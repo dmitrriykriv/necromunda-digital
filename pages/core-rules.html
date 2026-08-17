@@ -1,0 +1,2324 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Necromunda — справочник основных правил</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="topbar" id="top">
+    <a class="backlink" href="../index.html">&larr; На главную</a>
+    <h1>Necromunda</h1>
+    <p>Справочник основных правил &mdash; структура на русском, правила в оригинале</p>
+    <p class="source">Источник: SKIRMUNDA (сводные правила Necromunda) &bull; Правила/SKIRMUNDA.pdf</p>
+</header>
+
+<div class="layout">
+
+<aside class="sidebar">
+    <nav>
+        <h2>Оглавление</h2>
+
+        <details open>
+            <summary>Быстрый доступ</summary>
+            <ul>
+                <li><a href="#cheat">Шпаргалка<span class="en">Quick Reference</span></a></li>
+            </ul>
+        </details>
+
+        <details open>
+            <summary>Основные механики</summary>
+            <ul>
+                <li><a href="#osnovy">Первые принципы<span class="en">First Principles</span></a></li>
+                <li><a href="#vidimost">Линия видимости и укрытие<span class="en">Line of Sight &amp; Cover</span></a></li>
+                <li><a href="#mestnost">Местность<span class="en">Terrain</span></a></li>
+                <li><a href="#kubiki">Кубики и броски<span class="en">Dice &amp; Rolling Dice</span></a></li>
+                <li><a href="#harakteristiki">Характеристики бойцов<span class="en">Model Characteristics</span></a></li>
+                <li><a href="#profil-oruzhiya">Профиль оружия<span class="en">Weapon Profiles</span></a></li>
+            </ul>
+        </details>
+
+        <details open>
+            <summary>Статусы и состояния</summary>
+            <ul>
+                <li><a href="#statusy">Статусы моделей<span class="en">Model Status</span></a></li>
+                <li><a href="#podtipy">Подтипы бойцов<span class="en">Fighter Subtypes</span></a></li>
+                <li><a href="#podtipy-mashin">Подтипы машин<span class="en">Vehicle Subtypes</span></a></li>
+                <li><a href="#sostoyaniya">Состояния<span class="en">Conditions</span></a></li>
+            </ul>
+        </details>
+
+        <details open>
+            <summary>Последовательность хода</summary>
+            <ul>
+                <li><a href="#pered-boem">Подготовка к бою<span class="en">Pre-Battle Sequence</span></a></li>
+                <li><a href="#struktura">Структура раунда<span class="en">Game Structure</span></a></li>
+                <li><a href="#deystviya">Действия<span class="en">Actions</span></a></li>
+                <li><a href="#konec-fazy">Фаза окончания<span class="en">The End Phase</span></a></li>
+            </ul>
+        </details>
+
+        <details open>
+            <summary>Движение</summary>
+            <ul>
+                <li><a href="#dvizhenie">Перемещение моделей<span class="en">Moving Models</span></a></li>
+                <li><a href="#dvizhenie-mestnost">Местность и препятствия<span class="en">Terrain &amp; Obstacles</span></a></li>
+                <li><a href="#padenie">Карабканье, прыжки, падения<span class="en">Climbing, Leaping, Falling</span></a></li>
+            </ul>
+        </details>
+
+        <details open>
+            <summary>Стрельба</summary>
+            <ul>
+                <li><a href="#strelba">Последовательность стрельбы<span class="en">Shooting Sequence</span></a></li>
+                <li><a href="#boepripasy">Боеприпасы и Rapid Fire<span class="en">Ammo &amp; Rapid Fire</span></a></li>
+                <li><a href="#blast">Blast и Template<span class="en">Blast &amp; Template</span></a></li>
+            </ul>
+        </details>
+
+        <details open>
+            <summary>Ближний бой</summary>
+            <ul>
+                <li><a href="#blizhniy-boy">Разрешение схватки<span class="en">Close Combat</span></a></li>
+            </ul>
+        </details>
+
+        <details open>
+            <summary>Урон и ранения</summary>
+            <ul>
+                <li><a href="#popadaniya">Разрешение попаданий<span class="en">Resolve Hits</span></a></li>
+                <li><a href="#raneniya">Длительные ранения<span class="en">Lasting Injuries</span></a></li>
+                <li><a href="#povrezhdeniya">Длительные повреждения<span class="en">Lasting Damage</span></a></li>
+            </ul>
+        </details>
+
+        <details>
+            <summary>Псионика</summary>
+            <ul>
+                <li><a href="#wyrd">Силы виардов<span class="en">Wyrd Powers</span></a></li>
+            </ul>
+        </details>
+
+        <details>
+            <summary>Поле боя и сценарии</summary>
+            <ul>
+                <li><a href="#pole-boya">Подготовка поля боя<span class="en">Battlefield Set-Up</span></a></li>
+                <li><a href="#scenariy">Генерация сценария<span class="en">Scenario Generation</span></a></li>
+                <li><a href="#taktiki">Тактики банды<span class="en">Gang Tactics</span></a></li>
+            </ul>
+        </details>
+
+        <details>
+            <summary>Кампания</summary>
+            <ul>
+                <li><a href="#posle-boya">После боя<span class="en">Post-Battle Sequence</span></a></li>
+                <li><a href="#posle-cikla">После цикла<span class="en">Post-Cycle Sequence</span></a></li>
+                <li><a href="#opyt">Опыт и продвижение<span class="en">XP &amp; Advancements</span></a></li>
+                <li><a href="#sozdanie-bandy">Создание банды<span class="en">Gang Creation</span></a></li>
+                <li><a href="#kampaniya">Структура кампании<span class="en">Using the Campaign</span></a></li>
+                <li><a href="#territorii">Территории<span class="en">Territories</span></a></li>
+            </ul>
+        </details>
+
+        <details>
+            <summary>Справочник</summary>
+            <ul>
+                <li><a href="#navyki">Навыки<span class="en">Skills</span></a></li>
+                <li><a href="#oruzhie">Оружие<span class="en">Weapons</span></a></li>
+                <li><a href="#snaryazhenie">Броня и снаряжение<span class="en">Armour &amp; Wargear</span></a></li>
+                <li><a href="#svoystva">Свойства оружия<span class="en">Weapon Traits</span></a></li>
+            </ul>
+        </details>
+    </nav>
+</aside>
+
+<main class="content">
+
+<!-- ============ ШПАРГАЛКА ============ -->
+<section id="cheat">
+    <h2>Шпаргалка<span class="en">Quick Reference</span></h2>
+    <p class="lede">Самые используемые таблицы на одной странице. Русский текст — для игры за столом, английский рядом — чтобы сверить с оригинальной формулировкой.</p>
+
+    <div class="grid-2">
+        <div class="card">
+            <h4>Раунд<span class="orig">Round</span></h4>
+            <ol class="seq">
+                <li>
+                    <strong>Фаза приоритета</strong> — готовность банд, бросок за приоритет
+                    <span class="orig">Priority phase — Ready Gangs, Roll for Priority</span>
+                </li>
+                <li>
+                    <strong>Фаза действий</strong> — активация банд (2 действия на модель)
+                    <span class="orig">Action phase — Activate Gangs (2 действия на модель)</span>
+                </li>
+                <li>
+                    <strong>Фаза завершения</strong> — проверки морали, проверка победы, подкрепления
+                    <span class="orig">End phase — Bottle Checks, Check For Victory, Reinforcements</span>
+                </li>
+            </ol>
+        </div>
+        <div class="card">
+            <h4>Попадание<span class="orig">Hit</span></h4>
+            <p>Дальняя атака: проверка BS. Ближний бой: проверка WS.
+            <span class="orig">Ranged: BS test. Melee: WS test.</span></p>
+            <p>Натуральная 1 всегда промах, натуральная 6 всегда попадание.
+            <span class="orig">Natural 1 всегда промах, natural 6 всегда попадание.</span></p>
+            <h4>Спасбросок<span class="orig">Save</span></h4>
+            <p>D6 + модификатор AP &ge; Sv.
+            <span class="orig">D6 + AP модификатор &ge; Sv.</span></p>
+            <p>Натуральная 1–2 — всегда провал.
+            <span class="orig">Natural 1&ndash;2 — всегда провал.</span></p>
+        </div>
+    </div>
+
+    <div class="table-wrap">
+        <table>
+            <caption>Бросок на ранение — Сила против Стойкости<span class="orig">Wound roll — Strength vs Toughness</span></caption>
+            <thead>
+                <tr><th>Соотношение S и T</th><th class="num">Нужно на D6</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Сила вдвое больше Стойкости или выше
+                    <span class="orig">Strength is TWICE the Toughness or greater</span></td>
+                    <td class="num">2+</td>
+                </tr>
+                <tr>
+                    <td>Сила больше Стойкости
+                    <span class="orig">Strength is GREATER than the Toughness</span></td>
+                    <td class="num">3+</td>
+                </tr>
+                <tr>
+                    <td>Сила равна Стойкости
+                    <span class="orig">Strength is EQUAL to the Toughness</span></td>
+                    <td class="num">4+</td>
+                </tr>
+                <tr>
+                    <td>Сила меньше Стойкости
+                    <span class="orig">Strength is LOWER than the Toughness</span></td>
+                    <td class="num">5+</td>
+                </tr>
+                <tr>
+                    <td>Сила вдвое меньше Стойкости или ниже
+                    <span class="orig">Strength is HALF the Toughness or lower</span></td>
+                    <td class="num">6+</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="table-wrap">
+        <table class="compact">
+            <caption>Модификаторы спасброска за укрытие <em>(только против стрельбы)</em><span class="orig">Cover save modifiers (ranged attacks only)</span></caption>
+            <thead>
+                <tr><th>Условие</th><th class="num">Модификатор</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Цель в укрытии, в короткой дистанции оружия
+                    <span class="orig">Target in cover, within the weapon's Short Range</span></td>
+                    <td class="num">+1</td>
+                </tr>
+                <tr>
+                    <td>Цель в укрытии, в дальней дистанции оружия
+                    <span class="orig">Target in cover, within the weapon's Long Range</span></td>
+                    <td class="num">+2</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="table-wrap">
+        <table class="compact">
+            <caption>Падение<span class="orig">Falling</span></caption>
+            <thead>
+                <tr><th class="num">Высота</th><th>Эффект</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="num">&lt; 3"</td>
+                    <td>Модель становится подавленной (Suppressed); если она упала во время своей активации, активация сразу заканчивается.
+                    <span class="orig">The model becomes Suppressed; if they fell during their activation, their activation ends immediately.</span></td>
+                </tr>
+                <tr>
+                    <td class="num">3"&ndash;6"</td>
+                    <td>Как выше, плюс попадание Str –, AP –, L1, которое автоматически ранит, спасброски не допускаются.
+                    <span class="orig">As above, plus a Str &ndash;, AP &ndash;, L1 Hit that automatically Wounds with no saves allowed.</span></td>
+                </tr>
+                <tr>
+                    <td class="num">&gt; 6"</td>
+                    <td>Модель выводится из строя (Out of Action).
+                    <span class="orig">The model is taken Out of Action.</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="table-wrap">
+        <table class="compact">
+            <caption>Кубик ранений<span class="orig">Injury dice</span></caption>
+            <thead>
+                <tr><th>Результат</th><th>Эффект</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="num">Ранен
+                    <span class="orig">Injured</span></td>
+                    <td>Модель отделывается лёгким испугом и избегает дальнейшего урона, остаётся раненой/повреждённой (Injured/Damaged). Не получает пользы ни от одного из своих навыков.
+                    <span class="orig">The model has a lucky escape and avoids further damage, remaining Injured/Damaged. Gains no benefit from any of their skills.</span></td>
+                </tr>
+                <tr>
+                    <td class="num">Серьёзное ранение
+                    <span class="orig">Serious Injury</span></td>
+                    <td>Модель становится серьёзно раненной (Fighter) или серьёзно повреждённой (Vehicle).
+                    <span class="orig">The model becomes Seriously Injured (Fighter) or Seriously Damaged (Vehicle).</span></td>
+                </tr>
+                <tr>
+                    <td class="num">Выведен из строя
+                    <span class="orig">Out of Action</span></td>
+                    <td>Снимается с поля; бросок по таблице стойких травм / стойких повреждений.
+                    <span class="orig">Removed from play; roll on the Lasting Injury / Lasting Damage table.</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="table-wrap">
+        <table class="compact">
+            <caption>Пределы характеристик<span class="orig">Characteristic limits</span></caption>
+            <thead>
+                <tr><th></th><th class="num">M</th><th class="num">WS</th><th class="num">BS</th><th class="num">S</th><th class="num">T</th><th class="num">W</th><th class="num">I</th><th class="num">A</th><th class="num">Sv</th><th class="num">Ld</th><th class="num">Cl</th><th class="num">Wil</th><th class="num">Int</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Максимум<span class="orig">Maximum</span></td><td>12"</td><td>2+</td><td>2+</td><td>10</td><td>10</td><td>10</td><td>10</td><td>10</td><td>3+</td><td>10</td><td>10</td><td>10</td><td>10</td></tr>
+                <tr><td>Минимум<span class="orig">Minimum</span></td><td>1"</td><td>6+</td><td>6+</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>6+</td><td>4</td><td>4</td><td>4</td><td>4</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <a class="top-link" href="#top">&uarr; наверх</a>
+</section>
+
+<!-- ============ ОСНОВЫ ============ -->
+<section id="osnovy">
+    <h2>Первые принципы<span class="en">First Principles</span></h2>
+    <p class="lede">Базовые соглашения: кто такие модели, как измеряются расстояния, когда можно передумать.</p>
+
+    <p>In any game, there are certain conventions for all players to be aware of. In Necromunda, these include such things as how to roll and read dice, how distances are measured, when it is acceptable to change one's mind, and so forth.</p>
+
+    <h3>Бойцы, машины и модели<span class="en">Fighters, Vehicles &amp; Models</span></h3>
+    <ul>
+        <li>Any model that represents a single humanoid or a single animal is referred to as a <span class="term">Fighter</span> and has the Fighter Type. This could be a lowly gang member, a renowned hired gun, or even an exotic beast owned by a mighty gang Champion.</li>
+        <li>Any model that is Mounted on an animal or bike is a Fighter with the <span class="term">Mounted</span> Subtype.</li>
+        <li>Any model that represents a Vehicle of any type is referred to as a <span class="term">Vehicle</span> and has the Vehicle Type.</li>
+        <li>Where the rules use the terms Fighter or Vehicle they refer specifically to models of that Type. Where the rules use the term <span class="term">model</span>, they refer to both Fighters and Vehicles.</li>
+    </ul>
+
+    <h4>Controlling &amp; Opposing Player</h4>
+    <p>Frequently, rules will refer to the controlling player — this is the player whose model is being affected; the opposing player is their opponent.</p>
+
+    <h4>Take-backs &amp; Changing One's Mind</h4>
+    <p>As a general rule, players should be tolerant of an opponent second-guessing themselves. However, once dice have been rolled for any reason, players must abide by their decision; they can no longer go back and change anything that came before the dice roll.</p>
+
+    <h3>Измерение расстояний<span class="en">Measuring Distances</span></h3>
+    <p>All distances are measured in inches (") with a range ruler or tape measure. Distances can be measured at any time by either player.</p>
+    <p>Distances between models and any other battlefield objects (terrain features, objectives, and so forth) are measured from the closest point of one base to the closest point of the other. If a model or an object does not have a base, measure to or from the closest point of the model or object overall.</p>
+    <p>Unless stated, distances cannot be measured through any terrain feature defined as being <span class="term">solid</span>. If two models are at different elevations, or levels, measure the distance directly from one base to the other.</p>
+
+    <div class="note">
+        <span class="label">Arbitrator's Toolkit: No Pre-Measuring</span>
+        If an Arbitrator wishes, they may allow players to measure distances only after an action has been declared. If the action is not possible (due to a target being outside a weapon's Long Range) the model still attempts it, and would still make a shot and so potentially suffer the effects of the Unstable, Ammo (X+) and similar traits.
+    </div>
+
+    <a class="top-link" href="#top">&uarr; наверх</a>
+</section>
+
+<!-- ============ ЛИНИЯ ВИДИМОСТИ ============ -->
+<section id="vidimost">
+    <h2>Линия видимости и укрытие<span class="en">Line of Sight &amp; Cover</span></h2>
+    <p class="lede">Что боец видит и насколько цель прикрыта — определяется взглядом «от модели».</p>
+
+    <h3>Секторы обзора<span class="en">Fighter Vision Arcs</span></h3>
+    <p>Fighters are assumed to be constantly looking around them, keeping a wary eye, ear, and nose out for danger. As such, all models have a 360&deg; vision arc.</p>
+    <p><span class="term">The Arc (X) trait:</span> a weapon with this trait may only target enemy models in the model's arcs denoted by X. If the arc is Front, Rear, Left or Right, determine the arcs by drawing two imaginary lines through the corners of the model. If the arc is Centreline, determine the arc by drawing two imaginary lines along the side of the model.</p>
+
+    <h3>Линия видимости<span class="en">Line of Sight</span></h3>
+    <p>To check one model's Line of Sight to another model, stoop down to look from the first model's point of view.</p>
+    <ul>
+        <li>If a straight, uninterrupted line can be drawn from the first model to any part of the other model, the first model has a Line of Sight to them.</li>
+        <li>If no such line can be drawn due to intervening terrain or the presence of other models, the first model does not have a Line of Sight to them.</li>
+    </ul>
+    <p>Exclude their base and any insignificant elements, such as a protruding hairstyle, the barrel of a gun, or a spike from their armour. A Line of Sight can never be drawn through any terrain feature defined as being solid.</p>
+
+    <div class="note">
+        <span class="label">Agreeing on Line of Sight</span>
+        It pays to be gracious when your opponent claims Line of Sight. If both players take this approach, the game will flow more smoothly. If players cannot agree, it should be settled by rolling off.
+    </div>
+
+    <h3>Укрытие<span class="en">Cover</span></h3>
+    <p>To see if a target is in cover, stoop down to look from the attacker's point of view in exactly the same manner as described for checking Line of Sight. However, when checking to see if the target is in cover, disregard any friendly Fighters in base contact with the attacker — moving them aside temporarily if necessary, as long as they return to the original place once the shot has been resolved.</p>
+    <ul>
+        <li>If the target is fully visible, they are not in cover (i.e., they are in the open).</li>
+        <li>If any of the target is obscured by terrain or models, they are in cover.</li>
+    </ul>
+    <p>The benefits of cover are applied as modifiers to the Save roll (см. <a href="#popadaniya">Разрешение попаданий</a>).</p>
+
+    <a class="top-link" href="#top">&uarr; наверх</a>
+</section>
+
+<!-- ============ МЕСТНОСТЬ ============ -->
+<section id="mestnost">
+    <h2>Местность<span class="en">Terrain</span></h2>
+    <p class="lede">Типы ландшафта, которые согласуются до начала боя.</p>
+
+    <dl class="terms">
+        <dt>Impassable Terrain</dt>
+        <dd>Any terrain can be designated impassable when setting up the battlefield, regardless of size. Impassable terrain may include solid sections of wall, vertiginous rock formations or towering vats of molten metal. It cannot be moved through or over.</dd>
+
+        <dt>Difficult or Dangerous Terrain</dt>
+        <dd>Ranges from acidic pools of sludge to debris strewn floors. Any terrain can be designated as difficult or dangerous when setting up the battlefield, regardless of size. It is difficult to move over and can even be deadly to those traversing it.</dd>
+
+        <dt>Walls</dt>
+        <dd>Walls are almost always considered impassable terrain. On a battlefield of only one level, it is assumed that at the top of each wall sits a ceiling preventing Fighters from climbing over. On a multi-level battlefield, featuring ladders, staircases and even lifts, it is possible for Fighters to scale and climb over walls.</dd>
+
+        <dt>Doors</dt>
+        <dd>Set up as part of the Pre-battle Sequence. By default, all doors are closed at the start of a battle. Closed doors are considered impassable terrain and block both Line of Sight and measurement. Any Fighter may open a closed door or close an open door within 1" of them by sacrificing 2" of their movement during their activation. Closed doors can be targeted by attacks and are automatically hit; all doors have a Toughness of 5, and if a door is Wounded four times it is destroyed (do not roll Injury dice for doors).</dd>
+
+        <dt>Obstacles</dt>
+        <dd>Any freestanding terrain features measuring no more than 2" high and no more than 2" across, such as barricades, barrels and pipelines.</dd>
+
+        <dt>Structures</dt>
+        <dd>Any terrain features measuring more than 2" high or more than 2" across, be they freestanding or connected to other terrain features. Structures may feature many different levels, platforms and walkways on which models may be placed. Vehicles are unable to climb over obstacles or up onto structures.</dd>
+    </dl>
+
+    <div class="note">
+        <span class="label">Agreeing on Terrain Types</span>
+        After players have finished setting up the battlefield, it is worth going through each piece of terrain and agreeing what they all count as, to avoid confusion during the battle.
+    </div>
+
+    <a class="top-link" href="#top">&uarr; наверх</a>
+</section>
+
+<!-- ============ КУБИКИ ============ -->
+<section id="kubiki">
+    <h2>Кубики и броски<span class="en">Necromunda Dice &amp; Rolling Dice</span></h2>
+    <p class="lede">Типы кубиков и терминология бросков: тесты, проверки, модификаторы, переброс.</p>
+
+    <h3>Типы кубиков<span class="en">Necromunda Dice</span></h3>
+    <dl class="terms">
+        <dt>D6</dt>
+        <dd>A regular six-sided dice, marked 1 to 6. On many Necromunda dice it is common for the '6' to be replaced by a logo.</dd>
+        <dt>D66</dt>
+        <dd>Roll two D6, one after the other, counting the first dice as tens and the second as units, giving a result between 11 and 66. For example, a roll of 2 then 4 gives 24.</dd>
+        <dt>D3</dt>
+        <dd>Roll a D6 and halve the result, rounding fractions up.</dd>
+        <dt>Firepower dice</dt>
+        <dd>Used when a model makes a ranged attack with a weapon that has the Rapid Fire (X) trait, to determine how many shots the weapon makes and whether it runs Out of Ammo. Six-sided: three bullet symbols on one face, two bullets on two faces, one bullet on two faces, and a bullet plus an ammo symbol on one face.</dd>
+        <dt>Scatter dice</dt>
+        <dd>Six-sided, marked with a Hit symbol (a target icon with a small arrow) on two faces and an arrow on each of the other four. Used to determine random directions, most often for weapons with the Blast (3"/5") trait.</dd>
+        <dt>Injury dice</dt>
+        <dd>Determines the severity of an Injury: an Injured symbol on two faces, a Seriously Injured symbol on three faces, and an Out of Action symbol on one face.</dd>
+    </dl>
+
+    <h3>Броски, тесты и проверки<span class="en">Rolling Dice</span></h3>
+    <dl class="terms">
+        <dt>Single dice rolls</dt>
+        <dd>'Roll a D6'. Sometimes several single dice are rolled at once — for example, 3D6 means three dice are rolled together, but the result of each dice is considered separately.</dd>
+        <dt>Multiple dice rolls</dt>
+        <dd>Roll multiple D6 and add the results together, e.g. 2D6 gives a total between 2 and 12.</dd>
+        <dt>Dice pools</dt>
+        <dd>Two or more dice are rolled and a single result selected — for example, rolling two or three Injury dice and selecting one result to apply.</dd>
+        <dt>Tests</dt>
+        <dd>A player needs to roll a specific number <em>or higher</em>, shown as a number followed by '+'. If a 4+ is required, a roll of 4, 5 or 6 succeeds.</dd>
+        <dt>Checks</dt>
+        <dd>A player needs to roll <em>equal to or under</em> a specific number, shown as a plain number. If a check against 3 is required, a roll of 1, 2 or 3 succeeds.</dd>
+    </dl>
+
+    <div class="rule">
+        <span class="label">Modifying Dice Rolls</span>
+        If a +1 modifier is applied to a <strong>test</strong>, add it to the dice result; if it is applied to a <strong>check</strong>, add it to the target number. Positive modifiers make it more likely for the test or check to pass, negative modifiers less likely. If both positive and negative modifiers apply, apply all positive modifiers first, then all negative modifiers. Any fractions are rounded up unless stated otherwise.
+    </div>
+
+    <dl class="terms">
+        <dt>Rolling off</dt>
+        <dd>Both players roll a dice (usually a D6), occasionally adding a characteristic. The highest score always wins a roll-off. In the case of a tie, roll again unless otherwise instructed.</dd>
+        <dt>Natural rolls</dt>
+        <dd>The actual number rolled on a dice, regardless of modifiers (including the halving of the result when rolling a D6 as a D3).</dd>
+        <dt>Re-rolls</dt>
+        <dd>The second result must always be accepted, even if it is worse than the original. A dice can never be re-rolled more than once, regardless of the source of the re-roll.</dd>
+    </dl>
+
+    <a class="top-link" href="#top">&uarr; наверх</a>
+</section>
+
+<!-- ============ ХАРАКТЕРИСТИКИ ============ -->
+<section id="harakteristiki">
+    <h2>Характеристики бойцов<span class="en">Model Characteristics</span></h2>
+    <p class="lede">M, WS, BS, S, T, W, I, A, Sv, Ld, Cl, Wil, Int — и как по ним проходят проверки.</p>
+
+    <div class="table-wrap">
+        <table class="compact">
+            <caption>Пример профиля — Escher Gang Sister, 40 credits</caption>
+            <thead>
+                <tr><th class="num">M</th><th class="num">WS</th><th class="num">BS</th><th class="num">S</th><th class="num">T</th><th class="num">W</th><th class="num">I</th><th class="num">A</th><th class="num">Sv</th><th class="num">Ld</th><th class="num">Cl</th><th class="num">Wil</th><th class="num">Int</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>5"</td><td>4+</td><td>4+</td><td>3</td><td>3</td><td>1</td><td>4</td><td>1</td><td>6+</td><td>6</td><td>6</td><td>6</td><td>6</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <ul>
+        <li>Movement (M), Strength (S), Toughness (T), Wounds (W), Initiative (I) and Attacks (A) are shown as simple numbers — a higher number is better.</li>
+        <li>Weapon Skill (WS), Ballistic Skill (BS) and Save (Sv) are shown as target numbers — a lower number is better.</li>
+        <li>All four Psychology characteristics — Leadership (Ld), Cool (Cl), Willpower (Wil) and Intelligence (Int) — are simple numbers where a higher number is better.</li>
+    </ul>
+
+    <div class="table-wrap">
+        <table class="compact">
+            <caption>Значение характеристик</caption>
+            <thead><tr><th>Характеристика</th><th>Описание</th></tr></thead>
+            <tbody>
+                <tr><td class="num">M</td><td>Movement — the distance, in inches, the model can move when making a standard Move action.</td></tr>
+                <tr><td class="num">WS</td><td>Weapon Skill — the model's proficiency when using weapons in close combat.</td></tr>
+                <tr><td class="num">BS</td><td>Ballistic Skill — the model's proficiency with ranged weapons.</td></tr>
+                <tr><td class="num">S</td><td>Strength — the higher it is, the more likely the model is to inflict damage in close combat.</td></tr>
+                <tr><td class="num">T</td><td>Toughness — the higher it is, the less likely the model is to be wounded by an attack.</td></tr>
+                <tr><td class="num">W</td><td>Wounds — how much punishment the model can take before succumbing to injuries or damage.</td></tr>
+                <tr><td class="num">I</td><td>Initiative — how quickly the model acts in combat.</td></tr>
+                <tr><td class="num">A</td><td>Attacks — how many dice are rolled when the model is Engaged in close combat.</td></tr>
+                <tr><td class="num">Sv</td><td>Save — how well armoured and protected the model is, and how well it can use cover to minimise damage.</td></tr>
+                <tr><td class="num">Ld</td><td>Leadership — the ability to issue or follow commands in the heat of battle.</td></tr>
+                <tr><td class="num">Cl</td><td>Cool — the capacity for keeping calm under fire.</td></tr>
+                <tr><td class="num">Wil</td><td>Willpower — mental fortitude and resilience against the horrors of Necromunda.</td></tr>
+                <tr><td class="num">Int</td><td>Intelligence — mental acuity and the ability to apply knowledge.</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3>Тесты и проверки характеристик<span class="en">Characteristic Tests / Checks</span></h3>
+    <ul>
+        <li><strong>Weapon Skill and Ballistic Skill tests</strong> are made by achieving a target number on a single D6. If the result is equal to or higher than the characteristic, the test is passed.</li>
+        <li><strong>Leadership, Cool, Willpower and Intelligence checks</strong> are made by rolling equal to or under the characteristic on 2D6.</li>
+        <li><strong>Any other characteristic</strong> presented as a simple number (such as Strength or Toughness) is checked by rolling a D6 equal to or lower than the characteristic.</li>
+    </ul>
+
+    <div class="rule">
+        <span class="label">Improving / Reducing Characteristics</span>
+        When the characteristic is a simple number, it is just increased or decreased by the appropriate amount. If the characteristic is given as a target number, it is <strong>improved by lowering</strong> the number and <strong>reduced by increasing</strong> it — a model with Ballistic Skill 4+ that improves their BS by +1 now has BS 3+.
+    </div>
+
+    <a class="top-link" href="#top">&uarr; наверх</a>
+</section>
+
+<!-- ============ ПРОФИЛЬ ОРУЖИЯ ============ -->
+<section id="profil-oruzhiya">
+    <h2>Профиль оружия<span class="en">Weapon Profiles</span></h2>
+
+    <div class="table-wrap">
+        <table class="compact">
+            <caption>Пример — Boltgun</caption>
+            <thead>
+                <tr><th>Weapon</th><th class="num">SR</th><th class="num">LR</th><th class="num">Str</th><th class="num">AP</th><th class="num">L</th><th>Traits</th><th class="num">Creds</th><th class="num">TP</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Boltgun</td><td>12"</td><td>24"</td><td>4</td><td>&minus;1</td><td>2</td><td>Ammo (3+), Rapid Fire (1)</td><td>55</td><td>2</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <dl class="terms">
+        <dt>Short Range (SR) &amp; Long Range (LR)</dt>
+        <dd>Weapons cannot Hit models outside of their Long Range. A range of <strong>'E'</strong> means the weapon can only be used in close combat against targets Engaged with the wielder. A range of <strong>'T'</strong> means it uses the flame template. A range of <strong>'&ndash;'</strong> means the weapon cannot be used at that range.</dd>
+        <dt>Strength (Str)</dt>
+        <dd>Used when making Wound rolls. For close combat weapons this may be shown as 'S' (use the wielder's Strength) or 'S' with a modifier such as S+3. If a weapon's Strength is '&ndash;', its traits describe how to resolve hits from it.</dd>
+        <dt>Armour Piercing (AP)</dt>
+        <dd>A modifier applied to the dice rolled to make an Armour save. Most often negative, but it may be positive or '&ndash;' (no modifier).</dd>
+        <dt>Lethality (L)</dt>
+        <dd>How many Injury dice are rolled against a target that has been reduced to zero Wounds as a result of the attack.</dd>
+        <dt>Traits</dt>
+        <dd>Most weapons have one or more traits, each of which gives the weapon a unique bonus or changes the way in which it works.</dd>
+        <dt>Credit Cost (Creds) / Trade Points (TP)</dt>
+        <dd>The cost to purchase the weapon from the Trading Post, and how easily available it is there.</dd>
+    </dl>
+
+    <a class="top-link" href="#top">&uarr; наверх</a>
+</section>
+
+<!-- ============ СТАТУСЫ ============ -->
+<section id="statusy">
+    <h2>Статусы моделей<span class="en">Model Status</span></h2>
+    <p class="lede">Статус определяет, какие действия доступны модели при активации.</p>
+
+    <dl class="terms">
+        <dt>Active</dt>
+        <dd>A model is Active if they are not currently Engaged with any enemy models, Suppressed or Seriously Injured/Damaged. Active is the default Status and such models enjoy the greatest freedom to perform actions.</dd>
+
+        <dt>Engaged</dt>
+        <dd>
+            In order for models to make close combat attacks, they must be Engaged with an enemy model:
+            <ul>
+                <li>If the base of a Fighter is touching the base of an enemy Fighter, they are in base to base contact and are Engaged, unless either Fighter is Seriously Injured/Damaged.</li>
+                <li>If the base of a Fighter is within 1" of any part of an enemy Vehicle at the start of their activation, they may choose to be Engaged with that Vehicle.</li>
+                <li>If any part of a Vehicle is within 1" of any part of an enemy model at the start of its activation, it may choose to be Engaged with that model.</li>
+            </ul>
+            An Engaged model can generally only choose actions that allow them to fight or retreat.
+        </dd>
+
+        <dt>Suppressed</dt>
+        <dd>Models generally become Suppressed as a result of being hit by enemy fire, and may perform one less action during their activation. If a Suppressed model ever becomes Engaged, they immediately change their Status to Engaged — a model can never be both. The Suppressed marker is removed at the end of their next activation.</dd>
+
+        <dt>Seriously Injured / Damaged</dt>
+        <dd>If a model suffers a 'Serious Injury' result on an Injury dice, they become Seriously Injured (Fighter) or Seriously Damaged (Vehicle). Such a model is very vulnerable, susceptible to enemy attacks against which they cannot defend themselves and unable to move quickly towards safety. If they regain a Wound, change their Status to Active; if this happens while they are within 1" of an enemy model, they are instead taken Out of Action.</dd>
+    </dl>
+
+    <div class="rule">
+        <span class="label">Multiple Statuses</span>
+        A model may only ever have one Status at a time. When multiple Statuses would apply, use this priority order:
+        <ol class="seq">
+            <li>Seriously Injured/Damaged</li>
+            <li>Engaged</li>
+            <li>Suppressed</li>
+            <li>Active</li>
+        </ol>
+    </div>
+
+    <h3>Маркеры<span class="en">Showing Conditions &amp; Statuses</span></h3>
+    <p>The following types of markers can be placed next to models to indicate their Status or Condition: Ready &amp; Activated, Suppressed, Seriously Injured/Damaged, One Wound &amp; Two Wound, Injured, Insanity, Webbed, Out of Ammo.</p>
+
+    <a class="top-link" href="#top">&uarr; наверх</a>
+</section>
+
+<!-- ============ ПОДТИПЫ БОЙЦОВ ============ -->
+<section id="podtipy">
+    <h2>Подтипы бойцов<span class="en">Fighter Subtypes</span></h2>
+    <p class="lede">Подтип определяет место бойца в иерархии банды и доступные ему пост-цикловые действия. У бойца может быть несколько подтипов одновременно.</p>
+
+    <dl class="terms">
+        <dt>Beast</dt>
+        <dd>An animal that can only perform limited actions. Unless stated otherwise, a Beast may not perform Interact or Treat Ally. Additionally, a Beast may not assist a model making a Recovery test, and a gang cannot use the Leadership characteristic of a Beast for Bottle checks unless every friendly model on the battlefield is a Beast.</dd>
+
+        <dt>Brute</dt>
+        <dd>All Brutes have the Juggernaut skill. When a Brute is removed from the Gang Roster, all weapons and wargear they are equipped with are deleted instead of going into the gang's Stash.</dd>
+
+        <dt>Champion</dt>
+        <dd>Friendly models within 6" and in Line of Sight of a Champion may use the Champion's Cool characteristic for Nerve checks. All Champions have the Inspiring skill.</dd>
+
+        <dt>Flying</dt>
+        <dd>May move between levels without needing to climb a wall or ladder, by measuring a straight line between their starting and final positions. Whenever they fall, they are not Suppressed and never take any damage. They may not ignore impassable terrain and may not end their movement overlapping an obstacle or another Fighter's base.</dd>
+
+        <dt>Ganger</dt>
+        <dd>If during the Post-cycle Sequence a Ganger reaches at least 37 XP, they are promoted to a Champion. After rolling to determine an Advancement, they replace the Ganger Subtype with the Champion Subtype, keeping all their other existing Subtypes.</dd>
+
+        <dt>Hanger-on</dt>
+        <dd>May be excluded from being randomly selected when choosing a starting crew or creating a Reinforcements deck. When removed from the Gang Roster, all their weapons and wargear are deleted instead of going into the gang's Stash.</dd>
+
+        <dt>Leader</dt>
+        <dd>One Fighter in every gang must always have the Leader Subtype; if they die, another Fighter is promoted to replace them. Friendly models within 12" and in Line of Sight of a Leader may use the Leader's Cool characteristic for Nerve checks. All Leaders have the Inspiring skill.</dd>
+
+        <dt>Loner</dt>
+        <dd>A gang cannot use the Leadership characteristic of a Loner for Bottle checks unless every friendly model on the battlefield is either a Beast or a Loner.</dd>
+
+        <dt>Mounted</dt>
+        <dd>
+            <ul>
+                <li><strong>Optional Equipment:</strong> the controlling player decides before determining starting crews whether a Fighter will use mount wargear; this cannot be changed mid-battle.</li>
+                <li><strong>Skills:</strong> all Mounted Fighters gain the Nerves of Steel and Hit &amp; Run skills.</li>
+                <li><strong>Terrain:</strong> Mounted Fighters cannot climb up nor down walls or ladders, but can still jump down to lower levels or jump gaps.</li>
+                <li><strong>Gun It:</strong> when performing a Charge or Dash action, they may only make one 90&deg; turn.</li>
+                <li><strong>Hands Full:</strong> cannot be equipped with any weapon that has the Heavy or Paired trait unless it also has the Lance or Lance-bomb trait, and may not use a Secondary weapon in close combat.</li>
+            </ul>
+        </dd>
+
+        <dt>Pet</dt>
+        <dd>Purchased as wargear for a model; their credits value is included on the owning model's Model Card. Automatically included in a gang's starting crew if their owner is, and do not count against crew or Reinforcement limits. When their owner activates, any Pets outside Leash range become <em>Panicked</em>. When the owner goes Out of Action or is removed, their Pets are also removed. Pets cannot control objectives, though they do prevent enemy Fighters from controlling them.</dd>
+
+        <dt>Prospect</dt>
+        <dd>When a Prospect is taken Out of Action, friendly models only need to make Nerve checks if they themselves are also Prospects. If during the Post-cycle Sequence a Prospect reaches at least 13 XP, they are promoted to a Ganger and gain the Specialist Subtype, increasing their Credit Cost by +15 credits.</dd>
+
+        <dt>Specialist</dt>
+        <dd>When added to the Gang Roster, must select one specialization, which grants a free skill (см. таблицу ниже).</dd>
+
+        <dt>Support</dt>
+        <dd>Can always be included in a gang's starting crew, does not count against the crew limit, and can never be targeted with a ranged attack unless they are the closest model.</dd>
+
+        <dt>Wyrd</dt>
+        <dd>May use Wyrd powers, and treats Wyrd Powers as a Secondary Skill Set.</dd>
+    </dl>
+
+    <div class="table-wrap">
+        <table class="compact">
+            <caption>Специализации (Specialist)</caption>
+            <thead><tr><th>Specialist Type</th><th>Free Skill</th></tr></thead>
+            <tbody>
+                <tr><td>Heavy</td><td>Bulging Biceps</td></tr>
+                <tr><td>Gunner</td><td>Hip-shooting</td></tr>
+                <tr><td>Gunslinger</td><td>Gunfighter</td></tr>
+                <tr><td>Scout</td><td>Clamber</td></tr>
+                <tr><td>Sniper</td><td>Precision Shot</td></tr>
+                <tr><td>Brawler</td><td>Berserker</td></tr>
+                <tr><td>Medic</td><td>Medicate</td></tr>
+                <tr><td>Tech</td><td>Munitioneer</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="table-wrap">
+        <table class="compact">
+            <caption>Panicked Pet — обязательное действие</caption>
+            <thead><tr><th>Status</th><th>Action</th></tr></thead>
+            <tbody>
+                <tr><td>Ready</td><td>Dash</td></tr>
+                <tr><td>Suppressed</td><td>Move</td></tr>
+                <tr><td>Seriously Injured</td><td>Crawl</td></tr>
+                <tr><td>Engaged</td><td>Retreat</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <p>They must attempt to end their activation within Leash range of their owner. If they are unable to do so, they must end their activation as close as possible to their owner.</p>
+
+    <a class="top-link" href="#top">&uarr; наверх</a>
+</section>
+
+<!-- ============ ПОДТИПЫ МАШИН ============ -->
+<section id="podtipy-mashin">
+    <h2>Подтипы машин<span class="en">Vehicle Subtypes</span></h2>
+    <p class="lede">Определяются способом передвижения и влияют на взаимодействие с трудной и опасной местностью.</p>
+
+    <dl class="terms">
+        <dt>Hybrid</dt>
+        <dd>Uses a mix of methods for locomotion; it may choose which of its Locomotion Subtypes to use when activating.</dd>
+        <dt>Manoeuverable</dt>
+        <dd>May perform one additional 90&deg; turn when performing the Charge or Dash action.</dd>
+        <dt>Skimmer</dt>
+        <dd>Ignores all difficult or dangerous terrain when moving. However, if it ends its activation on difficult or dangerous terrain it must make an Agility test; if failed, it suffers a Str &ndash;, AP &ndash;, L1 Hit that automatically Wounds and ignores all saves.</dd>
+        <dt>Tracked</dt>
+        <dd>Suffers no penalty for moving over difficult terrain.</dd>
+        <dt>Transport (X)</dt>
+        <dd>Has an enclosed cab designed to carry up to X Fighters, and must have at least one clearly visible access point. While embarked, Fighters are treated as not on the battlefield and may only perform the Interact action (to disembark within 1" of an access point). If the Vehicle is taken Out of Action, embarked Fighters are placed Suppressed within 1" of it; any that cannot be placed are automatically taken Out of Action. Brutes and Mounted Fighters cannot enter a Transport.</dd>
+        <dt>Walker</dt>
+        <dd>May make as many turns during its activation as it wishes. For every 1" of difficult terrain it moves through, it counts as having moved 2". Walkers are treated as Fighters for the purpose of being Engaged.</dd>
+        <dt>Wheeled</dt>
+        <dd>Able to reach high speeds but struggles over rough terrain. For every 1" of difficult terrain it moves through, it counts as having moved 2".</dd>
+    </dl>
+
+    <a class="top-link" href="#top">&uarr; наверх</a>
+</section>
+
+<!-- ============ СОСТОЯНИЯ ============ -->
+<section id="sostoyaniya">
+    <h2>Состояния<span class="en">Conditions</span></h2>
+    <p class="lede">В дополнение к статусу модель может иметь одно или несколько состояний одновременно.</p>
+
+    <dl class="terms">
+        <dt>Fearsome</dt>
+        <dd>If a model subject to the Fearsome Condition is selected as the target of close combat attacks, the attacking model must immediately make a Willpower check. If the check is failed, then until the current model's activation ends, set the attacking model's WS to 6+. Models subject to Fearsome are themselves not affected by it, unless the enemy model also has the Terrifying Condition.</dd>
+
+        <dt>Frenzy</dt>
+        <dd>An Active model subject to Frenzy must declare a Charge action if they begin their activation within their Movement characteristic +6" of an enemy model and are able to complete that Charge, moving directly towards the nearest enemy model. While subject to Frenzy, a model increases their Attacks characteristic by 1.</dd>
+
+        <dt>Hatred (X)</dt>
+        <dd>When a model subject to Hatred (X) either performs or is the target of a Charge or Engage action against a model they hate, they may re-roll any failed Hit rolls in close combat for the duration of the current model's activation.</dd>
+
+        <dt>Injured / Damaged</dt>
+        <dd>When a model is reduced to zero Wounds they become subject to the Injured Condition (Fighter) or the Damaged Condition (Vehicle). Such a model gains no benefit from any of their skills. If they regain a Wound, they lose the Condition.</dd>
+
+        <dt>Intoxicated</dt>
+        <dd>Reduce BS and WS by 1 (to a minimum of 6+), but increase Cool by 1 (to a maximum of 10).</dd>
+
+        <dt>Terrifying</dt>
+        <dd>Gains all the benefits of Fearsome. In addition, an enemy model wishing to perform a Charge or Engage action targeting a Terrifying model must make a Willpower check; if it is failed they must remain where they are and their activation ends.</dd>
+
+        <dt>Webbed</dt>
+        <dd>Unable to move (voluntarily or involuntarily) and suffers a &minus;1 penalty on all Hit rolls. At the end of a Webbed model's activation they make a Strength check; if passed, they break free and lose the Condition.</dd>
+
+        <dt>Insanity</dt>
+        <dd>When the model activates, roll a D6 on the Insanity table to see what action they perform. Once the action is completed their activation ends and they make a Willpower check; if passed, they lose the Insanity Condition.</dd>
+    </dl>
+
+    <div class="table-wrap">
+        <table class="compact">
+            <caption>Insanity table</caption>
+            <thead>
+                <tr><th class="num">D6</th><th>Unengaged</th><th>Engaged</th><th>Seriously Injured</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="num">1</td>
+                    <td>"You'll never take me alive!" — Charge the nearest model (friend or foe).</td>
+                    <td>Fight randomly, targeting a model they are Engaged with.</td>
+                    <td>Crawl directly towards the closest model, ending at least 1" away from all models.</td>
+                </tr>
+                <tr>
+                    <td class="num">2</td>
+                    <td>"The floor is covered in spiders!" — Dash, ending as high above ground level as they can.</td>
+                    <td>Retreat, ending as high above ground level as they can.</td>
+                    <td>Crawl, ending as high above ground level as they can and at least 1" from all models.</td>
+                </tr>
+                <tr>
+                    <td class="num">3</td>
+                    <td>"They're coming for me!" — Dash, ending as far from all models as they can.</td>
+                    <td>Retreat, ending as far from all models as they can.</td>
+                    <td>Crawl, ending as far from all models as they can.</td>
+                </tr>
+                <tr>
+                    <td class="num">4</td>
+                    <td>"The shadows have eyes!" — Dash, ending as far from all terrain features and obstacles as they can.</td>
+                    <td>Retreat, ending as far from all terrain features and obstacles as they can.</td>
+                    <td>Crawl, ending as far from terrain as they can and at least 1" from all models.</td>
+                </tr>
+                <tr>
+                    <td class="num">5</td>
+                    <td>"I'll get you!" — Shoot or Braced Shot at the closest model; move first if needed. With no ranged weapon, treat as result 1.</td>
+                    <td>Retreat, then Shoot or Braced Shot at the closest model. With no ranged weapon, treat as result 1.</td>
+                    <td>Crawl directly towards the closest model, ending at least 1" away from all models.</td>
+                </tr>
+                <tr>
+                    <td class="num">6</td>
+                    <td>"Hide!" — Dash, attempting to end out of Line of Sight of all other models.</td>
+                    <td>Retreat, moving directly away from the model they are Engaged with.</td>
+                    <td>Crawl, attempting to end out of Line of Sight and at least 1" from all models.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <a class="top-link" href="#top">&uarr; наверх</a>
+</section>
+
+<!-- ============ ПОДГОТОВКА К БОЮ ============ -->
+<section id="pered-boem">
+    <h2>Подготовка к бою<span class="en">The Pre-Battle Sequence</span></h2>
+    <p class="lede">Семь шагов, выполняемых строго по порядку и в присутствии обоих игроков.</p>
+
+    <ol class="seq">
+        <li><strong>Make a Challenge &amp; Stake Territory.</strong> In Campaign play, challenges are handled as described by the Arbitrator, and an eligible Territory is nominated as the Stake. In Skirmish play, a challenge is issued and accepted when two players decide to play a battle.</li>
+        <li><strong>Determine Scenario.</strong> In Campaign play, the scenario is generated on the Scenario Generation Tables. In Skirmish play, players may simply choose the result on each table. In Campaign play the player who issued the challenge is the attacker; in Skirmish play both players roll a D6, and the highest chooses who is attacker and defender.</li>
+        <li><strong>Set Up the Battlefield.</strong></li>
+        <li><strong>Choose Crews.</strong> The scenario's Crew table details the method of selection, and how many and what kind of models can be selected. Players can also spend credits to <em>recruit Hired Guns</em>; if both players wish to, the player with the higher Gang Rating must do so first.</li>
+        <li><strong>Announce Battlefield Effects.</strong> Players announce which Territories are applying Battlefield Effects to the upcoming battle. This step is ignored in Skirmish play.</li>
+        <li><strong>Gang Tactics.</strong> Each player may select one Gang Tactic they have access to; each may be used once during the battle.</li>
+        <li><strong>Deployment.</strong> Starting with the defender, players set their gangs up in the deployment zones defined by the scenario.</li>
+    </ol>
+
+    <div class="rule">
+        <span class="label">Underdog Bonus</span>
+        If one player's Gang Rating is at least 200 credits less than their opponent's, they may select an additional Gang Tactic for the battle for each full 200 credits difference in Gang Rating.
+    </div>
+
+    <a class="top-link" href="#top">&uarr; наверх</a>
+</section>
+
+<!-- ============ СТРУКТУРА РАУНДА ============ -->
+<section id="struktura">
+    <h2>Структура раунда<span class="en">Game Structure</span></h2>
+    <p class="lede">Каждый раунд состоит из трёх фаз, разрешаемых по шагам.</p>
+
+    <div class="grid-2">
+        <div class="card">
+            <h4>Priority Phase</h4>
+            <ol class="seq">
+                <li><strong>Ready Gangs</strong> — each player gives each of their models a Ready marker.</li>
+                <li><strong>Roll for Priority</strong> — each player rolls a D6; the highest has Priority for the round. On a tie, whoever did not have Priority last round has Priority. If the very first roll is a draw, re-roll until one player wins.</li>
+            </ol>
+        </div>
+        <div class="card">
+            <h4>Action Phase</h4>
+            <p><strong>Activate Gangs</strong> — starting with the player who has Priority, players take turns choosing one of their Ready models to activate. When a model activates, it may perform two actions.</p>
+            <p>If one player has run out of models to activate, the other activates all of their remaining models in an order of their choosing. Once all models have activated, the Action phase ends.</p>
+        </div>
+        <div class="card">
+            <h4>End Phase</h4>
+            <ol class="seq">
+                <li><strong>Bottle Checks</strong></li>
+                <li><strong>Check For Victory</strong></li>
+                <li><strong>Reinforcements</strong></li>
+            </ol>
+        </div>
+    </div>
+
+    <a class="top-link" href="#top">&uarr; наверх</a>
+</section>
+
+<!-- ============ ДЕЙСТВИЯ ============ -->
+<section id="deystviya">
+    <h2>Действия<span class="en">Actions</span></h2>
+    <p class="lede">Доступный набор действий зависит от текущего статуса модели. Одно и то же действие нельзя выполнить дважды за активацию, если правило прямо не разрешает.</p>
+
+    <h3>Типы действий<span class="en">Types of Action</span></h3>
+    <ul>
+        <li><strong>Single actions</strong> — each counts as one of the model's actions. A first single action may be fully resolved before declaring the second.</li>
+        <li><strong>Double actions</strong> — count as making two actions. If a model can only perform one action during its activation for any reason, it may not perform a double action.</li>
+        <li><strong>Free actions</strong> — do not count as using one of the model's actions.</li>
+    </ul>
+    <div class="note">
+        <span class="label">Changing Action Type</span>
+        Some effects may change an action's type; for example, when a model performs the Charge action, after they have moved they must perform a Fight action as a Free action.
+    </div>
+
+    <h3>Действия активных моделей<span class="en">Model Actions</span></h3>
+    <p>Models that are not Engaged or Seriously Injured/Damaged can perform the following actions. If they are Suppressed when activated, they lose their Suppressed marker and may only perform one action instead of the usual two.</p>
+
+    <div class="table-wrap">
+        <table>
+            <thead><tr><th>Действие</th><th>Тип</th><th>Эффект</th></tr></thead>
+            <tbody>
+                <tr><td class="num">Aimed Shot</td><td>Double</td><td>The model makes an attack with a ranged weapon without the Heavy trait and applies a &minus;1 modifier to that Hit roll.</td></tr>
+                <tr><td class="num">Braced Shot</td><td>Double</td><td>The model makes an attack with a ranged weapon with the Heavy trait.</td></tr>
+                <tr><td class="num">Charge</td><td>Double</td><td>The model moves their Movement characteristic plus D6 towards a targeted enemy model, and may move within 1" of enemy models as long as they end the move Engaged with the target. If they do, they must perform a Fight or Coup de Grâce action as a Free action; otherwise they must move as close as possible to the target. A Vehicle may only make one turn of up to 90&deg;.</td></tr>
+                <tr><td class="num">Coup de Grâce</td><td>Single</td><td>Fighters only. Choose one Seriously Injured enemy Fighter within 1"; each player rolls a D6 and adds their Fighter's Strength. If the activating Fighter's total is equal or higher, the enemy Fighter immediately goes Out of Action.</td></tr>
+                <tr><td class="num">Crawl Through Ductway</td><td>Double</td><td>Fighters only. If within 1" of a ductway, the Fighter may be placed within 1" of the other end, provided they are not within 1" of an enemy model and their base does not overlap another model or an obstacle.</td></tr>
+                <tr><td class="num">Dash</td><td>Double</td><td>The model may move a distance equal to their Movement plus their Initiative in inches. A Vehicle may only make one turn of up to 90&deg;.</td></tr>
+                <tr><td class="num">Engage</td><td>Single</td><td>The model moves D6" towards a targeted enemy model and may move within 1" of enemy models as long as they end Engaged with the target. If they do, they must perform a Fight or Coup de Grâce action as a Free action.</td></tr>
+                <tr><td class="num">Fire All</td><td>Double</td><td>Vehicles only. The Vehicle fires all ranged weapons it is equipped with, regardless of the Heavy trait. Each weapon may target a different enemy model; declare all targets before rolling any dice.</td></tr>
+                <tr><td class="num">Group Activation</td><td>Single</td><td>Fighters only. Select any number of friendly Ready Fighters within 3" and make a Leadership check with a &minus;1 modifier per Fighter selected after the first. If passed, each of the other Fighters may be activated in turn after this Fighter's activation.</td></tr>
+                <tr><td class="num">Interact</td><td>Single</td><td>The model interacts with a part of the battlefield or an object. The rules for the object say what happens.</td></tr>
+                <tr><td class="num">Move</td><td>Single</td><td>The model may move a distance equal to their Movement characteristic.</td></tr>
+                <tr><td class="num">Reload</td><td>Single</td><td>Pick one of the model's weapons that is Out of Ammo and reload it.</td></tr>
+                <tr><td class="num">Repair</td><td>Single</td><td>Fighters only. Choose one Seriously Damaged friendly Vehicle within 1"; it immediately makes a Recovery test.</td></tr>
+                <tr><td class="num">Sabotage</td><td>Single</td><td>Fighters only. Choose one Seriously Damaged enemy Vehicle within 1" and make an Intelligence check. If passed, the Vehicle immediately goes Out of Action; if failed, the action is wasted.</td></tr>
+                <tr><td class="num">Shoot</td><td>Single</td><td>The model makes an attack with a ranged weapon without the Heavy trait.</td></tr>
+                <tr><td class="num">Treat Ally</td><td>Single</td><td>Fighters only. Choose one Seriously Injured friendly Fighter within 1"; they immediately make a Recovery test.</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3>Действия сцепленных моделей<span class="en">Engaged Models</span></h3>
+    <div class="table-wrap">
+        <table>
+            <thead><tr><th>Действие</th><th>Тип</th><th>Эффект</th></tr></thead>
+            <tbody>
+                <tr><td class="num">Fight</td><td>Double</td><td>Resolve a combat this model is Engaged with.</td></tr>
+                <tr><td class="num">Retreat</td><td>Double</td><td>The model may move a distance equal to their Initiative characteristic. During this move they may freely move within 1" of enemy models, but must end the move at least 1" away from them.</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3>Действия тяжелораненых<span class="en">Seriously Injured / Damaged</span></h3>
+    <div class="table-wrap">
+        <table>
+            <thead><tr><th>Действие</th><th>Тип</th><th>Эффект</th></tr></thead>
+            <tbody>
+                <tr><td class="num">Crawl</td><td>Double</td><td>Fighter. May move a distance equal to their Strength characteristic in inches.</td></tr>
+                <tr><td class="num">Tend Wounds</td><td>Double</td><td>Fighter. When the Fighter makes a Recovery test, they roll an additional Injury dice.</td></tr>
+                <tr><td class="num">Desperate Escape</td><td>Double</td><td>The model flees the battle and goes Out of Action. Roll a D6; on a 1 or 2 they roll on the Lasting Injury/Damage table, otherwise they are considered Out Cold / Superficial Damage.</td></tr>
+                <tr><td class="num">Conduct Repairs</td><td>Double</td><td>Vehicle. When the Vehicle rolls to Recover, it rolls an additional Injury dice.</td></tr>
+                <tr><td class="num">Freewheel</td><td>Double</td><td>Vehicle. The Vehicle may move D6".</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3>Проверка восстановления<span class="en">Recovery Tests</span></h3>
+    <p>After a model that started their activation Seriously Injured/Damaged completes their activation, the controlling player makes a Recovery test by rolling an Injury dice:</p>
+    <ul>
+        <li><strong>Out of Action</strong> — the model is removed from play and rolls on the Lasting Injury or Lasting Damage table.</li>
+        <li><strong>Seriously Injured</strong> — the model remains Seriously Injured/Damaged.</li>
+        <li><strong>Injured</strong> — the model recovers enough to continue fighting. Remove the Seriously Injured/Damaged marker.</li>
+    </ul>
+    <p>If a model becomes Seriously Injured/Damaged <em>during</em> their activation, they do not make a Recovery test at the end of it.</p>
+    <ul>
+        <li><strong>Assistance:</strong> one friendly Fighter within 1" that is neither Engaged nor Seriously Injured can offer assistance, adding 1 extra Injury dice. Vehicles cannot be assisted and cannot assist others.</li>
+        <li><strong>Multiple Injury Dice:</strong> regardless of how many are rolled, 1 Injury dice is picked by the recovering model's controlling player and resolved; the others are discarded.</li>
+        <li><strong>Enemy Models:</strong> if a model is within 1" of an enemy model that is not Seriously Injured/Damaged when they make a Recovery test, they are automatically taken Out of Action — no roll is needed.</li>
+    </ul>
+
+    <a class="top-link" href="#top">&uarr; наверх</a>
+</section>
+
+<!-- ============ ДВИЖЕНИЕ ============ -->
+<section id="dvizhenie">
+    <h2>Перемещение моделей<span class="en">Moving Models</span></h2>
+
+    <p>When a model moves, the action they are performing says how far they can move; unless stated otherwise, they do not have to move this full distance. A Fighter need not move in a straight line — they can zigzag around terrain as appropriate (a Fighter performing a Charge or Engage action should take the shortest route possible). A Vehicle must move in a straight line directly forwards, though unless stated otherwise it may perform as many turns as it wishes, pivoting around its Central Point.</p>
+    <p>Models may not move through other models, either friend or foe.</p>
+
+    <div class="rule">
+        <span class="label">The 1" Rule</span>
+        Unless they are performing the Charge, Engage, Retreat or Crawl actions, a model may not move within 1" of an enemy model unless the enemy model is Seriously Injured/Damaged.
+        <ul>
+            <li><strong>Charge / Engage:</strong> if a model moves within 1" of an enemy model, they must end their move in base contact with the model targeted by the action.</li>
+            <li><strong>Retreat:</strong> a model may move within 1" of any enemy models, but must end the move at least 1" away from all of them.</li>
+            <li><strong>Crawl:</strong> a Fighter may move and end within 1" of enemy models; however, if they are within 1" of an enemy Fighter who is not Seriously Injured when they make their Recovery test, they are automatically taken Out of Action.</li>
+        </ul>
+    </div>
+
+    <h4>Directly Towards &amp; Directly Away From</h4>
+    <p>Trace an imaginary straight line that crosses through the centre of each model — the moving model then moves the required distance towards or away from the other along this line. This cannot make a model move through a solid terrain feature or other model; should it come into contact with one, it stops and does not move any further.</p>
+
+    <h3 id="dvizhenie-mestnost">Местность и препятствия<span class="en">Terrain &amp; Obstacles</span></h3>
+
+    <div class="rule">
+        <span class="label">Agility Tests</span>
+        A model rolls a D6 — on a 4 or more they pass. Some abilities and skills modify this roll (for example, all Escher Fighters add +1 to Agility tests). Regardless of modifiers, a natural 1 is always a fail and a natural 6 is always a success.
+    </div>
+
+    <dl class="terms">
+        <dt>Difficult terrain</dt>
+        <dd>When measuring how far a Fighter may move through difficult terrain, treat every 1" moved as 2". How a Vehicle interacts with difficult terrain depends on its Subtype.</dd>
+        <dt>Dangerous terrain</dt>
+        <dd>Treated as difficult terrain for measuring movement. Additionally, after moving through dangerous terrain a model must roll a D6; on a 1 they immediately suffer a Str &ndash;, AP &ndash;, L1 Hit that Wounds automatically and ignores all saves.</dd>
+        <dt>Obstacles</dt>
+        <dd>Fighters may cross obstacles as they move, but doing so reduces their Movement by a number of inches equal to the height of the obstacle. A Fighter may not end their movement on top of an obstacle.</dd>
+        <dt>Structures</dt>
+        <dd>Fighters may climb up and onto structures and between the various levels and platforms as they move, and may end their movement on any level if there is sufficient space for their base.</dd>
+        <dt>Ductways</dt>
+        <dd>Up to a maximum of 2" in length, placed across any 2"-wide wall or other otherwise-impassable terrain feature. They allow Fighters to traverse the feature using the Crawl Through Ductway action.</dd>
+        <dt>Doors</dt>
+        <dd>Fighters may open or close doors they are within 1" of at any point during their move, costing 2" of movement each time. A Fighter can open a door, move through it and then close it, providing they have sufficient movement. Locked doors cannot be opened by sacrificing movement, though they can still be destroyed; a Fighter within 1" of the access terminal may perform the Interact action to lock or unlock the door.</dd>
+    </dl>
+
+    <div class="note">
+        <span class="label">Fighter Movement on Vehicles</span>
+        Fighters treat Vehicles like terrain for the purposes of movement. Whenever a Vehicle moves, any Fighters on it (except those on designated transport areas) must immediately pass an Agility test or fall. If they fall, place them 1" away from the Vehicle in a direction determined by the Scatter dice after the Vehicle has finished moving. They only need to test once during each Vehicle's activation.
+    </div>
+
+    <h3 id="padenie">Карабканье, прыжки, падения<span class="en">Climbing, Leaping &amp; Falling</span></h3>
+
+    <h4>Climbing</h4>
+    <p>Fighters can climb up or down any vertical surface to reach a higher level or platform during their movement. For every 1" a Fighter moves vertically by climbing, they count as having moved 2". A Fighter cannot end their activation mid-climb; they must have sufficient movement to reach a flat surface.</p>
+    <ul>
+        <li><strong>Stepping Up &amp; Down:</strong> a Fighter may freely step up or down onto another level, provided it is no more than &frac12;" higher or lower. If the difference is more than &frac12;", they must climb or jump down.</li>
+        <li><strong>Overhangs:</strong> a climbing Fighter can traverse an overhang as long as it protrudes no more than 1". Overhangs protruding more than 1" are impassable to a climbing Fighter.</li>
+        <li><strong>Ladders &amp; Stairs:</strong> no modifiers to a Fighter's movement.</li>
+    </ul>
+
+    <h4>Leaping Gaps</h4>
+    <p>A Fighter can cross any gap of 2" or less with no need to roll, as long as they have sufficient movement to reach the other side and there is space for their base. To leap a gap larger than 2" they must make an Agility test; if failed, they fall from the point they were attempting to leap from. The only Vehicles that can cross gaps are Walkers, which only test for gaps larger than their base.</p>
+
+    <h4>Falling Hazards</h4>
+    <p>If a model is forcibly moved off a ledge, they must make an Agility test. If passed, they remain where they are and are not moved; if failed, they fall.</p>
+    <ul>
+        <li><strong>Railings:</strong> a Fighter applies a +1 modifier to the Agility test to avoid falling. A Vehicle gains no benefit from railings.</li>
+        <li><strong>Jumping Down:</strong> a model that deliberately jumps down automatically falls, with no test needed. Make an Agility test to see how well they land; if passed, reduce the effect on the falling table by one level.</li>
+    </ul>
+
+    <div class="table-wrap">
+        <table class="compact">
+            <caption>Falling</caption>
+            <thead><tr><th class="num">Distance Fallen</th><th>Effect</th></tr></thead>
+            <tbody>
+                <tr><td class="num">Less than 3"</td><td>The model becomes Suppressed and, if they fell during their activation, their activation ends immediately.</td></tr>
+                <tr><td class="num">Between 3" and 6"</td><td>As above, plus they suffer a Str &ndash;, AP &ndash;, L1 Hit that automatically Wounds with no saves allowed.</td></tr>
+                <tr><td class="num">More than 6"</td><td>The model is taken Out of Action.</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <a class="top-link" href="#top">&uarr; наверх</a>
+</section>
+
+<!-- ============ СТРЕЛЬБА ============ -->
+<section id="strelba">
+    <h2>Стрельба<span class="en">Shooting</span></h2>
+    <p class="lede">Четыре шага дальней атаки.</p>
+
+    <ol class="seq">
+        <li><strong>Declare the Shot.</strong> Choose a ranged weapon profile the attacking model is equipped with and nominate an enemy model in Line of Sight to be the target.</li>
+        <li><strong>Measure Range.</strong> Measure the distance between the attacker and the target. If the target is out of range, the attack automatically misses.</li>
+        <li><strong>Make the Hit Roll.</strong> A Hit roll is a Ballistic Skill test made against the BS of the model making the shot.</li>
+        <li><strong>Resolve Hits.</strong> If the BS test is passed, a Hit is scored and each Hit is resolved (см. <a href="#popadaniya">Разрешение попаданий</a>).</li>
+    </ol>
+
+    <div class="rule">
+        <span class="label">Модификаторы и особые случаи</span>
+        <ul>
+            <li><strong>Target is Engaged:</strong> if the shot hits, all Hits must be randomly allocated between all models involved in the combat.</li>
+            <li><strong>Natural 1:</strong> the shot misses, regardless of modifiers.</li>
+            <li><strong>Natural 6:</strong> the shot hits, regardless of modifiers.</li>
+        </ul>
+    </div>
+
+    <h4>Hit Models Become Suppressed</h4>
+    <p>When a model is Hit by a ranged attack they become Suppressed, unless they are also Engaged or Seriously Injured/Damaged.</p>
+    <p><strong>Falling from Heights:</strong> if a model becomes Suppressed or Seriously Injured/Damaged as a result of being Hit by a ranged attack while within &frac12;" of a ledge, they must immediately check to see if they fall. If they are within &frac12;" of two ledges they fall off the closer one; if equidistant, the controlling player chooses.</p>
+
+    <h3 id="boepripasy">Боеприпасы и Rapid Fire<span class="en">Running Out of Ammo</span></h3>
+    <p>When a weapon is Out of Ammo, it cannot be used again until a Reload action is taken. Many weapons have multiple profiles representing different kinds of ammo; when a weapon goes Out of Ammo, only the profile used for the attack goes Out of Ammo. When the Reload action is performed, only one of a weapon's profiles (of the controlling player's choice) has the Out of Ammo Condition removed.</p>
+
+    <div class="rule">
+        <span class="label">Rapid Fire (X)</span>
+        When firing a weapon with this trait, you may also roll a number of Firepower dice up to X. If the attack hits, resolve a number of hits equal to the number of bullet holes across all the Firepower dice.
+        <br><br>
+        Regardless of whether the shots Hit or not, if any ammo symbols are rolled the weapon has run out of ammo. If <em>multiple</em> ammo symbols are rolled then the weapon jams and cannot be used again this battle. A weapon with the Ammo (X+) trait may be considered to have rolled one additional ammo symbol.
+        <br><br>
+        Weapons with both the Rapid Fire (X) and Light traits can only fire single shots when used in close combat — the Firepower dice is never rolled in this manner.
+    </div>
+
+    <h3 id="blast">Blast и Template<span class="en">Blast &amp; Template Weapons</span></h3>
+    <ul>
+        <li><strong>Hitting Engaged Models:</strong> if a weapon with either the Template or Blast (3"/5") trait hits a model that is Engaged, then every model (friend and foe) that model is Engaged with is automatically Hit.</li>
+        <li><strong>Hitting Models on Different Levels:</strong> only models on the same level as the targeted model may be Hit. If a Blast marker scatters off a ledge, it remains on the same level and explodes in midair.</li>
+    </ul>
+
+    <div class="note">
+        <span class="label">Arbitrator's Toolkit: Stray Shots</span>
+        If the attack misses, roll a D6 for each model that is within 1" of the line along which the range was measured, starting with the model closest to the attacker. On a roll of 1, 2, or 3, that model is Hit by the attack. On a 4, 5, or 6 the shot misses them — move on to the next model at risk.
+    </div>
+
+    <div class="note">
+        <span class="label">Arbitrator's Toolkit: Target Priority</span>
+        If the closest model in Line of Sight is within 12" of the attacking model and is not either Engaged or Seriously Injured/Damaged, they must be the target of any ranged attack unless the attacking model passes a Cool check.
+    </div>
+
+    <div class="note">
+        <span class="label">Arbitrator's Toolkit: Walking Fire</span>
+        If a Rapid Fire weapon scores more than one Hit, the Hits can be split between multiple targets. The first must be allocated to the original target, but the remainder can be allocated to other enemy models within 3" of the first who are also within range and Line of Sight. Allocate all of the Hits before making any Wound rolls.
+    </div>
+
+    <a class="top-link" href="#top">&uarr; наверх</a>
+</section>
+
+<!-- ============ БЛИЖНИЙ БОЙ ============ -->
+<section id="blizhniy-boy">
+    <h2>Ближний бой<span class="en">Close Combat</span></h2>
+    <p class="lede">Схватка разрешается, когда модель выполняет действие Fight. Каждый участник атакует в порядке Инициативы.</p>
+
+    <ol class="seq">
+        <li><strong>Determine Who Can Fight.</strong> Only the activating model and any enemy models Engaged with them may fight.</li>
+        <li><strong>Choose Weapons.</strong> The activating model selects a weapon with either the Melee or Light trait as their Primary weapon and, if they have two such weapons, may select another as their Secondary weapon. All other models select one close combat weapon or weapon with the Light trait as their Primary weapon.</li>
+        <li><strong>Determine Attack Dice.</strong> See below.</li>
+        <li><strong>Declare Targets.</strong> An eligible target is an enemy model they are Engaged with. If there is more than one eligible target, attacks can be split between them as the controlling player wishes.</li>
+        <li><strong>Determine Initiative.</strong> See below.</li>
+        <li><strong>Resolve Attacks.</strong> Starting with the highest modified Initiative: (A) make Hit roll(s), (B) resolve Hits.</li>
+        <li><strong>Consolidate.</strong> If all enemy models the activating model was Engaged with have gone Out of Action or are Seriously Injured/Damaged, the model may move up to their Initiative in inches in any direction, ending at least 1" away from all enemy models.</li>
+    </ol>
+
+    <div class="table-wrap">
+        <table class="compact">
+            <caption>Hand weapon — если у бойца нет оружия с трейтом Melee или Light</caption>
+            <thead><tr><th>Weapon</th><th class="num">SR</th><th class="num">LR</th><th class="num">Str</th><th class="num">AP</th><th class="num">L</th><th>Traits</th></tr></thead>
+            <tbody>
+                <tr><td>Hand weapon</td><td>E</td><td>&ndash;</td><td>S</td><td>&ndash;</td><td>1</td><td>Melee</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <p>If a Vehicle does not have any close combat weapons, it cannot perform any close combat attacks.</p>
+
+    <h3>Кубики атак<span class="en">Determine Attack Dice</span></h3>
+    <ul>
+        <li><strong>Primary weapon:</strong> the number of attack dice equals the model's Attacks characteristic, +1 if they performed the Charge action this activation.</li>
+        <li><strong>Secondary weapon:</strong> the model has only one attack dice.</li>
+        <li><strong>All other models</strong> (i.e. non-activating) make only one attack with their Primary weapon, regardless of their Attacks characteristic.</li>
+        <li><strong>Pistols at Close Quarters:</strong> a weapon with the Light trait can only ever make one attack, regardless of Attacks, skills, traits or any other modifiers; additional attacks are wasted.</li>
+    </ul>
+
+    <h3>Инициатива<span class="en">Determine Initiative</span></h3>
+    <ul>
+        <li>If either the model's Primary or Secondary weapon has the <strong>Unwieldy</strong> trait, the model's Initiative is set to 1 before any other modifiers are applied.</li>
+        <li>If the model successfully performed the <strong>Charge</strong> action this activation, they increase their Initiative by 2.</li>
+    </ul>
+    <p><strong>Simultaneous Attacks:</strong> if multiple models have the same modified Initiative, they attack at the same time. The activating model's attacks are resolved first, followed by any other models. Causing an enemy model to become Seriously Injured/Damaged or be taken Out of Action does not prevent them resolving their attacks if they have the same modified Initiative.</p>
+
+    <h3>Броски попадания<span class="en">Make Hit Rolls</span></h3>
+    <p>A Hit roll is a Weapon Skill test made against the WS of the attacking model. Roll separately for each different weapon and/or for different targets. BS is <em>not</em> used to make Hit rolls in close combat, even when a ranged weapon with the Light trait is used.</p>
+    <div class="table-wrap">
+        <table class="compact">
+            <thead><tr><th>Ситуация</th><th class="num">Модификатор</th></tr></thead>
+            <tbody>
+                <tr><td><strong>Assist</strong> — at least one other friendly model is Engaged with the target of the attack and is not Engaged with any other models from the target's gang. Multiple Assists cannot be claimed.</td><td class="num">+1</td></tr>
+                <tr><td><strong>Interference</strong> — at least one other enemy model is Engaged with the attacker and is not Engaged with any other models from the attacker's gang. Multiple models cannot provide Interference to the same attack.</td><td class="num">&minus;1</td></tr>
+                <tr><td><strong>Engaging out of Line of Sight</strong> — the model performed a Charge or Engage action targeting a model that was not in their Line of Sight when the action was declared.</td><td class="num">&minus;1</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <p>A natural 1 always misses and a natural 6 always hits, regardless of any modifiers.</p>
+
+    <a class="top-link" href="#top">&uarr; наверх</a>
+</section>
+
+<!-- ============ РАЗРЕШЕНИЕ ПОПАДАНИЙ ============ -->
+<section id="popadaniya">
+    <h2>Разрешение попаданий<span class="en">Resolve Hits</span></h2>
+
+    <ol class="seq">
+        <li><strong>Make a Wound Roll</strong></li>
+        <li><strong>Make a Save Roll</strong></li>
+        <li><strong>Inflict Damage</strong></li>
+    </ol>
+
+    <h3>1. Бросок на ранение<span class="en">Wound Roll</span></h3>
+    <p>Whenever a Wound roll is made against a model, it is always the opposing player that makes it. Cross-reference the weapon's Strength with the Hit model's Toughness:</p>
+    <div class="table-wrap">
+        <table class="compact">
+            <thead><tr><th>Strength vs Toughness</th><th class="num">D6 Roll Required</th></tr></thead>
+            <tbody>
+                <tr><td>Is the Strength TWICE the Toughness or greater?</td><td class="num">2+</td></tr>
+                <tr><td>Is the Strength GREATER than the Toughness?</td><td class="num">3+</td></tr>
+                <tr><td>Is the Strength EQUAL to the Toughness?</td><td class="num">4+</td></tr>
+                <tr><td>Is the Strength LOWER than the Toughness?</td><td class="num">5+</td></tr>
+                <tr><td>Is the Strength HALF the Toughness or lower?</td><td class="num">6+</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3>2. Спасбросок<span class="en">Save Roll</span></h3>
+    <p>Roll a D6 and apply the weapon's armour-piercing characteristic as a modifier. If the result is equal to or greater than the model's Save characteristic, the Hit does no damage.</p>
+    <ul>
+        <li>Only <strong>one</strong> Save roll may be made for each Hit that successfully Wounds, regardless of how many different types of Save a model may have.</li>
+        <li>Some weapon traits disallow Save rolls entirely (for example, Gas). In such cases, regardless of any modifiers, no Save roll can be made.</li>
+        <li>If a model has been successfully Wounded by several attacks at the same time, the Hit model's opposing player chooses the order in which the attacks are resolved.</li>
+        <li><strong>Cover</strong> (ranged attacks only): +1 if the target is within the weapon's Short Range, +2 if within its Long Range. For a Blast weapon that has scattered, check cover from the direction of the centre of the Blast marker.</li>
+        <li><strong>Invulnerable saves</strong> are not affected by modifiers from any source (for example, an attack's AP and Cover).</li>
+        <li>A natural 1 or 2 when making a Save roll is always an automatic failure, regardless of any modifiers.</li>
+    </ul>
+
+    <h3>3. Нанесение урона<span class="en">Inflict Damage</span></h3>
+    <p>If a successful Wound roll is not saved or mitigated, the target loses a Wound. If this results in the model's Wounds characteristic dropping to zero (or if it is already zero), the target's opposing player rolls a number of Injury dice equal to the weapon's Lethality characteristic, then selects one of the Injury dice and applies the result:</p>
+    <ul>
+        <li><strong>Injured</strong> — the model has a lucky escape and avoids any further damage, remaining Injured/Damaged. An Injured/Damaged model gains no benefits from any of their skills.</li>
+        <li><strong>Serious Injury</strong> — the model becomes Seriously Injured (Fighter) or Seriously Damaged (Vehicle). If the model is already Seriously Injured/Damaged, this result has no effect.</li>
+        <li><strong>Out of Action</strong> — the model is immediately removed from play and takes no further part in this battle. Roll on the Lasting Injury or Lasting Damage table.</li>
+    </ul>
+    <p>A model's Wounds characteristic may never drop below zero.</p>
+
+    <div class="rule">
+        <span class="label">Nerve Checks</span>
+        If a model is within 3" of a friendly model that goes Out of Action, they must make a Cool check. If the check is failed, they become Suppressed.
+    </div>
+
+    <div class="rule">
+        <span class="label">Models on Zero Wounds</span>
+        If an effect results in a model's Wounds characteristic becoming zero, the model is automatically Injured/Damaged. If an Injured/Damaged model has their Wounds restored to a positive value they are no longer Injured/Damaged. If a Seriously Injured model has their Wounds restored to a positive value, they become Active — unless they are within 1" of an enemy model, in which case they are immediately taken Out of Action.
+    </div>
+
+    <a class="top-link" href="#top">&uarr; наверх</a>
+</section>
+
+<!-- ============ ДЛИТЕЛЬНЫЕ РАНЕНИЯ ============ -->
+<section id="raneniya">
+    <h2>Длительные ранения<span class="en">Lasting Injuries</span></h2>
+    <p class="lede">Whenever a model goes Out of Action, the opposing player makes a D66 roll on the relevant table. If a Lasting Injury is rolled that a model has already received, its effects are applied again. If for whatever reason multiple effects cause a model to go Out of Action, only roll once.</p>
+
+    <div class="table-wrap">
+        <table>
+            <caption>Lasting Injury Table (Fighters)</caption>
+            <thead><tr><th class="num">D66</th><th>Lasting Injury</th></tr></thead>
+            <tbody>
+                <tr><td class="num">11</td><td><strong>Lesson Learnt:</strong> The Fighter earns D3 XP.</td></tr>
+                <tr><td class="num">12</td><td><strong>Eternal Enmity:</strong> The Fighter gains the Hatred (X) Condition where X is the <em>type</em> of gang that took them Out of Action.</td></tr>
+                <tr><td class="num">13</td><td><strong>Bitter Enmity:</strong> The Fighter gains the Hatred (X) Condition where X is the <em>gang</em> that took them Out of Action.</td></tr>
+                <tr><td class="num">14</td><td><strong>Personal Enmity:</strong> The Fighter gains the Hatred (X) Condition where X is the <em>model</em> that took them Out of Action. If they were not taken Out of Action by an enemy model's action, treat as Bitter Enmity.</td></tr>
+                <tr><td class="num">15</td><td><strong>Horrid Scars:</strong> The Fighter gains the Fearsome Condition.</td></tr>
+                <tr><td class="num">16</td><td><strong>Impressive Scars:</strong> The Fighter increases their Leadership characteristic by 1.</td></tr>
+                <tr><td class="num">21&ndash;26</td><td><strong>Out Cold:</strong> The Fighter takes no further part in the battle, but suffers no long-term effects.</td></tr>
+                <tr><td class="num">31&ndash;46</td><td><strong>Grievous Wound:</strong> The Fighter goes into Recovery.</td></tr>
+                <tr><td class="num">51</td><td><strong>Eye Injury:</strong> Recovery, and reduce Ballistic Skill by 1.</td></tr>
+                <tr><td class="num">52</td><td><strong>Hand Injury:</strong> Recovery, and reduce Weapon Skill by 1.</td></tr>
+                <tr><td class="num">53</td><td><strong>Hobbled:</strong> Recovery, and reduce Movement by 1.</td></tr>
+                <tr><td class="num">54</td><td><strong>Spinal Injury:</strong> Recovery, and reduce Strength by 1.</td></tr>
+                <tr><td class="num">55</td><td><strong>Enfeebled:</strong> Recovery, and reduce Toughness by 1.</td></tr>
+                <tr><td class="num">56</td><td><strong>Head Injury:</strong> Recovery, and reduce Leadership by 1.</td></tr>
+                <tr><td class="num">61&ndash;62</td><td><strong>Captured:</strong> The Fighter has been Captured (see The Post-Battle Sequence).</td></tr>
+                <tr><td class="num">63&ndash;65</td><td><strong>Critical Injury:</strong> The Fighter is in a critical condition; if their injuries are not successfully treated by a visit to the Doc in the Post-cycle Sequence, they will die.</td></tr>
+                <tr><td class="num">66</td><td><strong>Memorable Death:</strong> The Fighter is killed instantly. If the injury was caused by an enemy model, that model earns 1 extra XP.</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="rule">
+        <span class="label">Going into Recovery</span>
+        During Campaign play, the model's In Recovery box is checked on the Gang Roster and they cannot take part in any other battles this Campaign Cycle, nor perform Post-cycle Actions. During the Update Roster step of the Post-cycle Sequence, the box is cleared and they can once again take part in battles.
+    </div>
+
+    <h3 id="povrezhdeniya">Длительные повреждения<span class="en">Lasting Damage</span></h3>
+    <div class="table-wrap">
+        <table>
+            <caption>Lasting Damage Table (Vehicles)</caption>
+            <thead><tr><th class="num">D66</th><th>Lasting Damage</th></tr></thead>
+            <tbody>
+                <tr><td class="num">11</td><td><strong>Lesson Learnt:</strong> The Vehicle earns D3 XP.</td></tr>
+                <tr><td class="num">12&ndash;14</td><td><strong>Enmity:</strong> Gains the Hatred (X) Condition — X is the gang type (12), the gang (13) or the model (14) that took it Out of Action.</td></tr>
+                <tr><td class="num">15&ndash;16</td><td><strong>Percussive Repair:</strong> The Vehicle may remove one Lasting Damage previously suffered.</td></tr>
+                <tr><td class="num">21&ndash;26</td><td><strong>Superficial Damage:</strong> Takes no further part in the battle, but suffers no long-term effects.</td></tr>
+                <tr><td class="num">31&ndash;46</td><td><strong>Major Damage:</strong> The Vehicle goes into Recovery.</td></tr>
+                <tr><td class="num">51&ndash;52</td><td><strong>Busted Sights:</strong> Recovery, and reduce Ballistic Skill by 1.</td></tr>
+                <tr><td class="num">53</td><td><strong>Drive System Fault:</strong> Recovery, and reduce Movement by 1.</td></tr>
+                <tr><td class="num">54</td><td><strong>Buckled Frame:</strong> Recovery, and reduce Toughness by 1.</td></tr>
+                <tr><td class="num">55&ndash;56</td><td><strong>Engine Fracture:</strong> The Vehicle explodes — all models within 3" suffer a Str 3, AP &ndash;, L1 Hit. Recovery, and reduce Wounds by 1.</td></tr>
+                <tr><td class="num">61&ndash;62</td><td><strong>Captured:</strong> The Vehicle has been Captured.</td></tr>
+                <tr><td class="num">63&ndash;65</td><td><strong>Critical Damage:</strong> The Vehicle explodes. Until repaired at the Chop Shop it may not take part in battles or perform Post-cycle Actions. All models within 6" suffer a Str 4, AP &minus;1, L1 Hit.</td></tr>
+                <tr><td class="num">66</td><td><strong>Catastrophic Explosion!:</strong> The Vehicle is destroyed and deleted from the Gang Roster. All models within 6" suffer a Str 6, AP &minus;2, L2 Hit. If caused by an enemy model, that model earns 1 extra XP.</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <a class="top-link" href="#top">&uarr; наверх</a>
+</section>
+
+<!-- ============ ФАЗА ОКОНЧАНИЯ ============ -->
+<section id="konec-fazy">
+    <h2>Фаза окончания<span class="en">The End Phase</span></h2>
+
+    <h3>1. Bottle Checks</h3>
+    <p>Starting with the player with Priority, if a gang has had at least one model taken Out of Action <em>this round</em>, they must make a Leadership check using their gang's highest Leadership characteristic on the battlefield. If this check is failed, one model of the controlling player's choice flees the battlefield. If the check result is a natural 12, two models must be selected instead. Models that are Engaged can only be selected if every friendly model is Engaged. Any Seriously Injured/Damaged models removed in this manner must check to see if they succumb.</p>
+    <p><strong>Hold Your Nerve:</strong> a gang only needs to check if they had a model taken Out of Action <em>this</em> round. A model lost in a previous round does not trigger a check.</p>
+
+    <div class="rule">
+        <span class="label">Voluntarily Fleeing the Battlefield</span>
+        Once at least a third (rounded up) of a gang's starting crew are taken Out of Action or have fled, that gang's controlling player can choose to flee the battlefield at the start of the Check For Victory step. All of the gang's models are removed and they automatically lose the scenario.
+    </div>
+
+    <h3>2. Check For Victory</h3>
+    <p><strong>Controlling Objectives:</strong> in order for a gang to control an objective, they must have at least one friendly Fighter without the Pet Subtype within 3" of the centre of the objective, and no enemy models (including Pets) within 3" of the centre. Disregard Seriously Injured/Damaged models when determining control.</p>
+    <p>For the purposes of gaining XP, only one Fighter (of the controlling player's choice) is considered to be controlling each objective. Neither Pets nor Vehicles can control objectives, though they do prevent enemy Fighters from controlling them.</p>
+    <p>After control of objectives has been determined, check to see if the Ending the Battle conditions for the scenario have been met.</p>
+
+    <h3>3. Reinforcements</h3>
+    <p>If either gang has Reinforcements arriving on the battlefield this round, players take turns deploying them.</p>
+
+    <a class="top-link" href="#top">&uarr; наверх</a>
+</section>
+
+<!-- ============ WYRD ============ -->
+<section id="wyrd">
+    <h2>Силы виардов<span class="en">Wyrd Powers</span></h2>
+    <p class="lede">Виарды активируются как обычные модели, но дополнительно могут проявлять или подавлять псионические силы.</p>
+
+    <p>Manifesting a Wyrd power may be either a Single, Double or Free action, depending upon the complexity of the power; this is always shown in brackets after the name of the power. When a Wyrd is activated, they may choose to attempt to manifest one or more Wyrd powers that they know.</p>
+
+    <h4>Действия, доступные всем виардам</h4>
+    <ul>
+        <li><strong>Maintain Control (Single):</strong> the Wyrd makes a Willpower check with a +3 modifier — if passed, a Continuous effect remains in effect until the end of their next activation; if failed, the power ends immediately.</li>
+        <li><strong>Maintain Control (Free):</strong> performed at the start of their activation with no modifiers to the Willpower check; the Wyrd may not attempt to manifest another power this activation.</li>
+        <li><strong>Concentrate (Single):</strong> applies a +1 modifier to their Willpower characteristic when manifesting any Wyrd powers during this activation.</li>
+    </ul>
+
+    <h3>Проявление и подавление<span class="en">Manifesting &amp; Disrupting</span></h3>
+    <p>To manifest a Wyrd power, a Wyrd must make a Willpower check; if passed, the power is successfully manifested.</p>
+    <p>Once a Wyrd has declared they are going to attempt to manifest a power, before the Willpower check is made, any opposing Active or Suppressed Wyrds within 18" that have Line of Sight and are not Injured may attempt to disrupt the power (only one Wyrd may attempt to disrupt each power). The disrupting Wyrd makes a Willpower check; if successful, the manifesting Wyrd applies a &minus;2 modifier to their Willpower.</p>
+    <ul>
+        <li><strong>Disrupt, natural 2:</strong> the power automatically fails to manifest; the disrupting Wyrd suffers Perils of the Warp.</li>
+        <li><strong>Disrupt, natural 12:</strong> the attempt to disrupt automatically fails; the disrupting Wyrd suffers Perils of the Warp.</li>
+        <li><strong>Manifest, natural 2:</strong> the power is always manifested regardless of modifiers. Resolve it fully, then roll on Perils of the Warp.</li>
+        <li><strong>Manifest, natural 12:</strong> the power is never manifested regardless of modifiers. Immediately roll on Perils of the Warp.</li>
+    </ul>
+
+    <div class="table-wrap">
+        <table>
+            <caption>Perils of the Warp</caption>
+            <thead><tr><th class="num">D6</th><th>Result</th></tr></thead>
+            <tbody>
+                <tr><td class="num">1</td><td><strong>Warp Surge!</strong> The Wyrd may immediately try to manifest the same power again as a Free action (or, if disrupting, manifest one of their own powers as a Free action) — this can trigger Perils again. Afterwards their activation ends, they become Suppressed and suffer a Str 4, AP &minus;1, L1 Hit.</td></tr>
+                <tr><td class="num">2</td><td><strong>Spatial Distortion:</strong> The Wyrd is moved D6" in a random direction determined by the Scatter dice. This may cause them to fall.</td></tr>
+                <tr><td class="num">3</td><td><strong>Machine Dissonance:</strong> All weapons with either the Ammo (X+) or Rapid Fire (X) trait carried by models (friend and foe) within 3" of the Wyrd immediately run Out of Ammo.</td></tr>
+                <tr><td class="num">4</td><td><strong>Whispers from the Warp:</strong> The Wyrd becomes subject to the Insanity Condition.</td></tr>
+                <tr><td class="num">5</td><td><strong>A Tear in Reality!</strong> Centre a 5" Blast marker on the Wyrd; any model touched suffers a Str 5, AP &minus;2, L1 Hit and becomes Suppressed. The Wyrd then goes Out of Action.</td></tr>
+                <tr><td class="num">6</td><td><strong>Daemonic Possession:</strong> The Wyrd increases their Movement, Strength, Toughness and Attacks each by 3 and their Weapon Skill to 2+. At the start of the End phase of the following round, or if they generate this result again, they go Out of Action.</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="note">
+        <span class="label">Wyrd Powers &amp; the Firepower Dice</span>
+        Some Wyrd powers act as weapons that can be used by the Wyrd; however, these powers can never run out of ammo. If the Firepower dice is rolled as part of a Wyrd power, ignore the Ammo symbol.
+    </div>
+
+    <div class="table-wrap">
+        <table>
+            <caption>Wyrd Powers</caption>
+            <thead><tr><th class="num">D6</th><th>Power</th><th>Effect</th></tr></thead>
+            <tbody>
+                <tr><td class="num">1</td><td><strong>Force Blast</strong> (Free), Continuous</td><td>While maintained, the Wyrd is considered equipped with: SR 8", LR 12", Str 2, AP &minus;1, L1, Knockback (3+).</td></tr>
+                <tr><td class="num">2</td><td><strong>Flaming Weapon</strong> (Free), Continuous</td><td>While maintained, one close combat weapon carried by this Fighter gains the Blaze (5+) trait.</td></tr>
+                <tr><td class="num">3</td><td><strong>Freeze Time</strong> (Double)</td><td>All models (friend or foe) within 12" of this Fighter may only perform a single action when activated for the remainder of this round.</td></tr>
+                <tr><td class="num">4</td><td><strong>Weapon Jinx</strong> (Single)</td><td>Choose an enemy model within 18" and Line of Sight. One weapon carried by that model, chosen by the Wyrd's controlling player, goes Out of Ammo.</td></tr>
+                <tr><td class="num">5</td><td><strong>Terrify</strong> (Double)</td><td>Choose an enemy model within 18" and Line of Sight. That model becomes Suppressed, and if they have a Ready marker they must immediately make a Cool check; if failed, they lose their Ready marker.</td></tr>
+                <tr><td class="num">6</td><td><strong>Quickening</strong>, Continuous</td><td>While maintained, improve the Fighter's Movement by 3 and their Initiative by 2 (this may take these characteristics above their maximum).</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <a class="top-link" href="#top">&uarr; наверх</a>
+</section>
+
+<!-- ============ ПОДГОТОВКА ПОЛЯ БОЯ ============ -->
+<section id="pole-boya">
+    <h2>Подготовка поля боя<span class="en">Battlefield Set-Up</span></h2>
+
+    <h3>Андхайв<span class="en">Underhive</span></h3>
+    <p>For underhive battles, between a 3'&times;3' and a 4'&times;4' battlefield is ideal, although much larger or smaller battlefields are also possible. Starting with the defender, players alternate placing terrain features upon the battlefield. Once one player declines to place any terrain, the other player may place one more piece. Then, starting with the defender again, players alternate placing obstacles and other small terrain features.</p>
+    <div class="note">
+        <span class="label">Tunnel Warfare</span>
+        If both players agree, the claustrophobic confines of tunnel battles can be recreated by stating that the ceiling is at the height of one wall section, meaning walls cannot be climbed over, and stairs and ladders cannot be used.
+    </div>
+
+    <h3>Выбор экипажа<span class="en">Crew Selection</span></h3>
+    <dl class="terms">
+        <dt>Random Selection (X)</dt>
+        <dd>The player makes a deck of their Model Cards (only one randomly selected card for models with multiple cards, excluding models unable to take part). The deck is shuffled and X cards are dealt out — this is the starting crew.</dd>
+        <dt>Custom Selection (X)</dt>
+        <dd>The player chooses X models freely, and chooses which equipment set each model will use.</dd>
+        <dt>Hybrid Selection (X+Y)</dt>
+        <dd>The player chooses X models freely, then makes a shuffled deck of the remaining eligible Model Cards and deals Y cards to add to the starting crew.</dd>
+    </dl>
+
+    <h3>Подкрепления<span class="en">Reinforcements (X)</span></h3>
+    <p>All models not in the starting crew and able to take part are shuffled together, and X cards are dealt to form the Reinforcements deck. Reinforcements always arrive in the Reinforcements step of the End phase; the crew table states the round(s) on which they arrive and how many. Starting with the player who won Priority this round, players alternate drawing Reinforcements. For each model drawn, roll a D6:</p>
+    <ul>
+        <li><strong>3+</strong> — deploy on any battlefield edge at least 9" away from all enemy models.</li>
+        <li><strong>1&ndash;2</strong> — deploy on any battlefield edge at least 12" away from all enemy models.</li>
+    </ul>
+
+    <h3>Видимость<span class="en">Visibility (X")</span></h3>
+    <p>Models cannot draw a Line of Sight to a target more than X" away unless the target is using a photo-lumen. Models using photo-lumens, photo-goggles or infra-sights extend this range by 9" (these and similar effects do not stack).</p>
+    <div class="table-wrap">
+        <table class="compact">
+            <caption>Pitch Black — roll after setting up the battlefield</caption>
+            <thead><tr><th class="num">D6</th><th>Result</th></tr></thead>
+            <tbody>
+                <tr><td class="num">1</td><td>Full Night Cycle: the Visibility (3") rule is in effect.</td></tr>
+                <tr><td class="num">2&ndash;3</td><td>Near Night: the Visibility (6") rule is in effect.</td></tr>
+                <tr><td class="num">4&ndash;5</td><td>Near Day: the Visibility (12") rule is in effect.</td></tr>
+                <tr><td class="num">6</td><td>Full Day Cycle: the Visibility (24") rule is in effect.</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <a class="top-link" href="#top">&uarr; наверх</a>
+</section>
+
+<!-- ============ СЦЕНАРИЙ ============ -->
+<section id="scenariy">
+    <h2>Генерация сценария<span class="en">Scenario Generation Tables</span></h2>
+    <p class="lede">Сценарий собирается броском по четырём таблицам: расстановка, основная задача, побочная задача, состав экипажа.</p>
+
+    <div class="table-wrap">
+        <table>
+            <caption>Deployment Table — бросает челленджер (D6)</caption>
+            <thead><tr><th class="num">D6</th><th>Deployment</th></tr></thead>
+            <tbody>
+                <tr><td class="num">1</td><td><strong>Sniping Range:</strong> The winner of a roll-off chooses a battlefield edge; their opponent takes the opposite edge. Both deployment zones are anywhere between their battlefield edge and 12" from a line drawn through the centre of the battlefield.</td></tr>
+                <tr><td class="num">2</td><td><strong>Face Off:</strong> As above, but 9" from the centre line.</td></tr>
+                <tr><td class="num">3</td><td><strong>Stand Off:</strong> As above, but 6" from the centre line.</td></tr>
+                <tr><td class="num">4</td><td><strong>Ambush:</strong> The defender deploys anywhere within 6" of the centre of the battlefield. The attacker deploys anywhere at least 12" from the centre.</td></tr>
+                <tr><td class="num">5</td><td><strong>Free For All:</strong> The winner of a roll-off chooses a battlefield quarter; their opponent takes the opposite quarter. Each deployment zone is anywhere within that quarter at least 9" from the centre.</td></tr>
+                <tr><td class="num">6</td><td><strong>Chance Encounter:</strong> The winner of a roll-off chooses a corner; their zone is within 9" of that corner and the opposite corner. Their opponent deploys within 9" of the other two corners. Gangs must be split as evenly as possible between the two zones.</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="table-wrap">
+        <table>
+            <caption>Objective Table — бросает челленджер (D6)</caption>
+            <thead><tr><th class="num">D6</th><th>Objective</th></tr></thead>
+            <tbody>
+                <tr><td class="num">1</td><td><strong>King of the Hive:</strong> Place a single objective in the centre of the battlefield. During Check For Victory it is worth 1 VP. The winner is the first player to reach 3 VP.</td></tr>
+                <tr><td class="num">2</td><td><strong>Turf War:</strong> From round three onward, if only one player has models that are not Seriously Injured/Damaged within 9" of the centre during Check For Victory, they win.</td></tr>
+                <tr><td class="num">3</td><td><strong>Tunnel Clash:</strong> Place an objective in the centre, then each player places one at least 6" from any other objective and 6" from any battlefield edge. Controlling two objectives during Check For Victory scores 1 VP; first to 3 VP wins.</td></tr>
+                <tr><td class="num">4</td><td><strong>Object Lesson:</strong> Both gangs earn 1 VP for each enemy model that went Out of Action that round; +1 VP if the model had the Leader, Champion or Brute Subtype, and +1 VP if taken Out of Action as part of a Fight, Coup de Grâce or Sabotage action. First to 10 VP wins.</td></tr>
+                <tr><td class="num">5</td><td><strong>Flank 'em:</strong> The attacker places an objective in the centre of a battlefield edge, 6" onto the battlefield; the defender places one opposite. Controlling both objectives scores 1 VP; first to 3 VP wins.</td></tr>
+                <tr><td class="num">6</td><td><strong>Burn Them Out:</strong> Each player places three objectives in their opponent's deployment zone, at least 6" apart. Controlling an objective in the opponent's deployment zone scores 1 VP and removes it; first to 2 VP wins.</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <p>In all objectives: if only one player has at least one model on the battlefield, they are victorious. If neither player has any models on the battlefield, the battle is a draw.</p>
+
+    <div class="table-wrap">
+        <table>
+            <caption>Side Job Table — каждый игрок бросает свой D6</caption>
+            <thead><tr><th class="num">D6</th><th>Side Job</th></tr></thead>
+            <tbody>
+                <tr><td class="num">1</td><td><strong>Stitch 'em Up:</strong> When performing a Coup de Grâce action, instead of the Strength roll-off your Fighters may plant evidence on the Seriously Injured model. If at least one enemy Fighter had evidence planted on them by the end of the battle, the side job is achieved.</td></tr>
+                <tr><td class="num">2</td><td><strong>The Package:</strong> After deployment, choose one deployed Fighter and give them a package marker. If during Check For Victory of round three or later that Fighter is in base contact with a battlefield edge in the opponent's deployment zone, remove the marker — the side job is achieved.</td></tr>
+                <tr><td class="num">3</td><td><strong>Settle a Score:</strong> After deployment, randomly select one of your opponent's deployed models (not the enemy Leader) as the target. If it has been taken Out of Action or left the battlefield, the side job is achieved.</td></tr>
+                <tr><td class="num">4</td><td><strong>Crippling Strike:</strong> If during Check For Victory of any round at least half of your opponent's models on the battlefield are Seriously Injured/Damaged or Engaged, the side job is achieved.</td></tr>
+                <tr><td class="num">5</td><td><strong>Spread Unrest:</strong> Any Active Fighter without the Beast Subtype may perform the Graffiti (Double) action while within the opponent's deployment zone. If at least one Fighter performed it during the battle, the side job is achieved.</td></tr>
+                <tr><td class="num">6</td><td><strong>Protect the Future:</strong> After deployment, randomly select one of your deployed Prospects (or a Ganger if there are none) to be protected. If that Fighter is still on the battlefield at the end of the battle, the side job is achieved.</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="table-wrap">
+        <table>
+            <caption>Crew Table — бросает вызванный игрок (D6)</caption>
+            <thead><tr><th class="num">D6</th><th>Crew</th></tr></thead>
+            <tbody>
+                <tr><td class="num">1</td><td><strong>Escalating Engagement:</strong> Both gangs use Hybrid (3+D3). Both use Reinforcements (5) with D3 arriving each round from the first.</td></tr>
+                <tr><td class="num">2</td><td><strong>Hold Nothing Back!:</strong> Both gangs use Custom (10).</td></tr>
+                <tr><td class="num">3</td><td><strong>Patrol:</strong> Both gangs use Hybrid (3+4).</td></tr>
+                <tr><td class="num">4</td><td><strong>Surprise Attack:</strong> The attacker uses Hybrid (4+4). The defender uses Custom (3) and Reinforcements (7) with D3 arriving each round from the first.</td></tr>
+                <tr><td class="num">5</td><td><strong>Strike Force:</strong> Both gangs use Custom (5).</td></tr>
+                <tr><td class="num">6</td><td><strong>Scouting Force:</strong> Both gangs use Hybrid (D3+5).</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <a class="top-link" href="#top">&uarr; наверх</a>
+</section>
+
+<!-- ============ ТАКТИКИ БАНДЫ ============ -->
+<section id="taktiki">
+    <h2>Тактики банды<span class="en">Gang Tactics</span></h2>
+    <p class="lede">Каждая тактика может быть использована один раз за бой.</p>
+
+    <div class="table-wrap">
+        <table class="compact">
+            <caption>Генерация тактик</caption>
+            <thead><tr><th>Trigger</th><th class="num">Gang Tactics Generated</th></tr></thead>
+            <tbody>
+                <tr><td>Leader added to Gang Roster</td><td class="num">2</td></tr>
+                <tr><td>Champion added to Gang Roster (including when a Ganger is promoted)</td><td class="num">1</td></tr>
+                <tr><td>Develop Tactics Post-cycle Action performed</td><td class="num">1</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <p>Whenever a Gang Tactic is added to the Gang Roster, roll a D66 on the table below. If a Gang Tactic is generated that the gang already has, re-roll.</p>
+
+    <div class="table-wrap">
+        <table>
+            <caption>Core Gang Tactics</caption>
+            <thead><tr><th class="num">D66</th><th>Name</th><th>Timing</th><th>Effect</th></tr></thead>
+            <tbody>
+                <tr><td class="num">11&ndash;12</td><td>Point-blank Shot</td><td>When a friendly Fighter activates, before performing any action.</td><td>Select one of the Fighter's weapons without the Heavy or Blast (3"/5") trait. For this activation, the weapon gains the Light trait.</td></tr>
+                <tr><td class="num">13&ndash;14</td><td>Hidden Stash</td><td>When a friendly Fighter activates, before performing any action.</td><td>During this activation, the Fighter may perform the Reload action as a Free action.</td></tr>
+                <tr><td class="num">15&ndash;16</td><td>Suppressing Fire</td><td>After a friendly Fighter has resolved a ranged attack.</td><td>The target is Suppressed, regardless of whether the attack hits. Skills cannot prevent this.</td></tr>
+                <tr><td class="num">21&ndash;22</td><td>Burst of Courage</td><td>Before taking a Bottle check.</td><td>The Bottle check is automatically passed; no dice are rolled.</td></tr>
+                <tr><td class="num">23&ndash;24</td><td>Adrenaline Surge</td><td>When a friendly Fighter activates, before performing any action.</td><td>The Fighter may perform one additional action during this activation.</td></tr>
+                <tr><td class="num">25&ndash;26</td><td>Desperate Effort</td><td>When it is your turn to choose a Fighter to activate.</td><td>Activate a friendly Fighter as though they had a Ready marker. At the end of their activation they become Suppressed and suffer a Str &ndash;, AP &ndash;, L1 Hit that automatically Wounds and cannot be prevented or saved.</td></tr>
+                <tr><td class="num">31&ndash;32</td><td>Grenade Bouquet</td><td>When a friendly Fighter performs a ranged attack with a Blast (3"/5") grenade, before rolling to Hit.</td><td>Resolve three separate ranged attacks all targeting the same model. These attacks all automatically scatter; afterwards the weapon runs Out of Ammo.</td></tr>
+                <tr><td class="num">33&ndash;34</td><td>Quick Finish</td><td>When a friendly Fighter activates, before performing any action.</td><td>For this activation the Fighter may perform a Coup de Grâce action as a Free action.</td></tr>
+                <tr><td class="num">35&ndash;36</td><td>Remorseless Killer</td><td>When a friendly Fighter performs a Coup de Grâce action, before rolling any dice.</td><td>The enemy Fighter automatically goes Out of Action; no dice are rolled.</td></tr>
+                <tr><td class="num">41&ndash;42</td><td>Last Gasp</td><td>When a friendly Fighter is taken Out of Action, before removing them.</td><td>The Fighter may immediately perform a Shoot or Fight action, regardless of their status, then is removed.</td></tr>
+                <tr><td class="num">43&ndash;44</td><td>Thundering Charge</td><td>When a friendly Fighter declares a Charge action, before rolling for distance.</td><td>Roll two D6 instead of one and choose which to add to the Fighter's Movement.</td></tr>
+                <tr><td class="num">45&ndash;46</td><td>Chain Attack</td><td>When a friendly Fighter has resolved a Fight action and is no longer Engaged.</td><td>The Fighter may immediately perform a Charge action as a Free action, even if they already Charged this activation, moving D6+2".</td></tr>
+                <tr><td class="num">51&ndash;52</td><td>Opening Volley</td><td>At the start of the first round, before the first roll for Priority.</td><td>A friendly Fighter may immediately perform a Shoot action. This does not remove their Ready marker.</td></tr>
+                <tr><td class="num">53&ndash;54</td><td>"You!"</td><td>When a friendly Fighter activates, before performing any action.</td><td>Select an enemy Fighter; the activating Fighter applies +1 to Wound rolls against them for the rest of the battle, but must target that Fighter with any action targeting an enemy while they remain on the battlefield.</td></tr>
+                <tr><td class="num">55&ndash;56</td><td>Rapid Healing</td><td>When a friendly Fighter activates, before performing any action.</td><td>The Fighter immediately regains a Wound lost earlier in the battle.</td></tr>
+                <tr><td class="num">61&ndash;62</td><td>Reckless Attack</td><td>When a friendly Fighter activates, before performing any action.</td><td>Increase the Fighter's Weapon Skill by +1 for this activation. However, until their next activation all enemy Fighters are considered to have WS 2+ while targeting them.</td></tr>
+                <tr><td class="num">63&ndash;64</td><td>Rapid Fire</td><td>When a friendly Fighter activates, before performing any action.</td><td>For this activation, the Fighter may perform the Shoot action as a Free action.</td></tr>
+                <tr><td class="num">65&ndash;66</td><td>Crossfire</td><td>When a friendly Fighter activates, before performing any action.</td><td>If the Fighter makes a ranged attack against an enemy another friendly Fighter has already targeted this round, the attack automatically Hits. A Hit roll is still made for the purposes of weapon traits.</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <a class="top-link" href="#top">&uarr; наверх</a>
+</section>
+
+<!-- ============ ПОСЛЕ БОЯ ============ -->
+<section id="posle-boya">
+    <h2>После боя<span class="en">The Post-Battle Sequence</span></h2>
+    <p class="lede">Пять шагов, выполняемых по порядку в присутствии обоих игроков.</p>
+
+    <ol class="seq">
+        <li><strong>Wrap Up</strong></li>
+        <li><strong>Reassign Territory</strong></li>
+        <li><strong>Receive Rewards</strong></li>
+        <li><strong>Clean House</strong></li>
+        <li><strong>Report Results</strong></li>
+    </ol>
+
+    <h3>1. Wrap Up</h3>
+    <p><strong>Succumbing to Injuries / Irreparably Damaged:</strong> if a model is Seriously Injured/Damaged when the battle ends, or fled the battlefield while Seriously Injured/Damaged, roll a D6. On a 3 or more they survive without any further complications; on a 1 or 2 they are treated as having gone Out of Action and a Lasting Injury/Damage roll is made for them.</p>
+    <div class="table-wrap">
+        <table class="compact">
+            <caption>Escape Table — для моделей с результатом Captured (61&ndash;62)</caption>
+            <thead><tr><th class="num">D6</th><th>Result</th></tr></thead>
+            <tbody>
+                <tr><td class="num">1</td><td><strong>Executed:</strong> The model dies or is destroyed attempting to escape and is deleted from the Gang Roster.</td></tr>
+                <tr><td class="num">2&ndash;4</td><td><strong>Ransomed:</strong> The controlling gang must pay the capturing gang D6&times;10 credits during the Update Roster step, or the model is deleted from the Gang Roster and all of their equipment goes into the owning gang's Stash. If the ransom is paid, the model goes into Recovery.</td></tr>
+                <tr><td class="num">5&ndash;6</td><td><strong>Daring Escape:</strong> The model escapes their captors and goes into Recovery.</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3>2. Reassign Territory</h3>
+    <p>The player that won the battle takes control of the Territory Staked on the battle. In the case of a draw while fighting for an uncontrolled Territory, it is not claimed by either player. In the case of a draw when a controlled Territory is at Stake, it does not change hands.</p>
+
+    <h3>3. Receive Rewards</h3>
+    <p>Each campaign details the rewards gangs receive based on their performance. Any equipment gained is added to the gang's Stash. If a gang both gains and loses Reputation, gains are applied before losses (a gang's Reputation may never drop below 1).</p>
+
+    <h4 id="opyt">Опыт — Gaining Experience</h4>
+    <ul>
+        <li><strong>1 XP</strong> if they took part in a battle.</li>
+        <li><strong>1 XP</strong> if their action directly causes an enemy model to become Seriously Injured/Damaged.</li>
+        <li><strong>2 XP</strong> if their action directly causes an enemy model to go Out of Action — plus an extra <strong>1 XP</strong> if that model is a Leader, Champion, Brute or Vehicle.</li>
+        <li><strong>1 XP</strong> if they provide Assistance to another Fighter making a Recovery test who successfully recovers.</li>
+        <li><strong>1 XP</strong> if they control an objective during the End phase of a round (once per battle per Fighter).</li>
+    </ul>
+    <p>Models can only gain XP for Seriously Injuring or taking an enemy model Out of Action once per enemy model per activation — if a model causes an enemy to become Seriously Injured <em>and</em> go Out of Action, they only gain the 2 XP.</p>
+
+    <h3>4. Clean House</h3>
+    <p>Dead Fighters and Destroyed Vehicles are deleted from the Gang Roster. If their gang had at least one model on the battlefield at the end of the battle, all of a dead Fighter's equipment is added to the gang's Stash; otherwise it is lost. The controlling player can also choose to retire models — usually because Lasting Injuries have rendered them unfit for battle.</p>
+
+    <h3>5. Report Results</h3>
+    <p>The report should contain: which gangs fought, the outcome of the battle, which Territory the victor gained control of (if any) and how many enemies each gang took Out of Action.</p>
+
+    <a class="top-link" href="#top">&uarr; наверх</a>
+</section>
+
+<!-- ============ ПОСЛЕ ЦИКЛА ============ -->
+<section id="posle-cikla">
+    <h2>После цикла<span class="en">The Post-Cycle Sequence</span></h2>
+
+    <ol class="seq">
+        <li><strong>Post-cycle Actions</strong></li>
+        <li><strong>Collect Income</strong></li>
+        <li><strong>Update Roster</strong></li>
+    </ol>
+
+    <h3>1. Пост-цикловые действия<span class="en">Post-cycle Actions</span></h3>
+    <p>Each model in the gang can perform one Post-cycle Action, carried out one at a time in an order of the controlling player's choice. Models who are In Recovery or Critically Injured/Damaged cannot perform Post-cycle Actions.</p>
+    <div class="table-wrap">
+        <table>
+            <thead><tr><th>Action</th><th>Кто может</th><th>Effect</th></tr></thead>
+            <tbody>
+                <tr><td class="num">Medical Escort</td><td>Leader / Champion</td><td>Escort a Critically Injured gang member to the Doc. Resolved at the start of the Update Roster step: pay 30 credits from the Stash and roll a D6 (см. таблицу ниже). If the gang does not pay the full amount, no roll is made and the Fighter dies.</td></tr>
+                <tr><td class="num">Fit Bionics</td><td>Leader / Champion</td><td>Pay 50 credits from the Stash for each Lasting Injury you wish to remove from another Fighter. A Critical Injury cannot be removed this way. The targeted Fighter cannot perform a Post-cycle Action themselves.</td></tr>
+                <tr><td class="num">Develop Tactics</td><td>Leader / Champion</td><td>Generate a new Gang Tactic and add it to the Gang Roster.</td></tr>
+                <tr><td class="num">Visit Chop Shop</td><td>Vehicle</td><td>Select any number of Lasting Damage results (including Critical Damage) and pay 50 credits from the Stash for each.</td></tr>
+                <tr><td class="num">Work Territory</td><td>Leader, Champion, Ganger, Prospect — max 5 Fighters</td><td>Add 15 credits to the gang's Stash for each Fighter that performs the action.</td></tr>
+                <tr><td class="num">Visit Trading Post</td><td>Leader / Champion</td><td>Adds Trade Points to the gang: 2 TP for a Leader, 1 TP for a Champion. Required in order to purchase items from the Trading Post.</td></tr>
+                <tr><td class="num">Train</td><td>Any model</td><td>The model earns 2 XP.</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="table-wrap">
+        <table class="compact">
+            <caption>Medical Escort</caption>
+            <thead><tr><th class="num">D6</th><th>Result</th></tr></thead>
+            <tbody>
+                <tr><td class="num">1</td><td><strong>Complications:</strong> The Fighter dies.</td></tr>
+                <tr><td class="num">2&ndash;3</td><td><strong>Stabilised:</strong> Roll a D6 — this is the second dice of a D66 roll; the first is automatically a 5. Apply the appropriate result from the Lasting Injury table.</td></tr>
+                <tr><td class="num">4&ndash;6</td><td><strong>Full Recovery:</strong> The Fighter goes into Recovery, but suffers no lasting effects.</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <p><strong>"I'll Use the Good Stuff":</strong> before rolling, a player may pay for the Doc to use more expensive supplies. For every extra 50 credits spent, add +1 to the roll.</p>
+
+    <h3>2. Сбор дохода<span class="en">Collect Income</span></h3>
+    <p>Each gang collects Boons from each Territory they control. Additionally, each gang adds credits equal to 10&times; their Reputation to their Stash.</p>
+
+    <h3>3. Обновление ростера<span class="en">Update Roster</span></h3>
+    <p>Split into four sub-steps: <strong>A.</strong> Advance Models &nbsp;&bull;&nbsp; <strong>B.</strong> Visit the Trading Post &nbsp;&bull;&nbsp; <strong>C.</strong> Redistribute Equipment &nbsp;&bull;&nbsp; <strong>D.</strong> Clean House.</p>
+
+    <h4>A. Advance Models</h4>
+    <p>When a model's XP total moves them on to the next rank, they roll on the Advancements table. If a model has earned enough XP during a cycle to move up multiple ranks, make a roll for each rank gained. When you add a model to your gang, their starting XP does not generate Advancements.</p>
+    <div class="table-wrap">
+        <table class="compact">
+            <caption>Model Ranks</caption>
+            <thead><tr><th class="num">XP</th><th>Title</th></tr></thead>
+            <tbody>
+                <tr><td class="num">1&ndash;12</td><td>Rookie</td></tr>
+                <tr><td class="num">13&ndash;36</td><td>Gang Member</td></tr>
+                <tr><td class="num">37&ndash;84</td><td>Gang Exemplar</td></tr>
+                <tr><td class="num">85&ndash;132</td><td>Gang Hero</td></tr>
+                <tr><td class="num">133&ndash;228</td><td>Gang Legend</td></tr>
+                <tr><td class="num">229+</td><td>Legend of the Underhive</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="table-wrap">
+        <table>
+            <caption>Advancement Table</caption>
+            <thead><tr><th class="num">2D6</th><th>Result</th><th class="num">Credits Value Increase</th></tr></thead>
+            <tbody>
+                <tr><td class="num">2</td><td>+1 Leadership, +1 Intelligence or generate a random Primary skill</td><td class="num">+5</td></tr>
+                <tr><td class="num">3&ndash;4</td><td>+1 Cool or +1 Willpower</td><td class="num">+5</td></tr>
+                <tr><td class="num">5</td><td>Select a new Primary skill or generate a random Secondary skill</td><td class="num">+10</td></tr>
+                <tr><td class="num">6</td><td>+1 Initiative or +1 Movement</td><td class="num">+10</td></tr>
+                <tr><td class="num">7&ndash;8</td><td>Select a new Secondary skill</td><td class="num">+15</td></tr>
+                <tr><td class="num">9</td><td>+1 WS or +1 BS</td><td class="num">+15</td></tr>
+                <tr><td class="num">10</td><td>+1 Strength or +1 Toughness</td><td class="num">+20</td></tr>
+                <tr><td class="num">11</td><td>+1 Wounds, +1 Attacks or +1 Save</td><td class="num">+20</td></tr>
+                <tr><td class="num">12</td><td>Select any skill</td><td class="num">+30</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <p>A player may select any result they rolled high enough for. If an Advancement roll is a 12, the model may select a skill from <em>any</em> Skill Set, even those normally exclusive to other gangs or inherent skills. If a model cannot select any available Advancement because they would all exceed a maximum, they may select any Advancement from the table.</p>
+
+    <h4>B. Visit the Trading Post</h4>
+    <ul>
+        <li><strong>Recruit New Models</strong> from the gang list.</li>
+        <li><strong>Purchase Equipment.</strong> Weapons and wargear may always be purchased from a gang's equipment list, but can only be purchased from the Trading Post if at least one Fighter performed the Visit Trading Post action. Exclusive items (TP of E) may only be purchased if they appear on a model's equipment list. As well as paying the Credit Cost, deduct the item's Trade Points from the gang's total; unspent TP are lost at the end of this sub-step.</li>
+        <li><strong>Sell Unwanted Items.</strong> Any item in the Stash can be sold for half its value in credits, rounded up (minimum 5 credits).</li>
+    </ul>
+
+    <h4>C. Redistribute Equipment</h4>
+    <ul>
+        <li>Models may discard any weapons or wargear; these are placed in the gang's Stash and may be given to other models.</li>
+        <li>Any weapons or wargear in the Stash may be given to models to equip.</li>
+        <li>Models may only be given Exclusive weapons or wargear if it appears on their gang's equipment list.</li>
+        <li>Models may be given more than three weapons; if they are, they must have multiple Model Cards, each representing a different equipment set.</li>
+    </ul>
+
+    <h4>D. Clean House</h4>
+    <p>Clear all In Recovery boxes and delete dead, destroyed and retired models.</p>
+
+    <a class="top-link" href="#top">&uarr; наверх</a>
+</section>
+
+<!-- ============ СОЗДАНИЕ БАНДЫ ============ -->
+<section id="sozdanie-bandy">
+    <h2>Создание банды<span class="en">Gang Creation</span></h2>
+    <p class="lede">Стандартный бюджет — 1000 кредитов, который нельзя превысить при создании банды.</p>
+
+    <p>Any unspent credits are added to the gang's Stash if the gang has been founded for Campaign play. If a gang has been founded for Skirmish play, any unspent credits are simply lost. The Arbitrator may increase or decrease the budget.</p>
+
+    <h3>Состав банды<span class="en">Gang Composition</span></h3>
+    <ul>
+        <li>There must be one model with the <strong>Leader</strong> Subtype.</li>
+        <li>The total number of models with the <strong>Champion, Brute or Hanger-on</strong> Subtype must always be less than or equal to the number of models without any of those Subtypes.</li>
+    </ul>
+    <p>Should the number of Champions/Brutes/Hangers-on exceed the rest during a campaign, the controlling player must either retire some of them or recruit fresh models without those Subtypes during the Post-cycle Sequence.</p>
+    <div class="note">
+        <span class="label">Designer's Note: Pets</span>
+        Pets are treated as wargear and are not counted when working out if a gang has too many models with the Champion, Brute or Hanger-on Subtype. Many players still find it handy to include Pets on the Gang Roster to track their XP, Lasting Injuries and Post-cycle Actions.
+    </div>
+
+    <h3>Оружие и снаряжение<span class="en">Weapons &amp; Wargear</span></h3>
+    <ul>
+        <li>A Fighter can be equipped with a maximum of <strong>three weapons</strong> purchased from those listed in their entry.</li>
+        <li>Grenades count as wargear, not weapons, and so do not count towards this maximum.</li>
+        <li>Weapons marked with an asterisk (*) take up the space of two weapons.</li>
+        <li>Any model may purchase wargear listed in the relevant equipment list.</li>
+        <li>Each weapon may have at most <strong>one</strong> weapon accessory added to it.</li>
+        <li>A Vehicle's entry will state if there is a maximum number of weapons it may be equipped with.</li>
+    </ul>
+
+    <h4>Equipment Sets</h4>
+    <p>All models can have multiple Model Cards, each representing a different set of equipment. There is no additional cost for having multiple equipment sets — each individual weapon or item of wargear is only purchased and counted once. Only one of a model's cards can be used for a battle. If a battle uses random models, all of that model's cards are shuffled together and one is drawn at random before any cards are drawn for the crew.</p>
+
+    <h3>Смерть лидера<span class="en">Death of a Leader</span></h3>
+    <p>If a gang's Leader is killed, the new Leader is the Fighter with the highest Leadership characteristic, selected from among those Fighters that have, in order of priority:</p>
+    <ol class="seq">
+        <li>The Champion Subtype, but not the Loner Subtype.</li>
+        <li>Both the Champion and Loner Subtypes.</li>
+        <li>Neither the Beast, Brute, Pet nor Support Subtype.</li>
+    </ol>
+    <p>Vehicles and Hangers-on can never become a gang's Leader; if the only models left in a gang are Vehicles and Hangers-on, the gang is dissolved. Ties are broken by total XP, then by the controlling player's choice. A promoted Fighter gains the Leader Subtype and loses the Loner, Champion, Ganger and Prospect Subtypes; their existing characteristics and special rules do not change, and they keep equipment not allowed by their new role, though they may no longer purchase additional gear granted only to their original role.</p>
+
+    <h3>Ростер банды<span class="en">The Gang Roster</span></h3>
+    <dl class="terms">
+        <dt>Gang Rating</dt>
+        <dd>The total cost of all the models in the gang — an indicator of how powerful the gang is.</dd>
+        <dt>Reputation</dt>
+        <dd>The measure of a gang's standing and power in their region of the underhive. It starts at 1 and cannot drop below 1.</dd>
+        <dt>Wealth</dt>
+        <dd>The total cost of all the models in the gang, plus the value of any credits or equipment in their Stash.</dd>
+        <dt>Experience (XP) / In Recovery</dt>
+        <dd>Tracked per model: how much XP they currently have, how much they need for their next Advancement, and whether they are currently unable to fight.</dd>
+    </dl>
+
+    <a class="top-link" href="#top">&uarr; наверх</a>
+</section>
+
+<!-- ============ КАМПАНИЯ ============ -->
+<section id="kampaniya">
+    <h2>Структура кампании<span class="en">Using the Campaign</span></h2>
+    <p class="lede">Кампания — это серия боёв за контроль над территориями, разделённая на три фазы.</p>
+
+    <ol class="seq">
+        <li><strong>Occupation Phase</strong> (3 Cycles)</li>
+        <li><strong>Downtime</strong> (1 Cycle)</li>
+        <li><strong>Takeover Phase</strong> (3 Cycles)</li>
+    </ol>
+    <p>A Necromunda campaign is typically divided into six campaign Cycles, separated by a single Cycle of Downtime after the first three, for a total of seven Cycles. For ease, each Cycle is usually a week.</p>
+
+    <h3>Арбитр<span class="en">The Arbitrator</span></h3>
+    <ul>
+        <li>Organizing the players and making a list of all the gangs involved in the campaign.</li>
+        <li>Creating the Territory table and Scenario tables.</li>
+        <li>Keeping the players informed as to the progression of the campaign and tracking control of Territories.</li>
+        <li>Deciding when each phase of the campaign begins and ends, as well as when the overall campaign starts and finishes.</li>
+    </ul>
+
+    <h3>Стартовые территории<span class="en">Determine the Territories</span></h3>
+    <p>Each player starts with a <strong>Settlement</strong> Territory (which they cannot lose and which can never be Staked) and one other generated randomly. The Arbitrator then generates the Territories the gangs will fight over by rolling D66 on the Territory table (the same Territory can be generated multiple times):</p>
+    <div class="table-wrap">
+        <table class="compact">
+            <thead><tr><th class="num">Players</th><th class="num">Territories Generated</th></tr></thead>
+            <tbody>
+                <tr><td class="num">3</td><td class="num">9</td></tr>
+                <tr><td class="num">4</td><td class="num">12</td></tr>
+                <tr><td class="num">5</td><td class="num">15</td></tr>
+                <tr><td class="num">6</td><td class="num">18</td></tr>
+                <tr><td class="num">7</td><td class="num">21</td></tr>
+                <tr><td class="num">8</td><td class="num">24</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3>Вызовы<span class="en">Issuing &amp; Accepting Challenges</span></h3>
+    <ul>
+        <li>During each Cycle, each player may issue one challenge to another gang to do battle over control of a Territory nominated by the challenger.</li>
+        <li>In the first Campaign Cycle, challenges are made in a random order. In later Cycles, they are made in ascending order of Gang Rating, starting with the lowest.</li>
+        <li>During the <strong>Occupation phase</strong>, the challenger nominates one uncontrolled Territory as the Stake (or, if there are none, one controlled by the gang they are challenging).</li>
+        <li>During the <strong>Takeover phase</strong>, the challenger nominates one Territory controlled by the gang they are challenging.</li>
+        <li>A challenged gang may accept or decline. If declined, the Territory is automatically claimed by the challenger — unless the gang has already issued a challenge this Cycle or has received two or more challenges, in which case they may decline without losing any Territory.</li>
+    </ul>
+
+    <div class="table-wrap">
+        <table class="compact">
+            <caption>Награды по фазам кампании</caption>
+            <thead><tr><th>Результат</th><th>Occupation Phase</th><th>Takeover Phase</th></tr></thead>
+            <tbody>
+                <tr><td>Winner</td><td>2D3&times;10 credits, +1 Reputation</td><td>2D6&times;10 credits, +2 Reputation</td></tr>
+                <tr><td>Loser</td><td>D3&times;10 credits</td><td>D6&times;10 credits</td></tr>
+                <tr><td>Draw (both gangs)</td><td>D3&times;10 credits</td><td>D6&times;10 credits</td></tr>
+                <tr><td>Side job completed</td><td>D3&times;10 credits</td><td>D6&times;10 credits</td></tr>
+                <tr><td>Losing control of a Territory</td><td>&mdash;</td><td>&minus;1 Reputation</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <p><strong>Downtime:</strong> all gangs gain 250 credits to spend on new equipment from their gang equipment list and/or to recruit new models during this Cycle's Post-cycle Sequence. These credits must be spent now and cannot be added to the gang's Stash, but may be supplemented from the Stash.</p>
+
+    <h3>Завершение кампании<span class="en">Campaign Wrap-Up</span></h3>
+    <div class="table-wrap">
+        <table class="compact">
+            <caption>Triumphs</caption>
+            <thead><tr><th>Triumph</th><th>Criteria</th><th>Benefit in the next campaign</th></tr></thead>
+            <tbody>
+                <tr><td>Dominator</td><td>Most Territories at the end of the campaign.</td><td>The gang generates and starts the campaign with an additional Territory.</td></tr>
+                <tr><td>Slaughterer</td><td>Most enemy models taken Out of Action across the whole campaign.</td><td>The gang gains 9 additional XP distributed between models recruited from an old gang (max 3 XP each).</td></tr>
+                <tr><td>Creditor</td><td>Highest wealth at the end of the campaign.</td><td>The gang starts with an extra 100 credits which may be spent when founding the gang.</td></tr>
+                <tr><td>Warmonger</td><td>Most battles fought across the whole campaign.</td><td>The gang starts with an additional 2 Reputation and may choose to be attacker or defender in their first battle.</td></tr>
+                <tr><td>Powerbroker</td><td>Highest Reputation at the end of the campaign.</td><td>The gang may start with one of these Hangers-on for free: Ammo-Jack, Dome Runner, Hive Watcher, Rogue Doc or Slopper.</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <p>If multiple gangs are tied for a Triumph, it is awarded to the gang with the highest wealth; if still tied, all tied gangs are awarded it. Triumph benefits are only retained for the gang's next campaign.</p>
+
+    <a class="top-link" href="#top">&uarr; наверх</a>
+</section>
+
+<!-- ============ ТЕРРИТОРИИ ============ -->
+<section id="territorii">
+    <h2>Территории<span class="en">Territories</span></h2>
+    <p class="lede">Каждая территория даёт бандe-владельцу бонус (Boon) и влияет на бой, в котором она является ставкой (Battlefield Effect).</p>
+
+    <p>Boons come in five kinds: <strong>Income</strong> (credits added to the Stash during the Post-cycle Sequence), <strong>Recruit</strong> (free or discounted models — recruits stay with the gang even if the Territory is later lost), <strong>Equipment</strong> (added to the Stash, and not lost with the Territory), <strong>Reputation</strong> (lost with the Territory), and <strong>Special</strong>.</p>
+
+    <div class="table-wrap">
+        <table>
+            <caption>Campaign Territories</caption>
+            <thead><tr><th class="num">D66</th><th>Territory</th><th>Boon</th><th>Battlefield Effect</th></tr></thead>
+            <tbody>
+                <tr><td class="num">&mdash;</td><td><strong>Settlement</strong></td><td>Income 15. Instead: recruit a Ganger for 25 credits less than usual (min 0).</td><td>&mdash; (cannot be Staked)</td></tr>
+                <tr><td class="num">11&ndash;12</td><td><strong>Bullet Den</strong></td><td>Income 15. Instead: recruit an Ammo-Jack for 30 credits less.</td><td><strong>Plentiful Ammo:</strong> once per round each gang may perform a Reload action as a Free action.</td></tr>
+                <tr><td class="num">13&ndash;14</td><td><strong>Rogue Doc Shop</strong></td><td>Income 15. Instead: recruit a Rogue Doc for 30 credits less.</td><td><strong>Supplies Everywhere:</strong> when a Fighter offers assistance, add two Injury dice instead of one.</td></tr>
+                <tr><td class="num">15&ndash;16</td><td><strong>Mess Shack</strong></td><td>Income 15. Instead: recruit a Slopper for 30 credits less.</td><td><strong>Well Fed:</strong> all models increase their Leadership characteristic by 1.</td></tr>
+                <tr><td class="num">21&ndash;22</td><td><strong>Drinking Hole</strong></td><td>Income 15. Instead: recruit a Hive Watcher for 30 credits less.</td><td><strong>Bar Brawl:</strong> no ranged weapons may be used during the first round.</td></tr>
+                <tr><td class="num">23&ndash;24</td><td><strong>Fence Hangout</strong></td><td>Income 15. Instead: recruit a Dome Runner for 30 credits less.</td><td><strong>Scrapper's Delight:</strong> gangs gain an additional D3&times;10 credits for completing their Side Job.</td></tr>
+                <tr><td class="num">25&ndash;26</td><td><strong>Bounty Den</strong></td><td>Income 25.</td><td><strong>Bounty Board:</strong> each player generates an additional Side Job.</td></tr>
+                <tr><td class="num">31&ndash;32</td><td><strong>Generatorium</strong></td><td>Income 15. Reputation +1.</td><td><strong>Power Glow:</strong> the Visibility (X") rule has no effect.</td></tr>
+                <tr><td class="num">33&ndash;34</td><td><strong>Corpse Farm</strong></td><td>Income 25.</td><td><strong>Paid in Kind:</strong> gangs earn 10 credits for each enemy model they take Out of Action.</td></tr>
+                <tr><td class="num">35&ndash;36</td><td><strong>Tunnels</strong></td><td>Income 20.</td><td><strong>Twisting Tunnels:</strong> the Tunnel Warfare rule is in effect.</td></tr>
+                <tr><td class="num">41&ndash;42</td><td><strong>Tech Bazaar</strong></td><td>Income 15. Special: generate an additional 1 TP each Post-cycle Sequence and may always purchase from the Trading Post.</td><td><strong>Mind the Merchandise:</strong> weapons with the Blast (3"/5") and Template traits may not be used during the first round.</td></tr>
+                <tr><td class="num">43&ndash;44</td><td><strong>Promethium Cache</strong></td><td>Income 15. Instead: add three hazard suits to the Stash for free.</td><td><strong>Plentiful Promethium:</strong> for all weapons with the Blaze (X+) trait, increase the value of X by 1.</td></tr>
+                <tr><td class="num">45&ndash;46</td><td><strong>Collapsed Dome</strong></td><td>Income 20.</td><td><strong>Dangerous Footing:</strong> on a natural 1 for an Agility test, the model suffers an additional Str &ndash;, AP &ndash;, L1 Hit that automatically Wounds with no saves.</td></tr>
+                <tr><td class="num">51&ndash;52</td><td><strong>Bone Shrine</strong></td><td>Income 25.</td><td><strong>Revered Shrine:</strong> the defender places a marker within 6" of the centre; Fighters can earn XP from controlling it as if it were an objective.</td></tr>
+                <tr><td class="num">53&ndash;54</td><td><strong>Mine Workings</strong></td><td>Income 20. Instead: add two respirators to the Stash for free.</td><td><strong>Mine Dust Clouds:</strong> the Visibility (18") rule is in effect.</td></tr>
+                <tr><td class="num">55&ndash;56</td><td><strong>Gambling Den</strong></td><td>Income 15. Reputation +1.</td><td><strong>Fortune Favours the Bold:</strong> each player may re-roll one dice, once per battle.</td></tr>
+                <tr><td class="num">61&ndash;62</td><td><strong>Synth Still</strong></td><td>Income 20.</td><td><strong>Toxic Vats:</strong> increase the AP of all weapons with the Toxin (X+) trait by 1.</td></tr>
+                <tr><td class="num">63&ndash;64</td><td><strong>Old Ruins</strong></td><td>Income 20.</td><td><strong>Scattered Debris:</strong> models in a weapon's Long Range and not in cover increase their Save characteristic by 1.</td></tr>
+                <tr><td class="num">65&ndash;66</td><td><strong>Fighting Pit</strong></td><td>Income 25.</td><td><strong>Playing to the Crowd:</strong> models earn an additional 1 XP when they cause an enemy model to become Seriously Injured/Damaged or taken Out of Action in close combat.</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <a class="top-link" href="#top">&uarr; наверх</a>
+</section>
+
+<!-- ============ НАВЫКИ ============ -->
+<section id="navyki">
+    <h2>Навыки<span class="en">Skills</span></h2>
+    <p class="lede">Шесть наборов навыков плюс врождённые. Чтобы сгенерировать навык случайно, бросьте D6 по нужному набору; если выпал недоступный или уже имеющийся навык, перебросьте.</p>
+
+    <div class="table-wrap">
+        <table class="compact">
+            <caption>Skill Sets</caption>
+            <thead><tr><th class="num">D6</th><th>Agility</th><th>Brawn</th><th>Combat</th><th>Cunning</th><th>Savant</th><th>Shooting</th></tr></thead>
+            <tbody>
+                <tr><td class="num">1</td><td>Catfall</td><td>Bull Charge</td><td>Berserker</td><td>Backstab</td><td>Connected</td><td>Fast Shot</td></tr>
+                <tr><td class="num">2</td><td>Clamber</td><td>Bulging Biceps</td><td>Combat Master</td><td>Counter-attack</td><td>Fast Reload</td><td>Gunfighter</td></tr>
+                <tr><td class="num">3</td><td>Dodge</td><td>Fearsome</td><td>Headbutt</td><td>Cut-throat</td><td>Iron Will</td><td>Hip-shooting</td></tr>
+                <tr><td class="num">4</td><td>Mighty Leap</td><td>Iron Jaw</td><td>Heavy Blows</td><td>Infiltrate</td><td>Medicate</td><td>Marksman</td></tr>
+                <tr><td class="num">5</td><td>Spring Up</td><td>Nerves of Steel</td><td>Rain of Blows</td><td>Lie Low</td><td>Mentor</td><td>Precision Shot</td></tr>
+                <tr><td class="num">6</td><td>Sprint</td><td>Unstoppable</td><td>Two-weapon Fighter</td><td>Overwatch</td><td>Munitioneer</td><td>Sharpshooter</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3>Agility</h3>
+    <dl class="terms">
+        <dt>Catfall <em>(Fighter or Walker)</em></dt>
+        <dd>When this model falls or jumps down from a ledge, they count the vertical distance as being one level less than normal. In addition, if they are not Seriously Injured/Damaged or taken Out of Action by a fall, make an Agility test — if passed, they do not become Suppressed.</dd>
+        <dt>Clamber <em>(Fighter)</em></dt>
+        <dd>When this Fighter climbs, the distance they move is not halved; they always count as climbing up or down a ladder.</dd>
+        <dt>Dodge <em>(Fighter or Vehicle)</em></dt>
+        <dd>If this model suffers a Wound from a shooting or close combat attack (including from the Unstable trait), roll a D6. On a 6, the attack is dodged and has no further effect. Against a Blast marker or flame Template, a 6 instead allows the model to move up to 2" before seeing if they are Hit.</dd>
+        <dt>Mighty Leap <em>(Fighter or Walker)</em></dt>
+        <dd>When measuring the distance of a gap the model wishes to leap across, ignore the first 2". This means they may leap gaps of 4" or less without making an Agility test.</dd>
+        <dt>Spring Up <em>(Fighter)</em></dt>
+        <dd>If this Fighter is Suppressed when activated, make an Agility test. If passed, the Fighter is no longer Suppressed and may perform two actions as normal.</dd>
+        <dt>Sprint <em>(Fighter or Walker)</em></dt>
+        <dd>While Active, this model may perform the <strong>Sprint (Double)</strong> action: move a distance equal to their Movement plus twice their Initiative in inches.</dd>
+    </dl>
+
+    <h3>Brawn</h3>
+    <dl class="terms">
+        <dt>Bull Charge <em>(Fighter or Vehicle)</em></dt>
+        <dd>When the model makes close combat attacks as part of a Charge action, any close combat weapons they use gain the Knockback (6+) trait and are resolved at +1 Strength.</dd>
+        <dt>Bulging Biceps <em>(Fighter)</em></dt>
+        <dd>When performing a Braced Shot action, the Fighter may move a distance equal to their Initiative in inches either before or after resolving the attack. When attacking with a Heavy weapon in close combat, they may declare a Secondary weapon as long as it is not also Heavy.</dd>
+        <dt>Fearsome <em>(Fighter or Vehicle)</em></dt>
+        <dd>This model is subject to the Fearsome Condition.</dd>
+        <dt>Iron Jaw <em>(Fighter or Vehicle)</em></dt>
+        <dd>This model's Toughness is treated as being 2 higher than normal when resolving Hits from a close combat attack with an AP characteristic of '&ndash;'.</dd>
+        <dt>Nerves of Steel <em>(Fighter or Vehicle)</em></dt>
+        <dd>When the model is Hit by a ranged attack, they may make a Cool check. If passed, they are not Suppressed by the attack.</dd>
+        <dt>Unstoppable <em>(Fighter or Vehicle)</em></dt>
+        <dd>Each time this model activates, before performing any actions, make a Willpower check. If passed, they recover 1 Wound lost earlier in the battle.</dd>
+    </dl>
+
+    <h3>Combat</h3>
+    <dl class="terms">
+        <dt>Berserker <em>(Fighter or Walker)</em></dt>
+        <dd>This model is subject to the Frenzy Condition.</dd>
+        <dt>Combat Master <em>(Fighter or Walker)</em></dt>
+        <dd>This model never suffers penalties to their Hit rolls for Interference, and can always grant Assists, regardless of how many enemy models they are Engaged with.</dd>
+        <dt>Headbutt <em>(Fighter)</em></dt>
+        <dd>This Fighter is considered armed with: <em>Headbutt</em> — SR E, Str S+1, AP &ndash;, L1, Additional Attack (1), Melee.</dd>
+        <dt>Heavy Blows <em>(Fighter)</em></dt>
+        <dd>When using a weapon with the Heavy trait in close combat, increase this Fighter's Strength by 1.</dd>
+        <dt>Rain of Blows <em>(Fighter or Walker)</em></dt>
+        <dd>The first time each activation this model resolves a Fight action, if they are still Engaged with an enemy model they may perform an additional Fight action as a Free action.</dd>
+        <dt>Two-weapon Fighter <em>(Fighter or Walker)</em></dt>
+        <dd>In close combat, this model makes two attacks with their Secondary weapon instead of the normal one.</dd>
+    </dl>
+
+    <h3>Cunning</h3>
+    <dl class="terms">
+        <dt>Backstab <em>(Fighter)</em></dt>
+        <dd>All weapons with the Melee trait used by this Fighter gain the Backstab trait. If they already have it, add 2 to the weapon's Strength rather than the usual 1 when the trait is used.</dd>
+        <dt>Counter-attack <em>(Fighter or Walker)</em></dt>
+        <dd>When an enemy model resolves a Fight action involving this model, this model may make an additional attack with their weapon, resolved at the same Initiative as the enemy model's attacks.</dd>
+        <dt>Cut-throat <em>(Fighter)</em></dt>
+        <dd>When performing a Coup de Grâce action, after both players have rolled their D6, this Fighter may re-roll their dice.</dd>
+        <dt>Infiltrate <em>(Fighter)</em></dt>
+        <dd>Instead of being set up at the start of a battle, the Fighter may be placed to one side. Immediately before the start of the first round, they may be set up anywhere on the battlefield not visible to any enemy models and not within 9" of them, or in their gang's deployment zone.</dd>
+        <dt>Lie Low <em>(Fighter)</em></dt>
+        <dd>While this Fighter is Suppressed, enemy models cannot target them with a ranged attack unless they are within the attacking weapon's Short Range.</dd>
+        <dt>Overwatch <em>(Fighter or Vehicle)</em></dt>
+        <dd>If this model is Active, has a Ready marker and Line of Sight to the targeted model, they can interrupt an enemy model's action as soon as it is declared but before it is carried out. This model loses their Ready marker and immediately performs a Shoot action targeting that enemy. If the enemy is Suppressed or Seriously Injured/Damaged as a result, their activation ends immediately.</dd>
+    </dl>
+
+    <h3>Savant</h3>
+    <dl class="terms">
+        <dt>Connected <em>(Fighter or Vehicle)</em></dt>
+        <dd>This model can perform a Visit Trading Post action during the Post-cycle Sequence that adds 1 TP, in addition to any other actions they make.</dd>
+        <dt>Fast Reload <em>(Fighter or Vehicle)</em></dt>
+        <dd>When performing the Reload action, this model may reload all weapons they are carrying.</dd>
+        <dt>Iron Will <em>(Fighter or Vehicle)</em></dt>
+        <dd>Subtract 1 from the result of any of your Bottle checks whilst this model is on the battlefield.</dd>
+        <dt>Medicate <em>(Fighter)</em></dt>
+        <dd>While Active or Suppressed, this Fighter may perform the <strong>Heal Ally (Single)</strong> action: select a friendly Fighter within 1" who is not Seriously Injured; they regain 1 Wound lost earlier in the battle.</dd>
+        <dt>Mentor <em>(Fighter)</em></dt>
+        <dd>Make a Leadership check for this Fighter each time another friendly model within 6" gains XP. If passed, the other model gains an additional 1 XP.</dd>
+        <dt>Munitioneer <em>(Fighter)</em></dt>
+        <dd>While Active or Suppressed, this Fighter may perform the <strong>Distribute Ammo (Single)</strong> action: all friendly Fighters within 6" make an Intelligence check; each that passes may perform a Reload action as a Free action, even outside their activation.</dd>
+    </dl>
+
+    <h3>Shooting</h3>
+    <dl class="terms">
+        <dt>Fast Shot <em>(Fighter or Vehicle)</em></dt>
+        <dd>This model may perform two Shoot actions in each activation.</dd>
+        <dt>Gunfighter <em>(Fighter)</em></dt>
+        <dd>May fire two weapons with the Light trait as part of a single Shoot action. Each weapon may fire at a different target; both targets must be declared before any dice are rolled.</dd>
+        <dt>Hip-shooting <em>(Fighter)</em></dt>
+        <dd>All ranged weapons without the Heavy trait this Fighter is equipped with gain the Assault trait.</dd>
+        <dt>Marksman <em>(Fighter or Vehicle)</em></dt>
+        <dd>Applies a +1 modifier to all Hit rolls when making a ranged attack at a target between a weapon's Short and Long Ranges.</dd>
+        <dt>Precision Shot <em>(Fighter or Vehicle)</em></dt>
+        <dd>If the Hit roll for a ranged attack is a natural 6 (with a weapon without the Blast or Rapid Fire (X) traits), the shot Hits an exposed area and no Armour save can be made.</dd>
+        <dt>Sharpshooter <em>(Fighter or Vehicle)</em></dt>
+        <dd>When performing the Aimed Shot action, this model applies a +2 modifier to their Hit roll instead of a +1.</dd>
+    </dl>
+
+    <h3>Inherent</h3>
+    <dl class="terms">
+        <dt>Hit &amp; Run <em>(Fighter or Vehicle)</em></dt>
+        <dd>After completing a Fight action, the model may always consolidate even if they are still Engaged. During this consolidation they may move within 1" of enemy models, but must end it at least 1" away from them.</dd>
+        <dt>Inspiring <em>(Fighter)</em></dt>
+        <dd>May perform the Group Activation action as a Free action.</dd>
+        <dt>Juggernaut <em>(Fighter or Vehicle)</em></dt>
+        <dd>When Hit by a ranged attack, the model is only Suppressed if they either lose a Wound or an Injury dice is rolled and applied to them.</dd>
+    </dl>
+
+    <a class="top-link" href="#top">&uarr; наверх</a>
+</section>
+
+<!-- ============ ОРУЖИЕ ============ -->
+<section id="oruzhie">
+    <h2>Оружие<span class="en">Trading Post Weapons</span></h2>
+    <p class="lede">Оружие, доступное всем бандам через Trading Post. Уникальное оружие домов приводится в списках снаряжения соответствующих банд. Звёздочка (*) означает, что оружие занимает два слота.</p>
+
+    <h3>Дальнобойное оружие<span class="en">Ranged Weapons</span></h3>
+    <div class="table-wrap">
+        <table class="compact">
+            <thead><tr><th>Weapon</th><th class="num">SR</th><th class="num">LR</th><th class="num">Str</th><th class="num">AP</th><th class="num">L</th><th>Traits</th><th class="num">Creds</th><th class="num">TP</th></tr></thead>
+            <tbody>
+                <tr><td colspan="9"><strong>Auto / Stub weapons</strong></td></tr>
+                <tr><td>Autogun</td><td>8"</td><td>24"</td><td>3</td><td>&ndash;</td><td>1</td><td>Rapid Fire (1)</td><td>20</td><td>0</td></tr>
+                <tr><td>Autopistol</td><td>4"</td><td>12"</td><td>3</td><td>&ndash;</td><td>1</td><td>Light, Rapid Fire (1)</td><td>10</td><td>0</td></tr>
+                <tr><td>Heavy stubber*</td><td>20"</td><td>40"</td><td>4</td><td>&minus;1</td><td>1</td><td>Heavy, Rapid Fire (2)</td><td>70</td><td>2</td></tr>
+                <tr><td>Long rifle</td><td>24"</td><td>48"</td><td>4</td><td>&minus;1</td><td>1</td><td>Knockback (6+)</td><td>55</td><td>1</td></tr>
+                <tr><td>Stub gun</td><td>6"</td><td>12"</td><td>3</td><td>&ndash;</td><td>1</td><td>Light</td><td>5</td><td>0</td></tr>
+                <tr><td>&nbsp;&nbsp;&ndash; warp round</td><td colspan="5">(as base weapon)</td><td>Cursed, Single Shot</td><td>+10</td><td>4</td></tr>
+
+                <tr><td colspan="9"><strong>Bolt weapons</strong></td></tr>
+                <tr><td>Boltgun</td><td>12"</td><td>24"</td><td>4</td><td>&minus;1</td><td>2</td><td>Ammo (3+), Rapid Fire (1)</td><td>55</td><td>2</td></tr>
+                <tr><td>Bolt pistol</td><td>6"</td><td>12"</td><td>4</td><td>&minus;1</td><td>2</td><td>Ammo (3+), Light, Rapid Fire (1)</td><td>45</td><td>1</td></tr>
+                <tr><td>Heavy bolter*</td><td>18"</td><td>36"</td><td>5</td><td>&minus;2</td><td>2</td><td>Ammo (3+), Heavy, Rapid Fire (2)</td><td>100</td><td>3</td></tr>
+                <tr><td>Warpstorm bolter</td><td>12"</td><td>24"</td><td>4</td><td>&minus;1</td><td>2</td><td>Ammo (3+), Cursed, Rapid Fire (1), Scarce (4+)</td><td>65</td><td>4</td></tr>
+
+                <tr><td colspan="9"><strong>Flamers</strong></td></tr>
+                <tr><td>Flamer</td><td>T</td><td>&ndash;</td><td>4</td><td>&minus;1</td><td>1</td><td>Ammo (6+), Blaze (5+), Template</td><td>70</td><td>1</td></tr>
+                <tr><td>Hand flamer</td><td>T</td><td>&ndash;</td><td>3</td><td>&ndash;</td><td>1</td><td>Ammo (6+), Blaze (5+), Light, Template</td><td>45</td><td>1</td></tr>
+                <tr><td>Heavy flamer*</td><td>T</td><td>&ndash;</td><td>5</td><td>&minus;2</td><td>1</td><td>Ammo (6+), Blaze (5+), Template</td><td>95</td><td>2</td></tr>
+
+                <tr><td colspan="9"><strong>Grav weapons</strong></td></tr>
+                <tr><td>Grav gun</td><td>9"</td><td>18"</td><td>&ndash;</td><td>&ndash;</td><td>2</td><td>Ammo (5+), Blast (3"), Graviton Pulse</td><td>50</td><td>4</td></tr>
+                <tr><td>Grav pistol</td><td>4"</td><td>9"</td><td>&ndash;</td><td>&ndash;</td><td>2</td><td>Ammo (5+), Blast (3"), Graviton Pulse</td><td>40</td><td>3</td></tr>
+
+                <tr><td colspan="9"><strong>Grenade launchers</strong> (base 80 creds, TP 1)</td></tr>
+                <tr><td>&nbsp;&nbsp;&ndash; frag grenades</td><td>6"</td><td>24"</td><td>3</td><td>&ndash;</td><td>1</td><td>Ammo (4+), Blast (3"), Knockback (5+)</td><td>+0</td><td>&mdash;</td></tr>
+                <tr><td>&nbsp;&nbsp;&ndash; krak grenades</td><td>6"</td><td>24"</td><td>6</td><td>&minus;2</td><td>1</td><td>Ammo (4+)</td><td>+0</td><td>&mdash;</td></tr>
+                <tr><td>&nbsp;&nbsp;&ndash; photon flash</td><td>6"</td><td>24"</td><td>&ndash;</td><td>&ndash;</td><td>&ndash;</td><td>Ammo (5+), Blast (3"), Flash</td><td>+15</td><td>1</td></tr>
+                <tr><td>&nbsp;&nbsp;&ndash; smoke grenades</td><td>6"</td><td>24"</td><td>&ndash;</td><td>&ndash;</td><td>&ndash;</td><td>Ammo (4+), Blast (3"), Smoke</td><td>+15</td><td>1</td></tr>
+
+                <tr><td colspan="9"><strong>Las weapons</strong></td></tr>
+                <tr><td>Lasgun</td><td>16"</td><td>24"</td><td>3</td><td>&ndash;</td><td>1</td><td>&ndash;</td><td>15</td><td>0</td></tr>
+                <tr><td>Laspistol</td><td>8"</td><td>12"</td><td>3</td><td>&ndash;</td><td>1</td><td>Light</td><td>5</td><td>0</td></tr>
+                <tr><td>Long las</td><td>18"</td><td>36"</td><td>4</td><td>&ndash;</td><td>1</td><td>&ndash;</td><td>40</td><td>1</td></tr>
+
+                <tr><td colspan="9"><strong>Melta weapons</strong></td></tr>
+                <tr><td>Meltagun</td><td>6"</td><td>12"</td><td>8</td><td>&minus;4</td><td>3</td><td>Ammo (6+), Damage (3)</td><td>140</td><td>4</td></tr>
+                <tr><td>Multi-melta*</td><td>12"</td><td>24"</td><td>8</td><td>&minus;4</td><td>3</td><td>Ammo (6+), Damage (3), Heavy</td><td>150</td><td>4</td></tr>
+
+                <tr><td colspan="9"><strong>Plasma weapons</strong></td></tr>
+                <tr><td>Plasma cannon*</td><td>18"</td><td>36"</td><td>6</td><td>&minus;2</td><td>2</td><td>Ammo (6+), Blast (3"), Damage (2), Heavy, Unstable</td><td>115</td><td>4</td></tr>
+                <tr><td>Plasma gun</td><td>12"</td><td>24"</td><td>5</td><td>&minus;2</td><td>2</td><td>Ammo (6+), Damage (2), Rapid Fire (1), Unstable</td><td>85</td><td>3</td></tr>
+                <tr><td>Plasma pistol</td><td>6"</td><td>12"</td><td>5</td><td>&minus;2</td><td>2</td><td>Ammo (6+), Damage (2), Light, Unstable</td><td>70</td><td>3</td></tr>
+
+                <tr><td colspan="9"><strong>Radiation weapons</strong></td></tr>
+                <tr><td>Rad cannon*</td><td>16"</td><td>32"</td><td>3</td><td>&minus;1</td><td>1</td><td>Ammo (4+), Blast (3"), Heavy, Rad-phage</td><td>55</td><td>4</td></tr>
+                <tr><td>Rad gun</td><td>T</td><td>&ndash;</td><td>3</td><td>&minus;1</td><td>1</td><td>Ammo (5+), Rad-phage, Template</td><td>60</td><td>3</td></tr>
+
+                <tr><td colspan="9"><strong>Repurposed tools</strong></td></tr>
+                <tr><td>Harpoon launcher*</td><td>6"</td><td>18"</td><td>5</td><td>&minus;3</td><td>1</td><td>Ammo (5+), Drag</td><td>80</td><td>3</td></tr>
+                <tr><td>Las cutter</td><td>2"</td><td>4"</td><td>9</td><td>&minus;2</td><td>2</td><td>Damage (2), Light, Single Shot</td><td>80</td><td>3</td></tr>
+                <tr><td>Mining laser*</td><td>10"</td><td>14"</td><td>9</td><td>&minus;3</td><td>3</td><td>Ammo (5+), Damage (2), Heavy</td><td>125</td><td>3</td></tr>
+
+                <tr><td colspan="9"><strong>Shotguns</strong></td></tr>
+                <tr><td>Combat shotgun &ndash; salvo</td><td>4"</td><td>12"</td><td>4</td><td>&ndash;</td><td>1</td><td>Knockback (6+)</td><td>35</td><td>1</td></tr>
+                <tr><td>Combat shotgun &ndash; shredder</td><td>T</td><td>&ndash;</td><td>3</td><td>&ndash;</td><td>1</td><td>Ammo (6+), Rapid Fire (1), Shred (6+), Template</td><td>+0</td><td>&mdash;</td></tr>
+                <tr><td>Sawn-off &ndash; scatter shot</td><td>4"</td><td>8"</td><td>3</td><td>&ndash;</td><td>1</td><td>Rapid Fire (2)</td><td>30</td><td>1</td></tr>
+                <tr><td>Sawn-off &ndash; solid shot</td><td>4"</td><td>8"</td><td>4</td><td>&ndash;</td><td>1</td><td>Light, Knockback (6+)</td><td>+0</td><td>&mdash;</td></tr>
+                <tr><td>Shotgun &ndash; scatter ammo</td><td>4"</td><td>8"</td><td>3</td><td>&ndash;</td><td>1</td><td>Rapid Fire (2)</td><td>35</td><td>0</td></tr>
+                <tr><td>Shotgun &ndash; solid ammo</td><td>8"</td><td>16"</td><td>4</td><td>&ndash;</td><td>1</td><td>Knockback (5+)</td><td>+0</td><td>&mdash;</td></tr>
+
+                <tr><td colspan="9"><strong>Toxin &amp; primitive weapons</strong></td></tr>
+                <tr><td>Throwing knives</td><td>6"</td><td>12"</td><td>&ndash;</td><td>&ndash;</td><td>1</td><td>Ammo (3+), Toxin (4+)</td><td>10</td><td>0</td></tr>
+                <tr><td>Needle pistol</td><td>4"</td><td>9"</td><td>&ndash;</td><td>&ndash;</td><td>1</td><td>Light, Toxin (3+)</td><td>25</td><td>1</td></tr>
+                <tr><td>Needle rifle</td><td>9"</td><td>18"</td><td>&ndash;</td><td>&minus;1</td><td>1</td><td>Toxin (3+)</td><td>45</td><td>2</td></tr>
+
+                <tr><td colspan="9"><strong>Web weapons</strong></td></tr>
+                <tr><td>Web gun</td><td>T</td><td>&ndash;</td><td>5</td><td>&ndash;</td><td>&ndash;</td><td>Ammo (6+), Template, Web</td><td>65</td><td>4</td></tr>
+                <tr><td>Web pistol</td><td>T</td><td>&ndash;</td><td>4</td><td>&ndash;</td><td>&ndash;</td><td>Ammo (6+), Light, Template, Web</td><td>50</td><td>3</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3>Гранаты<span class="en">Grenades</span></h3>
+    <div class="table-wrap">
+        <table class="compact">
+            <thead><tr><th>Grenade</th><th class="num">SR</th><th class="num">LR</th><th class="num">Str</th><th class="num">AP</th><th class="num">L</th><th>Traits</th><th class="num">Creds</th><th class="num">TP</th></tr></thead>
+            <tbody>
+                <tr><td>Blasting charges</td><td>&ndash;</td><td>6"</td><td>5</td><td>&minus;1</td><td>2</td><td>Ammo (5+), Blast (5"), Knockback (5+), Limited</td><td>60</td><td>2</td></tr>
+                <tr><td>Choke gas grenades</td><td>&ndash;</td><td>9"</td><td>&ndash;</td><td>&ndash;</td><td>1</td><td>Ammo (5+), Blast (3"), Gas, Limited, Toxin (3+)</td><td>45</td><td>1</td></tr>
+                <tr><td>Demo charges</td><td>&ndash;</td><td>6"</td><td>6</td><td>&minus;3</td><td>3</td><td>Ammo (6+), Blast (5"), Damage (2), Limited</td><td>85</td><td>3</td></tr>
+                <tr><td>Frag grenades</td><td>&ndash;</td><td>9"</td><td>3</td><td>&ndash;</td><td>1</td><td>Ammo (4+), Blast (3"), Knockback (6+), Limited</td><td>30</td><td>0</td></tr>
+                <tr><td>Incendiary charges</td><td>&ndash;</td><td>9"</td><td>3</td><td>&ndash;</td><td>1</td><td>Ammo (5+), Blast (5"), Blaze (5+), Limited</td><td>40</td><td>2</td></tr>
+                <tr><td>Krak grenades</td><td>&ndash;</td><td>9"</td><td>6</td><td>&minus;2</td><td>1</td><td>Ammo (4+), Limited</td><td>45</td><td>1</td></tr>
+                <tr><td>Phosphor canisters</td><td>&ndash;</td><td>9"</td><td>4</td><td>&minus;2</td><td>2</td><td>Ammo (5+), Blast (3"), Blaze (5+), Limited, Unstable</td><td>65</td><td>3</td></tr>
+                <tr><td>Photon flash grenades</td><td>&ndash;</td><td>9"</td><td>&ndash;</td><td>&ndash;</td><td>&ndash;</td><td>Ammo (4+), Blast (5"), Flash, Limited</td><td>15</td><td>1</td></tr>
+                <tr><td>Plasma grenades</td><td>&ndash;</td><td>9"</td><td>5</td><td>&minus;1</td><td>2</td><td>Ammo (4+), Blast (3"), Damage (2), Limited, Unstable</td><td>70</td><td>3</td></tr>
+                <tr><td>Rad grenades</td><td>&ndash;</td><td>9"</td><td>2</td><td>&minus;1</td><td>1</td><td>Ammo (4+), Blast (3"), Limited, Rad-phage</td><td>25</td><td>1</td></tr>
+                <tr><td>Smoke grenades</td><td>&ndash;</td><td>9"</td><td>&ndash;</td><td>&ndash;</td><td>&ndash;</td><td>Ammo (4+), Blast (3"), Limited, Smoke</td><td>15</td><td>0</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3>Оружие ближнего боя<span class="en">Close Combat Weapons</span></h3>
+    <div class="table-wrap">
+        <table class="compact">
+            <thead><tr><th>Weapon</th><th class="num">SR</th><th class="num">Str</th><th class="num">AP</th><th class="num">L</th><th>Traits</th><th class="num">Creds</th><th class="num">TP</th></tr></thead>
+            <tbody>
+                <tr><td colspan="8"><strong>Chain weapons</strong></td></tr>
+                <tr><td>Chainaxe</td><td>E</td><td>S</td><td>&minus;1</td><td>1</td><td>Melee, Shred (5+)</td><td>20</td><td>1</td></tr>
+                <tr><td>Chainsword</td><td>E</td><td>S</td><td>&ndash;</td><td>1</td><td>Melee, Parry, Shred (5+)</td><td>20</td><td>1</td></tr>
+
+                <tr><td colspan="8"><strong>Power weapons</strong></td></tr>
+                <tr><td>Power axe</td><td>E</td><td>S</td><td>&minus;3</td><td>1</td><td>Breaching (5+), Melee</td><td>40</td><td>1</td></tr>
+                <tr><td>Power fist</td><td>E</td><td>S+3</td><td>&minus;3</td><td>2</td><td>Breaching (6+), Concussive (5+), Damage (2), Melee, Unwieldy</td><td>105</td><td>3</td></tr>
+                <tr><td>Power hammer</td><td>E</td><td>S</td><td>&minus;2</td><td>2</td><td>Breaching (6+), Concussive (6+), Melee</td><td>40</td><td>2</td></tr>
+                <tr><td>Power knife</td><td>E</td><td>S</td><td>&minus;2</td><td>1</td><td>Backstab, Breaching (6+), Melee</td><td>30</td><td>1</td></tr>
+                <tr><td>Power maul</td><td>E</td><td>S+1</td><td>&minus;2</td><td>1</td><td>Breaching (6+), Concussive (6+), Melee</td><td>45</td><td>1</td></tr>
+                <tr><td>Power sword</td><td>E</td><td>S</td><td>&minus;2</td><td>1</td><td>Breaching (6+), Melee, Parry</td><td>40</td><td>2</td></tr>
+
+                <tr><td colspan="8"><strong>Primitive weapons</strong></td></tr>
+                <tr><td>Axe</td><td>E</td><td>S</td><td>&minus;1</td><td>1</td><td>Melee</td><td>15</td><td>0</td></tr>
+                <tr><td>Fighting knife</td><td>E</td><td>S</td><td>&ndash;</td><td>1</td><td>Backstab, Melee</td><td>5</td><td>0</td></tr>
+                <tr><td>Flail</td><td>E</td><td>S</td><td>&ndash;</td><td>1</td><td>Knockback (6+), Melee</td><td>10</td><td>0</td></tr>
+                <tr><td>Maul</td><td>E</td><td>S+1</td><td>&ndash;</td><td>1</td><td>Concussive (6+), Melee</td><td>20</td><td>0</td></tr>
+                <tr><td>Two-handed axe*</td><td>E</td><td>S+1</td><td>&minus;1</td><td>2</td><td>Heavy, Melee, Unwieldy</td><td>40</td><td>1</td></tr>
+                <tr><td>Two-handed hammer*</td><td>E</td><td>S+1</td><td>&ndash;</td><td>3</td><td>Concussive (6+), Heavy, Melee, Unwieldy</td><td>40</td><td>1</td></tr>
+
+                <tr><td colspan="8"><strong>Shock weapons</strong></td></tr>
+                <tr><td>Shock baton</td><td>E</td><td>S</td><td>&ndash;</td><td>1</td><td>Melee, Parry, Shock (6+)</td><td>20</td><td>1</td></tr>
+                <tr><td>Shock stave</td><td>E</td><td>S+1</td><td>&ndash;</td><td>1</td><td>Melee, Shock (5+)</td><td>25</td><td>1</td></tr>
+                <tr><td>Shock whip</td><td>E</td><td>S</td><td>&ndash;</td><td>1</td><td>Knockback (6+), Melee, Shock (6+)</td><td>10</td><td>1</td></tr>
+
+                <tr><td colspan="8"><strong>Toxin weapons</strong></td></tr>
+                <tr><td>Stiletto knife</td><td>E</td><td>&ndash;</td><td>&ndash;</td><td>1</td><td>Melee, Toxin (3+)</td><td>25</td><td>2</td></tr>
+                <tr><td>Stiletto sword</td><td>E</td><td>&ndash;</td><td>&minus;1</td><td>1</td><td>Melee, Parry, Toxin (3+)</td><td>45</td><td>2</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <a class="top-link" href="#top">&uarr; наверх</a>
+</section>
+
+<!-- ============ СНАРЯЖЕНИЕ ============ -->
+<section id="snaryazhenie">
+    <h2>Броня и снаряжение<span class="en">Armour &amp; Wargear</span></h2>
+    <p class="lede">Боец не может носить более одного предмета брони или силового поля, если правила снаряжения прямо не разрешают комбинацию.</p>
+
+    <h3>Броня<span class="en">Armour &amp; Field Armour</span></h3>
+    <div class="table-wrap">
+        <table class="compact">
+            <thead><tr><th>Item</th><th class="num">Creds / TP</th><th>Effect</th></tr></thead>
+            <tbody>
+                <tr><td>Carapace armour (light)</td><td class="num">100 / 1</td><td>Improves the Fighter's Save characteristic by 1. They reduce their Initiative by 1.</td></tr>
+                <tr><td>Carapace armour (heavy)</td><td class="num">140 / 3</td><td>Improves Save by 2. Reduces Initiative by 2 and applies a &minus;1 modifier to all Agility tests.</td></tr>
+                <tr><td>Hazard suit</td><td class="num">10 / 0</td><td>The wearer is immune to the Blaze (X+) and Rad-phage traits.</td></tr>
+                <tr><td>Mesh armour</td><td class="num">40 / 0</td><td>Increases Save by 1 when resolving Hits suffered in close combat.</td></tr>
+                <tr><td>Reflec shroud</td><td class="num">25 / 1</td><td>The wearer counts the AP of any Las, Plasma or Melta weapon as '&ndash;' regardless of its actual AP.</td></tr>
+                <tr><td>Refractor field</td><td class="num">50 / 2</td><td>Grants a 5+ Invulnerable save. On a natural 1 the field burns out and cannot be used again this battle. May be combined with other armour and field armour.</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3>Личное снаряжение<span class="en">Personal Equipment</span></h3>
+    <div class="table-wrap">
+        <table class="compact">
+            <thead><tr><th>Item</th><th class="num">Creds / TP</th><th>Effect</th></tr></thead>
+            <tbody>
+                <tr><td>Bio-booster</td><td class="num">25 / 0</td><td>The first time each battle the bearer gains the Injured Condition, reduce the Lethality of the damaging weapon by 1. If Lethality becomes zero, roll 2 Injury dice instead of 1 and the bearer chooses which to apply.</td></tr>
+                <tr><td>Drop rig</td><td class="num">10 / 0</td><td>An Active or Suppressed Fighter within 1" of a platform edge may perform <strong>Descend (Single)</strong>: move up to 3" horizontally and up to 12" vertically downwards.</td></tr>
+                <tr><td>Grapnel launcher</td><td class="num">25 / 0</td><td>An Active Fighter may perform <strong>Grapnel (Double)</strong>: move up to 12" in a straight line in any direction, ending on a higher level than they started.</td></tr>
+                <tr><td>Grav chute</td><td class="num">30 / 0</td><td>If the Fighter falls or jumps down, they never suffer any damage and are never Suppressed.</td></tr>
+                <tr><td>Medicae kit</td><td class="num">20 / 0</td><td>If the Fighter aids another Fighter's Recovery test, they roll an additional Injury dice and choose which one to keep.</td></tr>
+                <tr><td>Photo-goggles</td><td class="num">35 / 0</td><td>Increases X in the Visibility (X") rule by 9" and allows seeing through smoke clouds. If hit by a Flash weapon, the Fighter suffers a &minus;2 modifier to the Initiative check to avoid being blinded.</td></tr>
+                <tr><td>Photo-lumens</td><td class="num">15 / 0</td><td>Increases X in the Visibility (X") rule by 9" for this Fighter. This Fighter can always be targeted, regardless of the Visibility rule.</td></tr>
+                <tr><td>Respirator</td><td class="num">15 / 0</td><td>When hit by a weapon with the Gas trait, the Fighter gains a 5+ Invulnerable save against it.</td></tr>
+                <tr><td>Servo-harness (partial)</td><td class="num">100 / 2</td><td>+2 Strength and +1 Toughness (may exceed maximums, but is not permanent). Reduces Movement and Initiative by 1. Cannot be combined with a servo-claw or another servo-harness.</td></tr>
+                <tr><td>Servo-harness (full)</td><td class="num">130 / 3</td><td>All the benefits of a partial servo-harness, without the negative modifiers.</td></tr>
+                <tr><td>Stimm-slug stash</td><td class="num">25 / 0</td><td>Once per battle, at the start of their activation: +2 Movement, Strength and Toughness until their next activation. Then roll a D6; on a 1 the Fighter suffers a Str &ndash;, AP &ndash;, L1 Hit that automatically wounds with no saves allowed.</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3>Аксессуары для оружия<span class="en">Weapon Accessories</span></h3>
+    <p>Each weapon may only have one weapon accessory attached.</p>
+    <div class="table-wrap">
+        <table class="compact">
+            <thead><tr><th>Accessory</th><th class="num">Creds / TP</th><th>Effect</th></tr></thead>
+            <tbody>
+                <tr><td>Focusing crystal <em>(Las only)</em></td><td class="num">25 / 1</td><td>Increases the weapon's AP by 1 (AP &ndash; becomes AP &minus;1). The weapon also gains the Unstable trait.</td></tr>
+                <tr><td>Hotshot las pack <em>(Las only)</em></td><td class="num">25 / 1</td><td>Increases the weapon's Strength by 1.</td></tr>
+                <tr><td>Infra-sight</td><td class="num">10 / 0</td><td>Can be fired at targets hidden behind Smoke markers. Increases X in the Visibility (X") rule by 9" when using this weapon.</td></tr>
+                <tr><td>Las-projector</td><td class="num">20 / 1</td><td>Reduces the benefit a model gains to their Armour save for being in cover by 1, while within the weapon's Short Range.</td></tr>
+                <tr><td>Mono-sight</td><td class="num">20 / 0</td><td>An Aimed Shot with this weapon applies a +2 modifier to the Hit roll instead of +1.</td></tr>
+                <tr><td>Suspensors <em>(* weapons only)</em></td><td class="num">40 / 0</td><td>The weapon only counts as one weapon when calculating how many weapons a Fighter may carry, instead of two.</td></tr>
+                <tr><td>Telescopic sight</td><td class="num">20 / 1</td><td>Reduces the benefit a model gains to their Armour save for being in cover by 1, while within the weapon's Long Range.</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3>Транспорт<span class="en">Mounts</span></h3>
+    <div class="table-wrap">
+        <table class="compact">
+            <thead><tr><th>Mount</th><th class="num">Creds / TP</th><th>Effect</th></tr></thead>
+            <tbody>
+                <tr><td>Dirt bike</td><td class="num">35 / 0</td><td>The Fighter gains the Mounted Subtype and sets their Movement characteristic to 8". When they perform a Dash action, they add 5" to their Movement instead of their Initiative.</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <a class="top-link" href="#top">&uarr; наверх</a>
+</section>
+
+<!-- ============ СВОЙСТВА ОРУЖИЯ ============ -->
+<section id="svoystva">
+    <h2>Свойства оружия<span class="en">Weapon Traits</span></h2>
+    <p class="lede">Алфавитный список наиболее часто встречающихся трейтов.</p>
+
+    <dl class="terms">
+        <dt>Additional Attacks (X)</dt>
+        <dd>The weapon can be used to make X attacks during close combat in addition to all normal attacks. This only applies during the model's activation and only if the weapon is not designated as either the model's Primary or Secondary weapon.</dd>
+
+        <dt>Ammo (X+)</dt>
+        <dd>After the weapon has fired, roll a D6. If the result is X or more, there is ammo left. Otherwise, it gains the Out of Ammo Condition automatically, even if no Firepower dice are rolled. If an Out of Ammo result is <em>also</em> rolled on the Firepower dice, the weapon jams and cannot be used again for the duration of the battle.</dd>
+
+        <dt>Arc (X)</dt>
+        <dd>The weapon has limited fields of fire, as denoted by X. A model can only target models within that field of fire.</dd>
+
+        <dt>Assault</dt>
+        <dd>After the bearer has performed a Dash action, they may perform a Shoot action with this weapon as a Free action.</dd>
+
+        <dt>Auxiliary</dt>
+        <dd>Can only be attached to another weapon and not taken on its own. It does not use one of the model's three weapon slots.</dd>
+
+        <dt>Backstab</dt>
+        <dd>The weapon gains +1 Strength if the target of the attack is Engaged with more than one model.</dd>
+
+        <dt>Blast (3"/5")</dt>
+        <dd>Place either the 3" or 5" Blast marker centred on the targeted model. If the Hit roll succeeds, the template stays where it is. If it misses, scatter it D6" in a random direction determined by the Scatter dice, stopping if it hits impassable terrain or would go off the battlefield. If a Hit symbol and a 1 are rolled on the Scatter dice, the shot misfired — centre the marker on the firing model. Any model with their base at least partially under the marker suffers one automatic Hit. If a weapon has both Blast and Rapid Fire (X), resolve the first Blast marker as usual and scatter additional markers from its final location.</dd>
+
+        <dt>Blaze (X+)</dt>
+        <dd>If the Wound roll is at least X, the target suffers an additional Hit with the same profile as the first, even if the first fails to Wound. This additional Hit rolls to Wound separately and cannot cause further additional Hits. A weapon may never benefit from more than one instance of this trait.</dd>
+
+        <dt>Breaching (X+)</dt>
+        <dd>If the attack successfully Wounds and the Wound roll is at least X, Armour saves cannot be made against the attack.</dd>
+
+        <dt>Combi</dt>
+        <dd>When fired as part of a Shoot or Aimed Shot action, the controller chooses which profile to resolve the attack with before rolling. They can attack with both profiles targeting the same model, applying a &minus;1 modifier to the Hit roll for each profile; these attacks are resolved simultaneously.</dd>
+
+        <dt>Concussive (X+)</dt>
+        <dd>If the attack successfully Wounds and the Wound roll is at least X, the target reduces their Initiative by 1 until the end of their next activation.</dd>
+
+        <dt>Cursed</dt>
+        <dd>A model Hit by a Cursed weapon must pass a Willpower check or become subject to the Insanity Condition. If the Hit roll is a natural 1, the bearer must pass a Willpower check or become subject to Insanity.</dd>
+
+        <dt>Damage (X)</dt>
+        <dd>A Wounded model loses X Wounds rather than the usual one. If this results in Injury dice being rolled, the number rolled equals the Lethality characteristic of the weapon, regardless of the number of Wounds lost.</dd>
+
+        <dt>Drag</dt>
+        <dd>If a model is Hit but not taken Out of Action, the attacker can attempt to drag the target closer. Roll a D6; if the score is equal to or higher than the target's Strength, the target is dragged D3" directly towards the attacker, stopping if they hit terrain. This movement can cause models to fall. Any models that end within 1" of an enemy are moved the shortest distance possible to be Engaged.</dd>
+
+        <dt>Flash</dt>
+        <dd>No Wound roll is made. Instead, the target must make an Initiative check; if failed, they become subject to the Blind Condition. A Blind model loses their Ready marker (or does not gain one at the start of the following round). Until the next time the model is activated, any close combat attacks they make only Hit on a natural 6.</dd>
+
+        <dt>Gas</dt>
+        <dd>Armour saves cannot be taken against attacks with this trait. Models equipped with a respirator gain a 5+ Invulnerable save against Wounds caused by it.</dd>
+
+        <dt>Graviton Pulse</dt>
+        <dd>Instead of rolling to Wound, any model caught in the Blast area must make a Strength check. If failed, they are Wounded with no Armour saves allowed. Leave the Blast marker in place; for the remainder of the round, any model moving through the area treats it as difficult terrain. At the start of each End phase, roll a D6 for each such marker — on a 5+ it remains for another round, otherwise it is removed.</dd>
+
+        <dt>Heavy</dt>
+        <dd>A ranged weapon with this trait can only be fired using the Braced Shot action. A close combat weapon with this trait may not be selected as a Secondary weapon, and a Secondary weapon may not be used alongside it.</dd>
+
+        <dt>Independent</dt>
+        <dd>Cannot be fired by the bearer. Instead, it is fired in addition to other weapons whenever the bearer performs a ranged attack, and may target a different model. All hits are resolved with a BS of 4+, which cannot be modified by the bearer's skills, equipment or special rules.</dd>
+
+        <dt>Knockback (X+)</dt>
+        <dd>If the weapon hits a Fighter and the Hit roll is at least X, the Fighter is moved 1" directly away from the attacker. If this would cause them to fall off a ledge, they test for falling. This can also cause models to no longer be Engaged. With a Blast weapon, roll a D6 for each Fighter Hit after the marker's final position is determined; on a result of at least X they are moved 1" directly away from the centre of the marker.</dd>
+
+        <dt>Lance</dt>
+        <dd>While equipped by a Fighter with the Mounted Subtype, the weapon increases its Strength by 1 for any attacks made as part of a Charge action.</dd>
+
+        <dt>Lance-bomb</dt>
+        <dd>The first successful Hit scored each battle is resolved using the Primed profile; all subsequent hits use the Spent profile.</dd>
+
+        <dt>Light</dt>
+        <dd>May be used as either a Primary or Secondary weapon in close combat, though only one attack may be made with it, regardless of the model's Attacks characteristic, skills or weapon traits. If a weapon has both Template and Light, then in close combat one opposing enemy model suffers one automatic Hit — do not place the template.</dd>
+
+        <dt>Limited</dt>
+        <dd>If the weapon runs out of ammo, it cannot be reloaded and may not be used again for the remainder of the battle.</dd>
+
+        <dt>Melee</dt>
+        <dd>The weapon is used to make attacks while Engaged.</dd>
+
+        <dt>Paired (X)</dt>
+        <dd>Can never be selected as a Secondary weapon, and a Secondary weapon may not be used alongside it. When selected as a Primary weapon, the bearer increases their Attacks characteristic by X.</dd>
+
+        <dt>Parry</dt>
+        <dd>If a model uses this weapon as either their Primary or Secondary weapon when resolving a combat, they increase their Save characteristic by 1. Using more than one weapon with this trait confers no additional benefit.</dd>
+
+        <dt>Power Pack</dt>
+        <dd>Does not count towards the maximum number of weapons a Fighter can carry. However, a Fighter cannot have more than two weapons with this trait.</dd>
+
+        <dt>Rad-phage</dt>
+        <dd>When a Fighter suffers an unsaved Wound from this weapon, they gain the Rad Poisoned Condition, reducing their Toughness by 1 (to a minimum of 1).</dd>
+
+        <dt>Ram</dt>
+        <dd>Can only be used during an activation when the bearer has performed the Charge action.</dd>
+
+        <dt>Rapid Fire (X)</dt>
+        <dd>Follows the rules for Rapid Fire (см. <a href="#boepripasy">Стрельба</a>).</dd>
+
+        <dt>Reckless</dt>
+        <dd>Before making a shooting attack, randomly determine the target from all models (friend or foe) within the model's Line of Sight, within 6" of the intended target and within range. Attacks with a Reckless close combat weapon are randomly distributed between any models (friend or foe) Engaged with this model.</dd>
+
+        <dt>Reliable</dt>
+        <dd>Ignores the first Out of Ammo symbol rolled each round on the Firepower dice.</dd>
+
+        <dt>Rending (X+)</dt>
+        <dd>If the natural Wound roll is at least X, increase the AP characteristic of the weapon for this attack by 1 (AP &minus;1 would become AP &minus;2).</dd>
+
+        <dt>Scarce (X+)</dt>
+        <dd>When the Reload action is performed, instead of automatically having more ammo the player must roll a D6. If the result is at least X the weapon is successfully reloaded; otherwise it is still Out of Ammo, though further attempts can be made in later activations.</dd>
+
+        <dt>Shield</dt>
+        <dd>If a model is equipped with at least one weapon with this trait, they increase their Save characteristic by 1 against shooting attacks. Multiple such weapons confer no further benefit.</dd>
+
+        <dt>Shock (X+)</dt>
+        <dd>If the attack Hits and the Hit roll is at least X, it automatically Wounds and is considered to have rolled a natural 6 on the Wound roll for the purposes of any other traits.</dd>
+
+        <dt>Shred (X+)</dt>
+        <dd>If the weapon Wounds a model and the Wound roll is at least X, increase the Lethality characteristic of the weapon for that attack by 1.</dd>
+
+        <dt>Single Shot</dt>
+        <dd>Can only be fired once per battle, at which point it automatically goes Out of Ammo and cannot be reloaded by any means.</dd>
+
+        <dt>Smoke</dt>
+        <dd>Does not have to target an enemy model; it may instead target a point on the battlefield. Leave the Blast marker in place — a column of smoke of infinite height rises up and blocks Line of Sight (stopping at the edge of a terrain feature it hits). During the Reinforcement step of the End phase, roll a D6 for each such marker; on a 5+ it remains, otherwise it is removed. A model Hit by a smoke grenade is never Wounded and is not Suppressed.</dd>
+
+        <dt>Template</dt>
+        <dd>Place the teardrop-shaped template so that the narrow end is in base contact with the firing model and the targeted model is under the template. Any model with any part of their base under the template is automatically Hit — no Hit roll is needed. With Template + Light in close combat, one opposing enemy model suffers one automatic Hit instead. With Template + Rapid Fire (X), the model closest to the firing model is Hit a number of times determined by the Firepower dice; all other models are Hit just once.</dd>
+
+        <dt>Toxin (X+)</dt>
+        <dd>Against a Fighter, instead of comparing Strength to Toughness, the target is Wounded on a result of X+. Against a Vehicle, the target is only Wounded on a natural 6.</dd>
+
+        <dt>Twin-linked</dt>
+        <dd>When making a ranged attack, the Firepower dice may be re-rolled (all of the Firepower dice must be re-rolled).</dd>
+
+        <dt>Unstable</dt>
+        <dd>If the Hit roll is a natural 1, the model using the weapon suffers an automatic Hit using this weapon's profile and no other models are Hit. If the weapon does not need to roll to Hit (for example, it has the Template trait), roll a D6 before resolving the attack as described.</dd>
+
+        <dt>Unwieldy</dt>
+        <dd>When a model attacks with this weapon in close combat, their Initiative is set to 1 before applying any modifiers.</dd>
+
+        <dt>Web</dt>
+        <dd>Armour saves cannot be taken, though Invulnerable saves may still be taken. If a Fighter is Wounded by a Web weapon, then instead of losing a Wound they gain the Webbed Condition.</dd>
+    </dl>
+
+    <a class="top-link" href="#top">&uarr; наверх</a>
+</section>
+
+</main>
+</div>
+
+<footer class="page-footer">
+    <p>Справочник основных правил Necromunda. Структура разделов — на русском, тексты правил приведены в оригинале на английском.</p>
+    <p>Источник правил: <strong>SKIRMUNDA</strong> (Правила/SKIRMUNDA.pdf, 53 стр.). Структура оглавления соответствует разделу «1.1 Навигация по разделам правил» из SCENARIOS.md.</p>
+    <p>Necromunda, Games Workshop и связанные названия — торговые марки Games Workshop Ltd. Страница создана для личного некоммерческого использования.</p>
+    <p><a class="backlink" href="../index.html">&larr; На главную</a></p>
+</footer>
+
+</body>
+</html>

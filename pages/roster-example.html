@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Necromunda — пример стартового ростера</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="topbar" id="top">
+    <a class="backlink" href="../index.html">&larr; На главную</a>
+    <h1>Necromunda</h1>
+    <p>Пример стартового ростера &mdash; кампания, 1000 кредитов, Дом Каудор</p>
+    <p class="source">Правила создания банды из SKIRMUNDA &bull; список Дома Каудор из Gangs of the Underhive &amp; Outlands</p>
+</header>
+
+<div class="layout">
+
+<aside class="sidebar">
+    <nav>
+        <h2>Пример ростера</h2>
+        <details open>
+            <summary>Ход сборки</summary>
+            <ul>
+                <li><a href="#zadacha">Задача</a></li>
+                <li><a href="#put">Шаг 1. Путь дома</a></li>
+                <li><a href="#sostav">Шаг 2. Состав</a></li>
+                <li><a href="#naem">Шаг 3. Наём бойцов</a></li>
+                <li><a href="#snaryazhenie">Шаг 4. Снаряжение</a></li>
+                <li><a href="#navyki">Шаг 5. Стартовые навыки</a></li>
+                <li><a href="#itog">Итоговый ростер</a></li>
+                <li><a href="#proverka">Проверка правил</a></li>
+            </ul>
+        </details>
+        <details open>
+            <summary>Карточки бойцов</summary>
+            <ul>
+                <li><a href="#malchus">Мальхус</a></li>
+                <li><a href="#helga">Хельга</a></li>
+                <li><a href="#jovik">Йовик</a></li>
+                <li><a href="#tomas">Томас</a></li>
+                <li><a href="#cato">Като</a></li>
+                <li><a href="#lysa">Лиза</a></li>
+                <li><a href="#skit">Скит</a></li>
+            </ul>
+        </details>
+        <p class="sidebar-note"><a href="core-rules.html#sozdanie-bandy">Правила создания банды</a><br>
+        <a href="gangs.html#house-cawdor-gang-list">Дом Каудор</a></p>
+    </nav>
+</aside>
+
+<main class="content">
+
+<section id="zadacha">
+    <h2>Задача</h2>
+    <p class="lede">Собрать стартовый ростер банды (Gang Roster) Дома Каудор (House Cawdor) на 1000 кредитов (credits) для кампании (Campaign play) из семи моделей.</p>
+
+    <p>Это учебный пример, а не «лучший» состав. Имена бойцов выдуманы, оружие и снаряжение взяты только из <a href="gangs.html#house-cawdor-gang-list">списка Дома Каудор</a>. Каждый шаг ниже ссылается на правило, которое его ограничивает.</p>
+
+    <div class="table-wrap">
+        <table class="compact">
+            <caption>Условия примера</caption>
+            <tbody>
+                <tr><th>Режим</th><td>кампания (Campaign play)</td></tr>
+                <tr><th>Бюджет</th><td>1000 кредитов (credits) — стандарт при основании банды</td></tr>
+                <tr><th>Банда</th><td>Дом Каудор (House Cawdor)</td></tr>
+                <tr><th>Моделей</th><td>7</td></tr>
+                <tr><th>Торговый пост</th><td>закрыт: при основании покупаем только из списка снаряжения банды (House Cawdor Equipment List)</td></tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section id="put">
+    <h2>Шаг 1. Путь дома<span class="en">A House Divided</span></h2>
+    <p>При основании банды Каудор нужно выбрать один из двух путей. Лидер (Leader) обязан иметь соответствующий подтип (Subtype), а численность противоположной фракции не может превысить «свою».</p>
+
+    <ul>
+        <li><strong>Путь Благочестивых (Path of the Pious).</strong> Лидер должен быть благочестивым (Pious). Фанатик (Fanatic) не может заменить погибшего лидера. Фанатиков в ростере не больше, чем благочестивых. В стартовый отряд (starting crew) можно добавить одного дополнительного проспекта (Prospect) — правило «Без числа» (Without Number).</li>
+        <li><strong>Путь Фанатиков (Path of the Fanatic).</strong> Лидер должен быть фанатиком. Можно перебрасывать проверки морали (Bottle checks) при натуральных 11 или 12.</li>
+    </ul>
+
+    <p><strong>Выбор примера:</strong> Путь Благочестивых (Path of the Pious). Берём хранителя слова (Cawdor Word-Keeper) лидером и не нанимаем искупителей (Redemptionists) — все семеро благочестивые, лимит фанатиков не нарушен.</p>
+</section>
+
+<section id="sostav">
+    <h2>Шаг 2. Состав<span class="en">Gang Composition</span></h2>
+    <p>Общие правила создания банды (Gang Creation):</p>
+    <ol class="seq">
+        <li>Ровно одна модель с подтипом лидер (Leader).</li>
+        <li>Число моделей с подтипами чемпион (Champion), громила (Brute) или прихлебатель (Hanger-on) не больше числа моделей <em>без</em> этих подтипов.</li>
+        <li>Питомец (Pet) считается снаряжением (wargear), а не моделью для этого соотношения.</li>
+    </ol>
+
+    <p>На семь моделей это значит: максимум три чемпиона/громилы, если остальные четыре — «обычные». Мы берём скромнее: один чемпион и шесть остальных.</p>
+
+    <div class="table-wrap">
+        <table class="compact roster">
+            <caption>Нанятые типы &mdash; ещё без снаряжения</caption>
+            <thead>
+                <tr><th>Тип</th><th>Подтипы (Subtypes)</th><th class="num">База</th><th class="num">Кол-во</th><th class="num">Итого</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><a href="gangs.html#house-cawdor-gang-list--cawdor-word-keeper">Хранитель слова (Cawdor Word-Keeper)</a></td><td>лидер, благочестивый (Leader, Pious)</td><td class="num">115</td><td class="num">1</td><td class="num">115</td></tr>
+                <tr><td><a href="gangs.html#house-cawdor-gang-list--cawdor-firebrand">Огневестник (Cawdor Firebrand)</a></td><td>чемпион, благочестивый (Champion, Pious)</td><td class="num">95</td><td class="num">1</td><td class="num">95</td></tr>
+                <tr><td><a href="gangs.html#house-cawdor-gang-list--cawdor-brethren">Брат (Cawdor Brethren)</a></td><td>гангер, благочестивый, специалист (Ganger, Pious, Specialist)</td><td class="num">40</td><td class="num">3</td><td class="num">120</td></tr>
+                <tr><td><a href="gangs.html#house-cawdor-gang-list--cawdor-way-brethren">Путник (Cawdor Way-Brethren)</a></td><td>благочестивый, проспект (Pious, Prospect)</td><td class="num">65</td><td class="num">1</td><td class="num">65</td></tr>
+                <tr><td><a href="gangs.html#house-cawdor-gang-list--cawdor-bonepicker">Сборщик костей (Cawdor Bonepicker)</a></td><td>благочестивый, проспект (Pious, Prospect)</td><td class="num">20</td><td class="num">1</td><td class="num">20</td></tr>
+            </tbody>
+            <tfoot>
+                <tr><th colspan="4">Базовая стоимость семи моделей</th><th class="num">415</th></tr>
+            </tfoot>
+        </table>
+    </div>
+
+    <div class="note">
+        <span class="label">Почему не громила</span>
+        Стиг-шамблер (Cawdor Stig-Shambler) стоит 240 кредитов и несёт подтип громилы (Brute). На семи моделях он законен (1 громила + 1 чемпион ≤ 5 остальных), но съедает почти четверть бюджета. Для учебного ростера оставляем место на оружие братьев.
+    </div>
+</section>
+
+<section id="naem">
+    <h2>Шаг 3. Наём бойцов</h2>
+    <p>На имена ограничений нет. Стартовый опыт (Starting XP) берётся из карточки типа и при добавлении в ростер <em>не</em> даёт продвижений (Advancements).</p>
+
+    <div class="table-wrap">
+        <table class="compact roster">
+            <caption>Банда «Гимн Пепельной часовни»</caption>
+            <thead>
+                <tr><th>Имя</th><th>Тип</th><th>XP</th><th class="num">База</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Мальхус</td><td>хранитель слова (Word-Keeper)</td><td>61</td><td class="num">115</td></tr>
+                <tr><td>Хельга</td><td>огневестник (Firebrand)</td><td>37</td><td class="num">95</td></tr>
+                <tr><td>Йовик</td><td>брат (Brethren)</td><td>13</td><td class="num">40</td></tr>
+                <tr><td>Томас</td><td>брат (Brethren)</td><td>13</td><td class="num">40</td></tr>
+                <tr><td>Като</td><td>брат (Brethren)</td><td>13</td><td class="num">40</td></tr>
+                <tr><td>Лиза</td><td>путник (Way-Brethren)</td><td>4</td><td class="num">65</td></tr>
+                <tr><td>Скит</td><td>сборщик костей (Bonepicker)</td><td>1</td><td class="num">20</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <p>На снаряжение остаётся <strong>585 кредитов</strong>.</p>
+</section>
+
+<section id="snaryazhenie">
+    <h2>Шаг 4. Снаряжение<span class="en">Weapons &amp; Wargear</span></h2>
+    <p>При основании каждый боец покупает оружие и снаряжение (wargear) только из своего списка. Для благочестивых Каудор это <strong>список снаряжения Дома Каудор (House Cawdor Equipment List)</strong>. Торговый пост (Trading Post) откроется позже, после действия «Посетить торговый пост» (Visit Trading Post) в пост-цикловой последовательности (Post-cycle Sequence).</p>
+
+    <ul>
+        <li>Боец (Fighter) несёт не больше <strong>трёх единиц оружия</strong>.</li>
+        <li>Гранаты считаются снаряжением (wargear), а не оружием, и в лимит трёх не входят.</li>
+        <li>Оружие со звёздочкой (*) занимает <strong>два</strong> слота.</li>
+        <li>На каждое оружие — не больше одного аксессуара (weapon accessory).</li>
+        <li>Икона культа (cult icon) — одна на всю банду, только у лидера или чемпиона.</li>
+        <li>Путник (Way-Brethren) уже экипирован ездовым «Гребнеходом» (Ridge Walker); его стоимость входит в 65 кредитов, второй раз платить не нужно.</li>
+    </ul>
+</section>
+
+<section id="navyki">
+    <h2>Шаг 5. Стартовые навыки<span class="en">Starting Skills</span></h2>
+    <p>Лидер и чемпионы Каудор при добавлении в ростер выбирают <strong>один</strong> навык из своих основных наборов (Primary Skill Sets). Гангеры и проспекты этот выбор не получают. У лидера и чемпиона также есть навык «Вдохновляющий» (Inspiring) — он входит в подтип, отдельно не покупается.</p>
+
+    <div class="table-wrap">
+        <table class="compact">
+            <thead>
+                <tr><th>Боец</th><th>Основные наборы (Primary)</th><th>Выбор</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Мальхус, хранитель слова</td><td>сила (Brawn), учёность (Savant)</td><td>железная воля (Iron Will) из учёности</td></tr>
+                <tr><td>Хельга, огневестник</td><td>сила (Brawn), бой (Combat)</td><td>град ударов (Rain of Blows) из боя</td></tr>
+                <tr><td>Лиза, путник</td><td>—</td><td>уклонение (Dodge) уже есть в карточке типа</td></tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section id="itog">
+    <h2>Итоговый ростер</h2>
+
+    <div class="roster-meta">
+        <div><span>Банда</span><strong>Гимн Пепельной часовни</strong></div>
+        <div><span>Тип</span><strong>Дом Каудор (House Cawdor), Путь Благочестивых (Path of the Pious)</strong></div>
+        <div><span>Рейтинг банды (Gang Rating)</span><strong>1000</strong></div>
+        <div><span>Репутация (Reputation)</span><strong>1</strong></div>
+        <div><span>Запас (Stash)</span><strong>0 кредитов</strong></div>
+        <div><span>Богатство (Wealth)</span><strong>1000</strong></div>
+    </div>
+
+    <div class="table-wrap">
+        <table class="compact roster">
+            <caption>Сводка ростера</caption>
+            <thead>
+                <tr>
+                    <th>Имя</th>
+                    <th>Тип</th>
+                    <th>Оружие и снаряжение</th>
+                    <th>Навыки</th>
+                    <th class="num">XP</th>
+                    <th class="num">Кредиты</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="#malchus">Мальхус</a></td>
+                    <td>хранитель слова (Word-Keeper)</td>
+                    <td>древко/огнемёт Каудор* (Cawdor polearm/flamer*), боевой нож (fighting knife), сетчатый доспех (mesh armour), икона культа (cult icon), осколочные гранаты (frag grenades)</td>
+                    <td>вдохновляющий (Inspiring), железная воля (Iron Will)</td>
+                    <td class="num">61</td>
+                    <td class="num">315</td>
+                </tr>
+                <tr>
+                    <td><a href="#helga">Хельга</a></td>
+                    <td>огневестник (Firebrand)</td>
+                    <td>древко/мушкетон Каудор с виноградной и очистительной дробью* (Cawdor polearm/blunderbuss with grape &amp; purgation rounds*), боевой нож, сетчатый доспех, респиратор (respirator)</td>
+                    <td>вдохновляющий (Inspiring), град ударов (Rain of Blows)</td>
+                    <td class="num">37</td>
+                    <td class="num">235</td>
+                </tr>
+                <tr>
+                    <td><a href="#jovik">Йовик</a></td>
+                    <td>брат (Brethren)</td>
+                    <td>древко/автоган Каудор* (Cawdor polearm/autogun*), автопистолет (autopistol)</td>
+                    <td>—</td>
+                    <td class="num">13</td>
+                    <td class="num">80</td>
+                </tr>
+                <tr>
+                    <td><a href="#tomas">Томас</a></td>
+                    <td>брат (Brethren)</td>
+                    <td>автоган (autogun), топор (axe), стаб-пистолет (stub gun), спусковая оснастка (drop rig)</td>
+                    <td>—</td>
+                    <td class="num">13</td>
+                    <td class="num">90</td>
+                </tr>
+                <tr>
+                    <td><a href="#cato">Като</a></td>
+                    <td>брат (Brethren)</td>
+                    <td>обрез с цельной и картечной дробью (sawn-off shotgun with solid &amp; scatter shot), боевой нож, подрывные заряды (blasting charges)</td>
+                    <td>—</td>
+                    <td class="num">13</td>
+                    <td class="num">135</td>
+                </tr>
+                <tr>
+                    <td><a href="#lysa">Лиза</a></td>
+                    <td>путник (Way-Brethren)</td>
+                    <td>оглушающее копьё* (stun lance*), стаб-пистолет; гребнеход (Ridge Walker) входит в стоимость типа</td>
+                    <td>уклонение (Dodge)</td>
+                    <td class="num">4</td>
+                    <td class="num">100</td>
+                </tr>
+                <tr>
+                    <td><a href="#skit">Скит</a></td>
+                    <td>сборщик костей (Bonepicker)</td>
+                    <td>автопистолет, боевой нож, цеп (flail)</td>
+                    <td>—</td>
+                    <td class="num">1</td>
+                    <td class="num">45</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr><th colspan="5">Рейтинг банды (Gang Rating)</th><th class="num">1000</th></tr>
+            </tfoot>
+        </table>
+    </div>
+</section>
+
+<!-- карточки -->
+
+<article class="ex-card" id="malchus">
+    <header class="fighter-head">
+        <h3 class="fighter-name">Мальхус</h3>
+        <span class="fighter-cost">315 credits</span>
+    </header>
+    <p class="fighter-meta"><span class="fighter-type">хранитель слова (Cawdor Word-Keeper) — лидер, благочестивый (Leader, Pious)</span> <span class="fighter-xp">Starting XP: 61</span></p>
+    <div class="table-wrap"><table class="stats">
+        <thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+        <tbody><tr><td>5”</td><td>3+</td><td>3+</td><td>3</td><td>3</td><td>3</td><td>3</td><td>2</td><td>5+</td><td>8</td><td>8</td><td>8</td><td>7</td></tr></tbody>
+    </table></div>
+    <p class="ex-slots">Слоты оружия: древко/огнемёт* занимает два, нож — один. Гранаты в лимит не входят.</p>
+    <div class="table-wrap">
+        <table class="compact">
+            <thead><tr><th>Статья</th><th class="num">Кредиты</th></tr></thead>
+            <tbody>
+                <tr><td>Хранитель слова (Word-Keeper)</td><td class="num">115</td></tr>
+                <tr><td>Древко/огнемёт Каудор* (Cawdor polearm/flamer*) — 2 слота</td><td class="num">85</td></tr>
+                <tr><td>Боевой нож (fighting knife) — 1 слот</td><td class="num">5</td></tr>
+                <tr><td>Сетчатый доспех (mesh armour)</td><td class="num">40</td></tr>
+                <tr><td>Икона культа (cult icon) — одна на банду, только лидер или чемпион</td><td class="num">40</td></tr>
+                <tr><td>Осколочные гранаты (frag grenades) — снаряжение, не оружие</td><td class="num">30</td></tr>
+            </tbody>
+            <tfoot><tr><th>Итого</th><th class="num">315</th></tr></tfoot>
+        </table>
+    </div>
+    <p>Навыки: вдохновляющий (Inspiring) от подтипа лидера; железная воля (Iron Will) — стартовый выбор из основного набора учёности (Savant).</p>
+</article>
+
+<article class="ex-card" id="helga">
+    <header class="fighter-head">
+        <h3 class="fighter-name">Хельга</h3>
+        <span class="fighter-cost">235 credits</span>
+    </header>
+    <p class="fighter-meta"><span class="fighter-type">огневестник (Cawdor Firebrand) — чемпион, благочестивый (Champion, Pious)</span> <span class="fighter-xp">Starting XP: 37</span></p>
+    <div class="table-wrap"><table class="stats">
+        <thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+        <tbody><tr><td>5”</td><td>3+</td><td>3+</td><td>3</td><td>3</td><td>2</td><td>3</td><td>2</td><td>5+</td><td>7</td><td>7</td><td>6</td><td>7</td></tr></tbody>
+    </table></div>
+    <div class="table-wrap">
+        <table class="compact">
+            <thead><tr><th>Статья</th><th class="num">Кредиты</th></tr></thead>
+            <tbody>
+                <tr><td>Огневестник (Firebrand)</td><td class="num">95</td></tr>
+                <tr><td>Древко/мушкетон Каудор с виноградной и очистительной дробью* — 2 слота</td><td class="num">80</td></tr>
+                <tr><td>Боевой нож (fighting knife) — 1 слот</td><td class="num">5</td></tr>
+                <tr><td>Сетчатый доспех (mesh armour)</td><td class="num">40</td></tr>
+                <tr><td>Респиратор (respirator)</td><td class="num">15</td></tr>
+            </tbody>
+            <tfoot><tr><th>Итого</th><th class="num">235</th></tr></tfoot>
+        </table>
+    </div>
+    <p>Навыки: вдохновляющий (Inspiring) от подтипа чемпиона; град ударов (Rain of Blows) — стартовый выбор из основного набора боя (Combat).</p>
+</article>
+
+<article class="ex-card" id="jovik">
+    <header class="fighter-head">
+        <h3 class="fighter-name">Йовик</h3>
+        <span class="fighter-cost">80 credits</span>
+    </header>
+    <p class="fighter-meta"><span class="fighter-type">брат (Cawdor Brethren) — гангер, благочестивый, специалист (Ganger, Pious, Specialist)</span> <span class="fighter-xp">Starting XP: 13</span></p>
+    <div class="table-wrap"><table class="stats">
+        <thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+        <tbody><tr><td>5”</td><td>4+</td><td>4+</td><td>3</td><td>3</td><td>1</td><td>3</td><td>1</td><td>6+</td><td>6</td><td>6</td><td>6</td><td>6</td></tr></tbody>
+    </table></div>
+    <div class="table-wrap">
+        <table class="compact">
+            <thead><tr><th>Статья</th><th class="num">Кредиты</th></tr></thead>
+            <tbody>
+                <tr><td>Брат (Brethren)</td><td class="num">40</td></tr>
+                <tr><td>Древко/автоган Каудор* (Cawdor polearm/autogun*) — 2 слота</td><td class="num">30</td></tr>
+                <tr><td>Автопистолет (autopistol) — 1 слот</td><td class="num">10</td></tr>
+            </tbody>
+            <tfoot><tr><th>Итого</th><th class="num">80</th></tr></tfoot>
+        </table>
+    </div>
+    <p>Подтип специалиста (Specialist) не даёт стартового навыка — только доступ к продвижениям гангера. Стартовый навык выбирают только лидер и чемпионы.</p>
+</article>
+
+<article class="ex-card" id="tomas">
+    <header class="fighter-head">
+        <h3 class="fighter-name">Томас</h3>
+        <span class="fighter-cost">90 credits</span>
+    </header>
+    <p class="fighter-meta"><span class="fighter-type">брат (Cawdor Brethren) — гангер, благочестивый, специалист (Ganger, Pious, Specialist)</span> <span class="fighter-xp">Starting XP: 13</span></p>
+    <div class="table-wrap"><table class="stats">
+        <thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+        <tbody><tr><td>5”</td><td>4+</td><td>4+</td><td>3</td><td>3</td><td>1</td><td>3</td><td>1</td><td>6+</td><td>6</td><td>6</td><td>6</td><td>6</td></tr></tbody>
+    </table></div>
+    <div class="table-wrap">
+        <table class="compact">
+            <thead><tr><th>Статья</th><th class="num">Кредиты</th></tr></thead>
+            <tbody>
+                <tr><td>Брат (Brethren)</td><td class="num">40</td></tr>
+                <tr><td>Автоган (autogun)</td><td class="num">20</td></tr>
+                <tr><td>Топор (axe)</td><td class="num">15</td></tr>
+                <tr><td>Стаб-пистолет (stub gun)</td><td class="num">5</td></tr>
+                <tr><td>Спусковая оснастка (drop rig) — снаряжение</td><td class="num">10</td></tr>
+            </tbody>
+            <tfoot><tr><th>Итого</th><th class="num">90</th></tr></tfoot>
+        </table>
+    </div>
+    <p>Три единицы оружия (автоган, топор, стаб-пистолет) плюс оснастка. Аксессуаров нет — лимит «один на оружие» не задет.</p>
+</article>
+
+<article class="ex-card" id="cato">
+    <header class="fighter-head">
+        <h3 class="fighter-name">Като</h3>
+        <span class="fighter-cost">135 credits</span>
+    </header>
+    <p class="fighter-meta"><span class="fighter-type">брат (Cawdor Brethren) — гангер, благочестивый, специалист (Ganger, Pious, Specialist)</span> <span class="fighter-xp">Starting XP: 13</span></p>
+    <div class="table-wrap"><table class="stats">
+        <thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+        <tbody><tr><td>5”</td><td>4+</td><td>4+</td><td>3</td><td>3</td><td>1</td><td>3</td><td>1</td><td>6+</td><td>6</td><td>6</td><td>6</td><td>6</td></tr></tbody>
+    </table></div>
+    <div class="table-wrap">
+        <table class="compact">
+            <thead><tr><th>Статья</th><th class="num">Кредиты</th></tr></thead>
+            <tbody>
+                <tr><td>Брат (Brethren)</td><td class="num">40</td></tr>
+                <tr><td>Обрез с цельной и картечной дробью (sawn-off shotgun)</td><td class="num">30</td></tr>
+                <tr><td>Боевой нож (fighting knife)</td><td class="num">5</td></tr>
+                <tr><td>Подрывные заряды (blasting charges) — гранаты, не занимают слот оружия</td><td class="num">60</td></tr>
+            </tbody>
+            <tfoot><tr><th>Итого</th><th class="num">135</th></tr></tfoot>
+        </table>
+    </div>
+    <p>Два слота оружия из трёх. Заряды стоят дорого, но это снаряжение: четвёртым «оружием» они не считаются.</p>
+</article>
+
+<article class="ex-card" id="lysa">
+    <header class="fighter-head">
+        <h3 class="fighter-name">Лиза</h3>
+        <span class="fighter-cost">100 credits</span>
+    </header>
+    <p class="fighter-meta"><span class="fighter-type">путник (Cawdor Way-Brethren) — благочестивый, проспект (Pious, Prospect)</span> <span class="fighter-xp">Starting XP: 4</span></p>
+    <div class="table-wrap"><table class="stats">
+        <thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+        <tbody><tr><td>6”</td><td>5+</td><td>5+</td><td>3</td><td>3</td><td>1</td><td>4</td><td>1</td><td>6+</td><td>5</td><td>6</td><td>6</td><td>5</td></tr></tbody>
+    </table></div>
+    <div class="table-wrap">
+        <table class="compact">
+            <thead><tr><th>Статья</th><th class="num">Кредиты</th></tr></thead>
+            <tbody>
+                <tr><td>Путник (Way-Brethren), включая гребнеход (Ridge Walker)</td><td class="num">65</td></tr>
+                <tr><td>Оглушающее копьё* (stun lance*) — 2 слота</td><td class="num">30</td></tr>
+                <tr><td>Стаб-пистолет (stub gun) — 1 слот</td><td class="num">5</td></tr>
+            </tbody>
+            <tfoot><tr><th>Итого</th><th class="num">100</th></tr></tfoot>
+        </table>
+    </div>
+    <p>Гребнеход входит в стоимость типа. Перед выбором стартового отряда (starting crew) игрок решает, использует ли боец ездовое снаряжение (mount wargear): тогда движение становится 8”, появляются подтипы «наездник» (Mounted) и «проворный» (Agile), а рывок (Dash) прибавляет 5” вместо инициативы. Навык уклонения (Dodge) уже записан в карточке типа, второй стартовый навык проспект не выбирает.</p>
+    <p>По правилу «Без числа» (Without Number) Пути Благочестивых этого проспекта можно добавить в стартовый отряд сверх обычного лимита отряда.</p>
+</article>
+
+<article class="ex-card" id="skit">
+    <header class="fighter-head">
+        <h3 class="fighter-name">Скит</h3>
+        <span class="fighter-cost">45 credits</span>
+    </header>
+    <p class="fighter-meta"><span class="fighter-type">сборщик костей (Cawdor Bonepicker) — благочестивый, проспект (Pious, Prospect)</span> <span class="fighter-xp">Starting XP: 1</span></p>
+    <div class="table-wrap"><table class="stats">
+        <thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+        <tbody><tr><td>6”</td><td>5+</td><td>5+</td><td>3</td><td>3</td><td>1</td><td>4</td><td>1</td><td>6+</td><td>5</td><td>5</td><td>5</td><td>5</td></tr></tbody>
+    </table></div>
+    <div class="table-wrap">
+        <table class="compact">
+            <thead><tr><th>Статья</th><th class="num">Кредиты</th></tr></thead>
+            <tbody>
+                <tr><td>Сборщик костей (Bonepicker)</td><td class="num">20</td></tr>
+                <tr><td>Автопистолет (autopistol)</td><td class="num">10</td></tr>
+                <tr><td>Боевой нож (fighting knife)</td><td class="num">5</td></tr>
+                <tr><td>Цеп (flail)</td><td class="num">10</td></tr>
+            </tbody>
+            <tfoot><tr><th>Итого</th><th class="num">45</th></tr></tfoot>
+        </table>
+    </div>
+    <p>Три лёгких оружия, все из списка Каудор. Проспект не выбирает стартовый навык.</p>
+</article>
+
+<section id="proverka">
+    <h2>Проверка правил</h2>
+    <p>Каждая строка — отдельное ограничение из создания банды (Gang Creation) и списка Каудор.</p>
+
+    <div class="table-wrap">
+        <table class="check-table">
+            <thead>
+                <tr><th>Правило</th><th>Как выполнено</th><th>Итог</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Бюджет 1000 кредитов, нельзя превысить</td>
+                    <td>315 + 235 + 80 + 90 + 135 + 100 + 45 = 1000. Неизрасходованных кредитов нет — в запас (Stash) уходит 0. В кампании неизрасходованное как раз кладётся в запас.</td>
+                    <td class="ok">да</td>
+                </tr>
+                <tr>
+                    <td>Ровно один лидер (Leader)</td>
+                    <td>Только Мальхус, хранитель слова (Word-Keeper).</td>
+                    <td class="ok">да</td>
+                </tr>
+                <tr>
+                    <td>Чемпионы + громилы + прихлебатели ≤ остальные</td>
+                    <td>1 чемпион (Хельга). Громил и прихлебателей нет. Остальных моделей 6. 1 ≤ 6.</td>
+                    <td class="ok">да</td>
+                </tr>
+                <tr>
+                    <td>Ровно 7 моделей</td>
+                    <td>Лидер, чемпион, три брата, два проспекта. Питомцев нет — они всё равно считались бы снаряжением, а не седьмой моделью.</td>
+                    <td class="ok">да</td>
+                </tr>
+                <tr>
+                    <td>Путь Благочестивых: лидер с подтипом благочестивый (Pious)</td>
+                    <td>Хранитель слова — Fighter (Leader, Pious).</td>
+                    <td class="ok">да</td>
+                </tr>
+                <tr>
+                    <td>Фанатиков не больше благочестивых</td>
+                    <td>Благочестивых 7, фанатиков (Fanatic) 0. Искупители (Redemptionists) не наняты.</td>
+                    <td class="ok">да</td>
+                </tr>
+                <tr>
+                    <td>При основании — только список снаряжения банды</td>
+                    <td>Все предметы из House Cawdor Equipment List. Торговый пост (Trading Post) не использован.</td>
+                    <td class="ok">да</td>
+                </tr>
+                <tr>
+                    <td>Не больше трёх единиц оружия; * = два слота</td>
+                    <td>Мальхус, Хельга, Йовик, Лиза: * плюс одно однослотовое = 3. Томас и Скит: три однослотовых. Като: два оружия и гранаты.</td>
+                    <td class="ok">да</td>
+                </tr>
+                <tr>
+                    <td>Гранаты — снаряжение, не оружие</td>
+                    <td>Осколочные гранаты у Мальхуса и подрывные заряды у Като не занимают слот.</td>
+                    <td class="ok">да</td>
+                </tr>
+                <tr>
+                    <td>Не больше одного аксессуара на оружие</td>
+                    <td>Аксессуаров нет. Моноприцел (mono-sight) из списка Каудор не куплен.</td>
+                    <td class="ok">да</td>
+                </tr>
+                <tr>
+                    <td>Одна икона культа (cult icon), у лидера или чемпиона</td>
+                    <td>Одна икона, несёт Мальхус.</td>
+                    <td class="ok">да</td>
+                </tr>
+                <tr>
+                    <td>Гребнеход путника уже оплачен</td>
+                    <td>65 кредитов типа включают Ridge Walker; в списке он стоит 40, второй раз не куплен.</td>
+                    <td class="ok">да</td>
+                </tr>
+                <tr>
+                    <td>Стартовый навык — один, из основных наборов, только лидер и чемпионы</td>
+                    <td>Мальхус: железная воля (Savant Primary). Хельга: град ударов (Combat Primary). У Лизы Dodge из карточки типа, не из выбора.</td>
+                    <td class="ok">да</td>
+                </tr>
+                <tr>
+                    <td>Стартовый XP не даёт продвижений</td>
+                    <td>Значения 61 / 37 / 13 / 4 / 1 записаны как есть, бросков по таблице продвижений (Advancement Table) нет.</td>
+                    <td class="ok">да</td>
+                </tr>
+                <tr>
+                    <td>Репутация (Reputation) начинается с 1</td>
+                    <td>1, ниже опуститься не может.</td>
+                    <td class="ok">да</td>
+                </tr>
+                <tr>
+                    <td>Рейтинг банды (Gang Rating) = сумма стоимостей моделей</td>
+                    <td>1000. Богатство (Wealth) = рейтинг + запас = 1000 + 0 = 1000.</td>
+                    <td class="ok">да</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="note">
+        <span class="label">Что сознательно не взяли</span>
+        Тяжёлый арбалет Каудор* (Cawdor heavy crossbow, 110), тяжёлый огнемёт* (heavy flamer, 95), комби-оружие (combi-weapon autogun/flamer, 75) и стиг-шамблер (Stig-Shambler, 240) законны для соответствующих типов, но не влезли в бюджет семи моделей без урезания братьев. Птица-блеск (Sheen Bird, 75) — питомец (Pet): её можно повесить на лидера или чемпиона как снаряжение, она не считалась бы восьмой моделью, но тогда пришлось бы снять икону или доспех.
+    </div>
+
+    <p>Дальше по кампании: после боёв лидер или чемпион может выполнить «Посетить торговый пост» (Visit Trading Post) и докупить предметы не из списка Каудор, а гангер с 37 XP станет чемпионом — тогда соотношение чемпионов к остальным нужно будет проверить снова.</p>
+
+    <a class="top-link" href="#top">Наверх</a>
+</section>
+
+</main>
+</div>
+
+<footer class="page-footer">
+    <p>Учебный пример. Стоимости и ограничения сверены со сводом SKIRMUNDA (создание банды) и списком Дома Каудор из Gangs of the Underhive &amp; Outlands.</p>
+    <p><a class="backlink" href="../index.html">&larr; На главную</a>
+       &nbsp;·&nbsp; <a href="core-rules.html#sozdanie-bandy">Создание банды</a>
+       &nbsp;·&nbsp; <a href="gangs.html#house-cawdor-gang-list">Дом Каудор</a></p>
+</footer>
+
+</body>
+</html>
