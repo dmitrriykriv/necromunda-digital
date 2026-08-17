@@ -11,6 +11,8 @@ import sys
 import unicodedata
 from pathlib import Path
 
+import gang_i18n as i18n
+
 sys.stdout.reconfigure(encoding='utf-8')
 
 TOOLS = Path(__file__).resolve().parent
@@ -961,25 +963,26 @@ def fighter_id(prefix, name):
 
 
 def render_paragraph(text):
-    m = NAMED_RULE.match(text)
-    if m:
-        return '<p><span class="term">%s:</span> %s</p>' % (esc(m.group(1)), esc(m.group(2)))
-    return '<p>%s</p>' % esc(text)
+    return i18n.render_named_or_plain(text)
 
 
 def render_weapon_rows(caption, rows):
     has_creds = any(r.get('creds') or r.get('tp') for r in rows)
     out = ['<div class="table-wrap"><table class="compact weapons">']
     if caption:
-        out.append('<caption>%s</caption>' % esc(caption))
-    hdr = ('<th>Weapon</th><th>SR</th><th>LR</th><th>Str</th><th>AP</th>'
-           '<th>L</th><th>Traits</th>')
+        out.append('<caption>%s</caption>' % i18n.orig_block(
+            esc(i18n.translate_heading(caption)), caption))
+    hdr = ('<th>Оружие<span class="orig">Weapon</span></th>'
+           '<th>SR</th><th>LR</th><th>Str</th><th>AP</th>'
+           '<th>L</th><th>Свойства<span class="orig">Traits</span></th>')
     if has_creds:
-        hdr += '<th>Creds</th><th>TP</th>'
+        hdr += ('<th>Кред.<span class="orig">Creds</span></th>'
+                '<th>TP</th>')
     out.append('<thead><tr>%s</tr></thead><tbody>' % hdr)
     for r in rows:
         if r.get('group'):
-            cells = ['<td class="wname group" colspan="7">%s</td>' % esc(r['name'])]
+            cells = ['<td class="wname group" colspan="7">%s</td>' % i18n.orig_block(
+                esc(i18n.translate_heading(r['name'])), r['name'])]
             if has_creds:
                 cells.append('<td>%s</td><td>%s</td>'
                              % (esc(r['creds']), esc(r['tp'])))
@@ -1004,14 +1007,15 @@ def render_profile(entry):
         return render_weapon_rows(entry['caption'],
                                   [entry['row']] + entry['children'])
     if entry['kind'] == 'wargear':
-        out = ['<p class="profile-price">%s</p>' % esc(p) for p in entry['prices']]
+        out = ['<p class="profile-price">%s</p>' % i18n.bilingual(p)
+               for p in entry['prices']]
         out += [render_paragraph(p) for p in entry['body']]
         return '\n'.join(out)
     f = entry['fighter']
     out = []
     if f['type']:
         out.append('<p class="fighter-meta"><span class="fighter-type">%s</span>'
-                   '</p>' % esc(f['type']))
+                   '</p>' % i18n.orig_block(esc(i18n.translate_type(f['type'])), f['type']))
     head = STAT_HEAD_B if f['wide'] else STAT_HEAD_A
     out.append('<div class="table-wrap"><table class="stats">')
     out.append('<thead><tr>%s</tr></thead>' % ''.join('<th>%s</th>' % h for h in head))
@@ -1053,18 +1057,23 @@ def render_fighter(f, prefix=''):
     out = ['<details class="fighter" id="%s">' % fighter_id(prefix, f['name'])]
     out.append('<summary class="fighter-head">')
     out.append('<h4 class="fighter-name">%s</h4>' % esc(f['name']))
-    out.append('<span class="fighter-cost">%s credits</span>' % esc(f['cost']))
+    out.append('<span class="fighter-cost">%s кредитов'
+               '<span class="orig">%s credits</span></span>'
+               % (esc(f['cost']), esc(f['cost'])))
     out.append('</summary>')
     out.append('<div class="fighter-body">')
     meta = []
     if f['type']:
-        meta.append('<span class="fighter-type">%s</span>' % esc(f['type']))
+        meta.append('<span class="fighter-type">%s</span>' % i18n.orig_block(
+            esc(i18n.translate_type(f['type'])), f['type']))
     if f['xp']:
-        meta.append('<span class="fighter-xp">Starting XP: %s</span>' % esc(f['xp']))
+        meta.append('<span class="fighter-xp">Стартовый XP: %s'
+                    '<span class="orig">Starting XP: %s</span></span>'
+                    % (esc(f['xp']), esc(f['xp'])))
     if meta:
         out.append('<p class="fighter-meta">%s</p>' % ' '.join(meta))
     if f.get('intro'):
-        out.append('<p class="fighter-intro">%s</p>' % esc(f['intro']))
+        out.append(render_paragraph(f['intro']))
 
     head = STAT_HEAD_B if f['wide'] else STAT_HEAD_A
     out.append('<div class="table-wrap"><table class="stats">')
@@ -1161,9 +1170,11 @@ def plan_regions(blocks):
 
     for start, end in equips:
         cnt = sum(len(p) for k, p in blocks[start + 1:end] if k == 'equipment')
+        raw_title = blocks[start][1]['text']
         regions[start] = {
             'end': end, 'cls': 'fold-equip', 'drop_heading': True,
-            'title': blocks[start][1]['text'],
+            'title_html': i18n.orig_block(esc(i18n.translate_heading(raw_title)),
+                                          raw_title),
             'count': '%d %s' % (cnt, plural(cnt, 'позиция', 'позиции',
                                             'позиций'))}
 
@@ -1188,43 +1199,55 @@ def render_blocks(blocks, prefix='', stores=()):
 
         region = regions.get(idx)
         if region:
+            title = region.get('title_html') or esc(region['title'])
             out.append('<details class="fold %s">' % region['cls'])
             out.append('<summary><span class="fold-title">%s</span>'
                        '<span class="fold-count">%s</span>'
                        '</summary><div class="fold-body">'
-                       % (esc(region['title']), esc(region['count'])))
+                       % (title, esc(region['count'])))
             close_at = region['end']
             if region.get('drop_heading'):
                 continue    # заголовок списка перенесён в шапку блока
 
         if kind == 'heading':
             tag = 'h%d' % payload['level']
-            out.append('<%s>%s</%s>' % (tag, esc(payload['text']), tag))
+            ru = i18n.translate_heading(payload['text'])
+            out.append('<%s>%s</%s>' % (
+                tag, i18n.orig_block(esc(ru), payload['text']), tag))
         elif kind == 'prose':
             out.append(render_paragraph(payload))
         elif kind == 'bullets':
             out.append('<ul class="rule-list">')
             for it in payload:
                 cls = ' class="sub"' if it['sub'] else ''
-                out.append('<li%s>%s</li>' % (cls, esc(it['text'])))
+                out.append('<li%s>%s</li>' % (cls, i18n.bilingual(it['text'])))
             out.append('</ul>')
         elif kind == 'fighter':
             out.append(render_fighter(payload, prefix))
         elif kind == 'skills':
             out.append('<div class="table-wrap"><table class="compact skills">')
-            out.append('<thead><tr><th>Fighter</th><th>Agility</th><th>Brawn</th>'
-                       '<th>Combat</th><th>Cunning</th><th>Savant</th><th>Shooting</th>'
+            out.append('<thead><tr><th>Боец<span class="orig">Fighter</span></th>'
+                       '<th>Ловкость<span class="orig">Agility</span></th>'
+                       '<th>Сила<span class="orig">Brawn</span></th>'
+                       '<th>Бой<span class="orig">Combat</span></th>'
+                       '<th>Хитрость<span class="orig">Cunning</span></th>'
+                       '<th>Эрудит<span class="orig">Savant</span></th>'
+                       '<th>Стрельба<span class="orig">Shooting</span></th>'
                        '</tr></thead><tbody>')
             for row in payload:
                 cells = ['<td>%s</td>' % esc(row[0])]
                 for v in row[1:]:
                     cls = 'p' if v == 'Primary' else ('s' if v == 'Secondary' else 'n')
-                    cells.append('<td class="skill %s">%s</td>' % (cls, esc(v)))
+                    ru = i18n.translate_skill_cell(v)
+                    cells.append('<td class="skill %s">%s</td>'
+                                 % (cls, i18n.orig_block(esc(ru), v) if v not in ('-',) else esc(v)))
                 out.append('<tr>%s</tr>' % ''.join(cells))
             out.append('</tbody></table></div>')
         elif kind == 'ranks':
             out.append('<div class="table-wrap"><table class="compact">')
-            out.append('<thead><tr><th>Fighter</th><th>Primary</th><th>Secondary</th>'
+            out.append('<thead><tr><th>Боец<span class="orig">Fighter</span></th>'
+                       '<th>Основной<span class="orig">Primary</span></th>'
+                       '<th>Вторичный<span class="orig">Secondary</span></th>'
                        '</tr></thead><tbody>')
             for row in payload:
                 out.append('<tr>%s</tr>' % ''.join('<td>%s</td>' % esc(c) for c in row))
@@ -1235,14 +1258,23 @@ def render_blocks(blocks, prefix='', stores=()):
             out.append(render_equipment(payload, stores))
         elif kind == 'dice':
             head = payload['head']
+            labels = (head if payload['wide']
+                      else [head[0], ' '.join(head[1:])])
             out.append('<div class="table-wrap"><table class="compact dice-table">')
             out.append('<thead><tr>%s</tr></thead><tbody>'
-                       % ''.join('<th>%s</th>' % esc(h) for h in
-                                 (head if payload['wide'] else [head[0], ' '.join(head[1:])])))
+                       % ''.join('<th>%s</th>' % (
+                           esc(h) if re.match(r'^(D\d+|2D6)$', h)
+                           else i18n.orig_block(esc(i18n.translate(h)), h)
+                       ) for h in labels))
             for row in payload['rows']:
+                cells = []
+                for c in row[1:]:
+                    if re.match(r'^[\d+\-]+$', c.strip()):
+                        cells.append('<td>%s</td>' % esc(c))
+                    else:
+                        cells.append('<td>%s</td>' % i18n.bilingual(c))
                 out.append('<tr><td class="roll">%s</td>%s</tr>'
-                           % (esc(row[0]),
-                              ''.join('<td>%s</td>' % esc(c) for c in row[1:])))
+                           % (esc(row[0]), ''.join(cells)))
             out.append('</tbody></table></div>')
     if close_at is not None:
         out.append('</div></details>')
@@ -1254,13 +1286,17 @@ def gang_summary(blocks, prefix=''):
     if not rows:
         return ''
     out = ['<div class="table-wrap"><table class="compact roster">',
-           '<caption>Состав банды &mdash; Gang Composition</caption>',
-           '<thead><tr><th>Fighter</th><th>Type</th><th class="num">Credits</th>'
+           '<caption>Состав банды<span class="orig">Gang Composition</span></caption>',
+           '<thead><tr><th>Боец<span class="orig">Fighter</span></th>'
+           '<th>Тип<span class="orig">Type</span></th>'
+           '<th class="num">Кредиты<span class="orig">Credits</span></th>'
            '</tr></thead><tbody>']
     for name, cost, ftype in rows:
         out.append('<tr><td><a href="#%s">%s</a></td><td>%s</td>'
                    '<td class="num">%s</td></tr>'
-                   % (fighter_id(prefix, name), esc(name), esc(ftype), esc(cost)))
+                   % (fighter_id(prefix, name), esc(name),
+                      i18n.orig_block(esc(i18n.translate_type(ftype)), ftype),
+                      esc(cost)))
     out.append('</tbody></table></div>')
     return '\n'.join(out)
 
@@ -1280,7 +1316,7 @@ HEAD = '''<!DOCTYPE html>
 <header class="topbar" id="top">
     <a class="backlink" href="../index.html">&larr; На главную</a>
     <h1>Necromunda</h1>
-    <p>Правила банд &mdash; структура на русском, правила в оригинале</p>
+    <p>Правила банд &mdash; русский перевод, оригинал под спойлером</p>
     <p class="source">Источник: Gangs of the Underhive &amp; Outlands &bull; Правила/GANGS0_3.pdf</p>
 </header>
 
@@ -1297,7 +1333,7 @@ FOOT = '''
 
 <footer class="page-footer">
     <p>Справочник собран из Gangs of the Underhive &amp; Outlands (Правила/GANGS0_3.pdf).
-    Структура разделов на русском, тексты правил приведены в оригинале.</p>
+    Русский текст — для игры за столом; английский оригинал спрятан под спойлером «Оригинал» или дан короткой подписью рядом.</p>
     <p><a class="backlink" href="../index.html">&larr; На главную</a></p>
     <a class="top-link" href="#top">Наверх</a>
 </footer>
