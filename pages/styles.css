@@ -565,6 +565,49 @@ td.num .orig {
     font-size: 0.72rem;
 }
 
+details.orig-spoiler {
+    margin: 4px 0 2px;
+    font-size: 0.78rem;
+}
+
+details.orig-spoiler > summary {
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+    color: var(--text-faint);
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: 0.4px;
+}
+
+details.orig-spoiler > summary::-webkit-details-marker {
+    display: none;
+}
+
+details.orig-spoiler > summary::before {
+    content: "\203A";
+    display: inline-block;
+    width: 12px;
+    color: var(--text-faint);
+}
+
+details.orig-spoiler[open] > summary::before {
+    transform: rotate(90deg);
+}
+
+details.orig-spoiler .orig-full {
+    margin: 6px 0 0;
+    padding: 8px 10px;
+    background: var(--bg-panel);
+    border-left: 2px solid var(--line);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    color: var(--text-faint);
+    font-style: italic;
+    font-size: 0.82rem;
+    line-height: 1.45;
+    white-space: pre-wrap;
+}
+
 .dice {
     display: inline-block;
     padding: 0 6px;
@@ -1305,8 +1348,18 @@ table.check-table td.ok {
         color: #333;
     }
 
-    .orig {
-        color: #555;
+    .orig-full {
+        color: #444;
+        background: none;
+        border-left-color: #999;
+    }
+
+    details.orig-spoiler > summary {
+        display: none;
+    }
+
+    details.orig-spoiler .orig-full {
+        display: block !important;
     }
 
     table {
