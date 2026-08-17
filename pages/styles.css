@@ -923,6 +923,39 @@ ul.equip > li.sub {
     color: var(--text-dim);
 }
 
+li.equip-incomplete {
+    margin: 6px 0 10px;
+    padding: 8px 10px;
+    background: rgba(255, 32, 32, 0.12);
+    border: 1px solid #ff2a2a;
+    border-radius: var(--radius);
+}
+
+li.equip-incomplete .equip-plain {
+    padding-left: 0;
+    border-bottom: 1px solid rgba(255, 42, 42, 0.45);
+    color: #ff3b3b;
+}
+
+li.equip-incomplete .equip-name {
+    font-weight: 700;
+    color: #ff3b3b;
+}
+
+li.equip-incomplete .equip-price {
+    color: #ff6b6b;
+}
+
+.equip-warn {
+    display: block;
+    margin-top: 6px;
+    font-size: 0.78rem;
+    line-height: 1.4;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    color: #ff3b3b;
+}
+
 .equip-name {
     flex: 1 1 auto;
 }
@@ -1223,6 +1256,17 @@ table.check-table td.ok {
     .equip-profile {
         background: none;
         border-left-color: #666;
+    }
+
+    li.equip-incomplete {
+        background: #ffe0e0;
+        border-color: #c00;
+    }
+
+    li.equip-incomplete .equip-name,
+    li.equip-incomplete .equip-plain,
+    .equip-warn {
+        color: #c00;
     }
 
     .layout {
