@@ -796,6 +796,159 @@ def lookup_item(name, *stores):
     return None
 
 
+# ------------------------------------------------- свойства оружия (подсказки)
+
+def trait_key(name):
+    """Ключ свойства: без скобок, дефисы как пробелы. Rapid Fire (1) -> rapid fire."""
+    s = unicodedata.normalize('NFKD', name)
+    s = s.replace('\u2019', "'").replace('\u2018', "'")
+    s = s.replace('\u201c', '"').replace('\u201d', '"').replace('\u2033', '"')
+    s = s.lower()
+    s = re.sub(r'\s*\([^)]*\)', '', s)
+    s = re.sub(r'[^a-z0-9]+', ' ', s)
+    return re.sub(r'\s+', ' ', s).strip()
+
+
+TRAIT_ALIASES = {
+    'additional attack': 'additional attacks',
+    'toxic': 'toxin',
+}
+
+# Русские расшифровки для подсказки. Английский оригинал подтягивается из правил.
+TRAIT_RU = {
+    'additional attacks': 'Оружие даёт X атак в ближнем бою сверх обычных. Только во время активации модели и только если оружие не назначено Primary или Secondary.',
+    'ammo': 'После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.',
+    'arc': 'Ограниченные сектора обстрела, обозначенные X. Целиться можно только в модели в этом секторе.',
+    'assault': 'После Dash носитель может выполнить Shoot этим оружием как свободное действие.',
+    'auxiliary': 'Только как насадка на другое оружие, отдельно не берётся. Не занимает слот оружия.',
+    'backstab': '+1 Strength, если цель Engaged более чем с одной моделью.',
+    'blast': 'Поставьте маркер Blast 3" или 5" на цель. Попадание — маркер остаётся. Промах — рассейте на D6" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него.',
+    'blaze': 'Если бросок на ранение не меньше X, цель получает ещё одно попадание тем же профилем. Оно бросается на ранение отдельно и не вызывает новых дополнительных попаданий.',
+    'breaching': 'Если атака ранит и бросок на ранение не меньше X, спасброски брони делать нельзя.',
+    'combi': 'При Shoot или Aimed Shot выберите профиль до броска. Можно стрелять обоими по одной цели с −1 к попаданию каждого; атаки одновременны.',
+    'concussive': 'Если атака ранит и бросок на ранение не меньше X, цель снижает Initiative на 1 до конца следующей активации.',
+    'cursed': 'Попавшая модель проходит Willpower или получает Insanity. Натуральная 1 на попадании: то же для носителя.',
+    'damage': 'Раненая модель теряет X Wounds вместо одного. Число кубиков ранений всё равно равно Lethality оружия.',
+    'drag': 'Если цель попала, но не выведена из боя, бросьте D6: при результате не ниже Strength цели её волокут на D3" к атакующему. Может вызвать падение или сцепление.',
+    'flash': 'Броска на ранение нет: цель делает проверку Initiative, при провале Blind. Слепая модель теряет Ready; её атаки ближнего боя попадают только на натуральную 6 до следующей активации.',
+    'gas': 'Спасброски брони нельзя. Респиратор даёт непробиваемый спасбросок 5+ против Wounds от этого оружия.',
+    'graviton pulse': 'Вместо ранения модели в Blast делают проверку Strength; провал ранит без брони. Маркер остаётся как трудная местность до конца раунда; в End phase на 5+ остаётся ещё на раунд.',
+    'heavy': 'Дальнобойное: только Braced Shot. Ближний бой: нельзя как Secondary и нельзя использовать Secondary вместе с ним.',
+    'independent': 'Стреляет само, в дополнение к другой дальней атаке, и может в другую цель. Попадания с BS 4+, который нельзя модифицировать.',
+    'knockback': 'Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1" от центра.',
+    'lance': 'У бойца с подтипом Mounted: +1 Strength на атаках как часть Charge.',
+    'lance bomb': 'Первое успешное попадание за бой — профиль Primed, все следующие — Spent.',
+    'light': 'Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят.',
+    'limited': 'Если оружие село, его нельзя перезарядить до конца боя.',
+    'melee': 'Оружие для атак, пока модель Engaged.',
+    'paired': 'Нельзя как Secondary и нельзя Secondary вместе с ним. Как Primary: носитель увеличивает Attacks на X.',
+    'parry': 'Как Primary или Secondary в схватке: +1 Save. Несколько таких оружий не складываются.',
+    'power pack': 'Не считается в лимите оружия бойца, но больше двух таких единиц носить нельзя.',
+    'rad phage': 'Неспасённый Wound даёт Rad Poisoned: Toughness −1 (минимум 1).',
+    'ram': 'Можно использовать только в активации, когда носитель выполнил Charge.',
+    'rapid fire': 'Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают.',
+    'reckless': 'Дальняя атака: цель случайна среди моделей (друг и враг) в линии видимости, в 6" от намеченной цели и в дистанции. В ближнем бою попадания случайно распределяются между всеми Engaged моделями.',
+    'reliable': 'Игнорирует первый символ Out of Ammo за раунд на кубике огневой мощи.',
+    'rending': 'Если натуральный бросок на ранение не меньше X, AP этой атаки увеличивается на 1.',
+    'scarce': 'При Reload бросьте D6: не меньше X — перезаряжено, иначе всё ещё Out of Ammo (можно пробовать снова).',
+    'shield': 'Хотя бы одно такое оружие: +1 Save против стрельбы. Несколько штук не складываются.',
+    'shock': 'Если атака попадает и бросок попадания не меньше X, она автоматически ранит и считается натуральной 6 на ранении для других свойств.',
+    'shred': 'Если оружие ранит и бросок на ранение не меньше X, Lethality этой атаки +1.',
+    'single shot': 'Один выстрел за бой, затем сразу Out of Ammo; перезарядить нельзя.',
+    'smoke': 'Можно целиться в точку на поле. Маркер Blast остаётся: столб дыма блокирует линию видимости. В End phase на 5+ остаётся, иначе снимается. Попавшая модель не ранится и не становится Suppressed.',
+    'template': 'Каплевидный шаблон от стреляющего через цель: все под ним получают автоматическое попадание. С Light в ближнем бою — одно автоматическое попадание без шаблона. С Rapid Fire (X) ближайшая модель получает попадания по кубику огневой мощи, остальные — по одному.',
+    'toxin': 'Против бойца ранит на X+ вместо сравнения Strength и Toughness. Против машины — только на натуральную 6.',
+    'twin linked': 'При дальней атаке кубики огневой мощи можно перебросить (все сразу).',
+    'unstable': 'Натуральная 1 на попадании: носитель получает автоматическое попадание этим профилем, другие модели не поражаются. Если броска попадания нет (Template) — сначала D6, как выше.',
+    'unwieldy': 'В ближнем бою Initiative модели ставится в 1 до любых модификаторов.',
+    'web': 'Спасброски брони нельзя (непробиваемые можно). Раненый боец не теряет Wound, а получает Webbed.',
+}
+
+_TRAIT_GLOSSARY = None
+_TRAIT_RE = None
+
+
+def load_trait_glossary():
+    """Читает раздел WEAPON TRAITS из основных правил и вешает русский текст."""
+    raw = open(CORE_RAW, encoding='utf-8').read().split('\n')
+    lines = [l.rstrip() for l in raw if not re.match(r'^=== PAGE \d+ ===$', l)]
+    start = 0
+    for i, line in enumerate(lines):
+        if line.strip() == 'WEAPON TRAITS':
+            start = i
+
+    def is_heading_name(s):
+        if not s or len(s) > 48:
+            return False
+        letters = [c for c in s if c.isalpha()]
+        return len(letters) >= 3 and all(c.isupper() for c in letters)
+
+    glossary = {}
+    name, buf = None, []
+
+    def flush():
+        if not name:
+            return
+        key = trait_key(name)
+        text = re.sub(r'\s+', ' ', ' '.join(buf)).strip()
+        if key and text:
+            glossary[key] = {'en': text, 'ru': TRAIT_RU.get(key, '')}
+
+    for line in lines[start + 1:]:
+        s = line.strip()
+        if not s:
+            continue
+        if is_heading_name(s):
+            flush()
+            name, buf = s, []
+        elif name:
+            buf.append(s)
+    flush()
+
+    for alias, canonical in TRAIT_ALIASES.items():
+        if canonical in glossary:
+            glossary[alias] = glossary[canonical]
+    return glossary
+
+
+def trait_glossary():
+    global _TRAIT_GLOSSARY, _TRAIT_RE
+    if _TRAIT_GLOSSARY is None:
+        _TRAIT_GLOSSARY = load_trait_glossary()
+        alts = []
+        for key in sorted(_TRAIT_GLOSSARY, key=lambda k: -len(k)):
+            parts = key.split()
+            alts.append(r'(?:%s)' % r'[\s\-]+'.join(re.escape(p) for p in parts))
+        _TRAIT_RE = re.compile(
+            r'(?i)\b(?:' + '|'.join(alts) + r')(?:\s*\([^)]+\))?')
+    return _TRAIT_GLOSSARY
+
+
+def render_traits(raw):
+    """Каждое известное свойство — подсказка по наведению, без JavaScript."""
+    if not raw or raw.strip() in ('-', '–', '—', '*'):
+        return esc(raw)
+    glossary = trait_glossary()
+    out = []
+    pos = 0
+    for match in _TRAIT_RE.finditer(raw):
+        if match.start() > pos:
+            out.append(esc(raw[pos:match.start()]))
+        label = match.group(0).strip()
+        entry = glossary.get(trait_key(label))
+        if not entry:
+            out.append(esc(match.group(0)))
+        else:
+            tip = entry['ru'] or entry['en']
+            out.append(
+                '<span class="trait">%s'
+                '<span class="trait-tip">%s</span></span>'
+                % (esc(label), esc(tip)))
+        pos = match.end()
+    out.append(esc(raw[pos:]))
+    return ''.join(out)
+
+
 # ---------------------------------------------------------------- рендер
 
 STAT_HEAD_A = ['M', 'WS', 'BS', 'S', 'T', 'W', 'I', 'A', 'Sv', 'Ld', 'Cl', 'Wil', 'Int']
@@ -836,7 +989,7 @@ def render_weapon_rows(caption, rows):
         cells = ['<td class="wname%s">%s</td>' % (sub, esc(r['name'].lstrip('- ')))]
         for k in ('sr', 'lr', 'str', 'ap', 'l'):
             cells.append('<td>%s</td>' % esc(r[k]))
-        cells.append('<td class="traits">%s</td>' % esc(r['traits']))
+        cells.append('<td class="traits">%s</td>' % render_traits(r['traits']))
         if has_creds:
             cells.append('<td>%s</td>' % esc(r['creds']))
             cells.append('<td>%s</td>' % esc(r['tp']))
@@ -1219,6 +1372,7 @@ def main():
 
     fighters = sum(1 for _, _, _, b, _ in parsed for k, _ in b if k == 'fighter')
     weapons = sum(1 for _, _, _, b, _ in parsed for k, _ in b if k == 'weapons')
+    print('свойств оружия в словаре: %d' % len(trait_glossary()))
 
     matched, missing = 0, []
     for _, _, _, blocks, gang_db in parsed:

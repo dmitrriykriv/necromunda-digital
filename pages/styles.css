@@ -828,6 +828,43 @@ table.weapons td.traits {
     min-width: 200px;
 }
 
+.trait {
+    display: inline-block;
+    max-width: 100%;
+    vertical-align: top;
+    cursor: help;
+    color: var(--text);
+    border-bottom: 1px dotted var(--text-faint);
+}
+
+.trait:hover,
+.trait:focus-within {
+    color: var(--accent-soft);
+    border-bottom-color: var(--accent-soft);
+}
+
+.trait-tip {
+    display: none;
+    margin: 6px 0 4px;
+    padding: 8px 10px;
+    max-width: 360px;
+    font-size: 0.78rem;
+    line-height: 1.45;
+    font-weight: 400;
+    color: var(--text);
+    background: #161922;
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--accent);
+    border-radius: 6px;
+    white-space: normal;
+    text-align: left;
+}
+
+.trait:hover .trait-tip,
+.trait:focus-within .trait-tip {
+    display: block;
+}
+
 table.dice-table td.roll {
     font-variant-numeric: tabular-nums;
     font-weight: 700;
@@ -1374,6 +1411,16 @@ table.check-table td.ok {
 
     td {
         border-bottom-color: #ccc;
+    }
+
+    .trait {
+        border-bottom: none;
+        color: inherit;
+        cursor: auto;
+    }
+
+    .trait-tip {
+        display: none !important;
     }
 
     .rule,
