@@ -1,0 +1,113 @@
+{
+  "id": "gimn-pepelnoj-chasovni",
+  "name": "Гимн Пепельной часовни",
+  "faction": "house-cawdor",
+  "factionName": "Дом Каудор",
+  "notes": "Кампания, Путь Благочестивых (Path of the Pious). Учебный стартовый ростер на 1000 кредитов.",
+  "reputation": 1,
+  "stash": 0,
+  "updatedAt": "2026-08-18",
+  "fighters": [
+    {
+      "id": "malchus",
+      "name": "Мальхус",
+      "type": "Cawdor Word-Keeper",
+      "subtypes": ["Leader", "Pious"],
+      "xp": 61,
+      "baseCost": 115,
+      "skills": ["Inspiring", "Iron Will"],
+      "equipment": [
+        {"name": "Cawdor polearm/flamer*", "cost": 85, "slots": 2},
+        {"name": "Fighting knife", "cost": 5, "slots": 1},
+        {"name": "Mesh armour", "cost": 40, "slots": 0},
+        {"name": "Cult icon", "cost": 40, "slots": 0},
+        {"name": "Frag grenades", "cost": 30, "slots": 0}
+      ]
+    },
+    {
+      "id": "helga",
+      "name": "Хельга",
+      "type": "Cawdor Firebrand",
+      "subtypes": ["Champion", "Pious"],
+      "xp": 37,
+      "baseCost": 95,
+      "skills": ["Inspiring", "Rain of Blows"],
+      "equipment": [
+        {"name": "Cawdor polearm/blunderbuss with grape & purgation rounds*", "cost": 80, "slots": 2},
+        {"name": "Fighting knife", "cost": 5, "slots": 1},
+        {"name": "Mesh armour", "cost": 40, "slots": 0},
+        {"name": "Respirator", "cost": 15, "slots": 0}
+      ]
+    },
+    {
+      "id": "jovik",
+      "name": "Йовик",
+      "type": "Cawdor Brethren",
+      "subtypes": ["Ganger", "Pious", "Specialist"],
+      "xp": 13,
+      "baseCost": 40,
+      "skills": [],
+      "equipment": [
+        {"name": "Cawdor polearm/autogun*", "cost": 30, "slots": 2},
+        {"name": "Autopistol", "cost": 10, "slots": 1}
+      ]
+    },
+    {
+      "id": "tomas",
+      "name": "Томас",
+      "type": "Cawdor Brethren",
+      "subtypes": ["Ganger", "Pious", "Specialist"],
+      "xp": 13,
+      "baseCost": 40,
+      "skills": [],
+      "equipment": [
+        {"name": "Autogun", "cost": 20, "slots": 1},
+        {"name": "Axe", "cost": 10, "slots": 1},
+        {"name": "Stub gun", "cost": 5, "slots": 1},
+        {"name": "Drop rig", "cost": 15, "slots": 0}
+      ]
+    },
+    {
+      "id": "cato",
+      "name": "Като",
+      "type": "Cawdor Brethren",
+      "subtypes": ["Ganger", "Pious", "Specialist"],
+      "xp": 13,
+      "baseCost": 40,
+      "skills": [],
+      "equipment": [
+        {"name": "Sawn-off shotgun with solid & scatter shot", "cost": 15, "slots": 1},
+        {"name": "Fighting knife", "cost": 5, "slots": 1},
+        {"name": "Blasting charges", "cost": 75, "slots": 0}
+      ]
+    },
+    {
+      "id": "lysa",
+      "name": "Лиза",
+      "type": "Cawdor Way-Brethren",
+      "subtypes": ["Pious", "Prospect"],
+      "xp": 4,
+      "baseCost": 65,
+      "skills": ["Dodge"],
+      "equipment": [
+        {"name": "Stun lance*", "cost": 30, "slots": 2},
+        {"name": "Stub gun", "cost": 5, "slots": 1},
+        {"name": "Ridge Walker (входит в тип)", "cost": 0, "slots": 0}
+      ]
+    },
+    {
+      "id": "skit",
+      "name": "Скит",
+      "type": "Cawdor Bonepicker",
+      "subtypes": ["Pious", "Prospect"],
+      "xp": 1,
+      "baseCost": 20,
+      "skills": [],
+      "equipment": [
+        {"name": "Autopistol", "cost": 10, "slots": 1},
+        {"name": "Fighting knife", "cost": 5, "slots": 1},
+        {"name": "Flail", "cost": 10, "slots": 1}
+      ]
+    }
+  ]
+}

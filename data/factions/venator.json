@@ -1,0 +1,717 @@
+{
+  "id": "venator",
+  "name": "Венаторы",
+  "types": [
+    {
+      "id": "house-hunt-leader",
+      "name": "House Hunt Leader",
+      "category": "Fighter",
+      "subtypes": [
+        "Leader"
+      ],
+      "baseCost": 130,
+      "xp": 61,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int",
+          "XP"
+        ],
+        "values": [
+          "5”",
+          "3+",
+          "3+",
+          "3",
+          "3",
+          "3",
+          "4",
+          "2",
+          "5+",
+          "9",
+          "9",
+          "8",
+          "8",
+          "61"
+        ]
+      },
+      "rules": [
+        "Наследие банды Venator: House Hunt Leader выбирает Gang Legacy Cawdor, Delaque, Escher, Goliath, Orlock или Van Saar.ОригиналA House Hunt Leader selects either the Cawdor, Delaque, Escher, Goliath, Orlock or Van Saar Gang Legacy."
+      ]
+    },
+    {
+      "id": "ogryn-hunt-leader",
+      "name": "Ogryn Hunt Leader",
+      "category": "Fighter",
+      "subtypes": [
+        "Leader",
+        "Ogryn"
+      ],
+      "baseCost": 180,
+      "xp": 61,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int",
+          "XP"
+        ],
+        "values": [
+          "5”",
+          "3+",
+          "5+",
+          "5",
+          "5",
+          "3",
+          "4",
+          "3",
+          "5+",
+          "6",
+          "9",
+          "5",
+          "6",
+          "61"
+        ]
+      },
+      "rules": [
+        "Наследие банды Venator: Ogryn Hunt Leader выбирает Ogryn Gang Legacy."
+      ]
+    },
+    {
+      "id": "squat-hunt-leader",
+      "name": "Squat Hunt Leader",
+      "category": "Fighter",
+      "subtypes": [
+        "Leader"
+      ],
+      "baseCost": 125,
+      "xp": 61,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int",
+          "XP"
+        ],
+        "values": [
+          "4”",
+          "3+",
+          "3+",
+          "3",
+          "4",
+          "3",
+          "2",
+          "2",
+          "5+",
+          "9",
+          "9",
+          "9",
+          "8",
+          "61"
+        ]
+      },
+      "rules": [
+        "Наследие банды Venator: Squat Hunt Leader выбирает Ironhead Squat Gang Legacy."
+      ]
+    },
+    {
+      "id": "ratling-hunt-leader",
+      "name": "Ratling Hunt Leader",
+      "category": "Fighter",
+      "subtypes": [
+        "Leader",
+        "Ratling"
+      ],
+      "baseCost": 105,
+      "xp": 61,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int",
+          "XP"
+        ],
+        "values": [
+          "6”",
+          "4+",
+          "3+",
+          "2",
+          "2",
+          "3",
+          "5",
+          "2",
+          "5+",
+          "8",
+          "8",
+          "8",
+          "9",
+          "61"
+        ]
+      }
+    },
+    {
+      "id": "beastman-hunt-leader",
+      "name": "Beastman Hunt Leader",
+      "category": "Fighter",
+      "subtypes": [
+        "Leader",
+        "Beastman"
+      ],
+      "baseCost": 145,
+      "xp": 61,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int",
+          "XP"
+        ],
+        "values": [
+          "4”",
+          "3+",
+          "4+",
+          "4",
+          "4",
+          "3",
+          "4",
+          "3",
+          "5+",
+          "7",
+          "9",
+          "7",
+          "7",
+          "61"
+        ]
+      }
+    },
+    {
+      "id": "house-hunt-champion",
+      "name": "House Hunt Champion",
+      "category": "Fighter",
+      "subtypes": [
+        "Champion"
+      ],
+      "baseCost": 100,
+      "xp": 37,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int",
+          "XP"
+        ],
+        "values": [
+          "5”",
+          "3+",
+          "3+",
+          "3",
+          "3",
+          "2",
+          "3",
+          "2",
+          "5+",
+          "7",
+          "7",
+          "7",
+          "7",
+          "37"
+        ]
+      },
+      "rules": [
+        "Наследие банды Venator: House Hunt Champion выбирает Gang Legacy Cawdor, Delaque, Escher, Goliath, Orlock или Van Saar.ОригиналA House Hunt Champion selects either the Cawdor, Delaque, Escher, Goliath, Orlock or Van Saar Gang Legacy."
+      ]
+    },
+    {
+      "id": "ogryn-hunt-champion",
+      "name": "Ogryn Hunt Champion",
+      "category": "Fighter",
+      "subtypes": [
+        "Champion",
+        "Ogryn"
+      ],
+      "baseCost": 150,
+      "xp": 37,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int",
+          "XP"
+        ],
+        "values": [
+          "5”",
+          "3+",
+          "5+",
+          "5",
+          "5",
+          "3",
+          "3",
+          "2",
+          "5+",
+          "6",
+          "7",
+          "5",
+          "5",
+          "37"
+        ]
+      },
+      "rules": [
+        "Наследие банды Venator: Ogryn Hunt Champion выбирает Ogryn Gang Legacy."
+      ]
+    },
+    {
+      "id": "squat-hunt-champion",
+      "name": "Squat Hunt Champion",
+      "category": "Fighter",
+      "subtypes": [
+        "Champion"
+      ],
+      "baseCost": 110,
+      "xp": 37,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int",
+          "XP"
+        ],
+        "values": [
+          "4”",
+          "3+",
+          "3+",
+          "3",
+          "4",
+          "2",
+          "2",
+          "2",
+          "5+",
+          "8",
+          "8",
+          "8",
+          "7",
+          "37"
+        ]
+      },
+      "rules": [
+        "Наследие банды Venator: Squat Hunt Champion выбирает Ironhead Squat Gang Legacy."
+      ]
+    },
+    {
+      "id": "ratling-hunt-champion",
+      "name": "Ratling Hunt Champion",
+      "category": "Fighter",
+      "subtypes": [
+        "Champion",
+        "Ratling"
+      ],
+      "baseCost": 75,
+      "xp": 37,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int",
+          "XP"
+        ],
+        "values": [
+          "6”",
+          "5+",
+          "3+",
+          "2",
+          "2",
+          "2",
+          "4",
+          "1",
+          "5+",
+          "7",
+          "8",
+          "7",
+          "9",
+          "37"
+        ]
+      }
+    },
+    {
+      "id": "beastman-hunt-champion",
+      "name": "Beastman Hunt Champion",
+      "category": "Fighter",
+      "subtypes": [
+        "Champion",
+        "Beastman"
+      ],
+      "baseCost": 110,
+      "xp": 37,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int",
+          "XP"
+        ],
+        "values": [
+          "4”",
+          "3+",
+          "4+",
+          "4",
+          "4",
+          "2",
+          "3",
+          "2",
+          "5+",
+          "6",
+          "8",
+          "7",
+          "6",
+          "37"
+        ]
+      }
+    },
+    {
+      "id": "house-hunter",
+      "name": "House Hunter",
+      "category": "Fighter",
+      "subtypes": [
+        "Ganger",
+        "Specialist"
+      ],
+      "baseCost": 45,
+      "xp": 13,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int",
+          "XP"
+        ],
+        "values": [
+          "5”",
+          "4+",
+          "4+",
+          "3",
+          "3",
+          "1",
+          "3",
+          "1",
+          "6+",
+          "6",
+          "7",
+          "7",
+          "6",
+          "13"
+        ]
+      },
+      "rules": [
+        "Наследие банды Venator: House Hunter выбирает Gang Legacy Cawdor, Delaque, Escher, Goliath, Orlock или Van Saar.ОригиналA House Hunter selects either the Cawdor, Delaque, Escher, Goliath, Orlock or Van Saar Gang Legacy."
+      ]
+    },
+    {
+      "id": "ogryn-hunter",
+      "name": "Ogryn Hunter",
+      "category": "Fighter",
+      "subtypes": [
+        "Ganger",
+        "Ogryn",
+        "Specialist"
+      ],
+      "baseCost": 120,
+      "xp": 13,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int",
+          "XP"
+        ],
+        "values": [
+          "5”",
+          "4+",
+          "5+",
+          "5",
+          "5",
+          "2",
+          "3",
+          "2",
+          "6+",
+          "5",
+          "7",
+          "5",
+          "5",
+          "13"
+        ]
+      },
+      "rules": [
+        "Наследие банды Venator: Ogryn Hunter выбирает Ogryn Gang Legacy."
+      ]
+    },
+    {
+      "id": "squat-hunter",
+      "name": "Squat Hunter",
+      "category": "Fighter",
+      "subtypes": [
+        "Ganger",
+        "Specialist"
+      ],
+      "baseCost": 50,
+      "xp": 13,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int",
+          "XP"
+        ],
+        "values": [
+          "4”",
+          "4+",
+          "4+",
+          "3",
+          "4",
+          "1",
+          "2",
+          "1",
+          "6+",
+          "6",
+          "6",
+          "6",
+          "7",
+          "13"
+        ]
+      },
+      "rules": [
+        "Наследие банды Venator: Squat Hunter выбирает Ironhead Squat Gang Legacy."
+      ]
+    },
+    {
+      "id": "ratling-hunter",
+      "name": "Ratling Hunter",
+      "category": "Fighter",
+      "subtypes": [
+        "Ganger",
+        "Ratling",
+        "Specialist"
+      ],
+      "baseCost": 25,
+      "xp": 13,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int",
+          "XP"
+        ],
+        "values": [
+          "5”",
+          "5+",
+          "4+",
+          "2",
+          "2",
+          "1",
+          "4",
+          "1",
+          "6+",
+          "6",
+          "6",
+          "6",
+          "7",
+          "13"
+        ]
+      }
+    },
+    {
+      "id": "beastman-hunter",
+      "name": "Beastman Hunter",
+      "category": "Fighter",
+      "subtypes": [
+        "Beastman",
+        "Ganger",
+        "Specialist"
+      ],
+      "baseCost": 65,
+      "xp": 13,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int",
+          "XP"
+        ],
+        "values": [
+          "4”",
+          "4+",
+          "4+",
+          "4",
+          "4",
+          "1",
+          "3",
+          "1",
+          "6+",
+          "5",
+          "8",
+          "6",
+          "6",
+          "13"
+        ]
+      }
+    }
+  ],
+  "subtypes": [
+    "Beastman",
+    "Champion",
+    "Ganger",
+    "Leader",
+    "Ogryn",
+    "Ratling",
+    "Specialist"
+  ],
+  "equipment": []
+}

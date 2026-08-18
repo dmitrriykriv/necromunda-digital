@@ -1,0 +1,137 @@
+{
+  "factions": [
+    {
+      "id": "ash-waste-nomad",
+      "name": "Кочевники Пепельных пустошей",
+      "file": "ash-waste-nomad.json",
+      "types": 10,
+      "equipment": 39
+    },
+    {
+      "id": "chaos-helot-cult",
+      "name": "Культ хаоситских илотов",
+      "file": "chaos-helot-cult.json",
+      "types": 7,
+      "equipment": 37
+    },
+    {
+      "id": "corpse-grinder-cult",
+      "name": "Культ Трупорезов",
+      "file": "corpse-grinder-cult.json",
+      "types": 5,
+      "equipment": 30
+    },
+    {
+      "id": "free-ogryn",
+      "name": "Свободные огрины",
+      "file": "free-ogryn.json",
+      "types": 4,
+      "equipment": 29
+    },
+    {
+      "id": "genestealer-cult",
+      "name": "Культ генокрадов",
+      "file": "genestealer-cult.json",
+      "types": 8,
+      "equipment": 39
+    },
+    {
+      "id": "house-cawdor",
+      "name": "Дом Каудор",
+      "file": "house-cawdor.json",
+      "types": 11,
+      "equipment": 53
+    },
+    {
+      "id": "house-delaque",
+      "name": "Дом Делак",
+      "file": "house-delaque.json",
+      "types": 9,
+      "equipment": 37
+    },
+    {
+      "id": "house-escher",
+      "name": "Дом Эшер",
+      "file": "house-escher.json",
+      "types": 9,
+      "equipment": 41
+    },
+    {
+      "id": "blades-of-the-matriarch",
+      "name": "Клинки Матриарха",
+      "file": "blades-of-the-matriarch.json",
+      "types": 4,
+      "equipment": 20
+    },
+    {
+      "id": "house-goliath",
+      "name": "Дом Голиаф",
+      "file": "house-goliath.json",
+      "types": 7,
+      "equipment": 41
+    },
+    {
+      "id": "forge-smelters",
+      "name": "Плавильщики кузниц",
+      "file": "forge-smelters.json",
+      "types": 4,
+      "equipment": 18
+    },
+    {
+      "id": "house-orlock",
+      "name": "Дом Орлок",
+      "file": "house-orlock.json",
+      "types": 7,
+      "equipment": 41
+    },
+    {
+      "id": "house-van-saar",
+      "name": "Дом Ван Саар",
+      "file": "house-van-saar.json",
+      "types": 7,
+      "equipment": 51
+    },
+    {
+      "id": "ironhead-squat",
+      "name": "Сквоты Айронхед",
+      "file": "ironhead-squat.json",
+      "types": 10,
+      "equipment": 53
+    },
+    {
+      "id": "malstrain",
+      "name": "Мальстрейн",
+      "file": "malstrain.json",
+      "types": 5,
+      "equipment": 31
+    },
+    {
+      "id": "outcast",
+      "name": "Изгои",
+      "file": "outcast.json",
+      "types": 3,
+      "equipment": 39
+    },
+    {
+      "id": "palanite-enforcer",
+      "name": "Паланитские энфорсеры",
+      "file": "palanite-enforcer.json",
+      "types": 9,
+      "equipment": 41
+    },
+    {
+      "id": "spyre-hunting",
+      "name": "Охотники Шпиля",
+      "file": "spyre-hunting.json",
+      "types": 6,
+      "equipment": 21
+    },
+    {
+      "id": "venator",
+      "name": "Венаторы",
+      "file": "venator.json",
+      "types": 15,
+      "equipment": 0
+    }
+  ]
+}

@@ -1,0 +1,1203 @@
+{
+  "id": "outcast",
+  "name": "Изгои",
+  "types": [
+    {
+      "id": "outcast-leader",
+      "name": "Outcast Leader",
+      "category": "Fighter",
+      "subtypes": [
+        "Leader"
+      ],
+      "baseCost": 135,
+      "xp": 61,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int",
+          "XP"
+        ],
+        "values": [
+          "7”",
+          "4+",
+          "3+",
+          "3",
+          "3",
+          "3",
+          "4",
+          "2",
+          "5+",
+          "9",
+          "9",
+          "8",
+          "9",
+          "61"
+        ]
+      }
+    },
+    {
+      "id": "outcast-champion",
+      "name": "Outcast Champion",
+      "category": "Fighter",
+      "subtypes": [
+        "Champion"
+      ],
+      "baseCost": 95,
+      "xp": 37,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "5”",
+          "3+",
+          "3+",
+          "3",
+          "3",
+          "2",
+          "3",
+          "2",
+          "5+",
+          "7",
+          "6",
+          "7",
+          "7"
+        ]
+      },
+      "rules": [
+        "Архетип: при добавлении в Gang Roster Outcast Champion должен выбрать архетип."
+      ]
+    },
+    {
+      "id": "outcast-hive-scum",
+      "name": "Outcast Hive Scum",
+      "category": "Fighter",
+      "subtypes": [
+        "Ganger",
+        "Specialist"
+      ],
+      "baseCost": 30,
+      "xp": 13,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "5”",
+          "4+",
+          "4+",
+          "3",
+          "3",
+          "1",
+          "3",
+          "1",
+          "6+",
+          "6",
+          "6",
+          "6",
+          "6"
+        ]
+      },
+      "rules": [
+        "Спуск (одиночное): Fighter сдвигается до 3” по горизонтали и до 12” по вертикали. Любое вертикальное движение должно быть вниз, то есть к земле.ОригиналThe Fighter makes a move of up to 3” horizontally and up to 12” vertically. Any vertical movement must be downwards, i.e., towards the ground.",
+        "Огненные шипы (одиночное): все остальные модели (друзья и враги) в пределах 3” от Mutant получают попадание Str -, AP -, L1 со свойством Toxin (3+). После выполнения этого действия Mutant больше не получает бонус к характеристике Save от этой Mutation до конца боя.ОригиналAll other models (friend and foe), within 3” of the Mutant suffer a Str -, AP -, L1 Hit with the Toxin (3+) trait. After this action has been performed, the Mutant gains no further bonus to their Save characteristic from this Mutation for the remainder of the battle."
+      ]
+    }
+  ],
+  "subtypes": [
+    "Champion",
+    "Ganger",
+    "Leader",
+    "Specialist"
+  ],
+  "equipment": [
+    {
+      "name": "Autogun",
+      "cost": 20,
+      "slots": 1,
+      "category": "AUTO/STUB WEAPONS",
+      "list": "OUTCAST",
+      "upgrades": [
+        {
+          "name": "warp rounds",
+          "cost": 10
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Autogun",
+          "sr": "8”",
+          "lr": "24”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Rapid Fire (1)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            }
+          ]
+        },
+        {
+          "name": "warp rounds",
+          "sr": "8”",
+          "lr": "24”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Cursed",
+              "text": "Попавшая модель проходит Willpower или получает Insanity. Натуральная 1 на попадании: то же для носителя."
+            },
+            {
+              "name": "Single Shot",
+              "text": "Один выстрел за бой, затем сразу Out of Ammo; перезарядить нельзя."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Autopistol",
+      "cost": 10,
+      "slots": 1,
+      "category": "AUTO/STUB WEAPONS",
+      "list": "OUTCAST",
+      "upgrades": [
+        {
+          "name": "warp rounds",
+          "cost": 10
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Autopistol",
+          "sr": "4”",
+          "lr": "12”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            },
+            {
+              "name": "Rapid Fire (1)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            }
+          ]
+        },
+        {
+          "name": "warp rounds",
+          "sr": "4”",
+          "lr": "12”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Cursed",
+              "text": "Попавшая модель проходит Willpower или получает Insanity. Натуральная 1 на попадании: то же для носителя."
+            },
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            },
+            {
+              "name": "Single Shot",
+              "text": "Один выстрел за бой, затем сразу Out of Ammo; перезарядить нельзя."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Stub gun",
+      "cost": 5,
+      "slots": 1,
+      "category": "AUTO/STUB WEAPONS",
+      "list": "OUTCAST",
+      "upgrades": [
+        {
+          "name": "warp rounds",
+          "cost": 10
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Stub gun",
+          "sr": "6”",
+          "lr": "12”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            }
+          ]
+        },
+        {
+          "name": "warp rounds",
+          "sr": "6”",
+          "lr": "12”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Cursed",
+              "text": "Попавшая модель проходит Willpower или получает Insanity. Натуральная 1 на попадании: то же для носителя."
+            },
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            },
+            {
+              "name": "Single Shot",
+              "text": "Один выстрел за бой, затем сразу Out of Ammo; перезарядить нельзя."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Flamer",
+      "cost": 70,
+      "slots": 1,
+      "category": "FLAMERS",
+      "list": "OUTCAST",
+      "profiles": [
+        {
+          "name": "Flamer",
+          "sr": "T",
+          "lr": "-",
+          "str": "4",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (6+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blaze (5+)",
+              "text": "Если бросок на ранение не меньше X, цель получает ещё одно попадание тем же профилем. Оно бросается на ранение отдельно и не вызывает новых дополнительных попаданий."
+            },
+            {
+              "name": "Template",
+              "text": "Каплевидный шаблон от стреляющего через цель: все под ним получают автоматическое попадание. С Light в ближнем бою — одно автоматическое попадание без шаблона. С Rapid Fire (X) ближайшая модель получает попадания по кубику огневой мощи, остальные — по одному."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Hand flamer",
+      "cost": 45,
+      "slots": 1,
+      "category": "FLAMERS",
+      "list": "OUTCAST",
+      "profiles": [
+        {
+          "name": "Hand Flamer",
+          "sr": "T",
+          "lr": "-",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (6+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blaze (5+)",
+              "text": "Если бросок на ранение не меньше X, цель получает ещё одно попадание тем же профилем. Оно бросается на ранение отдельно и не вызывает новых дополнительных попаданий."
+            },
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            },
+            {
+              "name": "Template",
+              "text": "Каплевидный шаблон от стреляющего через цель: все под ним получают автоматическое попадание. С Light в ближнем бою — одно автоматическое попадание без шаблона. С Rapid Fire (X) ближайшая модель получает попадания по кубику огневой мощи, остальные — по одному."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Grenade launcher with frag & krak grenades",
+      "cost": 80,
+      "slots": 0,
+      "category": "GRENADE LAUNCHERS",
+      "list": "OUTCAST",
+      "upgrades": [
+        {
+          "name": "photon flash grenades",
+          "cost": 15
+        },
+        {
+          "name": "smoke grenades",
+          "cost": 15
+        }
+      ],
+      "profiles": [
+        {
+          "name": "frag grenades",
+          "sr": "6”",
+          "lr": "24”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (4+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blast (3”)",
+              "text": "Поставьте маркер Blast 3\" или 5\" на цель. Попадание — маркер остаётся. Промах — рассейте на D6\" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него."
+            },
+            {
+              "name": "Knockback (5+)",
+              "text": "Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1\" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1\" от центра."
+            }
+          ]
+        },
+        {
+          "name": "krak grenades",
+          "sr": "6”",
+          "lr": "24”",
+          "str": "6",
+          "ap": "-2",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (4+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Lasgun",
+      "cost": 15,
+      "slots": 1,
+      "category": "LAS WEAPONS",
+      "list": "OUTCAST",
+      "profiles": [
+        {
+          "name": "Lasgun",
+          "sr": "16”",
+          "lr": "24”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": []
+        }
+      ]
+    },
+    {
+      "name": "Laspistol",
+      "cost": 5,
+      "slots": 1,
+      "category": "LAS WEAPONS",
+      "list": "OUTCAST",
+      "profiles": [
+        {
+          "name": "Laspistol",
+          "sr": "8”",
+          "lr": "12”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Throwing knives",
+      "cost": 10,
+      "slots": 1,
+      "category": "PRIMITIVE WEAPONS",
+      "list": "OUTCAST",
+      "profiles": [
+        {
+          "name": "Throwing knives",
+          "sr": "6”",
+          "lr": "12”",
+          "str": "-",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (3+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Toxin (4+)",
+              "text": "Против бойца ранит на X+ вместо сравнения Strength и Toughness. Против машины — только на натуральную 6."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Combat shotgun with salvo & shredder ammo",
+      "cost": 35,
+      "slots": 1,
+      "category": "SHOTGUNS",
+      "list": "OUTCAST",
+      "profiles": [
+        {
+          "name": "salvo ammo",
+          "sr": "4”",
+          "lr": "12”",
+          "str": "4",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Knockback (6”)",
+              "text": "Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1\" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1\" от центра."
+            }
+          ]
+        },
+        {
+          "name": "shredder ammo",
+          "sr": "T",
+          "lr": "-",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (6+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Rapid Fire (1)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            },
+            {
+              "name": "Shred (6+)",
+              "text": "Если оружие ранит и бросок на ранение не меньше X, Lethality этой атаки +1."
+            },
+            {
+              "name": "Template",
+              "text": "Каплевидный шаблон от стреляющего через цель: все под ним получают автоматическое попадание. С Light в ближнем бою — одно автоматическое попадание без шаблона. С Rapid Fire (X) ближайшая модель получает попадания по кубику огневой мощи, остальные — по одному."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sawn-off shotgun with solid & scatter shot",
+      "cost": 30,
+      "slots": 1,
+      "category": "SHOTGUNS",
+      "list": "OUTCAST",
+      "profiles": [
+        {
+          "name": "scatter shot",
+          "sr": "4”",
+          "lr": "8”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Rapid Fire (2)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            }
+          ]
+        },
+        {
+          "name": "solid shot",
+          "sr": "4”",
+          "lr": "8”",
+          "str": "4",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            },
+            {
+              "name": "Knockback (6+)",
+              "text": "Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1\" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1\" от центра."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Shotgun with solid & scatter ammo",
+      "cost": 35,
+      "slots": 1,
+      "category": "SHOTGUNS",
+      "list": "OUTCAST",
+      "profiles": [
+        {
+          "name": "scatter ammo",
+          "sr": "4”",
+          "lr": "8”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Rapid Fire (2)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            }
+          ]
+        },
+        {
+          "name": "solid ammo",
+          "sr": "8”",
+          "lr": "16”",
+          "str": "4",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Knockback (5+)",
+              "text": "Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1\" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1\" от центра."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Chainaxe",
+      "cost": 20,
+      "slots": 1,
+      "category": "CHAIN WEAPONS",
+      "list": "OUTCAST",
+      "profiles": [
+        {
+          "name": "Chainaxe",
+          "sr": "E",
+          "lr": "-",
+          "str": "S",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Shred (5+)",
+              "text": "Если оружие ранит и бросок на ранение не меньше X, Lethality этой атаки +1."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Chainsword",
+      "cost": 20,
+      "slots": 1,
+      "category": "CHAIN WEAPONS",
+      "list": "OUTCAST",
+      "profiles": [
+        {
+          "name": "Chainsword",
+          "sr": "E",
+          "lr": "-",
+          "str": "S",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Parry",
+              "text": "Как Primary или Secondary в схватке: +1 Save. Несколько таких оружий не складываются."
+            },
+            {
+              "name": "Shred (5+)",
+              "text": "Если оружие ранит и бросок на ранение не меньше X, Lethality этой атаки +1."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Axe",
+      "cost": 15,
+      "slots": 1,
+      "category": "PRIMITIVE WEAPONS",
+      "list": "OUTCAST",
+      "profiles": [
+        {
+          "name": "Axe",
+          "sr": "E",
+          "lr": "-",
+          "str": "S",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Fighting knife",
+      "cost": 5,
+      "slots": 1,
+      "category": "PRIMITIVE WEAPONS",
+      "list": "OUTCAST",
+      "profiles": [
+        {
+          "name": "Fighting knife",
+          "sr": "E",
+          "lr": "-",
+          "str": "S",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Backstab",
+              "text": "+1 Strength, если цель Engaged более чем с одной моделью."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Flail",
+      "cost": 10,
+      "slots": 1,
+      "category": "PRIMITIVE WEAPONS",
+      "list": "OUTCAST",
+      "profiles": [
+        {
+          "name": "Flail",
+          "sr": "E",
+          "lr": "-",
+          "str": "S",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Knockback (6+)",
+              "text": "Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1\" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1\" от центра."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Maul",
+      "cost": 20,
+      "slots": 1,
+      "category": "PRIMITIVE WEAPONS",
+      "list": "OUTCAST",
+      "profiles": [
+        {
+          "name": "Maul",
+          "sr": "E",
+          "lr": "-",
+          "str": "S+1",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Concussive (6+)",
+              "text": "Если атака ранит и бросок на ранение не меньше X, цель снижает Initiative на 1 до конца следующей активации."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Two-handed axe*",
+      "cost": 40,
+      "slots": 2,
+      "category": "PRIMITIVE WEAPONS",
+      "list": "OUTCAST",
+      "profiles": [
+        {
+          "name": "Two-handed axe*",
+          "sr": "E",
+          "lr": "-",
+          "str": "S+1",
+          "ap": "-1",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Heavy",
+              "text": "Дальнобойное: только Braced Shot. Ближний бой: нельзя как Secondary и нельзя использовать Secondary вместе с ним."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Unwieldy",
+              "text": "В ближнем бою Initiative модели ставится в 1 до любых модификаторов."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Two-handed hammer*",
+      "cost": 40,
+      "slots": 2,
+      "category": "PRIMITIVE WEAPONS",
+      "list": "OUTCAST",
+      "profiles": [
+        {
+          "name": "Two-handed hammer*",
+          "sr": "E",
+          "lr": "-",
+          "str": "S+1",
+          "ap": "-",
+          "l": "3",
+          "traits": [
+            {
+              "name": "Concussive (6+)",
+              "text": "Если атака ранит и бросок на ранение не меньше X, цель снижает Initiative на 1 до конца следующей активации."
+            },
+            {
+              "name": "Heavy",
+              "text": "Дальнобойное: только Braced Shot. Ближний бой: нельзя как Secondary и нельзя использовать Secondary вместе с ним."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Unwieldy",
+              "text": "В ближнем бою Initiative модели ставится в 1 до любых модификаторов."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Blasting charges",
+      "cost": 60,
+      "slots": 0,
+      "category": "GRENADES",
+      "list": "OUTCAST",
+      "profiles": [
+        {
+          "name": "Blasting charges",
+          "sr": "-",
+          "lr": "6”",
+          "str": "5",
+          "ap": "-1",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Ammo (5+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blast (5”)",
+              "text": "Поставьте маркер Blast 3\" или 5\" на цель. Попадание — маркер остаётся. Промах — рассейте на D6\" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него."
+            },
+            {
+              "name": "Knockback (5+)",
+              "text": "Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1\" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1\" от центра."
+            },
+            {
+              "name": "Limited",
+              "text": "Если оружие село, его нельзя перезарядить до конца боя."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Frag grenades",
+      "cost": 30,
+      "slots": 0,
+      "category": "GRENADES",
+      "list": "OUTCAST",
+      "profiles": [
+        {
+          "name": "Frag grenades",
+          "sr": "-",
+          "lr": "9”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (4+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blast (3”)",
+              "text": "Поставьте маркер Blast 3\" или 5\" на цель. Попадание — маркер остаётся. Промах — рассейте на D6\" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него."
+            },
+            {
+              "name": "Knockback (6+)",
+              "text": "Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1\" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1\" от центра."
+            },
+            {
+              "name": "Limited",
+              "text": "Если оружие село, его нельзя перезарядить до конца боя."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Krak grenades",
+      "cost": 45,
+      "slots": 0,
+      "category": "GRENADES",
+      "list": "OUTCAST",
+      "profiles": [
+        {
+          "name": "Krak grenades",
+          "sr": "-",
+          "lr": "9”",
+          "str": "6",
+          "ap": "-2",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (4+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Limited",
+              "text": "Если оружие село, его нельзя перезарядить до конца боя."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Smoke grenades",
+      "cost": 15,
+      "slots": 0,
+      "category": "GRENADES",
+      "list": "OUTCAST",
+      "profiles": [
+        {
+          "name": "Smoke grenades",
+          "sr": "-",
+          "lr": "9”",
+          "str": "-",
+          "ap": "-",
+          "l": "-",
+          "traits": [
+            {
+              "name": "Ammo (4+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blast (3”)",
+              "text": "Поставьте маркер Blast 3\" или 5\" на цель. Попадание — маркер остаётся. Промах — рассейте на D6\" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него."
+            },
+            {
+              "name": "Limited",
+              "text": "Если оружие село, его нельзя перезарядить до конца боя."
+            },
+            {
+              "name": "Smoke",
+              "text": "Можно целиться в точку на поле. Маркер Blast остаётся: столб дыма блокирует линию видимости. В End phase на 5+ остаётся, иначе снимается. Попавшая модель не ранится и не становится Suppressed."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Hazard suit",
+      "cost": 10,
+      "slots": 0,
+      "category": "ARMOUR & FIELD ARMOUR",
+      "list": "OUTCAST",
+      "description": "Fighter в защитном костюме иммунен к свойствам Blaze (X+) и Rad-phage."
+    },
+    {
+      "name": "Mesh armour",
+      "cost": 40,
+      "slots": 0,
+      "category": "ARMOUR & FIELD ARMOUR",
+      "list": "OUTCAST",
+      "description": "Fighter в сетчатой броне увеличивает характеристику Save на 1 при разрешении попаданий, полученных в ближнем бою."
+    },
+    {
+      "name": "Drop rig",
+      "cost": 10,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "OUTCAST",
+      "description": "Active или Suppressed Fighter со спусковой оснасткой может выполнить действие «Спуск», находясь в пределах 1” от края площадки: Спуск (одиночное): Fighter сдвигается до 3” по горизонтали и до 12” по вертикали. Любое вертикальное движение должно быть вниз, то есть к земле."
+    },
+    {
+      "name": "Medicae kit",
+      "cost": 20,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "OUTCAST",
+      "description": "Если Fighter с медкай-набором помогает другому Fighter на проверке Recovery, он бросает дополнительный кубик ранений и выбирает, какой оставить."
+    },
+    {
+      "name": "Photo-goggles",
+      "cost": 35,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "OUTCAST",
+      "description": "Fighter с фотоочками увеличивает значение X в правиле Visibility (X”) на 9” и может видеть сквозь дымовые облака, поставленные свойством Smoke. Кроме того, если во Fighter с фотоочками попадает оружие со свойством Flash, он получает модификатор −2 к проверке Initiative, чтобы не ослепнуть."
+    },
+    {
+      "name": "Respirator",
+      "cost": 15,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "OUTCAST",
+      "description": "Когда во Fighter с респиратором попадает оружие со свойством Gas, он получает непробиваемый спасбросок 5+ против этого оружия."
+    },
+    {
+      "name": "Telescopic sight",
+      "cost": 20,
+      "slots": 1,
+      "category": "WEAPON ACCESSORIES",
+      "list": "OUTCAST",
+      "description": "Оружие с телескопическим прицелом снижает бонус модели к спасброску брони за укрытие на 1, пока цель в Long Range оружия."
+    },
+    {
+      "name": "Aranthian-pattern meltagun",
+      "cost": 145,
+      "slots": 1,
+      "category": "ARANTHIAN WEAPONS",
+      "list": "ARANTHIAN",
+      "profiles": [
+        {
+          "name": "Aranthian-pattern meltagun",
+          "sr": "6”",
+          "lr": "12”",
+          "str": "8",
+          "ap": "-4",
+          "l": "3",
+          "traits": [
+            {
+              "name": "Ammo (5+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Damage (3)",
+              "text": "Раненая модель теряет X Wounds вместо одного. Число кубиков ранений всё равно равно Lethality оружия."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Aranthian-pattern plasma pistol",
+      "cost": 85,
+      "slots": 1,
+      "category": "ARANTHIAN WEAPONS",
+      "list": "ARANTHIAN",
+      "profiles": [
+        {
+          "name": "Aranthian-pattern plasma pistol",
+          "sr": "6”",
+          "lr": "12”",
+          "str": "6",
+          "ap": "-2",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Ammo (5+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Damage (2)",
+              "text": "Раненая модель теряет X Wounds вместо одного. Число кубиков ранений всё равно равно Lethality оружия."
+            },
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            },
+            {
+              "name": "Unstable",
+              "text": "Натуральная 1 на попадании: носитель получает автоматическое попадание этим профилем, другие модели не поражаются. Если броска попадания нет (Template) — сначала D6, как выше."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Aranthian-pattern power fist",
+      "cost": 115,
+      "slots": 1,
+      "category": "CHAIN WEAPONS",
+      "list": "ARANTHIAN",
+      "profiles": [
+        {
+          "name": "Aranthian-pattern power fist",
+          "sr": "E",
+          "lr": "-",
+          "str": "S+3",
+          "ap": "-3",
+          "l": "3",
+          "traits": [
+            {
+              "name": "Breaching (5+)",
+              "text": "Если атака ранит и бросок на ранение не меньше X, спасброски брони делать нельзя."
+            },
+            {
+              "name": "Concussive (5+)",
+              "text": "Если атака ранит и бросок на ранение не меньше X, цель снижает Initiative на 1 до конца следующей активации."
+            },
+            {
+              "name": "Damage (2)",
+              "text": "Раненая модель теряет X Wounds вместо одного. Число кубиков ранений всё равно равно Lethality оружия."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Unwieldy",
+              "text": "В ближнем бою Initiative модели ставится в 1 до любых модификаторов."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Power greatsword",
+      "cost": 60,
+      "slots": 1,
+      "category": "CHAIN WEAPONS",
+      "list": "ARANTHIAN",
+      "profiles": [
+        {
+          "name": "Power greatsword",
+          "sr": "E",
+          "lr": "-",
+          "str": "S+1",
+          "ap": "-2",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Breaching (6+)",
+              "text": "Если атака ранит и бросок на ранение не меньше X, спасброски брони делать нельзя."
+            },
+            {
+              "name": "Heavy",
+              "text": "Дальнобойное: только Braced Shot. Ближний бой: нельзя как Secondary и нельзя использовать Secondary вместе с ним."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Parry",
+              "text": "Как Primary или Secondary в схватке: +1 Save. Несколько таких оружий не складываются."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Seven-pointed breastplate",
+      "cost": 120,
+      "slots": 0,
+      "category": "GRENADES",
+      "list": "ARANTHIAN",
+      "description": "Семиконечный нагрудник увеличивает характеристику Save носителя на 1."
+    },
+    {
+      "name": "Conduit of Ozostium",
+      "cost": 35,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "ARANTHIAN",
+      "description": "Носитель получает подтип Wyrd и силу Wyrd Force Blast (см. Necromunda Skirmish Core Rulebook). Однако доступа к другим силам Wyrd он не получает."
+    },
+    {
+      "name": "Gloves of Ozostium",
+      "cost": 35,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "ARANTHIAN",
+      "description": "Носитель получает подтип Wyrd и силу Wyrd Flaming Weapon (см. Necromunda Skirmish Core Rulebook). Однако доступа к другим силам Wyrd он не получает."
+    },
+    {
+      "name": "Seven-pointed talisman",
+      "cost": 20,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "ARANTHIAN",
+      "description": "Fighter в пределах 6” от носителя этого талисмана увеличивают характеристику Cool на 1."
+    }
+  ]
+}

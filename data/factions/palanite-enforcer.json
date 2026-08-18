@@ -1,0 +1,1535 @@
+{
+  "id": "palanite-enforcer",
+  "name": "Паланитские энфорсеры",
+  "types": [
+    {
+      "id": "enforcer-captain",
+      "name": "Enforcer Captain",
+      "category": "Fighter",
+      "subtypes": [
+        "Leader"
+      ],
+      "baseCost": 130,
+      "xp": 61,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "5”",
+          "3+",
+          "3+",
+          "3",
+          "3",
+          "3",
+          "4",
+          "3",
+          "5+",
+          "9",
+          "7",
+          "8",
+          "7"
+        ]
+      }
+    },
+    {
+      "id": "enforcer-sergeant",
+      "name": "Enforcer Sergeant",
+      "category": "Fighter",
+      "subtypes": [
+        "Champion"
+      ],
+      "baseCost": 90,
+      "xp": 37,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "5”",
+          "4+",
+          "3+",
+          "3",
+          "3",
+          "2",
+          "4",
+          "2",
+          "5+",
+          "8",
+          "7",
+          "7",
+          "6"
+        ]
+      }
+    },
+    {
+      "id": "enforcer-subjugator-sergeant",
+      "name": "Enforcer Subjugator Sergeant",
+      "category": "Fighter",
+      "subtypes": [
+        "Champion"
+      ],
+      "baseCost": 95,
+      "xp": 37,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "5”",
+          "3+",
+          "4+",
+          "3",
+          "3",
+          "2",
+          "3",
+          "2",
+          "4+",
+          "7",
+          "8",
+          "7",
+          "6"
+        ]
+      }
+    },
+    {
+      "id": "enforcer-patrol-officer",
+      "name": "Enforcer Patrol Officer",
+      "category": "Fighter",
+      "subtypes": [
+        "Ganger",
+        "Specialist"
+      ],
+      "baseCost": 40,
+      "xp": 13,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "5”",
+          "4+",
+          "4+",
+          "3",
+          "3",
+          "1",
+          "4",
+          "1",
+          "6+",
+          "6",
+          "6",
+          "6",
+          "6"
+        ]
+      }
+    },
+    {
+      "id": "enforcer-subjugator-patrol-officer",
+      "name": "Enforcer Subjugator Patrol Officer",
+      "category": "Fighter",
+      "subtypes": [
+        "Ganger",
+        "Specialist"
+      ],
+      "baseCost": 60,
+      "xp": 13,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "5”",
+          "4+",
+          "4+",
+          "3",
+          "3",
+          "1",
+          "4",
+          "2",
+          "5+",
+          "6",
+          "6",
+          "6",
+          "6"
+        ]
+      },
+      "rules": [
+        "Специалист штурма: Enforcer Subjugator Patrol Officer может выбрать только одну из следующих специализаций:"
+      ]
+    },
+    {
+      "id": "enforcer-rookie",
+      "name": "Enforcer Rookie",
+      "category": "Fighter",
+      "subtypes": [
+        "Prospect"
+      ],
+      "baseCost": 20,
+      "xp": 1,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "6”",
+          "5+",
+          "5+",
+          "3",
+          "3",
+          "1",
+          "4",
+          "1",
+          "6+",
+          "5",
+          "5",
+          "5",
+          "5"
+        ]
+      }
+    },
+    {
+      "id": "enforcer-haunt",
+      "name": "Enforcer Haunt",
+      "category": "Fighter",
+      "subtypes": [
+        "Prospect"
+      ],
+      "baseCost": 50,
+      "xp": 4,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "6”",
+          "5+",
+          "5+",
+          "3",
+          "3",
+          "1",
+          "3",
+          "1",
+          "6+",
+          "5",
+          "5",
+          "7",
+          "5"
+        ]
+      },
+      "rules": [
+        "Санкционированный Wyrd: Enforcer Wyrd специализируется на одном виде проявления Wyrd; при добавлении в Gang Roster каждый Enforcer Haunt выбирает один из следующих типов:ОригиналAn Enforcer Wyrd is specialized in an area of wyrd manifestation; when added to a Gang Roster each Enforcer Haunt selects one of the following types:"
+      ]
+    },
+    {
+      "id": "hardcase-cyber-mastiff",
+      "name": "Hardcase Cyber-Mastiff",
+      "category": "Fighter",
+      "subtypes": [
+        "Beast",
+        "Pet"
+      ],
+      "baseCost": 75,
+      "xp": 13,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "5”",
+          "3+",
+          "6+",
+          "3",
+          "4",
+          "1",
+          "3",
+          "2",
+          "5+",
+          "6",
+          "6",
+          "6",
+          "4"
+        ]
+      },
+      "rules": [
+        "Длина поводка: у Hardcase Cyber-Mastiff длина поводка (Leash range) 3”.",
+        "Цепкий: Hardcase Cyber-Mastiff славится упрямством. Если Hardcase Cyber-Mastiff выведен Out of Action, не убирайте его с поля, если он ещё не активировался в этом раунде. В эту активацию он действует, как если бы был Active, и после завершения активации Hardcase Cyber-Mastiff убирают с поля.ОригиналHardcase Cyber-Mastiffs are renowned for their tenacity. If a Hardcase Cyber-Mastiff is taken Out of Action, do not remove it from the battlefield if it has not yet activated this round. During this activation it may act as if it was Active and once the Hardcase Cyber-Mastiff has completed its activation, remove it from the battlefield.",
+        "Верный защитник: вражеские Fighter не могут выполнить действие Coup de Grâce против владельца этого Pet, пока этот Fighter в пределах его leash range.ОригиналEnemy Fighters cannot perform a Coup de Grâce action against this Pet's owner while this Fighter is within its leash range.",
+        "Подвижный бастион: если дружественный fighter находится в укрытии, потому что его заслоняет Enforcer ‘Sanctioner’ Pattern Automata, он дополнительно улучшает характеристику Save на 1.ОригиналIf a Friendly fighter is in cover due to being obscured by an Enforcer ‘Sanctioner’ Pattern Automata, they improve their Save characteristic by an additional 1."
+      ]
+    },
+    {
+      "id": "enforcer-tauros-venator",
+      "name": "Enforcer Tauros Venator",
+      "category": "Vehicle",
+      "subtypes": [
+        "Wheeled"
+      ],
+      "baseCost": 250,
+      "xp": 13,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "7”",
+          "5+",
+          "4+",
+          "4",
+          "5",
+          "3",
+          "4",
+          "2",
+          "4+",
+          "6",
+          "7",
+          "7",
+          "6"
+        ]
+      },
+      "rules": [
+        "Спуск (одиночное): Fighter сдвигается до 3” по горизонтали и до 12” по вертикали. Любое вертикальное движение должно быть вниз, то есть к земле.ОригиналThe Fighter makes a move of up to 3” horizontally and up to 12” vertically. Any vertical movement must be downwards, i.e., towards the ground.",
+        "Сдержать (двойное): выберите вражеского Fighter, с которым этот Fighter Engaged; вражеский Fighter должен пройти проверку Agility. Если проверка провалена, он зафиксирован на месте и получает состояние Webbed.ОригиналTarget an enemy Fighter that this Fighter is Engaged with; the enemy Fighter must make an Agility test. If the test is failed, they have been locked in place and become subject to the Webbed condition."
+      ]
+    }
+  ],
+  "subtypes": [
+    "Beast",
+    "Champion",
+    "Ganger",
+    "Leader",
+    "Pet",
+    "Prospect",
+    "Specialist",
+    "Wheeled"
+  ],
+  "equipment": [
+    {
+      "name": "Autogun",
+      "cost": 20,
+      "slots": 1,
+      "category": "AUTO/STUB WEAPONS",
+      "list": "PALANITE ENFORCE PATROL",
+      "upgrades": [
+        {
+          "name": "warp rounds",
+          "cost": 10
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Autogun",
+          "sr": "8”",
+          "lr": "24”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Rapid Fire (1)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            }
+          ]
+        },
+        {
+          "name": "warp rounds",
+          "sr": "8”",
+          "lr": "24”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Cursed",
+              "text": "Попавшая модель проходит Willpower или получает Insanity. Натуральная 1 на попадании: то же для носителя."
+            },
+            {
+              "name": "Single Shot",
+              "text": "Один выстрел за бой, затем сразу Out of Ammo; перезарядить нельзя."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Autopistol",
+      "cost": 10,
+      "slots": 1,
+      "category": "AUTO/STUB WEAPONS",
+      "list": "PALANITE ENFORCE PATROL",
+      "upgrades": [
+        {
+          "name": "warp rounds",
+          "cost": 10
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Autopistol",
+          "sr": "4”",
+          "lr": "12”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            },
+            {
+              "name": "Rapid Fire (1)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            }
+          ]
+        },
+        {
+          "name": "warp rounds",
+          "sr": "4”",
+          "lr": "12”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Cursed",
+              "text": "Попавшая модель проходит Willpower или получает Insanity. Натуральная 1 на попадании: то же для носителя."
+            },
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            },
+            {
+              "name": "Single Shot",
+              "text": "Один выстрел за бой, затем сразу Out of Ammo; перезарядить нельзя."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Heavy stubber*",
+      "cost": 70,
+      "slots": 2,
+      "category": "AUTO/STUB WEAPONS",
+      "list": "PALANITE ENFORCE PATROL",
+      "profiles": [
+        {
+          "name": "Heavy stubber*",
+          "sr": "20”",
+          "lr": "40”",
+          "str": "4",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Heavy",
+              "text": "Дальнобойное: только Braced Shot. Ближний бой: нельзя как Secondary и нельзя использовать Secondary вместе с ним."
+            },
+            {
+              "name": "Rapid Fire (2)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Long rifle",
+      "cost": 55,
+      "slots": 1,
+      "category": "AUTO/STUB WEAPONS",
+      "list": "PALANITE ENFORCE PATROL",
+      "profiles": [
+        {
+          "name": "Long rifle",
+          "sr": "24”",
+          "lr": "48”",
+          "str": "4",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Knockback (6+)",
+              "text": "Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1\" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1\" от центра."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Stub gun",
+      "cost": 5,
+      "slots": 1,
+      "category": "AUTO/STUB WEAPONS",
+      "list": "PALANITE ENFORCE PATROL",
+      "upgrades": [
+        {
+          "name": "warp rounds",
+          "cost": 10
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Stub gun",
+          "sr": "6”",
+          "lr": "12”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            }
+          ]
+        },
+        {
+          "name": "warp rounds",
+          "sr": "6”",
+          "lr": "12”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Cursed",
+              "text": "Попавшая модель проходит Willpower или получает Insanity. Натуральная 1 на попадании: то же для носителя."
+            },
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            },
+            {
+              "name": "Single Shot",
+              "text": "Один выстрел за бой, затем сразу Out of Ammo; перезарядить нельзя."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Boltgun",
+      "cost": 55,
+      "slots": 1,
+      "category": "BOLT WEAPONS",
+      "list": "PALANITE ENFORCE PATROL",
+      "profiles": [
+        {
+          "name": "Boltgun",
+          "sr": "12”",
+          "lr": "24”",
+          "str": "4",
+          "ap": "-1",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Ammo (3+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Rapid Fire (1)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Bolt pistol",
+      "cost": 45,
+      "slots": 1,
+      "category": "BOLT WEAPONS",
+      "list": "PALANITE ENFORCE PATROL",
+      "profiles": [
+        {
+          "name": "Bolt pistol",
+          "sr": "6”",
+          "lr": "12”",
+          "str": "4",
+          "ap": "-1",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Ammo (3+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            },
+            {
+              "name": "Rapid Fire (1)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Bolter/grenade launcher with frag grenades",
+      "cost": 60,
+      "slots": 1,
+      "category": "COMBI-WEAPONS",
+      "list": "PALANITE ENFORCE PATROL",
+      "profiles": [
+        {
+          "name": "bolter",
+          "sr": "12”",
+          "lr": "24”",
+          "str": "4",
+          "ap": "-1",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Ammo (3+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Combi",
+              "text": "При Shoot или Aimed Shot выберите профиль до броска. Можно стрелять обоими по одной цели с −1 к попаданию каждого; атаки одновременны."
+            },
+            {
+              "name": "Rapid Fire (1)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            }
+          ]
+        },
+        {
+          "name": "grenade launcher with frag grenades",
+          "sr": "6”",
+          "lr": "24”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (4+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blast (3+)",
+              "text": "Поставьте маркер Blast 3\" или 5\" на цель. Попадание — маркер остаётся. Промах — рассейте на D6\" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него."
+            },
+            {
+              "name": "Combi",
+              "text": "При Shoot или Aimed Shot выберите профиль до броска. Можно стрелять обоими по одной цели с −1 к попаданию каждого; атаки одновременны."
+            },
+            {
+              "name": "Knockback (5+)",
+              "text": "Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1\" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1\" от центра."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Concussive carbine",
+      "cost": 25,
+      "slots": 1,
+      "category": "ESOTERIC WEAPONS",
+      "list": "PALANITE ENFORCE PATROL",
+      "profiles": [
+        {
+          "name": "Concussive carbine",
+          "sr": "9”",
+          "lr": "18”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Concussive (5+)",
+              "text": "Если атака ранит и бросок на ранение не меньше X, цель снижает Initiative на 1 до конца следующей активации."
+            },
+            {
+              "name": "Knockback (6+)",
+              "text": "Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1\" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1\" от центра."
+            },
+            {
+              "name": "Rapid Fire (1)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Flamer",
+      "cost": 70,
+      "slots": 1,
+      "category": "FLAMERS",
+      "list": "PALANITE ENFORCE PATROL",
+      "profiles": [
+        {
+          "name": "Flamer",
+          "sr": "T",
+          "lr": "-",
+          "str": "4",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (6+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blaze (5+)",
+              "text": "Если бросок на ранение не меньше X, цель получает ещё одно попадание тем же профилем. Оно бросается на ранение отдельно и не вызывает новых дополнительных попаданий."
+            },
+            {
+              "name": "Template",
+              "text": "Каплевидный шаблон от стреляющего через цель: все под ним получают автоматическое попадание. С Light в ближнем бою — одно автоматическое попадание без шаблона. С Rapid Fire (X) ближайшая модель получает попадания по кубику огневой мощи, остальные — по одному."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Plasma pistol",
+      "cost": 70,
+      "slots": 1,
+      "category": "PLASMA WEAPONS",
+      "list": "PALANITE ENFORCE PATROL",
+      "profiles": [
+        {
+          "name": "Plasma pistol",
+          "sr": "6”",
+          "lr": "12”",
+          "str": "5",
+          "ap": "-2",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Ammo (6+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Damage (2)",
+              "text": "Раненая модель теряет X Wounds вместо одного. Число кубиков ранений всё равно равно Lethality оружия."
+            },
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            },
+            {
+              "name": "Unstable",
+              "text": "Натуральная 1 на попадании: носитель получает автоматическое попадание этим профилем, другие модели не поражаются. Если броска попадания нет (Template) — сначала D6, как выше."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Shotgun (with solid & scatter ammo)",
+      "cost": 35,
+      "slots": 1,
+      "category": "SHOTGUNS",
+      "list": "PALANITE ENFORCE PATROL",
+      "profiles": [
+        {
+          "name": "scatter ammo",
+          "sr": "4”",
+          "lr": "8”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Rapid Fire (2)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            }
+          ]
+        },
+        {
+          "name": "solid ammo",
+          "sr": "8”",
+          "lr": "16”",
+          "str": "4",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Knockback (5+)",
+              "text": "Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1\" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1\" от центра."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Heavy concussion ram",
+      "cost": 45,
+      "slots": 1,
+      "category": "SUBJUGATOR WEAPONS",
+      "list": "PALANITE ENFORCE PATROL",
+      "profiles": [
+        {
+          "name": "Heavy concussion ram",
+          "sr": "15”",
+          "lr": "30”",
+          "str": "4",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Concussive (5+)",
+              "text": "Если атака ранит и бросок на ранение не меньше X, цель снижает Initiative на 1 до конца следующей активации."
+            },
+            {
+              "name": "Knockback (5+)",
+              "text": "Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1\" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1\" от центра."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Subjugator grenade launcher (with frag & stun grenades)",
+      "cost": 45,
+      "slots": 1,
+      "category": "SUBJUGATOR WEAPONS",
+      "list": "PALANITE ENFORCE PATROL",
+      "profiles": [
+        {
+          "name": "frag grenades",
+          "sr": "6”",
+          "lr": "24”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (4+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blast (3”)",
+              "text": "Поставьте маркер Blast 3\" или 5\" на цель. Попадание — маркер остаётся. Промах — рассейте на D6\" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него."
+            },
+            {
+              "name": "Knockback (5+)",
+              "text": "Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1\" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1\" от центра."
+            }
+          ]
+        },
+        {
+          "name": "stun grenades",
+          "sr": "6”",
+          "lr": "24”",
+          "str": "2",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (3+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Concussive (5+)",
+              "text": "Если атака ранит и бросок на ранение не меньше X, цель снижает Initiative на 1 до конца следующей активации."
+            },
+            {
+              "name": "Knockback (5+)",
+              "text": "Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1\" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1\" от центра."
+            }
+          ]
+        }
+      ],
+      "upgrades": [
+        {
+          "name": "choke gas grenades",
+          "cost": 55
+        },
+        {
+          "name": "krak grenades",
+          "cost": 60
+        },
+        {
+          "name": "smoke grenades",
+          "cost": 20
+        }
+      ]
+    },
+    {
+      "name": "Repulsion pattern chem-thrower",
+      "cost": 80,
+      "slots": 1,
+      "category": "SUBJUGATOR WEAPONS",
+      "list": "PALANITE ENFORCE PATROL",
+      "profiles": [
+        {
+          "name": "Repulsion pattern chem-thrower",
+          "sr": "T",
+          "lr": "-",
+          "str": "3",
+          "ap": "-",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Ammo (6+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Gas",
+              "text": "Спасброски брони нельзя. Респиратор даёт непробиваемый спасбросок 5+ против Wounds от этого оружия."
+            },
+            {
+              "name": "Template",
+              "text": "Каплевидный шаблон от стреляющего через цель: все под ним получают автоматическое попадание. С Light в ближнем бою — одно автоматическое попадание без шаблона. С Rapid Fire (X) ближайшая модель получает попадания по кубику огневой мощи, остальные — по одному."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Web gun",
+      "cost": 65,
+      "slots": 1,
+      "category": "WEB WEAPONS",
+      "list": "PALANITE ENFORCE PATROL",
+      "profiles": [
+        {
+          "name": "Web gun",
+          "sr": "T",
+          "lr": "-",
+          "str": "5",
+          "ap": "-",
+          "l": "-",
+          "traits": [
+            {
+              "name": "Ammo (6+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Template",
+              "text": "Каплевидный шаблон от стреляющего через цель: все под ним получают автоматическое попадание. С Light в ближнем бою — одно автоматическое попадание без шаблона. С Rapid Fire (X) ближайшая модель получает попадания по кубику огневой мощи, остальные — по одному."
+            },
+            {
+              "name": "Web",
+              "text": "Спасброски брони нельзя (непробиваемые можно). Раненый боец не теряет Wound, а получает Webbed."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Power knife",
+      "cost": 30,
+      "slots": 1,
+      "category": "POWER WEAPONS",
+      "list": "PALANITE ENFORCE PATROL",
+      "profiles": [
+        {
+          "name": "Power knife",
+          "sr": "E",
+          "lr": "-",
+          "str": "S",
+          "ap": "-2",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Backstab",
+              "text": "+1 Strength, если цель Engaged более чем с одной моделью."
+            },
+            {
+              "name": "Breaching (6+)",
+              "text": "Если атака ранит и бросок на ранение не меньше X, спасброски брони делать нельзя."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Power maul",
+      "cost": 45,
+      "slots": 1,
+      "category": "POWER WEAPONS",
+      "list": "PALANITE ENFORCE PATROL",
+      "profiles": [
+        {
+          "name": "Power maul",
+          "sr": "E",
+          "lr": "-",
+          "str": "S+1",
+          "ap": "-2",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Breaching (6+)",
+              "text": "Если атака ранит и бросок на ранение не меньше X, спасброски брони делать нельзя."
+            },
+            {
+              "name": "Concussive (6+)",
+              "text": "Если атака ранит и бросок на ранение не меньше X, цель снижает Initiative на 1 до конца следующей активации."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Power sword",
+      "cost": 40,
+      "slots": 1,
+      "category": "POWER WEAPONS",
+      "list": "PALANITE ENFORCE PATROL",
+      "profiles": [
+        {
+          "name": "Power sword",
+          "sr": "E",
+          "lr": "-",
+          "str": "S",
+          "ap": "-2",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Breaching (6+)",
+              "text": "Если атака ранит и бросок на ранение не меньше X, спасброски брони делать нельзя."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Parry",
+              "text": "Как Primary или Secondary в схватке: +1 Save. Несколько таких оружий не складываются."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Riot shield",
+      "cost": 35,
+      "slots": 1,
+      "category": "SHIELDS",
+      "list": "PALANITE ENFORCE PATROL",
+      "profiles": [
+        {
+          "name": "Riot shield",
+          "sr": "E",
+          "lr": "-",
+          "str": "S",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Parry",
+              "text": "Как Primary или Secondary в схватке: +1 Save. Несколько таких оружий не складываются."
+            },
+            {
+              "name": "Shield",
+              "text": "Хотя бы одно такое оружие: +1 Save против стрельбы. Несколько штук не складываются."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Shock baton",
+      "cost": 20,
+      "slots": 1,
+      "category": "SHOCK WEAPONS",
+      "list": "PALANITE ENFORCE PATROL",
+      "profiles": [
+        {
+          "name": "Shock baton",
+          "sr": "E",
+          "lr": "-",
+          "str": "S",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Parry",
+              "text": "Как Primary или Secondary в схватке: +1 Save. Несколько таких оружий не складываются."
+            },
+            {
+              "name": "Shock (6+)",
+              "text": "Если атака попадает и бросок попадания не меньше X, она автоматически ранит и считается натуральной 6 на ранении для других свойств."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Shock stave",
+      "cost": 25,
+      "slots": 1,
+      "category": "SHOCK WEAPONS",
+      "list": "PALANITE ENFORCE PATROL",
+      "profiles": [
+        {
+          "name": "Shock stave",
+          "sr": "E",
+          "lr": "-",
+          "str": "S+1",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Shock (5+)",
+              "text": "Если атака попадает и бросок попадания не меньше X, она автоматически ранит и считается натуральной 6 на ранении для других свойств."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SLHG pattern assault ram ‘Sledge Hammer’ with auxiliary grenade launcher (with choke gas & frag grenades)",
+      "cost": 120,
+      "slots": 1,
+      "category": "SUBJUGATOR WEAPONS",
+      "list": "PALANITE ENFORCE PATROL",
+      "profiles": [
+        {
+          "name": "SLHG pattern assault ram ‘Sledge Hammer’",
+          "sr": "E",
+          "lr": "-",
+          "str": "S+2",
+          "ap": "-1",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Concussive (6+)",
+              "text": "Если атака ранит и бросок на ранение не меньше X, цель снижает Initiative на 1 до конца следующей активации."
+            },
+            {
+              "name": "Knockback (5+)",
+              "text": "Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1\" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1\" от центра."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "auxiliary",
+              "text": "Только как насадка на другое оружие, отдельно не берётся. Не занимает слот оружия."
+            }
+          ]
+        },
+        {
+          "name": "choke gas grenades",
+          "sr": "6”",
+          "lr": "24”",
+          "str": "-",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (5+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blast (3”)",
+              "text": "Поставьте маркер Blast 3\" или 5\" на цель. Попадание — маркер остаётся. Промах — рассейте на D6\" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него."
+            },
+            {
+              "name": "Gas",
+              "text": "Спасброски брони нельзя. Респиратор даёт непробиваемый спасбросок 5+ против Wounds от этого оружия."
+            },
+            {
+              "name": "Toxin (3+)",
+              "text": "Против бойца ранит на X+ вместо сравнения Strength и Toughness. Против машины — только на натуральную 6."
+            }
+          ]
+        },
+        {
+          "name": "frag grenades",
+          "sr": "6”",
+          "lr": "24”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (4+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blast (3”)",
+              "text": "Поставьте маркер Blast 3\" или 5\" на цель. Попадание — маркер остаётся. Промах — рассейте на D6\" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него."
+            },
+            {
+              "name": "Knockback (5+)",
+              "text": "Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1\" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1\" от центра."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Vigilance pattern assault shield",
+      "cost": 45,
+      "slots": 1,
+      "category": "SUBJUGATOR WEAPONS",
+      "list": "PALANITE ENFORCE PATROL",
+      "profiles": [
+        {
+          "name": "Vigilance pattern assault shield",
+          "sr": "E",
+          "lr": "-",
+          "str": "S+1",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Concussive (6+)",
+              "text": "Если атака ранит и бросок на ранение не меньше X, цель снижает Initiative на 1 до конца следующей активации."
+            },
+            {
+              "name": "Knockback (5+)",
+              "text": "Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1\" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1\" от центра."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Parry",
+              "text": "Как Primary или Secondary в схватке: +1 Save. Несколько таких оружий не складываются."
+            },
+            {
+              "name": "Shield",
+              "text": "Хотя бы одно такое оружие: +1 Save против стрельбы. Несколько штук не складываются."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Choke gas grenades",
+      "cost": 45,
+      "slots": 0,
+      "category": "GRENADES",
+      "list": "PALANITE ENFORCE PATROL",
+      "profiles": [
+        {
+          "name": "choke gas grenades",
+          "sr": "6”",
+          "lr": "18”",
+          "str": "-",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (5+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blast (3”)",
+              "text": "Поставьте маркер Blast 3\" или 5\" на цель. Попадание — маркер остаётся. Промах — рассейте на D6\" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него."
+            },
+            {
+              "name": "Gas",
+              "text": "Спасброски брони нельзя. Респиратор даёт непробиваемый спасбросок 5+ против Wounds от этого оружия."
+            },
+            {
+              "name": "Toxin (3+)",
+              "text": "Против бойца ранит на X+ вместо сравнения Strength и Toughness. Против машины — только на натуральную 6."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Frag grenades",
+      "cost": 30,
+      "slots": 0,
+      "category": "GRENADES",
+      "list": "PALANITE ENFORCE PATROL",
+      "profiles": [
+        {
+          "name": "frag grenades",
+          "sr": "6”",
+          "lr": "24”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (4+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blast (3”)",
+              "text": "Поставьте маркер Blast 3\" или 5\" на цель. Попадание — маркер остаётся. Промах — рассейте на D6\" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него."
+            },
+            {
+              "name": "Knockback (5+)",
+              "text": "Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1\" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1\" от центра."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Smoke grenades",
+      "cost": 15,
+      "slots": 0,
+      "category": "GRENADES",
+      "list": "PALANITE ENFORCE PATROL",
+      "profiles": [
+        {
+          "name": "smoke grenades",
+          "sr": "6”",
+          "lr": "18”",
+          "str": "-",
+          "ap": "-",
+          "l": "-",
+          "traits": [
+            {
+              "name": "Ammo (4+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blast (3”)",
+              "text": "Поставьте маркер Blast 3\" или 5\" на цель. Попадание — маркер остаётся. Промах — рассейте на D6\" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него."
+            },
+            {
+              "name": "Smoke",
+              "text": "Можно целиться в точку на поле. Маркер Blast остаётся: столб дыма блокирует линию видимости. В End phase на 5+ остаётся, иначе снимается. Попавшая модель не ранится и не становится Suppressed."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mesh armour",
+      "cost": 40,
+      "slots": 0,
+      "category": "ARMOUR & FIELD ARMOUR",
+      "list": "PALANITE ENFORCE PATROL",
+      "description": "Fighter в сетчатой броне увеличивает характеристику Save на 1 при разрешении попаданий, полученных в ближнем бою."
+    },
+    {
+      "name": "Refractor field",
+      "cost": 50,
+      "slots": 0,
+      "category": "ARMOUR & FIELD ARMOUR",
+      "list": "PALANITE ENFORCE PATROL",
+      "description": "Рефракторное поле даёт носителю непробиваемый спасбросок 5+; однако если при этом спасброске выпадает натуральная 1, поле перегорает и его нельзя использовать до конца боя. Рефракторное поле можно сочетать с другой бронёй и полевой бронёй."
+    },
+    {
+      "name": "Bio-booster",
+      "cost": 25,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "PALANITE ENFORCE PATROL",
+      "description": "В первый раз за каждый бой, когда носитель получает состояние Injured, снизьте характеристику Lethality ранящего оружия на 1. Если Lethality стала нулём, бросьте 2 кубика ранений вместо 1, и носитель выбирает, какой применить; второй кубик отбрасывается."
+    },
+    {
+      "name": "Drop rig",
+      "cost": 10,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "PALANITE ENFORCE PATROL",
+      "description": "Active или Suppressed Fighter со спусковой оснасткой может выполнить действие «Спуск», находясь в пределах 1” от края площадки: Спуск (одиночное): Fighter сдвигается до 3” по горизонтали и до 12” по вертикали. Любое вертикальное движение должно быть вниз, то есть к земле."
+    },
+    {
+      "name": "Medicae kit",
+      "cost": 20,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "PALANITE ENFORCE PATROL",
+      "description": "Если Fighter с медкай-набором помогает другому Fighter на проверке Recovery, он бросает дополнительный кубик ранений и выбирает, какой оставить."
+    },
+    {
+      "name": "Photo-goggles",
+      "cost": 35,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "PALANITE ENFORCE PATROL",
+      "description": "Fighter с фотоочками увеличивает значение X в правиле Visibility (X”) на 9” и может видеть сквозь дымовые облака, поставленные свойством Smoke. Кроме того, если во Fighter с фотоочками попадает оружие со свойством Flash, он получает модификатор −2 к проверке Initiative, чтобы не ослепнуть."
+    },
+    {
+      "name": "Photo-lumens",
+      "cost": 15,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "PALANITE ENFORCE PATROL",
+      "description": "Увеличьте значение X в правиле Visibility (X”) на 9” для этого Fighter. В этого Fighter всегда можно целиться независимо от правила Visibility (X”)."
+    },
+    {
+      "name": "Respirator",
+      "cost": 15,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "PALANITE ENFORCE PATROL",
+      "description": "Когда во Fighter с респиратором попадает оружие со свойством Gas, он получает непробиваемый спасбросок 5+ против этого оружия."
+    },
+    {
+      "name": "Stimm-slug stash",
+      "cost": 25,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "PALANITE ENFORCE PATROL",
+      "description": "Раз за бой Fighter с запасом стимм-доз может использовать его в начале своей активации. До следующей активации увеличьте характеристики Movement, Strength и Toughness на 2. В начале следующей активации эффекты проходят, и контролирующий игрок бросает D6; на 2+ ничего не происходит, а на 1 Fighter плохо реагирует на стиммы — он получает попадание Str , AP -, L1, которое автоматически ранит без спасбросков."
+    },
+    {
+      "name": "Infra-sight",
+      "cost": 10,
+      "slots": 1,
+      "category": "WEAPON ACCESSORIES",
+      "list": "PALANITE ENFORCE PATROL",
+      "description": "Оружие с инфраприцелом можно стрелять по целям за маркерами, созданными свойством Smoke. Кроме того, значение X в правиле Visibility (X”) увеличивается на 9” при использовании оружия с инфраприцелом."
+    },
+    {
+      "name": "Las-projector",
+      "cost": 20,
+      "slots": 1,
+      "category": "WEAPON ACCESSORIES",
+      "list": "PALANITE ENFORCE PATROL",
+      "description": "Оружие с лаз-проектором снижает бонус модели к спасброску брони за укрытие на 1, пока цель в Short Range оружия."
+    },
+    {
+      "name": "Mono-sight",
+      "cost": 20,
+      "slots": 1,
+      "category": "WEAPON ACCESSORIES",
+      "list": "PALANITE ENFORCE PATROL",
+      "description": "Когда модель выполняет действие Aimed Shot оружием с моноприцелом, она применяет модификатор +2 к броску попадания вместо +1."
+    },
+    {
+      "name": "Dirt bike",
+      "cost": 35,
+      "slots": 0,
+      "category": "MOUNTS",
+      "list": "PALANITE ENFORCE PATROL",
+      "description": "Fighter с dirt bike получает подтип Mounted и ставит характеристику Movement на 8”. Когда он выполняет действие Dash, он добавляет 5” к характеристике Movement вместо Initiative."
+    },
+    {
+      "name": "Hardcase Cyber-Mastiff",
+      "cost": 75,
+      "slots": 0,
+      "category": "PETS",
+      "list": "PALANITE ENFORCE PATROL"
+    }
+  ]
+}

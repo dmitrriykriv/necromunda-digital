@@ -1,0 +1,1358 @@
+{
+  "id": "house-delaque",
+  "name": "Дом Делак",
+  "types": [
+    {
+      "id": "delaque-master-of-shadow",
+      "name": "Delaque Master Of Shadow",
+      "category": "Fighter",
+      "subtypes": [
+        "Leader"
+      ],
+      "baseCost": 140,
+      "xp": 61,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "5”",
+          "3+",
+          "3+",
+          "3",
+          "3",
+          "3",
+          "4",
+          "3",
+          "5+",
+          "8",
+          "8",
+          "9",
+          "8"
+        ]
+      },
+      "rules": [
+        "Мастер шёпотов: при добавлении в Gang Roster Delaque Master of Shadow может получить подтип Wyrd и выбрать силу Wyrd Psychoteric Whispers за +35 кредитов.ОригиналWhen added to a Gang Roster, a Delaque Master of Shadow may gain the Wyrd Subtype and select a Psychoteric Whispers Wyrd Power for +35 credits."
+      ]
+    },
+    {
+      "id": "delaque-phantom",
+      "name": "Delaque Phantom",
+      "category": "Fighter",
+      "subtypes": [
+        "Champion"
+      ],
+      "baseCost": 100,
+      "xp": 37,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "5”",
+          "3+",
+          "3+",
+          "3",
+          "3",
+          "2",
+          "4",
+          "2",
+          "5+",
+          "7",
+          "7",
+          "8",
+          "7"
+        ]
+      },
+      "rules": [
+        "Мастер шёпотов: при добавлении в Gang Roster Delaque Phantom может получить подтип Wyrd и выбрать силу Wyrd Psychoteric Whispers за +35 кредитов.ОригиналWhen added to a Gang Roster, a Delaque Phantom may gain the Wyrd Subtype and select a Psychoteric Whispers Wyrd Power for +35 credits."
+      ]
+    },
+    {
+      "id": "delaque-nacht-ghul",
+      "name": "Delaque Nacht-Ghul",
+      "category": "Fighter",
+      "subtypes": [
+        "Champion",
+        "Loner"
+      ],
+      "baseCost": 120,
+      "xp": 49,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "6”",
+          "3+",
+          "4+",
+          "4",
+          "3",
+          "2",
+          "5",
+          "3",
+          "5+",
+          "6",
+          "8",
+          "8",
+          "7"
+        ]
+      },
+      "rules": [
+        "Из теней: вместо обычной расстановки этого Fighter можно отложить в сторону. В начале любого раунда после первого, до броска за Priority, контролирующий игрок может выставить его в любой точке поля, которая не в линии видимости ни одной вражеской модели и не ближе 9” к любому вражескому Fighter. Если у обоих игроков есть Fighter с этим особым правилом, которых они хотят выставить в начале одного и того же раунда, победитель броска на очерёдность решает, кто выставляет своих Fighter первым.ОригиналInstead of deploying this Fighter normally, they may instead be placed to one side. At the start of any round after the first, before rolling for Priority, their controlling player may set them up anywhere on the battlefield that is not in Line of Sight of any enemy models, and not within 9” of any enemy Fighters. If both players have Fighter(s) with this special rule that they wish to deploy at the start of the same round, the winner of a roll-off may decide which player places their Fighter(s) first."
+      ]
+    },
+    {
+      "id": "delaque-ghost",
+      "name": "Delaque Ghost",
+      "category": "Fighter",
+      "subtypes": [
+        "Ganger",
+        "Specialist"
+      ],
+      "baseCost": 45,
+      "xp": 13,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "5”",
+          "4+",
+          "4+",
+          "3",
+          "3",
+          "1",
+          "4",
+          "1",
+          "6+",
+          "6",
+          "6",
+          "7",
+          "6"
+        ]
+      }
+    },
+    {
+      "id": "delaque-psy-gheist",
+      "name": "Delaque Psy-Gheist",
+      "category": "Fighter",
+      "subtypes": [
+        "Prospect",
+        "Wyrd"
+      ],
+      "baseCost": 30,
+      "xp": 4,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "6”",
+          "5+",
+          "5+",
+          "3",
+          "3",
+          "1",
+          "4",
+          "1",
+          "6+",
+          "5",
+          "6",
+          "7",
+          "5"
+        ]
+      },
+      "rules": [
+        "Шёпоты во тьме: при добавлении в Gang Roster этот Fighter выбирает силу Wyrd Psychoteric Whispers."
+      ]
+    },
+    {
+      "id": "delaque-shadow",
+      "name": "Delaque Shadow",
+      "category": "Fighter",
+      "subtypes": [
+        "Prospect"
+      ],
+      "baseCost": 25,
+      "xp": 1,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "6”",
+          "5+",
+          "5+",
+          "3",
+          "3",
+          "1",
+          "4",
+          "1",
+          "6+",
+          "5",
+          "5",
+          "6",
+          "5"
+        ]
+      }
+    },
+    {
+      "id": "piscean-spektor",
+      "name": "Piscean Spektor",
+      "category": "Fighter",
+      "subtypes": [
+        "Beast",
+        "Brute",
+        "Flying",
+        "Wyrd"
+      ],
+      "baseCost": 250,
+      "xp": 25,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "5”",
+          "3+",
+          "5+",
+          "4",
+          "4",
+          "4",
+          "4",
+          "2",
+          "5+",
+          "6",
+          "7",
+          "7",
+          "5"
+        ]
+      },
+      "rules": [
+        "Шёпоты во тьме: при добавлении в Gang Roster этот Fighter выбирает силу Wyrd Psychoteric Whispers."
+      ]
+    },
+    {
+      "id": "cephalopod-spektor",
+      "name": "Cephalopod Spektor",
+      "category": "Fighter",
+      "subtypes": [
+        "Beast",
+        "Flying",
+        "Pet"
+      ],
+      "baseCost": 75,
+      "xp": 13,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "5”",
+          "4+",
+          "5+",
+          "2",
+          "3",
+          "1",
+          "4",
+          "1",
+          "6+",
+          "6",
+          "7",
+          "7",
+          "7"
+        ]
+      },
+      "rules": [
+        "Длина поводка: у Cephalopod Spektor длина поводка (Leash range) 3”.",
+        "Сенсорная решётка: если Cephalopod Spektor в пределах Leash range от владельца, когда владельцу нужно сделать проверку Intelligence по любой причине, бросьте лишний D6 и один из кубиков отбросьте.ОригиналIf a Cephalopod Spektor is within Leash range of its owner when the owner is required to make an Intelligence check for any reason, roll an extra D6, picking one of the dice to discard."
+      ]
+    },
+    {
+      "id": "psychoteric-wyrm",
+      "name": "Psychoteric Wyrm",
+      "category": "Fighter",
+      "subtypes": [
+        "Beast",
+        "Pet"
+      ],
+      "baseCost": 50,
+      "xp": 13,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "6”",
+          "4+",
+          "6+",
+          "2",
+          "3",
+          "1",
+          "3",
+          "1",
+          "6+",
+          "5",
+          "6",
+          "7",
+          "5"
+        ]
+      },
+      "rules": [
+        "Длина поводка: у Psychoteric Wyrm длина поводка (Leash range) 12”.",
+        "Психотерический узел: когда Delaque Wyrd использует Psychoteric Power, он может назначить своего Active Psychoteric Wyrm в пределах Leash range, через которого проводить эту силу. Эффект Psychoteric Power считается от модели Psychoteric Wyrm, а не от модели Fighter. Иначе говоря, линия видимости, дистанция, дальность и прочее измеряются от Psychoteric Wyrm, а не от Fighter.ОригиналWhen a Delaque Wyrd uses a Psychoteric Power, they may nominate an Active Psychoteric Wyrm they own that is within Leash range through which to channel that Power. The effect of the Psychoteric Power is worked out from the model representing the Psychoteric Wyrm, rather than from the model representing the Fighter. In other words, Line of Sight, distance, range and so forth are all measured from the Psychoteric Wyrm, not from the Fighter.",
+        "Рытьё: Psychoteric Wyrm умеет рыть под металлическими и роккритовыми полами нижнего улья, быстро проходя скрытыми лазами и засыпанными вентиляциями и выходя в другом месте. Psychoteric Wyrm может свободно двигаться под непроходимой местностью, если ему хватает движения, но не может закончить движение на непроходимой местности или внутри неё.ОригиналA Psychoteric Wyrm is able to burrow beneath and through the metal and rockcrete floors of the underhive, passing quickly through hidden crawl spaces and buried vents, before emerging elsewhere. A Psychoteric Wyrm may move freely under impassable terrain if it has sufficient movement to do so, but may not end its movement on or within impassable terrain.",
+        "Гарпун (двойное): Fighter может сдвинуться до 12” по прямой в любом направлении, если заканчивает это движение на более высоком уровне, чем начал.ОригиналThe Fighter can move up to 12” in a straight line in any direction as long as they end this move on a higher level than they started."
+      ]
+    }
+  ],
+  "subtypes": [
+    "Beast",
+    "Brute",
+    "Champion",
+    "Flying",
+    "Ganger",
+    "Leader",
+    "Loner",
+    "Pet",
+    "Prospect",
+    "Specialist",
+    "Wyrd"
+  ],
+  "equipment": [
+    {
+      "name": "Autogun",
+      "cost": 20,
+      "slots": 1,
+      "category": "AUTO/STUB WEAPONS",
+      "list": "HOUSE DELAQUE",
+      "upgrades": [
+        {
+          "name": "warp rounds",
+          "cost": 10
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Autogun",
+          "sr": "8”",
+          "lr": "24”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Rapid Fire (1)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            }
+          ]
+        },
+        {
+          "name": "warp rounds",
+          "sr": "8”",
+          "lr": "24”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Cursed",
+              "text": "Попавшая модель проходит Willpower или получает Insanity. Натуральная 1 на попадании: то же для носителя."
+            },
+            {
+              "name": "Single Shot",
+              "text": "Один выстрел за бой, затем сразу Out of Ammo; перезарядить нельзя."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Autopistol",
+      "cost": 10,
+      "slots": 1,
+      "category": "AUTO/STUB WEAPONS",
+      "list": "HOUSE DELAQUE",
+      "upgrades": [
+        {
+          "name": "warp rounds",
+          "cost": 10
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Autopistol",
+          "sr": "4”",
+          "lr": "12”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            },
+            {
+              "name": "Rapid Fire (1)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            }
+          ]
+        },
+        {
+          "name": "warp rounds",
+          "sr": "4”",
+          "lr": "12”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Cursed",
+              "text": "Попавшая модель проходит Willpower или получает Insanity. Натуральная 1 на попадании: то же для носителя."
+            },
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            },
+            {
+              "name": "Single Shot",
+              "text": "Один выстрел за бой, затем сразу Out of Ammo; перезарядить нельзя."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Long rifle",
+      "cost": 55,
+      "slots": 1,
+      "category": "AUTO/STUB WEAPONS",
+      "list": "HOUSE DELAQUE",
+      "profiles": [
+        {
+          "name": "Long rifle",
+          "sr": "24”",
+          "lr": "48”",
+          "str": "4",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Knockback (6+)",
+              "text": "Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1\" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1\" от центра."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Stub gun",
+      "cost": 5,
+      "slots": 1,
+      "category": "AUTO/STUB WEAPONS",
+      "list": "HOUSE DELAQUE",
+      "upgrades": [
+        {
+          "name": "warp rounds",
+          "cost": 10
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Stub gun",
+          "sr": "6”",
+          "lr": "12”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            }
+          ]
+        },
+        {
+          "name": "warp rounds",
+          "sr": "6”",
+          "lr": "12”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Cursed",
+              "text": "Попавшая модель проходит Willpower или получает Insanity. Натуральная 1 на попадании: то же для носителя."
+            },
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            },
+            {
+              "name": "Single Shot",
+              "text": "Один выстрел за бой, затем сразу Out of Ammo; перезарядить нельзя."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Flechette pistol",
+      "cost": 35,
+      "slots": 1,
+      "category": "ESOTERIC WEAPONS",
+      "list": "HOUSE DELAQUE",
+      "profiles": [
+        {
+          "name": "Flechette pistol",
+          "sr": "4”",
+          "lr": "12”",
+          "str": "-",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            },
+            {
+              "name": "Rapid Fire (1)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            },
+            {
+              "name": "Toxin (3+)",
+              "text": "Против бойца ранит на X+ вместо сравнения Strength и Toughness. Против машины — только на натуральную 6."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Flamer",
+      "cost": 70,
+      "slots": 1,
+      "category": "FLAMERS",
+      "list": "HOUSE DELAQUE",
+      "profiles": [
+        {
+          "name": "Flamer",
+          "sr": "T",
+          "lr": "-",
+          "str": "4",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (6+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blaze (5+)",
+              "text": "Если бросок на ранение не меньше X, цель получает ещё одно попадание тем же профилем. Оно бросается на ранение отдельно и не вызывает новых дополнительных попаданий."
+            },
+            {
+              "name": "Template",
+              "text": "Каплевидный шаблон от стреляющего через цель: все под ним получают автоматическое попадание. С Light в ближнем бою — одно автоматическое попадание без шаблона. С Rapid Fire (X) ближайшая модель получает попадания по кубику огневой мощи, остальные — по одному."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Hand flamer",
+      "cost": 45,
+      "slots": 1,
+      "category": "FLAMERS",
+      "list": "HOUSE DELAQUE",
+      "profiles": [
+        {
+          "name": "Hand Flamer",
+          "sr": "T",
+          "lr": "-",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (6+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blaze (5+)",
+              "text": "Если бросок на ранение не меньше X, цель получает ещё одно попадание тем же профилем. Оно бросается на ранение отдельно и не вызывает новых дополнительных попаданий."
+            },
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            },
+            {
+              "name": "Template",
+              "text": "Каплевидный шаблон от стреляющего через цель: все под ним получают автоматическое попадание. С Light в ближнем бою — одно автоматическое попадание без шаблона. С Rapid Fire (X) ближайшая модель получает попадания по кубику огневой мощи, остальные — по одному."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Heavy flamer*",
+      "cost": 95,
+      "slots": 2,
+      "category": "FLAMERS",
+      "list": "HOUSE DELAQUE",
+      "profiles": [
+        {
+          "name": "Heavy flamer*",
+          "sr": "T",
+          "lr": "-",
+          "str": "5",
+          "ap": "-2",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (6+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blaze (5+)",
+              "text": "Если бросок на ранение не меньше X, цель получает ещё одно попадание тем же профилем. Оно бросается на ранение отдельно и не вызывает новых дополнительных попаданий."
+            },
+            {
+              "name": "Template",
+              "text": "Каплевидный шаблон от стреляющего через цель: все под ним получают автоматическое попадание. С Light в ближнем бою — одно автоматическое попадание без шаблона. С Rapid Fire (X) ближайшая модель получает попадания по кубику огневой мощи, остальные — по одному."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Grav gun",
+      "cost": 50,
+      "slots": 1,
+      "category": "GRAV WEAPONS",
+      "list": "HOUSE DELAQUE",
+      "profiles": [
+        {
+          "name": "Grav gun",
+          "sr": "9”",
+          "lr": "18”",
+          "str": "-",
+          "ap": "-",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Ammo (5+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blast (3”)",
+              "text": "Поставьте маркер Blast 3\" или 5\" на цель. Попадание — маркер остаётся. Промах — рассейте на D6\" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него."
+            },
+            {
+              "name": "Graviton Pulse",
+              "text": "Вместо ранения модели в Blast делают проверку Strength; провал ранит без брони. Маркер остаётся как трудная местность до конца раунда; в End phase на 5+ остаётся ещё на раунд."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Grav pistol",
+      "cost": 40,
+      "slots": 1,
+      "category": "GRAV WEAPONS",
+      "list": "HOUSE DELAQUE",
+      "profiles": [
+        {
+          "name": "Grav pistol",
+          "sr": "4”",
+          "lr": "9”",
+          "str": "-",
+          "ap": "-",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Ammo (5+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blast (3”)",
+              "text": "Поставьте маркер Blast 3\" или 5\" на цель. Попадание — маркер остаётся. Промах — рассейте на D6\" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него."
+            },
+            {
+              "name": "Graviton Pulse",
+              "text": "Вместо ранения модели в Blast делают проверку Strength; провал ранит без брони. Маркер остаётся как трудная местность до конца раунда; в End phase на 5+ остаётся ещё на раунд."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Lasgun",
+      "cost": 15,
+      "slots": 1,
+      "category": "LAS WEAPONS",
+      "list": "HOUSE DELAQUE",
+      "profiles": [
+        {
+          "name": "Lasgun",
+          "sr": "16”",
+          "lr": "24”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": []
+        }
+      ]
+    },
+    {
+      "name": "Laspistol",
+      "cost": 5,
+      "slots": 1,
+      "category": "LAS WEAPONS",
+      "list": "HOUSE DELAQUE",
+      "profiles": [
+        {
+          "name": "Laspistol",
+          "sr": "8”",
+          "lr": "12”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Meltagun",
+      "cost": 140,
+      "slots": 1,
+      "category": "MELTA WEAPONS",
+      "list": "HOUSE DELAQUE",
+      "profiles": [
+        {
+          "name": "Meltagun",
+          "sr": "6”",
+          "lr": "12”",
+          "str": "8",
+          "ap": "-4",
+          "l": "3",
+          "traits": [
+            {
+              "name": "Ammo (6+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Damage (3)",
+              "text": "Раненая модель теряет X Wounds вместо одного. Число кубиков ранений всё равно равно Lethality оружия."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Plasma gun",
+      "cost": 85,
+      "slots": 1,
+      "category": "PLASMA WEAPONS",
+      "list": "HOUSE DELAQUE",
+      "profiles": [
+        {
+          "name": "Plasma gun",
+          "sr": "12”",
+          "lr": "24”",
+          "str": "5",
+          "ap": "-2",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Ammo (6+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Damage (2)",
+              "text": "Раненая модель теряет X Wounds вместо одного. Число кубиков ранений всё равно равно Lethality оружия."
+            },
+            {
+              "name": "Rapid Fire (1)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            },
+            {
+              "name": "Unstable",
+              "text": "Натуральная 1 на попадании: носитель получает автоматическое попадание этим профилем, другие модели не поражаются. Если броска попадания нет (Template) — сначала D6, как выше."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Plasma pistol",
+      "cost": 70,
+      "slots": 1,
+      "category": "PLASMA WEAPONS",
+      "list": "HOUSE DELAQUE",
+      "profiles": [
+        {
+          "name": "Plasma pistol",
+          "sr": "6”",
+          "lr": "12”",
+          "str": "5",
+          "ap": "-2",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Ammo (6+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Damage (2)",
+              "text": "Раненая модель теряет X Wounds вместо одного. Число кубиков ранений всё равно равно Lethality оружия."
+            },
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            },
+            {
+              "name": "Unstable",
+              "text": "Натуральная 1 на попадании: носитель получает автоматическое попадание этим профилем, другие модели не поражаются. Если броска попадания нет (Template) — сначала D6, как выше."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Throwing knives",
+      "cost": 10,
+      "slots": 1,
+      "category": "PRIMITIVE WEAPONS",
+      "list": "HOUSE DELAQUE",
+      "profiles": [
+        {
+          "name": "Throwing knives",
+          "sr": "6”",
+          "lr": "12”",
+          "str": "-",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (3+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Toxin (4+)",
+              "text": "Против бойца ранит на X+ вместо сравнения Strength и Toughness. Против машины — только на натуральную 6."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Shotgun with solid & scatter ammo",
+      "cost": 35,
+      "slots": 1,
+      "category": "SHOTGUNS",
+      "list": "HOUSE DELAQUE",
+      "profiles": [
+        {
+          "name": "scatter ammo",
+          "sr": "4”",
+          "lr": "8”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Rapid Fire (2)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            }
+          ]
+        },
+        {
+          "name": "solid ammo",
+          "sr": "8”",
+          "lr": "16”",
+          "str": "4",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Knockback (5+)",
+              "text": "Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1\" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1\" от центра."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Web gun",
+      "cost": 65,
+      "slots": 1,
+      "category": "WEB WEAPONS",
+      "list": "HOUSE DELAQUE",
+      "profiles": [
+        {
+          "name": "Web gun",
+          "sr": "T",
+          "lr": "-",
+          "str": "5",
+          "ap": "-",
+          "l": "-",
+          "traits": [
+            {
+              "name": "Ammo (6+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Template",
+              "text": "Каплевидный шаблон от стреляющего через цель: все под ним получают автоматическое попадание. С Light в ближнем бою — одно автоматическое попадание без шаблона. С Rapid Fire (X) ближайшая модель получает попадания по кубику огневой мощи, остальные — по одному."
+            },
+            {
+              "name": "Web",
+              "text": "Спасброски брони нельзя (непробиваемые можно). Раненый боец не теряет Wound, а получает Webbed."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Web pistol",
+      "cost": 50,
+      "slots": 1,
+      "category": "WEB WEAPONS",
+      "list": "HOUSE DELAQUE",
+      "profiles": [
+        {
+          "name": "Web pistol",
+          "sr": "T",
+          "lr": "-",
+          "str": "4",
+          "ap": "-",
+          "l": "-",
+          "traits": [
+            {
+              "name": "Ammo (6+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            },
+            {
+              "name": "Template",
+              "text": "Каплевидный шаблон от стреляющего через цель: все под ним получают автоматическое попадание. С Light в ближнем бою — одно автоматическое попадание без шаблона. С Rapid Fire (X) ближайшая модель получает попадания по кубику огневой мощи, остальные — по одному."
+            },
+            {
+              "name": "Web",
+              "text": "Спасброски брони нельзя (непробиваемые можно). Раненый боец не теряет Wound, а получает Webbed."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Psychomantic claws* (Psy-Gheist only)",
+      "cost": 65,
+      "slots": 2,
+      "category": "ESOTERIC WEAPONS",
+      "list": "HOUSE DELAQUE",
+      "profiles": [
+        {
+          "name": "Psychomantic claws*",
+          "sr": "E",
+          "lr": "-",
+          "str": "S+1",
+          "ap": "-3",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Paired (2)",
+              "text": "Нельзя как Secondary и нельзя Secondary вместе с ним. Как Primary: носитель увеличивает Attacks на X."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Serpent’s fangs* (Nacht-Ghul only)",
+      "cost": 70,
+      "slots": 2,
+      "category": "ESOTERIC WEAPONS",
+      "list": "HOUSE DELAQUE",
+      "profiles": [
+        {
+          "name": "Serpent’s fangs*",
+          "sr": "E",
+          "lr": "-",
+          "str": "-",
+          "ap": "-3",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Paired (2)",
+              "text": "Нельзя как Secondary и нельзя Secondary вместе с ним. Как Primary: носитель увеличивает Attacks на X."
+            },
+            {
+              "name": "Toxin (3+)",
+              "text": "Против бойца ранит на X+ вместо сравнения Strength и Toughness. Против машины — только на натуральную 6."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Shivver sword (Nacht-Ghul only)",
+      "cost": 50,
+      "slots": 1,
+      "category": "ESOTERIC WEAPONS",
+      "list": "HOUSE DELAQUE",
+      "profiles": [
+        {
+          "name": "Shivver sword",
+          "sr": "E",
+          "lr": "-",
+          "str": "S+1",
+          "ap": "-1",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Parry",
+              "text": "Как Primary или Secondary в схватке: +1 Save. Несколько таких оружий не складываются."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Shock stave",
+      "cost": 25,
+      "slots": 1,
+      "category": "SHOCK WEAPONS",
+      "list": "HOUSE DELAQUE",
+      "profiles": [
+        {
+          "name": "Shock stave",
+          "sr": "E",
+          "lr": "-",
+          "str": "S+1",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Shock (5+)",
+              "text": "Если атака попадает и бросок попадания не меньше X, она автоматически ранит и считается натуральной 6 на ранении для других свойств."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Stiletto knife",
+      "cost": 25,
+      "slots": 1,
+      "category": "TOXIC WEAPONS",
+      "list": "HOUSE DELAQUE",
+      "profiles": [
+        {
+          "name": "Stiletto knife",
+          "sr": "E",
+          "lr": "-",
+          "str": "-",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Toxin (3+)",
+              "text": "Против бойца ранит на X+ вместо сравнения Strength и Toughness. Против машины — только на натуральную 6."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Web gauntlet",
+      "cost": 10,
+      "slots": 1,
+      "category": "WEB WEAPONS",
+      "list": "HOUSE DELAQUE",
+      "profiles": [
+        {
+          "name": "Web gauntlet",
+          "sr": "E",
+          "lr": "-",
+          "str": "3",
+          "ap": "-",
+          "l": "-",
+          "traits": [
+            {
+              "name": "Backstab",
+              "text": "+1 Strength, если цель Engaged более чем с одной моделью."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Web",
+              "text": "Спасброски брони нельзя (непробиваемые можно). Раненый боец не теряет Wound, а получает Webbed."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Smoke grenades",
+      "cost": 15,
+      "slots": 0,
+      "category": "GRENADES",
+      "list": "HOUSE DELAQUE",
+      "profiles": [
+        {
+          "name": "Smoke grenades",
+          "sr": "-",
+          "lr": "9”",
+          "str": "-",
+          "ap": "-",
+          "l": "-",
+          "traits": [
+            {
+              "name": "Ammo (4+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blast (3”)",
+              "text": "Поставьте маркер Blast 3\" или 5\" на цель. Попадание — маркер остаётся. Промах — рассейте на D6\" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него."
+            },
+            {
+              "name": "Limited",
+              "text": "Если оружие село, его нельзя перезарядить до конца боя."
+            },
+            {
+              "name": "Smoke",
+              "text": "Можно целиться в точку на поле. Маркер Blast остаётся: столб дыма блокирует линию видимости. В End phase на 5+ остаётся, иначе снимается. Попавшая модель не ранится и не становится Suppressed."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mesh armour",
+      "cost": 40,
+      "slots": 0,
+      "category": "ARMOUR & FIELD ARMOUR",
+      "list": "HOUSE DELAQUE",
+      "description": "Fighter в сетчатой броне увеличивает характеристику Save на 1 при разрешении попаданий, полученных в ближнем бою."
+    },
+    {
+      "name": "Refractor field",
+      "cost": 50,
+      "slots": 0,
+      "category": "ARMOUR & FIELD ARMOUR",
+      "list": "HOUSE DELAQUE",
+      "description": "Рефракторное поле даёт носителю непробиваемый спасбросок 5+; однако если при этом спасброске выпадает натуральная 1, поле перегорает и его нельзя использовать до конца боя. Рефракторное поле можно сочетать с другой бронёй и полевой бронёй."
+    },
+    {
+      "name": "Grapnel launcher",
+      "cost": 25,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "HOUSE DELAQUE",
+      "description": "Active Fighter с гарпунной лебёдкой может выполнить действие «Гарпун»: Гарпун (двойное): Fighter может сдвинуться до 12” по прямой в любом направлении, если заканчивает это движение на более высоком уровне, чем начал."
+    },
+    {
+      "name": "Medicae kit",
+      "cost": 20,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "HOUSE DELAQUE",
+      "description": "Если Fighter с медкай-набором помогает другому Fighter на проверке Recovery, он бросает дополнительный кубик ранений и выбирает, какой оставить."
+    },
+    {
+      "name": "Photo-goggles",
+      "cost": 35,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "HOUSE DELAQUE",
+      "description": "Fighter с фотоочками увеличивает значение X в правиле Visibility (X”) на 9” и может видеть сквозь дымовые облака, поставленные свойством Smoke. Кроме того, если во Fighter с фотоочками попадает оружие со свойством Flash, он получает модификатор −2 к проверке Initiative, чтобы не ослепнуть."
+    },
+    {
+      "name": "Psychomancer’s harness (Psy-Gheist only)",
+      "cost": 35,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "HOUSE DELAQUE",
+      "description": "Fighter в psychomancer’s harness увеличивает характеристику Movement на 2”; это может поднять характеристику Movement Fighter выше максимума. Кроме того, когда этот Fighter карабкается, вертикальная дистанция не делится пополам. Иначе говоря, он всегда считается поднимающимся или спускающимся по лестнице. Fighter нельзя экипировать одновременно psychomancer’s harness и сервоупряжью."
+    },
+    {
+      "name": "Respirator",
+      "cost": 15,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "HOUSE DELAQUE",
+      "description": "Когда во Fighter с респиратором попадает оружие со свойством Gas, он получает непробиваемый спасбросок 5+ против этого оружия."
+    },
+    {
+      "name": "Telescopic sight",
+      "cost": 20,
+      "slots": 1,
+      "category": "WEAPON ACCESSORIES",
+      "list": "HOUSE DELAQUE",
+      "description": "Оружие с телескопическим прицелом снижает бонус модели к спасброску брони за укрытие на 1, пока цель в Long Range оружия."
+    },
+    {
+      "name": "Dirt bike",
+      "cost": 35,
+      "slots": 0,
+      "category": "MOUNTS",
+      "list": "HOUSE DELAQUE",
+      "description": "Fighter с dirt bike получает подтип Mounted и ставит характеристику Movement на 8”. Когда он выполняет действие Dash, он добавляет 5” к характеристике Movement вместо Initiative."
+    },
+    {
+      "name": "Cephalopod Spektor",
+      "cost": 75,
+      "slots": 0,
+      "category": "PETS",
+      "list": "HOUSE DELAQUE"
+    },
+    {
+      "name": "Psychoteric Wyrm",
+      "cost": 50,
+      "slots": 0,
+      "category": "PETS",
+      "list": "HOUSE DELAQUE"
+    }
+  ]
+}

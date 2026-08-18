@@ -1,0 +1,95 @@
+{
+  "id": "lyubiteli-tiranid",
+  "name": "Любители тиранид",
+  "faction": "genestealer-cult",
+  "factionName": "Культ генокрадов",
+  "notes": "",
+  "reputation": 1,
+  "stash": 1000,
+  "fighters": [
+    {
+      "id": "f-3vl0vz",
+      "name": "Примус",
+      "type": "Genestealer Cult Alpha",
+      "subtypes": [
+        "Leader"
+      ],
+      "xp": 61,
+      "baseCost": 150,
+      "skills": [],
+      "equipment": [
+        {
+          "name": "Refractor field",
+          "cost": 50,
+          "slots": 0,
+          "extras": []
+        },
+        {
+          "name": "Mining laser*",
+          "cost": 125,
+          "slots": 2,
+          "extras": []
+        }
+      ]
+    },
+    {
+      "id": "f-l1z1q0",
+      "name": "Сверхразум",
+      "type": "Genestealer Cult Abominant",
+      "subtypes": [
+        "Brute"
+      ],
+      "xp": 25,
+      "baseCost": 240,
+      "skills": [],
+      "equipment": [
+        {
+          "name": "Two-handed hammer*",
+          "cost": 40,
+          "slots": 2,
+          "extras": []
+        }
+      ]
+    },
+    {
+      "id": "f-7vld4l",
+      "name": "Поехавший",
+      "type": "Genestealer Cult Aberrant",
+      "subtypes": [
+        "Ganger"
+      ],
+      "xp": 13,
+      "baseCost": 85,
+      "skills": [],
+      "equipment": [
+        {
+          "name": "Two-handed hammer*",
+          "cost": 40,
+          "slots": 2,
+          "extras": []
+        }
+      ]
+    },
+    {
+      "id": "f-pu0z75",
+      "name": "1сник",
+      "type": "Genestealer Cult Neophyte Hybrid",
+      "subtypes": [
+        "Ganger",
+        "Specialist"
+      ],
+      "xp": 13,
+      "baseCost": 40,
+      "skills": [],
+      "equipment": [
+        {
+          "name": "Lasgun",
+          "cost": 15,
+          "slots": 1,
+          "extras": []
+        }
+      ]
+    }
+  ],
+  "updatedAt": "2026-08-18"
+}

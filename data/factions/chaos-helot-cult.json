@@ -1,0 +1,1269 @@
+{
+  "id": "chaos-helot-cult",
+  "name": "Культ хаоситских илотов",
+  "types": [
+    {
+      "id": "chaos-helot-cult-demagogue",
+      "name": "Chaos Helot Cult Demagogue",
+      "category": "Fighter",
+      "subtypes": [
+        "Leader"
+      ],
+      "baseCost": 130,
+      "xp": 61,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "5”",
+          "3+",
+          "3+",
+          "3",
+          "3",
+          "3",
+          "4",
+          "2",
+          "5+",
+          "8",
+          "9",
+          "8",
+          "7"
+        ]
+      }
+    },
+    {
+      "id": "chaos-helot-cult-disciple",
+      "name": "Chaos Helot Cult Disciple",
+      "category": "Fighter",
+      "subtypes": [
+        "Champion"
+      ],
+      "baseCost": 95,
+      "xp": 37,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "5”",
+          "3+",
+          "3+",
+          "3",
+          "3",
+          "2",
+          "3",
+          "2",
+          "5+",
+          "7",
+          "8",
+          "6",
+          "6"
+        ]
+      }
+    },
+    {
+      "id": "chaos-helot-cult-witch",
+      "name": "Chaos Helot Cult Witch",
+      "category": "Fighter",
+      "subtypes": [
+        "Champion",
+        "Wyrd"
+      ],
+      "baseCost": 80,
+      "xp": 49,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "5”",
+          "4+",
+          "4+",
+          "3",
+          "3",
+          "2",
+          "3",
+          "1",
+          "5+",
+          "6",
+          "7",
+          "8",
+          "7"
+        ]
+      },
+      "rules": [
+        "Ведьма: Chaos Helot Cult Witch считает Chaos Helot Wyrd Powers своим Primary Skill Set при выборе навыков.ОригиналA Chaos Helot Cult Witch treats Chaos Helot Wyrd Powers as a Primary Skill Set for the purposes of skill selection."
+      ]
+    },
+    {
+      "id": "chaos-helot-cultist",
+      "name": "Chaos Helot Cultist",
+      "category": "Fighter",
+      "subtypes": [
+        "Ganger",
+        "Specialist"
+      ],
+      "baseCost": 45,
+      "xp": 13,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "5”",
+          "4+",
+          "4+",
+          "3",
+          "3",
+          "1",
+          "4",
+          "1",
+          "6+",
+          "6",
+          "7",
+          "5",
+          "6"
+        ]
+      }
+    },
+    {
+      "id": "chaos-helot-initiate",
+      "name": "Chaos Helot Initiate",
+      "category": "Fighter",
+      "subtypes": [
+        "Prospect"
+      ],
+      "baseCost": 20,
+      "xp": 1,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "5”",
+          "5+",
+          "5+",
+          "3",
+          "3",
+          "1",
+          "4",
+          "1",
+          "6+",
+          "5",
+          "5",
+          "5",
+          "5"
+        ]
+      }
+    },
+    {
+      "id": "chaos-familiar",
+      "name": "Chaos Familiar",
+      "category": "Fighter",
+      "subtypes": [
+        "Beast",
+        "Pet"
+      ],
+      "baseCost": 135,
+      "xp": 13,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "5”",
+          "4+",
+          "6+",
+          "2",
+          "2",
+          "1",
+          "5",
+          "1",
+          "6+",
+          "5",
+          "7",
+          "7",
+          "7"
+        ]
+      },
+      "rules": [
+        "Длина поводка: у Chaos Familiar длина поводка (Leash range) 3”.",
+        "Знамение удачи: Chaos Familiar чует беду и предупреждает спутника вспышкой предвидения. Пока он в пределах Leash range от владельца, у владельца есть непробиваемый спасбросок 4+.ОригиналA Chaos Familiar is able to sense bad fortune and forewarn its companion, giving them a flash of precognition. While they are within Leash range of their owner, their owner has a 4+ Invulnerable save.",
+        "Предвидение: дар предвидения Chaos Familiar позволяет уклоняться почти от любых атак, кроме самых неожиданных. Это мощное предвидение даёт непробиваемый спасбросок 4+.ОригиналThe gift of foresight possessed by the Chaos Familiar enables it to dodge and evade all but the most unexpected of attacks. This tremendous precognition grants them a 4+ Invulnerable save.",
+        "Психическое проявление: Chaos Familiar — продолжение воли владельца и явное свидетельство благоволения богов Хаоса. Если владеющий Fighter имеет подтип Wyrd, раз в раунд он может перебросить проваленную проверку Willpower на проявление силы Wyrd.ОригиналA Chaos Familiar is an extension of the owner’s will and a clear indication of the favour the gods of Chaos have bestowed upon them. If the owning Fighter has the Wyrd Subtype, once per round they may re-roll a failed Willpower check to manifest a Wyrd Power.",
+        "Навыки: у Chaos Familiar есть навык Clamber."
+      ]
+    },
+    {
+      "id": "chaos-spawn",
+      "name": "Chaos Spawn",
+      "category": "Fighter",
+      "subtypes": [
+        "Beast",
+        "Brute"
+      ],
+      "baseCost": 130,
+      "xp": 25,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "3+D3",
+          "*",
+          "6+",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "4",
+          "8",
+          "7",
+          "5"
+        ]
+      },
+      "rules": [
+        "Искажённое чудовище: когда Chaos Spawn добавляют в Gang Roster, бросьте D6 по каждой характеристике профиля и сверьтесь с таблицей ниже, чтобы определить её значение:ОригиналWhen a Chaos Spawn is added to the Gang Roster, roll a D6 for each characteristic in their profile and consult the table below to determine their value:",
+        "Случайное движение: характеристика Movement у Chaos Spawn случайная; бросайте каждый раз, когда Chaos Spawn активируется.ОригиналThe Movement characteristic for a Chaos Spawn is random; roll each time the Chaos Spawn is activated.",
+        "Благословлённые богами Хаоса: когда Chaos Spawn выводится Out of Action, не бросайте по таблице Lasting Injury. Его всегда считают Out Cold.ОригиналWhen a Chaos Spawn is taken Out of Action, do not roll on the Lasting Injury table. They are always considered to be Out Cold.",
+        "Вне контроля: на шаге Wrap-up последовательности Post-battle Sequence, если Chaos Spawn участвовал в бою, есть шанс, что он сбежит. Его хозяин назначает до трёх Fighter из банды, которые не были выведены Out of Action в этом бою; бросьте D6 за каждого Fighter. Если хотя бы один Fighter выбросил 4+, Chaos Spawn удерживают, и он остаётся с бандой. Иначе он сбегает в глубины андерхайва; Chaos Spawn уходит в Recovery, пока банда его возвращает. Кроме того, если любой Fighter выбросил 1, Chaos Spawn бьёт его. Немедленно бросьте по таблице Lasting Injury за него и примените результат.ОригиналDuring the Wrap-up step of the Post-battle Sequence, if a Chaos Spawn took part in the battle there is a chance they will escape. Their controller nominates up to three Fighters from the gang who did not go Out of Action during the battle; roll a D6 for each Fighter. If at least one Fighter rolls a 4+, the Chaos Spawn is restrained and remains with the gang. otherwise they escape into the depths of the underhive; the Chaos Spawn goes into Recovery while the gang retrieves it. Additionally, if any Fighter rolls a 1, the Chaos Spawn lashes out at them. Roll on the Lasting Injury table for them and apply the result immediately.",
+        "Спуск (одиночное): Fighter сдвигается до 3” по горизонтали и до 12” по вертикали. Любое вертикальное движение должно быть вниз, то есть к земле.ОригиналThe Fighter makes a move of up to 3” horizontally and up to 12” vertically. Any vertical movement must be downwards, i.e., towards the ground.",
+        "Посвящение богу Хаоса: при основании банды нужно выбрать одного из богов Хаоса, которому посвятить себя: Blood God, Plague Lord, Dark Prince или Architect of Fate.ОригиналWhen the gang is founded, it must select one of the Chaos gods to dedicate themselves to: the Blood God, the Plague Lord, the Dark Prince or the Architect of Fate.",
+        "Chaos Familiars: Leaders и Champions в Chaos Corrupted Gangs могут быть экипированы не более чем одним Chaos Familiar каждый.ОригиналLeaders and Champions in Chaos Corrupted Gangs can be equipped with up to one Chaos Familiar each."
+      ]
+    }
+  ],
+  "subtypes": [
+    "Beast",
+    "Brute",
+    "Champion",
+    "Ganger",
+    "Leader",
+    "Pet",
+    "Prospect",
+    "Specialist",
+    "Wyrd"
+  ],
+  "equipment": [
+    {
+      "name": "Autogun",
+      "cost": 20,
+      "slots": 1,
+      "category": "AUTO/STUB WEAPONS",
+      "list": "CHAOS HELOT",
+      "upgrades": [
+        {
+          "name": "warp rounds",
+          "cost": 10
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Autogun",
+          "sr": "8”",
+          "lr": "24”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Rapid Fire (1)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            }
+          ]
+        },
+        {
+          "name": "warp rounds",
+          "sr": "8”",
+          "lr": "24”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Cursed",
+              "text": "Попавшая модель проходит Willpower или получает Insanity. Натуральная 1 на попадании: то же для носителя."
+            },
+            {
+              "name": "Single Shot",
+              "text": "Один выстрел за бой, затем сразу Out of Ammo; перезарядить нельзя."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Autopistol",
+      "cost": 10,
+      "slots": 1,
+      "category": "AUTO/STUB WEAPONS",
+      "list": "CHAOS HELOT",
+      "upgrades": [
+        {
+          "name": "warp rounds",
+          "cost": 10
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Autopistol",
+          "sr": "4”",
+          "lr": "12”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            },
+            {
+              "name": "Rapid Fire (1)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            }
+          ]
+        },
+        {
+          "name": "warp rounds",
+          "sr": "4”",
+          "lr": "12”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Cursed",
+              "text": "Попавшая модель проходит Willpower или получает Insanity. Натуральная 1 на попадании: то же для носителя."
+            },
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            },
+            {
+              "name": "Single Shot",
+              "text": "Один выстрел за бой, затем сразу Out of Ammo; перезарядить нельзя."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Heavy stubber*",
+      "cost": 70,
+      "slots": 2,
+      "category": "AUTO/STUB WEAPONS",
+      "list": "CHAOS HELOT",
+      "profiles": [
+        {
+          "name": "Heavy stubber*",
+          "sr": "20”",
+          "lr": "40”",
+          "str": "4",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Heavy",
+              "text": "Дальнобойное: только Braced Shot. Ближний бой: нельзя как Secondary и нельзя использовать Secondary вместе с ним."
+            },
+            {
+              "name": "Rapid Fire (2)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Long rifle",
+      "cost": 55,
+      "slots": 1,
+      "category": "AUTO/STUB WEAPONS",
+      "list": "CHAOS HELOT",
+      "profiles": [
+        {
+          "name": "Long rifle",
+          "sr": "24”",
+          "lr": "48”",
+          "str": "4",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Knockback (6+)",
+              "text": "Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1\" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1\" от центра."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Stub gun",
+      "cost": 5,
+      "slots": 1,
+      "category": "AUTO/STUB WEAPONS",
+      "list": "CHAOS HELOT",
+      "upgrades": [
+        {
+          "name": "warp rounds",
+          "cost": 10
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Stub gun",
+          "sr": "6”",
+          "lr": "12”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            }
+          ]
+        },
+        {
+          "name": "warp rounds",
+          "sr": "6”",
+          "lr": "12”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Cursed",
+              "text": "Попавшая модель проходит Willpower или получает Insanity. Натуральная 1 на попадании: то же для носителя."
+            },
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            },
+            {
+              "name": "Single Shot",
+              "text": "Один выстрел за бой, затем сразу Out of Ammo; перезарядить нельзя."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Warpstorm bolter",
+      "cost": 65,
+      "slots": 1,
+      "category": "BOLT WEAPONS",
+      "list": "CHAOS HELOT",
+      "profiles": [
+        {
+          "name": "Warpstorm bolter",
+          "sr": "12”",
+          "lr": "24”",
+          "str": "4",
+          "ap": "-1",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Ammo (3+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Cursed",
+              "text": "Попавшая модель проходит Willpower или получает Insanity. Натуральная 1 на попадании: то же для носителя."
+            },
+            {
+              "name": "Rapid Fire (1)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            },
+            {
+              "name": "Scarce (4+)",
+              "text": "При Reload бросьте D6: не меньше X — перезаряжено, иначе всё ещё Out of Ammo (можно пробовать снова)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Flamer",
+      "cost": 70,
+      "slots": 1,
+      "category": "FLAMERS",
+      "list": "CHAOS HELOT",
+      "profiles": [
+        {
+          "name": "Flamer",
+          "sr": "T",
+          "lr": "-",
+          "str": "4",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (6+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blaze (5+)",
+              "text": "Если бросок на ранение не меньше X, цель получает ещё одно попадание тем же профилем. Оно бросается на ранение отдельно и не вызывает новых дополнительных попаданий."
+            },
+            {
+              "name": "Template",
+              "text": "Каплевидный шаблон от стреляющего через цель: все под ним получают автоматическое попадание. С Light в ближнем бою — одно автоматическое попадание без шаблона. С Rapid Fire (X) ближайшая модель получает попадания по кубику огневой мощи, остальные — по одному."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Hand flamer",
+      "cost": 45,
+      "slots": 1,
+      "category": "FLAMERS",
+      "list": "CHAOS HELOT",
+      "profiles": [
+        {
+          "name": "Hand Flamer",
+          "sr": "T",
+          "lr": "-",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (6+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blaze (5+)",
+              "text": "Если бросок на ранение не меньше X, цель получает ещё одно попадание тем же профилем. Оно бросается на ранение отдельно и не вызывает новых дополнительных попаданий."
+            },
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            },
+            {
+              "name": "Template",
+              "text": "Каплевидный шаблон от стреляющего через цель: все под ним получают автоматическое попадание. С Light в ближнем бою — одно автоматическое попадание без шаблона. С Rapid Fire (X) ближайшая модель получает попадания по кубику огневой мощи, остальные — по одному."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Heavy flamer*",
+      "cost": 95,
+      "slots": 2,
+      "category": "FLAMERS",
+      "list": "CHAOS HELOT",
+      "profiles": [
+        {
+          "name": "Heavy flamer*",
+          "sr": "T",
+          "lr": "-",
+          "str": "5",
+          "ap": "-2",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (6+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blaze (5+)",
+              "text": "Если бросок на ранение не меньше X, цель получает ещё одно попадание тем же профилем. Оно бросается на ранение отдельно и не вызывает новых дополнительных попаданий."
+            },
+            {
+              "name": "Template",
+              "text": "Каплевидный шаблон от стреляющего через цель: все под ним получают автоматическое попадание. С Light в ближнем бою — одно автоматическое попадание без шаблона. С Rapid Fire (X) ближайшая модель получает попадания по кубику огневой мощи, остальные — по одному."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Grenade launcher with frag & krak grenades",
+      "cost": 80,
+      "slots": 0,
+      "category": "GRENADE LAUNCHERS",
+      "list": "CHAOS HELOT",
+      "upgrades": [
+        {
+          "name": "photon flash grenades",
+          "cost": 15
+        },
+        {
+          "name": "smoke grenades",
+          "cost": 15
+        }
+      ],
+      "profiles": [
+        {
+          "name": "frag grenades",
+          "sr": "6”",
+          "lr": "24”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (4+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blast (3”)",
+              "text": "Поставьте маркер Blast 3\" или 5\" на цель. Попадание — маркер остаётся. Промах — рассейте на D6\" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него."
+            },
+            {
+              "name": "Knockback (5+)",
+              "text": "Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1\" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1\" от центра."
+            }
+          ]
+        },
+        {
+          "name": "krak grenades",
+          "sr": "6”",
+          "lr": "24”",
+          "str": "6",
+          "ap": "-2",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (4+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Lasgun",
+      "cost": 15,
+      "slots": 1,
+      "category": "LAS WEAPONS",
+      "list": "CHAOS HELOT",
+      "profiles": [
+        {
+          "name": "Lasgun",
+          "sr": "16”",
+          "lr": "24”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": []
+        }
+      ]
+    },
+    {
+      "name": "Laspistol",
+      "cost": 5,
+      "slots": 1,
+      "category": "LAS WEAPONS",
+      "list": "CHAOS HELOT",
+      "profiles": [
+        {
+          "name": "Laspistol",
+          "sr": "8”",
+          "lr": "12”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Chain glaive*",
+      "cost": 50,
+      "slots": 2,
+      "category": "CHAIN WEAPONS",
+      "list": "CHAOS HELOT",
+      "profiles": [
+        {
+          "name": "Chain glaive*",
+          "sr": "E",
+          "lr": "-",
+          "str": "S+1",
+          "ap": "-1",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Heavy",
+              "text": "Дальнобойное: только Braced Shot. Ближний бой: нельзя как Secondary и нельзя использовать Secondary вместе с ним."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Parry",
+              "text": "Как Primary или Secondary в схватке: +1 Save. Несколько таких оружий не складываются."
+            },
+            {
+              "name": "Shred (6+)",
+              "text": "Если оружие ранит и бросок на ранение не меньше X, Lethality этой атаки +1."
+            },
+            {
+              "name": "Unwieldy",
+              "text": "В ближнем бою Initiative модели ставится в 1 до любых модификаторов."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Chainsword",
+      "cost": 20,
+      "slots": 1,
+      "category": "CHAIN WEAPONS",
+      "list": "CHAOS HELOT",
+      "profiles": [
+        {
+          "name": "Chainsword",
+          "sr": "E",
+          "lr": "-",
+          "str": "S",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Parry",
+              "text": "Как Primary или Secondary в схватке: +1 Save. Несколько таких оружий не складываются."
+            },
+            {
+              "name": "Shred (5+)",
+              "text": "Если оружие ранит и бросок на ранение не меньше X, Lethality этой атаки +1."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Axe",
+      "cost": 15,
+      "slots": 1,
+      "category": "PRIMITIVE WEAPONS",
+      "list": "CHAOS HELOT",
+      "profiles": [
+        {
+          "name": "Axe",
+          "sr": "E",
+          "lr": "-",
+          "str": "S",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Fighting knife",
+      "cost": 5,
+      "slots": 1,
+      "category": "PRIMITIVE WEAPONS",
+      "list": "CHAOS HELOT",
+      "profiles": [
+        {
+          "name": "Fighting knife",
+          "sr": "E",
+          "lr": "-",
+          "str": "S",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Backstab",
+              "text": "+1 Strength, если цель Engaged более чем с одной моделью."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Flail",
+      "cost": 10,
+      "slots": 1,
+      "category": "PRIMITIVE WEAPONS",
+      "list": "CHAOS HELOT",
+      "profiles": [
+        {
+          "name": "Flail",
+          "sr": "E",
+          "lr": "-",
+          "str": "S",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Knockback (6+)",
+              "text": "Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1\" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1\" от центра."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Maul",
+      "cost": 20,
+      "slots": 1,
+      "category": "PRIMITIVE WEAPONS",
+      "list": "CHAOS HELOT",
+      "profiles": [
+        {
+          "name": "Maul",
+          "sr": "E",
+          "lr": "-",
+          "str": "S+1",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Concussive (6+)",
+              "text": "Если атака ранит и бросок на ранение не меньше X, цель снижает Initiative на 1 до конца следующей активации."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Two-handed axe*",
+      "cost": 40,
+      "slots": 2,
+      "category": "PRIMITIVE WEAPONS",
+      "list": "CHAOS HELOT",
+      "profiles": [
+        {
+          "name": "Two-handed axe*",
+          "sr": "E",
+          "lr": "-",
+          "str": "S+1",
+          "ap": "-1",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Heavy",
+              "text": "Дальнобойное: только Braced Shot. Ближний бой: нельзя как Secondary и нельзя использовать Secondary вместе с ним."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Unwieldy",
+              "text": "В ближнем бою Initiative модели ставится в 1 до любых модификаторов."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Two-handed hammer*",
+      "cost": 40,
+      "slots": 2,
+      "category": "PRIMITIVE WEAPONS",
+      "list": "CHAOS HELOT",
+      "profiles": [
+        {
+          "name": "Two-handed hammer*",
+          "sr": "E",
+          "lr": "-",
+          "str": "S+1",
+          "ap": "-",
+          "l": "3",
+          "traits": [
+            {
+              "name": "Concussive (6+)",
+              "text": "Если атака ранит и бросок на ранение не меньше X, цель снижает Initiative на 1 до конца следующей активации."
+            },
+            {
+              "name": "Heavy",
+              "text": "Дальнобойное: только Braced Shot. Ближний бой: нельзя как Secondary и нельзя использовать Secondary вместе с ним."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Unwieldy",
+              "text": "В ближнем бою Initiative модели ставится в 1 до любых модификаторов."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Blasting charges",
+      "cost": 60,
+      "slots": 0,
+      "category": "GRENADES",
+      "list": "CHAOS HELOT",
+      "profiles": [
+        {
+          "name": "Blasting charges",
+          "sr": "-",
+          "lr": "6”",
+          "str": "5",
+          "ap": "-1",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Ammo (5+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blast (5”)",
+              "text": "Поставьте маркер Blast 3\" или 5\" на цель. Попадание — маркер остаётся. Промах — рассейте на D6\" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него."
+            },
+            {
+              "name": "Knockback (5+)",
+              "text": "Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1\" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1\" от центра."
+            },
+            {
+              "name": "Limited",
+              "text": "Если оружие село, его нельзя перезарядить до конца боя."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Demo charges",
+      "cost": 85,
+      "slots": 0,
+      "category": "GRENADES",
+      "list": "CHAOS HELOT",
+      "profiles": [
+        {
+          "name": "Demo charges",
+          "sr": "-",
+          "lr": "6”",
+          "str": "6",
+          "ap": "-3",
+          "l": "3",
+          "traits": [
+            {
+              "name": "Ammo (6+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blast (5”)",
+              "text": "Поставьте маркер Blast 3\" или 5\" на цель. Попадание — маркер остаётся. Промах — рассейте на D6\" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него."
+            },
+            {
+              "name": "Damage (2)",
+              "text": "Раненая модель теряет X Wounds вместо одного. Число кубиков ранений всё равно равно Lethality оружия."
+            },
+            {
+              "name": "Limited",
+              "text": "Если оружие село, его нельзя перезарядить до конца боя."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Frag grenades",
+      "cost": 30,
+      "slots": 0,
+      "category": "GRENADES",
+      "list": "CHAOS HELOT",
+      "profiles": [
+        {
+          "name": "Frag grenades",
+          "sr": "-",
+          "lr": "9”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (4+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blast (3”)",
+              "text": "Поставьте маркер Blast 3\" или 5\" на цель. Попадание — маркер остаётся. Промах — рассейте на D6\" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него."
+            },
+            {
+              "name": "Knockback (6+)",
+              "text": "Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1\" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1\" от центра."
+            },
+            {
+              "name": "Limited",
+              "text": "Если оружие село, его нельзя перезарядить до конца боя."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Incendiary charges",
+      "cost": 40,
+      "slots": 0,
+      "category": "GRENADES",
+      "list": "CHAOS HELOT",
+      "profiles": [
+        {
+          "name": "Incendiary charges",
+          "sr": "-",
+          "lr": "9”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (5+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blast (5”)",
+              "text": "Поставьте маркер Blast 3\" или 5\" на цель. Попадание — маркер остаётся. Промах — рассейте на D6\" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него."
+            },
+            {
+              "name": "Blaze (5+)",
+              "text": "Если бросок на ранение не меньше X, цель получает ещё одно попадание тем же профилем. Оно бросается на ранение отдельно и не вызывает новых дополнительных попаданий."
+            },
+            {
+              "name": "Limited",
+              "text": "Если оружие село, его нельзя перезарядить до конца боя."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Krak grenades",
+      "cost": 45,
+      "slots": 0,
+      "category": "GRENADES",
+      "list": "CHAOS HELOT",
+      "profiles": [
+        {
+          "name": "Krak grenades",
+          "sr": "-",
+          "lr": "9”",
+          "str": "6",
+          "ap": "-2",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (4+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Limited",
+              "text": "Если оружие село, его нельзя перезарядить до конца боя."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Hazard suit",
+      "cost": 10,
+      "slots": 0,
+      "category": "ARMOUR & FIELD ARMOUR",
+      "list": "CHAOS HELOT",
+      "description": "Fighter в защитном костюме иммунен к свойствам Blaze (X+) и Rad-phage."
+    },
+    {
+      "name": "Mesh armour",
+      "cost": 40,
+      "slots": 0,
+      "category": "ARMOUR & FIELD ARMOUR",
+      "list": "CHAOS HELOT",
+      "description": "Fighter в сетчатой броне увеличивает характеристику Save на 1 при разрешении попаданий, полученных в ближнем бою."
+    },
+    {
+      "name": "Refractor field",
+      "cost": 50,
+      "slots": 0,
+      "category": "ARMOUR & FIELD ARMOUR",
+      "list": "CHAOS HELOT",
+      "description": "Рефракторное поле даёт носителю непробиваемый спасбросок 5+; однако если при этом спасброске выпадает натуральная 1, поле перегорает и его нельзя использовать до конца боя. Рефракторное поле можно сочетать с другой бронёй и полевой бронёй."
+    },
+    {
+      "name": "Cult icon (maximum one per gang)",
+      "cost": 20,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "CHAOS HELOT",
+      "description": "В отличие от другого снаряжения, банда может купить только один культовый символ. Его должен нести Leader или Champion. Когда Fighter с культовым символом выполняет действие Group Activation, он может перебросить проверку Leadership."
+    },
+    {
+      "name": "Drop rig",
+      "cost": 10,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "CHAOS HELOT",
+      "description": "Active или Suppressed Fighter со спусковой оснасткой может выполнить действие «Спуск», находясь в пределах 1” от края площадки: Спуск (одиночное): Fighter сдвигается до 3” по горизонтали и до 12” по вертикали. Любое вертикальное движение должно быть вниз, то есть к земле."
+    },
+    {
+      "name": "Medicae kit",
+      "cost": 20,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "CHAOS HELOT",
+      "description": "Если Fighter с медкай-набором помогает другому Fighter на проверке Recovery, он бросает дополнительный кубик ранений и выбирает, какой оставить."
+    },
+    {
+      "name": "Photo-goggles",
+      "cost": 35,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "CHAOS HELOT",
+      "description": "Fighter с фотоочками увеличивает значение X в правиле Visibility (X”) на 9” и может видеть сквозь дымовые облака, поставленные свойством Smoke. Кроме того, если во Fighter с фотоочками попадает оружие со свойством Flash, он получает модификатор −2 к проверке Initiative, чтобы не ослепнуть."
+    },
+    {
+      "name": "Respirator",
+      "cost": 15,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "CHAOS HELOT",
+      "description": "Когда во Fighter с респиратором попадает оружие со свойством Gas, он получает непробиваемый спасбросок 5+ против этого оружия."
+    },
+    {
+      "name": "Infra-sight",
+      "cost": 10,
+      "slots": 1,
+      "category": "WEAPON ACCESSORIES",
+      "list": "CHAOS HELOT",
+      "description": "Оружие с инфраприцелом можно стрелять по целям за маркерами, созданными свойством Smoke. Кроме того, значение X в правиле Visibility (X”) увеличивается на 9” при использовании оружия с инфраприцелом."
+    },
+    {
+      "name": "Mono-sight",
+      "cost": 20,
+      "slots": 1,
+      "category": "WEAPON ACCESSORIES",
+      "list": "CHAOS HELOT",
+      "description": "Когда модель выполняет действие Aimed Shot оружием с моноприцелом, она применяет модификатор +2 к броску попадания вместо +1."
+    },
+    {
+      "name": "Dirt bike",
+      "cost": 35,
+      "slots": 0,
+      "category": "MOUNTS",
+      "list": "CHAOS HELOT",
+      "description": "Fighter с dirt bike получает подтип Mounted и ставит характеристику Movement на 8”. Когда он выполняет действие Dash, он добавляет 5” к характеристике Movement вместо Initiative."
+    },
+    {
+      "name": "Chaos Familiar",
+      "cost": 135,
+      "slots": 0,
+      "category": "PETS",
+      "list": "CHAOS HELOT"
+    }
+  ]
+}

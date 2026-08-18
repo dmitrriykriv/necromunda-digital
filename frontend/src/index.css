@@ -1,0 +1,311 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 14% 9%;
+    --foreground: 220 10% 86%;
+    --card: 225 16% 13%;
+    --card-foreground: 220 10% 86%;
+    --primary: 16 81% 54%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 225 16% 16%;
+    --secondary-foreground: 220 10% 86%;
+    --muted: 225 14% 18%;
+    --muted-foreground: 218 8% 62%;
+    --accent: 16 50% 16%;
+    --accent-foreground: 22 84% 62%;
+    --destructive: 4 70% 52%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 222 14% 22%;
+    --input: 222 14% 22%;
+    --ring: 16 81% 54%;
+    --radius: 8px;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html,
+  body,
+  #root {
+    min-height: 100%;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: "Segoe UI", -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+}
+
+.print-card {
+  background: #1a1d26;
+  border: 1px solid hsl(var(--border));
+  border-top: 4px solid #e8622a;
+  border-radius: 10px;
+  color: #e8e6e1;
+  padding: 1.2rem 1.35rem 1.35rem;
+}
+
+.print-card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.9rem;
+}
+
+.print-kicker {
+  color: #e8622a;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.print-name {
+  font-size: 1.45rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.15;
+  margin-top: 0.15rem;
+  text-transform: uppercase;
+}
+
+.print-meta {
+  color: #9aa0ad;
+  font-size: 0.82rem;
+  margin-top: 0.2rem;
+}
+
+.print-cost {
+  flex-shrink: 0;
+  text-align: right;
+}
+
+.print-cost strong {
+  color: #f0c36a;
+  display: block;
+  font-size: 1.55rem;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.print-cost span {
+  color: #9aa0ad;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.print-stats {
+  border-collapse: collapse;
+  margin: 0 0 0.85rem;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.print-stats th,
+.print-stats td {
+  border: 1px solid #323846;
+  font-variant-numeric: tabular-nums;
+  padding: 0.28rem 0.15rem;
+  text-align: center;
+}
+
+.print-stats th {
+  background: #12141b;
+  color: #e8622a;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.print-stats td {
+  background: #22252f;
+  font-size: 0.92rem;
+  font-weight: 650;
+}
+
+.print-section {
+  margin-top: 0.85rem;
+}
+
+.print-section h3 {
+  color: #e8622a;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  margin-bottom: 0.35rem;
+  text-transform: uppercase;
+}
+
+.print-skills {
+  font-size: 0.92rem;
+}
+
+.print-rules,
+.print-gear-list {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.print-rules {
+  color: #c9cdd6;
+  font-size: 0.8rem;
+  line-height: 1.35;
+  list-style: none;
+  padding: 0;
+}
+
+.print-gear {
+  border: 1px solid #323846;
+  border-radius: 6px;
+  padding: 0.55rem 0.65rem;
+}
+
+.print-gear-title {
+  display: flex;
+  font-size: 0.92rem;
+  font-weight: 650;
+  gap: 0.75rem;
+  justify-content: space-between;
+}
+
+.print-gear-cost {
+  color: #f0c36a;
+  flex-shrink: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.print-weapon {
+  border-collapse: collapse;
+  font-size: 0.72rem;
+  margin-top: 0.4rem;
+  width: 100%;
+}
+
+.print-weapon th,
+.print-weapon td {
+  border-bottom: 1px solid #323846;
+  padding: 0.22rem 0.3rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.print-weapon th {
+  color: #9aa0ad;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.print-wname {
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+.print-desc,
+.print-traits dd {
+  color: #c9cdd6;
+  font-size: 0.78rem;
+  line-height: 1.4;
+  margin-top: 0.35rem;
+}
+
+.print-empty {
+  color: #9aa0ad;
+  font-size: 0.82rem;
+  font-style: italic;
+}
+
+.print-traits {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.print-traits dt {
+  color: #e8e6e1;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+@media print {
+  @page {
+    margin: 10mm;
+    size: A4;
+  }
+
+  html,
+  body,
+  #root {
+    background: #fff !important;
+    min-height: 0;
+  }
+
+  .print-toolbar {
+    display: none !important;
+  }
+
+  .print-sheet {
+    max-width: none;
+    padding: 0 !important;
+  }
+
+  .print-card {
+    background: #fff;
+    border: 1px solid #c9b4a4;
+    border-top: 5px solid #e8622a;
+    border-radius: 0;
+    break-inside: avoid;
+    color: #161616;
+    margin: 0 0 8mm;
+    page-break-inside: avoid;
+  }
+
+  .print-kicker,
+  .print-section h3,
+  .print-stats th {
+    color: #c24a1a;
+  }
+
+  .print-meta,
+  .print-cost span,
+  .print-empty,
+  .print-weapon th {
+    color: #5b5b5b;
+  }
+
+  .print-cost strong,
+  .print-gear-cost {
+    color: #8a5a12;
+  }
+
+  .print-stats th,
+  .print-stats td,
+  .print-weapon th,
+  .print-weapon td {
+    border-color: #d7d0c8;
+  }
+
+  .print-stats th {
+    background: #f4ebe4;
+  }
+
+  .print-stats td {
+    background: #fff;
+  }
+
+  .print-rules,
+  .print-desc,
+  .print-traits dd {
+    color: #333;
+  }
+
+  .print-gear {
+    border-color: #d7d0c8;
+  }
+}

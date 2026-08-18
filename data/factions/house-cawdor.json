@@ -1,0 +1,2091 @@
+{
+  "id": "house-cawdor",
+  "name": "Дом Каудор",
+  "types": [
+    {
+      "id": "cawdor-word-keeper",
+      "name": "Cawdor Word-Keeper",
+      "category": "Fighter",
+      "subtypes": [
+        "Leader",
+        "Pious"
+      ],
+      "baseCost": 115,
+      "xp": 61,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "5”",
+          "3+",
+          "3+",
+          "3",
+          "3",
+          "3",
+          "3",
+          "2",
+          "5+",
+          "8",
+          "8",
+          "8",
+          "7"
+        ]
+      }
+    },
+    {
+      "id": "cawdor-firebrand",
+      "name": "Cawdor Firebrand",
+      "category": "Fighter",
+      "subtypes": [
+        "Champion",
+        "Pious"
+      ],
+      "baseCost": 95,
+      "xp": 37,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "5”",
+          "3+",
+          "3+",
+          "3+",
+          "3+",
+          "2",
+          "3",
+          "2",
+          "5+",
+          "7",
+          "7",
+          "6",
+          "7"
+        ]
+      }
+    },
+    {
+      "id": "cawdor-brethren",
+      "name": "Cawdor Brethren",
+      "category": "Fighter",
+      "subtypes": [
+        "Ganger",
+        "Pious",
+        "Specialist"
+      ],
+      "baseCost": 40,
+      "xp": 13,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "5”",
+          "4+",
+          "4+",
+          "3",
+          "3",
+          "1",
+          "3",
+          "1",
+          "6+",
+          "6",
+          "6",
+          "6",
+          "6"
+        ]
+      }
+    },
+    {
+      "id": "cawdor-way-brethren",
+      "name": "Cawdor Way-Brethren",
+      "category": "Fighter",
+      "subtypes": [
+        "Pious",
+        "Prospect"
+      ],
+      "baseCost": 65,
+      "xp": 4,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "6”",
+          "5+",
+          "5+",
+          "3",
+          "3",
+          "1",
+          "4",
+          "1",
+          "6+",
+          "5",
+          "6",
+          "6",
+          "5"
+        ]
+      },
+      "rules": [
+        "Навыки: у Cawdor Way-Brethren есть навык Dodge."
+      ]
+    },
+    {
+      "id": "cawdor-bonepicker",
+      "name": "Cawdor Bonepicker",
+      "category": "Fighter",
+      "subtypes": [
+        "Pious",
+        "Prospect"
+      ],
+      "baseCost": 20,
+      "xp": 1,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "6”",
+          "5+",
+          "5+",
+          "3",
+          "3",
+          "1",
+          "4",
+          "1",
+          "6+",
+          "5",
+          "5",
+          "5",
+          "5"
+        ]
+      }
+    },
+    {
+      "id": "cawdor-stig-shambler",
+      "name": "Cawdor Stig-Shambler",
+      "category": "Fighter",
+      "subtypes": [
+        "Brute",
+        "Loner",
+        "Pious"
+      ],
+      "baseCost": 240,
+      "xp": 25,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "4”",
+          "4+",
+          "4+",
+          "5",
+          "4",
+          "4",
+          "3",
+          "2",
+          "6+",
+          "6",
+          "6",
+          "6",
+          "5"
+        ]
+      },
+      "rules": [
+        "Навыки: у Cawdor Stig-Shambler есть навык Bulging Biceps."
+      ]
+    },
+    {
+      "id": "redemptionist-priest",
+      "name": "Redemptionist Priest",
+      "category": "Fighter",
+      "subtypes": [
+        "Fanatic",
+        "Leader"
+      ],
+      "baseCost": 130,
+      "xp": 61,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "5”",
+          "3+",
+          "3+",
+          "3",
+          "3",
+          "3",
+          "3",
+          "3",
+          "5+",
+          "8",
+          "7",
+          "9",
+          "7"
+        ]
+      }
+    },
+    {
+      "id": "redemptionist-deacon",
+      "name": "Redemptionist Deacon",
+      "category": "Fighter",
+      "subtypes": [
+        "Champion",
+        "Fanatic"
+      ],
+      "baseCost": 130,
+      "xp": 37,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "5”",
+          "3+",
+          "3+",
+          "3",
+          "3",
+          "2",
+          "3",
+          "2",
+          "5+",
+          "7",
+          "7",
+          "8",
+          "6"
+        ]
+      }
+    },
+    {
+      "id": "redemptionist-brethren",
+      "name": "Redemptionist Brethren",
+      "category": "Fighter",
+      "subtypes": [
+        "Fanatic",
+        "Ganger",
+        "Specialist"
+      ],
+      "baseCost": 40,
+      "xp": 13,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "5”",
+          "4+",
+          "4+",
+          "3",
+          "3",
+          "1",
+          "3",
+          "1",
+          "6+",
+          "6",
+          "7",
+          "7",
+          "5"
+        ]
+      }
+    },
+    {
+      "id": "redemptionist-zealot",
+      "name": "Redemptionist Zealot",
+      "category": "Fighter",
+      "subtypes": [
+        "Fanatic",
+        "Prospect"
+      ],
+      "baseCost": 35,
+      "xp": 1,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "6”",
+          "5+",
+          "5+",
+          "3",
+          "3",
+          "1",
+          "4",
+          "2",
+          "6+",
+          "5",
+          "6",
+          "5",
+          "5"
+        ]
+      }
+    },
+    {
+      "id": "sheen-bird",
+      "name": "Sheen Bird",
+      "category": "Fighter",
+      "subtypes": [
+        "Beast",
+        "Flying",
+        "Pet"
+      ],
+      "baseCost": 75,
+      "xp": 13,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "7”",
+          "3+",
+          "6+",
+          "2",
+          "3",
+          "1",
+          "5",
+          "2",
+          "6+",
+          "6",
+          "6",
+          "6",
+          "4"
+        ]
+      },
+      "rules": [
+        "Длина поводка: у Sheen Bird длина поводка (Leash range) 6”.",
+        "В исступлении: Sheen Bird находится в состоянии Frenzy.",
+        "Подготовить крысу-бомбу (одиночное): выберите гранату со свойством Blast (3”/5”), которой экипирован Fighter и которая не Out of Ammo, и сделайте для неё тест Ammo (X+), как если бы гранату выстрелили. Затем поставьте bomb delivery rat в контакт подставками с этим Fighter; крыса сразу активируется. В начале каждого раунда, после броска за Priority, но до активации первой модели, активируются все bomb delivery rats. Когда bomb delivery rat активируется, следуйте этим указаниям:ОригиналSelect a grenade with the Blast (3”/5”) trait the Fighter is equipped with that is not Out of Ammo and make an Ammo (X+) test for them as if the grenade had been fired. Then, place a bomb delivery rat in base contact with this Fighter which then immediately activates. At the start of each round, after rolling for Priority but before the first model activates, all bomb delivery rats activate. When a bomb delivery rat activates, follow these instructions:",
+        "Спуск (одиночное): Fighter сдвигается до 3” по горизонтали и до 12” по вертикали. Любое вертикальное движение должно быть вниз, то есть к земле.ОригиналThe Fighter makes a move of up to 3” horizontally and up to 12” vertically. Any vertical movement must be downwards, i.e., towards the ground.",
+        "Слова гнева (одиночное): этот Fighter читает вслух из Book of the Redemption. До фазы окончания этого раунда любой дружественный Fanatic Fighter в пределах 6” от этого Fighter в начале своей активации может либо перебросить D6 при действии Charge, либо перебросить один бросок натуральной 1 при броске попадания.ОригиналThis Fighter read aloud from the Book of the Redemption. Until the End phase of this round, any friendly Fanatic Fighters that are within 6” of this Fighter when their activation starts may either re-roll the D6 when performing a Charge action, or may re-roll a single roll of a natural 1 when making a Hit roll.",
+        "Спуск (одиночное): Fighter сдвигается до 3” по горизонтали и до 12” по вертикали. Любое вертикальное движение должно быть вниз, то есть к земле.ОригиналThe Fighter makes a move of up to 3” horizontally and up to 12” vertically. Any vertical movement must be downwards, i.e., towards the ground.",
+        "Подготовить крысу-бомбу (одиночное): выберите гранату со свойством Blast (3”/5”), которой экипирован Fighter и которая не Out of Ammo, и сделайте для неё тест Ammo (X+), как если бы гранату выстрелили. Затем поставьте bomb delivery rat в контакт подставками с этим Fighter; крыса сразу активируется. В начале каждого раунда, после броска за Priority, но до активации первой модели, активируются все bomb delivery rats. Когда bomb delivery rat активируется, следуйте этим указаниям:ОригиналSelect a grenade with the Blast (3”/5”) trait the Fighter is equipped with that is not Out of Ammo and make an Ammo (X+) test for them as if the grenade had been fired. Then, place a bomb delivery rat in base contact with this Fighter which then immediately activates. At the start of each round, after rolling for Priority but before the first model activates, all bomb delivery rats activate. When a bomb delivery rat activates, follow these instructions:",
+        "Слова гнева (одиночное): этот Fighter читает вслух из Book of the Redemption. До фазы окончания этого раунда любой дружественный Fanatic Fighter в пределах 6” от этого Fighter в начале своей активации может либо перебросить D6 при действии Charge, либо перебросить один бросок натуральной 1 при броске попадания.ОригиналThis Fighter read aloud from the Book of the Redemption. Until the End phase of this round, any friendly Fanatic Fighters that are within 6” of this Fighter when their activation starts may either re-roll the D6 when performing a Charge action, or may re-roll a single roll of a natural 1 when making a Hit roll."
+      ]
+    }
+  ],
+  "subtypes": [
+    "Beast",
+    "Brute",
+    "Champion",
+    "Fanatic",
+    "Flying",
+    "Ganger",
+    "Leader",
+    "Loner",
+    "Pet",
+    "Pious",
+    "Prospect",
+    "Specialist"
+  ],
+  "equipment": [
+    {
+      "name": "Autogun",
+      "cost": 20,
+      "slots": 1,
+      "category": "AUTO/STUB WEAPONS",
+      "list": "HOUSE CAWDOR",
+      "profiles": [
+        {
+          "name": "autogun",
+          "sr": "8”",
+          "lr": "24”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Combi",
+              "text": "При Shoot или Aimed Shot выберите профиль до броска. Можно стрелять обоими по одной цели с −1 к попаданию каждого; атаки одновременны."
+            },
+            {
+              "name": "Rapid Fire (1)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            }
+          ]
+        },
+        {
+          "name": "warp rounds",
+          "sr": "8”",
+          "lr": "24”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Cursed",
+              "text": "Попавшая модель проходит Willpower или получает Insanity. Натуральная 1 на попадании: то же для носителя."
+            },
+            {
+              "name": "Single Shot",
+              "text": "Один выстрел за бой, затем сразу Out of Ammo; перезарядить нельзя."
+            }
+          ]
+        }
+      ],
+      "upgrades": [
+        {
+          "name": "warp rounds",
+          "cost": 10
+        }
+      ]
+    },
+    {
+      "name": "Autopistol",
+      "cost": 10,
+      "slots": 1,
+      "category": "AUTO/STUB WEAPONS",
+      "list": "HOUSE CAWDOR",
+      "upgrades": [
+        {
+          "name": "warp rounds",
+          "cost": 10
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Autopistol",
+          "sr": "4”",
+          "lr": "12”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            },
+            {
+              "name": "Rapid Fire (1)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            }
+          ]
+        },
+        {
+          "name": "warp rounds",
+          "sr": "4”",
+          "lr": "12”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Cursed",
+              "text": "Попавшая модель проходит Willpower или получает Insanity. Натуральная 1 на попадании: то же для носителя."
+            },
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            },
+            {
+              "name": "Single Shot",
+              "text": "Один выстрел за бой, затем сразу Out of Ammo; перезарядить нельзя."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Heavy stubber",
+      "cost": 70,
+      "slots": 1,
+      "category": "AUTO/STUB WEAPONS",
+      "list": "HOUSE CAWDOR",
+      "profiles": [
+        {
+          "name": "Heavy stubber*",
+          "sr": "20”",
+          "lr": "40”",
+          "str": "4",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Heavy",
+              "text": "Дальнобойное: только Braced Shot. Ближний бой: нельзя как Secondary и нельзя использовать Secondary вместе с ним."
+            },
+            {
+              "name": "Rapid Fire (2)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Long rifle",
+      "cost": 55,
+      "slots": 1,
+      "category": "AUTO/STUB WEAPONS",
+      "list": "HOUSE CAWDOR",
+      "profiles": [
+        {
+          "name": "Long rifle",
+          "sr": "24”",
+          "lr": "48”",
+          "str": "4",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Knockback (6+)",
+              "text": "Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1\" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1\" от центра."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Stub gun",
+      "cost": 5,
+      "slots": 1,
+      "category": "AUTO/STUB WEAPONS",
+      "list": "HOUSE CAWDOR",
+      "upgrades": [
+        {
+          "name": "warp rounds",
+          "cost": 10
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Stub gun",
+          "sr": "6”",
+          "lr": "12”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            }
+          ]
+        },
+        {
+          "name": "warp rounds",
+          "sr": "6”",
+          "lr": "12”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Cursed",
+              "text": "Попавшая модель проходит Willpower или получает Insanity. Натуральная 1 на попадании: то же для носителя."
+            },
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            },
+            {
+              "name": "Single Shot",
+              "text": "Один выстрел за бой, затем сразу Out of Ammo; перезарядить нельзя."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Combi-weapon (autogun/flamer)",
+      "cost": 75,
+      "slots": 1,
+      "category": "COMBI-WEAPONS",
+      "list": "HOUSE CAWDOR",
+      "profiles": [
+        {
+          "name": "autogun",
+          "sr": "8”",
+          "lr": "24”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Combi",
+              "text": "При Shoot или Aimed Shot выберите профиль до броска. Можно стрелять обоими по одной цели с −1 к попаданию каждого; атаки одновременны."
+            },
+            {
+              "name": "Rapid Fire (1)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            }
+          ]
+        },
+        {
+          "name": "flamer",
+          "sr": "T",
+          "lr": "-",
+          "str": "4",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (6+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blaze (5+)",
+              "text": "Если бросок на ранение не меньше X, цель получает ещё одно попадание тем же профилем. Оно бросается на ранение отдельно и не вызывает новых дополнительных попаданий."
+            },
+            {
+              "name": "Combi",
+              "text": "При Shoot или Aimed Shot выберите профиль до броска. Можно стрелять обоими по одной цели с −1 к попаданию каждого; атаки одновременны."
+            },
+            {
+              "name": "Template",
+              "text": "Каплевидный шаблон от стреляющего через цель: все под ним получают автоматическое попадание. С Light в ближнем бою — одно автоматическое попадание без шаблона. С Rapid Fire (X) ближайшая модель получает попадания по кубику огневой мощи, остальные — по одному."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Flamer",
+      "cost": 70,
+      "slots": 1,
+      "category": "FLAMERS",
+      "list": "HOUSE CAWDOR",
+      "profiles": [
+        {
+          "name": "flamer",
+          "sr": "T",
+          "lr": "-",
+          "str": "4",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (6+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blaze (5+)",
+              "text": "Если бросок на ранение не меньше X, цель получает ещё одно попадание тем же профилем. Оно бросается на ранение отдельно и не вызывает новых дополнительных попаданий."
+            },
+            {
+              "name": "Combi",
+              "text": "При Shoot или Aimed Shot выберите профиль до броска. Можно стрелять обоими по одной цели с −1 к попаданию каждого; атаки одновременны."
+            },
+            {
+              "name": "Template",
+              "text": "Каплевидный шаблон от стреляющего через цель: все под ним получают автоматическое попадание. С Light в ближнем бою — одно автоматическое попадание без шаблона. С Rapid Fire (X) ближайшая модель получает попадания по кубику огневой мощи, остальные — по одному."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Hand flamer",
+      "cost": 45,
+      "slots": 1,
+      "category": "FLAMERS",
+      "list": "HOUSE CAWDOR",
+      "profiles": [
+        {
+          "name": "Hand Flamer",
+          "sr": "T",
+          "lr": "-",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (6+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blaze (5+)",
+              "text": "Если бросок на ранение не меньше X, цель получает ещё одно попадание тем же профилем. Оно бросается на ранение отдельно и не вызывает новых дополнительных попаданий."
+            },
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            },
+            {
+              "name": "Template",
+              "text": "Каплевидный шаблон от стреляющего через цель: все под ним получают автоматическое попадание. С Light в ближнем бою — одно автоматическое попадание без шаблона. С Rapid Fire (X) ближайшая модель получает попадания по кубику огневой мощи, остальные — по одному."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Heavy flamer*",
+      "cost": 95,
+      "slots": 2,
+      "category": "FLAMERS",
+      "list": "HOUSE CAWDOR",
+      "profiles": [
+        {
+          "name": "flamer",
+          "sr": "T",
+          "lr": "-",
+          "str": "4",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (6+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blaze (5+)",
+              "text": "Если бросок на ранение не меньше X, цель получает ещё одно попадание тем же профилем. Оно бросается на ранение отдельно и не вызывает новых дополнительных попаданий."
+            },
+            {
+              "name": "Combi",
+              "text": "При Shoot или Aimed Shot выберите профиль до броска. Можно стрелять обоими по одной цели с −1 к попаданию каждого; атаки одновременны."
+            },
+            {
+              "name": "Template",
+              "text": "Каплевидный шаблон от стреляющего через цель: все под ним получают автоматическое попадание. С Light в ближнем бою — одно автоматическое попадание без шаблона. С Rapid Fire (X) ближайшая модель получает попадания по кубику огневой мощи, остальные — по одному."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Cawdor heavy crossbow with frag & krak shells",
+      "cost": 110,
+      "slots": 1,
+      "category": "PRIMITIVE WEAPONS",
+      "list": "HOUSE CAWDOR",
+      "profiles": [
+        {
+          "name": "frag shells",
+          "sr": "15”",
+          "lr": "30”",
+          "str": "4",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (3+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blast (5”)",
+              "text": "Поставьте маркер Blast 3\" или 5\" на цель. Попадание — маркер остаётся. Промах — рассейте на D6\" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него."
+            },
+            {
+              "name": "Heavy",
+              "text": "Дальнобойное: только Braced Shot. Ближний бой: нельзя как Secondary и нельзя использовать Secondary вместе с ним."
+            },
+            {
+              "name": "Knockback (6+)",
+              "text": "Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1\" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1\" от центра."
+            }
+          ]
+        },
+        {
+          "name": "krak shells",
+          "sr": "15”",
+          "lr": "30”",
+          "str": "6",
+          "ap": "-2",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (4+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Heavy",
+              "text": "Дальнобойное: только Braced Shot. Ближний бой: нельзя как Secondary и нельзя использовать Secondary вместе с ним."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sawn-off shotgun with solid & scatter shot",
+      "cost": 30,
+      "slots": 1,
+      "category": "SHOTGUNS",
+      "list": "HOUSE CAWDOR",
+      "profiles": [
+        {
+          "name": "scatter shot",
+          "sr": "4”",
+          "lr": "8”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Rapid Fire (2)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            }
+          ]
+        },
+        {
+          "name": "solid shot",
+          "sr": "4”",
+          "lr": "8”",
+          "str": "4",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            },
+            {
+              "name": "Knockback (6+)",
+              "text": "Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1\" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1\" от центра."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Cawdor polearm/autogun*",
+      "cost": 30,
+      "slots": 2,
+      "category": "CAWDOR POLEARMS",
+      "list": "HOUSE CAWDOR",
+      "profiles": [
+        {
+          "name": "Cawdor polearm*",
+          "sr": "E",
+          "lr": "-",
+          "str": "S+1",
+          "ap": "-",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Heavy",
+              "text": "Дальнобойное: только Braced Shot. Ближний бой: нельзя как Secondary и нельзя использовать Secondary вместе с ним."
+            },
+            {
+              "name": "Lance",
+              "text": "У бойца с подтипом Mounted: +1 Strength на атаках как часть Charge."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Unwieldy",
+              "text": "В ближнем бою Initiative модели ставится в 1 до любых модификаторов."
+            },
+            {
+              "name": "Rapid Fire (1)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            }
+          ]
+        },
+        {
+          "name": "autogun",
+          "sr": "8”",
+          "lr": "24”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Rapid Fire (1)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Cawdor polearm/blunderbuss with grape & purgation rounds*",
+      "cost": 80,
+      "slots": 2,
+      "category": "CAWDOR POLEARMS",
+      "list": "HOUSE CAWDOR",
+      "profiles": [
+        {
+          "name": "Cawdor polearm*",
+          "sr": "E",
+          "lr": "-",
+          "str": "S+1",
+          "ap": "-",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Heavy",
+              "text": "Дальнобойное: только Braced Shot. Ближний бой: нельзя как Secondary и нельзя использовать Secondary вместе с ним."
+            },
+            {
+              "name": "Lance",
+              "text": "У бойца с подтипом Mounted: +1 Strength на атаках как часть Charge."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Unwieldy",
+              "text": "В ближнем бою Initiative модели ставится в 1 до любых модификаторов."
+            },
+            {
+              "name": "Rapid Fire (1)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            }
+          ]
+        },
+        {
+          "name": "grape rounds",
+          "sr": "T",
+          "lr": "-",
+          "str": "2",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Rapid Fire (1)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            },
+            {
+              "name": "Template",
+              "text": "Каплевидный шаблон от стреляющего через цель: все под ним получают автоматическое попадание. С Light в ближнем бою — одно автоматическое попадание без шаблона. С Rapid Fire (X) ближайшая модель получает попадания по кубику огневой мощи, остальные — по одному."
+            }
+          ]
+        },
+        {
+          "name": "purgation rounds",
+          "sr": "T",
+          "lr": "-",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (6+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blaze (5+)",
+              "text": "Если бросок на ранение не меньше X, цель получает ещё одно попадание тем же профилем. Оно бросается на ранение отдельно и не вызывает новых дополнительных попаданий."
+            },
+            {
+              "name": "Template",
+              "text": "Каплевидный шаблон от стреляющего через цель: все под ним получают автоматическое попадание. С Light в ближнем бою — одно автоматическое попадание без шаблона. С Rapid Fire (X) ближайшая модель получает попадания по кубику огневой мощи, остальные — по одному."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Cawdor polearm/flamer*",
+      "cost": 85,
+      "slots": 2,
+      "category": "CAWDOR POLEARMS",
+      "list": "HOUSE CAWDOR",
+      "profiles": [
+        {
+          "name": "Cawdor polearm*",
+          "sr": "E",
+          "lr": "-",
+          "str": "S+1",
+          "ap": "-",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Heavy",
+              "text": "Дальнобойное: только Braced Shot. Ближний бой: нельзя как Secondary и нельзя использовать Secondary вместе с ним."
+            },
+            {
+              "name": "Lance",
+              "text": "У бойца с подтипом Mounted: +1 Strength на атаках как часть Charge."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Unwieldy",
+              "text": "В ближнем бою Initiative модели ставится в 1 до любых модификаторов."
+            },
+            {
+              "name": "Rapid Fire (1)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            }
+          ]
+        },
+        {
+          "name": "flamer",
+          "sr": "T",
+          "lr": "-",
+          "str": "4",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (6+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blaze (5+)",
+              "text": "Если бросок на ранение не меньше X, цель получает ещё одно попадание тем же профилем. Оно бросается на ранение отдельно и не вызывает новых дополнительных попаданий."
+            },
+            {
+              "name": "Template",
+              "text": "Каплевидный шаблон от стреляющего через цель: все под ним получают автоматическое попадание. С Light в ближнем бою — одно автоматическое попадание без шаблона. С Rapid Fire (X) ближайшая модель получает попадания по кубику огневой мощи, остальные — по одному."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Chain glaive*",
+      "cost": 50,
+      "slots": 2,
+      "category": "CHAIN WEAPONS",
+      "list": "HOUSE CAWDOR",
+      "profiles": [
+        {
+          "name": "Chain glaive*",
+          "sr": "E",
+          "lr": "-",
+          "str": "S+1",
+          "ap": "-1",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Heavy",
+              "text": "Дальнобойное: только Braced Shot. Ближний бой: нельзя как Secondary и нельзя использовать Secondary вместе с ним."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Parry",
+              "text": "Как Primary или Secondary в схватке: +1 Save. Несколько таких оружий не складываются."
+            },
+            {
+              "name": "Shred (6+)",
+              "text": "Если оружие ранит и бросок на ранение не меньше X, Lethality этой атаки +1."
+            },
+            {
+              "name": "Unwieldy",
+              "text": "В ближнем бою Initiative модели ставится в 1 до любых модификаторов."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Frag lance*",
+      "cost": 35,
+      "slots": 2,
+      "category": "LANCES",
+      "list": "HOUSE CAWDOR",
+      "profiles": [
+        {
+          "name": "primed",
+          "sr": "E",
+          "lr": "-",
+          "str": "4",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Heavy",
+              "text": "Дальнобойное: только Braced Shot. Ближний бой: нельзя как Secondary и нельзя использовать Secondary вместе с ним."
+            },
+            {
+              "name": "Lance-bomb",
+              "text": "Первое успешное попадание за бой — профиль Primed, все следующие — Spent."
+            },
+            {
+              "name": "Knockback (5+)",
+              "text": "Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1\" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1\" от центра."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            }
+          ]
+        },
+        {
+          "name": "spent",
+          "sr": "E",
+          "lr": "-",
+          "str": "S",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Heavy",
+              "text": "Дальнобойное: только Braced Shot. Ближний бой: нельзя как Secondary и нельзя использовать Secondary вместе с ним."
+            },
+            {
+              "name": "Lance",
+              "text": "У бойца с подтипом Mounted: +1 Strength на атаках как часть Charge."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Krak lance*",
+      "cost": 50,
+      "slots": 2,
+      "category": "LANCES",
+      "list": "HOUSE CAWDOR",
+      "profiles": [
+        {
+          "name": "primed",
+          "sr": "E",
+          "lr": "-",
+          "str": "6",
+          "ap": "-2",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Heavy",
+              "text": "Дальнобойное: только Braced Shot. Ближний бой: нельзя как Secondary и нельзя использовать Secondary вместе с ним."
+            },
+            {
+              "name": "Lance-bomb",
+              "text": "Первое успешное попадание за бой — профиль Primed, все следующие — Spent."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            }
+          ]
+        },
+        {
+          "name": "spent",
+          "sr": "E",
+          "lr": "-",
+          "str": "S",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Heavy",
+              "text": "Дальнобойное: только Braced Shot. Ближний бой: нельзя как Secondary и нельзя использовать Secondary вместе с ним."
+            },
+            {
+              "name": "Lance",
+              "text": "У бойца с подтипом Mounted: +1 Strength на атаках как часть Charge."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Stun lance*",
+      "cost": 30,
+      "slots": 2,
+      "category": "LANCES",
+      "list": "HOUSE CAWDOR",
+      "profiles": [
+        {
+          "name": "primed",
+          "sr": "E",
+          "lr": "-",
+          "str": "2",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Heavy",
+              "text": "Дальнобойное: только Braced Shot. Ближний бой: нельзя как Secondary и нельзя использовать Secondary вместе с ним."
+            },
+            {
+              "name": "Lance-bomb",
+              "text": "Первое успешное попадание за бой — профиль Primed, все следующие — Spent."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Shock (3+)",
+              "text": "Если атака попадает и бросок попадания не меньше X, она автоматически ранит и считается натуральной 6 на ранении для других свойств."
+            }
+          ]
+        },
+        {
+          "name": "spent",
+          "sr": "E",
+          "lr": "-",
+          "str": "S",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Heavy",
+              "text": "Дальнобойное: только Braced Shot. Ближний бой: нельзя как Secondary и нельзя использовать Secondary вместе с ним."
+            },
+            {
+              "name": "Lance",
+              "text": "У бойца с подтипом Mounted: +1 Strength на атаках как часть Charge."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Axe",
+      "cost": 15,
+      "slots": 1,
+      "category": "PRIMITIVE WEAPONS",
+      "list": "HOUSE CAWDOR",
+      "profiles": [
+        {
+          "name": "Axe",
+          "sr": "E",
+          "lr": "-",
+          "str": "S",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Cleaver",
+      "cost": 25,
+      "slots": 1,
+      "category": "PRIMITIVE WEAPONS",
+      "list": "HOUSE CAWDOR",
+      "profiles": [
+        {
+          "name": "Cleaver",
+          "sr": "E",
+          "lr": "-",
+          "str": "S",
+          "ap": "-1",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Fighting knife",
+      "cost": 5,
+      "slots": 1,
+      "category": "PRIMITIVE WEAPONS",
+      "list": "HOUSE CAWDOR",
+      "profiles": [
+        {
+          "name": "Fighting knife",
+          "sr": "E",
+          "lr": "-",
+          "str": "S",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Backstab",
+              "text": "+1 Strength, если цель Engaged более чем с одной моделью."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Flail",
+      "cost": 10,
+      "slots": 1,
+      "category": "PRIMITIVE WEAPONS",
+      "list": "HOUSE CAWDOR",
+      "profiles": [
+        {
+          "name": "Flail",
+          "sr": "E",
+          "lr": "-",
+          "str": "S",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Knockback (6+)",
+              "text": "Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1\" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1\" от центра."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Maul",
+      "cost": 20,
+      "slots": 1,
+      "category": "PRIMITIVE WEAPONS",
+      "list": "HOUSE CAWDOR",
+      "profiles": [
+        {
+          "name": "Maul",
+          "sr": "E",
+          "lr": "-",
+          "str": "S+1",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Concussive (6+)",
+              "text": "Если атака ранит и бросок на ранение не меньше X, цель снижает Initiative на 1 до конца следующей активации."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Two-handed axe*",
+      "cost": 40,
+      "slots": 2,
+      "category": "PRIMITIVE WEAPONS",
+      "list": "HOUSE CAWDOR",
+      "profiles": [
+        {
+          "name": "Two-handed axe*",
+          "sr": "E",
+          "lr": "-",
+          "str": "S+1",
+          "ap": "-1",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Heavy",
+              "text": "Дальнобойное: только Braced Shot. Ближний бой: нельзя как Secondary и нельзя использовать Secondary вместе с ним."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Unwieldy",
+              "text": "В ближнем бою Initiative модели ставится в 1 до любых модификаторов."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Two-handed hammer*",
+      "cost": 40,
+      "slots": 2,
+      "category": "PRIMITIVE WEAPONS",
+      "list": "HOUSE CAWDOR",
+      "profiles": [
+        {
+          "name": "Two-handed hammer*",
+          "sr": "E",
+          "lr": "-",
+          "str": "S+1",
+          "ap": "-",
+          "l": "3",
+          "traits": [
+            {
+              "name": "Concussive (6+)",
+              "text": "Если атака ранит и бросок на ранение не меньше X, цель снижает Initiative на 1 до конца следующей активации."
+            },
+            {
+              "name": "Heavy",
+              "text": "Дальнобойное: только Braced Shot. Ближний бой: нельзя как Secondary и нельзя использовать Secondary вместе с ним."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Unwieldy",
+              "text": "В ближнем бою Initiative модели ставится в 1 до любых модификаторов."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Blasting charges",
+      "cost": 60,
+      "slots": 0,
+      "category": "GRENADES",
+      "list": "HOUSE CAWDOR",
+      "profiles": [
+        {
+          "name": "Blasting charges",
+          "sr": "-",
+          "lr": "6”",
+          "str": "5",
+          "ap": "-1",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Ammo (5+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blast (5”)",
+              "text": "Поставьте маркер Blast 3\" или 5\" на цель. Попадание — маркер остаётся. Промах — рассейте на D6\" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него."
+            },
+            {
+              "name": "Knockback (5+)",
+              "text": "Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1\" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1\" от центра."
+            },
+            {
+              "name": "Limited",
+              "text": "Если оружие село, его нельзя перезарядить до конца боя."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Frag grenades",
+      "cost": 30,
+      "slots": 0,
+      "category": "GRENADES",
+      "list": "HOUSE CAWDOR",
+      "profiles": [
+        {
+          "name": "Frag grenades",
+          "sr": "-",
+          "lr": "9”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (4+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blast (3”)",
+              "text": "Поставьте маркер Blast 3\" или 5\" на цель. Попадание — маркер остаётся. Промах — рассейте на D6\" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него."
+            },
+            {
+              "name": "Knockback (6+)",
+              "text": "Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1\" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1\" от центра."
+            },
+            {
+              "name": "Limited",
+              "text": "Если оружие село, его нельзя перезарядить до конца боя."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Incendiary charges",
+      "cost": 40,
+      "slots": 0,
+      "category": "GRENADES",
+      "list": "HOUSE CAWDOR",
+      "profiles": [
+        {
+          "name": "Incendiary charges",
+          "sr": "-",
+          "lr": "9”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (5+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blast (5”)",
+              "text": "Поставьте маркер Blast 3\" или 5\" на цель. Попадание — маркер остаётся. Промах — рассейте на D6\" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него."
+            },
+            {
+              "name": "Blaze (5+)",
+              "text": "Если бросок на ранение не меньше X, цель получает ещё одно попадание тем же профилем. Оно бросается на ранение отдельно и не вызывает новых дополнительных попаданий."
+            },
+            {
+              "name": "Limited",
+              "text": "Если оружие село, его нельзя перезарядить до конца боя."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Krak grenades",
+      "cost": 45,
+      "slots": 0,
+      "category": "GRENADES",
+      "list": "HOUSE CAWDOR",
+      "profiles": [
+        {
+          "name": "Krak grenades",
+          "sr": "-",
+          "lr": "9”",
+          "str": "6",
+          "ap": "-2",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (4+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Limited",
+              "text": "Если оружие село, его нельзя перезарядить до конца боя."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mesh armour",
+      "cost": 40,
+      "slots": 0,
+      "category": "ARMOUR & FIELD ARMOUR",
+      "list": "HOUSE CAWDOR",
+      "description": "Fighter в сетчатой броне увеличивает характеристику Save на 1 при разрешении попаданий, полученных в ближнем бою."
+    },
+    {
+      "name": "Refractor field",
+      "cost": 50,
+      "slots": 0,
+      "category": "ARMOUR & FIELD ARMOUR",
+      "list": "HOUSE CAWDOR",
+      "description": "Рефракторное поле даёт носителю непробиваемый спасбросок 5+; однако если при этом спасброске выпадает натуральная 1, поле перегорает и его нельзя использовать до конца боя. Рефракторное поле можно сочетать с другой бронёй и полевой бронёй."
+    },
+    {
+      "name": "Bomb delivery rats",
+      "cost": 30,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "HOUSE CAWDOR",
+      "description": "Fighter с bomb delivery rats может выполнить действие «Подготовить крысу-бомбу». Подготовить крысу-бомбу (одиночное): выберите гранату со свойством Blast (3”/5”), которой экипирован Fighter и которая не Out of Ammo, и сделайте для неё тест Ammo (X+), как если бы гранату выстрелили. Затем поставьте bomb delivery rat в контакт подставками с этим Fighter; крыса сразу активируется. В начале каждого раунда, после броска за Priority, но до активации первой модели, активируются все bomb delivery rats. Когда bomb delivery rat активируется, следуйте этим указаниям: • Если они в пределах 9” от Fighter, который их выставил, контролирующий этого Fighter игрок выбирает направление движения, иначе они движутся в направлении по кубику Scatter. • При активации они движутся на 6” по прямой, не замедляются местностью, имеют навык Clamber, никогда не падают и не становятся pinned, и автоматически проходят тесты Agility на прыжок через промежутки до 2”. • Если они упираются в промежуток больше 2” или непроходимую местность, они останавливаются. • Если они оказываются в пределах 1” от любой модели (кроме Fighter, который их выставил), они останавливаются и могут взорваться. Бросьте D6. На 2+ граната взрывается; центрируйте её на bomb delivery rat. На 1 граната не взрывается, и bomb delivery rat сбегает. В любом случае уберите bomb delivery rat с поля. • В bomb delivery rat можно целиться атаками ближнего боя и стрельбой. Все попытки попасть получают модификатор −1 к броску попадания. Если крыса Hit, бросьте D6; на 4+ граната взрывается (см. выше), иначе bomb delivery rat сбегает. В любом случае уберите их с поля."
+    },
+    {
+      "name": "Cult icon",
+      "cost": 40,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "HOUSE CAWDOR",
+      "description": "В отличие от другого снаряжения, банда может купить только один культовый символ. Его должен нести Leader или Champion. Когда Fighter с культовым символом выполняет действие Group Activation, он может перебросить проверку Leadership."
+    },
+    {
+      "name": "Drop rig",
+      "cost": 10,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "HOUSE CAWDOR",
+      "description": "Active или Suppressed Fighter со спусковой оснасткой может выполнить действие «Спуск», находясь в пределах 1” от края площадки: Спуск (одиночное): Fighter сдвигается до 3” по горизонтали и до 12” по вертикали. Любое вертикальное движение должно быть вниз, то есть к земле."
+    },
+    {
+      "name": "Medicae kit",
+      "cost": 20,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "HOUSE CAWDOR",
+      "description": "Если Fighter с медкай-набором помогает другому Fighter на проверке Recovery, он бросает дополнительный кубик ранений и выбирает, какой оставить."
+    },
+    {
+      "name": "Photo-goggles",
+      "cost": 35,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "HOUSE CAWDOR",
+      "description": "Fighter с фотоочками увеличивает значение X в правиле Visibility (X”) на 9” и может видеть сквозь дымовые облака, поставленные свойством Smoke. Кроме того, если во Fighter с фотоочками попадает оружие со свойством Flash, он получает модификатор −2 к проверке Initiative, чтобы не ослепнуть."
+    },
+    {
+      "name": "Respirator",
+      "cost": 15,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "HOUSE CAWDOR",
+      "description": "Когда во Fighter с респиратором попадает оружие со свойством Gas, он получает непробиваемый спасбросок 5+ против этого оружия."
+    },
+    {
+      "name": "Mono-sight",
+      "cost": 20,
+      "slots": 1,
+      "category": "WEAPON ACCESSORIES",
+      "list": "HOUSE CAWDOR",
+      "description": "Когда модель выполняет действие Aimed Shot оружием с моноприцелом, она применяет модификатор +2 к броску попадания вместо +1."
+    },
+    {
+      "name": "Dirt bike",
+      "cost": 35,
+      "slots": 0,
+      "category": "MOUNTS",
+      "list": "HOUSE CAWDOR",
+      "description": "Fighter с dirt bike получает подтип Mounted и ставит характеристику Movement на 8”. Когда он выполняет действие Dash, он добавляет 5” к характеристике Movement вместо Initiative."
+    },
+    {
+      "name": "Ridge Walker",
+      "cost": 40,
+      "slots": 0,
+      "category": "MOUNTS",
+      "list": "HOUSE CAWDOR",
+      "description": "Fighter с Ridge Walker получает подтипы Mounted и Agile, применяет модификатор +1 к любым тестам Agility и ставит характеристику Movement на 8”. Когда он выполняет действие Dash, он добавляет 5” к характеристике Movement вместо Initiative."
+    },
+    {
+      "name": "Sheen Bird",
+      "cost": 75,
+      "slots": 0,
+      "category": "PETS",
+      "list": "HOUSE CAWDOR"
+    },
+    {
+      "name": "Exterminator (autogun, shotgun, chainaxe and eviscerator only)",
+      "cost": 35,
+      "slots": 1,
+      "category": "AUXILIARY WEAPONS",
+      "list": "REDEMPTIONIST",
+      "profiles": [
+        {
+          "name": "Exterminator",
+          "sr": "T",
+          "lr": "-",
+          "str": "4",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Auxiliary",
+              "text": "Только как насадка на другое оружие, отдельно не берётся. Не занимает слот оружия."
+            },
+            {
+              "name": "Single Shot",
+              "text": "Один выстрел за бой, затем сразу Out of Ammo; перезарядить нельзя."
+            },
+            {
+              "name": "Template",
+              "text": "Каплевидный шаблон от стреляющего через цель: все под ним получают автоматическое попадание. С Light в ближнем бою — одно автоматическое попадание без шаблона. С Rapid Fire (X) ближайшая модель получает попадания по кубику огневой мощи, остальные — по одному."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Fire pike*",
+      "cost": 80,
+      "slots": 2,
+      "category": "FLAMERS",
+      "list": "REDEMPTIONIST",
+      "profiles": [
+        {
+          "name": "Fire pike",
+          "sr": "T",
+          "lr": "-",
+          "str": "4",
+          "ap": "-2",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (6+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blaze (5+)",
+              "text": "Если бросок на ранение не меньше X, цель получает ещё одно попадание тем же профилем. Оно бросается на ранение отдельно и не вызывает новых дополнительных попаданий."
+            },
+            {
+              "name": "Breaching (5+)",
+              "text": "Если атака ранит и бросок на ранение не меньше X, спасброски брони делать нельзя."
+            },
+            {
+              "name": "Template",
+              "text": "Каплевидный шаблон от стреляющего через цель: все под ним получают автоматическое попадание. С Light в ближнем бою — одно автоматическое попадание без шаблона. С Rapid Fire (X) ближайшая модель получает попадания по кубику огневой мощи, остальные — по одному."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Grenade launcher with frag & krak grenades",
+      "cost": 80,
+      "slots": 0,
+      "category": "GRENADE LAUNCHERS",
+      "list": "REDEMPTIONIST",
+      "upgrades": [
+        {
+          "name": "photon flash grenades",
+          "cost": 15
+        },
+        {
+          "name": "smoke grenades",
+          "cost": 15
+        }
+      ],
+      "profiles": [
+        {
+          "name": "frag grenades",
+          "sr": "6”",
+          "lr": "24”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (4+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blast (3”)",
+              "text": "Поставьте маркер Blast 3\" или 5\" на цель. Попадание — маркер остаётся. Промах — рассейте на D6\" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него."
+            },
+            {
+              "name": "Knockback (5+)",
+              "text": "Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1\" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1\" от центра."
+            }
+          ]
+        },
+        {
+          "name": "krak grenades",
+          "sr": "6”",
+          "lr": "24”",
+          "str": "6",
+          "ap": "-2",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (4+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Shotgun with solid & scatter ammo",
+      "cost": 35,
+      "slots": 1,
+      "category": "SHOTGUNS",
+      "list": "REDEMPTIONIST",
+      "upgrades": [
+        {
+          "name": "executioner ammo",
+          "cost": 45
+        },
+        {
+          "name": "retributor ammo",
+          "cost": 25
+        }
+      ]
+    },
+    {
+      "name": "Chainaxe",
+      "cost": 20,
+      "slots": 1,
+      "category": "CHAIN WEAPONS",
+      "list": "REDEMPTIONIST",
+      "profiles": [
+        {
+          "name": "Chainaxe",
+          "sr": "E",
+          "lr": "-",
+          "str": "S",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Shred (5+)",
+              "text": "Если оружие ранит и бросок на ранение не меньше X, Lethality этой атаки +1."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Chainsword",
+      "cost": 20,
+      "slots": 1,
+      "category": "CHAIN WEAPONS",
+      "list": "REDEMPTIONIST",
+      "profiles": [
+        {
+          "name": "Chainsword",
+          "sr": "E",
+          "lr": "-",
+          "str": "S",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Parry",
+              "text": "Как Primary или Secondary в схватке: +1 Save. Несколько таких оружий не складываются."
+            },
+            {
+              "name": "Shred (5+)",
+              "text": "Если оружие ранит и бросок на ранение не меньше X, Lethality этой атаки +1."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Eviscerator*",
+      "cost": 65,
+      "slots": 2,
+      "category": "CHAIN WEAPONS",
+      "list": "REDEMPTIONIST",
+      "profiles": [
+        {
+          "name": "Eviscerator*",
+          "sr": "E",
+          "lr": "-",
+          "str": "S+2",
+          "ap": "-2",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Heavy",
+              "text": "Дальнобойное: только Braced Shot. Ближний бой: нельзя как Secondary и нельзя использовать Secondary вместе с ним."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Shred (5+)",
+              "text": "Если оружие ранит и бросок на ранение не меньше X, Lethality этой атаки +1."
+            },
+            {
+              "name": "Unwieldy",
+              "text": "В ближнем бою Initiative модели ставится в 1 до любых модификаторов."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Smoke grenades",
+      "cost": 15,
+      "slots": 0,
+      "category": "GRENADES",
+      "list": "REDEMPTIONIST",
+      "profiles": [
+        {
+          "name": "Smoke grenades",
+          "sr": "-",
+          "lr": "9”",
+          "str": "-",
+          "ap": "-",
+          "l": "-",
+          "traits": [
+            {
+              "name": "Ammo (4+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blast (3”)",
+              "text": "Поставьте маркер Blast 3\" или 5\" на цель. Попадание — маркер остаётся. Промах — рассейте на D6\" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него."
+            },
+            {
+              "name": "Limited",
+              "text": "Если оружие село, его нельзя перезарядить до конца боя."
+            },
+            {
+              "name": "Smoke",
+              "text": "Можно целиться в точку на поле. Маркер Blast остаётся: столб дыма блокирует линию видимости. В End phase на 5+ остаётся, иначе снимается. Попавшая модель не ранится и не становится Suppressed."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Book of the Redemption",
+      "cost": 50,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "REDEMPTIONIST",
+      "description": "Fighter с Book of the Redemption может выполнить действие «Слова гнева»: Слова гнева (одиночное): этот Fighter читает вслух из Book of the Redemption. До фазы окончания этого раунда любой дружественный Fanatic Fighter в пределах 6” от этого Fighter в начале своей активации может либо перебросить D6 при действии Charge, либо перебросить один бросок натуральной 1 при броске попадания."
+    },
+    {
+      "name": "Pyromantic mantle",
+      "cost": 30,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "REDEMPTIONIST",
+      "description": "Любые атаки оружием ближнего боя у Fighter с pyromantic mantle получают свойство Blaze (5+) на время активации этого Fighter (примечание: если у оружия уже есть свойство Blaze (X), это снаряжение не действует."
+    },
+    {
+      "name": "Infra-sight",
+      "cost": 10,
+      "slots": 1,
+      "category": "WEAPON ACCESSORIES",
+      "list": "REDEMPTIONIST",
+      "description": "Оружие с инфраприцелом можно стрелять по целям за маркерами, созданными свойством Smoke. Кроме того, значение X в правиле Visibility (X”) увеличивается на 9” при использовании оружия с инфраприцелом."
+    },
+    {
+      "name": "Ridge Walker",
+      "cost": 45,
+      "slots": 0,
+      "category": "MOUNTS",
+      "list": "REDEMPTIONIST",
+      "description": "Fighter с Ridge Walker получает подтипы Mounted и Agile, применяет модификатор +1 к любым тестам Agility и ставит характеристику Movement на 8”. Когда он выполняет действие Dash, он добавляет 5” к характеристике Movement вместо Initiative."
+    }
+  ]
+}

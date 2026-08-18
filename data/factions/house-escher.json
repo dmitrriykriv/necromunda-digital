@@ -1,0 +1,1470 @@
+{
+  "id": "house-escher",
+  "name": "Дом Эшер",
+  "types": [
+    {
+      "id": "escher-gang-queen",
+      "name": "Escher Gang Queen",
+      "category": "Fighter",
+      "subtypes": [
+        "Leader"
+      ],
+      "baseCost": 135,
+      "xp": 61,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "5”",
+          "3+",
+          "3+",
+          "3",
+          "3",
+          "3",
+          "5",
+          "3",
+          "5+",
+          "8",
+          "8",
+          "7",
+          "7"
+        ]
+      }
+    },
+    {
+      "id": "escher-gang-matriarch",
+      "name": "Escher Gang Matriarch",
+      "category": "Fighter",
+      "subtypes": [
+        "Champion"
+      ],
+      "baseCost": 100,
+      "xp": 37,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "5”",
+          "3+",
+          "3+",
+          "3",
+          "3",
+          "2",
+          "5",
+          "2",
+          "5+",
+          "7",
+          "7",
+          "6",
+          "7"
+        ]
+      }
+    },
+    {
+      "id": "escher-death-maiden",
+      "name": "Escher Death-Maiden",
+      "category": "Fighter",
+      "subtypes": [
+        "Champion",
+        "Loner"
+      ],
+      "baseCost": 130,
+      "xp": 49,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "6”",
+          "3+",
+          "3+",
+          "3",
+          "4",
+          "2",
+          "5",
+          "3",
+          "5+",
+          "6",
+          "8",
+          "7",
+          "7"
+        ]
+      },
+      "rules": [
+        "Ядовитая кровь: оружие Escher Death-Maiden со свойством Toxin (X+) сильнее обычного. Когда Escher Death-Maiden использует оружие со свойством Toxin (X+), если на ранение выпала натуральная 1, можно перебросить D6.ОригиналWeapons wielded by an Escher Death-Maiden that have the Toxin (X+) trait are more potent that normal. When an Escher Death-Maiden uses a weapon with the Toxin (X+) trait, if they roll a natural 1 to Wound, they may re-roll the D6."
+      ]
+    },
+    {
+      "id": "escher-gang-sister",
+      "name": "Escher Gang Sister",
+      "category": "Fighter",
+      "subtypes": [
+        "Ganger",
+        "Specialist"
+      ],
+      "baseCost": 40,
+      "xp": 13,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "5”",
+          "4+",
+          "4+",
+          "3",
+          "3",
+          "1",
+          "4",
+          "1",
+          "6+",
+          "6",
+          "6",
+          "6",
+          "6"
+        ]
+      }
+    },
+    {
+      "id": "escher-wyld-runner",
+      "name": "Escher Wyld Runner",
+      "category": "Fighter",
+      "subtypes": [
+        "Prospect"
+      ],
+      "baseCost": 30,
+      "xp": 4,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "6”",
+          "5+",
+          "5+",
+          "3",
+          "3",
+          "1",
+          "4",
+          "1",
+          "6+",
+          "5",
+          "6",
+          "5",
+          "5"
+        ]
+      },
+      "rules": [
+        "Стартовый навык: у Escher Wyld Runner есть навык Clamber."
+      ]
+    },
+    {
+      "id": "escher-little-sister",
+      "name": "Escher Little Sister",
+      "category": "Fighter",
+      "subtypes": [
+        "Prospect"
+      ],
+      "baseCost": 25,
+      "xp": 1,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "6”",
+          "5+",
+          "5+",
+          "3",
+          "3",
+          "1",
+          "4",
+          "1",
+          "6+",
+          "5",
+          "6",
+          "5",
+          "5"
+        ]
+      }
+    },
+    {
+      "id": "khimerix",
+      "name": "Khimerix",
+      "category": "Fighter",
+      "subtypes": [
+        "Beast",
+        "Brute"
+      ],
+      "baseCost": 220,
+      "xp": 25,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "6”",
+          "4+",
+          "4+",
+          "4",
+          "5",
+          "4",
+          "4",
+          "3",
+          "6+",
+          "5",
+          "6",
+          "7",
+          "4"
+        ]
+      },
+      "rules": [
+        "Регенерация: Active Khimerix может выполнить действие Регенерация:"
+      ]
+    },
+    {
+      "id": "phyrr-cat",
+      "name": "Phyrr Cat",
+      "category": "Fighter",
+      "subtypes": [
+        "Beast",
+        "Pet"
+      ],
+      "baseCost": 80,
+      "xp": 13,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "7”",
+          "3+",
+          "6+",
+          "3",
+          "3",
+          "1",
+          "5",
+          "2",
+          "6+",
+          "5",
+          "6",
+          "6",
+          "5"
+        ]
+      },
+      "rules": [
+        "Длина поводка: у Phyrr Cat длина поводка (Leash range) 9”.",
+        "Приземляется на лапы: если Phyrr Cat падает по любой причине, уменьшите пройденную дистанцию падения на 3”, сверяясь с таблицей Falling.ОригиналIf a Phyrr Cat falls for any reason, reduce the distance fallen by 3” when consulting the Falling table."
+      ]
+    },
+    {
+      "id": "phelynx",
+      "name": "Phelynx",
+      "category": "Fighter",
+      "subtypes": [
+        "Beast",
+        "Pet"
+      ],
+      "baseCost": 60,
+      "xp": 13,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "6”",
+          "4+",
+          "6+",
+          "2",
+          "3",
+          "1",
+          "4",
+          "2",
+          "6+",
+          "4",
+          "6",
+          "6",
+          "4"
+        ]
+      },
+      "rules": [
+        "Длина поводка: у Phelynx длина поводка (Leash range) 3”.",
+        "Спуск (одиночное): Fighter сдвигается до 3” по горизонтали и до 12” по вертикали. Любое вертикальное движение должно быть вниз, то есть к земле.ОригиналThe Fighter makes a move of up to 3” horizontally and up to 12” vertically. Any vertical movement must be downwards, i.e., towards the ground."
+      ]
+    }
+  ],
+  "subtypes": [
+    "Beast",
+    "Brute",
+    "Champion",
+    "Ganger",
+    "Leader",
+    "Loner",
+    "Pet",
+    "Prospect",
+    "Specialist"
+  ],
+  "equipment": [
+    {
+      "name": "Autogun",
+      "cost": 20,
+      "slots": 1,
+      "category": "AUTO/STUB WEAPONS",
+      "list": "HOUSE ESCHER",
+      "upgrades": [
+        {
+          "name": "warp rounds",
+          "cost": 10
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Autogun",
+          "sr": "8”",
+          "lr": "24”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Rapid Fire (1)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            }
+          ]
+        },
+        {
+          "name": "warp rounds",
+          "sr": "8”",
+          "lr": "24”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Cursed",
+              "text": "Попавшая модель проходит Willpower или получает Insanity. Натуральная 1 на попадании: то же для носителя."
+            },
+            {
+              "name": "Single Shot",
+              "text": "Один выстрел за бой, затем сразу Out of Ammo; перезарядить нельзя."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Autopistol",
+      "cost": 10,
+      "slots": 1,
+      "category": "AUTO/STUB WEAPONS",
+      "list": "HOUSE ESCHER",
+      "upgrades": [
+        {
+          "name": "warp rounds",
+          "cost": 10
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Autopistol",
+          "sr": "4”",
+          "lr": "12”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            },
+            {
+              "name": "Rapid Fire (1)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            }
+          ]
+        },
+        {
+          "name": "warp rounds",
+          "sr": "4”",
+          "lr": "12”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Cursed",
+              "text": "Попавшая модель проходит Willpower или получает Insanity. Натуральная 1 на попадании: то же для носителя."
+            },
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            },
+            {
+              "name": "Single Shot",
+              "text": "Один выстрел за бой, затем сразу Out of Ammo; перезарядить нельзя."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Heavy stubber*",
+      "cost": 70,
+      "slots": 2,
+      "category": "AUTO/STUB WEAPONS",
+      "list": "HOUSE ESCHER",
+      "profiles": [
+        {
+          "name": "Heavy stubber*",
+          "sr": "20”",
+          "lr": "40”",
+          "str": "4",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Heavy",
+              "text": "Дальнобойное: только Braced Shot. Ближний бой: нельзя как Secondary и нельзя использовать Secondary вместе с ним."
+            },
+            {
+              "name": "Rapid Fire (2)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Stub gun",
+      "cost": 5,
+      "slots": 1,
+      "category": "AUTO/STUB WEAPONS",
+      "list": "HOUSE ESCHER",
+      "upgrades": [
+        {
+          "name": "warp rounds",
+          "cost": 10
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Stub gun",
+          "sr": "6”",
+          "lr": "12”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            }
+          ]
+        },
+        {
+          "name": "warp rounds",
+          "sr": "6”",
+          "lr": "12”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Cursed",
+              "text": "Попавшая модель проходит Willpower или получает Insanity. Натуральная 1 на попадании: то же для носителя."
+            },
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            },
+            {
+              "name": "Single Shot",
+              "text": "Один выстрел за бой, затем сразу Out of Ammo; перезарядить нельзя."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Combi-weapon (bolter/needler)",
+      "cost": 70,
+      "slots": 1,
+      "category": "COMBI-WEAPONS",
+      "list": "HOUSE ESCHER",
+      "profiles": [
+        {
+          "name": "bolter",
+          "sr": "12”",
+          "lr": "24”",
+          "str": "4",
+          "ap": "-1",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Ammo (3+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Combi",
+              "text": "При Shoot или Aimed Shot выберите профиль до броска. Можно стрелять обоими по одной цели с −1 к попаданию каждого; атаки одновременны."
+            },
+            {
+              "name": "Rapid Fire (1)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            },
+            {
+              "name": "Scarce (4+)",
+              "text": "При Reload бросьте D6: не меньше X — перезаряжено, иначе всё ещё Out of Ammo (можно пробовать снова)."
+            }
+          ]
+        },
+        {
+          "name": "needler",
+          "sr": "9”",
+          "lr": "18”",
+          "str": "-",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Combi",
+              "text": "При Shoot или Aimed Shot выберите профиль до броска. Можно стрелять обоими по одной цели с −1 к попаданию каждого; атаки одновременны."
+            },
+            {
+              "name": "Toxin (3+)",
+              "text": "Против бойца ранит на X+ вместо сравнения Strength и Toughness. Против машины — только на натуральную 6."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Flamer",
+      "cost": 70,
+      "slots": 1,
+      "category": "FLAMERS",
+      "list": "HOUSE ESCHER",
+      "profiles": [
+        {
+          "name": "Flamer",
+          "sr": "T",
+          "lr": "-",
+          "str": "4",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (6+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blaze (5+)",
+              "text": "Если бросок на ранение не меньше X, цель получает ещё одно попадание тем же профилем. Оно бросается на ранение отдельно и не вызывает новых дополнительных попаданий."
+            },
+            {
+              "name": "Template",
+              "text": "Каплевидный шаблон от стреляющего через цель: все под ним получают автоматическое попадание. С Light в ближнем бою — одно автоматическое попадание без шаблона. С Rapid Fire (X) ближайшая модель получает попадания по кубику огневой мощи, остальные — по одному."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Hand flamer",
+      "cost": 45,
+      "slots": 1,
+      "category": "FLAMERS",
+      "list": "HOUSE ESCHER",
+      "profiles": [
+        {
+          "name": "Hand Flamer",
+          "sr": "T",
+          "lr": "-",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (6+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blaze (5+)",
+              "text": "Если бросок на ранение не меньше X, цель получает ещё одно попадание тем же профилем. Оно бросается на ранение отдельно и не вызывает новых дополнительных попаданий."
+            },
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            },
+            {
+              "name": "Template",
+              "text": "Каплевидный шаблон от стреляющего через цель: все под ним получают автоматическое попадание. С Light в ближнем бою — одно автоматическое попадание без шаблона. С Rapid Fire (X) ближайшая модель получает попадания по кубику огневой мощи, остальные — по одному."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Lasgun",
+      "cost": 15,
+      "slots": 1,
+      "category": "LAS WEAPONS",
+      "list": "HOUSE ESCHER",
+      "profiles": [
+        {
+          "name": "Lasgun",
+          "sr": "16”",
+          "lr": "24”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": []
+        }
+      ]
+    },
+    {
+      "name": "Laspistol",
+      "cost": 5,
+      "slots": 1,
+      "category": "LAS WEAPONS",
+      "list": "HOUSE ESCHER",
+      "profiles": [
+        {
+          "name": "Laspistol",
+          "sr": "8”",
+          "lr": "12”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Meltagun",
+      "cost": 140,
+      "slots": 1,
+      "category": "MELTA WEAPONS",
+      "list": "HOUSE ESCHER",
+      "profiles": [
+        {
+          "name": "Meltagun",
+          "sr": "6”",
+          "lr": "12”",
+          "str": "8",
+          "ap": "-4",
+          "l": "3",
+          "traits": [
+            {
+              "name": "Ammo (6+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Damage (3)",
+              "text": "Раненая модель теряет X Wounds вместо одного. Число кубиков ранений всё равно равно Lethality оружия."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Plasma gun",
+      "cost": 85,
+      "slots": 1,
+      "category": "PLASMA WEAPONS",
+      "list": "HOUSE ESCHER",
+      "profiles": [
+        {
+          "name": "Plasma gun",
+          "sr": "12”",
+          "lr": "24”",
+          "str": "5",
+          "ap": "-2",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Ammo (6+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Damage (2)",
+              "text": "Раненая модель теряет X Wounds вместо одного. Число кубиков ранений всё равно равно Lethality оружия."
+            },
+            {
+              "name": "Rapid Fire (1)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            },
+            {
+              "name": "Unstable",
+              "text": "Натуральная 1 на попадании: носитель получает автоматическое попадание этим профилем, другие модели не поражаются. Если броска попадания нет (Template) — сначала D6, как выше."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Plasma pistol",
+      "cost": 70,
+      "slots": 1,
+      "category": "PLASMA WEAPONS",
+      "list": "HOUSE ESCHER",
+      "profiles": [
+        {
+          "name": "Plasma pistol",
+          "sr": "6”",
+          "lr": "12”",
+          "str": "5",
+          "ap": "-2",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Ammo (6+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Damage (2)",
+              "text": "Раненая модель теряет X Wounds вместо одного. Число кубиков ранений всё равно равно Lethality оружия."
+            },
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            },
+            {
+              "name": "Unstable",
+              "text": "Натуральная 1 на попадании: носитель получает автоматическое попадание этим профилем, другие модели не поражаются. Если броска попадания нет (Template) — сначала D6, как выше."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Throwing knives",
+      "cost": 10,
+      "slots": 1,
+      "category": "PRIMITIVE WEAPONS",
+      "list": "HOUSE ESCHER",
+      "profiles": [
+        {
+          "name": "Throwing knives",
+          "sr": "6”",
+          "lr": "12”",
+          "str": "-",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (3+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Toxin (4+)",
+              "text": "Против бойца ранит на X+ вместо сравнения Strength и Toughness. Против машины — только на натуральную 6."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Wyld bow (Wyld Runner only)",
+      "cost": 15,
+      "slots": 1,
+      "category": "PRIMITIVE WEAPONS",
+      "list": "HOUSE ESCHER",
+      "profiles": [
+        {
+          "name": "Wyld bow",
+          "sr": "9”",
+          "lr": "18”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Assault",
+              "text": "После Dash носитель может выполнить Shoot этим оружием как свободное действие."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Shotgun with solid & scatter ammo",
+      "cost": 35,
+      "slots": 1,
+      "category": "SHOTGUNS",
+      "list": "HOUSE ESCHER",
+      "upgrades": [
+        {
+          "name": "acid ammo",
+          "cost": 15
+        }
+      ]
+    },
+    {
+      "name": "Needle pistol",
+      "cost": 25,
+      "slots": 1,
+      "category": "TOXIN WEAPONS",
+      "list": "HOUSE ESCHER",
+      "profiles": [
+        {
+          "name": "Needle pistol",
+          "sr": "4”",
+          "lr": "9”",
+          "str": "-",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            },
+            {
+              "name": "Toxin (3+)",
+              "text": "Против бойца ранит на X+ вместо сравнения Strength и Toughness. Против машины — только на натуральную 6."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Needle rifle",
+      "cost": 45,
+      "slots": 1,
+      "category": "TOXIN WEAPONS",
+      "list": "HOUSE ESCHER",
+      "profiles": [
+        {
+          "name": "Needle rifle",
+          "sr": "9”",
+          "lr": "18”",
+          "str": "-",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Toxin (3+)",
+              "text": "Против бойца ранит на X+ вместо сравнения Strength и Toughness. Против машины — только на натуральную 6."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "‘Nightshade’ chem-thrower",
+      "cost": 95,
+      "slots": 1,
+      "category": "TOXIN WEAPONS",
+      "list": "HOUSE ESCHER",
+      "profiles": [
+        {
+          "name": "‘Nightshade’ chem-thrower",
+          "sr": "T",
+          "lr": "-",
+          "str": "-",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (6+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Gas",
+              "text": "Спасброски брони нельзя. Респиратор даёт непробиваемый спасбросок 5+ против Wounds от этого оружия."
+            },
+            {
+              "name": "Template",
+              "text": "Каплевидный шаблон от стреляющего через цель: все под ним получают автоматическое попадание. С Light в ближнем бою — одно автоматическое попадание без шаблона. С Rapid Fire (X) ближайшая модель получает попадания по кубику огневой мощи, остальные — по одному."
+            },
+            {
+              "name": "Toxin (3+)",
+              "text": "Против бойца ранит на X+ вместо сравнения Strength и Toughness. Против машины — только на натуральную 6."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Chainsword",
+      "cost": 20,
+      "slots": 1,
+      "category": "CHAIN WEAPONS",
+      "list": "HOUSE ESCHER",
+      "profiles": [
+        {
+          "name": "Chainsword",
+          "sr": "E",
+          "lr": "-",
+          "str": "S",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Parry",
+              "text": "Как Primary или Secondary в схватке: +1 Save. Несколько таких оружий не складываются."
+            },
+            {
+              "name": "Shred (5+)",
+              "text": "Если оружие ранит и бросок на ранение не меньше X, Lethality этой атаки +1."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Power sword",
+      "cost": 40,
+      "slots": 1,
+      "category": "POWER WEAPONS",
+      "list": "HOUSE ESCHER",
+      "profiles": [
+        {
+          "name": "Power sword",
+          "sr": "E",
+          "lr": "-",
+          "str": "S",
+          "ap": "-2",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Breaching (6+)",
+              "text": "Если атака ранит и бросок на ранение не меньше X, спасброски брони делать нельзя."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Parry",
+              "text": "Как Primary или Secondary в схватке: +1 Save. Несколько таких оружий не складываются."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Fighting knife",
+      "cost": 5,
+      "slots": 1,
+      "category": "PRIMITIVE WEAPONS",
+      "list": "HOUSE ESCHER",
+      "profiles": [
+        {
+          "name": "Fighting knife",
+          "sr": "E",
+          "lr": "-",
+          "str": "S",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Backstab",
+              "text": "+1 Strength, если цель Engaged более чем с одной моделью."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Whip (Wyld Runner only)",
+      "cost": 5,
+      "slots": 1,
+      "category": "PRIMITIVE WEAPONS",
+      "list": "HOUSE ESCHER",
+      "profiles": [
+        {
+          "name": "Whip",
+          "sr": "E",
+          "lr": "-",
+          "str": "S",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Knockback (6+)",
+              "text": "Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1\" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1\" от центра."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Shock whip",
+      "cost": 10,
+      "slots": 1,
+      "category": "SHOCK WEAPONS",
+      "list": "HOUSE ESCHER",
+      "profiles": [
+        {
+          "name": "Shock whip",
+          "sr": "E",
+          "lr": "-",
+          "str": "S",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Knockback (6+)",
+              "text": "Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1\" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1\" от центра."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Shock (6+)",
+              "text": "Если атака попадает и бросок попадания не меньше X, она автоматически ранит и считается натуральной 6 на ранении для других свойств."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Stiletto knife",
+      "cost": 25,
+      "slots": 1,
+      "category": "TOXIC WEAPONS",
+      "list": "HOUSE ESCHER",
+      "profiles": [
+        {
+          "name": "Stiletto knife",
+          "sr": "E",
+          "lr": "-",
+          "str": "-",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Toxin (3+)",
+              "text": "Против бойца ранит на X+ вместо сравнения Strength и Toughness. Против машины — только на натуральную 6."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Stiletto sword",
+      "cost": 45,
+      "slots": 1,
+      "category": "TOXIC WEAPONS",
+      "list": "HOUSE ESCHER",
+      "profiles": [
+        {
+          "name": "Stiletto sword",
+          "sr": "E",
+          "lr": "-",
+          "str": "-",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Parry",
+              "text": "Как Primary или Secondary в схватке: +1 Save. Несколько таких оружий не складываются."
+            },
+            {
+              "name": "Toxin (3+)",
+              "text": "Против бойца ранит на X+ вместо сравнения Strength и Toughness. Против машины — только на натуральную 6."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Venom claw (Death-Maiden only)",
+      "cost": 50,
+      "slots": 1,
+      "category": "TOXIC WEAPONS",
+      "list": "HOUSE ESCHER",
+      "profiles": [
+        {
+          "name": "Venom claw",
+          "sr": "E",
+          "lr": "-",
+          "str": "-",
+          "ap": "-2",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Shred (5+)",
+              "text": "Если оружие ранит и бросок на ранение не меньше X, Lethality этой атаки +1."
+            },
+            {
+              "name": "Toxin (3+)",
+              "text": "Против бойца ранит на X+ вместо сравнения Strength и Toughness. Против машины — только на натуральную 6."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Choke gas grenades",
+      "cost": 45,
+      "slots": 0,
+      "category": "GRENADES",
+      "list": "HOUSE ESCHER",
+      "profiles": [
+        {
+          "name": "Choke gas grenades",
+          "sr": "-",
+          "lr": "9”",
+          "str": "-",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (5+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blast (3”)",
+              "text": "Поставьте маркер Blast 3\" или 5\" на цель. Попадание — маркер остаётся. Промах — рассейте на D6\" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него."
+            },
+            {
+              "name": "Gas",
+              "text": "Спасброски брони нельзя. Респиратор даёт непробиваемый спасбросок 5+ против Wounds от этого оружия."
+            },
+            {
+              "name": "Limited",
+              "text": "Если оружие село, его нельзя перезарядить до конца боя."
+            },
+            {
+              "name": "Toxin (3+)",
+              "text": "Против бойца ранит на X+ вместо сравнения Strength и Toughness. Против машины — только на натуральную 6."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Frag grenades",
+      "cost": 30,
+      "slots": 0,
+      "category": "GRENADES",
+      "list": "HOUSE ESCHER",
+      "profiles": [
+        {
+          "name": "frag grenades",
+          "sr": "6”",
+          "lr": "24”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (4+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Arc (Centreline)",
+              "text": "Ограниченные сектора обстрела, обозначенные X. Целиться можно только в модели в этом секторе."
+            },
+            {
+              "name": "Blast (3”)",
+              "text": "Поставьте маркер Blast 3\" или 5\" на цель. Попадание — маркер остаётся. Промах — рассейте на D6\" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него."
+            },
+            {
+              "name": "Knockback (5+)",
+              "text": "Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1\" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1\" от центра."
+            },
+            {
+              "name": "Rapid Fire (1)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Krak grenades",
+      "cost": 45,
+      "slots": 0,
+      "category": "GRENADES",
+      "list": "HOUSE ESCHER",
+      "profiles": [
+        {
+          "name": "krak grenades",
+          "sr": "6”",
+          "lr": "24”",
+          "str": "6",
+          "ap": "-2",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (4+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Arc (Centreline)",
+              "text": "Ограниченные сектора обстрела, обозначенные X. Целиться можно только в модели в этом секторе."
+            },
+            {
+              "name": "Rapid Fire (1)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Smoke grenades",
+      "cost": 15,
+      "slots": 0,
+      "category": "GRENADES",
+      "list": "HOUSE ESCHER",
+      "profiles": [
+        {
+          "name": "Smoke grenades",
+          "sr": "-",
+          "lr": "9”",
+          "str": "-",
+          "ap": "-",
+          "l": "-",
+          "traits": [
+            {
+              "name": "Ammo (4+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blast (3”)",
+              "text": "Поставьте маркер Blast 3\" или 5\" на цель. Попадание — маркер остаётся. Промах — рассейте на D6\" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него."
+            },
+            {
+              "name": "Limited",
+              "text": "Если оружие село, его нельзя перезарядить до конца боя."
+            },
+            {
+              "name": "Smoke",
+              "text": "Можно целиться в точку на поле. Маркер Blast остаётся: столб дыма блокирует линию видимости. В End phase на 5+ остаётся, иначе снимается. Попавшая модель не ранится и не становится Suppressed."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mesh armour",
+      "cost": 40,
+      "slots": 0,
+      "category": "ARMOUR & FIELD ARMOUR",
+      "list": "HOUSE ESCHER",
+      "description": "Fighter в сетчатой броне увеличивает характеристику Save на 1 при разрешении попаданий, полученных в ближнем бою."
+    },
+    {
+      "name": "Refractor field",
+      "cost": 50,
+      "slots": 0,
+      "category": "ARMOUR & FIELD ARMOUR",
+      "list": "HOUSE ESCHER",
+      "description": "Рефракторное поле даёт носителю непробиваемый спасбросок 5+; однако если при этом спасброске выпадает натуральная 1, поле перегорает и его нельзя использовать до конца боя. Рефракторное поле можно сочетать с другой бронёй и полевой бронёй."
+    },
+    {
+      "name": "Drop rig",
+      "cost": 10,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "HOUSE ESCHER",
+      "description": "Active или Suppressed Fighter со спусковой оснасткой может выполнить действие «Спуск», находясь в пределах 1” от края площадки: Спуск (одиночное): Fighter сдвигается до 3” по горизонтали и до 12” по вертикали. Любое вертикальное движение должно быть вниз, то есть к земле."
+    },
+    {
+      "name": "Medicae kit",
+      "cost": 20,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "HOUSE ESCHER",
+      "description": "Если Fighter с медкай-набором помогает другому Fighter на проверке Recovery, он бросает дополнительный кубик ранений и выбирает, какой оставить."
+    },
+    {
+      "name": "Photo-goggles",
+      "cost": 35,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "HOUSE ESCHER",
+      "description": "Fighter с фотоочками увеличивает значение X в правиле Visibility (X”) на 9” и может видеть сквозь дымовые облака, поставленные свойством Smoke. Кроме того, если во Fighter с фотоочками попадает оружие со свойством Flash, он получает модификатор −2 к проверке Initiative, чтобы не ослепнуть."
+    },
+    {
+      "name": "Respirator",
+      "cost": 15,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "HOUSE ESCHER",
+      "description": "Когда во Fighter с респиратором попадает оружие со свойством Gas, он получает непробиваемый спасбросок 5+ против этого оружия."
+    },
+    {
+      "name": "Las-projector",
+      "cost": 20,
+      "slots": 1,
+      "category": "WEAPON ACCESSORIES",
+      "list": "HOUSE ESCHER",
+      "description": "Оружие с лаз-проектором снижает бонус модели к спасброску брони за укрытие на 1, пока цель в Short Range оружия."
+    },
+    {
+      "name": "Dirt bike",
+      "cost": 35,
+      "slots": 0,
+      "category": "MOUNTS",
+      "list": "HOUSE ESCHER",
+      "description": "Fighter с dirt bike получает подтип Mounted и ставит характеристику Movement на 8”. Когда он выполняет действие Dash, он добавляет 5” к характеристике Movement вместо Initiative."
+    },
+    {
+      "name": "Escher Cutter",
+      "cost": 150,
+      "slots": 0,
+      "category": "MOUNTS",
+      "list": "HOUSE ESCHER",
+      "description": "Fighter с Escher Cutter получает подтипы Mounted и Flying и ставит характеристику Movement на 9”. Когда он выполняет действие Dash, он добавляет 5” к характеристике Movement вместо Initiative. Escher Cutter экипирован Cutter grenade launchers с гранатами frag и krak. Он может выбрать любой из следующих вариантов при добавлении в Gang Roster или в любой пост-цикловой последовательности: • Заменить Cutter grenade launcher с гранатами frag и krak на Cutter heavy stubbers..................................+10 кредитов • Заменить Cutter grenade launcher с гранатами frag и krak на Cutter plasma guns.......................................+15 кредитов"
+    },
+    {
+      "name": "Phyrr Cat",
+      "cost": 80,
+      "slots": 0,
+      "category": "PETS",
+      "list": "HOUSE ESCHER"
+    },
+    {
+      "name": "Phelynx",
+      "cost": 60,
+      "slots": 0,
+      "category": "PETS",
+      "list": "HOUSE ESCHER"
+    }
+  ]
+}

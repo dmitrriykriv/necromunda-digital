@@ -1,0 +1,109 @@
+{
+  "id": "trete-koleno",
+  "name": "Третье Колено",
+  "faction": "genestealer-cult",
+  "factionName": "Культ генокрадов",
+  "notes": "Кампания. Стартовый ростер на 1000 кредитов: Alpha с Extra Arm (Braced Shot как одиночное действие) и mining laser*. Снаряжение только из списка культа генокрадов.",
+  "reputation": 1,
+  "stash": 0,
+  "updatedAt": "2026-08-18",
+  "fighters": [
+    {
+      "id": "kaelor",
+      "name": "Каэлор",
+      "type": "Genestealer Cult Alpha",
+      "subtypes": ["Leader"],
+      "xp": 61,
+      "baseCost": 150,
+      "skills": ["Inspiring", "Iron Will"],
+      "equipment": [
+        {"name": "Clawed arm (Extra Arm, входит в тип)", "cost": 0, "slots": 0},
+        {"name": "Mining laser*", "cost": 125, "slots": 2},
+        {"name": "Power maul", "cost": 45, "slots": 1},
+        {"name": "Mesh armour", "cost": 40, "slots": 0},
+        {"name": "Cult icon (maximum one per gang)", "cost": 20, "slots": 0},
+        {"name": "Photo-goggles", "cost": 35, "slots": 0}
+      ]
+    },
+    {
+      "id": "vereja",
+      "name": "Верея",
+      "type": "Genestealer Cult Hybrid Acolyte",
+      "subtypes": ["Champion"],
+      "xp": 39,
+      "baseCost": 85,
+      "skills": ["Inspiring", "Overwatch"],
+      "equipment": [
+        {"name": "Early generation (Extra Arm)", "cost": 20, "slots": 0},
+        {"name": "Clawed arm (Extra Arm, входит в тип)", "cost": 0, "slots": 0},
+        {"name": "Hand flamer", "cost": 45, "slots": 1},
+        {"name": "Autopistol", "cost": 10, "slots": 1},
+        {"name": "Mesh armour", "cost": 40, "slots": 0}
+      ]
+    },
+    {
+      "id": "grokk",
+      "name": "Грокк",
+      "type": "Genestealer Cult Aberrant",
+      "subtypes": ["Ganger"],
+      "xp": 13,
+      "baseCost": 85,
+      "skills": ["Unstoppable"],
+      "equipment": [
+        {"name": "Heavy rock drill*", "cost": 60, "slots": 2}
+      ]
+    },
+    {
+      "id": "jenn",
+      "name": "Йенн",
+      "type": "Genestealer Cult Neophyte Hybrid",
+      "subtypes": ["Ganger", "Specialist"],
+      "xp": 13,
+      "baseCost": 40,
+      "skills": [],
+      "equipment": [
+        {"name": "Autogun", "cost": 20, "slots": 1},
+        {"name": "Fighting knife", "cost": 5, "slots": 1}
+      ]
+    },
+    {
+      "id": "drak",
+      "name": "Драк",
+      "type": "Genestealer Cult Neophyte Hybrid",
+      "subtypes": ["Ganger", "Specialist"],
+      "xp": 13,
+      "baseCost": 40,
+      "skills": [],
+      "equipment": [
+        {"name": "Shotgun with solid & scatter ammo", "cost": 35, "slots": 1},
+        {"name": "Fighting knife", "cost": 5, "slots": 1}
+      ]
+    },
+    {
+      "id": "sol",
+      "name": "Сол",
+      "type": "Genestealer Cult Neophyte Hybrid",
+      "subtypes": ["Ganger", "Specialist"],
+      "xp": 13,
+      "baseCost": 40,
+      "skills": [],
+      "equipment": [
+        {"name": "Lasgun", "cost": 15, "slots": 1},
+        {"name": "Fighting knife", "cost": 5, "slots": 1}
+      ]
+    },
+    {
+      "id": "niks",
+      "name": "Никс",
+      "type": "Genestealer Cult Hybrid Initiate",
+      "subtypes": ["Prospect"],
+      "xp": 1,
+      "baseCost": 20,
+      "skills": [],
+      "equipment": [
+        {"name": "Autopistol", "cost": 10, "slots": 1},
+        {"name": "Fighting knife", "cost": 5, "slots": 1}
+      ]
+    }
+  ]
+}

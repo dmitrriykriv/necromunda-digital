@@ -1,0 +1,605 @@
+{
+  "id": "forge-smelters",
+  "name": "Плавильщики кузниц",
+  "types": [
+    {
+      "id": "goliath-forge-breaker",
+      "name": "Goliath Forge Breaker",
+      "category": "Fighter",
+      "subtypes": [
+        "Ganger"
+      ],
+      "baseCost": 70,
+      "xp": 19,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "4”",
+          "4+",
+          "4+",
+          "3",
+          "4",
+          "1",
+          "3",
+          "2",
+          "6+",
+          "6",
+          "6",
+          "6",
+          "6"
+        ]
+      },
+      "rules": [
+        "Навыки: у Goliath Forge Breaker есть навыки Heavy Blows и Unstoppable Force."
+      ]
+    },
+    {
+      "id": "goliath-forge-gunner",
+      "name": "Goliath Forge Gunner",
+      "category": "Fighter",
+      "subtypes": [
+        "Ganger"
+      ],
+      "baseCost": 60,
+      "xp": 19,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "4”",
+          "4+",
+          "4+",
+          "3",
+          "4",
+          "1",
+          "3",
+          "1",
+          "6+",
+          "6",
+          "7",
+          "6",
+          "6"
+        ]
+      },
+      "rules": [
+        "Навыки: у Goliath Forge Gunner есть навыки Hip-shooting и Mighty Leap."
+      ]
+    },
+    {
+      "id": "goliath-forge-hauler",
+      "name": "Goliath Forge Hauler",
+      "category": "Fighter",
+      "subtypes": [
+        "Ganger"
+      ],
+      "baseCost": 60,
+      "xp": 19,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "4”",
+          "4+",
+          "4+",
+          "3",
+          "4",
+          "1",
+          "3",
+          "1",
+          "6+",
+          "6",
+          "6",
+          "7",
+          "6"
+        ]
+      },
+      "rules": [
+        "Навыки: у Goliath Forge Hauler есть навыки Bulging Biceps и Immovable Object."
+      ]
+    },
+    {
+      "id": "goliath-forge-patcher",
+      "name": "Goliath Forge Patcher",
+      "category": "Fighter",
+      "subtypes": [
+        "Ganger"
+      ],
+      "baseCost": 60,
+      "xp": 19,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "4”",
+          "4+",
+          "4+",
+          "3",
+          "4",
+          "1",
+          "3",
+          "1",
+          "6+",
+          "6",
+          "6",
+          "6",
+          "7"
+        ]
+      },
+      "rules": [
+        "Навыки: у Goliath Forge Patcher есть навык Medicate.",
+        "Chem Slug (одиночное): выберите дружественного Fighter в пределах 2”; в своей следующей активации он может выполнить дополнительное действие. В конце его активации бросьте D6. На 4+ ничего не происходит. На 1–3 система Fighter перегружается, и он получает попадание Str -, AP -, L1, которое автоматически ранит без спасбросков.ОригиналTarget a friendly Fighter within 2”; during their next activation they may perform an additional action. At the end of their activation, roll a D6. On a result 4+ nothing happens. On a result of 1-3 the Fighter’s system is overloaded and they suffer a Str -, AP -, L1 Hit that Wounds automatically with no saves allowed.",
+        "Автолечение (свободное): когда Fighter выполняет это действие, выберите его самого или дружественного Active или Suppressed Fighter в пределах 3” и сделайте проверку Intelligence для этого Fighter. Если проверка пройдена, цель восстанавливает 1 Wound, потерянный ранее в бою.ОригиналWhen a Fighter performs this action, target either them or a friendly Active or Suppressed Fighter within 3” and make an Intelligence check for this Fighter. If the check is passed then the targeted Fighter regains 1 Wound lost earlier in the battle.",
+        "Chem Slug (одиночное): выберите дружественного Fighter в пределах 2”; в своей следующей активации он может выполнить дополнительное действие. В конце его активации бросьте D6. На 4+ ничего не происходит. На 1–3 система Fighter перегружается, и он получает попадание Str -, AP -, L1, которое автоматически ранит без спасбросков.ОригиналTarget a friendly Fighter within 2”; during their next activation they may perform an additional action. At the end of their activation, roll a D6. On a result 4+ nothing happens. On a result of 1-3 the Fighter’s system is overloaded and they suffer a Str -, AP -, L1 Hit that Wounds automatically with no saves allowed.",
+        "Автолечение (свободное): когда Fighter выполняет это действие, выберите его самого или дружественного Active или Suppressed Fighter в пределах 3” и сделайте проверку Intelligence для этого Fighter. Если проверка пройдена, цель восстанавливает 1 Wound, потерянный ранее в бою.ОригиналWhen a Fighter performs this action, target either them or a friendly Active or Suppressed Fighter within 3” and make an Intelligence check for this Fighter. If the check is passed then the targeted Fighter regains 1 Wound lost earlier in the battle.",
+        "Стоять насмерть (двойное): до начала следующей активации этого Fighter он получает модификатор +2 к любым сейвам брони и его нельзя сдвинуть с текущей позиции никакими средствами, а также на него нельзя наложить Suppressed.ОригиналUntil the start of this Fighter’s next activation, they apply a +2 modifier to any Armour saves and cannot be moved from their current location by any means at all, nor can they be Suppressed."
+      ]
+    }
+  ],
+  "subtypes": [
+    "Ganger"
+  ],
+  "equipment": [
+    {
+      "name": "Heavy stubber*",
+      "cost": 70,
+      "slots": 2,
+      "category": "AUTO/STUB WEAPONS",
+      "list": "FORGE SMELTERS",
+      "profiles": [
+        {
+          "name": "Heavy stubber*",
+          "sr": "20”",
+          "lr": "40”",
+          "str": "4",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Heavy",
+              "text": "Дальнобойное: только Braced Shot. Ближний бой: нельзя как Secondary и нельзя использовать Secondary вместе с ним."
+            },
+            {
+              "name": "Rapid Fire (2)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Stub gun",
+      "cost": 5,
+      "slots": 1,
+      "category": "AUTO/STUB WEAPONS",
+      "list": "FORGE SMELTERS",
+      "upgrades": [
+        {
+          "name": "warp rounds",
+          "cost": 10
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Stub gun",
+          "sr": "6”",
+          "lr": "12”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            }
+          ]
+        },
+        {
+          "name": "warp rounds",
+          "sr": "6”",
+          "lr": "12”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Cursed",
+              "text": "Попавшая модель проходит Willpower или получает Insanity. Натуральная 1 на попадании: то же для носителя."
+            },
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            },
+            {
+              "name": "Single Shot",
+              "text": "Один выстрел за бой, затем сразу Out of Ammo; перезарядить нельзя."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Bolt pistol",
+      "cost": 45,
+      "slots": 1,
+      "category": "BOLT WEAPONS",
+      "list": "FORGE SMELTERS",
+      "profiles": [
+        {
+          "name": "Bolt pistol",
+          "sr": "6”",
+          "lr": "12”",
+          "str": "4",
+          "ap": "-1",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Ammo (3+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            },
+            {
+              "name": "Rapid Fire (1)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Flamer",
+      "cost": 70,
+      "slots": 1,
+      "category": "FLAMERS",
+      "list": "FORGE SMELTERS",
+      "profiles": [
+        {
+          "name": "Flamer",
+          "sr": "T",
+          "lr": "-",
+          "str": "4",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (6+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blaze (5+)",
+              "text": "Если бросок на ранение не меньше X, цель получает ещё одно попадание тем же профилем. Оно бросается на ранение отдельно и не вызывает новых дополнительных попаданий."
+            },
+            {
+              "name": "Template",
+              "text": "Каплевидный шаблон от стреляющего через цель: все под ним получают автоматическое попадание. С Light в ближнем бою — одно автоматическое попадание без шаблона. С Rapid Fire (X) ближайшая модель получает попадания по кубику огневой мощи, остальные — по одному."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "‘Krumper’ rivet cannon",
+      "cost": 45,
+      "slots": 1,
+      "category": "REPURPOSED TOOLS",
+      "list": "FORGE SMELTERS",
+      "profiles": [
+        {
+          "name": "‘Krumper’ rivet cannon",
+          "sr": "3”",
+          "lr": "9”",
+          "str": "4",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Assault",
+              "text": "После Dash носитель может выполнить Shoot этим оружием как свободное действие."
+            },
+            {
+              "name": "Blaze (5+)",
+              "text": "Если бросок на ранение не меньше X, цель получает ещё одно попадание тем же профилем. Оно бросается на ранение отдельно и не вызывает новых дополнительных попаданий."
+            },
+            {
+              "name": "Rapid Fire (1)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Ignition cannon (Forge Hauler only)",
+      "cost": 110,
+      "slots": 1,
+      "category": "REPURPOSED TOOLS",
+      "list": "FORGE SMELTERS",
+      "profiles": [
+        {
+          "name": "Ignition cannon*",
+          "sr": "5”",
+          "lr": "10”",
+          "str": "6",
+          "ap": "-2",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Ammo (6+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blaze (5+)",
+              "text": "Если бросок на ранение не меньше X, цель получает ещё одно попадание тем же профилем. Оно бросается на ранение отдельно и не вызывает новых дополнительных попаданий."
+            },
+            {
+              "name": "Damage (2)",
+              "text": "Раненая модель теряет X Wounds вместо одного. Число кубиков ранений всё равно равно Lethality оружия."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Fighting knife",
+      "cost": 5,
+      "slots": 1,
+      "category": "PRIMITIVE WEAPONS",
+      "list": "FORGE SMELTERS",
+      "profiles": [
+        {
+          "name": "Fighting knife",
+          "sr": "E",
+          "lr": "-",
+          "str": "S",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Backstab",
+              "text": "+1 Strength, если цель Engaged более чем с одной моделью."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Crucible hooks* (Forge Breaker only)",
+      "cost": 60,
+      "slots": 2,
+      "category": "REPURPOSED TOOLS",
+      "list": "FORGE SMELTERS",
+      "profiles": [
+        {
+          "name": "Crucible hooks*",
+          "sr": "E",
+          "lr": "-",
+          "str": "S+1",
+          "ap": "-2",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Paired (2)",
+              "text": "Нельзя как Secondary и нельзя Secondary вместе с ним. Как Primary: носитель увеличивает Attacks на X."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Forge axe* (Forge Breaker only)",
+      "cost": 45,
+      "slots": 2,
+      "category": "REPURPOSED TOOLS",
+      "list": "FORGE SMELTERS",
+      "profiles": [
+        {
+          "name": "Forge axe*",
+          "sr": "E",
+          "lr": "-",
+          "str": "S+1",
+          "ap": "-1",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Heavy",
+              "text": "Дальнобойное: только Braced Shot. Ближний бой: нельзя как Secondary и нельзя использовать Secondary вместе с ним."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Parry",
+              "text": "Как Primary или Secondary в схватке: +1 Save. Несколько таких оружий не складываются."
+            },
+            {
+              "name": "Unwieldy",
+              "text": "В ближнем бою Initiative модели ставится в 1 до любых модификаторов."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Frag grenades",
+      "cost": 30,
+      "slots": 0,
+      "category": "GRENADES",
+      "list": "FORGE SMELTERS",
+      "profiles": [
+        {
+          "name": "Frag grenades",
+          "sr": "-",
+          "lr": "9”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (4+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blast (3”)",
+              "text": "Поставьте маркер Blast 3\" или 5\" на цель. Попадание — маркер остаётся. Промах — рассейте на D6\" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него."
+            },
+            {
+              "name": "Knockback (6+)",
+              "text": "Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1\" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1\" от центра."
+            },
+            {
+              "name": "Limited",
+              "text": "Если оружие село, его нельзя перезарядить до конца боя."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Krak grenades",
+      "cost": 45,
+      "slots": 0,
+      "category": "GRENADES",
+      "list": "FORGE SMELTERS",
+      "profiles": [
+        {
+          "name": "Krak grenades",
+          "sr": "-",
+          "lr": "9”",
+          "str": "6",
+          "ap": "-2",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (4+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Limited",
+              "text": "Если оружие село, его нельзя перезарядить до конца боя."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mesh armour",
+      "cost": 40,
+      "slots": 0,
+      "category": "ARMOUR & FIELD ARMOUR",
+      "list": "FORGE SMELTERS",
+      "description": "Fighter в сетчатой броне увеличивает характеристику Save на 1 при разрешении попаданий, полученных в ближнем бою."
+    },
+    {
+      "name": "Refractor field",
+      "cost": 50,
+      "slots": 0,
+      "category": "ARMOUR & FIELD ARMOUR",
+      "list": "FORGE SMELTERS",
+      "description": "Рефракторное поле даёт носителю непробиваемый спасбросок 5+; однако если при этом спасброске выпадает натуральная 1, поле перегорает и его нельзя использовать до конца боя. Рефракторное поле можно сочетать с другой бронёй и полевой бронёй."
+    },
+    {
+      "name": "Chem slugger (Forge patcher only)",
+      "cost": 45,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "FORGE SMELTERS",
+      "description": "Active Fighter с chem slugger может выполнить действие Chem Slug: Chem Slug (одиночное): выберите дружественного Fighter в пределах 2”; в своей следующей активации он может выполнить дополнительное действие. В конце его активации бросьте D6. На 4+ ничего не происходит. На 1–3 система Fighter перегружается, и он получает попадание Str -, AP -, L1, которое автоматически ранит без спасбросков."
+    },
+    {
+      "name": "Servo-medicae (Forge Patcher only)",
+      "cost": 30,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "FORGE SMELTERS",
+      "description": "Active Fighter с servo-medicae может выполнить действие «Автолечение»: Автолечение (свободное): когда Fighter выполняет это действие, выберите его самого или дружественного Active или Suppressed Fighter в пределах 3” и сделайте проверку Intelligence для этого Fighter. Если проверка пройдена, цель восстанавливает 1 Wound, потерянный ранее в бою."
+    },
+    {
+      "name": "Infra-sight",
+      "cost": 10,
+      "slots": 1,
+      "category": "WEAPON ACCESSORIES",
+      "list": "FORGE SMELTERS",
+      "description": "Оружие с инфраприцелом можно стрелять по целям за маркерами, созданными свойством Smoke. Кроме того, значение X в правиле Visibility (X”) увеличивается на 9” при использовании оружия с инфраприцелом."
+    },
+    {
+      "name": "Mono-sight",
+      "cost": 20,
+      "slots": 1,
+      "category": "WEAPON ACCESSORIES",
+      "list": "FORGE SMELTERS",
+      "description": "Когда модель выполняет действие Aimed Shot оружием с моноприцелом, она применяет модификатор +2 к броску попадания вместо +1."
+    },
+    {
+      "name": "Telescopic sight",
+      "cost": 20,
+      "slots": 1,
+      "category": "WEAPON ACCESSORIES",
+      "list": "FORGE SMELTERS",
+      "description": "Оружие с телескопическим прицелом снижает бонус модели к спасброску брони за укрытие на 1, пока цель в Long Range оружия."
+    }
+  ]
+}

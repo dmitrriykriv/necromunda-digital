@@ -1,0 +1,1028 @@
+{
+  "id": "corpse-grinder-cult",
+  "name": "Культ Трупорезов",
+  "types": [
+    {
+      "id": "corpse-grinder-cult-butcher",
+      "name": "Corpse Grinder Cult Butcher",
+      "category": "Fighter",
+      "subtypes": [
+        "Leader"
+      ],
+      "baseCost": 135,
+      "xp": 61,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "5”",
+          "3+",
+          "4+",
+          "4",
+          "3",
+          "3",
+          "3",
+          "3",
+          "5+",
+          "8",
+          "8",
+          "8",
+          "7"
+        ]
+      }
+    },
+    {
+      "id": "corpse-grinder-cult-cutter",
+      "name": "Corpse Grinder Cult Cutter",
+      "category": "Fighter",
+      "subtypes": [
+        "Champion"
+      ],
+      "baseCost": 80,
+      "xp": 37,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "5”",
+          "3+",
+          "5+",
+          "3",
+          "3",
+          "2",
+          "3",
+          "2",
+          "5+",
+          "7",
+          "7",
+          "8",
+          "6"
+        ]
+      }
+    },
+    {
+      "id": "corpse-grinder-cult-skinner",
+      "name": "Corpse Grinder Cult Skinner",
+      "category": "Fighter",
+      "subtypes": [
+        "Ganger",
+        "Specialist"
+      ],
+      "baseCost": 35,
+      "xp": 13,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "5”",
+          "4+",
+          "5+",
+          "3",
+          "3",
+          "1",
+          "4",
+          "1",
+          "6+",
+          "6",
+          "6",
+          "7",
+          "6"
+        ]
+      }
+    },
+    {
+      "id": "corpse-grinder-cult-initiate",
+      "name": "Corpse Grinder Cult Initiate",
+      "category": "Fighter",
+      "subtypes": [
+        "Prospect"
+      ],
+      "baseCost": 20,
+      "xp": 1,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "5”",
+          "5+",
+          "5+",
+          "3",
+          "3",
+          "1",
+          "3",
+          "1",
+          "6+",
+          "5",
+          "5",
+          "6",
+          "7"
+        ]
+      }
+    },
+    {
+      "id": "chaos-spawn",
+      "name": "Chaos Spawn",
+      "category": "Fighter",
+      "subtypes": [
+        "Beast",
+        "Brute"
+      ],
+      "baseCost": 130,
+      "xp": 25,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "3+D3",
+          "*",
+          "6+",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "*",
+          "4",
+          "8",
+          "7",
+          "5"
+        ]
+      },
+      "rules": [
+        "Искажённое чудовище: когда Chaos Spawn добавляют в Gang Roster, бросьте D6 по каждой характеристике профиля и сверьтесь с таблицей ниже, чтобы определить её значение:ОригиналWhen a Chaos Spawn is added to the Gang Roster, roll a D6 for each characteristic in their profile and consult the table below to determine their value:",
+        "Непредсказуемое движение: характеристика Movement у Chaos Spawn случайная; бросайте каждый раз, когда Chaos Spawn активируется.ОригиналThe Movement characteristic for a Chaos Spawn is random; roll each time the Chaos Spawn is activated.",
+        "Благословлённые Lord of Skin and Sinew: когда Chaos Spawn выводится Out of Action, не бросайте по таблице Lasting Injury. Его всегда считают Out Cold.ОригиналWhen a Chaos Spawn is taken Out of Action, do not roll on the Lasting Injury table. They are always considered to be Out Cold.",
+        "Вне контроля: на шаге Wrap-up последовательности Post-battle Sequence, если Chaos Spawn участвовал в бою, есть шанс, что он сбежит. Его хозяин назначает до трёх Fighter из банды, которые не были выведены Out of Action в этом бою; бросьте D6 за каждого Fighter. Если хотя бы один Fighter выбросил 4+, Chaos Spawn удерживают, и он остаётся с бандой. Иначе он сбегает в глубины андерхайва; Chaos Spawn уходит в Recovery, пока банда его возвращает. Кроме того, если любой Fighter выбросил 1, Chaos Spawn бьёт его. Немедленно бросьте по таблице Lasting Injury за него и примените результат.ОригиналDuring the Wrap-up step of the Post-battle Sequence, if a Chaos Spawn took part in the battle there is a chance they will escape. Their controller nominates up to three Fighters from the gang who did not go Out of Action during the battle; roll a D6 for each Fighter. If at least one Fighter rolls a 4+, the Chaos Spawn is restrained and remains with the gang. otherwise they escape into the depths of the underhive; the Chaos Spawn goes into Recovery while the gang retrieves it. Additionally, if any Fighter rolls a 1, the Chaos Spawn lashes out at them. Roll on the Lasting Injury table for them and apply the result immediately.",
+        "Ярость (одиночное): все дружественные Fighter, полностью находящиеся в пределах 6” от этого Fighter, имеющие маркер Ready и находящиеся в состоянии Active, добавляют D3” к характеристике Movement до фазы окончания этого раунда.ОригиналAll friendly Fighters that are completely within 6” of this Fighter, that have a Ready marker and are Active, add D3” to their Movement characteristic until the End phase of this round.",
+        "Спуск (одиночное): Fighter сдвигается до 3” по горизонтали и до 12” по вертикали. Любое вертикальное движение должно быть вниз, то есть к земле.ОригиналThe Fighter makes a move of up to 3” horizontally and up to 12” vertically. Any vertical movement must be downwards, i.e., towards the ground.",
+        "Ярость (одиночное): все дружественные Fighter, полностью находящиеся в пределах 6” от этого Fighter, имеющие маркер Ready и находящиеся в состоянии Active, добавляют D3” к характеристике Movement до фазы окончания этого раунда.ОригиналAll friendly Fighters that are completely within 6” of this Fighter, that have a Ready marker and are Active, add D3” to their Movement characteristic until the End phase of this round."
+      ]
+    }
+  ],
+  "subtypes": [
+    "Beast",
+    "Brute",
+    "Champion",
+    "Ganger",
+    "Leader",
+    "Prospect",
+    "Specialist"
+  ],
+  "equipment": [
+    {
+      "name": "Autopistol",
+      "cost": 10,
+      "slots": 1,
+      "category": "AUTO/STUB WEAPONS",
+      "list": "CORPSE GRINDER CULT",
+      "upgrades": [
+        {
+          "name": "warp rounds",
+          "cost": 10
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Autopistol",
+          "sr": "4”",
+          "lr": "12”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            },
+            {
+              "name": "Rapid Fire (1)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            }
+          ]
+        },
+        {
+          "name": "warp rounds",
+          "sr": "4”",
+          "lr": "12”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Cursed",
+              "text": "Попавшая модель проходит Willpower или получает Insanity. Натуральная 1 на попадании: то же для носителя."
+            },
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            },
+            {
+              "name": "Single Shot",
+              "text": "Один выстрел за бой, затем сразу Out of Ammo; перезарядить нельзя."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Stub gun",
+      "cost": 5,
+      "slots": 1,
+      "category": "AUTO/STUB WEAPONS",
+      "list": "CORPSE GRINDER CULT",
+      "upgrades": [
+        {
+          "name": "warp rounds",
+          "cost": 10
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Stub gun",
+          "sr": "6”",
+          "lr": "12”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            }
+          ]
+        },
+        {
+          "name": "warp rounds",
+          "sr": "6”",
+          "lr": "12”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Cursed",
+              "text": "Попавшая модель проходит Willpower или получает Insanity. Натуральная 1 на попадании: то же для носителя."
+            },
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            },
+            {
+              "name": "Single Shot",
+              "text": "Один выстрел за бой, затем сразу Out of Ammo; перезарядить нельзя."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Flamer",
+      "cost": 70,
+      "slots": 1,
+      "category": "FLAMERS",
+      "list": "CORPSE GRINDER CULT",
+      "profiles": [
+        {
+          "name": "Flamer",
+          "sr": "T",
+          "lr": "-",
+          "str": "4",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (6+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blaze (5+)",
+              "text": "Если бросок на ранение не меньше X, цель получает ещё одно попадание тем же профилем. Оно бросается на ранение отдельно и не вызывает новых дополнительных попаданий."
+            },
+            {
+              "name": "Template",
+              "text": "Каплевидный шаблон от стреляющего через цель: все под ним получают автоматическое попадание. С Light в ближнем бою — одно автоматическое попадание без шаблона. С Rapid Fire (X) ближайшая модель получает попадания по кубику огневой мощи, остальные — по одному."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Hand flamer",
+      "cost": 45,
+      "slots": 1,
+      "category": "FLAMERS",
+      "list": "CORPSE GRINDER CULT",
+      "profiles": [
+        {
+          "name": "Hand Flamer",
+          "sr": "T",
+          "lr": "-",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (6+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blaze (5+)",
+              "text": "Если бросок на ранение не меньше X, цель получает ещё одно попадание тем же профилем. Оно бросается на ранение отдельно и не вызывает новых дополнительных попаданий."
+            },
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            },
+            {
+              "name": "Template",
+              "text": "Каплевидный шаблон от стреляющего через цель: все под ним получают автоматическое попадание. С Light в ближнем бою — одно автоматическое попадание без шаблона. С Rapid Fire (X) ближайшая модель получает попадания по кубику огневой мощи, остальные — по одному."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Heavy flamer*",
+      "cost": 95,
+      "slots": 2,
+      "category": "FLAMERS",
+      "list": "CORPSE GRINDER CULT",
+      "profiles": [
+        {
+          "name": "Heavy flamer*",
+          "sr": "T",
+          "lr": "-",
+          "str": "5",
+          "ap": "-2",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (6+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blaze (5+)",
+              "text": "Если бросок на ранение не меньше X, цель получает ещё одно попадание тем же профилем. Оно бросается на ранение отдельно и не вызывает новых дополнительных попаданий."
+            },
+            {
+              "name": "Template",
+              "text": "Каплевидный шаблон от стреляющего через цель: все под ним получают автоматическое попадание. С Light в ближнем бою — одно автоматическое попадание без шаблона. С Rapid Fire (X) ближайшая модель получает попадания по кубику огневой мощи, остальные — по одному."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Harpoon launcher*",
+      "cost": 80,
+      "slots": 2,
+      "category": "REPURPOSED TOOLS",
+      "list": "CORPSE GRINDER CULT",
+      "profiles": [
+        {
+          "name": "Harpoon launcher*",
+          "sr": "6”",
+          "lr": "18”",
+          "str": "5",
+          "ap": "-3",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (5+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Drag",
+              "text": "Если цель попала, но не выведена из боя, бросьте D6: при результате не ниже Strength цели её волокут на D3\" к атакующему. Может вызвать падение или сцепление."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Butcher’s chain cleaver",
+      "cost": 35,
+      "slots": 1,
+      "category": "CHAIN WEAPONS",
+      "list": "CORPSE GRINDER CULT",
+      "profiles": [
+        {
+          "name": "Butcher’s chain cleaver",
+          "sr": "E",
+          "lr": "-",
+          "str": "S+1",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Shred (5+)",
+              "text": "Если оружие ранит и бросок на ранение не меньше X, Lethality этой атаки +1."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Paired Butcher’s chain cleavers*",
+      "cost": 55,
+      "slots": 2,
+      "category": "CHAIN WEAPONS",
+      "list": "CORPSE GRINDER CULT",
+      "profiles": [
+        {
+          "name": "Paired Butcher’s chain cleavers*",
+          "sr": "E",
+          "lr": "-",
+          "str": "S+1",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Paired (2)",
+              "text": "Нельзя как Secondary и нельзя Secondary вместе с ним. Как Primary: носитель увеличивает Attacks на X."
+            },
+            {
+              "name": "Shred (5+)",
+              "text": "Если оружие ранит и бросок на ранение не меньше X, Lethality этой атаки +1."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Chain glaive*",
+      "cost": 50,
+      "slots": 2,
+      "category": "CHAIN WEAPONS",
+      "list": "CORPSE GRINDER CULT",
+      "profiles": [
+        {
+          "name": "Chain glaive*",
+          "sr": "E",
+          "lr": "-",
+          "str": "S+1",
+          "ap": "-1",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Heavy",
+              "text": "Дальнобойное: только Braced Shot. Ближний бой: нельзя как Secondary и нельзя использовать Secondary вместе с ним."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Parry",
+              "text": "Как Primary или Secondary в схватке: +1 Save. Несколько таких оружий не складываются."
+            },
+            {
+              "name": "Shred (6+)",
+              "text": "Если оружие ранит и бросок на ранение не меньше X, Lethality этой атаки +1."
+            },
+            {
+              "name": "Unwieldy",
+              "text": "В ближнем бою Initiative модели ставится в 1 до любых модификаторов."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Heavy chain cleaver",
+      "cost": 40,
+      "slots": 1,
+      "category": "CHAIN WEAPONS",
+      "list": "CORPSE GRINDER CULT",
+      "profiles": [
+        {
+          "name": "Heavy chain cleaver",
+          "sr": "E",
+          "lr": "-",
+          "str": "S",
+          "ap": "-2",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Shred (6+)",
+              "text": "Если оружие ранит и бросок на ранение не меньше X, Lethality этой атаки +1."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Paired heavy chain cleavers*",
+      "cost": 60,
+      "slots": 2,
+      "category": "CHAIN WEAPONS",
+      "list": "CORPSE GRINDER CULT",
+      "profiles": [
+        {
+          "name": "Paired heavy chain cleavers*",
+          "sr": "E",
+          "lr": "-",
+          "str": "S",
+          "ap": "-2",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Paired (2)",
+              "text": "Нельзя как Secondary и нельзя Secondary вместе с ним. Как Primary: носитель увеличивает Attacks на X."
+            },
+            {
+              "name": "Shred (6+)",
+              "text": "Если оружие ранит и бросок на ранение не меньше X, Lethality этой атаки +1."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Fighting knife",
+      "cost": 5,
+      "slots": 1,
+      "category": "PRIMITIVE WEAPONS",
+      "list": "CORPSE GRINDER CULT",
+      "profiles": [
+        {
+          "name": "Fighting knife",
+          "sr": "E",
+          "lr": "-",
+          "str": "S",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Backstab",
+              "text": "+1 Strength, если цель Engaged более чем с одной моделью."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Two-handed axe*",
+      "cost": 40,
+      "slots": 2,
+      "category": "PRIMITIVE WEAPONS",
+      "list": "CORPSE GRINDER CULT",
+      "profiles": [
+        {
+          "name": "Two-handed axe*",
+          "sr": "E",
+          "lr": "-",
+          "str": "S+1",
+          "ap": "-1",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Heavy",
+              "text": "Дальнобойное: только Braced Shot. Ближний бой: нельзя как Secondary и нельзя использовать Secondary вместе с ним."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Unwieldy",
+              "text": "В ближнем бою Initiative модели ставится в 1 до любых модификаторов."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Boning sword",
+      "cost": 35,
+      "slots": 1,
+      "category": "REPURPOSED TOOLS",
+      "list": "CORPSE GRINDER CULT",
+      "profiles": [
+        {
+          "name": "Boning Sword",
+          "sr": "E",
+          "lr": "-",
+          "str": "S",
+          "ap": "-2",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Parry",
+              "text": "Как Primary или Secondary в схватке: +1 Save. Несколько таких оружий не складываются."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Butcher’s cleaver",
+      "cost": 25,
+      "slots": 1,
+      "category": "REPURPOSED TOOLS",
+      "list": "CORPSE GRINDER CULT",
+      "profiles": [
+        {
+          "name": "Butcher’s cleaver",
+          "sr": "E",
+          "lr": "-",
+          "str": "S",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Parry",
+              "text": "Как Primary или Secondary в схватке: +1 Save. Несколько таких оружий не складываются."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Flensing knife",
+      "cost": 15,
+      "slots": 1,
+      "category": "REPURPOSED TOOLS",
+      "list": "CORPSE GRINDER CULT",
+      "profiles": [
+        {
+          "name": "Flensing knife",
+          "sr": "E",
+          "lr": "-",
+          "str": "S",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Backstab",
+              "text": "+1 Strength, если цель Engaged более чем с одной моделью."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Heavy rock saw*",
+      "cost": 100,
+      "slots": 2,
+      "category": "REPURPOSED TOOLS",
+      "list": "CORPSE GRINDER CULT",
+      "profiles": [
+        {
+          "name": "Heavy rock saw*",
+          "sr": "E",
+          "lr": "-",
+          "str": "S+3",
+          "ap": "-3",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Damage (2)",
+              "text": "Раненая модель теряет X Wounds вместо одного. Число кубиков ранений всё равно равно Lethality оружия."
+            },
+            {
+              "name": "Heavy",
+              "text": "Дальнобойное: только Braced Shot. Ближний бой: нельзя как Secondary и нельзя использовать Secondary вместе с ним."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Unwieldy",
+              "text": "В ближнем бою Initiative модели ставится в 1 до любых модификаторов."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Rotary flensing saw*",
+      "cost": 70,
+      "slots": 2,
+      "category": "REPURPOSED TOOLS",
+      "list": "CORPSE GRINDER CULT",
+      "profiles": [
+        {
+          "name": "Rotary flensing saw*",
+          "sr": "E",
+          "lr": "-",
+          "str": "S+2",
+          "ap": "-2",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Heavy",
+              "text": "Дальнобойное: только Braced Shot. Ближний бой: нельзя как Secondary и нельзя использовать Secondary вместе с ним."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Shred (5+)",
+              "text": "Если оружие ранит и бросок на ранение не меньше X, Lethality этой атаки +1."
+            },
+            {
+              "name": "Unwieldy",
+              "text": "В ближнем бою Initiative модели ставится в 1 до любых модификаторов."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Frag grenades",
+      "cost": 30,
+      "slots": 0,
+      "category": "GRENADES",
+      "list": "CORPSE GRINDER CULT",
+      "profiles": [
+        {
+          "name": "Frag grenades",
+          "sr": "-",
+          "lr": "9”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (4+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blast (3”)",
+              "text": "Поставьте маркер Blast 3\" или 5\" на цель. Попадание — маркер остаётся. Промах — рассейте на D6\" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него."
+            },
+            {
+              "name": "Knockback (6+)",
+              "text": "Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1\" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1\" от центра."
+            },
+            {
+              "name": "Limited",
+              "text": "Если оружие село, его нельзя перезарядить до конца боя."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Incendiary charges",
+      "cost": 40,
+      "slots": 0,
+      "category": "GRENADES",
+      "list": "CORPSE GRINDER CULT",
+      "profiles": [
+        {
+          "name": "Incendiary charges",
+          "sr": "-",
+          "lr": "9”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (5+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blast (5”)",
+              "text": "Поставьте маркер Blast 3\" или 5\" на цель. Попадание — маркер остаётся. Промах — рассейте на D6\" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него."
+            },
+            {
+              "name": "Blaze (5+)",
+              "text": "Если бросок на ранение не меньше X, цель получает ещё одно попадание тем же профилем. Оно бросается на ранение отдельно и не вызывает новых дополнительных попаданий."
+            },
+            {
+              "name": "Limited",
+              "text": "Если оружие село, его нельзя перезарядить до конца боя."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Krak grenades",
+      "cost": 45,
+      "slots": 0,
+      "category": "GRENADES",
+      "list": "CORPSE GRINDER CULT",
+      "profiles": [
+        {
+          "name": "Krak grenades",
+          "sr": "-",
+          "lr": "9”",
+          "str": "6",
+          "ap": "-2",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (4+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Limited",
+              "text": "Если оружие село, его нельзя перезарядить до конца боя."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Smoke grenades",
+      "cost": 15,
+      "slots": 0,
+      "category": "GRENADES",
+      "list": "CORPSE GRINDER CULT",
+      "profiles": [
+        {
+          "name": "Smoke grenades",
+          "sr": "-",
+          "lr": "9”",
+          "str": "-",
+          "ap": "-",
+          "l": "-",
+          "traits": [
+            {
+              "name": "Ammo (4+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blast (3”)",
+              "text": "Поставьте маркер Blast 3\" или 5\" на цель. Попадание — маркер остаётся. Промах — рассейте на D6\" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него."
+            },
+            {
+              "name": "Limited",
+              "text": "Если оружие село, его нельзя перезарядить до конца боя."
+            },
+            {
+              "name": "Smoke",
+              "text": "Можно целиться в точку на поле. Маркер Blast остаётся: столб дыма блокирует линию видимости. В End phase на 5+ остаётся, иначе снимается. Попавшая модель не ранится и не становится Suppressed."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mesh armour",
+      "cost": 40,
+      "slots": 0,
+      "category": "ARMOUR & FIELD ARMOUR",
+      "list": "CORPSE GRINDER CULT",
+      "description": "Fighter в сетчатой броне увеличивает характеристику Save на 1 при разрешении попаданий, полученных в ближнем бою."
+    },
+    {
+      "name": "Refractor field",
+      "cost": 50,
+      "slots": 0,
+      "category": "ARMOUR & FIELD ARMOUR",
+      "list": "CORPSE GRINDER CULT",
+      "description": "Рефракторное поле даёт носителю непробиваемый спасбросок 5+; однако если при этом спасброске выпадает натуральная 1, поле перегорает и его нельзя использовать до конца боя. Рефракторное поле можно сочетать с другой бронёй и полевой бронёй."
+    },
+    {
+      "name": "Corpse grinder cult icon",
+      "cost": 40,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "CORPSE GRINDER CULT",
+      "description": "Только один Fighter в банде может нести символ культа Трупорезов; это должен быть Fighter с подтипом Leader или Champion. Fighter не может нести больше одного символа. Этот знак крови и мяса вгоняет культистов в ярость, и они бросаются на врагов в багровом бешенстве. Если Fighter с этим символом Active, он может выполнить следующее действие: Ярость (одиночное): все дружественные Fighter, полностью находящиеся в пределах 6” от этого Fighter, имеющие маркер Ready и находящиеся в состоянии Active, добавляют D3” к характеристике Movement до фазы окончания этого раунда."
+    },
+    {
+      "name": "Drop rig",
+      "cost": 10,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "CORPSE GRINDER CULT",
+      "description": "Active или Suppressed Fighter со спусковой оснасткой может выполнить действие «Спуск», находясь в пределах 1” от края площадки: Спуск (одиночное): Fighter сдвигается до 3” по горизонтали и до 12” по вертикали. Любое вертикальное движение должно быть вниз, то есть к земле."
+    },
+    {
+      "name": "Medicae kit",
+      "cost": 20,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "CORPSE GRINDER CULT",
+      "description": "Если Fighter с медкай-набором помогает другому Fighter на проверке Recovery, он бросает дополнительный кубик ранений и выбирает, какой оставить."
+    },
+    {
+      "name": "Photo-goggles",
+      "cost": 35,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "CORPSE GRINDER CULT",
+      "description": "Fighter с фотоочками увеличивает значение X в правиле Visibility (X”) на 9” и может видеть сквозь дымовые облака, поставленные свойством Smoke. Кроме того, если во Fighter с фотоочками попадает оружие со свойством Flash, он получает модификатор −2 к проверке Initiative, чтобы не ослепнуть."
+    },
+    {
+      "name": "Respirator",
+      "cost": 15,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "CORPSE GRINDER CULT",
+      "description": "Когда во Fighter с респиратором попадает оружие со свойством Gas, он получает непробиваемый спасбросок 5+ против этого оружия."
+    },
+    {
+      "name": "Dirt bike",
+      "cost": 35,
+      "slots": 0,
+      "category": "MOUNTS",
+      "list": "CORPSE GRINDER CULT",
+      "description": "Fighter с dirt bike получает подтип Mounted и ставит характеристику Movement на 8”. Когда он выполняет действие Dash, он добавляет 5” к характеристике Movement вместо Initiative."
+    }
+  ]
+}

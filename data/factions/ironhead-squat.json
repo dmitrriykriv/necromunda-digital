@@ -1,0 +1,1781 @@
+{
+  "id": "ironhead-squat",
+  "name": "Сквоты Айронхед",
+  "types": [
+    {
+      "id": "ironhead-squat-charter-master",
+      "name": "Ironhead Squat Charter Master",
+      "category": "Fighter",
+      "subtypes": [
+        "Leader"
+      ],
+      "baseCost": 130,
+      "xp": 61,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "4”",
+          "3+",
+          "3+",
+          "3",
+          "4",
+          "3",
+          "2",
+          "3",
+          "5+",
+          "8",
+          "8",
+          "8",
+          "7"
+        ]
+      }
+    },
+    {
+      "id": "ironhead-squat-drill-master",
+      "name": "Ironhead Squat Drill Master",
+      "category": "Fighter",
+      "subtypes": [
+        "Champion"
+      ],
+      "baseCost": 90,
+      "xp": 37,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "4”",
+          "4+",
+          "3+",
+          "3",
+          "4",
+          "2",
+          "2",
+          "2",
+          "5+",
+          "7",
+          "7",
+          "7",
+          "6"
+        ]
+      }
+    },
+    {
+      "id": "ironhead-squat-exo-master",
+      "name": "Ironhead Squat Exo Master",
+      "category": "Fighter",
+      "subtypes": [
+        "Champion"
+      ],
+      "baseCost": 105,
+      "xp": 49,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "4”",
+          "3+",
+          "4+",
+          "3",
+          "4",
+          "2",
+          "2",
+          "2",
+          "4+",
+          "8",
+          "7",
+          "7",
+          "7"
+        ]
+      }
+    },
+    {
+      "id": "ironhead-squat-drill-kyn",
+      "name": "Ironhead Squat Drill-Kyn",
+      "category": "Fighter",
+      "subtypes": [
+        "Ganger",
+        "Specialist"
+      ],
+      "baseCost": 45,
+      "xp": 13,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "4”",
+          "4+",
+          "4+",
+          "3",
+          "4",
+          "1",
+          "2",
+          "1",
+          "6+",
+          "6",
+          "7",
+          "7",
+          "6"
+        ]
+      }
+    },
+    {
+      "id": "ironhead-squat-exo-kyn",
+      "name": "Ironhead Squat Exo-Kyn",
+      "category": "Fighter",
+      "subtypes": [
+        "Prospect"
+      ],
+      "baseCost": 40,
+      "xp": 4,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "4”",
+          "5+",
+          "5+",
+          "3",
+          "4",
+          "1",
+          "3",
+          "1",
+          "5+",
+          "5",
+          "6",
+          "5",
+          "5"
+        ]
+      },
+      "rules": [
+        "Навыки: у Ironhead Squat Exo-Kyn есть навык Nerves of Steel."
+      ]
+    },
+    {
+      "id": "ironhead-squat-digger",
+      "name": "Ironhead Squat Digger",
+      "category": "Fighter",
+      "subtypes": [
+        "Prospect"
+      ],
+      "baseCost": 30,
+      "xp": 1,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "5”",
+          "5+",
+          "5+",
+          "3",
+          "4",
+          "1",
+          "3",
+          "1",
+          "6+",
+          "5",
+          "6",
+          "5",
+          "5"
+        ]
+      }
+    },
+    {
+      "id": "ironhead-squat-vartijan-exo-driller",
+      "name": "Ironhead Squat Vartijan Exo-Driller",
+      "category": "Fighter",
+      "subtypes": [
+        "Brute"
+      ],
+      "baseCost": 280,
+      "xp": 25,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "4”",
+          "4+",
+          "3+",
+          "4+",
+          "5",
+          "3",
+          "3",
+          "2",
+          "4+",
+          "7",
+          "7",
+          "6",
+          "6"
+        ]
+      },
+      "rules": [
+        "Комплект сенсоров: Ironhead Squat Vartijan Exo-Driller считает правило Visibility (X”) на 3” больше, чем оно есть.ОригиналAn Ironhead Squat Vartijan Exo-Driller treats the Visibility (X”) rule as being 3” higher than it is.",
+        "Навыки: у Ironhead Squat Vartijan Exo-Driller есть навык Bulging Biceps."
+      ]
+    },
+    {
+      "id": "techmite-exovator",
+      "name": "Techmite Exovator",
+      "category": "Fighter",
+      "subtypes": [
+        "Beast",
+        "Pet"
+      ],
+      "baseCost": 45,
+      "xp": 13,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "4”",
+          "4+",
+          "4+",
+          "2",
+          "3",
+          "1",
+          "3",
+          "1",
+          "6+",
+          "6",
+          "7",
+          "6",
+          "5"
+        ]
+      },
+      "rules": [
+        "Длина поводка: у Techmite Exovator длина поводка (Leash range) 3”.",
+        "Две руки: Techmite Exovator может быть экипирован максимум двумя единицами оружия."
+      ]
+    },
+    {
+      "id": "techmite-oculi",
+      "name": "Techmite Oculi",
+      "category": "Fighter",
+      "subtypes": [
+        "Beast",
+        "Flying",
+        "Pet"
+      ],
+      "baseCost": 50,
+      "xp": 13,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "7”",
+          "5+",
+          "5+",
+          "2",
+          "3",
+          "1",
+          "3",
+          "1",
+          "6+",
+          "6",
+          "7",
+          "6",
+          "5"
+        ]
+      },
+      "rules": [
+        "Длина поводка: у Techmite Oculi длина поводка (Leash range) 12”.",
+        "Целеуказание: пока хотя бы один Techmite Oculi в пределах 6” от вражеского Fighter, его владелец считается стреляющим на короткой дистанции при расчёте бонусов за укрытие.ОригиналWhile at least one Techmite Oculi is within 6” of an enemy Fighter, its owner counts as firing at short range for the purposes of calculating cover bonuses."
+      ]
+    },
+    {
+      "id": "ironhead-squat-skalvian-explorator",
+      "name": "Ironhead Squat Skalvian Explorator",
+      "category": "Vehicle",
+      "subtypes": [
+        "Tracked"
+      ],
+      "baseCost": 560,
+      "xp": 13,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "6”",
+          "5+",
+          "4+",
+          "7",
+          "8",
+          "5",
+          "3",
+          "3",
+          "3+",
+          "7",
+          "7",
+          "7",
+          "7"
+        ]
+      },
+      "rules": [
+        "Лёгкая: лёгкая панцирная броня улучшает характеристику Save Fighter на 1. Кроме того, он снижает характеристику Initiative на 1.ОригиналLight carapace armour improves a Fighter’s Save characteristic by 1. In addition, they reduce their Initiative characteristic by 1.",
+        "Тяжёлая: тяжёлая панцирная броня улучшает характеристику Save Fighter на 2. Кроме того, он снижает характеристику Initiative на 2 и применяет модификатор −1 ко всем тестам Agility.ОригиналHeavy carapace armour improve’s a Fighter’s Save characteristic by 2. In addition, they reduce their Initiative characteristic by 2 and apply a -1 modifier to all Agility tests they make.",
+        "Спуск (одиночное): Fighter сдвигается до 3” по горизонтали и до 12” по вертикали. Любое вертикальное движение должно быть вниз, то есть к земле.ОригиналThe Fighter makes a move of up to 3” horizontally and up to 12” vertically. Any vertical movement must be downwards, i.e., towards the ground."
+      ]
+    }
+  ],
+  "subtypes": [
+    "Beast",
+    "Brute",
+    "Champion",
+    "Flying",
+    "Ganger",
+    "Leader",
+    "Pet",
+    "Prospect",
+    "Specialist",
+    "Tracked"
+  ],
+  "equipment": [
+    {
+      "name": "Ironhead Autogun",
+      "cost": 30,
+      "slots": 1,
+      "category": "AUTO/STUB WEAPONS",
+      "list": "IRONHEAD SQUAT",
+      "profiles": [
+        {
+          "name": "Ironhead autogun",
+          "sr": "8”",
+          "lr": "24”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Rapid Fire (1)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            },
+            {
+              "name": "Reliable",
+              "text": "Игнорирует первый символ Out of Ammo за раунд на кубике огневой мощи."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Ironhead Autopistol",
+      "cost": 20,
+      "slots": 1,
+      "category": "AUTO/STUB WEAPONS",
+      "list": "IRONHEAD SQUAT",
+      "profiles": [
+        {
+          "name": "Ironhead autopistol",
+          "sr": "4”",
+          "lr": "12”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            },
+            {
+              "name": "Rapid Fire (1)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            },
+            {
+              "name": "Reliable",
+              "text": "Игнорирует первый символ Out of Ammo за раунд на кубике огневой мощи."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Ironhead heavy stubber*",
+      "cost": 80,
+      "slots": 2,
+      "category": "AUTO/STUB WEAPONS",
+      "list": "IRONHEAD SQUAT",
+      "profiles": [
+        {
+          "name": "Ironhead heavy stubber*",
+          "sr": "20”",
+          "lr": "40”",
+          "str": "4",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Heavy",
+              "text": "Дальнобойное: только Braced Shot. Ближний бой: нельзя как Secondary и нельзя использовать Secondary вместе с ним."
+            },
+            {
+              "name": "Rapid Fire (2)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            },
+            {
+              "name": "Reliable",
+              "text": "Игнорирует первый символ Out of Ammo за раунд на кубике огневой мощи."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Ironhead Stub gun",
+      "cost": 15,
+      "slots": 1,
+      "category": "AUTO/STUB WEAPONS",
+      "list": "IRONHEAD SQUAT",
+      "profiles": [
+        {
+          "name": "Ironhead stub gun",
+          "sr": "6”",
+          "lr": "12”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            },
+            {
+              "name": "Rapid Fire (1)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Ironhead boltgun",
+      "cost": 65,
+      "slots": 1,
+      "category": "BOLT WEAPONS",
+      "list": "IRONHEAD SQUAT",
+      "profiles": [
+        {
+          "name": "Ironhead boltgun",
+          "sr": "12”",
+          "lr": "24”",
+          "str": "4",
+          "ap": "-1",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Ammo (3+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Rapid Fire (1)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            },
+            {
+              "name": "Reliable",
+              "text": "Игнорирует первый символ Out of Ammo за раунд на кубике огневой мощи."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Ironhead bolt pistol",
+      "cost": 55,
+      "slots": 1,
+      "category": "BOLT WEAPONS",
+      "list": "IRONHEAD SQUAT",
+      "profiles": [
+        {
+          "name": "Ironhead bolt pistol",
+          "sr": "6”",
+          "lr": "12”",
+          "str": "4",
+          "ap": "-1",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Ammo (3+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            },
+            {
+              "name": "Rapid Fire (1)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            },
+            {
+              "name": "Reliable",
+              "text": "Игнорирует первый символ Out of Ammo за раунд на кубике огневой мощи."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Heavy melta",
+      "cost": 160,
+      "slots": 1,
+      "category": "EXO WEAPONS",
+      "list": "IRONHEAD SQUAT",
+      "profiles": [
+        {
+          "name": "Heavy melta",
+          "sr": "9”",
+          "lr": "18”",
+          "str": "8",
+          "ap": "-4",
+          "l": "3",
+          "traits": [
+            {
+              "name": "Ammo (6+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Damage (3)",
+              "text": "Раненая модель теряет X Wounds вместо одного. Число кубиков ранений всё равно равно Lethality оружия."
+            },
+            {
+              "name": "Heavy",
+              "text": "Дальнобойное: только Braced Shot. Ближний бой: нельзя как Secondary и нельзя использовать Secondary вместе с ним."
+            },
+            {
+              "name": "Rapid Fire (1)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Ironhead combat shotgun",
+      "cost": 50,
+      "slots": 1,
+      "category": "EXO WEAPONS",
+      "list": "IRONHEAD SQUAT",
+      "profiles": [
+        {
+          "name": "Ironhead combat shotgun",
+          "sr": "8”",
+          "lr": "16”",
+          "str": "4",
+          "ap": "-",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Knockback (6+)",
+              "text": "Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1\" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1\" от центра."
+            },
+            {
+              "name": "Rapid Fire (1)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Storm welder",
+      "cost": 60,
+      "slots": 1,
+      "category": "EXO WEAPONS",
+      "list": "IRONHEAD SQUAT",
+      "profiles": [
+        {
+          "name": "Storm welder",
+          "sr": "8”",
+          "lr": "16”",
+          "str": "5",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Rapid Fire (3)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            },
+            {
+              "name": "Shock (6+)",
+              "text": "Если атака попадает и бросок попадания не меньше X, она автоматически ранит и считается натуральной 6 на ранении для других свойств."
+            },
+            {
+              "name": "Unstable",
+              "text": "Натуральная 1 на попадании: носитель получает автоматическое попадание этим профилем, другие модели не поражаются. Если броска попадания нет (Template) — сначала D6, как выше."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Ironhead flamer",
+      "cost": 80,
+      "slots": 1,
+      "category": "FLAMERS",
+      "list": "IRONHEAD SQUAT",
+      "profiles": [
+        {
+          "name": "Ironhead flamer",
+          "sr": "T",
+          "lr": "-",
+          "str": "4",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (6+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blaze (5+)",
+              "text": "Если бросок на ранение не меньше X, цель получает ещё одно попадание тем же профилем. Оно бросается на ранение отдельно и не вызывает новых дополнительных попаданий."
+            },
+            {
+              "name": "Rapid Fire (1)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            },
+            {
+              "name": "Template",
+              "text": "Каплевидный шаблон от стреляющего через цель: все под ним получают автоматическое попадание. С Light в ближнем бою — одно автоматическое попадание без шаблона. С Rapid Fire (X) ближайшая модель получает попадания по кубику огневой мощи, остальные — по одному."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Ironhead hand flamer",
+      "cost": 55,
+      "slots": 1,
+      "category": "FLAMERS",
+      "list": "IRONHEAD SQUAT",
+      "profiles": [
+        {
+          "name": "Ironhead hand flamer",
+          "sr": "T",
+          "lr": "-",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (6+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blaze (5+)",
+              "text": "Если бросок на ранение не меньше X, цель получает ещё одно попадание тем же профилем. Оно бросается на ранение отдельно и не вызывает новых дополнительных попаданий."
+            },
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            },
+            {
+              "name": "Rapid Fire (1)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            },
+            {
+              "name": "Template",
+              "text": "Каплевидный шаблон от стреляющего через цель: все под ним получают автоматическое попадание. С Light в ближнем бою — одно автоматическое попадание без шаблона. С Rapid Fire (X) ближайшая модель получает попадания по кубику огневой мощи, остальные — по одному."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Ironhead heavy flamer*",
+      "cost": 105,
+      "slots": 2,
+      "category": "FLAMERS",
+      "list": "IRONHEAD SQUAT",
+      "profiles": [
+        {
+          "name": "Ironhead heavy flamer*",
+          "sr": "T",
+          "lr": "-",
+          "str": "5",
+          "ap": "-2",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (6+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blaze (5+)",
+              "text": "Если бросок на ранение не меньше X, цель получает ещё одно попадание тем же профилем. Оно бросается на ранение отдельно и не вызывает новых дополнительных попаданий."
+            },
+            {
+              "name": "Rapid Fire (1)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            },
+            {
+              "name": "Template",
+              "text": "Каплевидный шаблон от стреляющего через цель: все под ним получают автоматическое попадание. С Light в ближнем бою — одно автоматическое попадание без шаблона. С Rapid Fire (X) ближайшая модель получает попадания по кубику огневой мощи, остальные — по одному."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Ironhead grenade launcher with seismic grenades",
+      "cost": 45,
+      "slots": 0,
+      "category": "GRENADE LAUNCHERS",
+      "list": "IRONHEAD SQUAT",
+      "profiles": [
+        {
+          "name": "seismic grenades",
+          "sr": "6”",
+          "lr": "12”",
+          "str": "3",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (4+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blast (3”)",
+              "text": "Поставьте маркер Blast 3\" или 5\" на цель. Попадание — маркер остаётся. Промах — рассейте на D6\" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него."
+            },
+            {
+              "name": "Breaching (6+)",
+              "text": "Если атака ранит и бросок на ранение не меньше X, спасброски брони делать нельзя."
+            },
+            {
+              "name": "Concussive (5+)",
+              "text": "Если атака ранит и бросок на ранение не меньше X, цель снижает Initiative на 1 до конца следующей активации."
+            },
+            {
+              "name": "Knockback (5+)",
+              "text": "Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1\" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1\" от центра."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Ironhead inferno pistol",
+      "cost": 120,
+      "slots": 1,
+      "category": "MELTA WEAPONS",
+      "list": "IRONHEAD SQUAT",
+      "profiles": [
+        {
+          "name": "Ironhead inferno pistol",
+          "sr": "4”",
+          "lr": "7”",
+          "str": "8",
+          "ap": "-3",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Ammo (6+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Damage (2)",
+              "text": "Раненая модель теряет X Wounds вместо одного. Число кубиков ранений всё равно равно Lethality оружия."
+            },
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Ironhead meltagun",
+      "cost": 150,
+      "slots": 1,
+      "category": "MELTA WEAPONS",
+      "list": "IRONHEAD SQUAT",
+      "profiles": [
+        {
+          "name": "Ironhead meltagun",
+          "sr": "6”",
+          "lr": "12”",
+          "str": "8",
+          "ap": "-4",
+          "l": "3",
+          "traits": [
+            {
+              "name": "Ammo (5+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Damage (3)",
+              "text": "Раненая модель теряет X Wounds вместо одного. Число кубиков ранений всё равно равно Lethality оружия."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Bolt spitter",
+      "cost": 45,
+      "slots": 1,
+      "category": "POWER PACK",
+      "list": "IRONHEAD SQUAT",
+      "profiles": [
+        {
+          "name": "Bolt spitter",
+          "sr": "4”",
+          "lr": "10”",
+          "str": "4",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Additional Attack (1)",
+              "text": "Оружие даёт X атак в ближнем бою сверх обычных. Только во время активации модели и только если оружие не назначено Primary или Secondary."
+            },
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            },
+            {
+              "name": "Power Pack",
+              "text": "Не считается в лимите оружия бойца, но больше двух таких единиц носить нельзя."
+            },
+            {
+              "name": "Rapid Fire (1)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Stone burner",
+      "cost": 75,
+      "slots": 1,
+      "category": "POWER PACK",
+      "list": "IRONHEAD SQUAT",
+      "profiles": [
+        {
+          "name": "Stone burner",
+          "sr": "2”",
+          "lr": "4”",
+          "str": "5",
+          "ap": "-2",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Ammo (6+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Additional Attack (1)",
+              "text": "Оружие даёт X атак в ближнем бою сверх обычных. Только во время активации модели и только если оружие не назначено Primary или Secondary."
+            },
+            {
+              "name": "Damage (2)",
+              "text": "Раненая модель теряет X Wounds вместо одного. Число кубиков ранений всё равно равно Lethality оружия."
+            },
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            },
+            {
+              "name": "Power Pack",
+              "text": "Не считается в лимите оружия бойца, но больше двух таких единиц носить нельзя."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mining laser*",
+      "cost": 125,
+      "slots": 2,
+      "category": "REPURPOSED TOOLS",
+      "list": "IRONHEAD SQUAT",
+      "profiles": [
+        {
+          "name": "Mining laser*",
+          "sr": "10”",
+          "lr": "14”",
+          "str": "9",
+          "ap": "-3",
+          "l": "3",
+          "traits": [
+            {
+              "name": "Ammo (5+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Damage (2)",
+              "text": "Раненая модель теряет X Wounds вместо одного. Число кубиков ранений всё равно равно Lethality оружия."
+            },
+            {
+              "name": "Heavy",
+              "text": "Дальнобойное: только Braced Shot. Ближний бой: нельзя как Secondary и нельзя использовать Secondary вместе с ним."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Two-handed chainaxe*",
+      "cost": 70,
+      "slots": 2,
+      "category": "CHAIN WEAPONS",
+      "list": "IRONHEAD SQUAT",
+      "profiles": [
+        {
+          "name": "Two-handed chainaxe*",
+          "sr": "E",
+          "lr": "-",
+          "str": "S+2",
+          "ap": "-2",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Heavy",
+              "text": "Дальнобойное: только Braced Shot. Ближний бой: нельзя как Secondary и нельзя использовать Secondary вместе с ним."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Shred (5+)",
+              "text": "Если оружие ранит и бросок на ранение не меньше X, Lethality этой атаки +1."
+            },
+            {
+              "name": "Unwieldy",
+              "text": "В ближнем бою Initiative модели ставится в 1 до любых модификаторов."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Excavator hammer*",
+      "cost": 65,
+      "slots": 2,
+      "category": "EXO WEAPONS",
+      "list": "IRONHEAD SQUAT",
+      "profiles": [
+        {
+          "name": "Excavator hammer*",
+          "sr": "E",
+          "lr": "-",
+          "str": "S+2",
+          "ap": "-1",
+          "l": "3",
+          "traits": [
+            {
+              "name": "Concussive (6+)",
+              "text": "Если атака ранит и бросок на ранение не меньше X, цель снижает Initiative на 1 до конца следующей активации."
+            },
+            {
+              "name": "Heavy",
+              "text": "Дальнобойное: только Braced Shot. Ближний бой: нельзя как Secondary и нельзя использовать Secondary вместе с ним."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Unwieldy",
+              "text": "В ближнем бою Initiative модели ставится в 1 до любых модификаторов."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Heavy drill",
+      "cost": 40,
+      "slots": 1,
+      "category": "EXO WEAPONS",
+      "list": "IRONHEAD SQUAT",
+      "profiles": [
+        {
+          "name": "Heavy drill",
+          "sr": "E",
+          "lr": "-",
+          "str": "S+1",
+          "ap": "-1",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Shred (6+)",
+              "text": "Если оружие ранит и бросок на ранение не меньше X, Lethality этой атаки +1."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Hydraulic drill",
+      "cost": 15,
+      "slots": 1,
+      "category": "EXO WEAPONS",
+      "list": "IRONHEAD SQUAT",
+      "profiles": [
+        {
+          "name": "Hydraulic drill",
+          "sr": "E",
+          "lr": "-",
+          "str": "S",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Shred (6+)",
+              "text": "Если оружие ранит и бросок на ранение не меньше X, Lethality этой атаки +1."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Power fist",
+      "cost": 105,
+      "slots": 1,
+      "category": "EXO WEAPONS",
+      "list": "IRONHEAD SQUAT",
+      "profiles": [
+        {
+          "name": "Power fist",
+          "sr": "E",
+          "lr": "-",
+          "str": "S+3",
+          "ap": "-3",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Breaching (6+)",
+              "text": "Если атака ранит и бросок на ранение не меньше X, спасброски брони делать нельзя."
+            },
+            {
+              "name": "Concussive (5+)",
+              "text": "Если атака ранит и бросок на ранение не меньше X, цель снижает Initiative на 1 до конца следующей активации."
+            },
+            {
+              "name": "Damage (2)",
+              "text": "Раненая модель теряет X Wounds вместо одного. Число кубиков ранений всё равно равно Lethality оружия."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Unwieldy",
+              "text": "В ближнем бою Initiative модели ставится в 1 до любых модификаторов."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Rock saw",
+      "cost": 30,
+      "slots": 1,
+      "category": "EXO WEAPONS",
+      "list": "IRONHEAD SQUAT",
+      "profiles": [
+        {
+          "name": "Rock saw",
+          "sr": "E",
+          "lr": "-",
+          "str": "S+1",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Breaching (6+)",
+              "text": "Если атака ранит и бросок на ранение не меньше X, спасброски брони делать нельзя."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Circular stone saw",
+      "cost": 40,
+      "slots": 1,
+      "category": "POWER PACK",
+      "list": "IRONHEAD SQUAT",
+      "profiles": [
+        {
+          "name": "Circular stone saw",
+          "sr": "E",
+          "lr": "-",
+          "str": "S+1",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Additional Attack (1)",
+              "text": "Оружие даёт X атак в ближнем бою сверх обычных. Только во время активации модели и только если оружие не назначено Primary или Secondary."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Power Pack",
+              "text": "Не считается в лимите оружия бойца, но больше двух таких единиц носить нельзя."
+            },
+            {
+              "name": "Shred (6+)",
+              "text": "Если оружие ранит и бросок на ранение не меньше X, Lethality этой атаки +1."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Drill",
+      "cost": 25,
+      "slots": 1,
+      "category": "POWER PACK",
+      "list": "IRONHEAD SQUAT",
+      "profiles": [
+        {
+          "name": "Drill",
+          "sr": "E",
+          "lr": "-",
+          "str": "3",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Additional Attack (1)",
+              "text": "Оружие даёт X атак в ближнем бою сверх обычных. Только во время активации модели и только если оружие не назначено Primary или Secondary."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Power Pack",
+              "text": "Не считается в лимите оружия бойца, но больше двух таких единиц носить нельзя."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Gem extractor",
+      "cost": 30,
+      "slots": 1,
+      "category": "POWER PACK",
+      "list": "IRONHEAD SQUAT",
+      "profiles": [
+        {
+          "name": "Gem extractor",
+          "sr": "E",
+          "lr": "-",
+          "str": "S+1",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Additional Attack (1)",
+              "text": "Оружие даёт X атак в ближнем бою сверх обычных. Только во время активации модели и только если оружие не назначено Primary или Secondary."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Power Pack",
+              "text": "Не считается в лимите оружия бойца, но больше двух таких единиц носить нельзя."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Ironhead arc welder",
+      "cost": 80,
+      "slots": 1,
+      "category": "POWER PACK",
+      "list": "IRONHEAD SQUAT",
+      "profiles": [
+        {
+          "name": "Ironhead arc welder",
+          "sr": "E",
+          "lr": "-",
+          "str": "S+2",
+          "ap": "-2",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Additional Attack (1)",
+              "text": "Оружие даёт X атак в ближнем бою сверх обычных. Только во время активации модели и только если оружие не назначено Primary или Secondary."
+            },
+            {
+              "name": "Blaze (5+)",
+              "text": "Если бросок на ранение не меньше X, цель получает ещё одно попадание тем же профилем. Оно бросается на ранение отдельно и не вызывает новых дополнительных попаданий."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Power Pack",
+              "text": "Не считается в лимите оружия бойца, но больше двух таких единиц носить нельзя."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Power hammer",
+      "cost": 40,
+      "slots": 1,
+      "category": "POWER WEAPONS",
+      "list": "IRONHEAD SQUAT",
+      "profiles": [
+        {
+          "name": "Power hammer",
+          "sr": "E",
+          "lr": "-",
+          "str": "S",
+          "ap": "-2",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Breaching (6+)",
+              "text": "Если атака ранит и бросок на ранение не меньше X, спасброски брони делать нельзя."
+            },
+            {
+              "name": "Concussive (6+)",
+              "text": "Если атака ранит и бросок на ранение не меньше X, цель снижает Initiative на 1 до конца следующей активации."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Two-handed power axe*",
+      "cost": 65,
+      "slots": 2,
+      "category": "POWER WEAPONS",
+      "list": "IRONHEAD SQUAT",
+      "profiles": [
+        {
+          "name": "Two-handed power axe*",
+          "sr": "E",
+          "lr": "-",
+          "str": "S+1",
+          "ap": "-3",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Breaching (6+)",
+              "text": "Если атака ранит и бросок на ранение не меньше X, спасброски брони делать нельзя."
+            },
+            {
+              "name": "Heavy",
+              "text": "Дальнобойное: только Braced Shot. Ближний бой: нельзя как Secondary и нельзя использовать Secondary вместе с ним."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Unwieldy",
+              "text": "В ближнем бою Initiative модели ставится в 1 до любых модификаторов."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Two-handed power pick*",
+      "cost": 60,
+      "slots": 2,
+      "category": "POWER WEAPONS",
+      "list": "IRONHEAD SQUAT",
+      "profiles": [
+        {
+          "name": "Two-handed power pick*",
+          "sr": "E",
+          "lr": "-",
+          "str": "S+1",
+          "ap": "-2",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Breaching (4+)",
+              "text": "Если атака ранит и бросок на ранение не меньше X, спасброски брони делать нельзя."
+            },
+            {
+              "name": "Heavy",
+              "text": "Дальнобойное: только Braced Shot. Ближний бой: нельзя как Secondary и нельзя использовать Secondary вместе с ним."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Unwieldy",
+              "text": "В ближнем бою Initiative модели ставится в 1 до любых модификаторов."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Axe",
+      "cost": 15,
+      "slots": 1,
+      "category": "PRIMITIVE WEAPONS",
+      "list": "IRONHEAD SQUAT",
+      "profiles": [
+        {
+          "name": "Axe",
+          "sr": "E",
+          "lr": "-",
+          "str": "S",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Fighting knife",
+      "cost": 5,
+      "slots": 1,
+      "category": "PRIMITIVE WEAPONS",
+      "list": "IRONHEAD SQUAT",
+      "profiles": [
+        {
+          "name": "Fighting knife",
+          "sr": "E",
+          "lr": "-",
+          "str": "S",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Backstab",
+              "text": "+1 Strength, если цель Engaged более чем с одной моделью."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Blasting charges",
+      "cost": 60,
+      "slots": 0,
+      "category": "GRENADES",
+      "list": "IRONHEAD SQUAT",
+      "profiles": [
+        {
+          "name": "Blasting charges",
+          "sr": "-",
+          "lr": "6”",
+          "str": "5",
+          "ap": "-1",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Ammo (5+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blast (5”)",
+              "text": "Поставьте маркер Blast 3\" или 5\" на цель. Попадание — маркер остаётся. Промах — рассейте на D6\" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него."
+            },
+            {
+              "name": "Knockback (5+)",
+              "text": "Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1\" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1\" от центра."
+            },
+            {
+              "name": "Limited",
+              "text": "Если оружие село, его нельзя перезарядить до конца боя."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Frag grenades",
+      "cost": 30,
+      "slots": 0,
+      "category": "GRENADES",
+      "list": "IRONHEAD SQUAT",
+      "profiles": [
+        {
+          "name": "Frag grenades",
+          "sr": "-",
+          "lr": "9”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (4+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blast (3”)",
+              "text": "Поставьте маркер Blast 3\" или 5\" на цель. Попадание — маркер остаётся. Промах — рассейте на D6\" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него."
+            },
+            {
+              "name": "Knockback (6+)",
+              "text": "Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1\" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1\" от центра."
+            },
+            {
+              "name": "Limited",
+              "text": "Если оружие село, его нельзя перезарядить до конца боя."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Krak grenades",
+      "cost": 45,
+      "slots": 0,
+      "category": "GRENADES",
+      "list": "IRONHEAD SQUAT",
+      "profiles": [
+        {
+          "name": "Krak grenades",
+          "sr": "-",
+          "lr": "9”",
+          "str": "6",
+          "ap": "-2",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (4+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Limited",
+              "text": "Если оружие село, его нельзя перезарядить до конца боя."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Smoke grenades",
+      "cost": 15,
+      "slots": 0,
+      "category": "GRENADES",
+      "list": "IRONHEAD SQUAT",
+      "profiles": [
+        {
+          "name": "Smoke grenades",
+          "sr": "-",
+          "lr": "9”",
+          "str": "-",
+          "ap": "-",
+          "l": "-",
+          "traits": [
+            {
+              "name": "Ammo (4+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blast (3”)",
+              "text": "Поставьте маркер Blast 3\" или 5\" на цель. Попадание — маркер остаётся. Промах — рассейте на D6\" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него."
+            },
+            {
+              "name": "Limited",
+              "text": "Если оружие село, его нельзя перезарядить до конца боя."
+            },
+            {
+              "name": "Smoke",
+              "text": "Можно целиться в точку на поле. Маркер Blast остаётся: столб дыма блокирует линию видимости. В End phase на 5+ остаётся, иначе снимается. Попавшая модель не ранится и не становится Suppressed."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Carapace armour (light)",
+      "cost": 100,
+      "slots": 0,
+      "category": "ARMOUR & FIELD ARMOUR",
+      "list": "IRONHEAD SQUAT",
+      "description": "Лёгкая: лёгкая панцирная броня улучшает характеристику Save Fighter на 1. Кроме того, он снижает характеристику Initiative на 1. Тяжёлая: тяжёлая панцирная броня улучшает характеристику Save Fighter на 2. Кроме того, он снижает характеристику Initiative на 2 и применяет модификатор −1 ко всем тестам Agility."
+    },
+    {
+      "name": "Mesh armour",
+      "cost": 40,
+      "slots": 0,
+      "category": "ARMOUR & FIELD ARMOUR",
+      "list": "IRONHEAD SQUAT",
+      "description": "Fighter в сетчатой броне увеличивает характеристику Save на 1 при разрешении попаданий, полученных в ближнем бою."
+    },
+    {
+      "name": "Refractor field",
+      "cost": 50,
+      "slots": 0,
+      "category": "ARMOUR & FIELD ARMOUR",
+      "list": "IRONHEAD SQUAT",
+      "description": "Рефракторное поле даёт носителю непробиваемый спасбросок 5+; однако если при этом спасброске выпадает натуральная 1, поле перегорает и его нельзя использовать до конца боя. Рефракторное поле можно сочетать с другой бронёй и полевой бронёй."
+    },
+    {
+      "name": "Bio-booster",
+      "cost": 25,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "IRONHEAD SQUAT",
+      "description": "В первый раз за каждый бой, когда носитель получает состояние Injured, снизьте характеристику Lethality ранящего оружия на 1. Если Lethality стала нулём, бросьте 2 кубика ранений вместо 1, и носитель выбирает, какой применить; второй кубик отбрасывается."
+    },
+    {
+      "name": "Drop rig",
+      "cost": 10,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "IRONHEAD SQUAT",
+      "description": "Active или Suppressed Fighter со спусковой оснасткой может выполнить действие «Спуск», находясь в пределах 1” от края площадки: Спуск (одиночное): Fighter сдвигается до 3” по горизонтали и до 12” по вертикали. Любое вертикальное движение должно быть вниз, то есть к земле."
+    },
+    {
+      "name": "Grav chute",
+      "cost": 30,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "IRONHEAD SQUAT",
+      "description": "Если Fighter с грав-парашютом падает или прыгает вниз, он никогда не получает урон и никогда не становится Suppressed."
+    },
+    {
+      "name": "Medicae kit",
+      "cost": 20,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "IRONHEAD SQUAT",
+      "description": "Если Fighter с медкай-набором помогает другому Fighter на проверке Recovery, он бросает дополнительный кубик ранений и выбирает, какой оставить."
+    },
+    {
+      "name": "Photo-goggles",
+      "cost": 35,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "IRONHEAD SQUAT",
+      "description": "Fighter с фотоочками увеличивает значение X в правиле Visibility (X”) на 9” и может видеть сквозь дымовые облака, поставленные свойством Smoke. Кроме того, если во Fighter с фотоочками попадает оружие со свойством Flash, он получает модификатор −2 к проверке Initiative, чтобы не ослепнуть."
+    },
+    {
+      "name": "Photo-lumens",
+      "cost": 15,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "IRONHEAD SQUAT",
+      "description": "Увеличьте значение X в правиле Visibility (X”) на 9” для этого Fighter. В этого Fighter всегда можно целиться независимо от правила Visibility (X”)."
+    },
+    {
+      "name": "Respirator",
+      "cost": 15,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "IRONHEAD SQUAT",
+      "description": "Когда во Fighter с респиратором попадает оружие со свойством Gas, он получает непробиваемый спасбросок 5+ против этого оружия."
+    },
+    {
+      "name": "Infra-sight",
+      "cost": 10,
+      "slots": 1,
+      "category": "WEAPON ACCESSORIES",
+      "list": "IRONHEAD SQUAT",
+      "description": "Оружие с инфраприцелом можно стрелять по целям за маркерами, созданными свойством Smoke. Кроме того, значение X в правиле Visibility (X”) увеличивается на 9” при использовании оружия с инфраприцелом."
+    },
+    {
+      "name": "Mono-sight",
+      "cost": 20,
+      "slots": 1,
+      "category": "WEAPON ACCESSORIES",
+      "list": "IRONHEAD SQUAT",
+      "description": "Когда модель выполняет действие Aimed Shot оружием с моноприцелом, она применяет модификатор +2 к броску попадания вместо +1."
+    },
+    {
+      "name": "Dirt bike",
+      "cost": 35,
+      "slots": 0,
+      "category": "MOUNTS",
+      "list": "IRONHEAD SQUAT",
+      "description": "Fighter с dirt bike получает подтип Mounted и ставит характеристику Movement на 8”. Когда он выполняет действие Dash, он добавляет 5” к характеристике Movement вместо Initiative."
+    },
+    {
+      "name": "Svenotar Scout Trike",
+      "cost": 80,
+      "slots": 0,
+      "category": "MOUNTS",
+      "list": "IRONHEAD SQUAT",
+      "description": "Fighter с Svenotar Scout Trike получает подтип Mounted и ставит характеристику Movement на 8”. Когда он выполняет действие Dash, он добавляет 5” к характеристике Movement вместо Initiative. Svenotar Scout Trike экипирован Svenotar autogun и может взять любой из следующих вариантов при добавлении в банду или в любой пост-цикловой последовательности. • Заменить Svenotar autogun на Svenotar boltgun.......+35 кредитов • Заменить Svenotar autogun на Svenotar meltagun.....+70 кредитов"
+    },
+    {
+      "name": "Techmite Exovator",
+      "cost": 45,
+      "slots": 0,
+      "category": "PETS",
+      "list": "IRONHEAD SQUAT"
+    },
+    {
+      "name": "Techmite Oculi",
+      "cost": 50,
+      "slots": 0,
+      "category": "PETS",
+      "list": "IRONHEAD SQUAT"
+    }
+  ]
+}

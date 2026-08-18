@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Necromunda — справочник правил</title>
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="pages/favicon.svg" type="image/svg+xml">
 <meta name="theme-color" content="#14161c">
 <link rel="stylesheet" href="pages/styles.css">
 </head>
@@ -17,8 +17,9 @@
 
 <main class="home-main">
 
-    <p class="home-lede">Три раздела справочника: общие механики, списки банд и учебный
-    пример стартового ростера. Внутри каждого раздела есть собственное оглавление.</p>
+    <p class="home-lede">Справочник правил и построитель ростера: общие механики, списки банд,
+    учебный пример и конструктор своей банды. Готовые ростеры хранятся как JSON
+    в папке <code>rosters/</code>.</p>
 
     <div class="home-cards">
 
@@ -61,6 +62,19 @@
                 <li>Полные карточки семи бойцов и проверка правил</li>
             </ul>
             <span class="home-card-src">Кампания &middot; House Cawdor</span>
+        </a>
+
+        <a class="home-card" href="pages/roster-builder.html">
+            <span class="home-card-kicker">Инструмент</span>
+            <h2>Составить ростер<span class="en">Roster Builder</span></h2>
+            <p>Прототип без базы данных: название банды, бойцы, снаряжение и кредиты.
+            Каждый готовый ростер &mdash; отдельный JSON в папке <code>rosters/</code>.</p>
+            <ul class="home-card-list">
+                <li>Черновик в браузере, запись файлов через локальный сервер</li>
+                <li>Рейтинг, запас и проверка состава (лидер, чемпионы)</li>
+                <li>Пример: Гимн Пепельной часовни, 1000 кредитов</li>
+            </ul>
+            <span class="home-card-src">npm run dev</span>
         </a>
 
     </div>

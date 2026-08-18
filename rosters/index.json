@@ -1,0 +1,36 @@
+{
+  "rosters": [
+    {
+      "file": "gimn-pepelnoj-chasovni.json",
+      "id": "gimn-pepelnoj-chasovni",
+      "name": "Гимн Пепельной часовни",
+      "faction": "house-cawdor",
+      "factionName": "Дом Каудор",
+      "rating": 1000
+    },
+    {
+      "file": "lyubiteli-tiranid.json",
+      "id": "lyubiteli-tiranid",
+      "name": "Любители тиранид",
+      "faction": "genestealer-cult",
+      "factionName": "Культ генокрадов",
+      "rating": 785
+    },
+    {
+      "file": "sangvinarnye-bomzhi.json",
+      "id": "sangvinarnye-bomzhi",
+      "name": "Сангвинарные бомжи",
+      "faction": "house-cawdor",
+      "factionName": "Дом Каудор",
+      "rating": 290
+    },
+    {
+      "file": "trete-koleno.json",
+      "id": "trete-koleno",
+      "name": "Третье Колено",
+      "faction": "genestealer-cult",
+      "factionName": "Культ генокрадов",
+      "rating": 1000
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "id": "sangvinarnye-bomzhi",
+  "name": "Сангвинарные бомжи",
+  "faction": "house-cawdor",
+  "factionName": "Дом Каудор",
+  "notes": "",
+  "reputation": 1,
+  "stash": 1000,
+  "fighters": [
+    {
+      "id": "f-whbq6t",
+      "name": "Санёк",
+      "type": "Cawdor Word-Keeper",
+      "subtypes": [
+        "Leader",
+        "Pious"
+      ],
+      "xp": 61,
+      "baseCost": 115,
+      "skills": [],
+      "equipment": [
+        {
+          "name": "Cleaver",
+          "cost": 25,
+          "slots": 1,
+          "extras": []
+        },
+        {
+          "name": "Mesh armour",
+          "cost": 40,
+          "slots": 0,
+          "extras": []
+        }
+      ]
+    },
+    {
+      "id": "f-mvyiho",
+      "name": "Пётр",
+      "type": "Cawdor Brethren",
+      "subtypes": [
+        "Ganger",
+        "Pious",
+        "Specialist"
+      ],
+      "xp": 13,
+      "baseCost": 40,
+      "skills": [],
+      "equipment": [
+        {
+          "name": "Flamer",
+          "cost": 70,
+          "slots": 1,
+          "extras": []
+        }
+      ]
+    }
+  ],
+  "updatedAt": "2026-08-18"
+}

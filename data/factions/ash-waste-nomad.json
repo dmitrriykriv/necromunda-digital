@@ -1,0 +1,1330 @@
+{
+  "id": "ash-waste-nomad",
+  "name": "Кочевники Пепельных пустошей",
+  "types": [
+    {
+      "id": "ash-waste-nomad-chieftain",
+      "name": "Ash Waste Nomad Chieftain",
+      "category": "Fighter",
+      "subtypes": [
+        "Leader"
+      ],
+      "baseCost": 120,
+      "xp": 61,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "6”",
+          "3+",
+          "3+",
+          "3",
+          "3",
+          "3",
+          "4",
+          "2",
+          "5+",
+          "8",
+          "8",
+          "7",
+          "7"
+        ]
+      }
+    },
+    {
+      "id": "ash-waste-nomad-watcher",
+      "name": "Ash Waste Nomad Watcher",
+      "category": "Fighter",
+      "subtypes": [
+        "Champion"
+      ],
+      "baseCost": 100,
+      "xp": 37,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "5”",
+          "3+",
+          "3+",
+          "3",
+          "3",
+          "2",
+          "4",
+          "2",
+          "5+",
+          "7",
+          "7",
+          "7",
+          "7"
+        ]
+      }
+    },
+    {
+      "id": "ash-waste-nomad-stormcaller",
+      "name": "Ash Waste Nomad Stormcaller",
+      "category": "Fighter",
+      "subtypes": [
+        "Champion"
+      ],
+      "baseCost": 140,
+      "xp": 49,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "5”",
+          "3+",
+          "4+",
+          "3",
+          "3",
+          "2",
+          "4",
+          "2",
+          "5+",
+          "6",
+          "8",
+          "8",
+          "7"
+        ]
+      },
+      "rules": [
+        "Воззвать к буре: пока экипирован Stormcaller staff, Active Ash Waste Nomad Stormcaller может выполнить действие Пылевая буря:ОригиналWhile equipped with a Stormcaller staff, an Active Ash Waste Nomad Stormcaller can perform the Dust Storm action:",
+        "Пылевая буря (одиночное): если в этом бою правило Visibility (X”) не действует, примените правило Visibility (24”). Иначе увеличьте или уменьшите значение X” на 6” (минимум 6”). Эти эффекты длятся до конца боя и могут дальше меняться повторными применениями этой способности.ОригиналIf the Visibility (X”) rule is not active for this battle, apply the Visibility (24”) rule. Otherwise, either increase or decrease the value of X” by 6” to a minimum of 6”. These effects last for the remainder of the battle and can be modified further by future uses of this ability."
+      ]
+    },
+    {
+      "id": "ash-waste-nomad-warrior",
+      "name": "Ash Waste Nomad Warrior",
+      "category": "Fighter",
+      "subtypes": [
+        "Ganger",
+        "Specialist"
+      ],
+      "baseCost": 45,
+      "xp": 13,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "6”",
+          "4+",
+          "4+",
+          "3",
+          "3",
+          "1",
+          "4",
+          "1",
+          "6+",
+          "6",
+          "6",
+          "6",
+          "6"
+        ]
+      }
+    },
+    {
+      "id": "ash-waste-nomad-hunter",
+      "name": "Ash Waste Nomad Hunter",
+      "category": "Fighter",
+      "subtypes": [
+        "Prospect"
+      ],
+      "baseCost": 45,
+      "xp": 4,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "6”",
+          "5+",
+          "5+",
+          "3",
+          "3",
+          "1",
+          "4",
+          "2",
+          "6+",
+          "5",
+          "6",
+          "6",
+          "5"
+        ]
+      },
+      "rules": [
+        "Стартовый навык: у Ash Waste Nomad Hunter есть навык Infiltrate."
+      ]
+    },
+    {
+      "id": "ash-waste-nomad-dust-runner",
+      "name": "Ash Waste Nomad Dust Runner",
+      "category": "Fighter",
+      "subtypes": [
+        "Prospect"
+      ],
+      "baseCost": 25,
+      "xp": 1,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "6”",
+          "5+",
+          "5+",
+          "3",
+          "3",
+          "1",
+          "4",
+          "1",
+          "6+",
+          "5",
+          "6",
+          "6",
+          "5"
+        ]
+      }
+    },
+    {
+      "id": "arthromite-duneskuttler",
+      "name": "Arthromite Duneskuttler",
+      "category": "Fighter",
+      "subtypes": [
+        "Beast",
+        "Brute"
+      ],
+      "baseCost": 225,
+      "xp": 25,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "6”",
+          "3+",
+          "5+",
+          "5",
+          "5",
+          "3",
+          "4",
+          "4",
+          "4+",
+          "7",
+          "8",
+          "6",
+          "4"
+        ]
+      },
+      "rules": [
+        "Трудно убить: Arthromite Duneskuttler знаменит живучестью; при броске по таблице Lasting Injury для Arthromite Duneskuttler бросьте дважды и примените тот результат, который выберет владеющий игрок.ОригиналAn Arthromite Duneskuttler is notoriously hard to kill; when rolling on the Lasting Injury table for an Arthromite Duneskuttler, roll twice and apply whichever result the owning player wishes.",
+        "Навыки: у Arthromite Duneskuttler есть навык Clamber."
+      ]
+    },
+    {
+      "id": "arthromite-spinewyrm",
+      "name": "Arthromite Spinewyrm",
+      "category": "Fighter",
+      "subtypes": [
+        "Beast",
+        "Pet"
+      ],
+      "baseCost": 60,
+      "xp": 13,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "6”",
+          "4+",
+          "6+",
+          "2",
+          "3",
+          "1",
+          "4",
+          "1",
+          "6+",
+          "6",
+          "7",
+          "6",
+          "4"
+        ]
+      },
+      "rules": [
+        "Длина поводка: у Arthromite Spinewyrm длина поводка (Leash range) 6”.",
+        "Маленькая цель: Arthromite Spinewyrm держатся низко над землёй и на удивление быстры, поэтому по ним трудно целиться на просторах пепельных пустошей. Дальнобойные атаки по Arthromite Spinewyrm получают −1 к попаданию.ОригиналArthromite Spinewyrms are low to the ground and surprisingly fast, making them difficult to target in the vast expanse of the ash wastes. Ranged attacks against Arthromite Spinewyrms are made at -1 to Hit.",
+        "Рытьё: Arthromite Spinewyrm умеет рыть под металлическими и роккритовыми полами нижнего улья, быстро проходя скрытыми лазами и засыпанными вентиляциями и выходя в другом месте. Arthromite Spinewyrm может свободно двигаться под непроходимой местностью, если ему хватает движения, но не может закончить движение на непроходимой местности или в ней.ОригиналAn Arthromite Spinewyrm is able to burrow beneath and through the metal and rockcrete floors of the underhive, passing quickly through hidden crawl spaces and buried vents, before emerging elsewhere. An Arthromite Spinewyrm may move freely under impassable terrain if it has sufficient movement to do so, but may not end its movement on or with impassable terrain."
+      ]
+    },
+    {
+      "id": "unbound-helamite",
+      "name": "Unbound Helamite",
+      "category": "Fighter",
+      "subtypes": [
+        "Beast",
+        "Pet"
+      ],
+      "baseCost": 70,
+      "xp": 13,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "8”",
+          "5+",
+          "6+",
+          "3",
+          "3",
+          "1",
+          "4",
+          "1",
+          "6+",
+          "6",
+          "7",
+          "7",
+          "4"
+        ]
+      },
+      "rules": [
+        "Длина поводка: у Unbound Helamite длина поводка (Leash range) 3”.",
+        "Запасной скакун: если владелец Unbound Helamite экипирован Dustback Helamite и становится Suppressed, находясь в пределах 1” от Active Unbound Helamite, он может сделать тест Agility. Если тест пройден, Unbound Helamite меняет свой Status на Suppressed вместо владельца.ОригиналIf an Unbound Helamite’s owner is equipped with a Dustback Helamite and is Suppressed whilst within 1” of an Active Unbound Helamite, they may make an Agility test. If the test is passed, the Unbound Helamite changes its Status to Suppressed instead of its owner."
+      ]
+    },
+    {
+      "id": "ashwing-helamite",
+      "name": "Ashwing Helamite",
+      "category": "Fighter",
+      "subtypes": [
+        "Beast",
+        "Flying",
+        "Pet"
+      ],
+      "baseCost": 70,
+      "xp": 13,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "8”",
+          "4+",
+          "6+",
+          "2",
+          "3",
+          "1",
+          "5",
+          "1",
+          "6+",
+          "6",
+          "5",
+          "6",
+          "4"
+        ]
+      },
+      "rules": [
+        "Длина поводка: у Ashwing Helamite длина поводка (Leash range) 9”.",
+        "Приманка Ashwing: пока Active, владелец Ashwing Helamite может выполнить действие Размещение приманки:",
+        "Спуск (одиночное): Fighter сдвигается до 3” по горизонтали и до 12” по вертикали. Любое вертикальное движение должно быть вниз, то есть к земле.ОригиналThe Fighter makes a move of up to 3” horizontally and up to 12” vertically. Any vertical movement must be downwards, i.e., towards the ground."
+      ]
+    }
+  ],
+  "subtypes": [
+    "Beast",
+    "Brute",
+    "Champion",
+    "Flying",
+    "Ganger",
+    "Leader",
+    "Pet",
+    "Prospect",
+    "Specialist"
+  ],
+  "equipment": [
+    {
+      "name": "Autogun",
+      "cost": 20,
+      "slots": 1,
+      "category": "AUTO/STUB WEAPONS",
+      "list": "ASH WASTE NOMAD",
+      "upgrades": [
+        {
+          "name": "warp rounds",
+          "cost": 10
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Autogun",
+          "sr": "8”",
+          "lr": "24”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Rapid Fire (1)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            }
+          ]
+        },
+        {
+          "name": "warp rounds",
+          "sr": "8”",
+          "lr": "24”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Cursed",
+              "text": "Попавшая модель проходит Willpower или получает Insanity. Натуральная 1 на попадании: то же для носителя."
+            },
+            {
+              "name": "Single Shot",
+              "text": "Один выстрел за бой, затем сразу Out of Ammo; перезарядить нельзя."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Long rifle",
+      "cost": 55,
+      "slots": 1,
+      "category": "AUTO/STUB WEAPONS",
+      "list": "ASH WASTE NOMAD",
+      "profiles": [
+        {
+          "name": "Long rifle",
+          "sr": "24”",
+          "lr": "48”",
+          "str": "4",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Knockback (6+)",
+              "text": "Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1\" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1\" от центра."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Stub gun",
+      "cost": 5,
+      "slots": 1,
+      "category": "AUTO/STUB WEAPONS",
+      "list": "ASH WASTE NOMAD",
+      "upgrades": [
+        {
+          "name": "warp rounds",
+          "cost": 10
+        }
+      ],
+      "profiles": [
+        {
+          "name": "Stub gun",
+          "sr": "6”",
+          "lr": "12”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            }
+          ]
+        },
+        {
+          "name": "warp rounds",
+          "sr": "6”",
+          "lr": "12”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Cursed",
+              "text": "Попавшая модель проходит Willpower или получает Insanity. Натуральная 1 на попадании: то же для носителя."
+            },
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            },
+            {
+              "name": "Single Shot",
+              "text": "Один выстрел за бой, затем сразу Out of Ammo; перезарядить нельзя."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Blast carbine",
+      "cost": 25,
+      "slots": 1,
+      "category": "BLAST WEAPONS",
+      "list": "ASH WASTE NOMAD",
+      "profiles": [
+        {
+          "name": "Blast carbine",
+          "sr": "10”",
+          "lr": "24”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Rapid Fire (1)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            },
+            {
+              "name": "Shock (6+)",
+              "text": "Если атака попадает и бросок попадания не меньше X, она автоматически ранит и считается натуральной 6 на ранении для других свойств."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Blast pistol",
+      "cost": 10,
+      "slots": 1,
+      "category": "BLAST WEAPONS",
+      "list": "ASH WASTE NOMAD",
+      "profiles": [
+        {
+          "name": "Blast pistol",
+          "sr": "8”",
+          "lr": "12”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            },
+            {
+              "name": "Shock (6+)",
+              "text": "Если атака попадает и бросок попадания не меньше X, она автоматически ранит и считается натуральной 6 на ранении для других свойств."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Blast rifle",
+      "cost": 20,
+      "slots": 1,
+      "category": "BLAST WEAPONS",
+      "list": "ASH WASTE NOMAD",
+      "profiles": [
+        {
+          "name": "Blast rifle",
+          "sr": "10”",
+          "lr": "24”",
+          "str": "3",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Shock (6+)",
+              "text": "Если атака попадает и бросок попадания не меньше X, она автоматически ранит и считается натуральной 6 на ранении для других свойств."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Heavy blaster*",
+      "cost": 75,
+      "slots": 2,
+      "category": "BLAST WEAPONS",
+      "list": "ASH WASTE NOMAD",
+      "profiles": [
+        {
+          "name": "Heavy blaster*",
+          "sr": "12”",
+          "lr": "36”",
+          "str": "4",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Heavy",
+              "text": "Дальнобойное: только Braced Shot. Ближний бой: нельзя как Secondary и нельзя использовать Secondary вместе с ним."
+            },
+            {
+              "name": "Rapid Fire (2)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            },
+            {
+              "name": "Shock (6+)",
+              "text": "Если атака попадает и бросок попадания не меньше X, она автоматически ранит и считается натуральной 6 на ранении для других свойств."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Charge caster with shock blast rockets & krak rockets",
+      "cost": 110,
+      "slots": 1,
+      "category": "ESOTERIC WEAPONS",
+      "list": "ASH WASTE NOMAD",
+      "profiles": [
+        {
+          "name": "shock blast rockets",
+          "sr": "20”",
+          "lr": "40”",
+          "str": "4",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (4+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blast (3”)",
+              "text": "Поставьте маркер Blast 3\" или 5\" на цель. Попадание — маркер остаётся. Промах — рассейте на D6\" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него."
+            },
+            {
+              "name": "Heavy",
+              "text": "Дальнобойное: только Braced Shot. Ближний бой: нельзя как Secondary и нельзя использовать Secondary вместе с ним."
+            },
+            {
+              "name": "Shock (6+)",
+              "text": "Если атака попадает и бросок попадания не меньше X, она автоматически ранит и считается натуральной 6 на ранении для других свойств."
+            }
+          ]
+        },
+        {
+          "name": "krak rockets",
+          "sr": "20”",
+          "lr": "40”",
+          "str": "6",
+          "ap": "-2",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Ammo (4+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Heavy",
+              "text": "Дальнобойное: только Braced Shot. Ближний бой: нельзя как Secondary и нельзя использовать Secondary вместе с ним."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Venom caster",
+      "cost": 75,
+      "slots": 1,
+      "category": "TOXIN WEAPONS",
+      "list": "ASH WASTE NOMAD",
+      "profiles": [
+        {
+          "name": "Venom caster",
+          "sr": "T",
+          "lr": "-",
+          "str": "-",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (6+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Template",
+              "text": "Каплевидный шаблон от стреляющего через цель: все под ним получают автоматическое попадание. С Light в ближнем бою — одно автоматическое попадание без шаблона. С Rapid Fire (X) ближайшая модель получает попадания по кубику огневой мощи, остальные — по одному."
+            },
+            {
+              "name": "Toxin (3+)",
+              "text": "Против бойца ранит на X+ вместо сравнения Strength и Toughness. Против машины — только на натуральную 6."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Web gun",
+      "cost": 65,
+      "slots": 1,
+      "category": "WEB WEAPONS",
+      "list": "ASH WASTE NOMAD",
+      "profiles": [
+        {
+          "name": "Web gun",
+          "sr": "T",
+          "lr": "-",
+          "str": "5",
+          "ap": "-",
+          "l": "-",
+          "traits": [
+            {
+              "name": "Ammo (6+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Template",
+              "text": "Каплевидный шаблон от стреляющего через цель: все под ним получают автоматическое попадание. С Light в ближнем бою — одно автоматическое попадание без шаблона. С Rapid Fire (X) ближайшая модель получает попадания по кубику огневой мощи, остальные — по одному."
+            },
+            {
+              "name": "Web",
+              "text": "Спасброски брони нельзя (непробиваемые можно). Раненый боец не теряет Wound, а получает Webbed."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Web pistol",
+      "cost": 50,
+      "slots": 1,
+      "category": "WEB WEAPONS",
+      "list": "ASH WASTE NOMAD",
+      "profiles": [
+        {
+          "name": "Web pistol",
+          "sr": "T",
+          "lr": "-",
+          "str": "4",
+          "ap": "-",
+          "l": "-",
+          "traits": [
+            {
+              "name": "Ammo (6+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Light",
+              "text": "Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят."
+            },
+            {
+              "name": "Template",
+              "text": "Каплевидный шаблон от стреляющего через цель: все под ним получают автоматическое попадание. С Light в ближнем бою — одно автоматическое попадание без шаблона. С Rapid Fire (X) ближайшая модель получает попадания по кубику огневой мощи, остальные — по одному."
+            },
+            {
+              "name": "Web",
+              "text": "Спасброски брони нельзя (непробиваемые можно). Раненый боец не теряет Wound, а получает Webbed."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Chain lance",
+      "cost": 30,
+      "slots": 1,
+      "category": "CHAIN WEAPONS",
+      "list": "ASH WASTE NOMAD",
+      "profiles": [
+        {
+          "name": "Chain lance*",
+          "sr": "E",
+          "lr": "-",
+          "str": "S+1",
+          "ap": "-2",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Heavy",
+              "text": "Дальнобойное: только Braced Shot. Ближний бой: нельзя как Secondary и нельзя использовать Secondary вместе с ним."
+            },
+            {
+              "name": "Lance",
+              "text": "У бойца с подтипом Mounted: +1 Strength на атаках как часть Charge."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Shred (6+)",
+              "text": "Если оружие ранит и бросок на ранение не меньше X, Lethality этой атаки +1."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Stormcaller staff* (Stormcaller only)",
+      "cost": 40,
+      "slots": 2,
+      "category": "ESOTERIC WEAPONS",
+      "list": "ASH WASTE NOMAD",
+      "profiles": [
+        {
+          "name": "Stormcaller staff*",
+          "sr": "E",
+          "lr": "-",
+          "str": "S+1",
+          "ap": "-2",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Heavy",
+              "text": "Дальнобойное: только Braced Shot. Ближний бой: нельзя как Secondary и нельзя использовать Secondary вместе с ним."
+            },
+            {
+              "name": "Lance",
+              "text": "У бойца с подтипом Mounted: +1 Strength на атаках как часть Charge."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Unwieldy",
+              "text": "В ближнем бою Initiative модели ставится в 1 до любых модификаторов."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Bone talons",
+      "cost": 20,
+      "slots": 1,
+      "category": "NOMAD WEAPONS",
+      "list": "ASH WASTE NOMAD",
+      "profiles": [
+        {
+          "name": "Bone talons",
+          "sr": "E",
+          "lr": "-",
+          "str": "S",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Rending (6+)",
+              "text": "Если натуральный бросок на ранение не меньше X, AP этой атаки увеличивается на 1."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Chitin dagger",
+      "cost": 10,
+      "slots": 1,
+      "category": "NOMAD WEAPONS",
+      "list": "ASH WASTE NOMAD",
+      "profiles": [
+        {
+          "name": "Chitin dagger",
+          "sr": "E",
+          "lr": "-",
+          "str": "S",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Backstab",
+              "text": "+1 Strength, если цель Engaged более чем с одной моделью."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Rending (6+)",
+              "text": "Если натуральный бросок на ранение не меньше X, AP этой атаки увеличивается на 1."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Chitin gauntlet",
+      "cost": 40,
+      "slots": 1,
+      "category": "NOMAD WEAPONS",
+      "list": "ASH WASTE NOMAD",
+      "profiles": [
+        {
+          "name": "Chitin gauntlet",
+          "sr": "E",
+          "lr": "-",
+          "str": "S+1",
+          "ap": "-1",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Insective knife",
+      "cost": 20,
+      "slots": 1,
+      "category": "NOMAD WEAPONS",
+      "list": "ASH WASTE NOMAD",
+      "profiles": [
+        {
+          "name": "Insective knife",
+          "sr": "E",
+          "lr": "-",
+          "str": "S",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Backstab",
+              "text": "+1 Strength, если цель Engaged более чем с одной моделью."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Shock (6+)",
+              "text": "Если атака попадает и бросок попадания не меньше X, она автоматически ранит и считается натуральной 6 на ранении для других свойств."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Trident",
+      "cost": 65,
+      "slots": 1,
+      "category": "NOMAD WEAPONS",
+      "list": "ASH WASTE NOMAD",
+      "profiles": [
+        {
+          "name": "Trident",
+          "sr": "E",
+          "lr": "-",
+          "str": "S+2",
+          "ap": "-1",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Heavy",
+              "text": "Дальнобойное: только Braced Shot. Ближний бой: нельзя как Secondary и нельзя использовать Secondary вместе с ним."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Parry",
+              "text": "Как Primary или Secondary в схватке: +1 Save. Несколько таких оружий не складываются."
+            },
+            {
+              "name": "Shock (6+)",
+              "text": "Если атака попадает и бросок попадания не меньше X, она автоматически ранит и считается натуральной 6 на ранении для других свойств."
+            },
+            {
+              "name": "Unwieldy",
+              "text": "В ближнем бою Initiative модели ставится в 1 до любых модификаторов."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Venom stave",
+      "cost": 45,
+      "slots": 1,
+      "category": "NOMAD WEAPONS",
+      "list": "ASH WASTE NOMAD",
+      "profiles": [
+        {
+          "name": "Venom stave",
+          "sr": "E",
+          "lr": "-",
+          "str": "-",
+          "ap": "-2",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Toxin (3+)",
+              "text": "Против бойца ранит на X+ вместо сравнения Strength и Toughness. Против машины — только на натуральную 6."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Venom whip",
+      "cost": 25,
+      "slots": 1,
+      "category": "NOMAD WEAPONS",
+      "list": "ASH WASTE NOMAD",
+      "profiles": [
+        {
+          "name": "Venom whip",
+          "sr": "E",
+          "lr": "-",
+          "str": "-",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Knockback (3+)",
+              "text": "Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1\" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1\" от центра."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Toxin (3+)",
+              "text": "Против бойца ранит на X+ вместо сравнения Strength и Toughness. Против машины — только на натуральную 6."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Long blade",
+      "cost": 25,
+      "slots": 1,
+      "category": "PRIMITIVE WEAPONS",
+      "list": "ASH WASTE NOMAD",
+      "profiles": [
+        {
+          "name": "Long blade",
+          "sr": "E",
+          "lr": "-",
+          "str": "S",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Parry",
+              "text": "Как Primary или Secondary в схватке: +1 Save. Несколько таких оружий не складываются."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mono-hook",
+      "cost": 25,
+      "slots": 1,
+      "category": "PRIMITIVE WEAPONS",
+      "list": "ASH WASTE NOMAD",
+      "profiles": [
+        {
+          "name": "Mono-hook",
+          "sr": "E",
+          "lr": "-",
+          "str": "S",
+          "ap": "-1",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Stalking knife",
+      "cost": 15,
+      "slots": 1,
+      "category": "PRIMITIVE WEAPONS",
+      "list": "ASH WASTE NOMAD",
+      "profiles": [
+        {
+          "name": "Stalking knife",
+          "sr": "E",
+          "lr": "-",
+          "str": "S",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Backstab",
+              "text": "+1 Strength, если цель Engaged более чем с одной моделью."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mesh armour",
+      "cost": 40,
+      "slots": 0,
+      "category": "ARMOUR & FIELD ARMOUR",
+      "list": "ASH WASTE NOMAD",
+      "description": "Fighter в сетчатой броне увеличивает характеристику Save на 1 при разрешении попаданий, полученных в ближнем бою."
+    },
+    {
+      "name": "Refractor field",
+      "cost": 50,
+      "slots": 0,
+      "category": "ARMOUR & FIELD ARMOUR",
+      "list": "ASH WASTE NOMAD",
+      "description": "Рефракторное поле даёт носителю непробиваемый спасбросок 5+; однако если при этом спасброске выпадает натуральная 1, поле перегорает и его нельзя использовать до конца боя. Рефракторное поле можно сочетать с другой бронёй и полевой бронёй."
+    },
+    {
+      "name": "Bio-booster",
+      "cost": 25,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "ASH WASTE NOMAD",
+      "description": "В первый раз за каждый бой, когда носитель получает состояние Injured, снизьте характеристику Lethality ранящего оружия на 1. Если Lethality стала нулём, бросьте 2 кубика ранений вместо 1, и носитель выбирает, какой применить; второй кубик отбрасывается."
+    },
+    {
+      "name": "Drop rig",
+      "cost": 10,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "ASH WASTE NOMAD",
+      "description": "Active или Suppressed Fighter со спусковой оснасткой может выполнить действие «Спуск», находясь в пределах 1” от края площадки: Спуск (одиночное): Fighter сдвигается до 3” по горизонтали и до 12” по вертикали. Любое вертикальное движение должно быть вниз, то есть к земле."
+    },
+    {
+      "name": "Grav chute",
+      "cost": 30,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "ASH WASTE NOMAD",
+      "description": "Если Fighter с грав-парашютом падает или прыгает вниз, он никогда не получает урон и никогда не становится Suppressed."
+    },
+    {
+      "name": "Medicae kit",
+      "cost": 20,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "ASH WASTE NOMAD",
+      "description": "Если Fighter с медкай-набором помогает другому Fighter на проверке Recovery, он бросает дополнительный кубик ранений и выбирает, какой оставить."
+    },
+    {
+      "name": "Photo-goggles",
+      "cost": 35,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "ASH WASTE NOMAD",
+      "description": "Fighter с фотоочками увеличивает значение X в правиле Visibility (X”) на 9” и может видеть сквозь дымовые облака, поставленные свойством Smoke. Кроме того, если во Fighter с фотоочками попадает оружие со свойством Flash, он получает модификатор −2 к проверке Initiative, чтобы не ослепнуть."
+    },
+    {
+      "name": "Photo-lumens",
+      "cost": 15,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "ASH WASTE NOMAD",
+      "description": "Увеличьте значение X в правиле Visibility (X”) на 9” для этого Fighter. В этого Fighter всегда можно целиться независимо от правила Visibility (X”)."
+    },
+    {
+      "name": "Respirator",
+      "cost": 15,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "ASH WASTE NOMAD",
+      "description": "Когда во Fighter с респиратором попадает оружие со свойством Gas, он получает непробиваемый спасбросок 5+ против этого оружия."
+    },
+    {
+      "name": "Infra-sight",
+      "cost": 10,
+      "slots": 1,
+      "category": "WEAPON ACCESSORIES",
+      "list": "ASH WASTE NOMAD",
+      "description": "Оружие с инфраприцелом можно стрелять по целям за маркерами, созданными свойством Smoke. Кроме того, значение X в правиле Visibility (X”) увеличивается на 9” при использовании оружия с инфраприцелом."
+    },
+    {
+      "name": "Mono-sight",
+      "cost": 20,
+      "slots": 1,
+      "category": "WEAPON ACCESSORIES",
+      "list": "ASH WASTE NOMAD",
+      "description": "Когда модель выполняет действие Aimed Shot оружием с моноприцелом, она применяет модификатор +2 к броску попадания вместо +1."
+    },
+    {
+      "name": "Telescopic sight",
+      "cost": 20,
+      "slots": 1,
+      "category": "WEAPON ACCESSORIES",
+      "list": "ASH WASTE NOMAD",
+      "description": "Оружие с телескопическим прицелом снижает бонус модели к спасброску брони за укрытие на 1, пока цель в Long Range оружия."
+    },
+    {
+      "name": "Dustback Helamite",
+      "cost": 55,
+      "slots": 0,
+      "category": "MOUNTS",
+      "list": "ASH WASTE NOMAD",
+      "description": "Fighter с Dustback Helamite получает подтипы Mounted и Agile, навык Mighty Leap и ставит характеристику Movement на 8”. Когда он выполняет действие Dash, он добавляет 4” к характеристике Movement вместо Initiative. Dustback Helamite экипирован Helamite claws, которые получают свойство Additional Attacks (1)."
+    },
+    {
+      "name": "Arthromite Spinewyrm",
+      "cost": 60,
+      "slots": 0,
+      "category": "PETS",
+      "list": "ASH WASTE NOMAD"
+    },
+    {
+      "name": "Ashwing Helamite",
+      "cost": 70,
+      "slots": 0,
+      "category": "PETS",
+      "list": "ASH WASTE NOMAD"
+    },
+    {
+      "name": "Unbound Helamite",
+      "cost": 70,
+      "slots": 0,
+      "category": "PETS",
+      "list": "ASH WASTE NOMAD"
+    }
+  ]
+}

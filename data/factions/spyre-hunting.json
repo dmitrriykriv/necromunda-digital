@@ -1,0 +1,810 @@
+{
+  "id": "spyre-hunting",
+  "name": "Охотники Шпиля",
+  "types": [
+    {
+      "id": "spyre-hunt-master",
+      "name": "Spyre Hunt Master",
+      "category": "Fighter",
+      "subtypes": [
+        "Leader",
+        "Spyrer"
+      ],
+      "baseCost": 190,
+      "xp": 61,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "6”",
+          "3+",
+          "3+",
+          "3",
+          "3",
+          "3",
+          "4",
+          "3",
+          "5+",
+          "8",
+          "9",
+          "8",
+          "8"
+        ]
+      },
+      "rules": [
+        "Опытный охотник: при добавлении в Gang Roster выберите одно оружие или предмет снаряжения у Spyre Hunt Master и повысьте его уровень Augmentation на 1.ОригиналWhen added to a Gang Roster, pick one weapon or piece of wargear carried by a Spyre Hunt Master and increase its Augmentation level by 1.",
+        "Привязан к ригу: со Spyre Hunt Master никогда нельзя снять Sovereign rig; если его удаляют из Gang Roster, этот предмет тоже удаляется, а не кладётся в Stash банды.ОригиналA Spyre Hunt Master may never have their Sovereign rig unequipped from them, and if they are removed from the Gang Roster this item is also removed instead of being placed into the gang’s Stash.",
+        "Фиксированная экипировка: Spyre Hunt Master может быть экипирован не более чем двумя вариантами из раздела Hunt Master Weapons списка снаряжения Spyre Hunter.ОригиналA Spyre Hunt Master may be equipped with up to two options from the Hunt Master Weapons section of the Spyre Hunter Equipment List."
+      ]
+    },
+    {
+      "id": "jakara-spyre-hunter",
+      "name": "Jakara Spyre Hunter",
+      "category": "Fighter",
+      "subtypes": [
+        "Champion",
+        "Spyrer"
+      ],
+      "baseCost": 185,
+      "xp": 37,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "6”",
+          "3+",
+          "4+",
+          "3",
+          "3",
+          "2",
+          "4",
+          "3",
+          "5+",
+          "7",
+          "8",
+          "7",
+          "7"
+        ]
+      },
+      "rules": [
+        "Привязан к ригу: с Jakara Spyre Hunter никогда нельзя снять Jakara hunting rig или mirror shield; если его удаляют из Gang Roster, эти предметы тоже удаляются, а не кладутся в Stash банды.ОригиналA Jakara Spyre Hunter may never have their Jakara hunting rig or mirror shield unequipped from them, and if they are removed from the Gang Roster these items are also removed instead of being placed into the gang’s Stash.",
+        "Фиксированная экипировка: Jakara Spyre Hunter всегда должен быть экипирован ровно одним вариантом из раздела Jakara Weapons списка снаряжения Spyre Hunter.ОригиналA Jakara Spyre Hunter must always be equipped with exactly one option from the Jakara Weapons section of the Spyre Hunter Equipment List."
+      ]
+    },
+    {
+      "id": "malcadon-spyre-hunter",
+      "name": "Malcadon Spyre Hunter",
+      "category": "Fighter",
+      "subtypes": [
+        "Champion",
+        "Spyrer"
+      ],
+      "baseCost": 185,
+      "xp": 37,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "7”",
+          "3+",
+          "3+",
+          "3",
+          "3",
+          "2",
+          "4",
+          "2",
+          "5+",
+          "7",
+          "8",
+          "7",
+          "7"
+        ]
+      },
+      "rules": [
+        "Привязан к ригу: с Malcadon Spyre Hunter никогда нельзя снять Malcadon hunting rig, drop rig, grapnel launcher или paired web incisors; если его удаляют из Gang Roster, эти предметы тоже удаляются, а не кладутся в Stash банды.ОригиналA Malcadon Spyre Hunter may never have their Malcadon hunting rig, drop rig, grapnel launcher or paired web incisors unequipped from them, and if they are removed from the Gang Roster these items are also removed instead of being placed into the gang’s Stash.",
+        "Фиксированная экипировка: Malcadon Spyre Hunter всегда должен быть экипирован ровно одним вариантом из раздела Malcadon Weapons списка снаряжения Spyre Hunter.ОригиналA Malcadon Spyre Hunter must always be equipped with exactly one option from the Malcadon Weapons section of the Spyre Hunter Equipment List."
+      ]
+    },
+    {
+      "id": "orrus-spyre-hunter",
+      "name": "Orrus Spyre Hunter",
+      "category": "Fighter",
+      "subtypes": [
+        "Champion",
+        "Spyrer"
+      ],
+      "baseCost": 180,
+      "xp": 37,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "5”",
+          "3+",
+          "3+",
+          "3",
+          "4",
+          "2",
+          "4",
+          "2",
+          "4+",
+          "7",
+          "8",
+          "7",
+          "7"
+        ]
+      },
+      "rules": [
+        "Привязан к ригу: с Orrus Spyre Hunter никогда нельзя снять Orrus hunting rig; если его удаляют из Gang Roster, этот предмет тоже удаляется, а не кладётся в Stash банды.ОригиналA Orrus Spyre Hunter may never have their Orrus hunting rig unequipped from them, and if they are removed from the Gang Roster this item is also removed instead of being placed into the gang’s Stash.",
+        "Фиксированная экипировка: Orrus Spyre Hunter всегда должен быть экипирован ровно одним вариантом из раздела Orrus Ranged Weapons и ровно одним вариантом из раздела Orrus Close Combat списка снаряжения Spyre Hunter.ОригиналA Orrus Spyre Hunter must always be equipped with exactly one option from the Orrus Ranged Weapons section and exactly one option from the Orrus Close Combat section of the Spyre Hunter Equipment List."
+      ]
+    },
+    {
+      "id": "yeld-spyre-hunter",
+      "name": "Yeld Spyre Hunter",
+      "category": "Fighter",
+      "subtypes": [
+        "Champion",
+        "Flying",
+        "Spyrer"
+      ],
+      "baseCost": 180,
+      "xp": 37,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "7”",
+          "4+",
+          "3+",
+          "3",
+          "3",
+          "2",
+          "5",
+          "2",
+          "5+",
+          "7",
+          "8",
+          "7",
+          "7"
+        ]
+      },
+      "rules": [
+        "Привязан к ригу: с Yeld Spyre Hunter никогда нельзя снять Yeld hunting rig или Yeld wings; если его удаляют из Gang Roster, эти предметы тоже удаляются, а не кладутся в Stash банды.ОригиналA Yeld Spyre Hunter may never have their Yeld hunting rig or Yeld wings unequipped from them, and if they are removed from the Gang Roster these items are also removed instead of being placed into the gang’s Stash.",
+        "Фиксированная экипировка: Yeld Spyre Hunter всегда должен быть экипирован ровно одним вариантом из раздела Yeld Weapons списка снаряжения Spyre Hunter.ОригиналA Yeld Spyre Hunter must always be equipped with exactly one option from the Yeld Weapons section of the Spyre Hunter Equipment List."
+      ]
+    },
+    {
+      "id": "caryatid-prime",
+      "name": "Caryatid Prime",
+      "category": "Fighter",
+      "subtypes": [
+        "Beast",
+        "Flying",
+        "Pet"
+      ],
+      "baseCost": 70,
+      "xp": 13,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "6”",
+          "5+",
+          "6+",
+          "2",
+          "2",
+          "1",
+          "5",
+          "1",
+          "6+",
+          "5",
+          "7",
+          "7",
+          "7"
+        ]
+      },
+      "rules": [
+        "Длина поводка: у Caryatid Prime длина поводка (Leash range) 3”.",
+        "Спутник Spyrer: Caryatid Prime подчиняется особому правилу Reflex Enhances.",
+        "Заговорённый спутник: Caryatid Prime помогает избранному спутнику избегать урона. Пока он в пределах Leash range от владельца, этот Fighter может перебросить один проваленный спасбросок каждый раунд.ОригиналA Caryatid Prime is able to help their chosen companion avoid damage. While they are within Leash range of their owner, that Fighter may re- roll one failed save each round.",
+        "Предвидение: дар предвидения Caryatid Prime позволяет уклоняться почти от любых атак, кроме самых неожиданных. Это мощное предвидение даёт непробиваемый спасбросок 3+.ОригиналThe gift of foresight possessed by a Caryatid Prime enables it to dodge and evade all but the most unexpected of attacks. This tremendous precognition grants them a 3+ Invulnerable save.",
+        "Аугментация 1-го уровня: улучшите характеристику Lethality до 2.",
+        "Аугментация 2-го уровня: улучшите характеристику AP до −2.",
+        "Аугментация 3-го уровня: замените свойство Rapid Fire (2) свойством Rapid Fire (3).",
+        "Аугментация 1-го уровня: улучшите характеристику AP до −3.",
+        "Аугментация 2-го уровня: замените свойство Ammo (5+) свойством Ammo (4+).",
+        "Аугментация 3-го уровня: улучшите характеристику Lethality до 3.",
+        "Аугментация 1-го уровня: улучшите характеристику Strength носителя на 1.",
+        "Аугментация 2-го уровня: улучшите характеристику Attacks носителя на 1.",
+        "Аугментация 1-го уровня: улучшите характеристику Ballistic Skill или Weapon Skill носителя на 1.",
+        "Аугментация 2-го уровня: улучшите характеристику Save носителя на 1.",
+        "Аугментация 1-го уровня: улучшите характеристику AP до −3.",
+        "Аугментация 2-го уровня: улучшите характеристику Lethality до 2.",
+        "Аугментация 3-го уровня: улучшите характеристику Strength до S+1.",
+        "Аугментация 1-го уровня: улучшите характеристику Lethality до 2.",
+        "Аугментация 2-го уровня: замените свойство Paired (2) свойством Paired (3).",
+        "Аугментация 3-го уровня: замените свойство Toxin (3+) свойством Toxin (2+).",
+        "Аугментация 1-го уровня: носитель получает неуязвимый сейв 6+.",
+        "Аугментация 2-го уровня: улучшите характеристику Long Range до 12”.",
+        "Аугментация 3-го уровня: носитель получает неуязвимый сейв 5+.",
+        "Аугментация 1-го уровня: улучшите характеристику Lethality до 2.",
+        "Аугментация 2-го уровня: улучшите характеристику AP до −3.",
+        "Аугментация 3-го уровня: улучшите характеристику Strength до S+2.",
+        "Аугментация 1-го уровня: добавьте свойство Shock (6+).",
+        "Аугментация 2-го уровня: улучшите характеристику AP до −2.",
+        "Аугментация 3-го уровня: улучшите характеристику Lethality до 3.",
+        "Аугментация 1-го уровня: улучшите неуязвимый сейв до 5+.",
+        "Аугментация 2-го уровня: улучшите неуязвимый сейв до 4+.",
+        "Аугментация 1-го уровня: добавьте свойство Damage (2).",
+        "Аугментация 2-го уровня: улучшите характеристику AP до −2.",
+        "Аугментация 3-го уровня: улучшите характеристику Lethality до 3.",
+        "Аугментация 1-го уровня: улучшите характеристику Lethality до 2.",
+        "Аугментация 2-го уровня: улучшите характеристику Strength до S+2.",
+        "Аугментация 3-го уровня: замените свойство Paired (2) свойством Paired (3).",
+        "Аугментация 1-го уровня: улучшите неуязвимый сейв до 5+.",
+        "Аугментация 2-го уровня: улучшите характеристику Strength носителя на 1.",
+        "Аугментация 1-го уровня: добавьте характеристику Lethality, равную 2.",
+        "Аугментация 2-го уровня: улучшите характеристику AP до −1.",
+        "Аугментация 3-го уровня: улучшите характеристику Long Range до 12”.",
+        "Аугментация 1-го уровня: улучшите характеристику Long Range до 10”.",
+        "Аугментация 2-го уровня: улучшите характеристику Strength до 4.",
+        "Аугментация 3-го уровня: улучшите характеристику Long Range до 12”.",
+        "Аугментация 1-го уровня: улучшите характеристику Movement носителя на 1”.",
+        "Аугментация 2-го уровня: носитель получает дополнительный +1 к броскам Save против стрелковых атак, пока находится в укрытии.ОригиналThe wearer adds an additional +1 to their Save rolls against shooting attacks while in cover.",
+        "Аугментация 1-го уровня: улучшите характеристику AP до −2.",
+        "Аугментация 2-го уровня: улучшите характеристику Long Range до 24”.",
+        "Аугментация 3-го уровня: улучшите характеристику Strength до 4.",
+        "Аугментация 1-го уровня: улучшите характеристику AP до −1.",
+        "Аугментация 2-го уровня: улучшите характеристику Strength до 6.",
+        "Аугментация 3-го уровня: добавьте свойство Blast (3”).",
+        "Аугментация 1-го уровня: добавьте свойство Parry.",
+        "Аугментация 2-го уровня: улучшите характеристику Lethality до 2.",
+        "Аугментация 3-го уровня: добавьте свойство Knockback (6+)."
+      ]
+    }
+  ],
+  "subtypes": [
+    "Beast",
+    "Champion",
+    "Flying",
+    "Leader",
+    "Pet",
+    "Spyrer"
+  ],
+  "equipment": [
+    {
+      "name": "Malcadon slashing claw with web incisor, grapnel launcher and drop rig",
+      "cost": 45,
+      "slots": 1,
+      "category": "HUNT MASTER WEAPONS",
+      "list": "SPYRE HUNTER",
+      "profiles": [
+        {
+          "name": "Malcadon slashing claw",
+          "sr": "E",
+          "lr": "-",
+          "str": "S",
+          "ap": "-2",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Malcadon toxin whip with web incisor, grapnel launcher and drop rig",
+      "cost": 60,
+      "slots": 1,
+      "category": "HUNT MASTER WEAPONS",
+      "list": "SPYRE HUNTER",
+      "profiles": [
+        {
+          "name": "Malcadon toxin whip",
+          "sr": "E",
+          "lr": "-",
+          "str": "-",
+          "ap": "-2",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Toxin (3+)",
+              "text": "Против бойца ранит на X+ вместо сравнения Strength и Toughness. Против машины — только на натуральную 6."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mirror shield",
+      "cost": 35,
+      "slots": 1,
+      "category": "HUNT MASTER WEAPONS",
+      "list": "SPYRE HUNTER",
+      "profiles": [
+        {
+          "name": "Mirror shield",
+          "sr": "4”",
+          "lr": "8”",
+          "str": "-",
+          "ap": "-",
+          "l": "-",
+          "traits": [
+            {
+              "name": "Flash",
+              "text": "Броска на ранение нет: цель делает проверку Initiative, при провале Blind. Слепая модель теряет Ready; её атаки ближнего боя попадают только на натуральную 6 до следующей активации."
+            },
+            {
+              "name": "Shield",
+              "text": "Хотя бы одно такое оружие: +1 Save против стрельбы. Несколько штук не складываются."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Monomolecular sword",
+      "cost": 50,
+      "slots": 1,
+      "category": "HUNT MASTER WEAPONS",
+      "list": "SPYRE HUNTER",
+      "profiles": [
+        {
+          "name": "Monomolecular sword",
+          "sr": "E",
+          "lr": "-",
+          "str": "S+1",
+          "ap": "-2",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Breaching (5+)",
+              "text": "Если атака ранит и бросок на ранение не меньше X, спасброски брони делать нельзя."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Parry",
+              "text": "Как Primary или Secondary в схватке: +1 Save. Несколько таких оружий не складываются."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Naga blade",
+      "cost": 65,
+      "slots": 1,
+      "category": "HUNT MASTER WEAPONS",
+      "list": "SPYRE HUNTER",
+      "profiles": [
+        {
+          "name": "Naga blade",
+          "sr": "E",
+          "lr": "-",
+          "str": "S+2",
+          "ap": "-1",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Parry",
+              "text": "Как Primary или Secondary в схватке: +1 Save. Несколько таких оружий не складываются."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Yeld laser gauntlet",
+      "cost": 25,
+      "slots": 1,
+      "category": "HUNT MASTER WEAPONS",
+      "list": "SPYRE HUNTER",
+      "profiles": [
+        {
+          "name": "Yeld laser gauntlet",
+          "sr": "10”",
+          "lr": "20”",
+          "str": "3",
+          "ap": "-1",
+          "l": "1",
+          "traits": []
+        }
+      ]
+    },
+    {
+      "name": "Yeld missile gauntlet",
+      "cost": 60,
+      "slots": 1,
+      "category": "HUNT MASTER WEAPONS",
+      "list": "SPYRE HUNTER",
+      "profiles": [
+        {
+          "name": "Yeld missile gauntlet",
+          "sr": "15”",
+          "lr": "30”",
+          "str": "5",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Knockback (5+)",
+              "text": "Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1\" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1\" от центра."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Paired Malcadon slashing claws",
+      "cost": 35,
+      "slots": 1,
+      "category": "MALCADON WEAPONS",
+      "list": "SPYRE HUNTER",
+      "profiles": [
+        {
+          "name": "Paired Malcadon slashing claws",
+          "sr": "E",
+          "lr": "-",
+          "str": "S",
+          "ap": "-2",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Paired (2)",
+              "text": "Нельзя как Secondary и нельзя Secondary вместе с ним. Как Primary: носитель увеличивает Attacks на X."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Paired Malcadon toxin whips",
+      "cost": 50,
+      "slots": 1,
+      "category": "MALCADON WEAPONS",
+      "list": "SPYRE HUNTER",
+      "profiles": [
+        {
+          "name": "Paired Malcadon toxin whips",
+          "sr": "E",
+          "lr": "-",
+          "str": "-",
+          "ap": "-2",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Toxin (3+)",
+              "text": "Против бойца ранит на X+ вместо сравнения Strength и Toughness. Против машины — только на натуральную 6."
+            },
+            {
+              "name": "Paired (2)",
+              "text": "Нельзя как Secondary и нельзя Secondary вместе с ним. Как Primary: носитель увеличивает Attacks на X."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Paired disintegration matrix",
+      "cost": 75,
+      "slots": 1,
+      "category": "ORRUS RANGED WEAPONS",
+      "list": "SPYRE HUNTER",
+      "profiles": [
+        {
+          "name": "Paired disintegration matrix",
+          "sr": "3”",
+          "lr": "12”",
+          "str": "5",
+          "ap": "-2",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Damage (2)",
+              "text": "Раненая модель теряет X Wounds вместо одного. Число кубиков ранений всё равно равно Lethality оружия."
+            },
+            {
+              "name": "Rapid Fire (1)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            },
+            {
+              "name": "Ammo (5+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Unstable",
+              "text": "Натуральная 1 на попадании: носитель получает автоматическое попадание этим профилем, другие модели не поражаются. Если броска попадания нет (Template) — сначала D6, как выше."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Paired volkite dischargers",
+      "cost": 45,
+      "slots": 1,
+      "category": "ORRUS RANGED WEAPONS",
+      "list": "SPYRE HUNTER",
+      "profiles": [
+        {
+          "name": "Paired volkite dischargers",
+          "sr": "5”",
+          "lr": "10”",
+          "str": "5",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Blaze (4+)",
+              "text": "Если бросок на ранение не меньше X, цель получает ещё одно попадание тем же профилем. Оно бросается на ранение отдельно и не вызывает новых дополнительных попаданий."
+            },
+            {
+              "name": "Rapid Fire (1)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Orrus power fists",
+      "cost": 65,
+      "slots": 1,
+      "category": "ORRUS CLOSE COMBAT WEAPONS",
+      "list": "SPYRE HUNTER",
+      "profiles": [
+        {
+          "name": "Orrus power fists",
+          "sr": "E",
+          "lr": "-",
+          "str": "S+2",
+          "ap": "-1",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Breaching (5+)",
+              "text": "Если атака ранит и бросок на ранение не меньше X, спасброски брони делать нельзя."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Paired (2)",
+              "text": "Нельзя как Secondary и нельзя Secondary вместе с ним. Как Primary: носитель увеличивает Attacks на X."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Orrus power talons",
+      "cost": 45,
+      "slots": 1,
+      "category": "ORRUS CLOSE COMBAT WEAPONS",
+      "list": "SPYRE HUNTER",
+      "profiles": [
+        {
+          "name": "Orrus power talons",
+          "sr": "E",
+          "lr": "-",
+          "str": "S+1",
+          "ap": "-2",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Breaching (6+)",
+              "text": "Если атака ранит и бросок на ранение не меньше X, спасброски брони делать нельзя."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Paired (2)",
+              "text": "Нельзя как Secondary и нельзя Secondary вместе с ним. Как Primary: носитель увеличивает Attacks на X."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Paired Yeld laser gauntlets",
+      "cost": 35,
+      "slots": 1,
+      "category": "YELD WEAPONS",
+      "list": "SPYRE HUNTER",
+      "profiles": [
+        {
+          "name": "Paired Yeld laser gauntlets",
+          "sr": "10”",
+          "lr": "20”",
+          "str": "3",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Rapid Fire (1)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Paired Yeld missile gauntlets",
+      "cost": 65,
+      "slots": 1,
+      "category": "YELD WEAPONS",
+      "list": "SPYRE HUNTER",
+      "profiles": [
+        {
+          "name": "Paired Yeld missile gauntlets",
+          "sr": "15”",
+          "lr": "30”",
+          "str": "5",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Knockback (5+)",
+              "text": "Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1\" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1\" от центра."
+            },
+            {
+              "name": "Rapid Fire (1)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Bio-booster",
+      "cost": 25,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "SPYRE HUNTER",
+      "description": "В первый раз за каждый бой, когда носитель получает состояние Injured, снизьте характеристику Lethality ранящего оружия на 1. Если Lethality стала нулём, бросьте 2 кубика ранений вместо 1, и носитель выбирает, какой применить; второй кубик отбрасывается."
+    },
+    {
+      "name": "Grav chute",
+      "cost": 30,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "SPYRE HUNTER",
+      "description": "Если Fighter с грав-парашютом падает или прыгает вниз, он никогда не получает урон и никогда не становится Suppressed."
+    },
+    {
+      "name": "Photo-goggles",
+      "cost": 35,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "SPYRE HUNTER",
+      "description": "Fighter с фотоочками увеличивает значение X в правиле Visibility (X”) на 9” и может видеть сквозь дымовые облака, поставленные свойством Smoke. Кроме того, если во Fighter с фотоочками попадает оружие со свойством Flash, он получает модификатор −2 к проверке Initiative, чтобы не ослепнуть."
+    },
+    {
+      "name": "Photo-lumens",
+      "cost": 15,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "SPYRE HUNTER",
+      "description": "Увеличьте значение X в правиле Visibility (X”) на 9” для этого Fighter. В этого Fighter всегда можно целиться независимо от правила Visibility (X”)."
+    },
+    {
+      "name": "Respirator",
+      "cost": 15,
+      "slots": 0,
+      "category": "PERSONAL EQUIPMENT",
+      "list": "SPYRE HUNTER",
+      "description": "Когда во Fighter с респиратором попадает оружие со свойством Gas, он получает непробиваемый спасбросок 5+ против этого оружия."
+    },
+    {
+      "name": "Caryatid Prime",
+      "cost": 70,
+      "slots": 0,
+      "category": "PETS",
+      "list": "SPYRE HUNTER"
+    }
+  ]
+}
