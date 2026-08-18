@@ -118,6 +118,8 @@
                 <li><a href="#opyt">Опыт и продвижение<span class="en">XP &amp; Advancements</span></a></li>
                 <li><a href="#sozdanie-bandy">Создание банды<span class="en">Gang Creation</span></a></li>
                 <li><a href="#kampaniya">Структура кампании<span class="en">Using the Campaign</span></a></li>
+                <li><a href="#zavershenie-kampanii">Завершение кампании<span class="en">Campaign Wrap-Up</span></a></li>
+                <li><a href="#zhivuchaya-banda">Живучая банда<span class="en">Enduring Gang</span></a></li>
                 <li><a href="#territorii">Территории<span class="en">Territories</span></a></li>
             </ul>
         </details>
@@ -2051,6 +2053,11 @@
     <p>Непотраченные кредиты добавляются в Stash банды, если банда создана для кампании. Если банда создана для скирмиша, непотраченные кредиты просто теряются. Арбитр может увеличить или уменьшить бюджет.
     <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Any unspent credits are added to the gang's Stash if the gang has been founded for Campaign play. If a gang has been founded for Skirmish play, any unspent credits are simply lost. The Arbitrator may increase or decrease the budget.</p></details></p>
 
+    <h3>Имена и типы моделей<span class="en">Model Names &amp; Types</span></h3>
+    <p>Каждая модель банды имеет имя (ранг в иерархии дома) и Type в записи списка банды. Правила часто ссылаются на Type или Subtype — тогда правило универсально для всех таких моделей, независимо от имени. Иногда правило называет конкретное имя, например «Orlock Gunner» — тогда оно действует только на модели с этим именем.
+    <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Each model available to a gang is of a named Type; this is the name given to that model's rank within the gang hierarchy of their House. In addition, each model will have a Type duly noted in their gang list entry. Very often the rules will refer to models by their Type or Subtype. In such cases, the rule is universal to all such models, regardless of their name. At other times, the rules will refer to a model by their specific name; 'Orlock Gunner,' for example. In these cases, the rule is specific only to models with that name.</p></details></p>
+    <p>Если банда помечена как <strong>Enduring</strong> в <a href="#zavershenie-kampanii">завершении кампании</a>, нового лидера и старых бойцов берут по правилам <a href="#zhivuchaya-banda">основания живучей банды</a>, а не нанимают лидера из списка банды.</p>
+
     <h3>Состав банды<span class="en">Gang Composition</span></h3>
     <ul>
         <li>Должна быть одна модель с подтипом <strong>Leader</strong>.
@@ -2086,7 +2093,7 @@
     <p>У всех моделей может быть несколько карт моделей, каждая со своим набором снаряжения. Дополнительной платы за несколько наборов нет — каждое оружие или предмет wargear покупается и считается только один раз. В бою можно использовать только одну карту модели. Если бой использует случайные модели, все карты этой модели тасуются вместе и одна тянется случайно до сдачи карт экипажа.
     <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">All models can have multiple Model Cards, each representing a different set of equipment. There is no additional cost for having multiple equipment sets &mdash; each individual weapon or item of wargear is only purchased and counted once. Only one of a model's cards can be used for a battle. If a battle uses random models, all of that model's cards are shuffled together and one is drawn at random before any cards are drawn for the crew.</p></details></p>
 
-    <h3>Смерть лидера<span class="en">Death of a Leader</span></h3>
+    <h3 id="smert-lidera">Смерть лидера<span class="en">Death of a Leader</span></h3>
     <p>Если лидер банды погибает, новым лидером становится боец с наивысшим Leadership, выбранный среди бойцов, у которых по приоритету:
     <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">If a gang's Leader is killed, the new Leader is the Fighter with the highest Leadership characteristic, selected from among those Fighters that have, in order of priority:</p></details></p>
     <ol class="seq">
@@ -2188,7 +2195,22 @@
     <p><strong>Простой:</strong> все банды получают 250 кредитов на новое снаряжение из списка банды и/или набор новых моделей в пост-цикловой последовательности этого цикла. Эти кредиты нужно потратить сейчас и нельзя добавить в Stash, но можно дополнить из Stash.
     <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full"><strong>Downtime:</strong> all gangs gain 250 credits to spend on new equipment from their gang equipment list and/or to recruit new models during this Cycle's Post-cycle Sequence. These credits must be spent now and cannot be added to the gang's Stash, but may be supplemented from the Stash.</p></details></p>
 
-    <h3>Завершение кампании<span class="en">Campaign Wrap-Up</span></h3>
+    <h3 id="zavershenie-kampanii">Завершение кампании<span class="en">Campaign Wrap-Up</span></h3>
+    <p>Когда кампания закончена, все игроки вместе проходят Wrap-up: оценивают успехи и неудачи, получают триумфы и готовят модели и банды к будущим кампаниям. Wrap-up делится на три фазы:
+    <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Once a campaign is finished, all players go through the campaign Wrap-up together. This is where players review their successes and failures in the campaign, Triumphs are awarded and models/gangs prepared for future campaigns. The campaign Wrap-up is split into three phases:</p></details></p>
+    <ol class="seq">
+        <li>Сообщить результаты<span class="orig">Report Results</span></li>
+        <li>Вручить триумфы<span class="orig">Award Triumphs</span></li>
+        <li>Роспуск банды<span class="orig">Gang Dissolution</span></li>
+    </ol>
+
+    <h4>1. Сообщить результаты<span class="orig">Report Results</span></h4>
+    <p>Каждый игрок сообщает арбитру, как его банда выступила по каждому триумфу, чтобы арбитр мог их вручить.
+    <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Each player makes sure they report how their gang did against each Triumph to the Arbitrator so they can award Triumphs.</p></details></p>
+
+    <h4>2. Вручить триумфы<span class="orig">Award Triumphs</span></h4>
+    <p>Победу в кампании можно измерить по-разному; само выживание в межбандовской войне уже достижение. На этом шаге арбитр вручает триумфы в зависимости от того, как банды проявили себя за кампанию.
+    <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Victory in the Necromunda campaign can be measured in many ways, although simply surviving the fierce inter-gang warfare is an achievement in itself! During this step, the Arbitrator awards Triumphs to the players depending on how their gangs have performed during the campaign.</p></details></p>
     <div class="table-wrap">
         <table class="compact">
             <caption>Триумфы<span class="orig">Triumphs</span></caption>
@@ -2197,19 +2219,41 @@
                 <tr><td>Доминатор<span class="orig">Dominator</span></td><td>Больше всех территорий в конце кампании.<span class="orig">Most Territories at the end of the campaign.</span></td><td>Банда генерирует и начинает кампанию с дополнительной территорией.
                 <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">The gang generates and starts the campaign with an additional Territory.</p></details></td></tr>
                 <tr><td>Мясник<span class="orig">Slaughterer</span></td><td>Больше всех вражеских моделей выведено из боя за всю кампанию.
-                <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Most enemy models taken Out of Action across the whole campaign.</p></details></td><td>Банда получает 9 дополнительных XP, распределённых между моделями, набранными из старой банды (макс. 3 XP каждая).
-                <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">The gang gains 9 additional XP distributed between models recruited from an old gang (max 3 XP each).</p></details></td></tr>
-                <tr><td>Кредитор<span class="orig">Creditor</span></td><td>Наибольшее богатство в конце кампании.<span class="orig">Highest wealth at the end of the campaign.</span></td><td>Банда начинает со 100 дополнительными кредитами, которые можно потратить при основании.
-                <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">The gang starts with an extra 100 credits which may be spent when founding the gang.</p></details></td></tr>
-                <tr><td>Поджигатель войны<span class="orig">Warmonger</span></td><td>Больше всех боёв за всю кампанию.<span class="orig">Most battles fought across the whole campaign.</span></td><td>Банда начинает с +2 Reputation и может выбрать, быть атакующим или защитником в первом бою.
-                <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">The gang starts with an additional 2 Reputation and may choose to be attacker or defender in their first battle.</p></details></td></tr>
-                <tr><td>Серый кардинал<span class="orig">Powerbroker</span></td><td>Наивысшая Reputation в конце кампании.<span class="orig">Highest Reputation at the end of the campaign.</span></td><td>Банда может начать с одним из этих прихвостней бесплатно: Ammo-Jack, Dome Runner, Hive Watcher, Rogue Doc или Slopper.
-                <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">The gang may start with one of these Hangers-on for free: Ammo-Jack, Dome Runner, Hive Watcher, Rogue Doc or Slopper.</p></details></td></tr>
+                <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Most enemy models taken Out of Action across the whole campaign.</p></details></td><td>После основания банда получает 9 дополнительных XP, распределённых между моделями, набранными из старой банды (макс. 3 XP на модель).
+                <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">After the gang has been founded, the gang gains 9 additional XP that can be distributed between models recruited from an old gang. Only 3 XP can be given to any single model.</p></details></td></tr>
+                <tr><td>Кредитор<span class="orig">Creditor</span></td><td>Наибольшее богатство в конце кампании.<span class="orig">Highest wealth at the end of the campaign.</span></td><td>Банда начинает со 100 дополнительными кредитами в стартовом Stash; их можно потратить при основании.
+                <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">The gang starts with an extra 100 credits which are added to their starting Stash and may be spent when founding the Gang.</p></details></td></tr>
+                <tr><td>Поджигатель войны<span class="orig">Warmonger</span></td><td>Больше всех боёв за всю кампанию.<span class="orig">Most battles fought across the whole campaign.</span></td><td>Банда начинает с +2 Reputation и может выбрать, быть атакующим или защитником в первом бою, независимо от того, кто бросил вызов.
+                <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">The gang starts the campaign with an additional 2 Reputation and can choose to be the attacker or defender in their first battle, regardless of who issued the challenge.</p></details></td></tr>
+                <tr><td>Серый кардинал<span class="orig">Powerbroker</span></td><td>Наивысшая Reputation в конце кампании.<span class="orig">Highest Reputation at the end of the campaign.</span></td><td>Банда может начать с одним из этих прихвостней бесплатно (включая любые опции): Ammo-Jack, Dome Runner, Hive Watcher, Rogue Doc или Slopper.
+                <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">The gang can choose to start the campaign with one of the following Hangers-on for free (including any options): Ammo-Jack, Dome Runner, Hive Watcher, Rogue Doc or Slopper.</p></details></td></tr>
             </tbody>
         </table>
     </div>
     <p>Если несколько банд делят триумф, его получает банда с наибольшим богатством; если снова ничья, триумф получают все. Бонусы триумфов сохраняются только на следующую кампанию этой банды.
-    <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">If multiple gangs are tied for a Triumph, it is awarded to the gang with the highest wealth; if still tied, all tied gangs are awarded it. Triumph benefits are only retained for the gang's next campaign.</p></details></p>
+    <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">If multiple gangs are tied for a Triumph, it is awarded to the gang with the highest wealth. If they are still tied, all tied gangs are awarded the Triumph. These Triumph benefits are only retained for the gang's next campaign.</p></details></p>
+
+    <h4>3. Роспуск банды<span class="orig">Gang Dissolution</span></h4>
+    <p>Ничто на Necromunda не длится вечно, и банды не исключение. В конце кампании банды распадаются: часть бойцов уходит на пенсию, другие основывают свои банды, а лидерство переходит к новым рукам. Даже изменившись, многие банды живут дальше.
+    <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Nothing on Necromunda lasts forever, and gangs are no exception. At the end of a campaign, gangs break apart as some Fighters retire, others go on to create their own gangs, and the Leadership of the gang passes on to new hands. However, even though they have changed, many gangs live on.</p></details></p>
+    <p>Если игроки хотят, они могут пометить банду как <strong>Enduring</strong> и выбрать один из заработанных триумфов, чтобы получить бонус в следующей кампании.
+    <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">If players wish, they may mark a gang as enduring and select one of the Triumphs the gang earned to grant them a bonus in the next campaign they take part in.</p></details></p>
+
+    <h3 id="zhivuchaya-banda">Основание живучей банды<span class="en">Founding an Enduring Gang</span></h3>
+    <p>После завершения кампании банду можно пометить как Enduring в Wrap-up. При основании новой банды для кампании игроки могут взять ранее контролируемую Enduring-банду и проследить, что происходит со следующим поколением.
+    <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Once a gang has completed a Campaign, it may be marked as Enduring in the Campaign Wrap-up. When founding a new gang for a Campaign, players may use an Enduring gang they have previously controlled and explore what happens to the next generation.</p></details></p>
+
+    <h4>Лидер банды<span class="orig">Gang Leader</span></h4>
+    <p>Первый шаг — нанять нового лидера. Предыдущий лидер навсегда ушёл на пенсию: его история рассказана, и кто-то новый внутри банды берёт бразды. Enduring-банда <strong>не может</strong> нанять лидера из своего списка банды; вместо этого выбирается боец из предыдущей итерации. Его нанимают за Credit Cost со всеми Lasting Injuries, XP, weapons, wargear и skills. Затем выполняются все шаги из <a href="#smert-lidera">Смерть лидера</a>.
+    <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">The first step is to hire your gang's new Leader. The gang's previous Leader has permanently retired, their story told, and someone new within the gang has taken over the reins. An Enduring gang may not hire a Leader from their gang list; instead a Fighter from the previous iteration of the gang must be selected to be the gang's new Leader &mdash; hire the Fighter for their Credit Cost with all Lasting Injuries, XP, weapons, wargear and skills carrying over. They then follow all of the steps outlined in Death of a Leader.</p></details></p>
+
+    <h4>Эффекты триумфов<span class="orig">Triumph Effects</span></h4>
+    <p>Если банда заработала триумфы в прошлой кампании, выбирается один; бонус для следующей кампании указан в таблице выше. Эти бонусы сохраняются только на следующую кампанию банды.
+    <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">If the gang earned any Triumphs in the last Campaign they took part in, they select one and gain a bonus for the next Campaign based on the selected Triumph. These Triumph benefits are only retained for the gang's next campaign.</p></details></p>
+
+    <h4>Перенанять модели<span class="orig">Rehire Gang Models</span></h4>
+    <p>Помимо найма новых моделей, Enduring-банда при создании может нанять любые модели предыдущей итерации за их Credits Value со всеми Lasting Injuries, XP, weapons, wargear и skills.
+    <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">In addition to hiring new models, an Enduring gang may hire any models from the previous iteration of the gang at gang creation for their Credits Value with all Lasting Injuries, XP, weapons, wargear and skills carrying over.</p></details></p>
 
     <a class="top-link" href="#top">&uarr; наверх</a>
 </section>
@@ -2763,8 +2807,8 @@
         <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Place either the 3" or 5" Blast marker centred on the targeted model. If the Hit roll succeeds, the template stays where it is. If it misses, scatter it D6" in a random direction determined by the Scatter dice, stopping if it hits impassable terrain or would go off the battlefield. If a Hit symbol and a 1 are rolled on the Scatter dice, the shot misfired &mdash; centre the marker on the firing model. Any model with their base at least partially under the marker suffers one automatic Hit. If a weapon has both Blast and Rapid Fire (X), resolve the first Blast marker as usual and scatter additional markers from its final location.</p></details></dd>
 
         <dt>Поджигание (X+)<span class="orig">Blaze (X+)</span></dt>
-        <dd>Если бросок на ранение не меньше X, цель получает дополнительное попадание с тем же профилем, даже если первое не ранило. Это дополнительное попадание бросает на ранение отдельно и не может вызвать дальнейших дополнительных попаданий. Оружие никогда не получает пользу более чем от одного экземпляра этого свойства.
-        <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">If the Wound roll is at least X, the target suffers an additional Hit with the same profile as the first, even if the first fails to Wound. This additional Hit rolls to Wound separately and cannot cause further additional Hits. A weapon may never benefit from more than one instance of this trait.</p></details></dd>
+        <dd>Если бросок на ранение не меньше X, цель получает дополнительное попадание с тем же профилем, даже если первое не ранило. Это дополнительное попадание бросает на ранение отдельно и не может вызвать дальнейших дополнительных попаданий. Оружие никогда не получает пользу более чем от одного экземпляра этого свойства; если свойство указано несколько раз, используется экземпляр с наименьшим X.
+        <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">If the Wound roll is at least X, the target suffers an additional Hit with the same profile as the first, even if the first fails to Wound. This additional Hit rolls to Wound separately and cannot cause further additional Hits. A weapon may never benefit from more than one instance of this trait; if a weapon has this trait multiple times, only the one with the lowest value of X is used.</p></details></dd>
 
         <dt>Пробитие (X+)<span class="orig">Breaching (X+)</span></dt>
         <dd>Если атака успешно ранит и бросок на ранение не меньше X, спасброски брони против атаки делать нельзя.
@@ -2787,8 +2831,8 @@
         <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A Wounded model loses X Wounds rather than the usual one. If this results in Injury dice being rolled, the number rolled equals the Lethality characteristic of the weapon, regardless of the number of Wounds lost.</p></details></dd>
 
         <dt>Волочение<span class="orig">Drag</span></dt>
-        <dd>Если модель получила попадание, но не выведена из боя, атакующий может попытаться подтянуть цель ближе. Бросьте D6; если результат равен Strength цели или выше, цель волокут на D3" прямо к атакующему, останавливаясь при столкновении с местностью. Это движение может вызвать падение. Любые модели, оказавшиеся в пределах 1" от врага, сдвигаются на кратчайшее расстояние, чтобы стать Engaged.
-        <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">If a model is Hit but not taken Out of Action, the attacker can attempt to drag the target closer. Roll a D6; if the score is equal to or higher than the target's Strength, the target is dragged D3" directly towards the attacker, stopping if they hit terrain. This movement can cause models to fall. Any models that end within 1" of an enemy are moved the shortest distance possible to be Engaged.</p></details></dd>
+        <dd>Если модель получила попадание, но не выведена из боя, атакующий может попытаться подтянуть цель ближе после разрешения атаки. Бросьте D6; если результат равен Strength цели или выше, цель волокут на D3" прямо к атакующему, останавливаясь при столкновении с местностью. Если она врезается в другую модель (кроме атакующего), обе сдвигаются на оставшуюся дистанцию прямо к атакующему. Это движение может вызвать падение. Затем любые модели, оказавшиеся в пределах 1" от врага, сдвигаются на кратчайшее расстояние, чтобы стать Engaged.
+        <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">If a model is Hit by a weapon with the Drag trait but not taken Out of Action, the attacker can attempt to drag the target closer after the attack has been resolved. If they do, roll a D6. If the score is equal to or higher than the target's Strength characteristic, the target is dragged D3" directly towards the attacker, stopping if they hit any terrain. If they move into another model (other than the attacker), both models are moved the remaining distance directly towards the attacker. This movement can cause models to fall. Once this movement has been resolved, any models that are now within 1" of an enemy model are moved the shortest distance possible to be Engaged with that model.</p></details></dd>
 
         <dt>Вспышка<span class="orig">Flash</span></dt>
         <dd>Бросок на ранение не делается. Вместо этого цель делает проверку Initiative; при провале получает состояние Blind. Слепая модель теряет маркер Ready (или не получает его в начале следующего раунда). До следующей активации любые её атаки ближнего боя попадают только на натуральную 6.
@@ -2807,12 +2851,12 @@
         <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A ranged weapon with this trait can only be fired using the Braced Shot action. A close combat weapon with this trait may not be selected as a Secondary weapon, and a Secondary weapon may not be used alongside it.</p></details></dd>
 
         <dt>Независимое<span class="orig">Independent</span></dt>
-        <dd>Не стреляет носитель. Вместо этого оно стреляет в дополнение к другому оружию всякий раз, когда носитель делает дальнюю атаку, и может целиться в другую модель. Все попадания разрешаются с BS 4+, который нельзя модифицировать навыками, снаряжением или особыми правилами носителя.
-        <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Cannot be fired by the bearer. Instead, it is fired in addition to other weapons whenever the bearer performs a ranged attack, and may target a different model. All hits are resolved with a BS of 4+, which cannot be modified by the bearer's skills, equipment or special rules.</p></details></dd>
+        <dd>Не стреляет носитель. Вместо этого оно стреляет в дополнение к другому оружию всякий раз, когда носитель делает дальнюю атаку, и может целиться в другую модель. Все попадания разрешаются с BS 4+, который нельзя модифицировать навыками, снаряжением или особыми правилами носителя и который <strong>не получает пользу от Aimed Shot</strong>.
+        <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Cannot be fired by the bearer. Instead, it is fired in addition to other weapons whenever the bearer performs a ranged attack, and may target a different model. All hits are resolved with a BS of 4+ (this cannot be modified by the bearer's skills, equipment or special rules and does not benefit from the Aimed Shot action).</p></details></dd>
 
         <dt>Отбрасывание (X+)<span class="orig">Knockback (X+)</span></dt>
-        <dd>Если оружие попадает в бойца и бросок попадания не меньше X, бойца сдвигают на 1" прямо от атакующего. Если это сбросит его с уступа, проверяйте падение. Это также может перестать делать модели Engaged. С Blast-оружием бросьте D6 за каждого попавшего бойца после определения конечной позиции маркера; на результат не меньше X их сдвигают на 1" прямо от центра маркера.
-        <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">If the weapon hits a Fighter and the Hit roll is at least X, the Fighter is moved 1" directly away from the attacker. If this would cause them to fall off a ledge, they test for falling. This can also cause models to no longer be Engaged. With a Blast weapon, roll a D6 for each Fighter Hit after the marker's final position is determined; on a result of at least X they are moved 1" directly away from the centre of the marker.</p></details></dd>
+        <dd>Если оружие попадает в бойца и бросок попадания не меньше X, бойца сдвигают на 1" прямо от атакующего. Если это сбросит его с уступа, проверяйте падение. Это также может перестать делать модели Engaged и лишить их возможности ответить в более поздних шагах Initiative. Если боец не может отойти из-за непроходимой местности, края поля или потому что сдвиг поставил бы его в пределах 1" от вражеского бойца, его не двигают. С Blast-оружием бросьте D6 за каждого попавшего бойца после определения конечной позиции маркера; на результат не меньше X их сдвигают на 1" прямо от центра маркера (с теми же ограничениями на движение).
+        <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">If the weapon hits a Fighter and the Hit roll is at least X, the Fighter is moved 1" directly away from the attacker. If this would cause them to fall off a ledge, they test for falling. This can also cause models to no longer be Engaged and so be unable to attack back during later Initiative steps. If the Fighter cannot move back due to either impassable terrain, the battlefield edge or the move putting them within 1" of an enemy Fighter, they are not moved. With a Blast weapon, roll a D6 for each Fighter Hit after the marker's final position is determined; on a result of at least X they are moved 1" directly away from the centre of the marker.</p></details></dd>
 
         <dt>Пика<span class="orig">Lance</span></dt>
         <dd>Пока экипировано бойцом с подтипом Mounted, оружие увеличивает Strength на 1 для любых атак как часть Charge.
