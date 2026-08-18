@@ -744,14 +744,6 @@ def build_gang_db(section_lines, blocks, gid):
     return store
 
 
-INCOMPLETE_ITEMS = {
-    'servo-claw': (
-        'Профиль отсутствует: в таблице основных правил у этой строки '
-        'потерялось название оружия. Правила Servo-claw неполные — '
-        'сверьтесь с книгой, не полагайтесь на эту страницу.'
-    ),
-}
-
 # Одни и те же предметы в разных книгах названы по-разному.
 ALIASES = {
     'incendiary grenades': 'incendiary charges',
@@ -1036,13 +1028,7 @@ def render_equipment(items, stores):
                  '<span class="equip-price">%s cr</span>'
                  % (esc(it['name']), esc(it['price'])))
         entry = lookup_item(it['name'], *stores)
-        warn = INCOMPLETE_ITEMS.get(norm_item(it['name']))
-        if warn:
-            extra = ' class="sub equip-incomplete"' if it['sub'] else ' class="equip-incomplete"'
-            out.append('<li%s><span class="equip-plain">%s</span>'
-                       '<span class="equip-warn">Неполно. %s</span></li>'
-                       % (extra, label, esc(warn)))
-        elif entry:
+        if entry:
             out.append('<li%s><details class="equip-item">'
                        '<summary>%s</summary>'
                        '<div class="equip-profile">%s</div>'

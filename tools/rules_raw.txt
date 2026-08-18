@@ -3365,7 +3365,7 @@ Two-handed hammer* E - S+1 - 3 Concussive (6+), Heavy, Melee,
 Unwieldy
 40 1
 REPURPOSED TOOLS SR LR Str AP L Traits Creds TP
-E - S+2 - 2 Melee, Unwieldy 40 1
+Servo-claw E - S+2 - 2 Melee, Unwieldy 40 1
 SHOCK WEAPONS SR LR Str AP L Traits Creds TP
 Shock baton E - S - 1 Melee, Parry, Shock (6+) 20 1
 Shock stave E - S+1 - 1 Melee, Shock (5+) 25 1
