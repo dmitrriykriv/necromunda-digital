@@ -69,7 +69,21 @@ export const FACTIONS: Faction[] = [
   { id: 'venator', name: 'Венаторы' },
 ];
 
-const HEAVY = /Leader|Champion|Brute|Hanger-on/i;
+const RESTRICTED = /Champion|Brute|Hanger-on/i;
+const LEADER = /Leader/i;
+const PET = /\bPet\b/i;
+const FOUNDING_BUDGET = 1000;
+const WEAPON_SLOT_MAX = 3;
+
+/** Gang lists that replace the core Champion/Brute/Hanger-on ratio. */
+const SKIP_RATIO = new Set([
+  'blades-of-the-matriarch',
+  'forge-smelters',
+  'spyre-hunting',
+]);
+
+/** Gang lists that also skip the single-Leader requirement. */
+const SKIP_LEADER = new Set(['blades-of-the-matriarch', 'forge-smelters']);
 
 const CYRILLIC: Record<string, string> = {
   а: 'a',
@@ -115,7 +129,7 @@ export function emptyRoster(): Roster {
     factionName: '',
     notes: '',
     reputation: 1,
-    stash: 0,
+    stash: FOUNDING_BUDGET,
     fighters: [],
     updatedAt: '',
   };
@@ -136,6 +150,39 @@ export function emptyFighter(isLeader: boolean): Fighter {
 
 export function emptyGear(): Equipment {
   return { name: '', cost: 0, slots: 1, extras: [] };
+}
+
+export function cloneFighter(fighter: Fighter): Fighter {
+  return {
+    ...fighter,
+    id: uid('f'),
+    subtypes: [...fighter.subtypes],
+    skills: [...fighter.skills],
+    equipment: fighter.equipment.map((item) => ({
+      ...item,
+      extras: item.extras ? [...item.extras] : [],
+    })),
+  };
+}
+
+export function copyRosterName(name: string): string {
+  const base = (name || '').trim() || 'Ростер';
+  const match = /^(.*) \(копия(?: (\d+))?\)$/.exec(base);
+  if (!match) return `${base} (копия)`;
+  const n = match[2] ? Number(match[2]) + 1 : 2;
+  return `${match[1]} (копия ${n})`;
+}
+
+export function cloneRoster(roster: Roster): Roster {
+  const name = copyRosterName(roster.name);
+  const stem = slugify(roster.id || roster.name || 'roster').slice(0, 48);
+  return {
+    ...roster,
+    id: `${stem}-${uid('c')}`,
+    name,
+    fighters: (roster.fighters ?? []).map(cloneFighter),
+    updatedAt: '',
+  };
 }
 
 export function uid(prefix = 'f'): string {
@@ -162,6 +209,28 @@ export function gangWealth(roster: Pick<Roster, 'fighters' | 'stash'>): number {
   return gangRating(roster) + (Number(roster.stash) || 0);
 }
 
+/** Soft credit cap for list-building. 0 means no cap. */
+export function creditLimit(roster: Pick<Roster, 'stash'>): number {
+  return Math.max(0, Number(roster.stash) || 0);
+}
+
+/** Remaining credits against the cap, or null if no cap is set. */
+export function creditsRemaining(roster: Pick<Roster, 'fighters' | 'stash'>): number | null {
+  const limit = creditLimit(roster);
+  if (limit <= 0) return null;
+  return limit - gangRating(roster);
+}
+
+/** Types and gear come from the house list — nothing to pick without a faction. */
+export function canAddFighters(roster: Pick<Roster, 'faction'>): boolean {
+  return Boolean(roster.faction);
+}
+
+/** Changing house would leave illegal types and gear. Empty roster can still switch. */
+export function canChangeFaction(roster: Pick<Roster, 'fighters'>): boolean {
+  return (roster.fighters ?? []).length === 0;
+}
+
 export function slugify(text: string): string {
   const mapped = (text || '')
     .toLowerCase()
@@ -183,24 +252,59 @@ export function splitList(text: string): string[] {
     .filter(Boolean);
 }
 
-export function rosterWarnings(roster: Pick<Roster, 'fighters'>): string[] {
+function hasSubtype(fighter: Fighter, pattern: RegExp): boolean {
+  return (fighter.subtypes || []).some((item) => pattern.test(item));
+}
+
+export function rosterWarnings(
+  roster: Pick<Roster, 'fighters'> & Partial<Pick<Roster, 'faction' | 'reputation' | 'stash'>>,
+): string[] {
   const fighters = roster.fighters ?? [];
-  const leaders = fighters.filter((fighter) =>
-    (fighter.subtypes || []).some((item) => /Leader/i.test(item)),
-  );
-  const heavy = fighters.filter((fighter) =>
-    (fighter.subtypes || []).some((item) => HEAVY.test(item)),
-  );
-  const rest = fighters.length - heavy.length;
+  const counted = fighters.filter((fighter) => !hasSubtype(fighter, PET));
+  const faction = roster.faction ?? '';
   const messages: string[] = [];
-  if (fighters.length && leaders.length !== 1) {
-    messages.push(`Нужен ровно один Leader (сейчас ${leaders.length}).`);
+
+  if (counted.length && !SKIP_LEADER.has(faction)) {
+    const leaders = counted.filter((fighter) => hasSubtype(fighter, LEADER));
+    if (leaders.length !== 1) {
+      messages.push(`Нужен ровно один Leader (сейчас ${leaders.length}).`);
+    }
   }
-  if (heavy.length > rest) {
+
+  if (counted.length && !SKIP_RATIO.has(faction)) {
+    const restricted = counted.filter((fighter) => hasSubtype(fighter, RESTRICTED));
+    const rest = counted.length - restricted.length;
+    if (restricted.length > rest) {
+      messages.push(
+        'Моделей с Champion, Brute или Hanger-on не должно быть больше остальных (Leader считается в остальных; питомцы не считаются).',
+      );
+    }
+  }
+
+  if (roster.reputation !== undefined && roster.reputation < 1) {
+    messages.push('Reputation не может быть ниже 1.');
+  }
+
+  const rating = gangRating({ fighters });
+  const limit = creditLimit({ stash: roster.stash ?? 0 });
+  if (limit > 0 && fighters.length && rating > limit) {
     messages.push(
-      'Чемпионов, громил и прихвостней не должно быть больше остальных моделей.',
+      `Рейтинг ${rating} превышает лимит ${limit} кредитов (остаток ${limit - rating}).`,
     );
   }
+
+  for (const fighter of fighters) {
+    const slots = (fighter.equipment ?? [])
+      .filter((item) => item.name)
+      .reduce((sum, item) => sum + (Number(item.slots) || 0), 0);
+    if (slots > WEAPON_SLOT_MAX) {
+      const label = fighter.name || fighter.type || 'Боец';
+      messages.push(
+        `${label}: максимум три слота оружия (сейчас ${slots}; гранаты — wargear).`,
+      );
+    }
+  }
+
   return messages;
 }
 

@@ -1,5 +1,14 @@
 import type { ReactNode } from 'react';
-import { equipmentGroups, findGear, findType, gearCost, type FactionCatalog } from '@shared/catalog';
+import { Copy } from 'lucide-react';
+import {
+  equipmentGroups,
+  findGear,
+  findType,
+  gearCost,
+  visibleProfiles,
+  type FactionCatalog,
+} from '@shared/catalog';
+import { WeaponProfileTable } from '@/components/roster/WeaponProfileTable';
 import { fighterCost, splitList, type Equipment, type Fighter } from '@shared/roster';
 import { useFactionCatalog } from '@/api/hooks';
 import { Badge } from '@/components/ui/badge';
@@ -33,6 +42,7 @@ export function FighterCard({ fighter }: { fighter: Fighter }) {
   const updateFighter = useRosterStore((state) => state.updateFighter);
   const removeFighter = useRosterStore((state) => state.removeFighter);
   const addGear = useRosterStore((state) => state.addGear);
+  const copyFighter = useRosterStore((state) => state.copyFighter);
   const updateGear = useRosterStore((state) => state.updateGear);
   const removeGear = useRosterStore((state) => state.removeGear);
 
@@ -64,7 +74,10 @@ export function FighterCard({ fighter }: { fighter: Fighter }) {
   }
 
   return (
-    <Card className="mb-3 border-l-[3px] border-l-primary">
+    <Card
+      id={`fighter-${fighter.id}`}
+      className="mb-3 scroll-mt-36 border-l-[3px] border-l-primary"
+    >
       <CardHeader className="flex flex-row items-center justify-between space-y-0">
         <h4 className="text-sm font-semibold uppercase tracking-wide text-accent-foreground">
           {fighter.name || 'Боец'}
@@ -183,8 +196,33 @@ export function FighterCard({ fighter }: { fighter: Fighter }) {
             ))}
           </div>
           <div className="mt-3 flex flex-wrap gap-2">
-            <Button type="button" variant="outline" size="sm" onClick={() => addGear(fighter.id)}>
+            <Button
+              type="button"
+              variant="outline"
+              size="sm"
+              disabled={!faction}
+              title={faction ? undefined : 'Сначала выберите банду'}
+              onClick={() => addGear(fighter.id)}
+            >
               + предмет
+            </Button>
+            <Button
+              type="button"
+              variant="outline"
+              size="sm"
+              onClick={() => {
+                const id = copyFighter(fighter.id);
+                if (!id) return;
+                window.setTimeout(() => {
+                  document.getElementById(`fighter-${id}`)?.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start',
+                  });
+                }, 0);
+              }}
+            >
+              <Copy />
+              Скопировать бойца
             </Button>
             <Button
               type="button"
@@ -226,6 +264,7 @@ function GearRow({
   const extra = item.name && !names.includes(item.name) ? item.name : '';
   const def = findGear(catalog, item.name);
   const extras = item.extras ?? [];
+  const profiles = visibleProfiles(def, extras);
 
   function applyName(name: string) {
     const next = findGear(catalog, name);
@@ -331,6 +370,7 @@ function GearRow({
           })}
         </div>
       ) : null}
+      {profiles.length > 0 ? <WeaponProfileTable profiles={profiles} /> : null}
     </div>
   );
 }

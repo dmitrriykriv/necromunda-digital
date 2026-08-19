@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react';
 import { Printer } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useFactionCatalog } from '@/api/hooks';
@@ -9,7 +10,26 @@ export function PrintCardsPage() {
   const roster = useRosterStore((state) => state.roster);
   const catalogQuery = useFactionCatalog(roster.faction);
   const catalog = catalogQuery.data;
-  const fighters = roster.fighters.filter((fighter) => fighter.name || fighter.type || fighter.equipment.length);
+  const fighters = roster.fighters.filter(
+    (fighter) => fighter.name || fighter.type || fighter.equipment.length,
+  );
+  const [traitGlossary, setTraitGlossary] = useState(true);
+  const pendingPrint = useRef(false);
+
+  useEffect(() => {
+    if (!pendingPrint.current) return;
+    pendingPrint.current = false;
+    window.print();
+  }, [traitGlossary]);
+
+  function printCards(withGlossary: boolean) {
+    if (traitGlossary === withGlossary) {
+      window.print();
+      return;
+    }
+    pendingPrint.current = true;
+    setTraitGlossary(withGlossary);
+  }
 
   return (
     <div className="min-h-screen bg-background">
@@ -28,10 +48,35 @@ export function PrintCardsPage() {
               {fighters.length ? ` · ${fighters.length} карт` : ''}
             </p>
           </div>
-          <Button type="button" onClick={() => window.print()} disabled={fighters.length === 0}>
-            <Printer />
-            Печать
-          </Button>
+          <div className="flex flex-col items-stretch gap-2 sm:items-end">
+            <label className="flex cursor-pointer items-center gap-2 text-sm text-muted-foreground">
+              <input
+                type="checkbox"
+                className="size-4 accent-primary"
+                checked={traitGlossary}
+                onChange={(event) => setTraitGlossary(event.target.checked)}
+              />
+              Расшифровки свойств оружия
+            </label>
+            <div className="flex flex-wrap gap-2">
+              <Button
+                type="button"
+                onClick={() => printCards(true)}
+                disabled={fighters.length === 0}
+              >
+                <Printer />
+                Печать
+              </Button>
+              <Button
+                type="button"
+                variant="outline"
+                onClick={() => printCards(false)}
+                disabled={fighters.length === 0}
+              >
+                Без расшифровок
+              </Button>
+            </div>
+          </div>
         </div>
       </header>
 
@@ -50,6 +95,7 @@ export function PrintCardsPage() {
               fighter={fighter}
               roster={roster}
               catalog={catalog}
+              showTraitGlossary={traitGlossary}
             />
           ))
         )}

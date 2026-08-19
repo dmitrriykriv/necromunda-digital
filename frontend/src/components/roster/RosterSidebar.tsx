@@ -1,7 +1,14 @@
-import { Loader2, Plus, Trash2 } from 'lucide-react';
+import { Copy, Loader2, Plus, Trash2 } from 'lucide-react';
+import { cloneRoster } from '@shared/roster';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
-import { fetchRoster, useApiHealth, useDeleteRoster, useRosterIndex } from '@/api/hooks';
+import {
+  fetchRoster,
+  useApiHealth,
+  useDeleteRoster,
+  useRosterIndex,
+  useSaveRoster,
+} from '@/api/hooks';
 import { handbook } from '@/lib/links';
 import { useRosterStore } from '@/store/rosterStore';
 
@@ -11,8 +18,18 @@ export function RosterSidebar() {
   const setRoster = useRosterStore((state) => state.setRoster);
   const health = useApiHealth();
   const index = useRosterIndex();
+  const save = useSaveRoster();
   const remove = useDeleteRoster();
   const online = health.isSuccess;
+
+  async function copySaved(file: string) {
+    try {
+      const data = await fetchRoster(file);
+      await save.mutateAsync(cloneRoster(data));
+    } catch {
+      /* список обновится при следующем удачном сохранении */
+    }
+  }
 
   return (
     <aside className="border-b border-border bg-card p-4 md:sticky md:top-0 md:h-screen md:overflow-y-auto md:border-b-0 md:border-r">
@@ -21,8 +38,8 @@ export function RosterSidebar() {
       </h2>
       <p className="mb-3 text-xs leading-relaxed text-muted-foreground">
         {online
-          ? 'Сервер запущен: «Сохранить» пишет JSON в папку rosters/.'
-          : 'Нет связи с API. Запустите npm run dev в корне проекта — черновик всё равно хранится в браузере.'}
+          ? 'Список сохранённых банд. «Сохранить» записывает текущую сюда.'
+          : 'Список файлов недоступен. Правки остаются в этом браузере; можно скачать копию.'}
       </p>
       <Button type="button" variant="outline" className="mb-3 w-full" onClick={() => reset()}>
         <Plus />
@@ -36,7 +53,7 @@ export function RosterSidebar() {
           </li>
         )}
         {index.data?.rosters.length === 0 && (
-          <li className="text-sm text-muted-foreground">В папке пока нет файлов.</li>
+          <li className="text-sm text-muted-foreground">Пока нет сохранённых банд.</li>
         )}
         {index.data?.rosters.map((item) => (
           <li key={item.file} className="flex gap-1">
@@ -59,21 +76,35 @@ export function RosterSidebar() {
               </span>
             </button>
             {online && (
-              <Button
-                type="button"
-                variant="destructive"
-                size="icon"
-                title="Удалить файл"
-                onClick={() => {
-                  remove.mutate(item.file, {
-                    onSuccess: () => {
-                      if (currentFile === item.file) reset();
-                    },
-                  });
-                }}
-              >
-                <Trash2 />
-              </Button>
+              <>
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="icon"
+                  title="Скопировать ростер"
+                  disabled={save.isPending}
+                  onClick={() => {
+                    void copySaved(item.file);
+                  }}
+                >
+                  <Copy />
+                </Button>
+                <Button
+                  type="button"
+                  variant="destructive"
+                  size="icon"
+                  title="Удалить из списка"
+                  onClick={() => {
+                    remove.mutate(item.file, {
+                      onSuccess: () => {
+                        if (currentFile === item.file) reset();
+                      },
+                    });
+                  }}
+                >
+                  <Trash2 />
+                </Button>
+              </>
             )}
           </li>
         ))}

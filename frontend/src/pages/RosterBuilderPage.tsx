@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { Download, Plus, Printer, Save, Upload } from 'lucide-react';
+import { Download, Printer, Save, Upload } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { rosterWarnings, slugify, type Roster } from '@shared/roster';
-import { useSaveRoster } from '@/api/hooks';
+import { useApiHealth, useSaveRoster } from '@/api/hooks';
 import { FighterCard } from '@/components/roster/FighterCard';
 import { GangMetaForm } from '@/components/roster/GangMetaForm';
 import { RosterSidebar } from '@/components/roster/RosterSidebar';
@@ -14,11 +14,13 @@ import { useRosterStore } from '@/store/rosterStore';
 
 export function RosterBuilderPage() {
   const roster = useRosterStore((state) => state.roster);
+  const currentFile = useRosterStore((state) => state.currentFile);
   const setRoster = useRosterStore((state) => state.setRoster);
-  const addFighter = useRosterStore((state) => state.addFighter);
   const save = useSaveRoster();
+  const health = useApiHealth();
   const [status, setStatus] = useState<{ text: string; ok?: boolean } | null>(null);
   const warnings = rosterWarnings(roster);
+  const offline = health.isFetched && !health.isSuccess;
 
   function payload(): Roster {
     const name = roster.name.trim();
@@ -37,25 +39,44 @@ export function RosterBuilderPage() {
       setStatus({ text: 'Сначала укажите название банды.', ok: false });
       return;
     }
+    if (offline) {
+      setStatus({
+        text: 'Сервер недоступен. Список слева не обновится — можно скачать копию.',
+        ok: false,
+      });
+      return;
+    }
     try {
       const result = await save.mutateAsync(data);
       setRoster(result.roster, result.file);
-      setStatus({ text: `Записано в rosters/${result.file}`, ok: true });
+      setStatus({ text: `Сохранено в список: ${result.file}`, ok: true });
     } catch {
-      downloadRoster(data);
       setStatus({
-        text: 'API недоступен — JSON скачан. Положите файл в папку rosters/.',
+        text: 'Не удалось записать в список. Можно скачать копию и открыть её позже.',
         ok: false,
       });
     }
+  }
+
+  function onExport() {
+    const data = payload();
+    if (!data.name) {
+      setStatus({ text: 'Сначала укажите название банды.', ok: false });
+      return;
+    }
+    downloadRoster(data);
+    setStatus({ text: 'Скачана копия JSON — это запасной файл, не запись в список.', ok: true });
   }
 
   async function onOpenFile(file: File | undefined) {
     if (!file) return;
     try {
       const data = (await readJsonFile(file)) as Roster;
-      setRoster(data, file.name);
-      setStatus({ text: `Загружен ${file.name}`, ok: true });
+      setRoster(data, '');
+      setStatus({
+        text: `Открыт ${file.name}. «Сохранить» добавит банду в список слева.`,
+        ok: true,
+      });
     } catch (error) {
       setStatus({
         text: error instanceof Error ? error.message : 'Это не JSON ростера.',
@@ -63,6 +84,15 @@ export function RosterBuilderPage() {
       });
     }
   }
+
+  const hint = status?.text
+    ?? (save.isPending
+      ? 'Сохранение…'
+      : offline
+        ? 'Черновик в этом браузере. Сервер недоступен — список слева не открыть, можно скачать копию.'
+        : currentFile
+          ? `В списке: ${currentFile}`
+          : 'Черновик в этом браузере. «Сохранить» добавит банду в список слева.');
 
   return (
     <div className="min-h-screen">
@@ -77,7 +107,7 @@ export function RosterBuilderPage() {
           Necromunda
         </h1>
         <p className="mt-2 text-sm text-muted-foreground">
-          Составить ростер — React-прототип, JSON в папке <code>rosters/</code>
+          Составить ростер — бойцы, снаряжение и рейтинг
         </p>
       </header>
 
@@ -92,25 +122,18 @@ export function RosterBuilderPage() {
           )}
           <GangMetaForm />
           <div className="mb-2 flex flex-wrap gap-2">
-            <Button type="button" onClick={onSave} disabled={save.isPending}>
+            <Button type="button" onClick={() => void onSave()} disabled={save.isPending || offline}>
               <Save />
-              Сохранить в папку
+              Сохранить
             </Button>
-            <Button
-              type="button"
-              variant="outline"
-              onClick={() => {
-                downloadRoster(payload());
-                setStatus({ text: 'Файл скачан.', ok: true });
-              }}
-            >
+            <Button type="button" variant="outline" onClick={onExport}>
               <Download />
-              Скачать JSON
+              Скачать копию
             </Button>
             <Button type="button" variant="outline" asChild>
               <label className="cursor-pointer">
                 <Upload />
-                Открыть JSON
+                Открыть файл
                 <input
                   type="file"
                   accept="application/json,.json"
@@ -121,10 +144,6 @@ export function RosterBuilderPage() {
                   }}
                 />
               </label>
-            </Button>
-            <Button type="button" variant="outline" onClick={() => addFighter()}>
-              <Plus />
-              Добавить бойца
             </Button>
             <Button type="button" variant="outline" asChild>
               <Link to="/print">
@@ -142,11 +161,13 @@ export function RosterBuilderPage() {
                   : 'text-muted-foreground'
             }`}
           >
-            {status?.text ?? (save.isPending ? 'Сохранение…' : '')}
+            {hint}
           </p>
           {roster.fighters.length === 0 ? (
             <p className="italic text-muted-foreground">
-              Бойцов пока нет. Добавьте лидера, затем чемпионов и гангеров.
+              {roster.faction
+                ? 'Бойцов пока нет. Добавьте лидера, затем чемпионов и гангеров.'
+                : 'Сначала выберите банду — от неё зависят типы бойцов и снаряжение.'}
             </p>
           ) : (
             roster.fighters.map((fighter) => (
@@ -158,8 +179,9 @@ export function RosterBuilderPage() {
 
       <footer className="border-t border-border px-6 py-8 text-center text-sm text-muted-foreground">
         <p>
-          Каталог оружия банд пока не подключён: стоимость и снаряжение вводятся вручную.
-          Готовые ростеры — отдельные JSON в <code>rosters/</code>.
+          Типы бойцов и снаряжение подставляются из списка выбранной банды.
+          «Сохранить» пишет банду в список слева; черновик в этом браузере не пропадает
+          при обновлении страницы.
         </p>
         <p className="mt-2">
           <a href={handbook.home} className="text-accent-foreground hover:underline">

@@ -1,6 +1,13 @@
 import { describe, expect, it } from 'vitest';
 import { namesMatch, visibleProfiles, type EquipmentDef } from '@shared/catalog';
 import {
+  canAddFighters,
+  canChangeFaction,
+  cloneFighter,
+  cloneRoster,
+  copyRosterName,
+  creditLimit,
+  creditsRemaining,
   fighterCost,
   gangRating,
   normalizeRoster,
@@ -36,6 +43,27 @@ describe('roster math', () => {
     expect(fighterCost(sample.fighters[0])).toBe(315);
   });
 
+  it('clones a fighter with a new id and copied gear', () => {
+    const copy = cloneFighter(sample.fighters[0]);
+    expect(copy.id).not.toBe(sample.fighters[0].id);
+    expect(copy.name).toBe('Мальхус');
+    expect(copy.equipment).toEqual(sample.fighters[0].equipment);
+    expect(copy.equipment).not.toBe(sample.fighters[0].equipment);
+    copy.equipment[0].name = 'changed';
+    expect(sample.fighters[0].equipment[0].name).toBe('flamer');
+  });
+
+  it('clones a roster with a new id and copy name', () => {
+    const copy = cloneRoster(sample);
+    expect(copy.id).not.toBe(sample.id);
+    expect(copy.name).toBe('Гимн Пепельной часовни (копия)');
+    expect(copy.fighters).toHaveLength(1);
+    expect(copy.fighters[0].id).not.toBe(sample.fighters[0].id);
+    expect(copy.fighters[0].name).toBe('Мальхус');
+    expect(copyRosterName('Гимн (копия)')).toBe('Гимн (копия 2)');
+    expect(copyRosterName('Гимн (копия 2)')).toBe('Гимн (копия 3)');
+  });
+
   it('translates cyrillic slugs', () => {
     expect(slugify('Гимн Пепельной часовни')).toBe('gimn-pepelnoj-chasovni');
   });
@@ -49,8 +77,80 @@ describe('roster math', () => {
     expect(gangerOnly.some((msg) => /Leader/.test(msg))).toBe(true);
   });
 
+  it('counts Leader toward the rest, not Champion/Brute/Hanger-on', () => {
+    const champ = {
+      ...sample.fighters[0],
+      equipment: [],
+      baseCost: 95,
+      subtypes: ['Champion'],
+    };
+    const ganger = { ...champ, subtypes: ['Ganger'], baseCost: 40 };
+    const valid = rosterWarnings({
+      fighters: [
+        { ...sample.fighters[0], equipment: [], baseCost: 115 },
+        { ...champ, id: 'c1' },
+        { ...champ, id: 'c2' },
+        { ...ganger, id: 'g1' },
+        { ...ganger, id: 'g2' },
+      ],
+    });
+    expect(valid).toEqual([]);
+    const over = rosterWarnings({
+      fighters: [
+        { ...sample.fighters[0], equipment: [], baseCost: 115 },
+        { ...champ, id: 'c1' },
+        { ...champ, id: 'c2' },
+        { ...champ, id: 'c3' },
+        { ...ganger, id: 'g1' },
+      ],
+    });
+    expect(over.some((msg) => /Champion, Brute или Hanger-on/.test(msg))).toBe(true);
+  });
+
+  it('skips core composition for Blades of the Matriarch', () => {
+    expect(
+      rosterWarnings({
+        faction: 'blades-of-the-matriarch',
+        fighters: [{ ...sample.fighters[0], subtypes: ['Ganger'], equipment: [], baseCost: 40 }],
+      }),
+    ).toEqual([]);
+  });
+
+  it('warns on more than three weapon slots', () => {
+    const overSlots = rosterWarnings({
+      fighters: [
+        {
+          ...sample.fighters[0],
+          equipment: [
+            { name: 'autogun', cost: 20, slots: 1 },
+            { name: 'stub gun', cost: 5, slots: 1 },
+            { name: 'axe', cost: 10, slots: 1 },
+            { name: 'knife', cost: 5, slots: 1 },
+          ],
+        },
+      ],
+    });
+    expect(overSlots.some((msg) => /три слота/.test(msg))).toBe(true);
+  });
+
   it('rates a gang', () => {
     expect(gangRating(sample)).toBe(315);
+  });
+
+  it('treats stash as a soft credit cap', () => {
+    expect(creditLimit({ stash: 1000 })).toBe(1000);
+    expect(creditsRemaining({ ...sample, stash: 1000 })).toBe(685);
+    expect(creditsRemaining({ ...sample, stash: 0 })).toBeNull();
+    const over = rosterWarnings({ ...sample, stash: 300 });
+    expect(over.some((msg) => /превышает лимит 300/.test(msg))).toBe(true);
+    expect(rosterWarnings({ ...sample, stash: 0 }).some((msg) => /лимит/.test(msg))).toBe(false);
+  });
+
+  it('locks the house once fighters exist', () => {
+    expect(canAddFighters({ faction: '' })).toBe(false);
+    expect(canAddFighters({ faction: 'house-cawdor' })).toBe(true);
+    expect(canChangeFaction({ fighters: [] })).toBe(true);
+    expect(canChangeFaction(sample)).toBe(false);
   });
 });
 

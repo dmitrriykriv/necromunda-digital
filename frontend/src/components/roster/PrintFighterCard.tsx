@@ -7,17 +7,18 @@ import {
   type WeaponProfile,
 } from '@shared/catalog';
 import { fighterCost, type Fighter, type Roster } from '@shared/roster';
-
-const PROFILE_COLS = ['Оружие', 'SR', 'LR', 'S', 'AP', 'L', 'Свойства'] as const;
+import { WeaponProfileTable } from '@/components/roster/WeaponProfileTable';
 
 export function PrintFighterCard({
   fighter,
   roster,
   catalog,
+  showTraitGlossary = true,
 }: {
   fighter: Fighter;
   roster: Roster;
   catalog: FactionCatalog | undefined;
+  showTraitGlossary?: boolean;
 }) {
   const type = findType(catalog, fighter.type);
   const gear = fighter.equipment.filter((item) => item.name);
@@ -106,28 +107,7 @@ export function PrintFighterCard({
                   <span className="print-gear-cost">{item.cost} cr</span>
                 </div>
                 {profiles.length > 0 && (
-                  <table className="print-weapon">
-                    <thead>
-                      <tr>
-                        {PROFILE_COLS.map((col) => (
-                          <th key={col}>{col}</th>
-                        ))}
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {profiles.map((profile) => (
-                        <tr key={`${profile.name}-${profile.sr}-${profile.str}`}>
-                          <td className="print-wname">{profile.name}</td>
-                          <td>{profile.sr}</td>
-                          <td>{profile.lr}</td>
-                          <td>{profile.str}</td>
-                          <td>{profile.ap}</td>
-                          <td>{profile.l}</td>
-                          <td>{profile.traits.map((trait) => trait.name).join(', ') || '—'}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
+                  <WeaponProfileTable profiles={profiles} variant="print" />
                 )}
                 {def?.description ? <p className="print-desc">{def.description}</p> : null}
                 {!def && !profiles.length ? (
@@ -139,8 +119,8 @@ export function PrintFighterCard({
         )}
       </section>
 
-      {traits.some((trait) => trait.text) && (
-        <section className="print-section">
+      {showTraitGlossary && traits.some((trait) => trait.text) && (
+        <section className="print-section print-trait-glossary">
           <h3>Свойства оружия</h3>
           <dl className="print-traits">
             {traits
