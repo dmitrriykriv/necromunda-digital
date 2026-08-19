@@ -148,8 +148,8 @@ export function emptyFighter(isLeader: boolean): Fighter {
   };
 }
 
-export function emptyGear(): Equipment {
-  return { name: '', cost: 0, slots: 1, extras: [] };
+export function emptyGear(kind: 'weapon' | 'wargear' = 'weapon'): Equipment {
+  return { name: '', cost: 0, slots: kind === 'weapon' ? 1 : 0, extras: [] };
 }
 
 export function cloneFighter(fighter: Fighter): Fighter {
@@ -335,4 +335,18 @@ export function toIndexItem(roster: Roster, file: string): RosterIndexItem {
     factionName: roster.factionName || '',
     rating: gangRating(roster),
   };
+}
+
+/** Stable snapshot for unsaved-change checks. Ignores updatedAt. */
+export function rosterFingerprint(roster: Roster): string {
+  return JSON.stringify({
+    id: roster.id,
+    name: roster.name,
+    faction: roster.faction,
+    factionName: roster.factionName,
+    notes: roster.notes,
+    reputation: roster.reputation,
+    stash: roster.stash,
+    fighters: roster.fighters,
+  });
 }

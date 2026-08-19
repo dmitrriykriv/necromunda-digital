@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Download, Printer, Save, Upload } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { rosterWarnings, slugify, type Roster } from '@shared/roster';
@@ -10,6 +10,7 @@ import { TotalsBar } from '@/components/roster/TotalsBar';
 import { Button } from '@/components/ui/button';
 import { downloadRoster, readJsonFile } from '@/lib/files';
 import { handbook } from '@/lib/links';
+import { confirmUnsaved } from '@/lib/unsaved';
 import { useRosterStore } from '@/store/rosterStore';
 
 export function RosterBuilderPage() {
@@ -19,8 +20,35 @@ export function RosterBuilderPage() {
   const save = useSaveRoster();
   const health = useApiHealth();
   const [status, setStatus] = useState<{ text: string; ok?: boolean } | null>(null);
+  const [collapsed, setCollapsed] = useState<Set<string>>(() => new Set());
   const warnings = rosterWarnings(roster);
   const offline = health.isFetched && !health.isSuccess;
+  const fighterIds = roster.fighters.map((fighter) => fighter.id);
+  const allCollapsed =
+    fighterIds.length > 0 && fighterIds.every((id) => collapsed.has(id));
+
+  function toggleFighterCard(id: string) {
+    setCollapsed((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      return next;
+    });
+  }
+
+  function collapseAllCards() {
+    setCollapsed(allCollapsed ? new Set() : new Set(fighterIds));
+  }
+
+  useEffect(() => {
+    function onLeave(event: BeforeUnloadEvent) {
+      if (!useRosterStore.getState().isDirty()) return;
+      event.preventDefault();
+      event.returnValue = '';
+    }
+    window.addEventListener('beforeunload', onLeave);
+    return () => window.removeEventListener('beforeunload', onLeave);
+  }, []);
 
   function payload(): Roster {
     const name = roster.name.trim();
@@ -70,6 +98,7 @@ export function RosterBuilderPage() {
 
   async function onOpenFile(file: File | undefined) {
     if (!file) return;
+    if (!confirmUnsaved()) return;
     try {
       const data = (await readJsonFile(file)) as Roster;
       setRoster(data, '');
@@ -100,6 +129,9 @@ export function RosterBuilderPage() {
         <a
           href={handbook.home}
           className="mb-3 inline-block text-sm text-accent-foreground hover:underline"
+          onClick={(event) => {
+            if (!confirmUnsaved()) event.preventDefault();
+          }}
         >
           ← На главную
         </a>
@@ -114,7 +146,11 @@ export function RosterBuilderPage() {
       <div className="mx-auto grid max-w-[1500px] md:grid-cols-[310px_minmax(0,1fr)]">
         <RosterSidebar />
         <main className="min-w-0 p-6 pb-20">
-          <TotalsBar />
+          <TotalsBar
+            onCollapseAll={collapseAllCards}
+            canCollapse={roster.fighters.length > 0}
+            collapseLabel={allCollapsed ? 'Развернуть все' : 'Свернуть все'}
+          />
           {warnings.length > 0 && (
             <p className="mb-4 rounded-r-lg border-l-[3px] border-destructive bg-destructive/15 px-4 py-3 text-sm text-red-200">
               {warnings.join(' ')}
@@ -171,7 +207,12 @@ export function RosterBuilderPage() {
             </p>
           ) : (
             roster.fighters.map((fighter) => (
-              <FighterCard key={fighter.id} fighter={fighter} />
+              <FighterCard
+                key={fighter.id}
+                fighter={fighter}
+                open={!collapsed.has(fighter.id)}
+                onToggle={() => toggleFighterCard(fighter.id)}
+              />
             ))
           )}
         </main>
@@ -184,7 +225,13 @@ export function RosterBuilderPage() {
           при обновлении страницы.
         </p>
         <p className="mt-2">
-          <a href={handbook.home} className="text-accent-foreground hover:underline">
+          <a
+            href={handbook.home}
+            className="text-accent-foreground hover:underline"
+            onClick={(event) => {
+              if (!confirmUnsaved()) event.preventDefault();
+            }}
+          >
             ← На главную
           </a>
         </p>

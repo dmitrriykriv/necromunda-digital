@@ -1,10 +1,18 @@
-import { Plus } from 'lucide-react';
+import { ChevronsUpDown, Plus } from 'lucide-react';
 import { canAddFighters, creditLimit, creditsRemaining, gangRating } from '@shared/roster';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { useRosterStore } from '@/store/rosterStore';
 
-export function TotalsBar() {
+export function TotalsBar({
+  onCollapseAll,
+  canCollapse = false,
+  collapseLabel = 'Свернуть все',
+}: {
+  onCollapseAll?: () => void;
+  canCollapse?: boolean;
+  collapseLabel?: string;
+}) {
   const roster = useRosterStore((state) => state.roster);
   const addFighter = useRosterStore((state) => state.addFighter);
   const rating = gangRating(roster);
@@ -35,16 +43,30 @@ export function TotalsBar() {
           warn={remaining !== null && remaining < 0}
         />
       </div>
-      <Button
-        type="button"
-        className="w-full shrink-0 md:w-auto"
-        disabled={!allowAdd}
-        title={allowAdd ? undefined : 'Сначала выберите банду'}
-        onClick={onAdd}
-      >
-        <Plus />
-        Добавить бойца
-      </Button>
+      <div className="flex w-full shrink-0 flex-col gap-2 sm:flex-row md:w-auto">
+        {onCollapseAll ? (
+          <Button
+            type="button"
+            variant="outline"
+            className="w-full md:w-auto"
+            disabled={!canCollapse}
+            onClick={onCollapseAll}
+          >
+            <ChevronsUpDown />
+            {collapseLabel}
+          </Button>
+        ) : null}
+        <Button
+          type="button"
+          className="w-full md:w-auto"
+          disabled={!allowAdd}
+          title={allowAdd ? undefined : 'Сначала выберите банду'}
+          onClick={onAdd}
+        >
+          <Plus />
+          Добавить бойца
+        </Button>
+      </div>
     </div>
   );
 }

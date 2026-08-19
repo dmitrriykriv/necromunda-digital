@@ -1,12 +1,17 @@
 import {
   findGear,
+  findSkill,
   findType,
+  isWeaponItem,
+  skillLabel,
   uniqueTraits,
   visibleProfiles,
+  type EquipmentDef,
   type FactionCatalog,
   type WeaponProfile,
 } from '@shared/catalog';
-import { fighterCost, type Fighter, type Roster } from '@shared/roster';
+import { fighterCost, type Equipment, type Fighter, type Roster } from '@shared/roster';
+import { FighterStatsTable } from '@/components/roster/FighterStatsTable';
 import { WeaponProfileTable } from '@/components/roster/WeaponProfileTable';
 
 export function PrintFighterCard({
@@ -32,6 +37,8 @@ export function PrintFighterCard({
   });
   const traits = uniqueTraits(allProfiles);
   const stats = type?.stats;
+  const weaponBlocks = gearBlocks.filter(({ def, item }) => isWeaponItem(def, item));
+  const wargearBlocks = gearBlocks.filter(({ def, item }) => !isWeaponItem(def, item));
 
   return (
     <article className="print-card">
@@ -53,22 +60,7 @@ export function PrintFighterCard({
       </header>
 
       {stats ? (
-        <table className="print-stats">
-          <thead>
-            <tr>
-              {stats.keys.map((key) => (
-                <th key={key}>{key}</th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              {stats.values.map((value, index) => (
-                <td key={`${stats.keys[index]}-${value}`}>{value}</td>
-              ))}
-            </tr>
-          </tbody>
-        </table>
+        <FighterStatsTable stats={stats} variant="print" />
       ) : fighter.type ? (
         <p className="print-empty">Профиль характеристик для этого типа не найден в каталоге.</p>
       ) : null}
@@ -76,7 +68,17 @@ export function PrintFighterCard({
       {fighter.skills.length > 0 && (
         <section className="print-section">
           <h3>Навыки</h3>
-          <p className="print-skills">{fighter.skills.join(' · ')}</p>
+          <dl className="print-traits">
+            {fighter.skills.filter(Boolean).map((name) => {
+              const def = findSkill(name);
+              return (
+                <div key={name}>
+                  <dt>{skillLabel(name)}</dt>
+                  {def?.text ? <dd>{def.text}</dd> : null}
+                </div>
+              );
+            })}
+          </dl>
         </section>
       )}
 
@@ -91,33 +93,49 @@ export function PrintFighterCard({
         </section>
       ) : null}
 
-      <section className="print-section">
-        <h3>Снаряжение</h3>
-        {gearBlocks.length === 0 ? (
+      {gearBlocks.length === 0 ? (
+        <section className="print-section">
+          <h3>Снаряжение</h3>
           <p className="print-empty">Снаряжение не указано.</p>
-        ) : (
-          <div className="print-gear-list">
-            {gearBlocks.map(({ item, def, extras, profiles }, index) => (
-              <div key={`${fighter.id}-gear-${index}`} className="print-gear">
-                <div className="print-gear-title">
-                  <span>
-                    {item.name}
-                    {extras.length ? ` + ${extras.join(', ')}` : ''}
-                  </span>
-                  <span className="print-gear-cost">{item.cost} cr</span>
-                </div>
-                {profiles.length > 0 && (
-                  <WeaponProfileTable profiles={profiles} variant="print" />
-                )}
-                {def?.description ? <p className="print-desc">{def.description}</p> : null}
-                {!def && !profiles.length ? (
-                  <p className="print-empty">Нет описания в каталоге этой банды.</p>
-                ) : null}
+        </section>
+      ) : (
+        <>
+          {weaponBlocks.length > 0 ? (
+            <section className="print-section">
+              <h3>Оружие</h3>
+              <div className="print-gear-list">
+                {weaponBlocks.map(({ item, def, extras, profiles }, index) => (
+                  <PrintGearBlock
+                    key={`${fighter.id}-weapon-${index}`}
+                    item={item}
+                    def={def}
+                    extras={extras}
+                    profiles={profiles}
+                    showDescription={false}
+                  />
+                ))}
               </div>
-            ))}
-          </div>
-        )}
-      </section>
+            </section>
+          ) : null}
+          {wargearBlocks.length > 0 ? (
+            <section className="print-section">
+              <h3>Снаряжение</h3>
+              <div className="print-gear-list">
+                {wargearBlocks.map(({ item, def, extras, profiles }, index) => (
+                  <PrintGearBlock
+                    key={`${fighter.id}-wargear-${index}`}
+                    item={item}
+                    def={def}
+                    extras={extras}
+                    profiles={profiles}
+                    showDescription
+                  />
+                ))}
+              </div>
+            </section>
+          ) : null}
+        </>
+      )}
 
       {showTraitGlossary && traits.some((trait) => trait.text) && (
         <section className="print-section print-trait-glossary">
@@ -135,5 +153,40 @@ export function PrintFighterCard({
         </section>
       )}
     </article>
+  );
+}
+
+function PrintGearBlock({
+  item,
+  def,
+  extras,
+  profiles,
+  showDescription,
+}: {
+  item: Equipment;
+  def: EquipmentDef | undefined;
+  extras: string[];
+  profiles: WeaponProfile[];
+  showDescription: boolean;
+}) {
+  return (
+    <div className="print-gear">
+      <div className="print-gear-title">
+        <span>
+          {item.name}
+          {extras.length ? ` + ${extras.join(', ')}` : ''}
+        </span>
+        <span className="print-gear-cost">{item.cost} cr</span>
+      </div>
+      {profiles.length > 0 && (
+        <WeaponProfileTable profiles={profiles} variant="print" />
+      )}
+      {showDescription && def?.description ? (
+        <p className="print-desc">{def.description}</p>
+      ) : null}
+      {showDescription && !def && !profiles.length ? (
+        <p className="print-empty">Нет описания в каталоге этой банды.</p>
+      ) : null}
+    </div>
   );
 }

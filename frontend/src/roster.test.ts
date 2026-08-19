@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { namesMatch, visibleProfiles, type EquipmentDef } from '@shared/catalog';
+import { namesMatch, allSkillNames, findSkill, isWeaponDef, visibleProfiles, type EquipmentDef } from '@shared/catalog';
 import {
   canAddFighters,
   canChangeFaction,
@@ -12,6 +12,7 @@ import {
   gangRating,
   normalizeRoster,
   rosterWarnings,
+  rosterFingerprint,
   slugify,
 } from '@shared/roster';
 
@@ -62,6 +63,13 @@ describe('roster math', () => {
     expect(copy.fighters[0].name).toBe('Мальхус');
     expect(copyRosterName('Гимн (копия)')).toBe('Гимн (копия 2)');
     expect(copyRosterName('Гимн (копия 2)')).toBe('Гимн (копия 3)');
+  });
+
+  it('ignores updatedAt when fingerprinting a roster', () => {
+    const a = rosterFingerprint({ ...sample, updatedAt: '2024-01-01' });
+    const b = rosterFingerprint({ ...sample, updatedAt: '2026-08-19' });
+    expect(a).toBe(b);
+    expect(rosterFingerprint({ ...sample, name: 'Другое' })).not.toBe(a);
   });
 
   it('translates cyrillic slugs', () => {
@@ -177,5 +185,58 @@ describe('print catalog helpers', () => {
       'Autogun',
       'warp rounds',
     ]);
+  });
+
+  it('lists universal skills by English name', () => {
+    const names = allSkillNames();
+    expect(names).toContain('Inspiring');
+    expect(names).toContain('Iron Will');
+    expect(names).toContain('Rain of Blows');
+    expect(names).toHaveLength(39);
+    expect(findSkill('Dodge')?.text).toMatch(/D6/);
+    expect(findSkill('Inspiring')?.label).toBe('Вдохновляющий');
+  });
+
+  it('treats profiles as weapons and armour as wargear', () => {
+    const autogun: EquipmentDef = {
+      name: 'Autogun',
+      cost: 20,
+      slots: 1,
+      category: 'AUTO/STUB WEAPONS',
+      list: 'HOUSE CAWDOR',
+      profiles: [
+        { name: 'Autogun', sr: '8”', lr: '24”', str: '3', ap: '-', l: '1', traits: [] },
+      ],
+    };
+    const mesh: EquipmentDef = {
+      name: 'Mesh armour',
+      cost: 40,
+      slots: 0,
+      category: 'ARMOUR & FIELD ARMOUR',
+      list: 'HOUSE CAWDOR',
+      description: 'Save +1 in melee.',
+    };
+    const sight: EquipmentDef = {
+      name: 'Mono-sight',
+      cost: 20,
+      slots: 1,
+      category: 'WEAPON ACCESSORIES',
+      list: 'HOUSE CAWDOR',
+      description: 'Aimed Shot +2.',
+    };
+    const grenade: EquipmentDef = {
+      name: 'Frag grenades',
+      cost: 30,
+      slots: 0,
+      category: 'GRENADES',
+      list: 'HOUSE CAWDOR',
+      profiles: [
+        { name: 'Frag grenades', sr: '-', lr: 'SX2', str: '3', ap: '-', l: '1', traits: [] },
+      ],
+    };
+    expect(isWeaponDef(autogun)).toBe(true);
+    expect(isWeaponDef(grenade)).toBe(true);
+    expect(isWeaponDef(mesh)).toBe(false);
+    expect(isWeaponDef(sight)).toBe(false);
   });
 });

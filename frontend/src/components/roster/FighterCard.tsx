@@ -1,15 +1,20 @@
 import type { ReactNode } from 'react';
-import { Copy } from 'lucide-react';
+import { ChevronDown, Copy } from 'lucide-react';
 import {
+  allSkillNames,
   equipmentGroups,
   findGear,
+  findSkill,
   findType,
   gearCost,
+  isWeaponItem,
+  SKILL_SETS,
   visibleProfiles,
   type FactionCatalog,
 } from '@shared/catalog';
+import { FighterStatsTable } from '@/components/roster/FighterStatsTable';
 import { WeaponProfileTable } from '@/components/roster/WeaponProfileTable';
-import { fighterCost, splitList, type Equipment, type Fighter } from '@shared/roster';
+import { fighterCost, type Equipment, type Fighter } from '@shared/roster';
 import { useFactionCatalog } from '@/api/hooks';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -35,7 +40,15 @@ function Field({
   );
 }
 
-export function FighterCard({ fighter }: { fighter: Fighter }) {
+export function FighterCard({
+  fighter,
+  open,
+  onToggle,
+}: {
+  fighter: Fighter;
+  open: boolean;
+  onToggle: () => void;
+}) {
   const faction = useRosterStore((state) => state.roster.faction);
   const catalogQuery = useFactionCatalog(faction);
   const catalog = catalogQuery.data;
@@ -73,19 +86,61 @@ export function FighterCard({ fighter }: { fighter: Fighter }) {
     updateFighter(fighter.id, { subtypes: next });
   }
 
+  function setSkill(index: number, name: string) {
+    const next = [...fighter.skills];
+    next[index] = name;
+    updateFighter(fighter.id, { skills: next });
+  }
+
+  function addSkill() {
+    updateFighter(fighter.id, { skills: [...fighter.skills, ''] });
+  }
+
+  function removeSkill(index: number) {
+    updateFighter(fighter.id, {
+      skills: fighter.skills.filter((_, i) => i !== index),
+    });
+  }
+
+  const catalogSkillNames = allSkillNames();
+  const typeDef = findType(catalog, fighter.type);
+  const stats = typeDef?.stats;
+
   return (
     <Card
       id={`fighter-${fighter.id}`}
       className="mb-3 scroll-mt-36 border-l-[3px] border-l-primary"
     >
-      <CardHeader className="flex flex-row items-center justify-between space-y-0">
-        <h4 className="text-sm font-semibold uppercase tracking-wide text-accent-foreground">
-          {fighter.name || 'Боец'}
-        </h4>
-        <Badge variant="gold">{fighterCost(fighter)} кредитов</Badge>
+      <CardHeader className="p-0">
+        <button
+          type="button"
+          className="flex w-full items-center gap-3 p-4 text-left"
+          aria-expanded={open}
+          onClick={onToggle}
+        >
+          <ChevronDown
+            className={cn(
+              'size-4 shrink-0 text-muted-foreground transition-transform',
+              !open && '-rotate-90',
+            )}
+          />
+          <span className="min-w-0 flex-1">
+            <h4 className="text-sm font-semibold uppercase tracking-wide text-accent-foreground">
+              {fighter.name || 'Боец'}
+            </h4>
+            {!open ? (
+              <p className="mt-0.5 truncate text-xs text-muted-foreground">
+                {[fighter.type, fighter.subtypes.join(', ')].filter(Boolean).join(' · ')
+                  || 'Тип не выбран'}
+              </p>
+            ) : null}
+          </span>
+          <Badge variant="gold">{fighterCost(fighter)} кредитов</Badge>
+        </button>
       </CardHeader>
+      {open ? (
       <CardContent className="space-y-4">
-        <div className="grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-4">
           <Field label="Имя">
             <Input
               value={fighter.name}
@@ -112,39 +167,6 @@ export function FighterCard({ fighter }: { fighter: Fighter }) {
               ))}
             </NativeSelect>
           </Field>
-          <div className="flex flex-col gap-1.5 xl:col-span-1 md:col-span-2">
-            <Label>Подтипы</Label>
-            {subtypeOptions.length === 0 ? (
-              <p className="text-sm text-muted-foreground">
-                {!faction ? 'Сначала выберите банду' : 'Список подтипов пуст'}
-              </p>
-            ) : (
-              <div className="flex flex-wrap gap-1.5">
-                {subtypeOptions.map((subtype) => {
-                  const checked = fighter.subtypes.includes(subtype);
-                  return (
-                    <label
-                      key={subtype}
-                      className={cn(
-                        'cursor-pointer rounded-md border px-2 py-1 text-xs font-medium',
-                        checked
-                          ? 'border-primary bg-primary/15 text-accent-foreground'
-                          : 'border-input bg-background text-muted-foreground hover:border-primary',
-                      )}
-                    >
-                      <input
-                        type="checkbox"
-                        className="sr-only"
-                        checked={checked}
-                        onChange={(event) => toggleSubtype(subtype, event.target.checked)}
-                      />
-                      {subtype}
-                    </label>
-                  );
-                })}
-              </div>
-            )}
-          </div>
           <Field label="Стартовый XP">
             <Input
               type="number"
@@ -165,15 +187,140 @@ export function FighterCard({ fighter }: { fighter: Fighter }) {
               }
             />
           </Field>
-          <Field label="Навыки через запятую">
-            <Input
-              placeholder="Inspiring, Iron Will"
-              value={fighter.skills.join(', ')}
-              onChange={(event) =>
-                updateFighter(fighter.id, { skills: splitList(event.target.value) })
-              }
-            />
-          </Field>
+        </div>
+        <div className="flex flex-col gap-1.5">
+          <Label>Подтипы</Label>
+          {subtypeOptions.length === 0 ? (
+            <p className="text-sm text-muted-foreground">
+              {!faction ? 'Сначала выберите банду' : 'Список подтипов пуст'}
+            </p>
+          ) : (
+            <div className="flex flex-wrap gap-1.5">
+              {subtypeOptions.map((subtype) => {
+                const checked = fighter.subtypes.includes(subtype);
+                return (
+                  <label
+                    key={subtype}
+                    className={cn(
+                      'cursor-pointer rounded-md border px-2 py-1 text-xs font-medium',
+                      checked
+                        ? 'border-primary bg-primary/15 text-accent-foreground'
+                        : 'border-input bg-background text-muted-foreground hover:border-primary',
+                    )}
+                  >
+                    <input
+                      type="checkbox"
+                      className="sr-only"
+                      checked={checked}
+                      onChange={(event) => toggleSubtype(subtype, event.target.checked)}
+                    />
+                    {subtype}
+                  </label>
+                );
+              })}
+            </div>
+          )}
+        </div>
+
+        {stats ? (
+          <div>
+            <h5 className="mb-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+              Характеристики
+            </h5>
+            <FighterStatsTable stats={stats} />
+          </div>
+        ) : fighter.type ? (
+          <p className="text-sm italic text-muted-foreground">
+            Профиль характеристик для этого типа не найден в каталоге.
+          </p>
+        ) : null}
+
+        <div>
+          <h5 className="mb-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+            Навыки
+          </h5>
+          <div className="space-y-2">
+            {fighter.skills.map((skill, index) => {
+              const taken = new Set(
+                fighter.skills.filter((name, i) => i !== index && name),
+              );
+              const extra = skill && !catalogSkillNames.includes(skill) ? skill : '';
+              const def = findSkill(skill);
+              return (
+                <div key={`${fighter.id}-skill-${index}`} className="space-y-1.5">
+                  <div className="flex gap-2">
+                    <NativeSelect
+                      value={skill}
+                      onChange={(event) => setSkill(index, event.target.value)}
+                    >
+                      <option value="">— выберите навык —</option>
+                      {extra ? <option value={extra}>{extra}</option> : null}
+                      {SKILL_SETS.map((group) => (
+                        <optgroup key={group.id} label={group.name}>
+                          {group.skills
+                            .filter((item) => item.name === skill || !taken.has(item.name))
+                            .map((item) => (
+                              <option key={item.name} value={item.name}>
+                                {item.label} ({item.name})
+                              </option>
+                            ))}
+                        </optgroup>
+                      ))}
+                    </NativeSelect>
+                    <Button
+                      type="button"
+                      variant="destructive"
+                      size="icon"
+                      onClick={() => removeSkill(index)}
+                    >
+                      ×
+                    </Button>
+                  </div>
+                  {def?.text ? (
+                    <p className="text-xs leading-relaxed text-muted-foreground">{def.text}</p>
+                  ) : null}
+                </div>
+              );
+            })}
+          </div>
+          <Button type="button" variant="outline" size="sm" className="mt-3" onClick={addSkill}>
+            + навык
+          </Button>
+        </div>
+
+        <div>
+          <h5 className="mb-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+            Оружие
+          </h5>
+          <div className="space-y-2">
+            {fighter.equipment.map((item, index) =>
+              isWeaponItem(findGear(catalog, item.name), item) ? (
+                <GearRow
+                  key={`${fighter.id}-weapon-${index}`}
+                  kind="weapon"
+                  fighterId={fighter.id}
+                  index={index}
+                  item={item}
+                  catalog={catalog}
+                  hasFaction={Boolean(faction)}
+                  loading={catalogQuery.isLoading}
+                  onChange={updateGear}
+                  onRemove={removeGear}
+                />
+              ) : null,
+            )}
+          </div>
+          <Button
+            type="button"
+            variant="outline"
+            size="sm"
+            className="mt-3"
+            disabled={!faction}
+            title={faction ? undefined : 'Сначала выберите банду'}
+            onClick={() => addGear(fighter.id, 'weapon')}
+          >
+            + оружие
+          </Button>
         </div>
 
         <div>
@@ -181,65 +328,72 @@ export function FighterCard({ fighter }: { fighter: Fighter }) {
             Снаряжение
           </h5>
           <div className="space-y-2">
-            {fighter.equipment.map((item, index) => (
-              <GearRow
-                key={`${fighter.id}-gear-${index}`}
-                fighterId={fighter.id}
-                index={index}
-                item={item}
-                catalog={catalog}
-                hasFaction={Boolean(faction)}
-                loading={catalogQuery.isLoading}
-                onChange={updateGear}
-                onRemove={removeGear}
-              />
-            ))}
+            {fighter.equipment.map((item, index) =>
+              isWeaponItem(findGear(catalog, item.name), item) ? null : (
+                <GearRow
+                  key={`${fighter.id}-wargear-${index}`}
+                  kind="wargear"
+                  fighterId={fighter.id}
+                  index={index}
+                  item={item}
+                  catalog={catalog}
+                  hasFaction={Boolean(faction)}
+                  loading={catalogQuery.isLoading}
+                  onChange={updateGear}
+                  onRemove={removeGear}
+                />
+              ),
+            )}
           </div>
-          <div className="mt-3 flex flex-wrap gap-2">
-            <Button
-              type="button"
-              variant="outline"
-              size="sm"
-              disabled={!faction}
-              title={faction ? undefined : 'Сначала выберите банду'}
-              onClick={() => addGear(fighter.id)}
-            >
-              + предмет
-            </Button>
-            <Button
-              type="button"
-              variant="outline"
-              size="sm"
-              onClick={() => {
-                const id = copyFighter(fighter.id);
-                if (!id) return;
-                window.setTimeout(() => {
-                  document.getElementById(`fighter-${id}`)?.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start',
-                  });
-                }, 0);
-              }}
-            >
-              <Copy />
-              Скопировать бойца
-            </Button>
-            <Button
-              type="button"
-              variant="destructive"
-              size="sm"
-              onClick={() => removeFighter(fighter.id)}
-            >
-              Удалить бойца
-            </Button>
-          </div>
+          <Button
+            type="button"
+            variant="outline"
+            size="sm"
+            className="mt-3"
+            disabled={!faction}
+            title={faction ? undefined : 'Сначала выберите банду'}
+            onClick={() => addGear(fighter.id, 'wargear')}
+          >
+            + предмет
+          </Button>
+        </div>
+
+        <div className="flex flex-wrap gap-2">
+          <Button
+            type="button"
+            variant="outline"
+            size="sm"
+            onClick={() => {
+              const id = copyFighter(fighter.id);
+              if (!id) return;
+              window.setTimeout(() => {
+                document.getElementById(`fighter-${id}`)?.scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'start',
+                });
+              }, 0);
+            }}
+          >
+            <Copy />
+            Скопировать бойца
+          </Button>
+          <Button
+            type="button"
+            variant="destructive"
+            size="sm"
+            onClick={() => removeFighter(fighter.id)}
+          >
+            Удалить бойца
+          </Button>
         </div>
       </CardContent>
+      ) : null}
     </Card>
   );
 }
 
 function GearRow({
+  kind,
   fighterId,
   index,
   item,
@@ -249,6 +403,7 @@ function GearRow({
   onChange,
   onRemove,
 }: {
+  kind: 'weapon' | 'wargear';
   fighterId: string;
   index: number;
   item: Equipment;
@@ -258,13 +413,14 @@ function GearRow({
   onChange: (fighterId: string, index: number, patch: Partial<Equipment>) => void;
   onRemove: (fighterId: string, index: number) => void;
 }) {
-  const groups = equipmentGroups(catalog);
+  const groups = equipmentGroups(catalog, kind);
   const names = catalog?.equipment.map((entry) => entry.name) ?? [];
   const hasList = names.length > 0;
   const extra = item.name && !names.includes(item.name) ? item.name : '';
   const def = findGear(catalog, item.name);
   const extras = item.extras ?? [];
   const profiles = visibleProfiles(def, extras);
+  const weapon = kind === 'weapon';
 
   function applyName(name: string) {
     const next = findGear(catalog, name);
@@ -288,7 +444,12 @@ function GearRow({
 
   return (
     <div className="space-y-1.5">
-      <div className="grid grid-cols-[1fr_88px_72px_auto] gap-2">
+      <div
+        className={cn(
+          'grid gap-2',
+          weapon ? 'grid-cols-[1fr_88px_72px_auto]' : 'grid-cols-[1fr_88px_auto]',
+        )}
+      >
         {hasList ? (
           <NativeSelect
             value={item.name}
@@ -300,7 +461,9 @@ function GearRow({
                 ? 'Сначала выберите банду'
                 : loading
                   ? 'Загрузка списка…'
-                  : '— выберите предмет —'}
+                  : weapon
+                    ? '— выберите оружие —'
+                    : '— выберите предмет —'}
             </option>
             {extra && <option value={extra}>{extra}</option>}
             {groups.map((group) => (
@@ -315,7 +478,13 @@ function GearRow({
           </NativeSelect>
         ) : (
           <Input
-            placeholder={hasFaction ? 'Оружие или снаряжение' : 'Сначала выберите банду'}
+            placeholder={
+              hasFaction
+                ? weapon
+                  ? 'Оружие'
+                  : 'Снаряжение'
+                : 'Сначала выберите банду'
+            }
             value={item.name}
             onChange={(event) => onChange(fighterId, index, { name: event.target.value })}
           />
@@ -330,16 +499,18 @@ function GearRow({
             onChange(fighterId, index, { cost: Number(event.target.value) || 0 })
           }
         />
-        <Input
-          type="number"
-          min={0}
-          max={2}
-          title="Слоты оружия"
-          value={item.slots}
-          onChange={(event) =>
-            onChange(fighterId, index, { slots: Number(event.target.value) || 0 })
-          }
-        />
+        {weapon ? (
+          <Input
+            type="number"
+            min={0}
+            max={2}
+            title="Слоты оружия"
+            value={item.slots}
+            onChange={(event) =>
+              onChange(fighterId, index, { slots: Number(event.target.value) || 0 })
+            }
+          />
+        ) : null}
         <Button type="button" variant="destructive" size="icon" onClick={() => onRemove(fighterId, index)}>
           ×
         </Button>
@@ -371,6 +542,9 @@ function GearRow({
         </div>
       ) : null}
       {profiles.length > 0 ? <WeaponProfileTable profiles={profiles} /> : null}
+      {!weapon && def?.description ? (
+        <p className="text-xs leading-relaxed text-muted-foreground">{def.description}</p>
+      ) : null}
     </div>
   );
 }

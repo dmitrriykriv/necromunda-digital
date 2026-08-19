@@ -9,6 +9,7 @@ import {
   emptyRoster,
   factionName,
   normalizeRoster,
+  rosterFingerprint,
   type Equipment,
   type Fighter,
   type Roster,
@@ -17,6 +18,8 @@ import {
 type RosterState = {
   roster: Roster;
   currentFile: string;
+  cleanFingerprint: string;
+  isDirty: () => boolean;
   setRoster: (roster: Partial<Roster>, file?: string) => void;
   setMeta: (patch: Partial<Roster>) => void;
   reset: () => void;
@@ -24,7 +27,7 @@ type RosterState = {
   copyFighter: (id: string) => string;
   updateFighter: (id: string, patch: Partial<Fighter>) => void;
   removeFighter: (id: string) => void;
-  addGear: (fighterId: string) => void;
+  addGear: (fighterId: string, kind?: 'weapon' | 'wargear') => void;
   updateGear: (fighterId: string, index: number, patch: Partial<Equipment>) => void;
   removeGear: (fighterId: string, index: number) => void;
 };
@@ -37,16 +40,23 @@ function patchRoster(roster: Roster, patch: Partial<Roster>): Roster {
   return next;
 }
 
+const empty = emptyRoster();
+
 export const useRosterStore = create<RosterState>()(
   persist(
     (set, get) => ({
-      roster: emptyRoster(),
+      roster: empty,
       currentFile: '',
-      setRoster: (roster, file) =>
+      cleanFingerprint: rosterFingerprint(empty),
+      isDirty: () => rosterFingerprint(get().roster) !== get().cleanFingerprint,
+      setRoster: (roster, file) => {
+        const next = normalizeRoster(roster);
         set({
-          roster: normalizeRoster(roster),
+          roster: next,
           currentFile: file ?? (roster.id ? `${roster.id}.json` : ''),
-        }),
+          cleanFingerprint: rosterFingerprint(next),
+        });
+      },
       setMeta: (patch) =>
         set((state) => {
           if (
@@ -60,7 +70,14 @@ export const useRosterStore = create<RosterState>()(
           }
           return { roster: patchRoster(state.roster, patch) };
         }),
-      reset: () => set({ roster: emptyRoster(), currentFile: '' }),
+      reset: () => {
+        const roster = emptyRoster();
+        set({
+          roster,
+          currentFile: '',
+          cleanFingerprint: rosterFingerprint(roster),
+        });
+      },
       addFighter: () => {
         if (!canAddFighters(get().roster)) return '';
         const fighter = emptyFighter(get().roster.fighters.length === 0);
@@ -100,7 +117,7 @@ export const useRosterStore = create<RosterState>()(
             fighters: state.roster.fighters.filter((fighter) => fighter.id !== id),
           },
         })),
-      addGear: (fighterId) =>
+      addGear: (fighterId, kind = 'weapon') =>
         set((state) => {
           if (!canAddFighters(state.roster)) return state;
           return {
@@ -108,7 +125,7 @@ export const useRosterStore = create<RosterState>()(
               ...state.roster,
               fighters: state.roster.fighters.map((fighter) =>
                 fighter.id === fighterId
-                  ? { ...fighter, equipment: [...fighter.equipment, emptyGear()] }
+                  ? { ...fighter, equipment: [...fighter.equipment, emptyGear(kind)] }
                   : fighter,
               ),
             },
@@ -145,6 +162,18 @@ export const useRosterStore = create<RosterState>()(
           },
         })),
     }),
-    { name: 'necromunda-roster-draft-v2' },
+    {
+      name: 'necromunda-roster-draft-v2',
+      partialize: (state) => ({
+        roster: state.roster,
+        currentFile: state.currentFile,
+        cleanFingerprint: state.cleanFingerprint,
+      }),
+      onRehydrateStorage: () => (state) => {
+        if (!state?.cleanFingerprint && state?.roster) {
+          state.cleanFingerprint = rosterFingerprint(state.roster);
+        }
+      },
+    },
   ),
 );

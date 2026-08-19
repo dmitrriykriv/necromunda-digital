@@ -10,6 +10,7 @@ import {
   useSaveRoster,
 } from '@/api/hooks';
 import { handbook } from '@/lib/links';
+import { confirmUnsaved } from '@/lib/unsaved';
 import { useRosterStore } from '@/store/rosterStore';
 
 export function RosterSidebar() {
@@ -31,6 +32,28 @@ export function RosterSidebar() {
     }
   }
 
+  async function openSaved(file: string) {
+    if (file === currentFile && !useRosterStore.getState().isDirty()) return;
+    if (!confirmUnsaved()) return;
+    const data = await fetchRoster(file);
+    setRoster(data, file);
+  }
+
+  function newRoster() {
+    if (!confirmUnsaved()) return;
+    reset();
+  }
+
+  function deleteSaved(file: string) {
+    const wipingOpen = currentFile === file;
+    if (wipingOpen && !confirmUnsaved()) return;
+    remove.mutate(file, {
+      onSuccess: () => {
+        if (wipingOpen) reset();
+      },
+    });
+  }
+
   return (
     <aside className="border-b border-border bg-card p-4 md:sticky md:top-0 md:h-screen md:overflow-y-auto md:border-b-0 md:border-r">
       <h2 className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
@@ -41,7 +64,7 @@ export function RosterSidebar() {
           ? 'Список сохранённых банд. «Сохранить» записывает текущую сюда.'
           : 'Список файлов недоступен. Правки остаются в этом браузере; можно скачать копию.'}
       </p>
-      <Button type="button" variant="outline" className="mb-3 w-full" onClick={() => reset()}>
+      <Button type="button" variant="outline" className="mb-3 w-full" onClick={newRoster}>
         <Plus />
         Новый ростер
       </Button>
@@ -64,9 +87,8 @@ export function RosterSidebar() {
                   ? 'border-primary bg-primary/15'
                   : 'border-border bg-background hover:border-primary'
               }`}
-              onClick={async () => {
-                const data = await fetchRoster(item.file);
-                setRoster(data, item.file);
+              onClick={() => {
+                void openSaved(item.file);
               }}
             >
               <strong className="truncate">{item.name}</strong>
@@ -95,11 +117,7 @@ export function RosterSidebar() {
                   size="icon"
                   title="Удалить из списка"
                   onClick={() => {
-                    remove.mutate(item.file, {
-                      onSuccess: () => {
-                        if (currentFile === item.file) reset();
-                      },
-                    });
+                    deleteSaved(item.file);
                   }}
                 >
                   <Trash2 />
@@ -111,13 +129,31 @@ export function RosterSidebar() {
       </ul>
       <Separator className="my-4" />
       <nav className="space-y-1 text-sm">
-        <a className="block text-accent-foreground hover:underline" href={handbook.example}>
+        <a
+          className="block text-accent-foreground hover:underline"
+          href={handbook.example}
+          onClick={(event) => {
+            if (!confirmUnsaved()) event.preventDefault();
+          }}
+        >
           Учебный пример Каудор
         </a>
-        <a className="block text-accent-foreground hover:underline" href={handbook.gangs}>
+        <a
+          className="block text-accent-foreground hover:underline"
+          href={handbook.gangs}
+          onClick={(event) => {
+            if (!confirmUnsaved()) event.preventDefault();
+          }}
+        >
           Списки банд
         </a>
-        <a className="block text-accent-foreground hover:underline" href={handbook.createGang}>
+        <a
+          className="block text-accent-foreground hover:underline"
+          href={handbook.createGang}
+          onClick={(event) => {
+            if (!confirmUnsaved()) event.preventDefault();
+          }}
+        >
           Правила создания банды
         </a>
       </nav>
