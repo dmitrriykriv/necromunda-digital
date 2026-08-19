@@ -5,7 +5,7 @@
   "factionName": "Дом Каудор",
   "notes": "Кампания, Путь Благочестивых (Path of the Pious). Учебный стартовый ростер на 1000 кредитов.",
   "reputation": 1,
-  "stash": 0,
+  "stash": 1000,
   "updatedAt": "2026-08-18",
   "fighters": [
     {
