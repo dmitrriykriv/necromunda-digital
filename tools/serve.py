@@ -102,7 +102,7 @@ class Handler(SimpleHTTPRequestHandler):
         if path == '/api/rosters':
             self._json(200, rebuild_index())
             return
-        if path == '/favicon.svg':
+        if path in ('/favicon.svg', '/favicon.ico'):
             self.path = '/pages/favicon.svg'
         super().do_GET()
 

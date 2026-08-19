@@ -25,14 +25,22 @@ app.get('/api/health', (_req, res) => {
 });
 app.use('/api/rosters', rosterRouter(ROSTERS));
 
-app.use('/pages', express.static(join(ROOT, 'pages')));
+app.use('/pages', express.static(join(ROOT, 'pages'), {
+  setHeaders(res, filePath) {
+    if (filePath.endsWith('.svg')) res.type('image/svg+xml');
+  },
+}));
 app.use('/data', express.static(join(ROOT, 'data')));
 app.use('/frontend/dist', express.static(FRONTEND_DIST));
 if (existsSync(join(FRONTEND_DIST, 'index.html'))) {
   app.use('/roster', express.static(FRONTEND_DIST));
 }
 app.get('/favicon.svg', (_req, res) => {
+  res.type('image/svg+xml');
   res.sendFile(join(ROOT, 'pages', 'favicon.svg'));
+});
+app.get('/favicon.ico', (_req, res) => {
+  res.redirect(302, '/favicon.svg');
 });
 app.get('/', (_req, res) => {
   res.sendFile(join(ROOT, 'index.html'));
