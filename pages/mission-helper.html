@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Necromunda — помощник генерации миссий</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#14161c">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="topbar" id="top">
+    <a class="backlink" href="../">&larr; На главную</a>
+    <h1>Necromunda</h1>
+    <p>Помощник генерации миссий &mdash; таблицы сценария SKIRMUNDA</p>
+    <p class="source">Источник: SKIRMUNDA &bull; Scenario Generation Tables</p>
+</header>
+
+<main class="mission-main">
+
+    <p class="mh-lede">Сценарий собирается из четырёх таблиц: расстановка, цель, побочные задания и состав.
+    Можно выбрать каждый результат вручную или бросить случайный набор. В шапке три режима:
+    инструкция (все броски за столом), таблицы (сценарий здесь, D3 и атакующий на игре) и все кубики.
+    Полные формулировки &mdash; в <a href="core-rules.html#scenariy">справочнике</a>.</p>
+
+    <div class="mh-toolbar">
+        <button type="button" class="mh-btn mh-btn-primary" id="btn-roll-all">Случайный набор</button>
+        <button type="button" class="mh-btn mh-btn-ghost" id="btn-reset">Сбросить</button>
+        <button type="button" class="mh-btn mh-btn-ghost" id="btn-print">Печать листа</button>
+        <div class="mh-modes" role="radiogroup" aria-label="Режим генерации">
+            <label title="Лист без результатов: все броски по таблицам и внутри сценария — за столом">
+                <input type="radio" name="gen-mode" value="guide">
+                Инструкция
+            </label>
+            <label title="Бросить таблицы сценария; D3 состава и атакующего в скирмише — отдельными кнопками или за столом">
+                <input type="radio" name="gen-mode" value="tables" checked>
+                Таблицы
+            </label>
+            <label title="Бросить таблицы и внутренние кубики: D3 состава, кто атакующий">
+                <input type="radio" name="gen-mode" value="all">
+                Все кубики
+            </label>
+        </div>
+    </div>
+
+    <div class="mh-grid">
+
+        <form class="mh-form mh-panel" id="mission-form">
+            <h2>Параметры</h2>
+
+            <div class="mh-group">
+                <h3>Бой<span class="en">Battle</span></h3>
+                <div class="mh-field">
+                    <div class="mh-field-head"><label for="mode">Режим</label></div>
+                    <select class="mh-select" id="mode">
+                        <option value="campaign">Кампания</option>
+                        <option value="skirmish">Скирмиш</option>
+                    </select>
+                </div>
+                <div class="mh-field">
+                    <div class="mh-field-head"><label for="nameA">Банда A</label></div>
+                    <input class="mh-input" id="nameA" type="text" maxlength="80" placeholder="Название или игрок A">
+                </div>
+                <div class="mh-field">
+                    <div class="mh-field-head"><label for="nameB">Банда B</label></div>
+                    <input class="mh-input" id="nameB" type="text" maxlength="80" placeholder="Название или игрок B">
+                </div>
+                <div class="mh-field" id="field-challenger">
+                    <div class="mh-field-head"><label for="challenger">Челленджер</label>
+                        <span class="mh-who">сделал вызов, в кампании он атакующий</span></div>
+                    <select class="mh-select" id="challenger">
+                        <option value="A">Банда A</option>
+                        <option value="B">Банда B</option>
+                    </select>
+                </div>
+                <div class="mh-field" data-key="attacker">
+                    <div class="mh-field-head">
+                        <label for="attacker">Атакующий</label>
+                        <span class="mh-who" id="attacker-who">в скирмише — сравнительный бросок D6</span>
+                        <button type="button" class="mh-icon" data-lock="attacker" title="Не менять при генерации">Фикс</button>
+                        <button type="button" class="mh-icon" data-roll="attacker" title="Определить случайно">D6</button>
+                    </div>
+                    <select class="mh-select" id="attacker">
+                        <option value="">— перед игрой —</option>
+                        <option value="A">Банда A</option>
+                        <option value="B">Банда B</option>
+                    </select>
+                    <p class="mh-hint" id="attacker-hint"></p>
+                </div>
+            </div>
+
+            <div class="mh-group">
+                <h3>Расстановка<span class="en">Deployment</span></h3>
+                <div class="mh-field" data-key="deployment">
+                    <div class="mh-field-head">
+                        <label for="deployment">Таблица расстановки</label>
+                        <span class="mh-who" id="who-deployment">бросает челленджер</span>
+                        <button type="button" class="mh-icon" data-lock="deployment">Фикс</button>
+                        <button type="button" class="mh-icon" data-roll="deployment">D6</button>
+                    </div>
+                    <select class="mh-select" id="deployment"></select>
+                    <p class="mh-hint" data-hint="deployment"></p>
+                </div>
+            </div>
+
+            <div class="mh-group">
+                <h3>Цель<span class="en">Objective</span></h3>
+                <div class="mh-field" data-key="objective">
+                    <div class="mh-field-head">
+                        <label for="objective">Таблица целей</label>
+                        <span class="mh-who" id="who-objective">бросает челленджер</span>
+                        <button type="button" class="mh-icon" data-lock="objective">Фикс</button>
+                        <button type="button" class="mh-icon" data-roll="objective">D6</button>
+                    </div>
+                    <select class="mh-select" id="objective"></select>
+                    <p class="mh-hint" data-hint="objective"></p>
+                </div>
+            </div>
+
+            <div class="mh-group">
+                <h3>Состав<span class="en">Crew</span></h3>
+                <div class="mh-field" data-key="crew">
+                    <div class="mh-field-head">
+                        <label for="crew">Таблица состава</label>
+                        <span class="mh-who" id="who-crew">бросает вызванный</span>
+                        <button type="button" class="mh-icon" data-lock="crew">Фикс</button>
+                        <button type="button" class="mh-icon" data-roll="crew">D6</button>
+                    </div>
+                    <select class="mh-select" id="crew"></select>
+                    <p class="mh-hint" data-hint="crew"></p>
+                </div>
+                <div class="mh-d3" id="d3-row" hidden>
+                    <div class="mh-d3-bar">
+                        <span class="mh-who">Hybrid: D3 размера каждой банды</span>
+                        <button type="button" class="mh-icon" data-roll="d3" title="Бросить D3 для обеих банд">D3 обеих</button>
+                    </div>
+                    <div class="mh-field">
+                        <div class="mh-field-head">
+                            <label for="d3A">D3 состава A</label>
+                            <button type="button" class="mh-icon" data-roll="d3A">D3</button>
+                        </div>
+                        <select class="mh-select" id="d3A">
+                            <option value="0">— перед игрой —</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </div>
+                    <div class="mh-field">
+                        <div class="mh-field-head">
+                            <label for="d3B">D3 состава B</label>
+                            <button type="button" class="mh-icon" data-roll="d3B">D3</button>
+                        </div>
+                        <select class="mh-select" id="d3B">
+                            <option value="0">— перед игрой —</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mh-group">
+                <h3>Побочные задания<span class="en">Side Jobs</span></h3>
+                <div class="mh-field" data-key="sideA">
+                    <div class="mh-field-head">
+                        <label for="sideA">Задание банды A</label>
+                        <span class="mh-who">свой D6</span>
+                        <button type="button" class="mh-icon" data-lock="sideA">Фикс</button>
+                        <button type="button" class="mh-icon" data-roll="sideA">D6</button>
+                    </div>
+                    <select class="mh-select" id="sideA"></select>
+                    <p class="mh-hint" data-hint="sideA"></p>
+                </div>
+                <div class="mh-field" data-key="sideB">
+                    <div class="mh-field-head">
+                        <label for="sideB">Задание банды B</label>
+                        <span class="mh-who">свой D6</span>
+                        <button type="button" class="mh-icon" data-lock="sideB">Фикс</button>
+                        <button type="button" class="mh-icon" data-roll="sideB">D6</button>
+                    </div>
+                    <select class="mh-select" id="sideB"></select>
+                    <p class="mh-hint" data-hint="sideB"></p>
+                </div>
+                <label class="mh-check">
+                    <input type="checkbox" id="extraJobs">
+                    <span>Дополнительное задание каждой стороне (Доска наград / Bounty Den)</span>
+                </label>
+                <div id="extra-jobs" hidden>
+                    <div class="mh-field" data-key="sideA2">
+                        <div class="mh-field-head">
+                            <label for="sideA2">Второе задание A</label>
+                            <button type="button" class="mh-icon" data-lock="sideA2">Фикс</button>
+                            <button type="button" class="mh-icon" data-roll="sideA2">D6</button>
+                        </div>
+                        <select class="mh-select" id="sideA2"></select>
+                        <p class="mh-hint" data-hint="sideA2"></p>
+                    </div>
+                    <div class="mh-field" data-key="sideB2">
+                        <div class="mh-field-head">
+                            <label for="sideB2">Второе задание B</label>
+                            <button type="button" class="mh-icon" data-lock="sideB2">Фикс</button>
+                            <button type="button" class="mh-icon" data-roll="sideB2">D6</button>
+                        </div>
+                        <select class="mh-select" id="sideB2"></select>
+                        <p class="mh-hint" data-hint="sideB2"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mh-group">
+                <h3>Поле боя<span class="en">Battlefield</span></h3>
+                <div class="mh-field" data-key="visibility">
+                    <div class="mh-field-head">
+                        <label for="visibility">Кромешная тьма</label>
+                        <span class="mh-who">по желанию, после расстановки поля</span>
+                        <button type="button" class="mh-icon" data-lock="visibility">Фикс</button>
+                        <button type="button" class="mh-icon" data-roll="visibility">D6</button>
+                    </div>
+                    <select class="mh-select" id="visibility"></select>
+                    <p class="mh-hint" data-hint="visibility"></p>
+                </div>
+                <label class="mh-check">
+                    <input type="checkbox" id="tunnel">
+                    <span>Туннельная война: потолок на высоте одной секции стены, через стены не перелезают</span>
+                </label>
+            </div>
+        </form>
+
+        <div class="mh-sheet-wrap">
+            <article class="mh-sheet" id="sheet">
+                <p class="mh-empty">Выберите параметры или нажмите «Случайный набор».</p>
+            </article>
+        </div>
+
+    </div>
+</main>
+
+<footer class="page-footer">
+    <p>Таблицы сценария из SKIRMUNDA. Necromunda, Games Workshop и связанные названия &mdash; торговые марки Games Workshop Ltd.
+    Страница создана для личного некоммерческого использования.</p>
+</footer>
+
+<script>
+(function () {
+  const DEPLOYMENT = {
+    1: { name: 'Снайперская дистанция', en: 'Sniping Range',
+      text: 'Победитель сравнительного броска выбирает край поля; оппонент берёт противоположный. Обе зоны расстановки — от своего края до 12" от линии через центр поля.' },
+    2: { name: 'Лицом к лицу', en: 'Face Off',
+      text: 'Победитель сравнительного броска выбирает край поля; оппонент берёт противоположный. Обе зоны расстановки — от своего края до 9" от линии через центр поля.' },
+    3: { name: 'Противостояние', en: 'Stand Off',
+      text: 'Победитель сравнительного броска выбирает край поля; оппонент берёт противоположный. Обе зоны расстановки — от своего края до 6" от линии через центр поля.' },
+    4: { name: 'Засада', en: 'Ambush',
+      text: 'Защитник расставляется в пределах 6" от центра поля. Атакующий — где угодно не ближе 12" от центра.' },
+    5: { name: 'Все против всех', en: 'Free For All',
+      text: 'Победитель сравнительного броска выбирает четверть поля; оппонент берёт противоположную. Каждая зона — в этой четверти не ближе 9" от центра.' },
+    6: { name: 'Случайная встреча', en: 'Chance Encounter',
+      text: 'Победитель сравнительного броска выбирает угол; его зона — в пределах 9" от этого угла и противоположного. Оппонент — в пределах 9" от двух других углов. Банды делят поровну между двумя зонами.' },
+  };
+
+  const OBJECTIVE = {
+    1: { name: 'Король улья', en: 'King of the Hive',
+      text: 'Одна цель в центре поля. На Check For Victory она стоит 1 VP. Побеждает первый, кто наберёт 3 VP.' },
+    2: { name: 'Война за территорию', en: 'Turf War',
+      text: 'С третьего раунда, если только у одного игрока есть модели не Seriously Injured/Damaged в пределах 9" от центра на Check For Victory, он побеждает.' },
+    3: { name: 'Схватка в туннелях', en: 'Tunnel Clash',
+      text: 'Цель в центре, затем каждый игрок ставит ещё одну не ближе 6" от любой другой цели и 6" от края. Контроль двух целей даёт 1 VP; первый до 3 VP побеждает.' },
+    4: { name: 'Наглядный урок', en: 'Object Lesson',
+      text: '1 VP за каждую вражескую модель, вышедшую из боя в этом раунде; +1 VP если Leader, Champion или Brute; +1 VP если выведена Fight, Coup de Grâce или Sabotage. Первый до 10 VP побеждает.' },
+    5: { name: 'Обойти с фланга', en: "Flank 'em",
+      text: 'Атакующий ставит цель в центре края поля, на 6" вглубь; защитник — напротив. Контроль обеих целей даёт 1 VP; первый до 3 VP побеждает.' },
+    6: { name: 'Выжечь их', en: 'Burn Them Out',
+      text: 'Каждый ставит три цели в зоне оппонента, не ближе 6" друг от друга. Контроль цели в зоне оппонента даёт 1 VP и снимает её; первый до 2 VP побеждает.' },
+  };
+
+  const SIDE_JOB = {
+    1: { name: 'Подставить', en: "Stitch 'em Up",
+      text: 'При Coup de Grâce вместо сравнительного броска Strength можно подбросить улики тяжелораненой модели. Если к концу боя хотя бы на одного врага подбросили улики — задание выполнено.' },
+    2: { name: 'Посылка', en: 'The Package',
+      text: 'После расстановки выберите выставленного бойца и дайте маркер посылки. Если на Check For Victory 3-го раунда или позже он в контакте подставкой с краем поля в зоне оппонента — задание выполнено.' },
+    3: { name: 'Свести счёты', en: 'Settle a Score',
+      text: 'После расстановки случайно выберите выставленную модель оппонента (не лидера). Если её вывели из боя или она покинула поле — задание выполнено.' },
+    4: { name: 'Калечащий удар', en: 'Crippling Strike',
+      text: 'Если на Check For Victory любого раунда хотя бы половина моделей оппонента на поле Seriously Injured/Damaged или Engaged — задание выполнено.' },
+    5: { name: 'Сеять смуту', en: 'Spread Unrest',
+      text: 'Любой Active-боец без подтипа Beast может выполнить Graffiti (двойное) в зоне оппонента. Если хотя бы один боец сделал это — задание выполнено.' },
+    6: { name: 'Защитить будущее', en: 'Protect the Future',
+      text: 'После расстановки случайно выберите своего выставленного проспекта (или гэнгера, если проспектов нет). Если он на поле в конце боя — задание выполнено.' },
+  };
+
+  const CREW = {
+    1: { name: 'Нарастающая стычка', en: 'Escalating Engagement', needsD3: true,
+      text: 'Обе банды: Hybrid (3+D3). Подкрепления (5), D3 прибывают каждый раунд начиная с первого.' },
+    2: { name: 'Не жалеть ничего!', en: 'Hold Nothing Back!', needsD3: false,
+      text: 'Обе банды: Custom (10).' },
+    3: { name: 'Патруль', en: 'Patrol', needsD3: false,
+      text: 'Обе банды: Hybrid (3+4).' },
+    4: { name: 'Внезапная атака', en: 'Surprise Attack', needsD3: false,
+      text: 'Атакующий: Hybrid (4+4). Защитник: Custom (3) и Reinforcements (7), D3 прибывают каждый раунд начиная с первого.' },
+    5: { name: 'Ударная группа', en: 'Strike Force', needsD3: false,
+      text: 'Обе банды: Custom (5).' },
+    6: { name: 'Разведгруппа', en: 'Scouting Force', needsD3: true,
+      text: 'Обе банды: Hybrid (D3+5).' },
+  };
+
+  const VISIBILITY = {
+    none: { name: 'Не используется', en: '—', d6: '—',
+      text: 'Обычная видимость, правило Pitch Black не действует.' },
+    pending: { name: 'Перед игрой', en: 'Pitch Black', d6: 'D6',
+      text: 'После расстановки поля бросьте D6 по таблице кромешной тьмы.' },
+    1: { name: 'Полный ночной цикл', en: 'Full Night Cycle', d6: '1',
+      text: 'Visibility (3"). Линию видимости дальше 3" провести нельзя, если цель не с photo-lumen. Photo-lumen / photo-goggles / infra-sights дают +9" (не складываются).' },
+    2: { name: 'Почти ночь', en: 'Near Night', d6: '2–3',
+      text: 'Visibility (6"). Photo-lumen, photo-goggles и infra-sights увеличивают дистанцию на 9".' },
+    3: { name: 'Почти день', en: 'Near Day', d6: '4–5',
+      text: 'Visibility (12"). Photo-lumen, photo-goggles и infra-sights увеличивают дистанцию на 9".' },
+    4: { name: 'Полный дневной цикл', en: 'Full Day Cycle', d6: '6',
+      text: 'Visibility (24"). Photo-lumen, photo-goggles и infra-sights увеличивают дистанцию на 9".' },
+  };
+
+  const OBJECTIVE_ALL = 'Во всех целях: если только у одного игрока есть хотя бы одна модель на поле, он побеждает. Если ни у кого нет моделей — ничья.';
+
+  const DEFAULTS = {
+    mode: 'campaign',
+    nameA: '',
+    nameB: '',
+    challenger: 'A',
+    attacker: 'A',
+    attackerNote: '',
+    deployment: 0,
+    objective: 0,
+    crew: 0,
+    d3A: 0,
+    d3B: 0,
+    sideA: 0,
+    sideB: 0,
+    extraJobs: false,
+    sideA2: 0,
+    sideB2: 0,
+    visibility: 'none',
+    tunnel: false,
+    genMode: 'tables',
+  };
+
+  const state = { ...DEFAULTS, locks: {} };
+
+  const $ = (id) => document.getElementById(id);
+
+  function d6() { return 1 + Math.floor(Math.random() * 6); }
+  function d3() { return Math.ceil(d6() / 2); }
+
+  function fillSelect(id, table, blank) {
+    const el = $(id);
+    el.innerHTML = '';
+    if (blank) {
+      const opt = document.createElement('option');
+      opt.value = '0';
+      opt.textContent = '— не выбрано —';
+      el.appendChild(opt);
+    }
+    Object.keys(table).forEach((key) => {
+      if (key === 'none' || key === 'pending') return;
+      const n = Number(key);
+      if (!Number.isFinite(n)) return;
+      const opt = document.createElement('option');
+      opt.value = String(n);
+      opt.textContent = n + ' — ' + table[n].name;
+      el.appendChild(opt);
+    });
+  }
+
+  function fillVisibility() {
+    const el = $('visibility');
+    el.innerHTML = '';
+    [['none', 'Не используется'], ['pending', 'Перед игрой — бросок D6'],
+     ['1', '1 — Полный ночной цикл (3")'],
+     ['2', '2–3 — Почти ночь (6")'], ['3', '4–5 — Почти день (12")'],
+     ['4', '6 — Полный дневной цикл (24")']].forEach(([value, label]) => {
+      const opt = document.createElement('option');
+      opt.value = value;
+      opt.textContent = label;
+      el.appendChild(opt);
+    });
+  }
+
+  function esc(s) {
+    return String(s).replace(/[&<>"']/g, (ch) => ({
+      '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
+    }[ch]));
+  }
+
+  function gangName(side) {
+    const raw = side === 'A' ? state.nameA.trim() : state.nameB.trim();
+    return raw || ('Банда ' + side);
+  }
+
+  function isCampaign() { return state.mode === 'campaign'; }
+
+  function tableWho(kind) {
+    if (isCampaign()) {
+      return kind === 'crew' ? 'бросает вызванный' : 'бросает челленджер';
+    }
+    return 'игроки выбирают или бросают';
+  }
+
+  function tablePending(kind) {
+    const names = { deployment: 'расстановки', objective: 'целей', crew: 'состава' };
+    const extra = kind === 'crew'
+      ? ' На 1 (Нарастающая стычка) и 6 (Разведгруппа) дополнительно D3 на размер состава каждой банды.'
+      : '';
+    if (isCampaign()) {
+      const who = kind === 'crew' ? 'Вызванный' : 'Челленджер';
+      return who + ' бросает D6 по таблице ' + names[kind] + '.' + extra;
+    }
+    return 'Игроки выбирают результат на таблице ' + names[kind] + ' или бросают D6.' + extra;
+  }
+
+  function crewDetail() {
+    const entry = CREW[state.crew];
+    if (!entry) return tablePending('crew');
+    if (state.crew === 1) {
+      const a = state.d3A
+        ? 'A: Hybrid (3+' + state.d3A + ' = ' + (3 + state.d3A) + ')'
+        : 'A: Hybrid (3+D3)';
+      const b = state.d3B
+        ? 'B: Hybrid (3+' + state.d3B + ' = ' + (3 + state.d3B) + ')'
+        : 'B: Hybrid (3+D3)';
+      return a + '. ' + b + '. Подкрепления (5): D3 каждый раунд с первого.';
+    }
+    if (state.crew === 6) {
+      const a = state.d3A
+        ? 'A: Hybrid (' + state.d3A + '+5 = ' + (state.d3A + 5) + ')'
+        : 'A: Hybrid (D3+5)';
+      const b = state.d3B
+        ? 'B: Hybrid (' + state.d3B + '+5 = ' + (state.d3B + 5) + ')'
+        : 'B: Hybrid (D3+5)';
+      return a + '. ' + b + '.';
+    }
+    return entry.text;
+  }
+
+  function diceMark(value, dice) {
+    if (value) return '<span class="dice">' + dice + ': ' + value + '</span>';
+    return '<span class="dice mh-pending">перед игрой: ' + dice + '</span>';
+  }
+
+  function isGuide() { return state.genMode === 'guide'; }
+  function rollInner() { return state.genMode === 'all'; }
+
+  const CAMPAIGN_ATTACKER_NOTE = 'В кампании атакующий — игрок, сделавший вызов.';
+
+  function applyPlayMode(prevMode) {
+    if (state.mode === 'campaign') {
+      state.attacker = state.challenger;
+      state.attackerNote = CAMPAIGN_ATTACKER_NOTE;
+      return;
+    }
+    const leftCampaign = prevMode === 'campaign';
+    const staleCampaign = state.attackerNote === CAMPAIGN_ATTACKER_NOTE;
+    if (leftCampaign || staleCampaign) {
+      state.attacker = '';
+      state.attackerNote = '';
+    }
+  }
+
+  function clearInner() {
+    state.d3A = 0;
+    state.d3B = 0;
+    if (state.mode === 'skirmish') {
+      state.attacker = '';
+      state.attackerNote = '';
+    } else {
+      state.attacker = state.challenger;
+      state.attackerNote = CAMPAIGN_ATTACKER_NOTE;
+    }
+  }
+
+  function clearDice() {
+    state.deployment = 0;
+    state.objective = 0;
+    state.crew = 0;
+    state.d3A = 0;
+    state.d3B = 0;
+    state.sideA = 0;
+    state.sideB = 0;
+    state.sideA2 = 0;
+    state.sideB2 = 0;
+    state.visibility = 'none';
+    state.locks = {};
+    if (state.mode === 'skirmish') {
+      state.attacker = '';
+      state.attackerNote = '';
+    } else {
+      state.attacker = state.challenger;
+      state.attackerNote = CAMPAIGN_ATTACKER_NOTE;
+    }
+  }
+
+  function rollVisibilityD6() {
+    const n = d6();
+    if (n === 1) return '1';
+    if (n <= 3) return '2';
+    if (n <= 5) return '3';
+    return '4';
+  }
+
+  function setLockButtons() {
+    document.querySelectorAll('[data-lock]').forEach((btn) => {
+      const key = btn.getAttribute('data-lock');
+      const on = !!state.locks[key];
+      btn.classList.toggle('is-locked', on);
+      btn.textContent = on ? 'Фикс ✓' : 'Фикс';
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+  }
+
+  function readForm() {
+    state.mode = $('mode').value;
+    state.nameA = $('nameA').value;
+    state.nameB = $('nameB').value;
+    state.challenger = $('challenger').value;
+    state.attacker = $('attacker').value;
+    state.deployment = Number($('deployment').value);
+    state.objective = Number($('objective').value);
+    state.crew = Number($('crew').value);
+    state.d3A = Number($('d3A').value);
+    state.d3B = Number($('d3B').value);
+    state.sideA = Number($('sideA').value);
+    state.sideB = Number($('sideB').value);
+    state.extraJobs = $('extraJobs').checked;
+    state.sideA2 = Number($('sideA2').value);
+    state.sideB2 = Number($('sideB2').value);
+    state.visibility = $('visibility').value;
+    state.tunnel = $('tunnel').checked;
+  }
+
+  function writeForm() {
+    $('mode').value = state.mode;
+    $('nameA').value = state.nameA;
+    $('nameB').value = state.nameB;
+    $('challenger').value = state.challenger;
+    $('attacker').value = state.attacker;
+    $('deployment').value = String(state.deployment);
+    $('objective').value = String(state.objective);
+    $('crew').value = String(state.crew);
+    $('d3A').value = String(state.d3A);
+    $('d3B').value = String(state.d3B);
+    $('sideA').value = String(state.sideA);
+    $('sideB').value = String(state.sideB);
+    $('extraJobs').checked = state.extraJobs;
+    $('sideA2').value = String(state.sideA2);
+    $('sideB2').value = String(state.sideB2);
+    $('visibility').value = state.visibility;
+    $('tunnel').checked = state.tunnel;
+    const modeInput = document.querySelector('input[name="gen-mode"][value="' + state.genMode + '"]');
+    if (modeInput) modeInput.checked = true;
+    $('mission-form').classList.toggle('is-guide', isGuide());
+    $('mission-form').classList.toggle('is-tables', state.genMode === 'tables');
+    $('btn-roll-all').disabled = isGuide();
+    document.querySelectorAll('.mh-modes label').forEach((lab) => {
+      lab.classList.toggle('is-on', lab.querySelector('input').checked);
+    });
+  }
+
+  function hint(id, table, value) {
+    const node = document.querySelector('[data-hint="' + id + '"]');
+    if (!node) return;
+    const entry = table[value];
+    node.textContent = entry ? entry.text : '';
+  }
+
+  function maybe(key) {
+    return !state.locks[key];
+  }
+
+  function setAttackerPending() {
+    state.attacker = '';
+    state.attackerNote = '';
+  }
+
+  function rollAttacker() {
+    if (state.mode === 'campaign') {
+      state.attacker = state.challenger;
+      state.attackerNote = CAMPAIGN_ATTACKER_NOTE;
+      return;
+    }
+    let a = d6();
+    let b = d6();
+    let guard = 0;
+    while (a === b && guard < 20) {
+      a = d6();
+      b = d6();
+      guard += 1;
+    }
+    const winner = a > b ? 'A' : 'B';
+    state.attacker = winner;
+    state.attackerNote = 'Сравнительный бросок: ' + gangName('A') + ' ' + a + ' vs ' +
+      gangName('B') + ' ' + b + '. Победитель выбирает, кто атакующий (по умолчанию — он сам).';
+  }
+
+  function rollCrewD3() {
+    state.d3A = d3();
+    state.d3B = d3();
+  }
+
+  function rollKey(key) {
+    if (isGuide()) return;
+    if (key === 'attacker') rollAttacker();
+    else if (key === 'deployment') state.deployment = d6();
+    else if (key === 'objective') state.objective = d6();
+    else if (key === 'crew') {
+      state.crew = d6();
+      if (CREW[state.crew].needsD3) {
+        if (rollInner()) rollCrewD3();
+        else {
+          state.d3A = 0;
+          state.d3B = 0;
+        }
+      } else {
+        state.d3A = 0;
+        state.d3B = 0;
+      }
+    } else if (key === 'd3') rollCrewD3();
+    else if (key === 'd3A') state.d3A = d3();
+    else if (key === 'd3B') state.d3B = d3();
+    else if (key === 'sideA') state.sideA = d6();
+    else if (key === 'sideB') state.sideB = d6();
+    else if (key === 'sideA2') state.sideA2 = d6();
+    else if (key === 'sideB2') state.sideB2 = d6();
+    else if (key === 'visibility') state.visibility = rollVisibilityD6();
+  }
+
+  function rollAll() {
+    if (isGuide()) return;
+    if (maybe('attacker')) {
+      if (state.mode === 'campaign' || rollInner()) rollAttacker();
+      else setAttackerPending();
+    }
+    if (maybe('deployment')) state.deployment = d6();
+    if (maybe('objective')) state.objective = d6();
+    if (maybe('crew')) {
+      state.crew = d6();
+      if (CREW[state.crew].needsD3 && rollInner()) rollCrewD3();
+      else {
+        state.d3A = 0;
+        state.d3B = 0;
+      }
+    } else if (state.crew && CREW[state.crew] && CREW[state.crew].needsD3 && rollInner()) {
+      rollCrewD3();
+    }
+    if (maybe('sideA')) state.sideA = d6();
+    if (maybe('sideB')) state.sideB = d6();
+    if (state.extraJobs) {
+      if (maybe('sideA2')) state.sideA2 = d6();
+      if (maybe('sideB2')) state.sideB2 = d6();
+    }
+    if (maybe('visibility') && state.visibility !== 'none' && state.visibility !== 'pending') {
+      state.visibility = rollVisibilityD6();
+    }
+  }
+
+  function sheetRollBtn(key, label) {
+    if (isGuide()) return '';
+    return '<button type="button" class="mh-icon mh-sheet-roll" data-sheet-roll="' +
+      key + '">' + label + '</button>';
+  }
+
+  function jobBlock(side, value, extra) {
+    const title = extra ? 'Побочное задание 2' : 'Побочное задание';
+    const entry = SIDE_JOB[value];
+    if (!entry) {
+      return '<div class="mh-block"><h3>' + title + ' — ' + esc(gangName(side)) + ' ' +
+        diceMark('', 'D6') + '</h3><p>' +
+        (isCampaign()
+          ? 'Свой бросок по таблице побочных заданий.'
+          : 'Игрок выбирает задание или бросает D6.') +
+        '</p></div>';
+    }
+    return '<div class="mh-block"><h3>' + title + ' — ' + esc(gangName(side)) + ' ' +
+      diceMark(value, 'D6') + '</h3><p><strong>' + entry.name +
+      '</strong> (' + entry.en + '). ' + entry.text + '</p></div>';
+  }
+
+  function renderSheet() {
+    const extrasOk = !state.extraJobs || (state.sideA2 && state.sideB2);
+    const ready = state.deployment && state.objective && state.crew &&
+      state.sideA && state.sideB && extrasOk;
+    const sheet = $('sheet');
+    if (!isGuide() && !ready) {
+      sheet.innerHTML = '<p class="mh-empty">Выберите расстановку, цель, состав и оба побочных задания — или нажмите «Случайный набор».</p>';
+      return;
+    }
+    const dep = DEPLOYMENT[state.deployment];
+    const obj = OBJECTIVE[state.objective];
+    const crew = CREW[state.crew];
+    const vis = VISIBILITY[state.visibility];
+    const attackerKnown = !!state.attacker;
+    const attacker = state.attacker || 'A';
+    const defender = attacker === 'A' ? 'B' : 'A';
+    const modeLabel = state.mode === 'campaign' ? 'Кампания' : 'Скирмиш';
+    const subtitle = dep && obj ? (dep.name + ' / ' + obj.name) : 'сбор таблиц перед игрой';
+
+    let html = '';
+    html += '<p class="mh-sheet-kicker">' + modeLabel + ' · Scenario Generation</p>';
+    html += '<p class="mh-sheet-note">Где указано D3 — нужен бросок кубика.</p>';
+    html += '<h2>Сценарий<span class="en">' + subtitle + '</span></h2>';
+    html += '<div class="mh-sides">';
+    if (attackerKnown) {
+      html += '<div class="mh-side"><div class="mh-role">Атакующий</div><div class="mh-gang">' +
+        esc(gangName(attacker)) + '</div></div>';
+      html += '<div class="mh-side"><div class="mh-role">Защитник</div><div class="mh-gang">' +
+        esc(gangName(defender)) + '</div></div></div>';
+    } else {
+      html += '<div class="mh-side"><div class="mh-role">Атакующий</div><div class="mh-gang mh-pending">сравнительный бросок D6</div></div>';
+      html += '<div class="mh-side"><div class="mh-role">Защитник</div><div class="mh-gang mh-pending">определится броском</div></div></div>';
+    }
+    if (state.attackerNote) {
+      html += '<p class="mh-hint">' + esc(state.attackerNote) + '</p>';
+    } else if (!attackerKnown) {
+      html += '<p class="mh-hint">Перед игрой оба бросают D6. Победитель сравнительного броска выбирает, кто атакующий.</p>';
+    }
+    if (state.mode === 'skirmish' && !isGuide()) {
+      html += '<p class="mh-sheet-actions">' +
+        sheetRollBtn('attacker', attackerKnown ? 'Перебросить атакующего' : 'Определить атакующего') +
+        '</p>';
+    }
+    html += '<div class="mh-block"><h3>Расстановка ' + diceMark(state.deployment || '', 'D6') +
+      '</h3>';
+    if (dep) {
+      html += '<p><strong>' + dep.name + '</strong> (' + dep.en + '). ' + dep.text + '</p></div>';
+    } else {
+      html += '<p>' + tablePending('deployment') + '</p></div>';
+    }
+    html += '<div class="mh-block"><h3>Цель ' + diceMark(state.objective || '', 'D6') +
+      '</h3>';
+    if (obj) {
+      html += '<p><strong>' + obj.name + '</strong> (' + obj.en + '). ' + obj.text +
+        '</p><p>' + OBJECTIVE_ALL + '</p></div>';
+    } else {
+      html += '<p>' + tablePending('objective') + '</p><p>' +
+        OBJECTIVE_ALL + '</p></div>';
+    }
+    html += '<div class="mh-block"><h3>Состав ' + diceMark(state.crew || '', 'D6') +
+      '</h3>';
+    if (crew) {
+      html += '<p><strong>' + crew.name + '</strong> (' + crew.en + '). ' + crewDetail() + '</p>';
+      if (crew.needsD3 && !isGuide()) {
+        html += '<p class="mh-sheet-actions">' +
+          sheetRollBtn('d3', (state.d3A && state.d3B) ? 'Перебросить D3 состава' : 'Бросить D3 состава') +
+          '</p>';
+      }
+      html += '</div>';
+    } else {
+      html += '<p>' + crewDetail() + '</p></div>';
+    }
+    html += jobBlock('A', state.sideA, false);
+    html += jobBlock('B', state.sideB, false);
+    if (state.extraJobs) {
+      html += jobBlock('A', state.sideA2, true);
+      html += jobBlock('B', state.sideB2, true);
+    }
+    if (state.visibility === 'pending') {
+      html += '<div class="mh-block"><h3>Кромешная тьма ' + diceMark('', 'D6') +
+        '</h3><p>' + vis.text + '</p></div>';
+    } else if (state.visibility !== 'none') {
+      html += '<div class="mh-block"><h3>Кромешная тьма <span class="dice">D6: ' + vis.d6 +
+        '</span></h3><p><strong>' + vis.name + '</strong> (' + vis.en +
+        '). ' + vis.text + '</p></div>';
+    }
+    if (state.tunnel) {
+      html += '<div class="mh-block"><h3>Туннельная война</h3><p>Потолок на высоте одной секции стены: через стены нельзя перелезать, лестницы и стремянки использовать нельзя.</p></div>';
+    }
+    html += '<div class="mh-block"><h3>До боя</h3><ul class="mh-checklist">';
+    html += '<li>Расставить местность (начинает защитник), затем препятствия</li>';
+    html += '<li>Выбрать составы по методу выше; при желании нанять Hired Guns</li>';
+    if (state.mode === 'campaign') {
+      html += '<li>Объявить Battlefield Effects территорий</li>';
+    }
+    html += '<li>Каждый выбирает одну Gang Tactic (аутсайдер: +1 за каждые полные 200 кредитов разницы рейтинга)</li>';
+    html += '<li>Расстановка: начинает защитник</li>';
+    html += '</ul></div>';
+    sheet.innerHTML = html;
+  }
+
+  function syncHints() {
+    hint('deployment', DEPLOYMENT, state.deployment);
+    hint('objective', OBJECTIVE, state.objective);
+    hint('crew', CREW, state.crew);
+    hint('sideA', SIDE_JOB, state.sideA);
+    hint('sideB', SIDE_JOB, state.sideB);
+    hint('sideA2', SIDE_JOB, state.sideA2);
+    hint('sideB2', SIDE_JOB, state.sideB2);
+    hint('visibility', VISIBILITY, state.visibility);
+    $('who-deployment').textContent = tableWho('deployment');
+    $('who-objective').textContent = tableWho('objective');
+    $('who-crew').textContent = tableWho('crew');
+    $('attacker-hint').textContent = state.attackerNote;
+    $('field-challenger').hidden = state.mode !== 'campaign';
+    $('attacker-who').textContent = state.mode === 'campaign'
+      ? 'в кампании = челленджер'
+      : 'в скирмише — сравнительный бросок D6';
+    const needs = !!(CREW[state.crew] && CREW[state.crew].needsD3);
+    $('d3-row').hidden = !needs || isGuide();
+    const attRoll = document.querySelector('[data-roll="attacker"]');
+    if (attRoll) attRoll.hidden = state.mode === 'campaign';
+    $('extra-jobs').hidden = !state.extraJobs;
+    setLockButtons();
+  }
+
+  function refresh() {
+    writeForm();
+    syncHints();
+    renderSheet();
+  }
+
+  fillSelect('deployment', DEPLOYMENT, true);
+  fillSelect('objective', OBJECTIVE, true);
+  fillSelect('crew', CREW, true);
+  fillSelect('sideA', SIDE_JOB, true);
+  fillSelect('sideB', SIDE_JOB, true);
+  fillSelect('sideA2', SIDE_JOB, true);
+  fillSelect('sideB2', SIDE_JOB, true);
+  fillVisibility();
+  refresh();
+
+  function onFormUpdate() {
+    const prevMode = state.mode;
+    const hadExtra = state.extraJobs;
+    readForm();
+    applyPlayMode(prevMode);
+    $('attacker').value = state.attacker;
+    if (state.extraJobs && !hadExtra && !isGuide()) {
+      if (!state.sideA2) state.sideA2 = d6();
+      if (!state.sideB2) state.sideB2 = d6();
+      $('sideA2').value = String(state.sideA2);
+      $('sideB2').value = String(state.sideB2);
+    }
+    syncHints();
+    renderSheet();
+  }
+
+  $('mission-form').addEventListener('input', onFormUpdate);
+  $('mission-form').addEventListener('change', onFormUpdate);
+
+  document.querySelectorAll('input[name="gen-mode"]').forEach((el) => {
+    el.addEventListener('change', () => {
+      const prev = state.genMode;
+      readForm();
+      state.genMode = document.querySelector('input[name="gen-mode"]:checked').value;
+      if (state.genMode === 'guide') clearDice();
+      else if (state.genMode === 'tables' && prev === 'all') clearInner();
+      refresh();
+    });
+  });
+
+  document.querySelectorAll('[data-lock]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const key = btn.getAttribute('data-lock');
+      state.locks[key] = !state.locks[key];
+      setLockButtons();
+    });
+  });
+
+  document.querySelectorAll('[data-roll]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      readForm();
+      rollKey(btn.getAttribute('data-roll'));
+      refresh();
+    });
+  });
+
+  $('sheet').addEventListener('click', (e) => {
+    const btn = e.target.closest('[data-sheet-roll]');
+    if (!btn || isGuide()) return;
+    readForm();
+    rollKey(btn.getAttribute('data-sheet-roll'));
+    refresh();
+  });
+
+  $('btn-roll-all').addEventListener('click', () => {
+    readForm();
+    rollAll();
+    refresh();
+  });
+
+  $('btn-reset').addEventListener('click', () => {
+    const genMode = document.querySelector('input[name="gen-mode"]:checked').value;
+    Object.assign(state, { ...DEFAULTS, locks: {}, genMode });
+    if (genMode === 'guide') clearDice();
+    else if (genMode === 'tables') clearInner();
+    refresh();
+  });
+
+  $('btn-print').addEventListener('click', () => window.print());
+})();
+</script>
+</body>
+</html>

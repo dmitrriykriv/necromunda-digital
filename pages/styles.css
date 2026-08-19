@@ -1176,6 +1176,417 @@ ul.rule-list li.sub {
     color: var(--text-dim);
 }
 
+/* ---------- Помощник миссий ---------- */
+
+.mission-main {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 28px 28px 72px;
+}
+
+.mh-lede {
+    color: var(--text-dim);
+    max-width: 720px;
+    margin: 0 0 22px;
+}
+
+.mh-lede a {
+    color: var(--accent-soft);
+}
+
+.mh-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 22px;
+}
+
+.mh-btn {
+    appearance: none;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    padding: 9px 18px;
+    font: inherit;
+    font-size: 0.86rem;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.mh-btn-primary {
+    background: var(--accent);
+    color: #fff;
+    font-weight: 700;
+}
+
+.mh-btn-primary:hover {
+    background: var(--accent-soft);
+}
+
+.mh-btn-ghost {
+    background: var(--bg-panel-2);
+    color: var(--text);
+    border-color: var(--line);
+}
+
+.mh-modes {
+    display: inline-flex;
+    margin-left: auto;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--bg-panel-2);
+    overflow: hidden;
+}
+
+.mh-modes label {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 12px;
+    font-size: 0.78rem;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    cursor: pointer;
+    user-select: none;
+    border-right: 1px solid var(--line);
+}
+
+.mh-modes label:last-child {
+    border-right: none;
+}
+
+.mh-modes input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.mh-modes label.is-on,
+.mh-modes label:has(input:checked) {
+    background: var(--accent-dim);
+    color: var(--accent-soft);
+}
+
+.mh-btn:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+.mh-form.is-guide [data-roll],
+.mh-form.is-guide [data-lock] {
+    display: none;
+}
+
+.mh-pending {
+    color: var(--accent-soft);
+}
+
+.mh-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 0.92fr);
+    gap: 24px;
+    align-items: start;
+}
+
+.mh-panel {
+    background: var(--bg-panel);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 18px 18px 20px;
+}
+
+.mh-panel h2 {
+    font-size: 0.78rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin-bottom: 14px;
+}
+
+.mh-group {
+    margin-bottom: 18px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--line);
+}
+
+.mh-group:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.mh-group h3 {
+    font-size: 0.95rem;
+    color: var(--accent);
+    letter-spacing: 0.6px;
+    margin-bottom: 10px;
+}
+
+.mh-group h3 .en {
+    display: inline;
+    margin-left: 8px;
+    font-size: 0.72rem;
+    color: var(--text-faint);
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.mh-field {
+    margin-bottom: 12px;
+}
+
+.mh-field:last-child {
+    margin-bottom: 0;
+}
+
+.mh-field-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
+.mh-field-head label {
+    font-size: 0.86rem;
+    color: var(--text);
+}
+
+.mh-who {
+    font-size: 0.72rem;
+    color: var(--text-faint);
+    margin-right: auto;
+}
+
+.mh-icon {
+    appearance: none;
+    min-width: 34px;
+    height: 28px;
+    padding: 0 8px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: var(--bg-panel-2);
+    color: var(--text-dim);
+    font-size: 0.72rem;
+    letter-spacing: 0.6px;
+    cursor: pointer;
+}
+
+.mh-icon:hover {
+    border-color: var(--accent);
+    color: var(--accent-soft);
+}
+
+.mh-icon.is-locked {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--accent-dim);
+}
+
+.mh-select,
+.mh-input {
+    width: 100%;
+    background: var(--bg);
+    color: var(--text);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 8px 10px;
+    font: inherit;
+    font-size: 0.92rem;
+}
+
+.mh-select:focus,
+.mh-input:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+.mh-check {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: var(--text-dim);
+    margin: 8px 0 4px;
+}
+
+.mh-check input {
+    margin-top: 4px;
+    accent-color: var(--accent);
+}
+
+.mh-hint {
+    margin-top: 6px;
+    font-size: 0.82rem;
+    color: var(--text-dim);
+    line-height: 1.45;
+}
+
+.mh-d3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.mh-d3-bar {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.mh-d3-bar .mh-who {
+    margin-right: auto;
+}
+
+.mh-sheet > .mh-hint {
+    margin-bottom: 6px;
+}
+
+.mh-sheet-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 8px 0 14px;
+}
+
+.mh-sheet-wrap {
+    position: sticky;
+    top: 16px;
+}
+
+.mh-sheet {
+    background: var(--bg-panel);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 20px 22px 22px;
+}
+
+.mh-sheet-kicker {
+    font-size: 0.7rem;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+    color: var(--text-faint);
+}
+
+.mh-sheet-note {
+    margin: 4px 0 0;
+    font-size: 0.82rem;
+    color: var(--text-dim);
+}
+
+.mh-sheet h2 {
+    font-size: 1.35rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin: 6px 0 14px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--accent);
+}
+
+.mh-sheet h2 .en {
+    display: block;
+    font-size: 0.7rem;
+    color: var(--text-faint);
+    letter-spacing: 2px;
+    margin-top: 4px;
+}
+
+.mh-sides {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.mh-side {
+    background: var(--bg-panel-2);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 10px 12px;
+}
+
+.mh-side .mh-role {
+    font-size: 0.68rem;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: var(--accent-soft);
+}
+
+.mh-side .mh-gang {
+    font-size: 1.02rem;
+    color: var(--text);
+    margin-top: 2px;
+}
+
+.mh-block {
+    margin-bottom: 14px;
+}
+
+.mh-block h3 {
+    font-size: 0.72rem;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin-bottom: 4px;
+}
+
+.mh-block h3 .dice {
+    margin-left: 6px;
+}
+
+.mh-block strong {
+    color: var(--text);
+}
+
+.mh-block p {
+    font-size: 0.9rem;
+    color: var(--text-dim);
+}
+
+.mh-checklist {
+    list-style: none;
+    margin: 8px 0 0;
+    padding: 0;
+    font-size: 0.84rem;
+    color: var(--text-dim);
+}
+
+.mh-checklist li {
+    padding-left: 16px;
+    position: relative;
+    margin-bottom: 4px;
+}
+
+.mh-checklist li::before {
+    content: "\2022";
+    position: absolute;
+    left: 2px;
+    color: var(--accent);
+}
+
+.mh-empty {
+    color: var(--text-faint);
+    font-size: 0.92rem;
+}
+
+@media (max-width: 1000px) {
+    .mh-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mh-sheet-wrap {
+        position: static;
+    }
+
+    .mission-main {
+        padding: 20px 18px 56px;
+    }
+}
+
 /* ---------- Адаптив ---------- */
 
 @media (max-width: 1000px) {
@@ -1327,8 +1738,38 @@ table.check-table td.ok {
 
     .sidebar,
     .top-link,
-    .backlink {
+    .backlink,
+    .mh-toolbar,
+    .mh-form,
+    .mh-lede,
+    .mh-sheet-actions,
+    .mh-sheet-roll {
         display: none;
+    }
+
+    .mh-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mh-sheet-wrap {
+        position: static;
+    }
+
+    .mh-sheet,
+    .mh-side {
+        background: none;
+        border-color: #999;
+    }
+
+    .mh-sheet {
+        border-left-color: #333;
+    }
+
+    .mh-sheet h2,
+    .mh-block strong,
+    .mh-side .mh-gang,
+    .mh-pending {
+        color: #000;
     }
 
     .fighter {
