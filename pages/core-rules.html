@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Necromunda — справочник основных правил</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#14161c">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -106,6 +108,7 @@
             <ul>
                 <li><a href="#pole-boya">Подготовка поля боя<span class="en">Battlefield Set-Up</span></a></li>
                 <li><a href="#scenariy">Генерация сценария<span class="en">Scenario Generation</span></a></li>
+                <li><a href="mission-helper.html">Помощник миссий<span class="en">Scenario Helper</span></a></li>
                 <li><a href="#taktiki">Тактики банды<span class="en">Gang Tactics</span></a></li>
             </ul>
         </details>
@@ -436,7 +439,7 @@
 <!-- ============ КУБИКИ ============ -->
 <section id="kubiki">
     <h2>Кубики и броски<span class="en">Necromunda Dice &amp; Rolling Dice</span></h2>
-    <p class="lede">Типы кубиков и терминология бросков: тесты, проверки, модификаторы, переброс.</p>
+    <p class="lede">Типы кубиков и терминология бросков: тесты, проверки, модификаторы, сравнительный бросок, переброс.</p>
 
     <h3>Типы кубиков<span class="en">Necromunda Dice</span></h3>
     <dl class="terms">
@@ -486,8 +489,8 @@
     </div>
 
     <dl class="terms">
-        <dt>Переброс между игроками<span class="orig">Rolling off</span></dt>
-        <dd>Оба игрока бросают кубик (обычно D6), иногда добавляя характеристику. Побеждает больший результат. При ничьей бросают снова, если не указано иное.
+        <dt>Сравнительный бросок<span class="orig">Rolling off</span></dt>
+        <dd>Оба игрока бросают кубик (обычно D6), иногда добавляя характеристику. Победитель сравнительного броска — игрок с большим результатом. При ничьей бросают снова, если не указано иное.
         <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Both players roll a dice (usually a D6), occasionally adding a characteristic. The highest score always wins a roll-off. In the case of a tie, roll again unless otherwise instructed.</p></details></dd>
         <dt>Натуральный результат<span class="orig">Natural rolls</span></dt>
         <dd>Фактическое число на кубике, без учёта модификаторов (включая деление пополам, когда D6 бросают как D3).
@@ -700,7 +703,7 @@
         <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">If during the Post-cycle Sequence a Ganger reaches at least 37 XP, they are promoted to a Champion. After rolling to determine an Advancement, they replace the Ganger Subtype with the Champion Subtype, keeping all their other existing Subtypes.</p></details></dd>
 
         <dt>Прихвостень<span class="orig">Hanger-on</span></dt>
-        <dd>Может быть исключён из случайного выбора стартового экипажа или колоды подкреплений. При удалении из ростера всё его оружие и снаряжение удаляется, а не попадает в Stash.
+        <dd>Может быть исключён из случайного выбора стартового состава или колоды подкреплений. При удалении из ростера всё его оружие и снаряжение удаляется, а не попадает в Stash.
         <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">May be excluded from being randomly selected when choosing a starting crew or creating a Reinforcements deck. When removed from the Gang Roster, all their weapons and wargear are deleted instead of going into the gang's Stash.</p></details></dd>
 
         <dt>Лидер<span class="orig">Leader</span></dt>
@@ -714,7 +717,7 @@
         <dt>Наездник<span class="orig">Mounted</span></dt>
         <dd>
             <ul>
-                <li><strong>Необязательное снаряжение:</strong> контролирующий игрок до выбора стартовых экипажей решает, будет ли боец использовать mount-снаряжение; в бою это нельзя сменить.
+                <li><strong>Необязательное снаряжение:</strong> контролирующий игрок до выбора стартовых составов решает, будет ли боец использовать mount-снаряжение; в бою это нельзя сменить.
                 <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full"><strong>Optional Equipment:</strong> the controlling player decides before determining starting crews whether a Fighter will use mount wargear; this cannot be changed mid-battle.</p></details></li>
                 <li><strong>Навыки:</strong> все наездники получают навыки Nerves of Steel и Hit &amp; Run.
                 <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full"><strong>Skills:</strong> all Mounted Fighters gain the Nerves of Steel and Hit &amp; Run skills.</p></details></li>
@@ -728,7 +731,7 @@
         </dd>
 
         <dt>Питомец<span class="orig">Pet</span></dt>
-        <dd>Покупается как снаряжение модели; его стоимость в кредитах включена в карту владельца. Автоматически входит в стартовый экипаж, если входит владелец, и не считается в лимите экипажа и подкреплений. Когда владелец активируется, любые питомцы вне дистанции поводка (Leash) становятся <em>паникующими (Panicked)</em>. Когда владелец выходит из боя или удаляется, питомцев тоже убирают. Питомцы не могут контролировать цели, но мешают вражеским бойцам их контролировать.
+        <dd>Покупается как снаряжение модели; его стоимость в кредитах включена в карту владельца. Автоматически входит в стартовый состав, если входит владелец, и не считается в лимите состава и подкреплений. Когда владелец активируется, любые питомцы вне дистанции поводка (Leash) становятся <em>паникующими (Panicked)</em>. Когда владелец выходит из боя или удаляется, питомцев тоже убирают. Питомцы не могут контролировать цели, но мешают вражеским бойцам их контролировать.
         <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Purchased as wargear for a model; their credits value is included on the owning model's Model Card. Automatically included in a gang's starting crew if their owner is, and do not count against crew or Reinforcement limits. When their owner activates, any Pets outside Leash range become <em>Panicked</em>. When the owner goes Out of Action or is removed, their Pets are also removed. Pets cannot control objectives, though they do prevent enemy Fighters from controlling them.</p></details></dd>
 
         <dt>Проспект<span class="orig">Prospect</span></dt>
@@ -740,7 +743,7 @@
         <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When added to the Gang Roster, must select one specialization, which grants a free skill (see table below).</p></details></dd>
 
         <dt>Поддержка<span class="orig">Support</span></dt>
-        <dd>Всегда может входить в стартовый экипаж, не считается в лимите экипажа и никогда не может быть целью дальней атаки, если не является ближайшей моделью.
+        <dd>Всегда может входить в стартовый состав, не считается в лимите состава и никогда не может быть целью дальней атаки, если не является ближайшей моделью.
         <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Can always be included in a gang's starting crew, does not count against the crew limit, and can never be targeted with a ranged attack unless they are the closest model.</p></details></dd>
 
         <dt>Виард<span class="orig">Wyrd</span></dt>
@@ -933,7 +936,7 @@
         <li><strong>Определить сценарий.</strong> В кампании сценарий генерируется по таблицам Scenario Generation. В скирмише игроки могут просто выбрать результат на каждой таблице. В кампании игрок, сделавший вызов, — атакующий; в скирмише оба бросают D6, и больший выбирает, кто атакующий, а кто защитник.
         <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full"><strong>Determine Scenario.</strong> In Campaign play, the scenario is generated on the Scenario Generation Tables. In Skirmish play, players may simply choose the result on each table. In Campaign play the player who issued the challenge is the attacker; in Skirmish play both players roll a D6, and the highest chooses who is attacker and defender.</p></details></li>
         <li><strong>Расставить поле боя.</strong><span class="orig">Set Up the Battlefield.</span></li>
-        <li><strong>Выбрать экипажи.</strong> Таблица экипажа сценария описывает метод выбора, сколько и каких моделей можно взять. Игроки также могут тратить кредиты, чтобы <em>нанять Hired Guns</em>; если хотят оба, первым это делает игрок с более высоким Gang Rating.
+        <li><strong>Выбрать составы.</strong> Таблица состава сценария описывает метод выбора, сколько и каких моделей можно взять. Игроки также могут тратить кредиты, чтобы <em>нанять Hired Guns</em>; если хотят оба, первым это делает игрок с более высоким Gang Rating.
         <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full"><strong>Choose Crews.</strong> The scenario's Crew table details the method of selection, and how many and what kind of models can be selected. Players can also spend credits to <em>recruit Hired Guns</em>; if both players wish to, the player with the higher Gang Rating must do so first.</p></details></li>
         <li><strong>Объявить эффекты поля боя.</strong> Игроки объявляют, какие территории применяют Battlefield Effects к предстоящему бою. Этот шаг пропускается в скирмише.
         <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full"><strong>Announce Battlefield Effects.</strong> Players announce which Territories are applying Battlefield Effects to the upcoming battle. This step is ignored in Skirmish play.</p></details></li>
@@ -1527,7 +1530,7 @@
 
     <div class="rule">
         <span class="label">Добровольное бегство с поля<span class="orig">Voluntarily Fleeing the Battlefield</span></span>
-        Когда хотя бы треть (с округлением вверх) стартового экипажа банды выведена из боя или сбежала, контролирующий игрок может в начале шага Check For Victory решить бежать с поля. Все модели банды снимаются, и она автоматически проигрывает сценарий.
+        Когда хотя бы треть (с округлением вверх) стартового состава банды выведена из боя или сбежала, контролирующий игрок может в начале шага Check For Victory решить бежать с поля. Все модели банды снимаются, и она автоматически проигрывает сценарий.
         <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Once at least a third (rounded up) of a gang's starting crew are taken Out of Action or have fled, that gang's controlling player can choose to flee the battlefield at the start of the Check For Victory step. All of the gang's models are removed and they automatically lose the scenario.</p></details>
     </div>
 
@@ -1643,21 +1646,21 @@
         <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">If both players agree, the claustrophobic confines of tunnel battles can be recreated by stating that the ceiling is at the height of one wall section, meaning walls cannot be climbed over, and stairs and ladders cannot be used.</p></details>
     </div>
 
-    <h3>Выбор экипажа<span class="en">Crew Selection</span></h3>
+    <h3>Выбор состава<span class="en">Crew Selection</span></h3>
     <dl class="terms">
         <dt>Случайный выбор (X)<span class="orig">Random Selection (X)</span></dt>
-        <dd>Игрок составляет колоду карт моделей (только одна случайная карта для моделей с несколькими картами, исключая модели, которые не могут участвовать). Колода тасуется и сдаётся X карт — это стартовый экипаж.
+        <dd>Игрок составляет колоду карт моделей (только одна случайная карта для моделей с несколькими картами, исключая модели, которые не могут участвовать). Колода тасуется и сдаётся X карт — это стартовый состав.
         <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">The player makes a deck of their Model Cards (only one randomly selected card for models with multiple cards, excluding models unable to take part). The deck is shuffled and X cards are dealt out &mdash; this is the starting crew.</p></details></dd>
         <dt>Свой выбор (X)<span class="orig">Custom Selection (X)</span></dt>
         <dd>Игрок свободно выбирает X моделей и выбирает, какой набор снаряжения использует каждая.
         <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">The player chooses X models freely, and chooses which equipment set each model will use.</p></details></dd>
         <dt>Гибридный выбор (X+Y)<span class="orig">Hybrid Selection (X+Y)</span></dt>
-        <dd>Игрок свободно выбирает X моделей, затем тасует колоду оставшихся подходящих карт и сдаёт Y карт в стартовый экипаж.
+        <dd>Игрок свободно выбирает X моделей, затем тасует колоду оставшихся подходящих карт и сдаёт Y карт в стартовый состав.
         <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">The player chooses X models freely, then makes a shuffled deck of the remaining eligible Model Cards and deals Y cards to add to the starting crew.</p></details></dd>
     </dl>
 
     <h3>Подкрепления<span class="en">Reinforcements (X)</span></h3>
-    <p>Все модели не из стартового экипажа, которые могут участвовать, тасуются вместе, и сдаётся X карт в колоду подкреплений. Подкрепления всегда прибывают на шаге Reinforcements фазы окончания; таблица экипажа указывает раунд(ы) прибытия и сколько. Начиная с игрока, выигравшего Priority в этом раунде, игроки по очереди тянут подкрепления. За каждую вытянутую модель бросьте D6:
+    <p>Все модели не из стартового состава, которые могут участвовать, тасуются вместе, и сдаётся X карт в колоду подкреплений. Подкрепления всегда прибывают на шаге Reinforcements фазы окончания; таблица состава указывает раунд(ы) прибытия и сколько. Начиная с игрока, выигравшего Priority в этом раунде, игроки по очереди тянут подкрепления. За каждую вытянутую модель бросьте D6:
     <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">All models not in the starting crew and able to take part are shuffled together, and X cards are dealt to form the Reinforcements deck. Reinforcements always arrive in the Reinforcements step of the End phase; the crew table states the round(s) on which they arrive and how many. Starting with the player who won Priority this round, players alternate drawing Reinforcements. For each model drawn, roll a D6:</p></details></p>
     <ul>
         <li><strong>3+</strong> — поставьте на любой край поля не ближе 9" от всех вражеских моделей.</li>
@@ -1686,22 +1689,25 @@
 <!-- ============ СЦЕНАРИЙ ============ -->
 <section id="scenariy">
     <h2>Генерация сценария<span class="en">Scenario Generation Tables</span></h2>
-    <p class="lede">Сценарий собирается броском по четырём таблицам: расстановка, основная задача, побочная задача, состав экипажа.</p>
+    <p class="lede">Сценарий собирается броском по четырём таблицам: расстановка, основная задача, побочная задача, состав.
+    За столом удобнее <a href="mission-helper.html">помощник генерации миссий</a>: ручной выбор или случайный набор.</p>
 
     <div class="table-wrap">
         <table>
             <caption>Таблица расстановки — бросает челленджер (D6)<span class="orig">Deployment Table</span></caption>
             <thead><tr><th class="num">D6</th><th>Расстановка<span class="orig">Deployment</span></th></tr></thead>
             <tbody>
-                <tr><td class="num">1</td><td><strong>Снайперская дистанция:</strong> победитель переброса выбирает край поля; оппонент берёт противоположный. Обе зоны расстановки — от своего края до 12" от линии через центр поля.
+                <tr><td class="num">1</td><td><strong>Снайперская дистанция:</strong> победитель сравнительного броска выбирает край поля; оппонент берёт противоположный. Обе зоны расстановки — от своего края до 12" от линии через центр поля.
                 <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full"><strong>Sniping Range:</strong> The winner of a roll-off chooses a battlefield edge; their opponent takes the opposite edge. Both deployment zones are anywhere between their battlefield edge and 12" from a line drawn through the centre of the battlefield.</p></details></td></tr>
-                <tr><td class="num">2</td><td><strong>Лицом к лицу:</strong> как выше, но 9" от центральной линии.<span class="orig">Face Off: As above, but 9" from the centre line.</span></td></tr>
-                <tr><td class="num">3</td><td><strong>Противостояние:</strong> как выше, но 6" от центральной линии.<span class="orig">Stand Off: As above, but 6" from the centre line.</span></td></tr>
+                <tr><td class="num">2</td><td><strong>Лицом к лицу:</strong> победитель сравнительного броска выбирает край поля; оппонент берёт противоположный. Обе зоны расстановки — от своего края до 9" от линии через центр поля.
+                <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full"><strong>Face Off:</strong> The winner of a roll-off chooses a battlefield edge; their opponent takes the opposite edge. Both deployment zones are anywhere between their battlefield edge and 9" from a line drawn through the centre of the battlefield.</p></details></td></tr>
+                <tr><td class="num">3</td><td><strong>Противостояние:</strong> победитель сравнительного броска выбирает край поля; оппонент берёт противоположный. Обе зоны расстановки — от своего края до 6" от линии через центр поля.
+                <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full"><strong>Stand Off:</strong> The winner of a roll-off chooses a battlefield edge; their opponent takes the opposite edge. Both deployment zones are anywhere between their battlefield edge and 6" from a line drawn through the centre of the battlefield.</p></details></td></tr>
                 <tr><td class="num">4</td><td><strong>Засада:</strong> защитник расставляется в пределах 6" от центра поля. Атакующий — где угодно не ближе 12" от центра.
                 <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full"><strong>Ambush:</strong> The defender deploys anywhere within 6" of the centre of the battlefield. The attacker deploys anywhere at least 12" from the centre.</p></details></td></tr>
-                <tr><td class="num">5</td><td><strong>Все против всех:</strong> победитель переброса выбирает четверть поля; оппонент берёт противоположную. Каждая зона — в пределах этой четверти не ближе 9" от центра.
+                <tr><td class="num">5</td><td><strong>Все против всех:</strong> победитель сравнительного броска выбирает четверть поля; оппонент берёт противоположную. Каждая зона — в пределах этой четверти не ближе 9" от центра.
                 <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full"><strong>Free For All:</strong> The winner of a roll-off chooses a battlefield quarter; their opponent takes the opposite quarter. Each deployment zone is anywhere within that quarter at least 9" from the centre.</p></details></td></tr>
-                <tr><td class="num">6</td><td><strong>Случайная встреча:</strong> победитель переброса выбирает угол; его зона — в пределах 9" от этого угла и противоположного. Оппонент расставляется в пределах 9" от двух других углов. Банды нужно разделить между двумя зонами как можно равнее.
+                <tr><td class="num">6</td><td><strong>Случайная встреча:</strong> победитель сравнительного броска выбирает угол; его зона — в пределах 9" от этого угла и противоположного. Оппонент расставляется в пределах 9" от двух других углов. Банды нужно разделить между двумя зонами как можно равнее.
                 <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full"><strong>Chance Encounter:</strong> The winner of a roll-off chooses a corner; their zone is within 9" of that corner and the opposite corner. Their opponent deploys within 9" of the other two corners. Gangs must be split as evenly as possible between the two zones.</p></details></td></tr>
             </tbody>
         </table>
@@ -1735,7 +1741,7 @@
             <caption>Таблица побочных заданий — каждый игрок бросает свой D6<span class="orig">Side Job Table</span></caption>
             <thead><tr><th class="num">D6</th><th>Побочное задание<span class="orig">Side Job</span></th></tr></thead>
             <tbody>
-                <tr><td class="num">1</td><td><strong>Подставить:</strong> при действии Coup de Grâce вместо переброса Strength ваши бойцы могут подбросить улики тяжелораненой модели. Если к концу боя хотя бы на одного вражеского бойца подбросили улики, задание выполнено.
+                <tr><td class="num">1</td><td><strong>Подставить:</strong> при действии Coup de Grâce вместо сравнительного броска Strength ваши бойцы могут подбросить улики тяжелораненой модели. Если к концу боя хотя бы на одного вражеского бойца подбросили улики, задание выполнено.
                 <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full"><strong>Stitch 'em Up:</strong> When performing a Coup de Gr&acirc;ce action, instead of the Strength roll-off your Fighters may plant evidence on the Seriously Injured model. If at least one enemy Fighter had evidence planted on them by the end of the battle, the side job is achieved.</p></details></td></tr>
                 <tr><td class="num">2</td><td><strong>Посылка:</strong> после расстановки выберите одного выставленного бойца и дайте ему маркер посылки. Если на Check For Victory третьего раунда или позже этот боец в контакте подставкой с краем поля в зоне оппонента, снимите маркер — задание выполнено.
                 <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full"><strong>The Package:</strong> After deployment, choose one deployed Fighter and give them a package marker. If during Check For Victory of round three or later that Fighter is in base contact with a battlefield edge in the opponent's deployment zone, remove the marker &mdash; the side job is achieved.</p></details></td></tr>
@@ -1753,8 +1759,8 @@
 
     <div class="table-wrap">
         <table>
-            <caption>Таблица экипажа — бросает вызванный игрок (D6)<span class="orig">Crew Table</span></caption>
-            <thead><tr><th class="num">D6</th><th>Экипаж<span class="orig">Crew</span></th></tr></thead>
+            <caption>Таблица состава — бросает вызванный игрок (D6)<span class="orig">Crew Table</span></caption>
+            <thead><tr><th class="num">D6</th><th>Состав<span class="orig">Crew</span></th></tr></thead>
             <tbody>
                 <tr><td class="num">1</td><td><strong>Нарастающая стычка:</strong> обе банды используют Hybrid (3+D3). Обе используют Reinforcements (5), D3 прибывают каждый раунд начиная с первого.
                 <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full"><strong>Escalating Engagement:</strong> Both gangs use Hybrid (3+D3). Both use Reinforcements (5) with D3 arriving each round from the first.</p></details></td></tr>
@@ -2090,7 +2096,7 @@
     </ul>
 
     <h4>Наборы снаряжения<span class="orig">Equipment Sets</span></h4>
-    <p>У всех моделей может быть несколько карт моделей, каждая со своим набором снаряжения. Дополнительной платы за несколько наборов нет — каждое оружие или предмет wargear покупается и считается только один раз. В бою можно использовать только одну карту модели. Если бой использует случайные модели, все карты этой модели тасуются вместе и одна тянется случайно до сдачи карт экипажа.
+    <p>У всех моделей может быть несколько карт моделей, каждая со своим набором снаряжения. Дополнительной платы за несколько наборов нет — каждое оружие или предмет wargear покупается и считается только один раз. В бою можно использовать только одну карту модели. Если бой использует случайные модели, все карты этой модели тасуются вместе и одна тянется случайно до сдачи карт состава.
     <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">All models can have multiple Model Cards, each representing a different set of equipment. There is no additional cost for having multiple equipment sets &mdash; each individual weapon or item of wargear is only purchased and counted once. Only one of a model's cards can be used for a battle. If a battle uses random models, all of that model's cards are shuffled together and one is drawn at random before any cards are drawn for the crew.</p></details></p>
 
     <h3 id="smert-lidera">Смерть лидера<span class="en">Death of a Leader</span></h3>
