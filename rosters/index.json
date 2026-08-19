@@ -17,14 +17,6 @@
       "rating": 785
     },
     {
-      "file": "sangvinarnye-bomzhi.json",
-      "id": "sangvinarnye-bomzhi",
-      "name": "Сангвинарные бомжи",
-      "faction": "house-cawdor",
-      "factionName": "Дом Каудор",
-      "rating": 290
-    },
-    {
       "file": "trete-koleno.json",
       "id": "trete-koleno",
       "name": "Третье Колено",
