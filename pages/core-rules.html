@@ -20,6 +20,24 @@
 <div class="layout">
 
 <aside class="sidebar">
+    <div class="hb-search" id="hb-search">
+        <label class="hb-search-label" for="hb-q">Поиск</label>
+        <input class="hb-q" id="hb-q" type="search" placeholder="Навык, оружие, термин…" autocomplete="off" spellcheck="false" title="Клавиша / — фокус, Enter — к совпадению">
+        <div class="hb-modes" role="radiogroup" aria-label="Режим поиска">
+            <label class="is-on">
+                <input type="radio" name="hb-mode" value="headings" checked>
+                Заголовки
+            </label>
+            <label>
+                <input type="radio" name="hb-mode" value="full">
+                Весь текст
+            </label>
+        </div>
+        <p class="hb-status" id="hb-status" hidden></p>
+        <ol class="hb-hits" id="hb-hits" hidden></ol>
+    </div>
+    <details class="toc-drawer">
+    <summary class="toc-toggle">Оглавление</summary>
     <nav>
         <h2>Оглавление</h2>
 
@@ -138,6 +156,7 @@
             </ul>
         </details>
     </nav>
+    </details>
 </aside>
 
 <main class="content">
@@ -1722,14 +1741,14 @@
                 <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full"><strong>King of the Hive:</strong> Place a single objective in the centre of the battlefield. During Check For Victory it is worth 1 VP. The winner is the first player to reach 3 VP.</p></details></td></tr>
                 <tr><td class="num">2</td><td><strong>Война за территорию:</strong> с третьего раунда, если только у одного игрока есть модели не Seriously Injured/Damaged в пределах 9" от центра на Check For Victory, он побеждает.
                 <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full"><strong>Turf War:</strong> From round three onward, if only one player has models that are not Seriously Injured/Damaged within 9" of the centre during Check For Victory, they win.</p></details></td></tr>
-                <tr><td class="num">3</td><td><strong>Схватка в туннелях:</strong> поставьте цель в центр, затем каждый игрок ставит ещё одну не ближе 6" от любой другой цели и 6" от любого края. Контроль двух целей на Check For Victory даёт 1 VP; первый до 3 VP побеждает.
-                <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full"><strong>Tunnel Clash:</strong> Place an objective in the centre, then each player places one at least 6" from any other objective and 6" from any battlefield edge. Controlling two objectives during Check For Victory scores 1 VP; first to 3 VP wins.</p></details></td></tr>
-                <tr><td class="num">4</td><td><strong>Наглядный урок:</strong> обе банды получают 1 VP за каждую вражескую модель, вышедшую из боя в этом раунде; +1 VP если у модели подтип Leader, Champion или Brute, и +1 VP если выведена действием Fight, Coup de Grâce или Sabotage. Первый до 10 VP побеждает.
-                <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full"><strong>Object Lesson:</strong> Both gangs earn 1 VP for each enemy model that went Out of Action that round; +1 VP if the model had the Leader, Champion or Brute Subtype, and +1 VP if taken Out of Action as part of a Fight, Coup de Gr&acirc;ce or Sabotage action. First to 10 VP wins.</p></details></td></tr>
+                <tr><td class="num">3</td><td><strong>Схватка в туннелях:</strong> поставьте цель в центр, затем начиная с победителя сравнительного броска каждый игрок ставит ещё одну не ближе 6" от любой другой цели и 6" от любого края. Контроль двух целей на Check For Victory даёт 1 VP; первый до 3 VP побеждает.
+                <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full"><strong>Tunnel Clash:</strong> Place an objective in the centre of the battlefield, then, starting with the winner of a roll-off, each player places an objective at least 6" away from any other objective and at least 6" away from any battlefield edge. Controlling two objectives during Check For Victory scores 1 VP; first to 3 VP wins.</p></details></td></tr>
+                <tr><td class="num">4</td><td><strong>Наглядный урок:</strong> обе банды получают 1 VP за каждую вражескую модель, вышедшую из боя в этом раунде; +1 VP если у модели подтип Leader, Champion или Brute, и +1 VP если выведена действием Fight, Coup de Grâce или Sabotage. Первый до 10 VP побеждает. Если оба игрока набрали не меньше 10 VP — ничья.
+                <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full"><strong>Object Lesson:</strong> Both gangs earn 1 VP for each enemy model that went Out of Action that round; +1 VP if the model had the Leader, Champion or Brute Subtype, and +1 VP if taken Out of Action as part of a Fight, Coup de Gr&acirc;ce or Sabotage action. First to 10 VP wins. If both players have at least 10 VP, the battle is a draw.</p></details></td></tr>
                 <tr><td class="num">5</td><td><strong>Обойти с фланга:</strong> атакующий ставит цель в центре края поля, на 6" вглубь; защитник ставит одну напротив. Контроль обеих целей даёт 1 VP; первый до 3 VP побеждает.
                 <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full"><strong>Flank 'em:</strong> The attacker places an objective in the centre of a battlefield edge, 6" onto the battlefield; the defender places one opposite. Controlling both objectives scores 1 VP; first to 3 VP wins.</p></details></td></tr>
-                <tr><td class="num">6</td><td><strong>Выжечь их:</strong> каждый игрок ставит три цели в зоне расстановки оппонента, не ближе 6" друг от друга. Контроль цели в зоне оппонента даёт 1 VP и снимает её; первый до 2 VP побеждает.
-                <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full"><strong>Burn Them Out:</strong> Each player places three objectives in their opponent's deployment zone, at least 6" apart. Controlling an objective in the opponent's deployment zone scores 1 VP and removes it; first to 2 VP wins.</p></details></td></tr>
+                <tr><td class="num">6</td><td><strong>Выжечь их:</strong> начиная с защитника, игроки по очереди ставят цели в зоне расстановки оппонента, пока у каждого не будет по три. Каждая цель не ближе 6" от остальных, если возможно. Контроль цели в зоне оппонента даёт 1 VP и снимает её; первый до 2 VP побеждает. Если оба игрока набрали не меньше 2 VP — ничья.
+                <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full"><strong>Burn Them Out:</strong> Starting with the defender, each player takes turns placing an objective in their opponent's deployment zone until they have each placed three. Each objective must be at least 6" from all other objectives, if possible. Controlling an objective in the opponent's deployment zone scores 1 VP and removes it; first to 2 VP wins. If both players have at least 2 VP, the battle is a draw.</p></details></td></tr>
             </tbody>
         </table>
     </div>
@@ -1741,18 +1760,18 @@
             <caption>Таблица побочных заданий — каждый игрок бросает свой D6<span class="orig">Side Job Table</span></caption>
             <thead><tr><th class="num">D6</th><th>Побочное задание<span class="orig">Side Job</span></th></tr></thead>
             <tbody>
-                <tr><td class="num">1</td><td><strong>Подставить:</strong> при действии Coup de Grâce вместо сравнительного броска Strength ваши бойцы могут подбросить улики тяжелораненой модели. Если к концу боя хотя бы на одного вражеского бойца подбросили улики, задание выполнено.
-                <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full"><strong>Stitch 'em Up:</strong> When performing a Coup de Gr&acirc;ce action, instead of the Strength roll-off your Fighters may plant evidence on the Seriously Injured model. If at least one enemy Fighter had evidence planted on them by the end of the battle, the side job is achieved.</p></details></td></tr>
-                <tr><td class="num">2</td><td><strong>Посылка:</strong> после расстановки выберите одного выставленного бойца и дайте ему маркер посылки. Если на Check For Victory третьего раунда или позже этот боец в контакте подставкой с краем поля в зоне оппонента, снимите маркер — задание выполнено.
-                <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full"><strong>The Package:</strong> After deployment, choose one deployed Fighter and give them a package marker. If during Check For Victory of round three or later that Fighter is in base contact with a battlefield edge in the opponent's deployment zone, remove the marker &mdash; the side job is achieved.</p></details></td></tr>
+                <tr><td class="num">1</td><td><strong>Подставить:</strong> при действии Coup de Grâce вместо сравнительного броска Strength ваши бойцы могут подбросить улики тяжелораненой модели. Если к концу боя хотя бы на одного вражеского бойца подбросили улики (даже если его уже нет на поле), задание выполнено.
+                <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full"><strong>Stitch 'em Up:</strong> When performing a Coup de Gr&acirc;ce action, instead of the Strength roll-off your Fighters may plant evidence on the Seriously Injured model. If at least one enemy Fighter had evidence planted on them by the end of the battle (even if they are no longer on the battlefield), the side job is achieved.</p></details></td></tr>
+                <tr><td class="num">2</td><td><strong>Посылка:</strong> после расстановки выберите одного выставленного бойца и дайте ему маркер посылки. Если на Check For Victory третьего раунда или позже этот боец в контакте подставкой с краем поля в зоне оппонента (или в центре поля, если у зоны оппонента нет края), снимите маркер — задание выполнено.
+                <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full"><strong>The Package:</strong> After deployment, choose one deployed Fighter and give them a package marker. If during Check For Victory of round three or later that Fighter is in base contact with a battlefield edge in the opponent's deployment zone (or in the centre of the battlefield if the opponent's deployment zone has no battlefield edges), remove the marker &mdash; the side job is achieved.</p></details></td></tr>
                 <tr><td class="num">3</td><td><strong>Свести счёты:</strong> после расстановки случайно выберите одну из выставленных моделей оппонента (не лидера врага) как цель. Если её вывели из боя или она покинула поле, задание выполнено.
                 <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full"><strong>Settle a Score:</strong> After deployment, randomly select one of your opponent's deployed models (not the enemy Leader) as the target. If it has been taken Out of Action or left the battlefield, the side job is achieved.</p></details></td></tr>
                 <tr><td class="num">4</td><td><strong>Калечащий удар:</strong> если на Check For Victory любого раунда хотя бы половина моделей оппонента на поле Seriously Injured/Damaged или Engaged, задание выполнено.
                 <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full"><strong>Crippling Strike:</strong> If during Check For Victory of any round at least half of your opponent's models on the battlefield are Seriously Injured/Damaged or Engaged, the side job is achieved.</p></details></td></tr>
-                <tr><td class="num">5</td><td><strong>Сеять смуту:</strong> любой Active-боец без подтипа Beast может выполнить действие Graffiti (двойное), находясь в зоне расстановки оппонента. Если хотя бы один боец сделал это в бою, задание выполнено.
-                <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full"><strong>Spread Unrest:</strong> Any Active Fighter without the Beast Subtype may perform the Graffiti (Double) action while within the opponent's deployment zone. If at least one Fighter performed it during the battle, the side job is achieved.</p></details></td></tr>
-                <tr><td class="num">6</td><td><strong>Защитить будущее:</strong> после расстановки случайно выберите одного из ваших выставленных проспектов (или гэнгера, если проспектов нет) для защиты. Если этот боец всё ещё на поле в конце боя, задание выполнено.
-                <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full"><strong>Protect the Future:</strong> After deployment, randomly select one of your deployed Prospects (or a Ganger if there are none) to be protected. If that Fighter is still on the battlefield at the end of the battle, the side job is achieved.</p></details></td></tr>
+                <tr><td class="num">5</td><td><strong>Сеять смуту:</strong> любой Active-боец без подтипа Beast может выполнить действие Graffiti (двойное), находясь в зоне расстановки оппонента (или в пределах 6" от центра, если у оппонента нет зоны). Если хотя бы один боец сделал это в бою (даже если его уже нет на поле), задание выполнено.
+                <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full"><strong>Spread Unrest:</strong> Any Active Fighter without the Beast Subtype may perform the Graffiti (Double) action while within the opponent's deployment zone, or within 6" of the centre of the battlefield if the opponent has no deployment zone. If at least one Fighter performed it during the battle (even if the Fighter is no longer on the battlefield), the side job is achieved.</p></details></td></tr>
+                <tr><td class="num">6</td><td><strong>Защитить будущее:</strong> после расстановки случайно выберите одного из ваших выставленных проспектов (или гэнгера, если проспектов нет) для защиты. Если в стартовом составе нет ни проспектов, ни гэнгеров — сгенерируйте новое побочное задание. Если этот боец всё ещё на поле в конце боя, задание выполнено.
+                <details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full"><strong>Protect the Future:</strong> After deployment, randomly select one of your deployed Prospects (or a Ganger if there are none) to be protected. If the starting crew also contains no Gangers, generate a new side job. If that Fighter is still on the battlefield at the end of the battle, the side job is achieved.</p></details></td></tr>
             </tbody>
         </table>
     </div>
@@ -2981,6 +3000,8 @@
     <p>Necromunda, Games Workshop и связанные названия — торговые марки Games Workshop Ltd. Страница создана для личного некоммерческого использования.</p>
     <p><a class="backlink" href="../index.html">&larr; На главную</a></p>
 </footer>
+
+<script src="handbook-search.js"></script>
 
 </body>
 </html>

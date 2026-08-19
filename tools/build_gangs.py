@@ -1311,6 +1311,24 @@ HEAD = '''<!DOCTYPE html>
 <div class="layout">
 
 <aside class="sidebar">
+    <div class="hb-search" id="hb-search">
+        <label class="hb-search-label" for="hb-q">Поиск</label>
+        <input class="hb-q" id="hb-q" type="search" placeholder="Банда, боец, оружие…" autocomplete="off" spellcheck="false" title="Клавиша / — фокус, Enter — к совпадению">
+        <div class="hb-modes" role="radiogroup" aria-label="Режим поиска">
+            <label class="is-on">
+                <input type="radio" name="hb-mode" value="headings" checked>
+                Заголовки
+            </label>
+            <label>
+                <input type="radio" name="hb-mode" value="full">
+                Весь текст
+            </label>
+        </div>
+        <p class="hb-status" id="hb-status" hidden></p>
+        <ol class="hb-hits" id="hb-hits" hidden></ol>
+    </div>
+    <details class="toc-drawer">
+    <summary class="toc-toggle">Банды</summary>
     <nav>
         <h2>Банды</h2>
 '''
@@ -1326,22 +1344,7 @@ FOOT = '''
     <a class="top-link" href="#top">Наверх</a>
 </footer>
 
-<script>
-// Ссылки из состава банды и из списков снаряжения ведут внутрь свёрнутых
-// блоков, поэтому по якорю раскрываем всю цепочку и доводим прокрутку.
-function revealHash() {
-    var id = decodeURIComponent(location.hash.slice(1));
-    if (!id) return;
-    var target = document.getElementById(id);
-    if (!target) return;
-    for (var el = target; el; el = el.parentElement) {
-        if (el.tagName === 'DETAILS') el.open = true;
-    }
-    target.scrollIntoView();
-}
-window.addEventListener('hashchange', revealHash);
-revealHash();
-</script>
+<script src="handbook-search.js"></script>
 
 </body>
 </html>
@@ -1378,7 +1381,7 @@ def main():
                        % (slug(title), ru, esc(en)))
         nav.append('            </ul>')
         nav.append('        </details>')
-    nav.append('    </nav>\n</aside>\n\n<main class="content">')
+    nav.append('    </nav>\n    </details>\n</aside>\n\n<main class="content">')
 
     body_html = []
     for title, ru, group, blocks, gang_db in parsed:
