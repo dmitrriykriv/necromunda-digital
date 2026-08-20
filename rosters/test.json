@@ -1,0 +1,49 @@
+{
+  "id": "test",
+  "name": "Тест",
+  "faction": "house-van-saar",
+  "factionName": "Дом Ван Саар",
+  "notes": "",
+  "reputation": 1,
+  "stash": 1000,
+  "fighters": [
+    {
+      "id": "f-1nt0i4",
+      "name": "Главный",
+      "type": "Van Saar Prime",
+      "subtypes": [
+        "Leader"
+      ],
+      "xp": 61,
+      "baseCost": 115,
+      "skills": [],
+      "equipment": [
+        {
+          "name": "Bio-booster",
+          "cost": 25,
+          "slots": 0,
+          "extras": []
+        },
+        {
+          "name": "Frag grenades",
+          "cost": 30,
+          "slots": 0,
+          "extras": []
+        },
+        {
+          "name": "Las carbine",
+          "cost": 20,
+          "slots": 1,
+          "extras": []
+        },
+        {
+          "name": "Las sub-carbine",
+          "cost": 10,
+          "slots": 1,
+          "extras": []
+        }
+      ]
+    }
+  ],
+  "updatedAt": "2026-08-20"
+}
