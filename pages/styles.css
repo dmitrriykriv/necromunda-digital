@@ -1055,26 +1055,41 @@ table.weapons td.traits {
     min-width: 200px;
 }
 
-.trait {
-    display: inline-block;
-    max-width: 100%;
-    vertical-align: top;
+.trait,
+.stat-abbr {
+    display: inline;
     cursor: help;
     color: var(--text);
     border-bottom: 1px dotted var(--text-faint);
 }
 
+th .stat-abbr {
+    color: inherit;
+}
+
 .trait:hover,
-.trait:focus-within {
+.trait:focus,
+.stat-abbr:hover,
+.stat-abbr:focus {
     color: var(--accent-soft);
     border-bottom-color: var(--accent-soft);
+    outline: none;
 }
 
 .trait-tip {
     display: none;
-    margin: 6px 0 4px;
+}
+
+.trait-pop[hidden] {
+    display: none !important;
+}
+
+.trait-pop {
+    position: fixed;
+    z-index: 80;
+    box-sizing: border-box;
+    max-width: min(360px, calc(100vw - 16px));
     padding: 8px 10px;
-    max-width: 360px;
     font-size: 0.78rem;
     line-height: 1.45;
     font-weight: 400;
@@ -1083,13 +1098,10 @@ table.weapons td.traits {
     border: 1px solid var(--line);
     border-left: 3px solid var(--accent);
     border-radius: 6px;
-    white-space: normal;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+    pointer-events: none;
     text-align: left;
-}
-
-.trait:hover .trait-tip,
-.trait:focus-within .trait-tip {
-    display: block;
+    white-space: normal;
 }
 
 table.dice-table td.roll {
@@ -2153,13 +2165,15 @@ table.check-table td.ok {
         border-bottom-color: #ccc;
     }
 
-    .trait {
+    .trait,
+    .stat-abbr {
         border-bottom: none;
         color: inherit;
         cursor: auto;
     }
 
-    .trait-tip {
+    .trait-tip,
+    .trait-pop {
         display: none !important;
     }
 

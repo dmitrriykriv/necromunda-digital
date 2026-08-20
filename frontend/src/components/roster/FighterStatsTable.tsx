@@ -1,4 +1,6 @@
 import { type FighterStats } from '@shared/catalog';
+import { fighterStatTip } from '@shared/statTips';
+import { TraitTip } from '@/components/roster/TraitTip';
 
 export function FighterStatsTable({
   stats,
@@ -29,7 +31,7 @@ export function FighterStatsTable({
                     : 'border border-border bg-muted/40 px-1 py-1.5 text-[11px] font-semibold uppercase tracking-wide text-accent-foreground'
                 }
               >
-                {key}
+                {print ? key : <TraitTip name={key} text={fighterStatTip(key)} className="text-inherit border-current" />}
               </th>
             ))}
           </tr>

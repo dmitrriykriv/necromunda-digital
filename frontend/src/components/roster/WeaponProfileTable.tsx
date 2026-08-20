@@ -1,4 +1,6 @@
 import { type WeaponProfile } from '@shared/catalog';
+import { weaponStatTip } from '@shared/statTips';
+import { TraitTip } from '@/components/roster/TraitTip';
 import { cn } from '@/lib/utils';
 
 const COLS = ['Оружие', 'SR', 'LR', 'S', 'AP', 'L', 'Свойства'] as const;
@@ -28,7 +30,7 @@ export function WeaponProfileTable({
                     : 'border-b border-border px-1.5 py-1 text-left font-semibold uppercase tracking-wider text-muted-foreground'
                 }
               >
-                {col}
+                {print ? col : <TraitTip name={col} text={weaponStatTip(col)} />}
               </th>
             ))}
           </tr>
@@ -45,7 +47,14 @@ export function WeaponProfileTable({
               <td className={cell(print)}>{profile.ap}</td>
               <td className={cell(print)}>{profile.l}</td>
               <td className={cn(cell(print), print ? undefined : 'text-muted-foreground')}>
-                {profile.traits.map((trait) => trait.name).join(', ') || '—'}
+                {profile.traits.length === 0
+                  ? '—'
+                  : profile.traits.map((trait, index) => (
+                      <span key={`${trait.name}-${index}`}>
+                        {index > 0 ? ', ' : null}
+                        {print ? trait.name : <TraitTip name={trait.name} text={trait.text} />}
+                      </span>
+                    ))}
               </td>
             </tr>
           ))}
