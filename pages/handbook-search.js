@@ -1,6 +1,44 @@
 (function () {
   'use strict';
 
+  (function backToTop() {
+    var btn = document.createElement('a');
+    btn.className = 'to-top';
+    btn.href = '#top';
+    btn.setAttribute('aria-label', 'Наверх');
+    btn.tabIndex = -1;
+    btn.setAttribute('aria-hidden', 'true');
+    btn.innerHTML =
+      '<svg class="to-top-arrow" viewBox="0 0 24 24" aria-hidden="true">' +
+      '<path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M6 11l6-6 6 6"/>' +
+      '<path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M6 19l6-6 6 6"/>' +
+      '</svg>' +
+      '<span class="to-top-label">Наверх</span>';
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var top = document.getElementById('top');
+      if (top && top.scrollIntoView) {
+        top.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+      } else {
+        window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+      }
+    });
+    document.body.appendChild(btn);
+
+    var shown = false;
+    function sync() {
+      var on = window.scrollY > 240;
+      if (on === shown) return;
+      shown = on;
+      btn.classList.toggle('is-on', on);
+      btn.tabIndex = on ? 0 : -1;
+      btn.setAttribute('aria-hidden', on ? 'false' : 'true');
+    }
+    window.addEventListener('scroll', sync, { passive: true });
+    sync();
+  })();
+
   (function rulePopovers() {
     var TIP_SEL = '.trait, .stat-abbr';
     var FIGHTER_TIPS = {

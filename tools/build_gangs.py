@@ -1661,10 +1661,7 @@ def render_nav(parsed, current, href_for, index_href):
 
 
 def page_foot(home_href, asset, search=True, layout=True):
-    script = (
-        '\n<script src="%shandbook-search.js"></script>\n' % asset
-        if search else '\n'
-    )
+    script = '\n<script src="%shandbook-search.js"></script>\n' % asset
     close = '</main>\n</div>\n' if layout else '</main>\n'
     return '''
 %s

@@ -1,5 +1,6 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { HashRouter, Route, Routes } from 'react-router-dom';
+import { BackToTop } from '@/components/BackToTop';
 import { PrintCardsPage } from '@/pages/PrintCardsPage';
 import { RosterBuilderPage } from '@/pages/RosterBuilderPage';
 
@@ -17,7 +18,12 @@ export function App() {
     <QueryClientProvider client={queryClient}>
       <HashRouter>
         <Routes>
-          <Route path="/" element={<RosterBuilderPage />} />
+          <Route path="/" element={
+            <>
+              <BackToTop />
+              <RosterBuilderPage />
+            </>
+          } />
           <Route path="/print" element={<PrintCardsPage />} />
         </Routes>
       </HashRouter>
