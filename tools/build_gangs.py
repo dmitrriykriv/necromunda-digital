@@ -254,6 +254,8 @@ def scan_weapon_table(lines, start, has_creds, is_stop):
         wraps = bool(rows) and not rows[-1]['group'] and (
             s.startswith('(') or s[:1].islower() or rows[-1]['traits'].endswith(','))
         if wraps and not pending_name:
+            if NAMED_RULE.match(s) or SKILL_HDR.match(s):
+                break
             rows[-1]['traits'] = (rows[-1]['traits'] + ' ' + s).strip()
             j += 1
             continue
@@ -290,6 +292,8 @@ def scan_weapon_table(lines, start, has_creds, is_stop):
             continue
 
         if rows and not rows[-1]['group']:
+            if NAMED_RULE.match(s) or SKILL_HDR.match(s):
+                break
             rows[-1]['traits'] = (rows[-1]['traits'] + ' ' + s).strip()
             j += 1
             continue
@@ -427,7 +431,8 @@ def parse_section(lines):
 
             def stop(s):
                 return bool(WEAP_HDR.match(s) or FIGHTER_HEAD.match(s)
-                            or is_heading(s) or EQUIP_ROW.match(s))
+                            or is_heading(s) or EQUIP_ROW.match(s)
+                            or SKILL_HDR.match(s) or NAMED_RULE.match(s))
 
             rows, j = scan_weapon_table(lines, i + 1, has_creds, stop)
             if rows:
@@ -971,7 +976,26 @@ def fighter_id(prefix, name):
 
 
 def render_paragraph(text):
+    text = strip_innate_weapon_clause(text)
     return i18n.render_named_or_plain(text)
+
+
+def strip_innate_weapon_clause(text):
+    """Профиль встроенного оружия показываем в fold-innate, не в особых правилах."""
+    text = re.sub(
+        r'\s+and is always considered to be armed with the .+weapons?'
+        r'(?:\s*\([^)]*\))?\s*:?\s*$',
+        '',
+        text,
+        flags=re.I | re.S,
+    )
+    text = re.sub(
+        r'\s+и всегда считается вооружённым оружием\s+\S.*$',
+        '',
+        text,
+        flags=re.I | re.S,
+    )
+    return text.rstrip(' :')
 
 
 def render_weapon_rows(caption, rows):
@@ -1315,10 +1339,13 @@ def plan_regions(blocks):
 
     leftover = equips[-1][1] if equips else bound
     shop_keys = shop_keys_from_blocks(blocks)
+    early = [i for i in range(first or 0) if first is not None and blocks[i][0] == 'weapons']
     if leftover >= len(blocks):
-        return regions, skip, leftover, shop_keys
+        skip.update(early)
+        return regions, skip, leftover, shop_keys, early
 
     skip = leftover_skip(blocks, leftover, shop_keys)
+    skip.update(early)
     extras = [idx for idx in range(leftover, len(blocks))
               if blocks[idx][0] == 'heading'
               and extra_fold_class(blocks[idx][1]['text'])]
@@ -1334,9 +1361,11 @@ def plan_regions(blocks):
     if last_weapon is not None and innate_idx is not None:
         tables = sum(1 for idx in range(innate_idx, innate_end)
                      if idx not in skip and blocks[idx][0] == 'weapons')
+        tables += len(early)
         regions[innate_idx] = {
             'end': innate_end, 'cls': 'fold-innate',
             'title': 'Встроенное оружие',
+            'prefix_weapons': early,
             'count': '%d %s' % (tables, plural(tables, 'профиль', 'профиля',
                                                'профилей')),
         }
@@ -1370,17 +1399,45 @@ def plan_regions(blocks):
                                 plural(max(1, heads), 'раздел', 'раздела',
                                        'разделов')),
         }
-    return regions, skip, leftover, shop_keys
+    return regions, skip, leftover, shop_keys, early
+
+
+def render_early_innate(blocks, indices):
+    out = []
+    for idx in indices:
+        payload = blocks[idx][1]
+        out.append(render_weapon_rows(payload.get('caption'), payload.get('rows') or []))
+    return out
 
 
 def render_blocks(blocks, prefix='', stores=()):
-    regions, skip, leftover, shop_keys = plan_regions(blocks)
+    regions, skip, leftover, shop_keys, early = plan_regions(blocks)
     out = []
     close_at = None
+    prefixed = False
+    has_innate_fold = any(item.get('cls') == 'fold-innate' for item in regions.values())
+
+    def write_standalone_innate():
+        nonlocal prefixed
+        if prefixed or not early or has_innate_fold:
+            return
+        tables = len(early)
+        out.append('<details class="fold fold-innate">')
+        out.append('<summary><span class="fold-title">Встроенное оружие</span>'
+                   '<span class="fold-count">%s</span></summary><div class="fold-body">'
+                   % esc('%d %s' % (tables, plural(tables, 'профиль', 'профиля',
+                                                   'профилей'))))
+        out.extend(render_early_innate(blocks, early))
+        out.append('</div></details>')
+        prefixed = True
+
     for idx, (kind, payload) in enumerate(blocks):
         if close_at is not None and idx == close_at:
             out.append('</div></details>')
             close_at = None
+
+        if idx == leftover and not has_innate_fold:
+            write_standalone_innate()
 
         region = regions.get(idx)
         if region:
@@ -1391,6 +1448,9 @@ def render_blocks(blocks, prefix='', stores=()):
                        '</summary><div class="fold-body">'
                        % (title, esc(region['count'])))
             close_at = region['end']
+            if region.get('cls') == 'fold-innate':
+                out.extend(render_early_innate(blocks, region.get('prefix_weapons') or early))
+                prefixed = True
             if region.get('drop_heading'):
                 continue    # заголовок списка перенесён в шапку блока
 
@@ -1471,6 +1531,7 @@ def render_blocks(blocks, prefix='', stores=()):
             out.append('</tbody></table></div>')
     if close_at is not None:
         out.append('</div></details>')
+    write_standalone_innate()
     return '\n'.join(out)
 
 
