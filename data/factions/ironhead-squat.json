@@ -42,6 +42,16 @@
           "8",
           "7"
         ]
+      },
+      "skillAccess": {
+        "primary": [
+          "savant",
+          "shooting"
+        ],
+        "secondary": [
+          "brawn",
+          "combat"
+        ]
       }
     },
     {
@@ -83,6 +93,15 @@
           "7",
           "7",
           "6"
+        ]
+      },
+      "skillAccess": {
+        "primary": [
+          "brawn",
+          "shooting"
+        ],
+        "secondary": [
+          "savant"
         ]
       }
     },
@@ -126,6 +145,15 @@
           "7",
           "7"
         ]
+      },
+      "skillAccess": {
+        "primary": [
+          "brawn",
+          "combat"
+        ],
+        "secondary": [
+          "savant"
+        ]
       }
     },
     {
@@ -168,6 +196,15 @@
           "7",
           "7",
           "6"
+        ]
+      },
+      "skillAccess": {
+        "primary": [
+          "shooting"
+        ],
+        "secondary": [
+          "brawn",
+          "combat"
         ]
       }
     },
@@ -214,7 +251,15 @@
       },
       "rules": [
         "Навыки: у Ironhead Squat Exo-Kyn есть навык Nerves of Steel."
-      ]
+      ],
+      "skillAccess": {
+        "primary": [
+          "brawn"
+        ],
+        "secondary": [
+          "combat"
+        ]
+      }
     },
     {
       "id": "ironhead-squat-digger",
@@ -255,6 +300,14 @@
           "6",
           "5",
           "5"
+        ]
+      },
+      "skillAccess": {
+        "primary": [
+          "shooting"
+        ],
+        "secondary": [
+          "brawn"
         ]
       }
     },
@@ -382,7 +435,16 @@
             }
           ]
         }
-      ]
+      ],
+      "skillAccess": {
+        "primary": [
+          "brawn",
+          "combat"
+        ],
+        "secondary": [
+          "shooting"
+        ]
+      }
     },
     {
       "id": "techmite-exovator",
@@ -429,7 +491,15 @@
       "rules": [
         "Длина поводка: у Techmite Exovator длина поводка (Leash range) 3”.",
         "Две руки: Techmite Exovator может быть экипирован максимум двумя единицами оружия."
-      ]
+      ],
+      "skillAccess": {
+        "primary": [
+          "shooting"
+        ],
+        "secondary": [
+          "cunning"
+        ]
+      }
     },
     {
       "id": "techmite-oculi",
@@ -497,7 +567,15 @@
             }
           ]
         }
-      ]
+      ],
+      "skillAccess": {
+        "primary": [
+          "cunning"
+        ],
+        "secondary": [
+          "agility"
+        ]
+      }
     },
     {
       "id": "ironhead-squat-skalvian-explorator",
@@ -629,7 +707,15 @@
             }
           ]
         }
-      ]
+      ],
+      "skillAccess": {
+        "primary": [
+          "brawn"
+        ],
+        "secondary": [
+          "shooting"
+        ]
+      }
     }
   ],
   "subtypes": [
@@ -1874,7 +1960,7 @@
       "slots": 0,
       "category": "PERSONAL EQUIPMENT",
       "list": "IRONHEAD SQUAT",
-      "description": "Active или Suppressed Fighter со спусковой оснасткой может выполнить действие «Спуск», находясь в пределах 1” от края площадки: Спуск (одиночное): Fighter сдвигается до 3” по горизонтали и до 12” по вертикали. Любое вертикальное движение должно быть вниз, то есть к земле."
+      "description": "An Active or Suppressed Fighter with a drop rig can perform the Descend action while they are within 1” of the edge of a platform Спуск (одиночное): Fighter сдвигается до 3” по горизонтали и до 12” по вертикали. Любое вертикальное движение должно быть вниз, то есть к земле."
     },
     {
       "name": "Grav chute",

@@ -45,7 +45,17 @@
       },
       "rules": [
         "Мастер шёпотов: при добавлении в Gang Roster Delaque Master of Shadow может получить подтип Wyrd и выбрать силу Wyrd Psychoteric Whispers за +35 кредитов."
-      ]
+      ],
+      "skillAccess": {
+        "primary": [
+          "cunning",
+          "savant"
+        ],
+        "secondary": [
+          "agility",
+          "shooting"
+        ]
+      }
     },
     {
       "id": "delaque-phantom",
@@ -90,7 +100,16 @@
       },
       "rules": [
         "Мастер шёпотов: при добавлении в Gang Roster Delaque Phantom может получить подтип Wyrd и выбрать силу Wyrd Psychoteric Whispers за +35 кредитов."
-      ]
+      ],
+      "skillAccess": {
+        "primary": [
+          "cunning",
+          "savant"
+        ],
+        "secondary": [
+          "agility"
+        ]
+      }
     },
     {
       "id": "delaque-nacht-ghul",
@@ -136,7 +155,16 @@
       },
       "rules": [
         "Из теней: вместо обычной расстановки этого Fighter можно отложить в сторону. В начале любого раунда после первого, до броска за Priority, контролирующий игрок может выставить его в любой точке поля, которая не в линии видимости ни одной вражеской модели и не ближе 9” к любому вражескому Fighter. Если у обоих игроков есть Fighter с этим особым правилом, которых они хотят выставить в начале одного и того же раунда, победитель броска на очерёдность решает, кто выставляет своих Fighter первым."
-      ]
+      ],
+      "skillAccess": {
+        "primary": [
+          "agility",
+          "combat"
+        ],
+        "secondary": [
+          "cunning"
+        ]
+      }
     },
     {
       "id": "delaque-ghost",
@@ -178,6 +206,15 @@
           "6",
           "7",
           "6"
+        ]
+      },
+      "skillAccess": {
+        "primary": [
+          "cunning"
+        ],
+        "secondary": [
+          "agility",
+          "savant"
         ]
       }
     },
@@ -225,7 +262,15 @@
       },
       "rules": [
         "Шёпоты во тьме: при добавлении в Gang Roster этот Fighter выбирает силу Wyrd Psychoteric Whispers."
-      ]
+      ],
+      "skillAccess": {
+        "primary": [
+          "cunning"
+        ],
+        "secondary": [
+          "agility"
+        ]
+      }
     },
     {
       "id": "delaque-shadow",
@@ -266,6 +311,14 @@
           "5",
           "6",
           "5"
+        ]
+      },
+      "skillAccess": {
+        "primary": [
+          "cunning"
+        ],
+        "secondary": [
+          "agility"
         ]
       }
     },
@@ -335,7 +388,15 @@
             }
           ]
         }
-      ]
+      ],
+      "skillAccess": {
+        "primary": [
+          "brawn"
+        ],
+        "secondary": [
+          "combat"
+        ]
+      }
     },
     {
       "id": "cephalopod-spektor",
@@ -403,7 +464,15 @@
             }
           ]
         }
-      ]
+      ],
+      "skillAccess": {
+        "primary": [
+          "cunning"
+        ],
+        "secondary": [
+          "agility"
+        ]
+      }
     },
     {
       "id": "psychoteric-wyrm",
@@ -471,7 +540,15 @@
             }
           ]
         }
-      ]
+      ],
+      "skillAccess": {
+        "primary": [
+          "agility"
+        ],
+        "secondary": [
+          "cunning"
+        ]
+      }
     }
   ],
   "subtypes": [
@@ -1349,7 +1426,7 @@
       "slots": 0,
       "category": "PERSONAL EQUIPMENT",
       "list": "HOUSE DELAQUE",
-      "description": "Active Fighter с гарпунной лебёдкой может выполнить действие «Гарпун»: Гарпун (двойное): Fighter может сдвинуться до 12” по прямой в любом направлении, если заканчивает это движение на более высоком уровне, чем начал."
+      "description": "An Active Fighter with a grapnel launcher can perform the Grapnel action Гарпун (двойное): Fighter может сдвинуться до 12” по прямой в любом направлении, если заканчивает это движение на более высоком уровне, чем начал."
     },
     {
       "name": "Medicae kit",

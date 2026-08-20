@@ -18,6 +18,13 @@ export type FighterStats = {
   values: string[];
 };
 
+export type SkillAccessLevel = 'primary' | 'secondary';
+
+export type SkillAccess = {
+  primary: string[];
+  secondary: string[];
+};
+
 export type FighterTypeDef = {
   id: string;
   name: string;
@@ -28,6 +35,8 @@ export type FighterTypeDef = {
   stats?: FighterStats;
   rules?: string[];
   weapons?: WeaponProfile[];
+  skillAccess?: SkillAccess;
+  skillAccessByArchetype?: Record<string, SkillAccess>;
 };
 
 export type EquipmentUpgrade = {
@@ -319,6 +328,10 @@ export function findSkill(name: string) {
   return undefined;
 }
 
+export function findSkillSet(name: string) {
+  return SKILL_SETS.find((group) => group.skills.some((skill) => skill.name === name));
+}
+
 export function skillLabel(name: string) {
   return findSkill(name)?.label ?? name;
 }
@@ -331,6 +344,80 @@ export function splitNamedRule(rule: string) {
 
 export function findType(catalog: FactionCatalog | undefined, name: string) {
   return catalog?.types.find((item) => item.name === name);
+}
+
+export const SKILL_ARCHETYPE_ORDER = [
+  'Brawler',
+  'Gunslinger',
+  'Mastermind',
+  'Survivor',
+  'Wyrd',
+] as const;
+
+export function catalogArchetypes(catalog: FactionCatalog | undefined): string[] {
+  const names = new Set<string>();
+  for (const type of catalog?.types ?? []) {
+    for (const name of Object.keys(type.skillAccessByArchetype ?? {})) {
+      names.add(name);
+    }
+  }
+  return SKILL_ARCHETYPE_ORDER.filter((name) => names.has(name));
+}
+
+export function skillAccessFor(
+  type: FighterTypeDef | undefined,
+  subtypes: string[],
+): SkillAccess | undefined {
+  if (!type) return undefined;
+  const byArch = type.skillAccessByArchetype;
+  if (byArch) {
+    const key = SKILL_ARCHETYPE_ORDER.find(
+      (name) => subtypes.includes(name) && byArch[name],
+    );
+    return key ? byArch[key] : undefined;
+  }
+  return type.skillAccess;
+}
+
+export function skillAccessLevel(
+  access: SkillAccess | undefined,
+  setId: string,
+): SkillAccessLevel | undefined {
+  if (!access) return undefined;
+  if (access.primary.includes(setId)) return 'primary';
+  if (access.secondary.includes(setId)) return 'secondary';
+  return undefined;
+}
+
+export function skillAccessLabel(level: SkillAccessLevel | undefined) {
+  if (level === 'primary') return 'основной';
+  if (level === 'secondary') return 'вторичный';
+  return undefined;
+}
+
+function accessRank(level: SkillAccessLevel | undefined) {
+  if (level === 'primary') return 0;
+  if (level === 'secondary') return 1;
+  return 2;
+}
+
+export function orderedSkillSets(access: SkillAccess | undefined) {
+  return SKILL_SETS.map((group, index) => ({ group, index })).sort((a, b) => {
+    const rank = accessRank(skillAccessLevel(access, a.group.id))
+      - accessRank(skillAccessLevel(access, b.group.id));
+    return rank || a.index - b.index;
+  }).map((entry) => entry.group);
+}
+
+export function skillSetGroupLabel(group: SkillSetDef, level: SkillAccessLevel | undefined) {
+  const tag = skillAccessLabel(level);
+  return tag ? `${group.name} · ${tag}` : group.name;
+}
+
+export function skillOptionLabel(skill: SkillDef, level: SkillAccessLevel | undefined) {
+  const base = `${skill.label} (${skill.name})`;
+  const tag = skillAccessLabel(level);
+  return tag ? `${base} · ${tag}` : base;
 }
 
 export function findGear(catalog: FactionCatalog | undefined, name: string) {

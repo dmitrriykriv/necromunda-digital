@@ -42,6 +42,16 @@
           "7",
           "9"
         ]
+      },
+      "skillAccess": {
+        "primary": [
+          "savant",
+          "shooting"
+        ],
+        "secondary": [
+          "combat",
+          "cunning"
+        ]
       }
     },
     {
@@ -83,6 +93,15 @@
           "7",
           "6",
           "8"
+        ]
+      },
+      "skillAccess": {
+        "primary": [
+          "savant",
+          "shooting"
+        ],
+        "secondary": [
+          "cunning"
         ]
       }
     },
@@ -127,6 +146,15 @@
           "6",
           "8"
         ]
+      },
+      "skillAccess": {
+        "primary": [
+          "combat",
+          "shooting"
+        ],
+        "secondary": [
+          "savant"
+        ]
       }
     },
     {
@@ -169,6 +197,15 @@
           "6",
           "5",
           "7"
+        ]
+      },
+      "skillAccess": {
+        "primary": [
+          "shooting"
+        ],
+        "secondary": [
+          "cunning",
+          "savant"
         ]
       }
     },
@@ -215,7 +252,15 @@
       },
       "rules": [
         "Навыки: у Van Saar Neotek есть навык Gunfighter."
-      ]
+      ],
+      "skillAccess": {
+        "primary": [
+          "shooting"
+        ],
+        "secondary": [
+          "agility"
+        ]
+      }
     },
     {
       "id": "van-saar-subtek",
@@ -256,6 +301,14 @@
           "5",
           "4",
           "6"
+        ]
+      },
+      "skillAccess": {
+        "primary": [
+          "shooting"
+        ],
+        "secondary": [
+          "cunning"
         ]
       }
     },
@@ -428,7 +481,15 @@
             }
           ]
         }
-      ]
+      ],
+      "skillAccess": {
+        "primary": [
+          "brawn"
+        ],
+        "secondary": [
+          "shooting"
+        ]
+      }
     }
   ],
   "subtypes": [
@@ -1489,7 +1550,7 @@
       "slots": 0,
       "category": "PERSONAL EQUIPMENT",
       "list": "HOUSE VAN SAAR",
-      "description": "Active или Suppressed Fighter со спусковой оснасткой может выполнить действие «Спуск», находясь в пределах 1” от края площадки: Спуск (одиночное): Fighter сдвигается до 3” по горизонтали и до 12” по вертикали. Любое вертикальное движение должно быть вниз, то есть к земле."
+      "description": "An Active or Suppressed Fighter with a drop rig can perform the Descend action while they are within 1” of the edge of a platform Спуск (одиночное): Fighter сдвигается до 3” по горизонтали и до 12” по вертикали. Любое вертикальное движение должно быть вниз, то есть к земле."
     },
     {
       "name": "Grav chute",
@@ -1537,7 +1598,7 @@
       "slots": 0,
       "category": "PERSONAL EQUIPMENT",
       "list": "HOUSE VAN SAAR",
-      "description": "Active Fighter с servo-medicae может выполнить действие «Автолечение»: Автолечение (свободное): когда Fighter выполняет это действие, выберите его самого или дружественного Active или Suppressed Fighter в пределах 3” и сделайте проверку Intelligence для этого Fighter. Если проверка пройдена, цель восстанавливает 1 Wound, потерянный ранее в бою."
+      "description": "An Active Fighter equipped with a servo-medicae may perform the Auto- medicate action Автолечение (свободное): когда Fighter выполняет это действие, выберите его самого или дружественного Active или Suppressed Fighter в пределах 3” и сделайте проверку Intelligence для этого Fighter. Если проверка пройдена, цель восстанавливает 1 Wound, потерянный ранее в бою."
     },
     {
       "name": "Vox array (Tech specialist only)",

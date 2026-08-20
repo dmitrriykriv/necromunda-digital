@@ -100,6 +100,26 @@ NO_SLOT = (
     'ARMOUR', 'WARGEAR', 'GRENADE', 'PERSONAL EQUIPMENT', 'STATUS',
     'PET', 'MOUNT', 'EXOTIC', 'CHEM', 'BIONIC', 'BOMB', 'GANG TERRAIN',
 )
+SKILLS_TABLE_RE = re.compile(r'<table class="compact skills">(.*?)</table>', re.S)
+H3_ORIG_RE = re.compile(r'<h3>[^<]*<span class="orig">([^<]+)</span></h3>')
+ORIG_SPAN_RE = re.compile(r'<span class="orig">([^<]+)</span>')
+TR_RE = re.compile(r'<tr>(.*?)</tr>', re.S)
+SKILL_SET_BY_HEADER = {
+    'agility': 'agility',
+    'brawn': 'brawn',
+    'combat': 'combat',
+    'cunning': 'cunning',
+    'savant': 'savant',
+    'shooting': 'shooting',
+}
+ARCHETYPE_HEADERS = {
+    'brawler': 'Brawler',
+    'gunslinger': 'Gunslinger',
+    'mastermind': 'Mastermind',
+    'survivor': 'Survivor',
+    'wyrd': 'Wyrd',
+}
+ARCHETYPE_ORDER = list(ARCHETYPE_HEADERS.values())
 
 
 def faction_id(section_id: str) -> str:
@@ -195,6 +215,138 @@ def parse_fighter_rules(chunk: str) -> list[str]:
     return rules
 
 
+def strip_innate_weapon_clause(text: str) -> str:
+    """Профиль встроенного оружия не дублируем текстом особого правила."""
+    text = re.sub(
+        r'(?:,?\s*и)?\s*всегда считается вооружённым оружием\s+\S.*$',
+        '',
+        text,
+        flags=re.I | re.S,
+    )
+    text = re.sub(
+        r'(?:,?\s*and)?\s*is always considered to be armed with the\s+\S.*$',
+        '',
+        text,
+        flags=re.I | re.S,
+    )
+    return re.sub(r'[\s:]+$', '', text)
+
+
+def normalize_skill_name(raw: str) -> str:
+    text = html.unescape(raw).lower().replace('’', "'").replace('‘', "'")
+    text = text.replace('_', ' ').replace('-', ' ')
+    return re.sub(r'[^a-z0-9]+', ' ', text).strip()
+
+
+def skill_row_matches(fighter_name: str, row_name: str) -> bool:
+    left = normalize_skill_name(fighter_name)
+    right = normalize_skill_name(row_name)
+    return bool(right) and (left == right or left.endswith(' ' + right))
+
+
+def best_skill_row(fighter_name: str, rows: dict) -> str | None:
+    matches = [name for name in rows if skill_row_matches(fighter_name, name)]
+    if not matches:
+        return None
+    return max(matches, key=lambda name: (len(normalize_skill_name(name)), len(name)))
+
+
+def header_orig(raw: str) -> str:
+    orig = ORIG_SPAN_RE.search(raw)
+    return (orig.group(1) if orig else strip_tags(raw)).strip()
+
+
+def cell_access(raw: str) -> str | None:
+    cls = re.search(r'class="skill\s+([psn])"', raw)
+    if cls:
+        return {'p': 'primary', 's': 'secondary'}.get(cls.group(1))
+    orig = ORIG_SPAN_RE.search(raw)
+    token = (orig.group(1) if orig else strip_tags(raw)).strip().lower()
+    if token == 'primary':
+        return 'primary'
+    if token == 'secondary':
+        return 'secondary'
+    return None
+
+
+def parse_skill_access_table(table_html: str) -> dict[str, dict]:
+    rows_html = TR_RE.findall(table_html)
+    if not rows_html:
+        return {}
+    headers = [header_orig(cell) for cell in CELL_RE.findall(rows_html[0])]
+    if len(headers) < 2:
+        return {}
+    set_ids = [SKILL_SET_BY_HEADER.get(name.lower()) for name in headers[1:]]
+    result: dict[str, dict] = {}
+    for row_html in rows_html[1:]:
+        cells = CELL_RE.findall(row_html)
+        if len(cells) < 2:
+            continue
+        name = strip_tags(cells[0])
+        if not name:
+            continue
+        primary: list[str] = []
+        secondary: list[str] = []
+        for index, cell in enumerate(cells[1:]):
+            if index >= len(set_ids) or not set_ids[index]:
+                continue
+            level = cell_access(cell)
+            if level == 'primary':
+                primary.append(set_ids[index])
+            elif level == 'secondary':
+                secondary.append(set_ids[index])
+        if primary or secondary:
+            result[name] = {'primary': primary, 'secondary': secondary}
+    return result
+
+
+def preceding_archetype(body: str, pos: int) -> str | None:
+    last = None
+    for match in H3_ORIG_RE.finditer(body[:pos]):
+        mapped = ARCHETYPE_HEADERS.get(match.group(1).strip().lower())
+        if mapped:
+            last = mapped
+    return last
+
+
+def parse_skill_access_tables(body: str) -> tuple[dict[str, dict], dict[str, dict[str, dict]]]:
+    flat: dict[str, dict] = {}
+    by_arch: dict[str, dict[str, dict]] = {}
+    for match in SKILLS_TABLE_RE.finditer(body):
+        rows = parse_skill_access_table(match.group(1))
+        if not rows:
+            continue
+        archetype = preceding_archetype(body, match.start())
+        if archetype:
+            by_arch.setdefault(archetype, {}).update(rows)
+        else:
+            flat.update(rows)
+    return flat, by_arch
+
+
+def attach_skill_access(
+    item: dict,
+    flat: dict[str, dict],
+    by_arch: dict[str, dict[str, dict]],
+) -> None:
+    name = item['name']
+    if by_arch:
+        access: dict[str, dict] = {}
+        for archetype in ARCHETYPE_ORDER:
+            rows = by_arch.get(archetype)
+            if not rows:
+                continue
+            row = best_skill_row(name, rows)
+            if row:
+                access[archetype] = rows[row]
+        if access:
+            item['skillAccessByArchetype'] = access
+        return
+    row = best_skill_row(name, flat)
+    if row:
+        item['skillAccess'] = flat[row]
+
+
 def parse_gang_named_rules(body: str) -> dict[str, str]:
     match = GANG_RULES_RE.search(body)
     if not match:
@@ -208,7 +360,8 @@ def parse_gang_named_rules(body: str) -> dict[str, str]:
     def flush() -> None:
         nonlocal current_key, current_title, parts
         if current_key and parts:
-            abilities[current_key] = rule_text(current_title, ' '.join(parts).rstrip(':'))
+            abilities[current_key] = strip_innate_weapon_clause(
+                rule_text(current_title, ' '.join(parts).rstrip(':')))
         current_key = ''
         current_title = ''
         parts = []
@@ -236,6 +389,8 @@ def expand_referenced_rules(rules: list[str], chunk: str, abilities: dict[str, s
     known = {item.casefold() for item in expanded}
     for match in BENEFITS_RE.finditer(chunk):
         text = abilities.get(match.group(1).strip().lower())
+        if text:
+            text = strip_innate_weapon_clause(text)
         if text and text.casefold() not in known:
             expanded.append(text)
             known.add(text.casefold())
@@ -488,6 +643,7 @@ def main() -> None:
         equipment = parse_equipment(body)
         weapon_catalog = index_weapon_profiles(body, equipment)
         gang_rules = parse_gang_named_rules(body)
+        skill_flat, skill_by_arch = parse_skill_access_tables(body)
         types = []
         subtype_set: list[str] = []
         seen = set()
@@ -521,12 +677,17 @@ def main() -> None:
             weapons = innate_weapons(chunk, weapon_catalog)
             if weapons:
                 item['weapons'] = weapons
+            attach_skill_access(item, skill_flat, skill_by_arch)
             types.append(item)
             for subtype in subtypes:
                 if subtype not in seen:
                     seen.add(subtype)
                     subtype_set.append(subtype)
         armed = sum(1 for item in types if item.get('weapons'))
+        skilled = sum(
+            1 for item in types
+            if item.get('skillAccess') or item.get('skillAccessByArchetype')
+        )
         payload = {
             'id': fid,
             'name': name,
@@ -543,7 +704,10 @@ def main() -> None:
             'types': len(types),
             'equipment': len(equipment),
         })
-        print(f'{fid:28} {len(types):2} types  {armed:2} armed  {len(equipment):3} gear  {name}')
+        print(
+            f'{fid:28} {len(types):2} types  {armed:2} armed  '
+            f'{len(equipment):3} gear  skills {skilled}/{len(types)}  {name}'
+        )
     (OUT / 'index.json').write_text(
         json.dumps({'factions': index}, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
 

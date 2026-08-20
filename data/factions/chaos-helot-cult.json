@@ -42,6 +42,16 @@
           "8",
           "7"
         ]
+      },
+      "skillAccess": {
+        "primary": [
+          "brawn",
+          "savant"
+        ],
+        "secondary": [
+          "combat",
+          "cunning"
+        ]
       }
     },
     {
@@ -83,6 +93,16 @@
           "8",
           "6",
           "6"
+        ]
+      },
+      "skillAccess": {
+        "primary": [
+          "cunning",
+          "shooting"
+        ],
+        "secondary": [
+          "brawn",
+          "savant"
         ]
       }
     },
@@ -130,7 +150,16 @@
       },
       "rules": [
         "Ведьма: Chaos Helot Cult Witch считает Chaos Helot Wyrd Powers своим Primary Skill Set при выборе навыков."
-      ]
+      ],
+      "skillAccess": {
+        "primary": [
+          "cunning",
+          "savant"
+        ],
+        "secondary": [
+          "agility"
+        ]
+      }
     },
     {
       "id": "chaos-helot-cultist",
@@ -173,6 +202,15 @@
           "5",
           "6"
         ]
+      },
+      "skillAccess": {
+        "primary": [
+          "combat"
+        ],
+        "secondary": [
+          "cunning",
+          "shooting"
+        ]
       }
     },
     {
@@ -214,6 +252,14 @@
           "5",
           "5",
           "5"
+        ]
+      },
+      "skillAccess": {
+        "primary": [
+          "cunning"
+        ],
+        "secondary": [
+          "agility"
         ]
       }
     },
@@ -281,7 +327,15 @@
             }
           ]
         }
-      ]
+      ],
+      "skillAccess": {
+        "primary": [
+          "agility"
+        ],
+        "secondary": [
+          "cunning"
+        ]
+      }
     },
     {
       "id": "chaos-spawn",
@@ -326,7 +380,7 @@
         ]
       },
       "rules": [
-        "Искажённое чудовище: когда Chaos Spawn добавляют в Gang Roster, бросьте D6 по каждой характеристике профиля и сверьтесь с таблицей ниже, чтобы определить её значение:",
+        "Warped Monstrosity: When a Chaos Spawn is added to the Gang Roster, roll a D6 for each characteristic in their profile and consult the table below to determine their value",
         "Случайное движение: характеристика Movement у Chaos Spawn случайная; бросайте каждый раз, когда Chaos Spawn активируется.",
         "Благословлённые богами Хаоса: когда Chaos Spawn выводится Out of Action, не бросайте по таблице Lasting Injury. Его всегда считают Out Cold.",
         "Вне контроля: на шаге Wrap-up последовательности Post-battle Sequence, если Chaos Spawn участвовал в бою, есть шанс, что он сбежит. Его хозяин назначает до трёх Fighter из банды, которые не были выведены Out of Action в этом бою; бросьте D6 за каждого Fighter. Если хотя бы один Fighter выбросил 4+, Chaos Spawn удерживают, и он остаётся с бандой. Иначе он сбегает в глубины андерхайва; Chaos Spawn уходит в Recovery, пока банда его возвращает. Кроме того, если любой Fighter выбросил 1, Chaos Spawn бьёт его. Немедленно бросьте по таблице Lasting Injury за него и примените результат."
@@ -350,7 +404,16 @@
             }
           ]
         }
-      ]
+      ],
+      "skillAccess": {
+        "primary": [
+          "brawn"
+        ],
+        "secondary": [
+          "agility",
+          "cunning"
+        ]
+      }
     }
   ],
   "subtypes": [
@@ -1241,7 +1304,7 @@
       "slots": 0,
       "category": "PERSONAL EQUIPMENT",
       "list": "CHAOS HELOT",
-      "description": "Active или Suppressed Fighter со спусковой оснасткой может выполнить действие «Спуск», находясь в пределах 1” от края площадки: Спуск (одиночное): Fighter сдвигается до 3” по горизонтали и до 12” по вертикали. Любое вертикальное движение должно быть вниз, то есть к земле."
+      "description": "An Active or Suppressed Fighter with a drop rig can perform the Descend action while they are within 1” of the edge of a platform Спуск (одиночное): Fighter сдвигается до 3” по горизонтали и до 12” по вертикали. Любое вертикальное движение должно быть вниз, то есть к земле."
     },
     {
       "name": "Medicae kit",

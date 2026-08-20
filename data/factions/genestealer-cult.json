@@ -46,7 +46,16 @@
       },
       "rules": [
         "Адепт культа: Genestealer Cult Adept имеет подтип Wyrd и считает Genestealer Cult Wyrd Powers своим Primary Skill Set."
-      ]
+      ],
+      "skillAccess": {
+        "primary": [
+          "savant"
+        ],
+        "secondary": [
+          "agility",
+          "cunning"
+        ]
+      }
     },
     {
       "id": "genestealer-cult-alpha",
@@ -91,7 +100,7 @@
       },
       "rules": [
         "Гибрид раннего поколения: Genestealer Cult Alpha получает правило Extra Arm.",
-        "Дополнительная рука: этот вариант доступен некоторым Fighter в банде культа генокрадов и указан в записи Fighter. Fighter с этой способностью считает действие Braced Shot одиночным действием вместо двойного. Кроме того, этот Fighter может нести четыре единицы оружия вместо обычных трёх и всегда считается вооружённым оружием clawed arm (оно не занимает одно из разрешённых оружий)"
+        "Дополнительная рука: этот вариант доступен некоторым Fighter в банде культа генокрадов и указан в записи Fighter. Fighter с этой способностью считает действие Braced Shot одиночным действием вместо двойного. Кроме того, этот Fighter может нести четыре единицы оружия вместо обычных трёх."
       ],
       "weapons": [
         {
@@ -116,7 +125,17 @@
             }
           ]
         }
-      ]
+      ],
+      "skillAccess": {
+        "primary": [
+          "cunning",
+          "savant"
+        ],
+        "secondary": [
+          "brawn",
+          "combat"
+        ]
+      }
     },
     {
       "id": "genestealer-cult-hybrid-acolyte",
@@ -161,7 +180,16 @@
       },
       "rules": [
         "Смешанные поколения: по умолчанию Genestealer Cult Hybrid Acolyte принадлежит к позднему поколению. При добавлении в Gang Roster его можно назначить ранним поколением за +20 кредитов. Если он раннего поколения, он получает правило Extra Arm."
-      ]
+      ],
+      "skillAccess": {
+        "primary": [
+          "cunning",
+          "shooting"
+        ],
+        "secondary": [
+          "combat"
+        ]
+      }
     },
     {
       "id": "genestealer-cult-neophyte-hybrid",
@@ -207,7 +235,16 @@
       },
       "rules": [
         "Смешанные поколения: по умолчанию Genestealer Cult Neophyte Hybrid принадлежит к позднему поколению. При добавлении в Gang Roster его можно назначить ранним поколением за +20 кредитов. Если он раннего поколения, он получает правило Extra Arm."
-      ]
+      ],
+      "skillAccess": {
+        "primary": [
+          "cunning"
+        ],
+        "secondary": [
+          "combat",
+          "shooting"
+        ]
+      }
     },
     {
       "id": "genestealer-cult-aberrant",
@@ -252,7 +289,16 @@
       },
       "rules": [
         "Навыки: у Genestealer Cult Aberrant есть навык Unstoppable."
-      ]
+      ],
+      "skillAccess": {
+        "primary": [
+          "brawn"
+        ],
+        "secondary": [
+          "combat",
+          "cunning"
+        ]
+      }
     },
     {
       "id": "genestealer-cult-hybrid-initiate",
@@ -297,7 +343,15 @@
       },
       "rules": [
         "Смешанные поколения: по умолчанию Genestealer Cult Hybrid Initiate принадлежит к позднему поколению. При добавлении в Gang Roster его можно назначить ранним поколением за +20 кредитов. Если он раннего поколения, он получает правило Extra Arm."
-      ]
+      ],
+      "skillAccess": {
+        "primary": [
+          "cunning"
+        ],
+        "secondary": [
+          "agility"
+        ]
+      }
     },
     {
       "id": "genestealer-cult-abominant",
@@ -374,7 +428,15 @@
             }
           ]
         }
-      ]
+      ],
+      "skillAccess": {
+        "primary": [
+          "brawn"
+        ],
+        "secondary": [
+          "combat"
+        ]
+      }
     },
     {
       "id": "psychic-familiar",
@@ -423,7 +485,15 @@
         "Знамение удачи: Psychic Familiar чует беду и предупреждает спутника вспышкой предвидения. Пока он в пределах Leash range от владельца, у владельца есть непробиваемый спасбросок 4+.",
         "Предвидение: дар предвидения Psychic Familiar позволяет уклоняться почти от любых атак, кроме самых неожиданных. Это мощное предвидение даёт непробиваемый спасбросок 4+.",
         "Навыки: у Psychic Familiar есть навыки Catfall и Clamber."
-      ]
+      ],
+      "skillAccess": {
+        "primary": [
+          "agility"
+        ],
+        "secondary": [
+          "cunning"
+        ]
+      }
     }
   ],
   "subtypes": [

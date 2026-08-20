@@ -42,6 +42,16 @@
           "8",
           "7"
         ]
+      },
+      "skillAccess": {
+        "primary": [
+          "savant",
+          "shooting"
+        ],
+        "secondary": [
+          "brawn",
+          "combat"
+        ]
       }
     },
     {
@@ -83,6 +93,15 @@
           "7",
           "7",
           "7"
+        ]
+      },
+      "skillAccess": {
+        "primary": [
+          "brawn",
+          "shooting"
+        ],
+        "secondary": [
+          "savant"
         ]
       }
     },
@@ -129,7 +148,16 @@
       },
       "rules": [
         "Навыки: пока Orlock Arms Master на поле боя, его банда может перебрасывать проверки Bottle."
-      ]
+      ],
+      "skillAccess": {
+        "primary": [
+          "brawn",
+          "combat"
+        ],
+        "secondary": [
+          "savant"
+        ]
+      }
     },
     {
       "id": "orlock-gunner",
@@ -171,6 +199,15 @@
           "6",
           "6",
           "6"
+        ]
+      },
+      "skillAccess": {
+        "primary": [
+          "brawn"
+        ],
+        "secondary": [
+          "combat",
+          "shooting"
         ]
       }
     },
@@ -217,7 +254,15 @@
       },
       "rules": [
         "Навыки: у Orlock Wrecker есть навык Nerves of Steel."
-      ]
+      ],
+      "skillAccess": {
+        "primary": [
+          "agility"
+        ],
+        "secondary": [
+          "brawn"
+        ]
+      }
     },
     {
       "id": "orlock-greenhorn",
@@ -258,6 +303,14 @@
           "5",
           "5",
           "5"
+        ]
+      },
+      "skillAccess": {
+        "primary": [
+          "brawn"
+        ],
+        "secondary": [
+          "combat"
         ]
       }
     },
@@ -322,7 +375,15 @@
             }
           ]
         }
-      ]
+      ],
+      "skillAccess": {
+        "primary": [
+          "brawn"
+        ],
+        "secondary": [
+          "agility"
+        ]
+      }
     }
   ],
   "subtypes": [
@@ -1355,7 +1416,7 @@
       "slots": 0,
       "category": "PERSONAL EQUIPMENT",
       "list": "HOUSE ORLOCK",
-      "description": "Active или Suppressed Fighter со спусковой оснасткой может выполнить действие «Спуск», находясь в пределах 1” от края площадки: Спуск (одиночное): Fighter сдвигается до 3” по горизонтали и до 12” по вертикали. Любое вертикальное движение должно быть вниз, то есть к земле."
+      "description": "An Active or Suppressed Fighter with a drop rig can perform the Descend action while they are within 1” of the edge of a platform Спуск (одиночное): Fighter сдвигается до 3” по горизонтали и до 12” по вертикали. Любое вертикальное движение должно быть вниз, то есть к земле."
     },
     {
       "name": "Medicae kit",
@@ -1419,7 +1480,7 @@
       "slots": 0,
       "category": "MOUNTS",
       "list": "HOUSE ORLOCK",
-      "description": "Fighter с Outrider Quad получает подтип Mounted и ставит характеристику Movement на 7”. Когда он выполняет действие Dash, он добавляет 5” к характеристике Movement вместо Initiative. Outrider Quad экипирован Outrider harpoon launcher. Он может выбрать следующий вариант при добавлении в Gang Roster или в любой пост-цикловой последовательности: Заменить Outrider harpoon launcher на Outrider heavy bolter....................................+30 кредитов"
+      "description": "Fighter с Outrider Quad получает подтип Mounted и ставит характеристику Movement на 7”. Когда он выполняет действие Dash, он добавляет 5” к характеристике Movement вместо Initiative. An Outrider Quad is equipped with an Outrider harpoon launcher. It may select the following option when added to the Gang Roster or during any Post-cycle Sequence Заменить Outrider harpoon launcher на Outrider heavy bolter....................................+30 кредитов"
     },
     {
       "name": "Cyber-Mastiff",

@@ -44,7 +44,7 @@
         ]
       },
       "rules": [
-        "Хищник из засады: пока Active, Malstrain Alpha может выполнить действие Исчезновение в свою активацию:",
+        "Ambush Predator: While Active, the Malstrain Alpha may perform the Fade action during their activation",
         "Ксено-мерзость: Malstrain Alpha не может выполнять пост-цикловые действия.",
         "Навыки: у Malstrain Alpha есть навыки Clamber, Dodge, Infiltrate, Juggernaut, Nerves of Steel и Rain of Blows."
       ],
@@ -93,7 +93,17 @@
             }
           ]
         }
-      ]
+      ],
+      "skillAccess": {
+        "primary": [
+          "agility",
+          "combat"
+        ],
+        "secondary": [
+          "brawn",
+          "cunning"
+        ]
+      }
     },
     {
       "id": "malstrain-genestealer",
@@ -185,7 +195,16 @@
             }
           ]
         }
-      ]
+      ],
+      "skillAccess": {
+        "primary": [
+          "agility",
+          "combat"
+        ],
+        "secondary": [
+          "brawn"
+        ]
+      }
     },
     {
       "id": "malstrain-coalescence",
@@ -249,7 +268,15 @@
             }
           ]
         }
-      ]
+      ],
+      "skillAccess": {
+        "primary": [
+          "cunning"
+        ],
+        "secondary": [
+          "brawn"
+        ]
+      }
     },
     {
       "id": "malstrain-brood-scum",
@@ -291,6 +318,14 @@
           "6",
           "6",
           "6"
+        ]
+      },
+      "skillAccess": {
+        "primary": [
+          "cunning"
+        ],
+        "secondary": [
+          "agility"
         ]
       }
     },
@@ -364,7 +399,15 @@
             }
           ]
         }
-      ]
+      ],
+      "skillAccess": {
+        "primary": [
+          "agility"
+        ],
+        "secondary": [
+          "cunning"
+        ]
+      }
     }
   ],
   "subtypes": [
@@ -1194,7 +1237,7 @@
       "slots": 0,
       "category": "PERSONAL EQUIPMENT",
       "list": "MALSTRAIN",
-      "description": "Active или Suppressed Fighter со спусковой оснасткой может выполнить действие «Спуск», находясь в пределах 1” от края площадки: Спуск (одиночное): Fighter сдвигается до 3” по горизонтали и до 12” по вертикали. Любое вертикальное движение должно быть вниз, то есть к земле."
+      "description": "An Active or Suppressed Fighter with a drop rig can perform the Descend action while they are within 1” of the edge of a platform Спуск (одиночное): Fighter сдвигается до 3” по горизонтали и до 12” по вертикали. Любое вертикальное движение должно быть вниз, то есть к земле."
     },
     {
       "name": "Medicae kit",

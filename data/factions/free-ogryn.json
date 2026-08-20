@@ -42,6 +42,15 @@
           "7",
           "6"
         ]
+      },
+      "skillAccess": {
+        "primary": [
+          "brawn",
+          "combat"
+        ],
+        "secondary": [
+          "savant"
+        ]
       }
     },
     {
@@ -83,6 +92,15 @@
           "8",
           "6",
           "5"
+        ]
+      },
+      "skillAccess": {
+        "primary": [
+          "brawn"
+        ],
+        "secondary": [
+          "combat",
+          "savant"
         ]
       }
     },
@@ -127,6 +145,14 @@
           "5",
           "5"
         ]
+      },
+      "skillAccess": {
+        "primary": [
+          "brawn"
+        ],
+        "secondary": [
+          "combat"
+        ]
       }
     },
     {
@@ -169,6 +195,12 @@
           "4",
           "4"
         ]
+      },
+      "skillAccess": {
+        "primary": [
+          "brawn"
+        ],
+        "secondary": []
       }
     }
   ],
@@ -768,7 +800,7 @@
       "slots": 0,
       "category": "PERSONAL EQUIPMENT",
       "list": "FREE OGRYN",
-      "description": "Active или Suppressed Fighter со спусковой оснасткой может выполнить действие «Спуск», находясь в пределах 1” от края площадки: Спуск (одиночное): Fighter сдвигается до 3” по горизонтали и до 12” по вертикали. Любое вертикальное движение должно быть вниз, то есть к земле."
+      "description": "An Active or Suppressed Fighter with a drop rig can perform the Descend action while they are within 1” of the edge of a platform Спуск (одиночное): Fighter сдвигается до 3” по горизонтали и до 12” по вертикали. Любое вертикальное движение должно быть вниз, то есть к земле."
     },
     {
       "name": "Medicae kit",

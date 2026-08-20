@@ -43,6 +43,16 @@
           "8",
           "7"
         ]
+      },
+      "skillAccess": {
+        "primary": [
+          "brawn",
+          "savant"
+        ],
+        "secondary": [
+          "combat",
+          "shooting"
+        ]
       }
     },
     {
@@ -85,6 +95,15 @@
           "7",
           "6",
           "7"
+        ]
+      },
+      "skillAccess": {
+        "primary": [
+          "brawn",
+          "combat"
+        ],
+        "secondary": [
+          "savant"
         ]
       }
     },
@@ -129,6 +148,15 @@
           "6",
           "6",
           "6"
+        ]
+      },
+      "skillAccess": {
+        "primary": [
+          "combat"
+        ],
+        "secondary": [
+          "agility",
+          "brawn"
         ]
       }
     },
@@ -176,7 +204,15 @@
       },
       "rules": [
         "Навыки: у Cawdor Way-Brethren есть навык Dodge."
-      ]
+      ],
+      "skillAccess": {
+        "primary": [
+          "agility"
+        ],
+        "secondary": [
+          "combat"
+        ]
+      }
     },
     {
       "id": "cawdor-bonepicker",
@@ -218,6 +254,14 @@
           "5",
           "5",
           "5"
+        ]
+      },
+      "skillAccess": {
+        "primary": [
+          "combat"
+        ],
+        "secondary": [
+          "agility"
         ]
       }
     },
@@ -320,7 +364,15 @@
             }
           ]
         }
-      ]
+      ],
+      "skillAccess": {
+        "primary": [
+          "brawn"
+        ],
+        "secondary": [
+          "shooting"
+        ]
+      }
     },
     {
       "id": "redemptionist-priest",
@@ -362,6 +414,16 @@
           "7",
           "9",
           "7"
+        ]
+      },
+      "skillAccess": {
+        "primary": [
+          "combat",
+          "savant"
+        ],
+        "secondary": [
+          "brawn",
+          "cunning"
         ]
       }
     },
@@ -405,6 +467,15 @@
           "7",
           "8",
           "6"
+        ]
+      },
+      "skillAccess": {
+        "primary": [
+          "combat",
+          "shooting"
+        ],
+        "secondary": [
+          "savant"
         ]
       }
     },
@@ -450,6 +521,15 @@
           "7",
           "5"
         ]
+      },
+      "skillAccess": {
+        "primary": [
+          "combat"
+        ],
+        "secondary": [
+          "cunning",
+          "shooting"
+        ]
       }
     },
     {
@@ -492,6 +572,14 @@
           "6",
           "5",
           "5"
+        ]
+      },
+      "skillAccess": {
+        "primary": [
+          "agility"
+        ],
+        "secondary": [
+          "combat"
         ]
       }
     },
@@ -561,7 +649,15 @@
             }
           ]
         }
-      ]
+      ],
+      "skillAccess": {
+        "primary": [
+          "agility"
+        ],
+        "secondary": [
+          "combat"
+        ]
+      }
     }
   ],
   "subtypes": [
@@ -1784,7 +1880,7 @@
       "slots": 0,
       "category": "PERSONAL EQUIPMENT",
       "list": "HOUSE CAWDOR",
-      "description": "Fighter с bomb delivery rats может выполнить действие «Подготовить крысу-бомбу». Подготовить крысу-бомбу (одиночное): выберите гранату со свойством Blast (3”/5”), которой экипирован Fighter и которая не Out of Ammo, и сделайте для неё тест Ammo (X+), как если бы гранату выстрелили. Затем поставьте bomb delivery rat в контакт подставками с этим Fighter; крыса сразу активируется. В начале каждого раунда, после броска за Priority, но до активации первой модели, активируются все bomb delivery rats. Когда bomb delivery rat активируется, следуйте этим указаниям: • Если они в пределах 9” от Fighter, который их выставил, контролирующий этого Fighter игрок выбирает направление движения, иначе они движутся в направлении по кубику Scatter. • При активации они движутся на 6” по прямой, не замедляются местностью, имеют навык Clamber, никогда не падают и не становятся pinned, и автоматически проходят тесты Agility на прыжок через промежутки до 2”. • Если они упираются в промежуток больше 2” или непроходимую местность, они останавливаются. • Если они оказываются в пределах 1” от любой модели (кроме Fighter, который их выставил), они останавливаются и могут взорваться. Бросьте D6. На 2+ граната взрывается; центрируйте её на bomb delivery rat. На 1 граната не взрывается, и bomb delivery rat сбегает. В любом случае уберите bomb delivery rat с поля. • В bomb delivery rat можно целиться атаками ближнего боя и стрельбой. Все попытки попасть получают модификатор −1 к броску попадания. Если крыса Hit, бросьте D6; на 4+ граната взрывается (см. выше), иначе bomb delivery rat сбегает. В любом случае уберите их с поля."
+      "description": "Fighter с bomb delivery rats может выполнить действие «Подготовить крысу-бомбу». Prime Bomb Rat (Single): Select a grenade with the Blast (3”/5”) trait the Fighter is equipped with that is not Out of Ammo and make an Ammo (X+) test for them as if the grenade had been fired. Then, place a bomb delivery rat in base contact with this Fighter which then immediately activates. At the start of each round, after rolling for Priority but before the first model activates, all bomb delivery rats activate. When a bomb delivery rat activates, follow these instructions • Если они в пределах 9” от Fighter, который их выставил, контролирующий этого Fighter игрок выбирает направление движения, иначе они движутся в направлении по кубику Scatter. • При активации они движутся на 6” по прямой, не замедляются местностью, имеют навык Clamber, никогда не падают и не становятся pinned, и автоматически проходят тесты Agility на прыжок через промежутки до 2”. • Если они упираются в промежуток больше 2” или непроходимую местность, они останавливаются. • Если они оказываются в пределах 1” от любой модели (кроме Fighter, который их выставил), они останавливаются и могут взорваться. Бросьте D6. На 2+ граната взрывается; центрируйте её на bomb delivery rat. На 1 граната не взрывается, и bomb delivery rat сбегает. В любом случае уберите bomb delivery rat с поля. • В bomb delivery rat можно целиться атаками ближнего боя и стрельбой. Все попытки попасть получают модификатор −1 к броску попадания. Если крыса Hit, бросьте D6; на 4+ граната взрывается (см. выше), иначе bomb delivery rat сбегает. В любом случае уберите их с поля."
     },
     {
       "name": "Cult icon",
@@ -1800,7 +1896,7 @@
       "slots": 0,
       "category": "PERSONAL EQUIPMENT",
       "list": "HOUSE CAWDOR",
-      "description": "Active или Suppressed Fighter со спусковой оснасткой может выполнить действие «Спуск», находясь в пределах 1” от края площадки: Спуск (одиночное): Fighter сдвигается до 3” по горизонтали и до 12” по вертикали. Любое вертикальное движение должно быть вниз, то есть к земле."
+      "description": "An Active or Suppressed Fighter with a drop rig can perform the Descend action while they are within 1” of the edge of a platform Спуск (одиночное): Fighter сдвигается до 3” по горизонтали и до 12” по вертикали. Любое вертикальное движение должно быть вниз, то есть к земле."
     },
     {
       "name": "Medicae kit",
@@ -2129,7 +2225,7 @@
       "slots": 0,
       "category": "PERSONAL EQUIPMENT",
       "list": "REDEMPTIONIST",
-      "description": "Fighter с Book of the Redemption может выполнить действие «Слова гнева»: Слова гнева (одиночное): этот Fighter читает вслух из Book of the Redemption. До фазы окончания этого раунда любой дружественный Fanatic Fighter в пределах 6” от этого Fighter в начале своей активации может либо перебросить D6 при действии Charge, либо перебросить один бросок натуральной 1 при броске попадания."
+      "description": "A Fighter equipped with a Book of the Redemption may perform the Words of Wrath action Слова гнева (одиночное): этот Fighter читает вслух из Book of the Redemption. До фазы окончания этого раунда любой дружественный Fanatic Fighter в пределах 6” от этого Fighter в начале своей активации может либо перебросить D6 при действии Charge, либо перебросить один бросок натуральной 1 при броске попадания."
     },
     {
       "name": "Pyromantic mantle",

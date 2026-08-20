@@ -42,6 +42,16 @@
           "8",
           "7"
         ]
+      },
+      "skillAccess": {
+        "primary": [
+          "savant",
+          "shooting"
+        ],
+        "secondary": [
+          "brawn",
+          "combat"
+        ]
       }
     },
     {
@@ -83,6 +93,15 @@
           "7",
           "7",
           "6"
+        ]
+      },
+      "skillAccess": {
+        "primary": [
+          "savant",
+          "shooting"
+        ],
+        "secondary": [
+          "combat"
         ]
       }
     },
@@ -126,6 +145,15 @@
           "7",
           "6"
         ]
+      },
+      "skillAccess": {
+        "primary": [
+          "brawn",
+          "combat"
+        ],
+        "secondary": [
+          "shooting"
+        ]
       }
     },
     {
@@ -168,6 +196,15 @@
           "6",
           "6",
           "6"
+        ]
+      },
+      "skillAccess": {
+        "primary": [
+          "shooting"
+        ],
+        "secondary": [
+          "brawn",
+          "combat"
         ]
       }
     },
@@ -214,8 +251,17 @@
         ]
       },
       "rules": [
-        "Специалист штурма: Enforcer Subjugator Patrol Officer может выбрать только одну из следующих специализаций:"
-      ]
+        "Assault Specialist: An Enforcer Subjugator Patrol Officer may only select one of the following specializations"
+      ],
+      "skillAccess": {
+        "primary": [
+          "brawn"
+        ],
+        "secondary": [
+          "combat",
+          "shooting"
+        ]
+      }
     },
     {
       "id": "enforcer-rookie",
@@ -256,6 +302,14 @@
           "5",
           "5",
           "5"
+        ]
+      },
+      "skillAccess": {
+        "primary": [
+          "shooting"
+        ],
+        "secondary": [
+          "combat"
         ]
       }
     },
@@ -301,8 +355,16 @@
         ]
       },
       "rules": [
-        "Санкционированный Wyrd: Enforcer Wyrd специализируется на одном виде проявления Wyrd; при добавлении в Gang Roster каждый Enforcer Haunt выбирает один из следующих типов:"
-      ]
+        "Sanctioned Wyrd: An Enforcer Wyrd is specialized in an area of wyrd manifestation; when added to a Gang Roster each Enforcer Haunt selects one of the following types"
+      ],
+      "skillAccess": {
+        "primary": [
+          "savant"
+        ],
+        "secondary": [
+          "cunning"
+        ]
+      }
     },
     {
       "id": "hardcase-cyber-mastiff",
@@ -370,7 +432,15 @@
             }
           ]
         }
-      ]
+      ],
+      "skillAccess": {
+        "primary": [
+          "brawn"
+        ],
+        "secondary": [
+          "agility"
+        ]
+      }
     },
     {
       "id": "enforcer-sanctioner-pattern-automata",
@@ -1758,7 +1828,7 @@
       "slots": 0,
       "category": "PERSONAL EQUIPMENT",
       "list": "PALANITE ENFORCE PATROL",
-      "description": "Active или Suppressed Fighter со спусковой оснасткой может выполнить действие «Спуск», находясь в пределах 1” от края площадки: Спуск (одиночное): Fighter сдвигается до 3” по горизонтали и до 12” по вертикали. Любое вертикальное движение должно быть вниз, то есть к земле."
+      "description": "An Active or Suppressed Fighter with a drop rig can perform the Descend action while they are within 1” of the edge of a platform Спуск (одиночное): Fighter сдвигается до 3” по горизонтали и до 12” по вертикали. Любое вертикальное движение должно быть вниз, то есть к земле."
     },
     {
       "name": "Medicae kit",

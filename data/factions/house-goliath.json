@@ -42,6 +42,16 @@
           "7",
           "8"
         ]
+      },
+      "skillAccess": {
+        "primary": [
+          "brawn",
+          "savant"
+        ],
+        "secondary": [
+          "combat",
+          "shooting"
+        ]
       }
     },
     {
@@ -83,6 +93,15 @@
           "8",
           "6",
           "6"
+        ]
+      },
+      "skillAccess": {
+        "primary": [
+          "brawn",
+          "combat"
+        ],
+        "secondary": [
+          "savant"
         ]
       }
     },
@@ -130,7 +149,16 @@
       },
       "rules": [
         "Запас Combat Chems: каждый раз, когда активируется Goliath Stimmer, он может использовать Combat Chems. До фазы End этого раунда он получает дополнительные +D3 Attacks. Однако если на кубике выпала натуральная 1, вместо этого он получает плохую реакцию, и его характеристика Attacks снижается до 1 до фазы End этого раунда."
-      ]
+      ],
+      "skillAccess": {
+        "primary": [
+          "brawn",
+          "combat"
+        ],
+        "secondary": [
+          "shooting"
+        ]
+      }
     },
     {
       "id": "goliath-bruiser",
@@ -172,6 +200,15 @@
           "7",
           "5",
           "6"
+        ]
+      },
+      "skillAccess": {
+        "primary": [
+          "brawn"
+        ],
+        "secondary": [
+          "combat",
+          "shooting"
         ]
       }
     },
@@ -218,7 +255,15 @@
       },
       "rules": [
         "Навыки: у Goliath Forge-Born есть навык Iron Jaw."
-      ]
+      ],
+      "skillAccess": {
+        "primary": [
+          "brawn"
+        ],
+        "secondary": [
+          "agility"
+        ]
+      }
     },
     {
       "id": "goliath-bully",
@@ -259,6 +304,14 @@
           "6",
           "5",
           "5"
+        ]
+      },
+      "skillAccess": {
+        "primary": [
+          "brawn"
+        ],
+        "secondary": [
+          "combat"
         ]
       }
     },
@@ -326,7 +379,15 @@
             }
           ]
         }
-      ]
+      ],
+      "skillAccess": {
+        "primary": [
+          "brawn"
+        ],
+        "secondary": [
+          "combat"
+        ]
+      }
     },
     {
       "id": "sumpkroc",
@@ -393,7 +454,15 @@
             }
           ]
         }
-      ]
+      ],
+      "skillAccess": {
+        "primary": [
+          "brawn"
+        ],
+        "secondary": [
+          "combat"
+        ]
+      }
     }
   ],
   "subtypes": [
@@ -1452,7 +1521,7 @@
       "slots": 0,
       "category": "PERSONAL EQUIPMENT",
       "list": "HOUSE GOLIATH",
-      "description": "Active или Suppressed Fighter со спусковой оснасткой может выполнить действие «Спуск», находясь в пределах 1” от края площадки: Спуск (одиночное): Fighter сдвигается до 3” по горизонтали и до 12” по вертикали. Любое вертикальное движение должно быть вниз, то есть к земле."
+      "description": "An Active or Suppressed Fighter with a drop rig can perform the Descend action while they are within 1” of the edge of a platform Спуск (одиночное): Fighter сдвигается до 3” по горизонтали и до 12” по вертикали. Любое вертикальное движение должно быть вниз, то есть к земле."
     },
     {
       "name": "Medicae kit",

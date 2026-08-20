@@ -48,7 +48,17 @@
         "Опытный охотник: при добавлении в Gang Roster выберите одно оружие или предмет снаряжения у Spyre Hunt Master и повысьте его уровень Augmentation на 1.",
         "Привязан к ригу: со Spyre Hunt Master никогда нельзя снять Sovereign rig; если его удаляют из Gang Roster, этот предмет тоже удаляется, а не кладётся в Stash банды.",
         "Фиксированная экипировка: Spyre Hunt Master может быть экипирован не более чем двумя вариантами из раздела Hunt Master Weapons списка снаряжения Spyre Hunter."
-      ]
+      ],
+      "skillAccess": {
+        "primary": [
+          "combat",
+          "savant",
+          "shooting"
+        ],
+        "secondary": [
+          "agility"
+        ]
+      }
     },
     {
       "id": "jakara-spyre-hunter",
@@ -95,7 +105,16 @@
       "rules": [
         "Привязан к ригу: с Jakara Spyre Hunter никогда нельзя снять Jakara hunting rig или mirror shield; если его удаляют из Gang Roster, эти предметы тоже удаляются, а не кладутся в Stash банды.",
         "Фиксированная экипировка: Jakara Spyre Hunter всегда должен быть экипирован ровно одним вариантом из раздела Jakara Weapons списка снаряжения Spyre Hunter."
-      ]
+      ],
+      "skillAccess": {
+        "primary": [
+          "agility",
+          "combat"
+        ],
+        "secondary": [
+          "savant"
+        ]
+      }
     },
     {
       "id": "malcadon-spyre-hunter",
@@ -142,7 +161,16 @@
       "rules": [
         "Привязан к ригу: с Malcadon Spyre Hunter никогда нельзя снять Malcadon hunting rig, drop rig, grapnel launcher или paired web incisors; если его удаляют из Gang Roster, эти предметы тоже удаляются, а не кладутся в Stash банды.",
         "Фиксированная экипировка: Malcadon Spyre Hunter всегда должен быть экипирован ровно одним вариантом из раздела Malcadon Weapons списка снаряжения Spyre Hunter."
-      ]
+      ],
+      "skillAccess": {
+        "primary": [
+          "agility",
+          "cunning"
+        ],
+        "secondary": [
+          "savant"
+        ]
+      }
     },
     {
       "id": "orrus-spyre-hunter",
@@ -189,7 +217,16 @@
       "rules": [
         "Привязан к ригу: с Orrus Spyre Hunter никогда нельзя снять Orrus hunting rig; если его удаляют из Gang Roster, этот предмет тоже удаляется, а не кладётся в Stash банды.",
         "Фиксированная экипировка: Orrus Spyre Hunter всегда должен быть экипирован ровно одним вариантом из раздела Orrus Ranged Weapons и ровно одним вариантом из раздела Orrus Close Combat списка снаряжения Spyre Hunter."
-      ]
+      ],
+      "skillAccess": {
+        "primary": [
+          "brawn",
+          "combat"
+        ],
+        "secondary": [
+          "savant"
+        ]
+      }
     },
     {
       "id": "yeld-spyre-hunter",
@@ -237,7 +274,16 @@
       "rules": [
         "Привязан к ригу: с Yeld Spyre Hunter никогда нельзя снять Yeld hunting rig или Yeld wings; если его удаляют из Gang Roster, эти предметы тоже удаляются, а не кладутся в Stash банды.",
         "Фиксированная экипировка: Yeld Spyre Hunter всегда должен быть экипирован ровно одним вариантом из раздела Yeld Weapons списка снаряжения Spyre Hunter."
-      ]
+      ],
+      "skillAccess": {
+        "primary": [
+          "agility",
+          "shooting"
+        ],
+        "secondary": [
+          "savant"
+        ]
+      }
     },
     {
       "id": "caryatid-prime",
@@ -303,7 +349,15 @@
             }
           ]
         }
-      ]
+      ],
+      "skillAccess": {
+        "primary": [
+          "agility"
+        ],
+        "secondary": [
+          "cunning"
+        ]
+      }
     }
   ],
   "subtypes": [

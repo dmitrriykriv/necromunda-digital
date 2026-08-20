@@ -42,6 +42,16 @@
           "7",
           "7"
         ]
+      },
+      "skillAccess": {
+        "primary": [
+          "agility",
+          "savant"
+        ],
+        "secondary": [
+          "combat",
+          "shooting"
+        ]
       }
     },
     {
@@ -83,6 +93,15 @@
           "7",
           "6",
           "7"
+        ]
+      },
+      "skillAccess": {
+        "primary": [
+          "agility",
+          "combat"
+        ],
+        "secondary": [
+          "savant"
         ]
       }
     },
@@ -130,7 +149,16 @@
       },
       "rules": [
         "Ядовитая кровь: оружие Escher Death-Maiden со свойством Toxin (X+) сильнее обычного. Когда Escher Death-Maiden использует оружие со свойством Toxin (X+), если на ранение выпала натуральная 1, можно перебросить D6."
-      ]
+      ],
+      "skillAccess": {
+        "primary": [
+          "agility",
+          "combat"
+        ],
+        "secondary": [
+          "brawn"
+        ]
+      }
     },
     {
       "id": "escher-gang-sister",
@@ -172,6 +200,15 @@
           "6",
           "6",
           "6"
+        ]
+      },
+      "skillAccess": {
+        "primary": [
+          "agility"
+        ],
+        "secondary": [
+          "combat",
+          "shooting"
         ]
       }
     },
@@ -218,7 +255,15 @@
       },
       "rules": [
         "Стартовый навык: у Escher Wyld Runner есть навык Clamber."
-      ]
+      ],
+      "skillAccess": {
+        "primary": [
+          "agility"
+        ],
+        "secondary": [
+          "cunning"
+        ]
+      }
     },
     {
       "id": "escher-little-sister",
@@ -259,6 +304,14 @@
           "6",
           "5",
           "5"
+        ]
+      },
+      "skillAccess": {
+        "primary": [
+          "agility"
+        ],
+        "secondary": [
+          "combat"
         ]
       }
     },
@@ -305,7 +358,7 @@
         ]
       },
       "rules": [
-        "Регенерация: Active Khimerix может выполнить действие Регенерация:"
+        "Regeneration: An Active Khimerix may perform the Regenerate action"
       ],
       "weapons": [
         {
@@ -340,7 +393,15 @@
             }
           ]
         }
-      ]
+      ],
+      "skillAccess": {
+        "primary": [
+          "brawn"
+        ],
+        "secondary": [
+          "agility"
+        ]
+      }
     },
     {
       "id": "phyrr-cat",
@@ -403,7 +464,15 @@
             }
           ]
         }
-      ]
+      ],
+      "skillAccess": {
+        "primary": [
+          "agility"
+        ],
+        "secondary": [
+          "combat"
+        ]
+      }
     },
     {
       "id": "phelynx",
@@ -469,7 +538,15 @@
             }
           ]
         }
-      ]
+      ],
+      "skillAccess": {
+        "primary": [
+          "agility"
+        ],
+        "secondary": [
+          "combat"
+        ]
+      }
     }
   ],
   "subtypes": [
@@ -1471,7 +1548,7 @@
       "slots": 0,
       "category": "PERSONAL EQUIPMENT",
       "list": "HOUSE ESCHER",
-      "description": "Active или Suppressed Fighter со спусковой оснасткой может выполнить действие «Спуск», находясь в пределах 1” от края площадки: Спуск (одиночное): Fighter сдвигается до 3” по горизонтали и до 12” по вертикали. Любое вертикальное движение должно быть вниз, то есть к земле."
+      "description": "An Active or Suppressed Fighter with a drop rig can perform the Descend action while they are within 1” of the edge of a platform Спуск (одиночное): Fighter сдвигается до 3” по горизонтали и до 12” по вертикали. Любое вертикальное движение должно быть вниз, то есть к земле."
     },
     {
       "name": "Medicae kit",
@@ -1519,7 +1596,7 @@
       "slots": 0,
       "category": "MOUNTS",
       "list": "HOUSE ESCHER",
-      "description": "Fighter с Escher Cutter получает подтипы Mounted и Flying и ставит характеристику Movement на 9”. Когда он выполняет действие Dash, он добавляет 5” к характеристике Movement вместо Initiative. Escher Cutter экипирован Cutter grenade launchers с гранатами frag и krak. Он может выбрать любой из следующих вариантов при добавлении в Gang Roster или в любой пост-цикловой последовательности: • Replace the Cutter grenade launcher with frag & krak grenades with Cutter heavy stubbers..................................+10 credits • Replace the Cutter grenade launcher with frag & krak grenades with Cutter plasma guns.......................................+15 credits"
+      "description": "Fighter с Escher Cutter получает подтипы Mounted и Flying и ставит характеристику Movement на 9”. Когда он выполняет действие Dash, он добавляет 5” к характеристике Movement вместо Initiative. An Escher Cutter is equipped with Cutter grenade launchers with frag & krak grenades. It may select any of the following options when added to the Gang Roster or during any Post-cycle Sequence • Replace the Cutter grenade launcher with frag & krak grenades with Cutter heavy stubbers..................................+10 credits • Replace the Cutter grenade launcher with frag & krak grenades with Cutter plasma guns.......................................+15 credits"
     },
     {
       "name": "Phyrr Cat",

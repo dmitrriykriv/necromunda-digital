@@ -44,6 +44,57 @@
           "9",
           "61"
         ]
+      },
+      "skillAccessByArchetype": {
+        "Brawler": {
+          "primary": [
+            "combat",
+            "savant"
+          ],
+          "secondary": [
+            "brawn",
+            "cunning"
+          ]
+        },
+        "Gunslinger": {
+          "primary": [
+            "savant",
+            "shooting"
+          ],
+          "secondary": [
+            "agility",
+            "cunning"
+          ]
+        },
+        "Mastermind": {
+          "primary": [
+            "agility",
+            "savant"
+          ],
+          "secondary": [
+            "combat",
+            "cunning"
+          ]
+        },
+        "Survivor": {
+          "primary": [
+            "cunning",
+            "savant"
+          ],
+          "secondary": [
+            "agility",
+            "shooting"
+          ]
+        },
+        "Wyrd": {
+          "primary": [
+            "savant"
+          ],
+          "secondary": [
+            "agility",
+            "cunning"
+          ]
+        }
       }
     },
     {
@@ -89,7 +140,53 @@
       },
       "rules": [
         "Архетип: при добавлении в Gang Roster Outcast Champion должен выбрать архетип."
-      ]
+      ],
+      "skillAccessByArchetype": {
+        "Brawler": {
+          "primary": [
+            "brawn",
+            "combat"
+          ],
+          "secondary": [
+            "savant"
+          ]
+        },
+        "Gunslinger": {
+          "primary": [
+            "agility",
+            "shooting"
+          ],
+          "secondary": [
+            "savant"
+          ]
+        },
+        "Mastermind": {
+          "primary": [
+            "agility",
+            "combat"
+          ],
+          "secondary": [
+            "savant"
+          ]
+        },
+        "Survivor": {
+          "primary": [
+            "agility",
+            "cunning"
+          ],
+          "secondary": [
+            "savant"
+          ]
+        },
+        "Wyrd": {
+          "primary": [
+            "cunning"
+          ],
+          "secondary": [
+            "savant"
+          ]
+        }
+      }
     },
     {
       "id": "outcast-hive-scum",
@@ -132,6 +229,51 @@
           "6",
           "6"
         ]
+      },
+      "skillAccessByArchetype": {
+        "Brawler": {
+          "primary": [
+            "combat"
+          ],
+          "secondary": [
+            "brawn",
+            "cunning"
+          ]
+        },
+        "Gunslinger": {
+          "primary": [
+            "shooting"
+          ],
+          "secondary": [
+            "agility",
+            "cunning"
+          ]
+        },
+        "Mastermind": {
+          "primary": [
+            "agility"
+          ],
+          "secondary": [
+            "brawn",
+            "combat"
+          ]
+        },
+        "Survivor": {
+          "primary": [
+            "cunning"
+          ],
+          "secondary": [
+            "agility",
+            "shooting"
+          ]
+        },
+        "Wyrd": {
+          "primary": [],
+          "secondary": [
+            "agility",
+            "cunning"
+          ]
+        }
       }
     }
   ],
@@ -993,7 +1135,7 @@
       "slots": 0,
       "category": "PERSONAL EQUIPMENT",
       "list": "OUTCAST",
-      "description": "Active или Suppressed Fighter со спусковой оснасткой может выполнить действие «Спуск», находясь в пределах 1” от края площадки: Спуск (одиночное): Fighter сдвигается до 3” по горизонтали и до 12” по вертикали. Любое вертикальное движение должно быть вниз, то есть к земле."
+      "description": "An Active or Suppressed Fighter with a drop rig can perform the Descend action while they are within 1” of the edge of a platform Спуск (одиночное): Fighter сдвигается до 3” по горизонтали и до 12” по вертикали. Любое вертикальное движение должно быть вниз, то есть к земле."
     },
     {
       "name": "Medicae kit",

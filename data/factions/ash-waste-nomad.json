@@ -42,6 +42,16 @@
           "7",
           "7"
         ]
+      },
+      "skillAccess": {
+        "primary": [
+          "cunning",
+          "savant"
+        ],
+        "secondary": [
+          "agility",
+          "shooting"
+        ]
       }
     },
     {
@@ -83,6 +93,15 @@
           "7",
           "7",
           "7"
+        ]
+      },
+      "skillAccess": {
+        "primary": [
+          "combat",
+          "savant"
+        ],
+        "secondary": [
+          "cunning"
         ]
       }
     },
@@ -128,9 +147,18 @@
         ]
       },
       "rules": [
-        "Воззвать к буре: пока экипирован Stormcaller staff, Active Ash Waste Nomad Stormcaller может выполнить действие Пылевая буря:",
+        "Call the Storm: While equipped with a Stormcaller staff, an Active Ash Waste Nomad Stormcaller can perform the Dust Storm action",
         "Пылевая буря (одиночное): если в этом бою правило Visibility (X”) не действует, примените правило Visibility (24”). Иначе увеличьте или уменьшите значение X” на 6” (минимум 6”). Эти эффекты длятся до конца боя и могут дальше меняться повторными применениями этой способности."
-      ]
+      ],
+      "skillAccess": {
+        "primary": [
+          "agility",
+          "cunning"
+        ],
+        "secondary": [
+          "savant"
+        ]
+      }
     },
     {
       "id": "ash-waste-nomad-warrior",
@@ -172,6 +200,15 @@
           "6",
           "6",
           "6"
+        ]
+      },
+      "skillAccess": {
+        "primary": [
+          "cunning"
+        ],
+        "secondary": [
+          "agility",
+          "shooting"
         ]
       }
     },
@@ -218,7 +255,15 @@
       },
       "rules": [
         "Стартовый навык: у Ash Waste Nomad Hunter есть навык Infiltrate."
-      ]
+      ],
+      "skillAccess": {
+        "primary": [
+          "combat"
+        ],
+        "secondary": [
+          "brawn"
+        ]
+      }
     },
     {
       "id": "ash-waste-nomad-dust-runner",
@@ -259,6 +304,14 @@
           "6",
           "6",
           "5"
+        ]
+      },
+      "skillAccess": {
+        "primary": [
+          "agility"
+        ],
+        "secondary": [
+          "cunning"
         ]
       }
     },
@@ -327,7 +380,15 @@
             }
           ]
         }
-      ]
+      ],
+      "skillAccess": {
+        "primary": [
+          "brawn"
+        ],
+        "secondary": [
+          "agility"
+        ]
+      }
     },
     {
       "id": "arthromite-spinewyrm",
@@ -395,7 +456,15 @@
             }
           ]
         }
-      ]
+      ],
+      "skillAccess": {
+        "primary": [
+          "agility"
+        ],
+        "secondary": [
+          "cunning"
+        ]
+      }
     },
     {
       "id": "unbound-helamite",
@@ -458,7 +527,15 @@
             }
           ]
         }
-      ]
+      ],
+      "skillAccess": {
+        "primary": [
+          "agility"
+        ],
+        "secondary": [
+          "brawn"
+        ]
+      }
     },
     {
       "id": "ashwing-helamite",
@@ -505,7 +582,7 @@
       },
       "rules": [
         "Длина поводка: у Ashwing Helamite длина поводка (Leash range) 9”.",
-        "Приманка Ashwing: пока Active, владелец Ashwing Helamite может выполнить действие Размещение приманки:"
+        "Ashwing Lure: While Active, an Ashwing Helamite’s owner may perform the Deploy Lure action"
       ],
       "weapons": [
         {
@@ -526,7 +603,15 @@
             }
           ]
         }
-      ]
+      ],
+      "skillAccess": {
+        "primary": [
+          "agility"
+        ],
+        "secondary": [
+          "cunning"
+        ]
+      }
     }
   ],
   "subtypes": [
@@ -1306,7 +1391,7 @@
       "slots": 0,
       "category": "PERSONAL EQUIPMENT",
       "list": "ASH WASTE NOMAD",
-      "description": "Active или Suppressed Fighter со спусковой оснасткой может выполнить действие «Спуск», находясь в пределах 1” от края площадки: Спуск (одиночное): Fighter сдвигается до 3” по горизонтали и до 12” по вертикали. Любое вертикальное движение должно быть вниз, то есть к земле."
+      "description": "An Active or Suppressed Fighter with a drop rig can perform the Descend action while they are within 1” of the edge of a platform Спуск (одиночное): Fighter сдвигается до 3” по горизонтали и до 12” по вертикали. Любое вертикальное движение должно быть вниз, то есть к земле."
     },
     {
       "name": "Grav chute",
