@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Download, Printer, Save, Upload } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { rosterWarnings, slugify, type Roster } from '@shared/roster';
-import { useApiHealth, useSaveRoster } from '@/api/hooks';
+import { useApiHealth, useFactionCatalog, useSaveRoster } from '@/api/hooks';
 import { FighterCard } from '@/components/roster/FighterCard';
 import { GangMetaForm } from '@/components/roster/GangMetaForm';
 import { RosterSidebar } from '@/components/roster/RosterSidebar';
@@ -19,9 +19,10 @@ export function RosterBuilderPage() {
   const setRoster = useRosterStore((state) => state.setRoster);
   const save = useSaveRoster();
   const health = useApiHealth();
+  const catalogQuery = useFactionCatalog(roster.faction);
   const [status, setStatus] = useState<{ text: string; ok?: boolean } | null>(null);
   const [collapsed, setCollapsed] = useState<Set<string>>(() => new Set());
-  const warnings = rosterWarnings(roster);
+  const warnings = rosterWarnings(roster, catalogQuery.data);
   const offline = health.isFetched && !health.isSuccess;
   const fighterIds = roster.fighters.map((fighter) => fighter.id);
   const allCollapsed =
@@ -77,7 +78,7 @@ export function RosterBuilderPage() {
     try {
       const result = await save.mutateAsync(data);
       setRoster(result.roster, result.file);
-      setStatus({ text: `Сохранено в список: ${result.file}`, ok: true });
+      setStatus({ text: 'Сохранено в список слева.', ok: true });
     } catch {
       setStatus({
         text: 'Не удалось записать в список. Можно скачать копию и открыть её позже.',
@@ -120,7 +121,7 @@ export function RosterBuilderPage() {
       : offline
         ? 'Черновик в этом браузере. Сервер недоступен — список слева не открыть, можно скачать копию.'
         : currentFile
-          ? `В списке: ${currentFile}`
+          ? ''
           : 'Черновик в этом браузере. «Сохранить» добавит банду в список слева.');
 
   return (
@@ -152,12 +153,16 @@ export function RosterBuilderPage() {
             collapseLabel={allCollapsed ? 'Развернуть все' : 'Свернуть все'}
           />
           {warnings.length > 0 && (
-            <p className="mb-4 rounded-r-lg border-l-[3px] border-destructive bg-destructive/15 px-4 py-3 text-sm text-red-200">
-              {warnings.join(' ')}
-            </p>
+            <div className="mb-4 rounded-r-lg border-l-[3px] border-destructive bg-destructive/15 px-4 py-3 text-sm text-red-200">
+              {warnings.map((msg) => (
+                <p key={msg} className="[&:not(:last-child)]:mb-1.5">
+                  {msg}
+                </p>
+              ))}
+            </div>
           )}
           <GangMetaForm />
-          <div className="mb-2 flex flex-wrap gap-2">
+          <div className="mb-4 flex flex-wrap gap-2">
             <Button type="button" onClick={() => void onSave()} disabled={save.isPending || offline}>
               <Save />
               Сохранить
@@ -188,17 +193,19 @@ export function RosterBuilderPage() {
               </Link>
             </Button>
           </div>
-          <p
-            className={`mb-4 min-h-6 text-sm ${
-              status?.ok === false
-                ? 'text-red-300'
-                : status?.ok
-                  ? 'text-lime-400'
-                  : 'text-muted-foreground'
-            }`}
-          >
-            {hint}
-          </p>
+          {hint ? (
+            <p
+              className={`mb-4 min-h-6 text-sm ${
+                status?.ok === false
+                  ? 'text-red-300'
+                  : status?.ok
+                    ? 'text-lime-400'
+                    : 'text-muted-foreground'
+              }`}
+            >
+              {hint}
+            </p>
+          ) : null}
           {roster.fighters.length === 0 ? (
             <p className="italic text-muted-foreground">
               {roster.faction

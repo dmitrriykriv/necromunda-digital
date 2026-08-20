@@ -22,6 +22,8 @@
     --input: 222 14% 22%;
     --ring: 16 81% 54%;
     --radius: 8px;
+    --skill-primary: #f0954a;
+    --skill-secondary: #5b9dd9;
   }
 
   * {
@@ -38,6 +40,16 @@
     @apply bg-background text-foreground antialiased;
     font-family: "Segoe UI", -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
   }
+}
+
+/* Как table.skills в справочнике: основной / вторичный */
+.skill-access-p {
+  color: var(--skill-primary);
+  font-weight: 600;
+}
+
+.skill-access-s {
+  color: var(--skill-secondary);
 }
 
 .print-card {

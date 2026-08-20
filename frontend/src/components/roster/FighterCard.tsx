@@ -2,20 +2,27 @@ import type { ReactNode } from 'react';
 import { ChevronDown, Copy } from 'lucide-react';
 import {
   allSkillNames,
+  catalogArchetypes,
   equipmentGroups,
   findGear,
   findSkill,
+  findSkillSet,
   findType,
   gearCost,
   isWeaponItem,
-  SKILL_SETS,
+  orderedSkillSets,
+  skillAccessFor,
+  skillAccessLevel,
+  skillOptionLabel,
+  skillSetGroupLabel,
   splitNamedRule,
   visibleProfiles,
   type FactionCatalog,
+  type SkillAccessLevel,
 } from '@shared/catalog';
 import { FighterStatsTable } from '@/components/roster/FighterStatsTable';
 import { WeaponProfileTable } from '@/components/roster/WeaponProfileTable';
-import { fighterCost, type Equipment, type Fighter } from '@shared/roster';
+import { fighterCost, weaponSlotMax, weaponSlotOverMessage, weaponSlotsUsed, type Equipment, type Fighter } from '@shared/roster';
 import { useFactionCatalog } from '@/api/hooks';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -39,6 +46,25 @@ function Field({
       {children}
     </label>
   );
+}
+
+const SKILL_ACCESS_COLOR: Record<SkillAccessLevel, string> = {
+  primary: '#f0954a',
+  secondary: '#5b9dd9',
+};
+
+function skillAccessClass(level: SkillAccessLevel | undefined) {
+  if (level === 'primary') return 'skill-access-p';
+  if (level === 'secondary') return 'skill-access-s';
+  return undefined;
+}
+
+function skillAccessStyle(level: SkillAccessLevel | undefined) {
+  if (!level) return undefined;
+  return {
+    color: SKILL_ACCESS_COLOR[level],
+    fontWeight: level === 'primary' ? 600 : undefined,
+  };
 }
 
 export function FighterCard({
@@ -65,25 +91,31 @@ export function FighterCard({
     fighter.type && !typeNames.includes(fighter.type)
       ? [fighter.type, ...typeNames]
       : typeNames;
+  const archetypeNames = catalogArchetypes(catalog);
 
   const subtypeOptions = Array.from(
-    new Set([...(catalog?.subtypes ?? []), ...fighter.subtypes]),
+    new Set([...(catalog?.subtypes ?? []), ...archetypeNames, ...fighter.subtypes]),
   );
 
   function applyType(name: string) {
     const def = findType(catalog, name);
+    const kept = fighter.subtypes.filter((subtype) => archetypeNames.includes(subtype));
+    const base = def?.subtypes ?? [];
     updateFighter(fighter.id, {
       type: name,
-      subtypes: def?.subtypes ?? fighter.subtypes,
+      subtypes: [...base, ...kept.filter((subtype) => !base.includes(subtype))],
       baseCost: def?.baseCost ?? fighter.baseCost,
       xp: def?.xp ?? fighter.xp,
     });
   }
 
   function toggleSubtype(subtype: string, on: boolean) {
-    const next = on
+    let next = on
       ? [...fighter.subtypes, subtype]
       : fighter.subtypes.filter((item) => item !== subtype);
+    if (on && archetypeNames.includes(subtype)) {
+      next = next.filter((item) => item === subtype || !archetypeNames.includes(item));
+    }
     updateFighter(fighter.id, { subtypes: next });
   }
 
@@ -108,6 +140,11 @@ export function FighterCard({
   const stats = typeDef?.stats;
   const innateWeapons = typeDef?.weapons ?? [];
   const innateRules = typeDef?.rules ?? [];
+  const skillAccess = skillAccessFor(typeDef, fighter.subtypes);
+  const skillGroups = orderedSkillSets(skillAccess);
+  const weaponUsed = weaponSlotsUsed(fighter);
+  const weaponMax = weaponSlotMax(fighter, catalog);
+  const overWeapons = weaponMax > 0 && weaponUsed > weaponMax;
 
   return (
     <Card
@@ -279,26 +316,44 @@ export function FighterCard({
               );
               const extra = skill && !catalogSkillNames.includes(skill) ? skill : '';
               const def = findSkill(skill);
+              const selectedLevel = skillAccessLevel(
+                skillAccess,
+                findSkillSet(skill)?.id ?? '',
+              );
               return (
                 <div key={`${fighter.id}-skill-${index}`} className="space-y-1.5">
                   <div className="flex gap-2">
                     <NativeSelect
                       value={skill}
+                      className={skillAccessClass(selectedLevel)}
                       onChange={(event) => setSkill(index, event.target.value)}
                     >
                       <option value="">— выберите навык —</option>
                       {extra ? <option value={extra}>{extra}</option> : null}
-                      {SKILL_SETS.map((group) => (
-                        <optgroup key={group.id} label={group.name}>
-                          {group.skills
-                            .filter((item) => item.name === skill || !taken.has(item.name))
-                            .map((item) => (
-                              <option key={item.name} value={item.name}>
-                                {item.label} ({item.name})
-                              </option>
-                            ))}
-                        </optgroup>
-                      ))}
+                      {skillGroups.map((group) => {
+                        const level = skillAccessLevel(skillAccess, group.id);
+                        return (
+                          <optgroup
+                            key={group.id}
+                            label={skillSetGroupLabel(group, level)}
+                            className={skillAccessClass(level)}
+                            style={skillAccessStyle(level)}
+                          >
+                            {group.skills
+                              .filter((item) => item.name === skill || !taken.has(item.name))
+                              .map((item) => (
+                                <option
+                                  key={item.name}
+                                  value={item.name}
+                                  className={skillAccessClass(level)}
+                                  style={skillAccessStyle(level)}
+                                >
+                                  {skillOptionLabel(item, level)}
+                                </option>
+                              ))}
+                          </optgroup>
+                        );
+                      })}
                     </NativeSelect>
                     <Button
                       type="button"
@@ -354,6 +409,11 @@ export function FighterCard({
           >
             + оружие
           </Button>
+          {overWeapons ? (
+            <p className="mt-3 rounded-r-lg border-l-[3px] border-destructive bg-destructive/15 px-3 py-2 text-sm text-red-200">
+              {weaponSlotOverMessage(weaponUsed, weaponMax)}
+            </p>
+          ) : null}
         </div>
 
         <div>

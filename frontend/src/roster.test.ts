@@ -1,5 +1,16 @@
 import { describe, expect, it } from 'vitest';
-import { namesMatch, allSkillNames, findSkill, isWeaponDef, visibleProfiles, type EquipmentDef } from '@shared/catalog';
+import {
+  namesMatch,
+  allSkillNames,
+  findSkill,
+  isWeaponDef,
+  orderedSkillSets,
+  skillAccessFor,
+  skillOptionLabel,
+  visibleProfiles,
+  type EquipmentDef,
+  type FighterTypeDef,
+} from '@shared/catalog';
 import { fighterStatTip, weaponStatTip } from '@shared/statTips';
 import {
   canAddFighters,
@@ -125,7 +136,7 @@ describe('roster math', () => {
     ).toEqual([]);
   });
 
-  it('warns on more than three weapon slots', () => {
+  it('warns on more than three weapons', () => {
     const overSlots = rosterWarnings({
       fighters: [
         {
@@ -139,7 +150,67 @@ describe('roster math', () => {
         },
       ],
     });
-    expect(overSlots.some((msg) => /три слота/.test(msg))).toBe(true);
+    expect(overSlots.some((msg) => /4 единицы оружия при максимуме 3/.test(msg))).toBe(true);
+  });
+
+  it('counts starred weapons as two unless suspensors are fitted', () => {
+    const laser = {
+      ...sample.fighters[0],
+      equipment: [
+        { name: 'Mining laser*', cost: 125, slots: 2 },
+        { name: 'autogun', cost: 20, slots: 1 },
+        { name: 'knife', cost: 5, slots: 1 },
+      ],
+    };
+    expect(rosterWarnings({ fighters: [laser] }).some((msg) => /оружия при максимуме/.test(msg))).toBe(
+      true,
+    );
+    const withSuspensors = {
+      ...laser,
+      equipment: [
+        { name: 'Mining laser*', cost: 165, slots: 2, extras: ['Suspensors'] },
+        { name: 'autogun', cost: 20, slots: 1 },
+        { name: 'knife', cost: 5, slots: 1 },
+      ],
+    };
+    expect(
+      rosterWarnings({ fighters: [withSuspensors] }).some((msg) => /оружия при максимуме/.test(msg)),
+    ).toBe(false);
+  });
+
+  it('allows four weapons with Extra Arm', () => {
+    const catalog = {
+      id: 'genestealer-cult',
+      name: 'Культ генокрадов',
+      types: [
+        {
+          id: 'alpha',
+          name: 'Genestealer Cult Alpha',
+          category: 'Fighter',
+          subtypes: ['Leader'],
+          baseCost: 150,
+          xp: 61,
+          rules: [
+            'Дополнительная рука: этот Fighter может нести четыре единицы оружия вместо обычных трёх.',
+          ],
+        },
+      ],
+      subtypes: ['Leader'],
+      equipment: [],
+    };
+    const gear = [
+      { name: 'autogun', cost: 20, slots: 1 },
+      { name: 'stub gun', cost: 5, slots: 1 },
+      { name: 'axe', cost: 10, slots: 1 },
+      { name: 'knife', cost: 5, slots: 1 },
+    ];
+    const alpha = { ...sample.fighters[0], type: 'Genestealer Cult Alpha', equipment: gear };
+    expect(rosterWarnings({ fighters: [alpha] }).some((msg) => /оружия при максимуме/.test(msg))).toBe(
+      true,
+    );
+    expect(
+      rosterWarnings({ fighters: [alpha] }, catalog).some((msg) => /оружия при максимуме/.test(msg)),
+    ).toBe(false);
   });
 
   it('rates a gang', () => {
@@ -196,6 +267,49 @@ describe('print catalog helpers', () => {
     expect(names).toHaveLength(39);
     expect(findSkill('Dodge')?.text).toMatch(/D6/);
     expect(findSkill('Inspiring')?.label).toBe('Вдохновляющий');
+  });
+
+  it('orders primary skill sets before secondary, then the rest', () => {
+    const access = {
+      primary: ['cunning', 'savant'],
+      secondary: ['brawn', 'combat'],
+    };
+    expect(orderedSkillSets(access).map((group) => group.id)).toEqual([
+      'cunning',
+      'savant',
+      'brawn',
+      'combat',
+      'agility',
+      'shooting',
+      'inherent',
+    ]);
+    expect(skillOptionLabel(findSkill('Dodge')!, 'primary')).toBe(
+      'Уворот (Dodge) · основной',
+    );
+  });
+
+  it('picks Outcast skill access from the selected archetype', () => {
+    const type: FighterTypeDef = {
+      id: 'outcast-leader',
+      name: 'Outcast Leader',
+      category: 'Fighter',
+      subtypes: ['Leader'],
+      baseCost: 135,
+      xp: 61,
+      skillAccessByArchetype: {
+        Brawler: { primary: ['combat', 'savant'], secondary: ['brawn', 'cunning'] },
+        Gunslinger: { primary: ['savant', 'shooting'], secondary: ['agility', 'cunning'] },
+      },
+    };
+    expect(skillAccessFor(type, ['Leader'])).toBeUndefined();
+    expect(skillAccessFor(type, ['Leader', 'Brawler'])?.primary).toEqual([
+      'combat',
+      'savant',
+    ]);
+    expect(skillAccessFor(type, ['Leader', 'Gunslinger'])?.primary).toEqual([
+      'savant',
+      'shooting',
+    ]);
   });
 
   it('treats profiles as weapons and armour as wargear', () => {
@@ -273,6 +387,7 @@ describe('fighter special rules in faction catalogs', () => {
     const extraArm = alpha?.rules?.find((rule) => rule.startsWith('Дополнительная рука'));
     expect(extraArm).toMatch(/Braced Shot/);
     expect(extraArm).toMatch(/четыре единицы оружия/);
+    expect(extraArm).not.toMatch(/clawed arm/i);
   });
 
   it('does not auto-attach Extra Arm to a later-generation Acolyte', async () => {
@@ -314,5 +429,34 @@ describe('faction equipment catalogs', () => {
     expect(alpha?.weapons?.map((item) => item.name)).toEqual(['Clawed arm']);
     const abominant = data.types.find((item) => item.name === 'Genestealer Cult Abominant');
     expect(abominant?.weapons?.map((item) => item.name)).toEqual(['Power sledgehammer']);
+  });
+});
+
+describe('skill access in faction catalogs', () => {
+  async function loadFaction(id: string) {
+    const { readFileSync } = await import('node:fs');
+    const { dirname, resolve } = await import('node:path');
+    const { fileURLToPath } = await import('node:url');
+    const root = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
+    return JSON.parse(readFileSync(resolve(root, `data/factions/${id}.json`), 'utf8')) as {
+      types: FighterTypeDef[];
+    };
+  }
+
+  it('tags Genestealer Cult Alpha primary and secondary sets', async () => {
+    const data = await loadFaction('genestealer-cult');
+    const alpha = data.types.find((item) => item.name === 'Genestealer Cult Alpha');
+    expect(alpha?.skillAccess).toEqual({
+      primary: ['cunning', 'savant'],
+      secondary: ['brawn', 'combat'],
+    });
+  });
+
+  it('does not confuse Cawdor Brethren with Way-Brethren', async () => {
+    const data = await loadFaction('house-cawdor');
+    const brethren = data.types.find((item) => item.name === 'Cawdor Brethren');
+    const way = data.types.find((item) => item.name === 'Cawdor Way-Brethren');
+    expect(brethren?.skillAccess?.primary).toEqual(['combat']);
+    expect(way?.skillAccess?.primary).toEqual(['agility']);
   });
 });

@@ -1,3 +1,5 @@
+import { findType, type FactionCatalog } from './catalog';
+
 export type Equipment = {
   name: string;
   cost: number;
@@ -73,7 +75,10 @@ const RESTRICTED = /Champion|Brute|Hanger-on/i;
 const LEADER = /Leader/i;
 const PET = /\bPet\b/i;
 const FOUNDING_BUDGET = 1000;
-const WEAPON_SLOT_MAX = 3;
+export const WEAPON_SLOT_MAX = 3;
+const EXTRA_WEAPON_RULE = /четыре единиц(?:ы|у) оружия/i;
+const EXTRA_WEAPON_GEAR = /extra arm|extra appendage|early generation|лишняя конечность/i;
+const SUSPENSOR = /suspensor/i;
 
 /** Gang lists that replace the core Champion/Brute/Hanger-on ratio. */
 const SKIP_RATIO = new Set([
@@ -258,6 +263,7 @@ function hasSubtype(fighter: Fighter, pattern: RegExp): boolean {
 
 export function rosterWarnings(
   roster: Pick<Roster, 'fighters'> & Partial<Pick<Roster, 'faction' | 'reputation' | 'stash'>>,
+  catalog?: FactionCatalog,
 ): string[] {
   const fighters = roster.fighters ?? [];
   const counted = fighters.filter((fighter) => !hasSubtype(fighter, PET));
@@ -294,18 +300,63 @@ export function rosterWarnings(
   }
 
   for (const fighter of fighters) {
-    const slots = (fighter.equipment ?? [])
-      .filter((item) => item.name)
-      .reduce((sum, item) => sum + (Number(item.slots) || 0), 0);
-    if (slots > WEAPON_SLOT_MAX) {
-      const label = fighter.name || fighter.type || 'Боец';
-      messages.push(
-        `${label}: максимум три слота оружия (сейчас ${slots}; гранаты — wargear).`,
-      );
-    }
+    const warning = weaponSlotWarning(fighter, catalog);
+    if (warning) messages.push(warning);
   }
 
   return messages;
+}
+
+function weaponSlotCost(item: Equipment): number {
+  const slots = Number(item.slots) || 0;
+  if (slots <= 0 || !item.name) return 0;
+  if (slots >= 2 && (item.extras ?? []).some((name) => SUSPENSOR.test(name))) return 1;
+  return slots;
+}
+
+export function weaponSlotsUsed(fighter: Pick<Fighter, 'equipment'>): number {
+  return (fighter.equipment ?? []).reduce((sum, item) => sum + weaponSlotCost(item), 0);
+}
+
+export function hasExtraWeaponCapacity(
+  fighter: Pick<Fighter, 'type' | 'equipment'>,
+  catalog?: FactionCatalog,
+): boolean {
+  const rules = findType(catalog, fighter.type)?.rules ?? [];
+  if (rules.some((rule) => EXTRA_WEAPON_RULE.test(rule))) return true;
+  return (fighter.equipment ?? []).some((item) => EXTRA_WEAPON_GEAR.test(item.name));
+}
+
+export function weaponSlotMax(
+  fighter: Pick<Fighter, 'type' | 'equipment'>,
+  catalog?: FactionCatalog,
+): number {
+  if (findType(catalog, fighter.type)?.category === 'Vehicle') return 0;
+  return hasExtraWeaponCapacity(fighter, catalog) ? 4 : WEAPON_SLOT_MAX;
+}
+
+export function weaponSlotWarning(
+  fighter: Pick<Fighter, 'name' | 'type' | 'equipment'>,
+  catalog?: FactionCatalog,
+): string | undefined {
+  const max = weaponSlotMax(fighter, catalog);
+  if (max <= 0) return undefined;
+  const used = weaponSlotsUsed(fighter);
+  if (used <= max) return undefined;
+  const label = fighter.name || fighter.type || 'Боец';
+  return `${label}: ${weaponSlotOverMessage(used, max)}`;
+}
+
+export function weaponSlotOverMessage(used: number, max: number) {
+  return `${used} ${weaponUnitsWord(used)} оружия при максимуме ${max}.`;
+}
+
+function weaponUnitsWord(count: number) {
+  const ten = count % 10;
+  const hundred = count % 100;
+  if (ten === 1 && hundred !== 11) return 'единица';
+  if (ten >= 2 && ten <= 4 && (hundred < 12 || hundred > 14)) return 'единицы';
+  return 'единиц';
 }
 
 export function normalizeRoster(data: Partial<Roster>): Roster {
