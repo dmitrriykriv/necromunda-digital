@@ -22,12 +22,6 @@
       ],
       "equipment": [
         {
-          "name": "Clawed arm (Extra Arm, входит в тип)",
-          "cost": 0,
-          "slots": 0,
-          "extras": []
-        },
-        {
           "name": "Mining laser*",
           "cost": 125,
           "slots": 2,
@@ -230,5 +224,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-08-19"
+  "updatedAt": "2026-08-20"
 }
