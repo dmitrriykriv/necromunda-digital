@@ -46,7 +46,53 @@
       "rules": [
         "Хищник из засады: пока Active, Malstrain Alpha может выполнить действие Исчезновение в свою активацию:",
         "Ксено-мерзость: Malstrain Alpha не может выполнять пост-цикловые действия.",
-        "Навыки: у Malstrain Alpha есть навыки Clamber, Dodge, Infiltrate, Juggernaut, Nerves of Steel и Rain of Blows.ОригиналThe Malstrain Alpha has the Clamber, Dodge, Infiltrate, Juggernaut, Nerves of Steel and Rain of Blows skills."
+        "Навыки: у Malstrain Alpha есть навыки Clamber, Dodge, Infiltrate, Juggernaut, Nerves of Steel и Rain of Blows."
+      ],
+      "weapons": [
+        {
+          "name": "Razor-sharp claws",
+          "sr": "E",
+          "lr": "-",
+          "str": "S+1",
+          "ap": "-1",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Breaching (5+)",
+              "text": "Если атака ранит и бросок на ранение не меньше X, спасброски брони делать нельзя."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Paired (2)",
+              "text": "Нельзя как Secondary и нельзя Secondary вместе с ним. Как Primary: носитель увеличивает Attacks на X."
+            }
+          ]
+        },
+        {
+          "name": "Venomous bite",
+          "sr": "E",
+          "lr": "-",
+          "str": "-",
+          "ap": "-2",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Additional Attacks (1)",
+              "text": "Оружие даёт X атак в ближнем бою сверх обычных. Только во время активации модели и только если оружие не назначено Primary или Secondary."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Toxin (3+)",
+              "text": "Против бойца ранит на X+ вместо сравнения Strength и Toughness. Против машины — только на натуральную 6."
+            }
+          ]
+        }
       ]
     },
     {
@@ -92,7 +138,53 @@
       },
       "rules": [
         "Ксено-мерзость: Malstrain Genestealer не может выполнять пост-цикловые действия.",
-        "Навыки: у Malstrain Genestealer есть навыки Clamber, Dodge, Juggernaut, Nerves of Steel и Rain of Blows.ОригиналA Malstrain Genestealer has the Clamber, Dodge, Juggernaut, Nerves of Steel and Rain of Blows skills."
+        "Навыки: у Malstrain Genestealer есть навыки Clamber, Dodge, Juggernaut, Nerves of Steel и Rain of Blows."
+      ],
+      "weapons": [
+        {
+          "name": "Razor-sharp claws",
+          "sr": "E",
+          "lr": "-",
+          "str": "S+1",
+          "ap": "-1",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Breaching (5+)",
+              "text": "Если атака ранит и бросок на ранение не меньше X, спасброски брони делать нельзя."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Paired (2)",
+              "text": "Нельзя как Secondary и нельзя Secondary вместе с ним. Как Primary: носитель увеличивает Attacks на X."
+            }
+          ]
+        },
+        {
+          "name": "Venomous bite",
+          "sr": "E",
+          "lr": "-",
+          "str": "-",
+          "ap": "-2",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Additional Attacks (1)",
+              "text": "Оружие даёт X атак в ближнем бою сверх обычных. Только во время активации модели и только если оружие не назначено Primary или Secondary."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Toxin (3+)",
+              "text": "Против бойца ранит на X+ вместо сравнения Strength и Toughness. Против машины — только на натуральную 6."
+            }
+          ]
+        }
       ]
     },
     {
@@ -141,6 +233,22 @@
       "rules": [
         "Тень Malstrain: Malstrain Coalescence считает Malstrain Wyrd Powers своим Primary Skill Set.",
         "Ксено-мерзость: Malstrain Coalescence не может выполнять пост-цикловые действия."
+      ],
+      "weapons": [
+        {
+          "name": "Feeder tendrils",
+          "sr": "E",
+          "lr": "-",
+          "str": "S+1",
+          "ap": "-1",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            }
+          ]
+        }
       ]
     },
     {
@@ -231,11 +339,31 @@
       },
       "rules": [
         "Длина поводка: у Malstrain Tyramite длина поводка (Leash range) 6”.",
-        "Навыки: у Malstrain Tyramite есть навык Dodge.",
-        "Спуск (одиночное): Fighter сдвигается до 3” по горизонтали и до 12” по вертикали. Любое вертикальное движение должно быть вниз, то есть к земле.ОригиналThe Fighter makes a move of up to 3” horizontally and up to 12” vertically. Any vertical movement must be downwards, i.e., towards the ground.",
-        "Повышение Leader до Wyrd: Leader порченной Malstrain банды можно повысить до Wyrd за +35 кредитов. Эта стоимость либо оплачивается во время Post- cycle Sequence и требует, чтобы Leader отказался от любых пост-цикловых действий и не был In Recovery, либо может быть выбрана при найме. После повышения Leader получает подтип Wyrd и может выбрать одну силу Wyrd из списка сил Wyrd Malstrain. Далее силы Wyrd Malstrain считаются одним из его Primary Skill Sets.Оригиналthe Leader of a Malstrain corrupted gang can be upgraded to become a Wyrd for +35 credits. This cost is either paid during the Post- cycle Sequence and requires the Leader to forgo any Post-cycle Actions and to not be In Recovery, or it may be selected when they are recruited. Once the Leader has been upgraded, they gain the Wyrd Subtype and can choose one Wyrd power from the Malstrain Wyrd Powers list. Thereafter, they count Malstrain Wyrd Powers as one of their Primary Skill Sets.",
-        "Malstrain Tyramites: Leaders и Champions в порченных Malstrain бандах могут быть экипированы не более чем двумя Malstrain Tyramites каждый.ОригиналLeaders and Champions in Malstrain corrupted gangs can be equipped with up to two Malstrain Tyramites each.",
-        "Наём Malstrain Brood Scum: порченные Malstrain банды могут добавлять Malstrain Brood Scum в ростер банды, как если бы те были частью их списка банды.ОригиналMalstrain corrupted gangs may add Malstrain Brood Scum to their gang roster as if they were part of their gang list."
+        "Навыки: у Malstrain Tyramite есть навык Dodge."
+      ],
+      "weapons": [
+        {
+          "name": "Stinger",
+          "sr": "E",
+          "lr": "-",
+          "str": "-",
+          "ap": "-2",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Rad-phage",
+              "text": "Неспасённый Wound даёт Rad Poisoned: Toughness −1 (минимум 1)."
+            },
+            {
+              "name": "Toxin (3+)",
+              "text": "Против бойца ранит на X+ вместо сравнения Strength и Toughness. Против машины — только на натуральную 6."
+            }
+          ]
+        }
       ]
     }
   ],

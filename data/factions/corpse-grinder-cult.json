@@ -214,13 +214,30 @@
         ]
       },
       "rules": [
-        "Искажённое чудовище: когда Chaos Spawn добавляют в Gang Roster, бросьте D6 по каждой характеристике профиля и сверьтесь с таблицей ниже, чтобы определить её значение:ОригиналWhen a Chaos Spawn is added to the Gang Roster, roll a D6 for each characteristic in their profile and consult the table below to determine their value:",
-        "Непредсказуемое движение: характеристика Movement у Chaos Spawn случайная; бросайте каждый раз, когда Chaos Spawn активируется.ОригиналThe Movement characteristic for a Chaos Spawn is random; roll each time the Chaos Spawn is activated.",
-        "Благословлённые Lord of Skin and Sinew: когда Chaos Spawn выводится Out of Action, не бросайте по таблице Lasting Injury. Его всегда считают Out Cold.ОригиналWhen a Chaos Spawn is taken Out of Action, do not roll on the Lasting Injury table. They are always considered to be Out Cold.",
-        "Вне контроля: на шаге Wrap-up последовательности Post-battle Sequence, если Chaos Spawn участвовал в бою, есть шанс, что он сбежит. Его хозяин назначает до трёх Fighter из банды, которые не были выведены Out of Action в этом бою; бросьте D6 за каждого Fighter. Если хотя бы один Fighter выбросил 4+, Chaos Spawn удерживают, и он остаётся с бандой. Иначе он сбегает в глубины андерхайва; Chaos Spawn уходит в Recovery, пока банда его возвращает. Кроме того, если любой Fighter выбросил 1, Chaos Spawn бьёт его. Немедленно бросьте по таблице Lasting Injury за него и примените результат.ОригиналDuring the Wrap-up step of the Post-battle Sequence, if a Chaos Spawn took part in the battle there is a chance they will escape. Their controller nominates up to three Fighters from the gang who did not go Out of Action during the battle; roll a D6 for each Fighter. If at least one Fighter rolls a 4+, the Chaos Spawn is restrained and remains with the gang. otherwise they escape into the depths of the underhive; the Chaos Spawn goes into Recovery while the gang retrieves it. Additionally, if any Fighter rolls a 1, the Chaos Spawn lashes out at them. Roll on the Lasting Injury table for them and apply the result immediately.",
-        "Ярость (одиночное): все дружественные Fighter, полностью находящиеся в пределах 6” от этого Fighter, имеющие маркер Ready и находящиеся в состоянии Active, добавляют D3” к характеристике Movement до фазы окончания этого раунда.ОригиналAll friendly Fighters that are completely within 6” of this Fighter, that have a Ready marker and are Active, add D3” to their Movement characteristic until the End phase of this round.",
-        "Спуск (одиночное): Fighter сдвигается до 3” по горизонтали и до 12” по вертикали. Любое вертикальное движение должно быть вниз, то есть к земле.ОригиналThe Fighter makes a move of up to 3” horizontally and up to 12” vertically. Any vertical movement must be downwards, i.e., towards the ground.",
-        "Ярость (одиночное): все дружественные Fighter, полностью находящиеся в пределах 6” от этого Fighter, имеющие маркер Ready и находящиеся в состоянии Active, добавляют D3” к характеристике Movement до фазы окончания этого раунда.ОригиналAll friendly Fighters that are completely within 6” of this Fighter, that have a Ready marker and are Active, add D3” to their Movement characteristic until the End phase of this round."
+        "Искажённое чудовище: когда Chaos Spawn добавляют в Gang Roster, бросьте D6 по каждой характеристике профиля и сверьтесь с таблицей ниже, чтобы определить её значение:",
+        "Непредсказуемое движение: характеристика Movement у Chaos Spawn случайная; бросайте каждый раз, когда Chaos Spawn активируется.",
+        "Благословлённые Lord of Skin and Sinew: когда Chaos Spawn выводится Out of Action, не бросайте по таблице Lasting Injury. Его всегда считают Out Cold.",
+        "Вне контроля: на шаге Wrap-up последовательности Post-battle Sequence, если Chaos Spawn участвовал в бою, есть шанс, что он сбежит. Его хозяин назначает до трёх Fighter из банды, которые не были выведены Out of Action в этом бою; бросьте D6 за каждого Fighter. Если хотя бы один Fighter выбросил 4+, Chaos Spawn удерживают, и он остаётся с бандой. Иначе он сбегает в глубины андерхайва; Chaos Spawn уходит в Recovery, пока банда его возвращает. Кроме того, если любой Fighter выбросил 1, Chaos Spawn бьёт его. Немедленно бросьте по таблице Lasting Injury за него и примените результат."
+      ],
+      "weapons": [
+        {
+          "name": "Warped appendages",
+          "sr": "E",
+          "lr": "-",
+          "str": "S",
+          "ap": "-1",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Parry",
+              "text": "Как Primary или Secondary в схватке: +1 Save. Несколько таких оружий не складываются."
+            }
+          ]
+        }
       ]
     }
   ],

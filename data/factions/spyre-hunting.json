@@ -45,9 +45,9 @@
         ]
       },
       "rules": [
-        "Опытный охотник: при добавлении в Gang Roster выберите одно оружие или предмет снаряжения у Spyre Hunt Master и повысьте его уровень Augmentation на 1.ОригиналWhen added to a Gang Roster, pick one weapon or piece of wargear carried by a Spyre Hunt Master and increase its Augmentation level by 1.",
-        "Привязан к ригу: со Spyre Hunt Master никогда нельзя снять Sovereign rig; если его удаляют из Gang Roster, этот предмет тоже удаляется, а не кладётся в Stash банды.ОригиналA Spyre Hunt Master may never have their Sovereign rig unequipped from them, and if they are removed from the Gang Roster this item is also removed instead of being placed into the gang’s Stash.",
-        "Фиксированная экипировка: Spyre Hunt Master может быть экипирован не более чем двумя вариантами из раздела Hunt Master Weapons списка снаряжения Spyre Hunter.ОригиналA Spyre Hunt Master may be equipped with up to two options from the Hunt Master Weapons section of the Spyre Hunter Equipment List."
+        "Опытный охотник: при добавлении в Gang Roster выберите одно оружие или предмет снаряжения у Spyre Hunt Master и повысьте его уровень Augmentation на 1.",
+        "Привязан к ригу: со Spyre Hunt Master никогда нельзя снять Sovereign rig; если его удаляют из Gang Roster, этот предмет тоже удаляется, а не кладётся в Stash банды.",
+        "Фиксированная экипировка: Spyre Hunt Master может быть экипирован не более чем двумя вариантами из раздела Hunt Master Weapons списка снаряжения Spyre Hunter."
       ]
     },
     {
@@ -93,8 +93,8 @@
         ]
       },
       "rules": [
-        "Привязан к ригу: с Jakara Spyre Hunter никогда нельзя снять Jakara hunting rig или mirror shield; если его удаляют из Gang Roster, эти предметы тоже удаляются, а не кладутся в Stash банды.ОригиналA Jakara Spyre Hunter may never have their Jakara hunting rig or mirror shield unequipped from them, and if they are removed from the Gang Roster these items are also removed instead of being placed into the gang’s Stash.",
-        "Фиксированная экипировка: Jakara Spyre Hunter всегда должен быть экипирован ровно одним вариантом из раздела Jakara Weapons списка снаряжения Spyre Hunter.ОригиналA Jakara Spyre Hunter must always be equipped with exactly one option from the Jakara Weapons section of the Spyre Hunter Equipment List."
+        "Привязан к ригу: с Jakara Spyre Hunter никогда нельзя снять Jakara hunting rig или mirror shield; если его удаляют из Gang Roster, эти предметы тоже удаляются, а не кладутся в Stash банды.",
+        "Фиксированная экипировка: Jakara Spyre Hunter всегда должен быть экипирован ровно одним вариантом из раздела Jakara Weapons списка снаряжения Spyre Hunter."
       ]
     },
     {
@@ -140,8 +140,8 @@
         ]
       },
       "rules": [
-        "Привязан к ригу: с Malcadon Spyre Hunter никогда нельзя снять Malcadon hunting rig, drop rig, grapnel launcher или paired web incisors; если его удаляют из Gang Roster, эти предметы тоже удаляются, а не кладутся в Stash банды.ОригиналA Malcadon Spyre Hunter may never have their Malcadon hunting rig, drop rig, grapnel launcher or paired web incisors unequipped from them, and if they are removed from the Gang Roster these items are also removed instead of being placed into the gang’s Stash.",
-        "Фиксированная экипировка: Malcadon Spyre Hunter всегда должен быть экипирован ровно одним вариантом из раздела Malcadon Weapons списка снаряжения Spyre Hunter.ОригиналA Malcadon Spyre Hunter must always be equipped with exactly one option from the Malcadon Weapons section of the Spyre Hunter Equipment List."
+        "Привязан к ригу: с Malcadon Spyre Hunter никогда нельзя снять Malcadon hunting rig, drop rig, grapnel launcher или paired web incisors; если его удаляют из Gang Roster, эти предметы тоже удаляются, а не кладутся в Stash банды.",
+        "Фиксированная экипировка: Malcadon Spyre Hunter всегда должен быть экипирован ровно одним вариантом из раздела Malcadon Weapons списка снаряжения Spyre Hunter."
       ]
     },
     {
@@ -187,8 +187,8 @@
         ]
       },
       "rules": [
-        "Привязан к ригу: с Orrus Spyre Hunter никогда нельзя снять Orrus hunting rig; если его удаляют из Gang Roster, этот предмет тоже удаляется, а не кладётся в Stash банды.ОригиналA Orrus Spyre Hunter may never have their Orrus hunting rig unequipped from them, and if they are removed from the Gang Roster this item is also removed instead of being placed into the gang’s Stash.",
-        "Фиксированная экипировка: Orrus Spyre Hunter всегда должен быть экипирован ровно одним вариантом из раздела Orrus Ranged Weapons и ровно одним вариантом из раздела Orrus Close Combat списка снаряжения Spyre Hunter.ОригиналA Orrus Spyre Hunter must always be equipped with exactly one option from the Orrus Ranged Weapons section and exactly one option from the Orrus Close Combat section of the Spyre Hunter Equipment List."
+        "Привязан к ригу: с Orrus Spyre Hunter никогда нельзя снять Orrus hunting rig; если его удаляют из Gang Roster, этот предмет тоже удаляется, а не кладётся в Stash банды.",
+        "Фиксированная экипировка: Orrus Spyre Hunter всегда должен быть экипирован ровно одним вариантом из раздела Orrus Ranged Weapons и ровно одним вариантом из раздела Orrus Close Combat списка снаряжения Spyre Hunter."
       ]
     },
     {
@@ -235,8 +235,8 @@
         ]
       },
       "rules": [
-        "Привязан к ригу: с Yeld Spyre Hunter никогда нельзя снять Yeld hunting rig или Yeld wings; если его удаляют из Gang Roster, эти предметы тоже удаляются, а не кладутся в Stash банды.ОригиналA Yeld Spyre Hunter may never have their Yeld hunting rig or Yeld wings unequipped from them, and if they are removed from the Gang Roster these items are also removed instead of being placed into the gang’s Stash.",
-        "Фиксированная экипировка: Yeld Spyre Hunter всегда должен быть экипирован ровно одним вариантом из раздела Yeld Weapons списка снаряжения Spyre Hunter.ОригиналA Yeld Spyre Hunter must always be equipped with exactly one option from the Yeld Weapons section of the Spyre Hunter Equipment List."
+        "Привязан к ригу: с Yeld Spyre Hunter никогда нельзя снять Yeld hunting rig или Yeld wings; если его удаляют из Gang Roster, эти предметы тоже удаляются, а не кладутся в Stash банды.",
+        "Фиксированная экипировка: Yeld Spyre Hunter всегда должен быть экипирован ровно одним вариантом из раздела Yeld Weapons списка снаряжения Spyre Hunter."
       ]
     },
     {
@@ -285,60 +285,24 @@
       "rules": [
         "Длина поводка: у Caryatid Prime длина поводка (Leash range) 3”.",
         "Спутник Spyrer: Caryatid Prime подчиняется особому правилу Reflex Enhances.",
-        "Заговорённый спутник: Caryatid Prime помогает избранному спутнику избегать урона. Пока он в пределах Leash range от владельца, этот Fighter может перебросить один проваленный спасбросок каждый раунд.ОригиналA Caryatid Prime is able to help their chosen companion avoid damage. While they are within Leash range of their owner, that Fighter may re- roll one failed save each round.",
-        "Предвидение: дар предвидения Caryatid Prime позволяет уклоняться почти от любых атак, кроме самых неожиданных. Это мощное предвидение даёт непробиваемый спасбросок 3+.ОригиналThe gift of foresight possessed by a Caryatid Prime enables it to dodge and evade all but the most unexpected of attacks. This tremendous precognition grants them a 3+ Invulnerable save.",
-        "Аугментация 1-го уровня: улучшите характеристику Lethality до 2.",
-        "Аугментация 2-го уровня: улучшите характеристику AP до −2.",
-        "Аугментация 3-го уровня: замените свойство Rapid Fire (2) свойством Rapid Fire (3).",
-        "Аугментация 1-го уровня: улучшите характеристику AP до −3.",
-        "Аугментация 2-го уровня: замените свойство Ammo (5+) свойством Ammo (4+).",
-        "Аугментация 3-го уровня: улучшите характеристику Lethality до 3.",
-        "Аугментация 1-го уровня: улучшите характеристику Strength носителя на 1.",
-        "Аугментация 2-го уровня: улучшите характеристику Attacks носителя на 1.",
-        "Аугментация 1-го уровня: улучшите характеристику Ballistic Skill или Weapon Skill носителя на 1.",
-        "Аугментация 2-го уровня: улучшите характеристику Save носителя на 1.",
-        "Аугментация 1-го уровня: улучшите характеристику AP до −3.",
-        "Аугментация 2-го уровня: улучшите характеристику Lethality до 2.",
-        "Аугментация 3-го уровня: улучшите характеристику Strength до S+1.",
-        "Аугментация 1-го уровня: улучшите характеристику Lethality до 2.",
-        "Аугментация 2-го уровня: замените свойство Paired (2) свойством Paired (3).",
-        "Аугментация 3-го уровня: замените свойство Toxin (3+) свойством Toxin (2+).",
-        "Аугментация 1-го уровня: носитель получает неуязвимый сейв 6+.",
-        "Аугментация 2-го уровня: улучшите характеристику Long Range до 12”.",
-        "Аугментация 3-го уровня: носитель получает неуязвимый сейв 5+.",
-        "Аугментация 1-го уровня: улучшите характеристику Lethality до 2.",
-        "Аугментация 2-го уровня: улучшите характеристику AP до −3.",
-        "Аугментация 3-го уровня: улучшите характеристику Strength до S+2.",
-        "Аугментация 1-го уровня: добавьте свойство Shock (6+).",
-        "Аугментация 2-го уровня: улучшите характеристику AP до −2.",
-        "Аугментация 3-го уровня: улучшите характеристику Lethality до 3.",
-        "Аугментация 1-го уровня: улучшите неуязвимый сейв до 5+.",
-        "Аугментация 2-го уровня: улучшите неуязвимый сейв до 4+.",
-        "Аугментация 1-го уровня: добавьте свойство Damage (2).",
-        "Аугментация 2-го уровня: улучшите характеристику AP до −2.",
-        "Аугментация 3-го уровня: улучшите характеристику Lethality до 3.",
-        "Аугментация 1-го уровня: улучшите характеристику Lethality до 2.",
-        "Аугментация 2-го уровня: улучшите характеристику Strength до S+2.",
-        "Аугментация 3-го уровня: замените свойство Paired (2) свойством Paired (3).",
-        "Аугментация 1-го уровня: улучшите неуязвимый сейв до 5+.",
-        "Аугментация 2-го уровня: улучшите характеристику Strength носителя на 1.",
-        "Аугментация 1-го уровня: добавьте характеристику Lethality, равную 2.",
-        "Аугментация 2-го уровня: улучшите характеристику AP до −1.",
-        "Аугментация 3-го уровня: улучшите характеристику Long Range до 12”.",
-        "Аугментация 1-го уровня: улучшите характеристику Long Range до 10”.",
-        "Аугментация 2-го уровня: улучшите характеристику Strength до 4.",
-        "Аугментация 3-го уровня: улучшите характеристику Long Range до 12”.",
-        "Аугментация 1-го уровня: улучшите характеристику Movement носителя на 1”.",
-        "Аугментация 2-го уровня: носитель получает дополнительный +1 к броскам Save против стрелковых атак, пока находится в укрытии.ОригиналThe wearer adds an additional +1 to their Save rolls against shooting attacks while in cover.",
-        "Аугментация 1-го уровня: улучшите характеристику AP до −2.",
-        "Аугментация 2-го уровня: улучшите характеристику Long Range до 24”.",
-        "Аугментация 3-го уровня: улучшите характеристику Strength до 4.",
-        "Аугментация 1-го уровня: улучшите характеристику AP до −1.",
-        "Аугментация 2-го уровня: улучшите характеристику Strength до 6.",
-        "Аугментация 3-го уровня: добавьте свойство Blast (3”).",
-        "Аугментация 1-го уровня: добавьте свойство Parry.",
-        "Аугментация 2-го уровня: улучшите характеристику Lethality до 2.",
-        "Аугментация 3-го уровня: добавьте свойство Knockback (6+)."
+        "Заговорённый спутник: Caryatid Prime помогает избранному спутнику избегать урона. Пока он в пределах Leash range от владельца, этот Fighter может перебросить один проваленный спасбросок каждый раунд.",
+        "Предвидение: дар предвидения Caryatid Prime позволяет уклоняться почти от любых атак, кроме самых неожиданных. Это мощное предвидение даёт непробиваемый спасбросок 3+."
+      ],
+      "weapons": [
+        {
+          "name": "Bite",
+          "sr": "E",
+          "lr": "-",
+          "str": "S",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            }
+          ]
+        }
       ]
     }
   ],

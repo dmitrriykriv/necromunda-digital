@@ -169,10 +169,7 @@
           "4",
           "4"
         ]
-      },
-      "rules": [
-        "Спуск (одиночное): Fighter сдвигается до 3” по горизонтали и до 12” по вертикали. Любое вертикальное движение должно быть вниз, то есть к земле.ОригиналThe Fighter makes a move of up to 3” horizontally and up to 12” vertically. Any vertical movement must be downwards, i.e., towards the ground."
-      ]
+      }
     }
   ],
   "subtypes": [

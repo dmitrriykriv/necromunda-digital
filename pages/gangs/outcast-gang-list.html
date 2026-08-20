@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Necromunda — Изгои</title>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#14161c">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<header class="topbar" id="top">
+    <a class="backlink" href="../gangs.html">&larr; Все банды</a>
+    <h1>Necromunda</h1>
+    <p>Изгои &mdash; русский перевод, оригинал под спойлером</p>
+    <p class="source">Источник: Gangs of the Underhive &amp; Outlands &bull; Правила/GANGS0_3.pdf</p>
+</header>
+
+<div class="layout">
+<aside class="sidebar">
+    <div class="hb-search" id="hb-search">
+        <label class="hb-search-label" for="hb-q">Поиск</label>
+        <input class="hb-q" id="hb-q" type="search" placeholder="Боец, оружие, правило…" autocomplete="off" spellcheck="false" title="Клавиша / — фокус, Enter — к совпадению">
+        <div class="hb-modes" role="radiogroup" aria-label="Режим поиска">
+            <label class="is-on">
+                <input type="radio" name="hb-mode" value="headings" checked>
+                Заголовки
+            </label>
+            <label>
+                <input type="radio" name="hb-mode" value="full">
+                Весь текст
+            </label>
+        </div>
+        <p class="hb-status" id="hb-status" hidden></p>
+        <ol class="hb-hits" id="hb-hits" hidden></ol>
+    </div>
+
+    <details class="toc-drawer">
+    <summary class="toc-toggle">Банды</summary>
+    <nav>
+        <p class="sidebar-index"><a href="../gangs.html">Все банды</a></p>
+        <h2>Банды</h2>
+        <details open>
+            <summary>Кланы-дома</summary>
+            <ul>
+                <li><a href="house-cawdor-gang-list.html">Дом Каудор<span class="en">House Cawdor</span></a></li>
+                <li><a href="house-delaque-gang-list.html">Дом Делак<span class="en">House Delaque</span></a></li>
+                <li><a href="house-escher-gang-list.html">Дом Эшер<span class="en">House Escher</span></a></li>
+                <li><a href="house-goliath-gang-list.html">Дом Голиаф<span class="en">House Goliath</span></a></li>
+                <li><a href="house-orlock-gang-list.html">Дом Орлок<span class="en">House Orlock</span></a></li>
+                <li><a href="house-van-saar-gang-list.html">Дом Ван Саар<span class="en">House Van Saar</span></a></li>
+            </ul>
+        </details>
+        <details open>
+            <summary>Ответвления домов</summary>
+            <ul>
+                <li><a href="blades-of-the-matriarch-gang-list.html">Клинки Матриарха<span class="en">Blades Of The Matriarch</span></a></li>
+                <li><a href="forge-smelters-gang-list.html">Плавильщики кузниц<span class="en">Forge Smelters</span></a></li>
+            </ul>
+        </details>
+        <details open>
+            <summary>Культы и мутанты</summary>
+            <ul>
+                <li><a href="chaos-helot-cult-list.html">Культ хаоситских илотов<span class="en">Chaos Helot Cult</span></a></li>
+                <li><a href="corpse-grinder-cult-gang-list.html">Культ Трупорезов<span class="en">Corpse Grinder Cult</span></a></li>
+                <li><a href="genestealer-cult-gang-list.html">Культ генокрадов<span class="en">Genestealer Cult</span></a></li>
+                <li><a href="malstrain-gang-list.html">Мальстрейн<span class="en">Malstrain</span></a></li>
+            </ul>
+        </details>
+        <details open>
+            <summary>Прочие банды</summary>
+            <ul>
+                <li><a href="ash-waste-nomad-gang-list.html">Кочевники Пепельных пустошей<span class="en">Ash Waste Nomad</span></a></li>
+                <li><a href="free-ogryn-gang-list.html">Свободные огрины<span class="en">Free Ogryn</span></a></li>
+                <li><a href="ironhead-squat-gang-list.html">Сквоты Айронхед<span class="en">Ironhead Squat</span></a></li>
+                <li><a href="outcast-gang-list.html" class="is-current" aria-current="page">Изгои<span class="en">Outcast</span></a></li>
+                <li><a href="palanite-enforcer-patrol-list.html">Паланитские энфорсеры<span class="en">Palanite Enforcer</span></a></li>
+                <li><a href="spyre-hunting-party-list.html">Охотники Шпиля<span class="en">Spyre Hunting</span></a></li>
+                <li><a href="venator-gang-list.html">Венаторы<span class="en">Venator</span></a></li>
+            </ul>
+        </details>
+    </nav>
+    </details>
+</aside>
+<main class="content">
+<section id="outcast-gang-list">
+<h2>Изгои<span class="en">Outcast Gang List</span></h2>
+<div class="table-wrap"><table class="compact roster">
+<caption>Состав банды<span class="orig">Gang Composition</span></caption>
+<thead><tr><th>Боец<span class="orig">Fighter</span></th><th>Тип<span class="orig">Type</span></th><th class="num">Кредиты<span class="orig">Credits</span></th></tr></thead><tbody>
+<tr><td><a href="#outcast-gang-list--outcast-leader">OUTCAST LEADER</a></td><td>Боец (Лидер)<span class="orig">Fighter (Leader)</span></td><td class="num">135</td></tr>
+<tr><td><a href="#outcast-gang-list--outcast-champion">OUTCAST CHAMPION</a></td><td>Боец (Чемпион)<span class="orig">Fighter (Champion)</span></td><td class="num">95</td></tr>
+<tr><td><a href="#outcast-gang-list--outcast-hive-scum">OUTCAST HIVE SCUM</a></td><td>Боец (Гэнгер, Специалист)<span class="orig">Fighter (Ganger, Specialist)</span></td><td class="num">30</td></tr>
+</tbody></table></div>
+<p class="note"><span class="label">Снаряжение банды<span class="orig">Gang Equipment</span></span> Турели и прочее снаряжение банды покупаются в Trading Post и кладутся в Stash, не на бойца. <a href="../core-rules.html#snaryazhenie-bandy">Правила и турель Trazior →</a></p>
+<h3>Особые правила банды<span class="orig">GANG SPECIAL RULES</span></h3>
+<p><span class="term">Культ личности:<span class="orig">Cult of Personality</span></span> все Outcast Fighters в пределах 6” от Leader банды автоматически проходят любые нужные проверки Nerve и не подвержены моделям с состоянием Fearsome.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">All Outcast Fighters within 6” of the gang’s Leader automatically pass any Nerve checks they need to make and are unaffected by models with the Fearsome Condition.</p></details></p>
+<p><span class="term">Вести массы:<span class="orig">Lead the Masses</span></span> в Gang Roster всегда должно быть не меньше трёх Outcast Hive Scum на каждого Outcast Champion в банде Outcast. Если на шаге Update Roster последовательности Post-cycle Sequence нет хотя бы трёх Outcast Hive Scum на каждого Outcast Champion, Outcast Champions нужно удалять из Gang Roster, пока это условие не выполнено.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">There must always be at least three Outcast Hive Scum on the Gang Roster for each Outcast Champion in an Outcast gang. If, during the Update Roster step of the Post-cycle Sequence there are not at least three Outcast Hive Scum for each Outcast Champion, Outcast Champions must be removed from the Gang Roster until this is no longer the case.</p></details></p>
+<p><span class="term">Стартовые навыки:<span class="orig">Starting Skills</span></span> при добавлении в ростер банды все Outcast Leaders and Champions могут выбрать один навык из одного из своих основных наборов (Primary Skill Sets).<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When added to a Gang Roster, all Outcast Leaders and Champions may select one skill from one of their Primary Skill Sets.</p></details></p>
+<p><span class="term">Доступ к навыкам:<span class="orig">Skill Access</span></span> Fighter этой банды имеют доступ к следующим Skill Sets в зависимости от своих Archetypes.<span class="orig">This gang’s Fighters have access to the following Skill Sets as determined by their Archetypes.</span></p>
+<h3>Заметка автора: повышение бойца до лидера<span class="orig">DESIGNER'S NOTE: ELEVATING A FIGHTER TO LEADER STATUS</span></h3>
+<p>С помощью профилей, архетипов и принадлежностей из этого раздела можно создать множество видов Outcast Leaders. Однако, возможно, вы хотите собрать банду Outcast вокруг уже существующего бойца из другого списка банды или издания Necromunda. Это вполне уместно: любой Fighter может в какой-то момент карьеры возглавить банду.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">There are many kinds of Outcast Leaders that can be created using the profiles, Archetypes and Affiliations presented in this section. It might be, however, that you want to create an Outcast gang centred around an existing fighter from another gang list or Necromunda publication. This is entirely appropriate, as any Fighter might rise up to lead a gang at some point or another in their careers.</p></details></p>
+<ul class="rule-list">
+<li>Первый шаг — выбрать Fighter, который станет вашим Outcast Leader. Это может быть любой Fighter с профилем, мог бы он обычно входить в банду или нет.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">The first step is to choose a Fighter to become your Outcast Leader. This can be any Fighter with a profile, whether they could normally be part of a gang or not.</p></details></li>
+</ul>
+<p>Dramatis Personae, Hangers-on и Hired Guns особенно подходят на роль лидеров банды и должны легко конвертироваться. Другим типам Fighter может понадобиться больше работы, а некоторых, вероятно, стоит допускать только с согласия Арбитра кампании (как ни забавно было бы иметь банду Outcasts во главе с разумным Sumpkroc).<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Dramatis Personae, Hangers-on and Hired Guns are particularly suited to becoming gang Leaders and should prove easy to convert. Other kinds of Fighters might need more work, and some should probably only be allowed with the agreement of the campaign Arbitrator (as fun as it would be to have a gang of Outcasts led by an intelligent Sumpkroc).</p></details></p>
+<ul class="rule-list">
+<li>Fighter сохраняет любые навыки, снаряжение и особые правила, которые у него есть. Либо можно заменить его навыки и снаряжение на доступные<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">The Fighter retains any skills, equipment or special rules they might have. Alternatively, you can replace their skills and equipment with those available to an</p></details></li>
+</ul>
+<p>Outcast Leader. Какой бы вариант ни был выбран, для этого Fighter нужно выбрать подходящие Affiliation и Archetype.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Outcast Leader. Whichever option is taken, you need to choose an appropriate Affiliation and Archetype for this Fighter.</p></details></p>
+<ul class="rule-list">
+<li>Fighter сохраняет свою стоимость в кредитах и в ходе кампании получает Experience и может получать снаряжение как обычный Fighter.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">The Fighter retains their cost in credits, and throughout a campaign gains Experience and can be equipped with wargear like a normal Fighter.</p></details></li>
+<li>Fighter получает все особые правила Outcast Leader.<span class="orig">The Fighter gains all the special rules an Outcast Leader has.</span></li>
+</ul>
+<p>Заметьте: из-за огромного разнообразия Fighter, которых можно повысить до Outcast Leader, Арбитр кампании всегда имеет последнее слово, можно ли пользоваться этими правилами и как их применять.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Note that, due to the incredibly wide variety of Fighters available to be elevated to an Outcast Leader, the campaign Arbitrator always has the final say on whether these rules can be used and how they are applied.</p></details></p>
+<h3>Архетип<span class="orig">ARCHETYPE</span></h3>
+<p>У каждого Outcast Leader свои сильные и слабые стороны. Одни — жестокие владыки, правящие грубой силой и крушащие всё на пути; другие хитрее и заставляют окружающих исполнять свою волю; третьи призывают силы Варпа, чтобы держать банду в узде. Архетипы позволяют дополнительно настроить Outcast Leader, давая доступ к разным Skill Sets.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Every Outcast Leader has different strengths and weaknesses. Some are brutal overlords who rule through physical strength, crushing all in their path; others are more cunning, manipulating those around them to do their bidding; others still call upon the powers of the Warp to keep their gang in line. Archetypes allow you to further customize your Outcast Leader by giving them access to different Skill Sets.</p></details></p>
+<p><span class="term">Есть пять разных Archetypes:<span class="orig">There are five different Archetypes</span></span> Brawler, Gunslinger, Mastermind, Survivor и Wyrd. Когда Outcast Leader набирается в банду Outcast, он должен выбрать один из этих архетипов, и позже его нельзя сменить. Этот Archetype также определяет навыки, доступные всем моделям Outcast, кроме Champions (примечание:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Brawler, Gunslinger, Mastermind, Survivor, and Wyrd. When an Outcast Leader is recruited for an Outcast gang they must choose one of these Archetypes, and it may not be changed later on. This Archetype will also determine the skills available to all Outcast models except Champions (note:</p></details></p>
+<p>Champions могут выбрать другой Archetype, отличный от Leader своей банды).<span class="orig">Champions may choose a different Archetype to their gang's Leader).</span></p>
+<h3>Боец ближнего боя<span class="orig">BRAWLER</span></h3>
+<p>Brawler имеет доступ к следующим Skill Sets:<span class="orig">A Brawler has access to the following Skill Sets:</span></p>
+<div class="table-wrap"><table class="compact skills">
+<thead><tr><th>Боец<span class="orig">Fighter</span></th><th>Ловкость<span class="orig">Agility</span></th><th>Сила<span class="orig">Brawn</span></th><th>Бой<span class="orig">Combat</span></th><th>Хитрость<span class="orig">Cunning</span></th><th>Эрудит<span class="orig">Savant</span></th><th>Стрельба<span class="orig">Shooting</span></th></tr></thead><tbody>
+<tr><td>Outcast Leader</td><td class="skill n">-</td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill n">-</td></tr>
+<tr><td>Outcast Champion</td><td class="skill n">-</td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill n">-</td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill n">-</td></tr>
+<tr><td>Outcast Hive Scum</td><td class="skill n">-</td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill n">-</td><td class="skill n">-</td></tr>
+</tbody></table></div>
+<h3>Стрелок<span class="orig">GUNSLINGER</span></h3>
+<p>Gunslinger имеет доступ к следующим Skill Sets:<span class="orig">A Gunslinger has access to the following Skill Sets:</span></p>
+<div class="table-wrap"><table class="compact skills">
+<thead><tr><th>Боец<span class="orig">Fighter</span></th><th>Ловкость<span class="orig">Agility</span></th><th>Сила<span class="orig">Brawn</span></th><th>Бой<span class="orig">Combat</span></th><th>Хитрость<span class="orig">Cunning</span></th><th>Эрудит<span class="orig">Savant</span></th><th>Стрельба<span class="orig">Shooting</span></th></tr></thead><tbody>
+<tr><td>Outcast Leader</td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill n">-</td><td class="skill n">-</td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill p">Основной<span class="orig">Primary</span></td></tr>
+<tr><td>Outcast Champion</td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill n">-</td><td class="skill n">-</td><td class="skill n">-</td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill p">Основной<span class="orig">Primary</span></td></tr>
+<tr><td>Outcast Hive Scum</td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill n">-</td><td class="skill n">-</td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill n">-</td><td class="skill p">Основной<span class="orig">Primary</span></td></tr>
+</tbody></table></div>
+<h3>Вдохновитель<span class="orig">MASTERMIND</span></h3>
+<p>Mastermind имеет доступ к следующим Skill Sets:<span class="orig">A Mastermind has access to the following Skill Sets:</span></p>
+<div class="table-wrap"><table class="compact skills">
+<thead><tr><th>Боец<span class="orig">Fighter</span></th><th>Ловкость<span class="orig">Agility</span></th><th>Сила<span class="orig">Brawn</span></th><th>Бой<span class="orig">Combat</span></th><th>Хитрость<span class="orig">Cunning</span></th><th>Эрудит<span class="orig">Savant</span></th><th>Стрельба<span class="orig">Shooting</span></th></tr></thead><tbody>
+<tr><td>Outcast Leader</td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill n">-</td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill n">-</td></tr>
+<tr><td>Outcast Champion</td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill n">-</td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill n">-</td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill n">-</td></tr>
+<tr><td>Outcast Hive Scum</td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill n">-</td><td class="skill n">-</td><td class="skill n">-</td></tr>
+</tbody></table></div>
+<h3>Выживший<span class="orig">SURVIVOR</span></h3>
+<p>Survivor имеет доступ к следующим Skill Sets:<span class="orig">A Survivor has access to the following Skill Sets:</span></p>
+<div class="table-wrap"><table class="compact skills">
+<thead><tr><th>Боец<span class="orig">Fighter</span></th><th>Ловкость<span class="orig">Agility</span></th><th>Сила<span class="orig">Brawn</span></th><th>Бой<span class="orig">Combat</span></th><th>Хитрость<span class="orig">Cunning</span></th><th>Эрудит<span class="orig">Savant</span></th><th>Стрельба<span class="orig">Shooting</span></th></tr></thead><tbody>
+<tr><td>Outcast Leader</td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill n">-</td><td class="skill n">-</td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill s">Вторичный<span class="orig">Secondary</span></td></tr>
+<tr><td>Outcast Champion</td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill n">-</td><td class="skill n">-</td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill n">-</td></tr>
+<tr><td>Outcast Hive Scum</td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill n">-</td><td class="skill n">-</td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill n">-</td><td class="skill s">Вторичный<span class="orig">Secondary</span></td></tr>
+</tbody></table></div>
+<h3>Виард<span class="orig">WYRD</span></h3>
+<p>Wyrd имеет доступ к следующим Skill Sets:<span class="orig">A Wyrd has access to the following Skill Sets:</span></p>
+<div class="table-wrap"><table class="compact skills">
+<thead><tr><th>Боец<span class="orig">Fighter</span></th><th>Ловкость<span class="orig">Agility</span></th><th>Сила<span class="orig">Brawn</span></th><th>Бой<span class="orig">Combat</span></th><th>Хитрость<span class="orig">Cunning</span></th><th>Эрудит<span class="orig">Savant</span></th><th>Стрельба<span class="orig">Shooting</span></th></tr></thead><tbody>
+<tr><td>Outcast Leader</td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill n">-</td><td class="skill n">-</td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill n">-</td></tr>
+<tr><td>Outcast Champion</td><td class="skill n">-</td><td class="skill n">-</td><td class="skill n">-</td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill n">-</td></tr>
+<tr><td>Outcast Hive Scum</td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill n">-</td><td class="skill n">-</td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill n">-</td><td class="skill n">-</td></tr>
+</tbody></table></div>
+<h3>Принадлежность<span class="orig">AFFILIATION</span></h3>
+<p>Чтобы отразить огромное разнообразие возможных Outcast Leaders, при создании банды Outcast её Leader должен выбрать Affiliation. Affiliation — это взгляд в прошлое Leader или намёк на связи, которые он всё ещё поддерживает с более «обычными» жителями улья. Outcast Leader может выбрать одну из четырёх принадлежностей: Clanless, Clan House, Aranthian или Mutant. У каждой свои плюсы и минусы, но главное — она определяет снаряжение, доступное Outcast Leader и его банде. После выбора Affiliation её нельзя сменить — даже Outcast не может сбежать от своего прошлого.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">To represent the huge variety of potential Outcast Leaders, when an Outcast gang is created its Leader must choose an Affiliation. An Affiliation is a glimpse into the origins of the Leader, or speaks to the contacts they still maintain with those more mainstream members of hive society. There are four different Affiliations an Outcast Leader can choose from: Clanless, Clan House, Aranthian or Mutant. Each comes with its own advantages and disadvantages, but most importantly will determine the equipment that the Outcast Leader and their gang has access to. Once the choice of Affiliation has been made, it cannot be changed – not even an Outcast can escape their past.</p></details></p>
+<h3>Бездомные изгои<span class="orig">CLANLESS OUTCAST GANGS</span></h3>
+<p>Clanless Outcast Leader и его банда получают следующие преимущества:<span class="orig">A Clanless Outcast Leader and their gang gain the following benefits:</span></p>
+<ul class="rule-list">
+<li>Банды Clanless Outcast получают дополнительные TP, как указано ниже:<span class="orig">Clanless Outcast gangs gain additional TPs as covered below:</span></li>
+<li class="sub">При создании банды каждый Leader и Champion в банде Clanless Outcast получает дополнительные 1 TP, которые можно потратить на оружие и снаряжение с Trading Post.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">At gang creation, each Leader and Champion in a Clanless Outcast gang gains an additional 1 TP that may be spent on weapons and wargear from the Trading Post.</p></details></li>
+<li class="sub">В каждой пост-цикловой последовательности первое пост-цикловое действие Visit Trading Post, выполненное бандой Clanless Outcast, даёт дополнительные 1 TP.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">During each Post-cycle Sequence, the first Visit Trading Post Post-cycle Action performed by a Clanless Outcast gang generates an additional 1 TP.</p></details></li>
+</ul>
+<h3>Изгои домов-кланов<span class="orig">CLAN HOUSE OUTCAST GANGS</span></h3>
+<p>Clan House Outcast Leader и его банда получают следующие преимущества:<span class="orig">A Clan House Outcast Leader and their gang gain the following benefits:</span></p>
+<ul class="rule-list">
+<li>Когда создаётся банда Clan House Outcast, нужно выбрать один из шести Clan<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When a Clan House Outcast gang is created, you must choose one of the six Clan</p></details></li>
+</ul>
+<p><span class="term">Дома, с которыми можно аффилироваться:<span class="orig">Houses for them to affiliate with</span></span> Cawdor, Delaque, Escher, Goliath, Van Saar или Orlock. Для сценариев или кампании банда Outcast считается бандой выбранного дома-клана.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Cawdor, Delaque, Escher, Goliath, Van Saar or Orlock. For scenario or campaign purposes, the Outcast gang is considered to be a Clan House gang of the chosen type.</p></details></p>
+<ul class="rule-list">
+<li>Leaders и Champions в банде Clan House Outcast могут покупать оружие и снаряжение, обычно доступное только из списков снаряжения их дома, включая Pets, при создании банды и в каждой пост-цикловой последовательности.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Leaders and Champions in a Clan House Outcast gang may purchase weapons and wargear normally restricted to their house equipment lists, including Pets, at gang creation and during each Post-cycle Sequence.</p></details></li>
+</ul>
+<h3>Мутантские банды изгоев<span class="orig">MUTANT OUTCAST GANGS</span></h3>
+<p>Mutant Outcast Leader и его банда получают следующие преимущества:<span class="orig">A Mutant Outcast Leader and their gang gain the following benefits:</span></p>
+<ul class="rule-list">
+<li>Когда Fighter добавляют в Gang Roster банды Mutant Outcast, он может купить несколько Mutations из списка в зависимости от своего подтипа.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When a Fighter is added to a Mutant Outcast gang’s Gang Roster they may purchase a number of Mutations, depending on their Subtype, from the list.</p></details></li>
+<li class="sub">Leaders и Champions могут купить до двух Mutations.<span class="orig">Leaders and Champions may purchase up to two Mutations.</span></li>
+<li class="sub">Gangers могут купить только одну Mutation.<span class="orig">Gangers may purchase only one Mutation.</span></li>
+</ul>
+<h3>Арантианские банды изгоев<span class="orig">ARANTHIAN OUTCAST GANGS</span></h3>
+<p>Aranthian Outcast Leader и его банда получают следующие преимущества:<span class="orig">An Aranthian Outcast Leader and their gang gain the following benefits:</span></p>
+<ul class="rule-list">
+<li>Leaders и Champions в банде Aranthian Outcast могут покупать предметы из списка снаряжения Aranthian при создании банды и в каждой Post-cycle<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Leaders and Champions in an Aranthian Outcast gang may purchase items from the Aranthian equipment list at gang creation and during each Post-cycle</p></details></li>
+</ul>
+<p>Последовательность.<span class="orig">Sequence.</span></p>
+<details class="fold fold-fighters">
+<summary><span class="fold-title">Бойцы банды</span><span class="fold-count">3 карточки</span></summary><div class="fold-body">
+<details class="fighter" id="outcast-gang-list--outcast-leader">
+<summary class="fighter-head">
+<h4 class="fighter-name">OUTCAST LEADER</h4>
+<span class="fighter-cost">135 кредитов<span class="orig">135 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Лидер)<span class="orig">Fighter (Leader)</span></span> <span class="fighter-xp">Стартовый XP: 61<span class="orig">Starting XP: 61</span></span></p>
+<p>Когда Outcast Leader добавляется в банду Outcast, выберите один из следующих профилей, чтобы представить его:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When an Outcast Leader is added to an Outcast gang, select one of the following profiles to represent them:</p></details></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th><th>XP</th></tr></thead>
+<tbody>
+<tr><td>7”</td><td>4+</td><td>3+</td><td>3</td><td>3</td><td>3</td><td>4</td><td>2</td><td>5+</td><td>9</td><td>9</td><td>8</td><td>9</td><td>61</td></tr>
+<tr><td>6”</td><td>3+</td><td>3+</td><td>3</td><td>3</td><td>3</td><td>4</td><td>3</td><td>5+</td><td>8</td><td>7</td><td>7</td><td>7</td><td>61</td></tr>
+<tr><td>5”</td><td>3+</td><td>4+</td><td>4</td><td>3</td><td>3</td><td>3</td><td>3</td><td>5+</td><td>8</td><td>8</td><td>9</td><td>9</td><td>61</td></tr>
+<tr><td>4”</td><td>3+</td><td>4+</td><td>3</td><td>4</td><td>3</td><td>2</td><td>2</td><td>4+</td><td>8</td><td>9</td><td>8</td><td>8</td><td>61</td></tr>
+</tbody></table></div>
+<p>Принадлежность и архетип: при добавлении в Gang Roster Outcast Leader должен выбрать принадлежность и архетип.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Affiliation &amp; Archetype: When added to a Gang Roster, an Outcast Leader must select an Affiliation and an Archetype.</p></details></p>
+<p><span class="term">Снаряжение:<span class="orig">Equipment</span></span> при добавлении в ростер банды Outcast Leader может купить оружие и снаряжение из списка Equipment List granted to them by their Affiliation, the Outcast Equipment List and from the Trading Post with a combined TP of 4 or less:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When added to a Gang Roster, an Outcast Leader may purchase weapons and wargear from the Equipment List granted to them by their Affiliation, the Outcast Equipment List and from the Trading Post with a combined TP of 4 or less:</p></details></p>
+<p>• В ходе кампании им можно давать дополнительное оружие и снаряжение, купленное из списка снаряжения Outcast и с Trading Post. Их принадлежность может дать дополнительные варианты.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">• During the course of a campaign, they may be given additional weapons and wargear purchased from the Outcast Equipment List and from the Trading Post. Their Affiliation may grant them additional options.</p></details></p>
+</div></details>
+<details class="fighter" id="outcast-gang-list--outcast-champion">
+<summary class="fighter-head">
+<h4 class="fighter-name">OUTCAST CHAMPION</h4>
+<span class="fighter-cost">95 кредитов<span class="orig">95 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Чемпион)<span class="orig">Fighter (Champion)</span></span> <span class="fighter-xp">Стартовый XP: 37<span class="orig">Starting XP: 37</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+<tbody>
+<tr><td>5”</td><td>3+</td><td>3+</td><td>3</td><td>3</td><td>2</td><td>3</td><td>2</td><td>5+</td><td>7</td><td>6</td><td>7</td><td>7</td></tr>
+</tbody></table></div>
+<p><span class="term">Архетип:<span class="orig">Archetype</span></span> при добавлении в Gang Roster Outcast Champion должен выбрать архетип.<span class="orig">When added to a Gang Roster, an Outcast Champion must select an Archetype.</span></p>
+<p><span class="term">Снаряжение:<span class="orig">Equipment</span></span> при добавлении в ростер банды Outcast Champion может купить оружие и снаряжение из списка Equipment List granted to them by their Leader’s Affiliation, the Outcast Equipment List and from the Trading Post with a combined TP of 3 or less:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When added to a Gang Roster, an Outcast Champion may purchase weapons and wargear from the Equipment List granted to them by their Leader’s Affiliation, the Outcast Equipment List and from the Trading Post with a combined TP of 3 or less:</p></details></p>
+<p>• В ходе кампании им можно давать дополнительное оружие и снаряжение, купленное из списка снаряжения Outcast и с Trading Post. Принадлежность их Leader может дать дополнительные варианты.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">• During the course of a campaign, they may be given additional weapons and wargear purchased from the Outcast Equipment List and from the Trading Post. Their Leader’s Affiliation may grant them additional options.</p></details></p>
+</div></details>
+<details class="fighter" id="outcast-gang-list--outcast-hive-scum">
+<summary class="fighter-head">
+<h4 class="fighter-name">OUTCAST HIVE SCUM</h4>
+<span class="fighter-cost">30 кредитов<span class="orig">30 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Гэнгер, Специалист)<span class="orig">Fighter (Ganger, Specialist)</span></span> <span class="fighter-xp">Стартовый XP: 13<span class="orig">Starting XP: 13</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+<tbody>
+<tr><td>5”</td><td>4+</td><td>4+</td><td>3</td><td>3</td><td>1</td><td>3</td><td>1</td><td>6+</td><td>6</td><td>6</td><td>6</td><td>6</td></tr>
+</tbody></table></div>
+<p><span class="term">Снаряжение:<span class="orig">Equipment</span></span> при добавлении в ростер банды Outcast Hive Scum может купить оружие и снаряжение из списка Outcast:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When added to a Gang Roster, an Outcast Hive Scum may purchase weapons and wargear from the Outcast Equipment List:</p></details></p>
+<p>В ходе кампании им можно давать дополнительное оружие и снаряжение, купленное из списка Outcast и с Trading Post.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">• During the course of a campaign, they may be given additional weapons and wargear purchased from the Outcast Equipment List and from the Trading Post.</p></details></p>
+</div></details>
+</div></details>
+<details class="fold fold-equip">
+<summary><span class="fold-title">Список снаряжения изгоев<span class="orig">OUTCAST EQUIPMENT LIST</span></span><span class="fold-count">31 позиция</span></summary><div class="fold-body">
+<h4>Дальнобойное оружие<span class="orig">RANGED WEAPONS</span></h4>
+<h4>Авто / стаб-оружие<span class="orig">AUTO/STUB WEAPONS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Autogun</span><span class="equip-price">20 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Авто / стаб-оружие<span class="orig">AUTO/STUB WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Autogun</td><td>8”</td><td>24”</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Rapid Fire (1)<span class="trait-tip">Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают.</span></span></td><td>20</td><td>0</td></tr>
+<tr><td class="wname sub">warp round</td><td>8”</td><td>24”</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Cursed<span class="trait-tip">Попавшая модель проходит Willpower или получает Insanity. Натуральная 1 на попадании: то же для носителя.</span></span>, <span class="trait">Single Shot<span class="trait-tip">Один выстрел за бой, затем сразу Out of Ammo; перезарядить нельзя.</span></span></td><td>+10</td><td>4</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Autopistol</span><span class="equip-price">10 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Авто / стаб-оружие<span class="orig">AUTO/STUB WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Autopistol</td><td>4”</td><td>12”</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Light<span class="trait-tip">Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят.</span></span>, <span class="trait">Rapid Fire (1)<span class="trait-tip">Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают.</span></span></td><td>10</td><td>0</td></tr>
+<tr><td class="wname sub">warp round</td><td>4”</td><td>12”</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Cursed<span class="trait-tip">Попавшая модель проходит Willpower или получает Insanity. Натуральная 1 на попадании: то же для носителя.</span></span>, <span class="trait">Light<span class="trait-tip">Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят.</span></span>, <span class="trait">Single Shot<span class="trait-tip">Один выстрел за бой, затем сразу Out of Ammo; перезарядить нельзя.</span></span></td><td>+10</td><td>4</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Stub gun</span><span class="equip-price">5 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Авто / стаб-оружие<span class="orig">AUTO/STUB WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Stub gun</td><td>6”</td><td>12”</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Light<span class="trait-tip">Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят.</span></span></td><td>5</td><td>0</td></tr>
+<tr><td class="wname sub">warp round</td><td>6”</td><td>12”</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Cursed<span class="trait-tip">Попавшая модель проходит Willpower или получает Insanity. Натуральная 1 на попадании: то же для носителя.</span></span>, <span class="trait">Light<span class="trait-tip">Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят.</span></span>, <span class="trait">Single Shot<span class="trait-tip">Один выстрел за бой, затем сразу Out of Ammo; перезарядить нельзя.</span></span></td><td>+10</td><td>4</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Огнемёты<span class="orig">FLAMERS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Flamer</span><span class="equip-price">70 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Огнемёты<span class="orig">FLAMERS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Flamer</td><td>T</td><td>-</td><td>4</td><td>-1</td><td>1</td><td class="traits"><span class="trait">Ammo (6+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Blaze (5+)<span class="trait-tip">Если бросок на ранение не меньше X, цель получает ещё одно попадание тем же профилем. Оно бросается на ранение отдельно и не вызывает новых дополнительных попаданий.</span></span>, <span class="trait">Template<span class="trait-tip">Каплевидный шаблон от стреляющего через цель: все под ним получают автоматическое попадание. С Light в ближнем бою — одно автоматическое попадание без шаблона. С Rapid Fire (X) ближайшая модель получает попадания по кубику огневой мощи, остальные — по одному.</span></span></td><td>70</td><td>1</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Hand flamer</span><span class="equip-price">45 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Огнемёты<span class="orig">FLAMERS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Hand Flamer</td><td>T</td><td>-</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Ammo (6+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Blaze (5+)<span class="trait-tip">Если бросок на ранение не меньше X, цель получает ещё одно попадание тем же профилем. Оно бросается на ранение отдельно и не вызывает новых дополнительных попаданий.</span></span>, <span class="trait">Light<span class="trait-tip">Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят.</span></span>, <span class="trait">Template<span class="trait-tip">Каплевидный шаблон от стреляющего через цель: все под ним получают автоматическое попадание. С Light в ближнем бою — одно автоматическое попадание без шаблона. С Rapid Fire (X) ближайшая модель получает попадания по кубику огневой мощи, остальные — по одному.</span></span></td><td>45</td><td>1</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Гранатомёты<span class="orig">GRENADE LAUNCHERS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Grenade launcher with frag &amp; krak grenades</span><span class="equip-price">80 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Гранатомёты<span class="orig">GRENADE LAUNCHERS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr class="wgroup"><td class="wname group" colspan="7">Grenade launcher</td><td>80</td><td>1</td></tr>
+<tr><td class="wname sub">frag grenades</td><td>6”</td><td>24”</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Ammo (4+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Blast (3”)<span class="trait-tip">Поставьте маркер Blast 3" или 5" на цель. Попадание — маркер остаётся. Промах — рассейте на D6" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него.</span></span>, <span class="trait">Knockback (5+)<span class="trait-tip">Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1" от центра.</span></span></td><td>+0</td><td></td></tr>
+<tr><td class="wname sub">krak grenades</td><td>6”</td><td>24”</td><td>6</td><td>-2</td><td>1</td><td class="traits"><span class="trait">Ammo (4+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span></td><td>+0</td><td></td></tr>
+<tr><td class="wname sub">photon flash grenades</td><td>6”</td><td>24”</td><td>-</td><td>-</td><td>-</td><td class="traits"><span class="trait">Ammo (5+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Blast (3”)<span class="trait-tip">Поставьте маркер Blast 3" или 5" на цель. Попадание — маркер остаётся. Промах — рассейте на D6" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него.</span></span>, <span class="trait">Flash<span class="trait-tip">Броска на ранение нет: цель делает проверку Initiative, при провале Blind. Слепая модель теряет Ready; её атаки ближнего боя попадают только на натуральную 6 до следующей активации.</span></span></td><td>+15</td><td>1</td></tr>
+<tr><td class="wname sub">smoke grenades</td><td>6”</td><td>24”</td><td>-</td><td>-</td><td>-</td><td class="traits"><span class="trait">Ammo (4+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Blast (3”)<span class="trait-tip">Поставьте маркер Blast 3" или 5" на цель. Попадание — маркер остаётся. Промах — рассейте на D6" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него.</span></span>, <span class="trait">Smoke<span class="trait-tip">Можно целиться в точку на поле. Маркер Blast остаётся: столб дыма блокирует линию видимости. В End phase на 5+ остаётся, иначе снимается. Попавшая модель не ранится и не становится Suppressed.</span></span></td><td>+15</td><td>1</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Лаз-оружие<span class="orig">LAS WEAPONS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Lasgun</span><span class="equip-price">15 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Лаз-оружие<span class="orig">LAS WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Lasgun</td><td>16”</td><td>24”</td><td>3</td><td>-</td><td>1</td><td class="traits">-</td><td>15</td><td>0</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Laspistol</span><span class="equip-price">5 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Лаз-оружие<span class="orig">LAS WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Laspistol</td><td>8”</td><td>12”</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Light<span class="trait-tip">Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят.</span></span></td><td>5</td><td>0</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Примитивное оружие<span class="orig">PRIMITIVE WEAPONS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Throwing knives</span><span class="equip-price">10 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Примитивное оружие<span class="orig">PRIMITIVE WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Throwing knives</td><td>6”</td><td>12”</td><td>-</td><td>-</td><td>1</td><td class="traits"><span class="trait">Ammo (3+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Toxin (4+)<span class="trait-tip">Против бойца ранит на X+ вместо сравнения Strength и Toughness. Против машины — только на натуральную 6.</span></span></td><td>10</td><td>0</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Дробовики<span class="orig">SHOTGUNS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Combat shotgun with salvo &amp; shredder ammo</span><span class="equip-price">35 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Дробовики<span class="orig">SHOTGUNS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr class="wgroup"><td class="wname group" colspan="7">Combat shotgun</td><td>35</td><td>1</td></tr>
+<tr><td class="wname sub">salvo ammo</td><td>4”</td><td>12”</td><td>4</td><td>-</td><td>1</td><td class="traits"><span class="trait">Knockback (6”)<span class="trait-tip">Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1" от центра.</span></span></td><td>+0</td><td></td></tr>
+<tr><td class="wname sub">shredder ammo</td><td>T</td><td>-</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Ammo (6+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Rapid Fire (1)<span class="trait-tip">Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают.</span></span>, <span class="trait">Shred (6+)<span class="trait-tip">Если оружие ранит и бросок на ранение не меньше X, Lethality этой атаки +1.</span></span>, <span class="trait">Template<span class="trait-tip">Каплевидный шаблон от стреляющего через цель: все под ним получают автоматическое попадание. С Light в ближнем бою — одно автоматическое попадание без шаблона. С Rapid Fire (X) ближайшая модель получает попадания по кубику огневой мощи, остальные — по одному.</span></span></td><td>+0</td><td></td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Sawn-off shotgun with solid &amp; scatter shot</span><span class="equip-price">30 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Дробовики<span class="orig">SHOTGUNS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr class="wgroup"><td class="wname group" colspan="7">Sawn-off shotgun</td><td>30</td><td>1</td></tr>
+<tr><td class="wname sub">scatter shot</td><td>4”</td><td>8”</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Rapid Fire (2)<span class="trait-tip">Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают.</span></span></td><td>+0</td><td></td></tr>
+<tr><td class="wname sub">solid shot</td><td>4”</td><td>8”</td><td>4</td><td>-</td><td>1</td><td class="traits"><span class="trait">Light<span class="trait-tip">Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят.</span></span>, <span class="trait">Knockback (6+)<span class="trait-tip">Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1" от центра.</span></span></td><td>+0</td><td></td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Shotgun with solid &amp; scatter ammo</span><span class="equip-price">35 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Дробовики<span class="orig">SHOTGUNS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr class="wgroup"><td class="wname group" colspan="7">Shotgun</td><td>35</td><td>0</td></tr>
+<tr><td class="wname sub">scatter ammo</td><td>4”</td><td>8”</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Rapid Fire (2)<span class="trait-tip">Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают.</span></span></td><td>+0</td><td></td></tr>
+<tr><td class="wname sub">solid ammo</td><td>8”</td><td>16”</td><td>4</td><td>-</td><td>1</td><td class="traits"><span class="trait">Knockback (5+)<span class="trait-tip">Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1" от центра.</span></span></td><td>+0</td><td></td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Оружие ближнего боя<span class="orig">CLOSE COMBAT WEAPONS</span></h4>
+<h4>Цепное оружие<span class="orig">CHAIN WEAPONS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Chainaxe</span><span class="equip-price">20 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Цепное оружие<span class="orig">CHAIN WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Chainaxe</td><td>E</td><td>-</td><td>S</td><td>-1</td><td>1</td><td class="traits"><span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span>, <span class="trait">Shred (5+)<span class="trait-tip">Если оружие ранит и бросок на ранение не меньше X, Lethality этой атаки +1.</span></span></td><td>20</td><td>1</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Chainsword</span><span class="equip-price">20 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Цепное оружие<span class="orig">CHAIN WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Chainsword</td><td>E</td><td>-</td><td>S</td><td>-</td><td>1</td><td class="traits"><span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span>, <span class="trait">Parry<span class="trait-tip">Как Primary или Secondary в схватке: +1 Save. Несколько таких оружий не складываются.</span></span>, <span class="trait">Shred (5+)<span class="trait-tip">Если оружие ранит и бросок на ранение не меньше X, Lethality этой атаки +1.</span></span></td><td>20</td><td>1</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Примитивное оружие<span class="orig">PRIMITIVE WEAPONS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Axe</span><span class="equip-price">15 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Примитивное оружие<span class="orig">PRIMITIVE WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Axe</td><td>E</td><td>-</td><td>S</td><td>-1</td><td>1</td><td class="traits"><span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span></td><td>15</td><td>0</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Fighting knife</span><span class="equip-price">5 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Примитивное оружие<span class="orig">PRIMITIVE WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Fighting knife</td><td>E</td><td>-</td><td>S</td><td>-</td><td>1</td><td class="traits"><span class="trait">Backstab<span class="trait-tip">+1 Strength, если цель Engaged более чем с одной моделью.</span></span>, <span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span></td><td>5</td><td>0</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Flail</span><span class="equip-price">10 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Примитивное оружие<span class="orig">PRIMITIVE WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Flail</td><td>E</td><td>-</td><td>S</td><td>-</td><td>1</td><td class="traits"><span class="trait">Knockback (6+)<span class="trait-tip">Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1" от центра.</span></span>, <span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span></td><td>10</td><td>0</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Maul</span><span class="equip-price">20 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Примитивное оружие<span class="orig">PRIMITIVE WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Maul</td><td>E</td><td>-</td><td>S+1</td><td>-</td><td>1</td><td class="traits"><span class="trait">Concussive (6+)<span class="trait-tip">Если атака ранит и бросок на ранение не меньше X, цель снижает Initiative на 1 до конца следующей активации.</span></span>, <span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span></td><td>20</td><td>0</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Two-handed axe*</span><span class="equip-price">40 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Примитивное оружие<span class="orig">PRIMITIVE WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Two-handed axe*</td><td>E</td><td>-</td><td>S+1</td><td>-1</td><td>2</td><td class="traits"><span class="trait">Heavy<span class="trait-tip">Дальнобойное: только Braced Shot. Ближний бой: нельзя как Secondary и нельзя использовать Secondary вместе с ним.</span></span>, <span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span>, <span class="trait">Unwieldy<span class="trait-tip">В ближнем бою Initiative модели ставится в 1 до любых модификаторов.</span></span></td><td>40</td><td>1</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Two-handed hammer*</span><span class="equip-price">40 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Примитивное оружие<span class="orig">PRIMITIVE WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Two-handed hammer*</td><td>E</td><td>-</td><td>S+1</td><td>-</td><td>3</td><td class="traits"><span class="trait">Concussive (6+)<span class="trait-tip">Если атака ранит и бросок на ранение не меньше X, цель снижает Initiative на 1 до конца следующей активации.</span></span>, <span class="trait">Heavy<span class="trait-tip">Дальнобойное: только Braced Shot. Ближний бой: нельзя как Secondary и нельзя использовать Secondary вместе с ним.</span></span>, <span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span>, <span class="trait">Unwieldy<span class="trait-tip">В ближнем бою Initiative модели ставится в 1 до любых модификаторов.</span></span></td><td>40</td><td>1</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Снаряжение<span class="orig">WARGEAR</span></h4>
+<h4>Гранаты<span class="orig">GRENADES</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Blasting charges</span><span class="equip-price">60 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Гранаты<span class="orig">GRENADES</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Blasting charges</td><td>-</td><td>6”</td><td>5</td><td>-1</td><td>2</td><td class="traits"><span class="trait">Ammo (5+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Blast (5”)<span class="trait-tip">Поставьте маркер Blast 3" или 5" на цель. Попадание — маркер остаётся. Промах — рассейте на D6" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него.</span></span>, <span class="trait">Knockback (5+)<span class="trait-tip">Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1" от центра.</span></span>, <span class="trait">Limited<span class="trait-tip">Если оружие село, его нельзя перезарядить до конца боя.</span></span></td><td>60</td><td>2</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Frag grenades</span><span class="equip-price">30 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Гранаты<span class="orig">GRENADES</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Frag grenades</td><td>-</td><td>9”</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Ammo (4+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Blast (3”)<span class="trait-tip">Поставьте маркер Blast 3" или 5" на цель. Попадание — маркер остаётся. Промах — рассейте на D6" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него.</span></span>, <span class="trait">Knockback (6+)<span class="trait-tip">Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1" от центра.</span></span>, <span class="trait">Limited<span class="trait-tip">Если оружие село, его нельзя перезарядить до конца боя.</span></span></td><td>30</td><td>0</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Krak grenades</span><span class="equip-price">45 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Гранаты<span class="orig">GRENADES</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Krak grenades</td><td>-</td><td>9”</td><td>6</td><td>-2</td><td>1</td><td class="traits"><span class="trait">Ammo (4+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Limited<span class="trait-tip">Если оружие село, его нельзя перезарядить до конца боя.</span></span></td><td>45</td><td>1</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Smoke grenades</span><span class="equip-price">15 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Гранаты<span class="orig">GRENADES</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Smoke grenades</td><td>-</td><td>9”</td><td>-</td><td>-</td><td>-</td><td class="traits"><span class="trait">Ammo (4+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Blast (3”)<span class="trait-tip">Поставьте маркер Blast 3" или 5" на цель. Попадание — маркер остаётся. Промах — рассейте на D6" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него.</span></span>, <span class="trait">Limited<span class="trait-tip">Если оружие село, его нельзя перезарядить до конца боя.</span></span>, <span class="trait">Smoke<span class="trait-tip">Можно целиться в точку на поле. Маркер Blast остаётся: столб дыма блокирует линию видимости. В End phase на 5+ остаётся, иначе снимается. Попавшая модель не ранится и не становится Suppressed.</span></span></td><td>15</td><td>0</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Броня и силовые поля<span class="orig">ARMOUR &amp; FIELD ARMOUR</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Hazard suit</span><span class="equip-price">10 cr</span></summary><div class="equip-profile"><p class="profile-price">10 кредитов — TP 0<span class="orig">10 CREDITS – TP 0</span></p>
+<p>Fighter в защитном костюме иммунен к свойствам Blaze (X+) и Rad-phage.<span class="orig">A fighter wearing a hazard suit is immune to the Blaze (X+) and Rad-phage traits.</span></p></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Mesh armour</span><span class="equip-price">40 cr</span></summary><div class="equip-profile"><p class="profile-price">40 кредитов — TP 0<span class="orig">40 CREDITS – TP 0</span></p>
+<p>Fighter в сетчатой броне увеличивает характеристику Save на 1 при разрешении попаданий, полученных в ближнем бою.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A Fighter equipped with mesh armour increases their Save characteristic by 1 when resolving Hits suffered in close combat.</p></details></p></div></details></li>
+</ul>
+<h4>Личное снаряжение<span class="orig">PERSONAL EQUIPMENT</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Drop rig</span><span class="equip-price">10 cr</span></summary><div class="equip-profile"><p class="profile-price">10 кредитов — TP 0<span class="orig">10 CREDITS – TP 0</span></p>
+<p>Active или Suppressed Fighter со спусковой оснасткой может выполнить действие «Спуск», находясь в пределах 1” от края площадки:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">An Active or Suppressed Fighter with a drop rig can perform the Descend action while they are within 1” of the edge of a platform:</p></details></p>
+<p><span class="term">Спуск (одиночное):<span class="orig">Descend (Single)</span></span> Fighter сдвигается до 3” по горизонтали и до 12” по вертикали. Любое вертикальное движение должно быть вниз, то есть к земле.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">The Fighter makes a move of up to 3” horizontally and up to 12” vertically. Any vertical movement must be downwards, i.e., towards the ground.</p></details></p></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Medicae kit</span><span class="equip-price">20 cr</span></summary><div class="equip-profile"><p class="profile-price">20 кредитов — TP 0<span class="orig">20 CREDITS – TP 0</span></p>
+<p>Если Fighter с медкай-набором помогает другому Fighter на проверке Recovery, он бросает дополнительный кубик ранений и выбирает, какой оставить.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">If a Fighter with a Medicare kit aids another Fighter’s Recovery test, they roll an additional Injury dice and choose which one to keep.</p></details></p></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Photo-goggles</span><span class="equip-price">35 cr</span></summary><div class="equip-profile"><p class="profile-price">35 кредитов — TP 0<span class="orig">35 CREDITS – TP 0</span></p>
+<p>Fighter с фотоочками увеличивает значение X в правиле Visibility (X”) на 9” и может видеть сквозь дымовые облака, поставленные свойством Smoke. Кроме того, если во Fighter с фотоочками попадает оружие со свойством Flash, он получает модификатор −2 к проверке Initiative, чтобы не ослепнуть.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A Fighter equipped with photo-goggle increases the value of X in the Visibility (X”) rule by 9” and may see through smoke clouds placed as part of the Smoke trait. Additionally, if a Fighter equipped with photo-goggles is hit by a weapon with the Flash trait, they suffer a -2 modifier to their Initiative check to avoid being blinded.</p></details></p></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Respirator</span><span class="equip-price">15 cr</span></summary><div class="equip-profile"><p class="profile-price">15 кредитов — TP 0<span class="orig">15 CREDITS – TP 0</span></p>
+<p>Когда во Fighter с респиратором попадает оружие со свойством Gas, он получает непробиваемый спасбросок 5+ против этого оружия.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When a Fighter equipped with a respirator is hit by a weapon with the Gas trait, they gain a 5+ Invulnerable save against that weapon.</p></details></p></div></details></li>
+</ul>
+<h4>Аксессуары оружия<span class="orig">WEAPON ACCESSORIES</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Telescopic sight</span><span class="equip-price">20 cr</span></summary><div class="equip-profile"><p class="profile-price">20 кредитов — TP 1<span class="orig">20 CREDITS – TP 1</span></p>
+<p>Оружие с телескопическим прицелом снижает бонус модели к спасброску брони за укрытие на 1, пока цель в Long Range оружия.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A weapon fitted with a telescopic sight reduces the benefit a model gains to their Armour save for being in cover by 1 while within the weapon’s Long Range.</p></details></p></div></details></li>
+</ul>
+</div></details>
+<details class="fold fold-equip">
+<summary><span class="fold-title">Список снаряжения арантианцев<span class="orig">ARANTHIAN EQUIPMENT LIST</span></span><span class="fold-count">8 позиций</span></summary><div class="fold-body">
+<h4>Дальнобойное оружие<span class="orig">RANGED WEAPONS</span></h4>
+<h4>Арантианское оружие<span class="orig">ARANTHIAN WEAPONS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Aranthian-pattern meltagun</span><span class="equip-price">145 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Арантианское оружие<span class="orig">ARANTHIAN WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Aranthian-pattern meltagun</td><td>6”</td><td>12”</td><td>8</td><td>-4</td><td>3</td><td class="traits"><span class="trait">Ammo (5+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Damage (3)<span class="trait-tip">Раненая модель теряет X Wounds вместо одного. Число кубиков ранений всё равно равно Lethality оружия.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Aranthian-pattern plasma pistol</span><span class="equip-price">85 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Арантианское оружие<span class="orig">ARANTHIAN WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Aranthian-pattern plasma pistol</td><td>6”</td><td>12”</td><td>6</td><td>-2</td><td>2</td><td class="traits"><span class="trait">Ammo (5+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Damage (2)<span class="trait-tip">Раненая модель теряет X Wounds вместо одного. Число кубиков ранений всё равно равно Lethality оружия.</span></span>, <span class="trait">Light<span class="trait-tip">Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят.</span></span>, <span class="trait">Unstable<span class="trait-tip">Натуральная 1 на попадании: носитель получает автоматическое попадание этим профилем, другие модели не поражаются. Если броска попадания нет (Template) — сначала D6, как выше.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Оружие ближнего боя<span class="orig">CLOSE COMBAT WEAPONS</span></h4>
+<h4>Цепное оружие<span class="orig">CHAIN WEAPONS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Aranthian-pattern power fist</span><span class="equip-price">115 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Арантианское оружие<span class="orig">ARANTHIAN WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Aranthian-pattern power fist</td><td>E</td><td>-</td><td>S+3</td><td>-3</td><td>3</td><td class="traits"><span class="trait">Breaching (5+)<span class="trait-tip">Если атака ранит и бросок на ранение не меньше X, спасброски брони делать нельзя.</span></span>, <span class="trait">Concussive (5+)<span class="trait-tip">Если атака ранит и бросок на ранение не меньше X, цель снижает Initiative на 1 до конца следующей активации.</span></span>, <span class="trait">Damage (2)<span class="trait-tip">Раненая модель теряет X Wounds вместо одного. Число кубиков ранений всё равно равно Lethality оружия.</span></span>, <span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span>, <span class="trait">Unwieldy<span class="trait-tip">В ближнем бою Initiative модели ставится в 1 до любых модификаторов.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Power greatsword</span><span class="equip-price">60 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Арантианское оружие<span class="orig">ARANTHIAN WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Power greatsword</td><td>E</td><td>-</td><td>S+1</td><td>-2</td><td>2</td><td class="traits"><span class="trait">Breaching (6+)<span class="trait-tip">Если атака ранит и бросок на ранение не меньше X, спасброски брони делать нельзя.</span></span>, <span class="trait">Heavy<span class="trait-tip">Дальнобойное: только Braced Shot. Ближний бой: нельзя как Secondary и нельзя использовать Secondary вместе с ним.</span></span>, <span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span>, <span class="trait">Parry<span class="trait-tip">Как Primary или Secondary в схватке: +1 Save. Несколько таких оружий не складываются.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Снаряжение<span class="orig">WARGEAR</span></h4>
+<h4>Гранаты<span class="orig">GRENADES</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Seven-pointed breastplate</span><span class="equip-price">120 cr</span></summary><div class="equip-profile"><p class="profile-price">120 кредитов — Exclusive<span class="orig">120 credits – Exclusive</span></p>
+<p>Семиконечный нагрудник увеличивает характеристику Save носителя на 1.<span class="orig">The Seven-pointed breastplate increases the wearer’s Save characteristic by 1.</span></p></div></details></li>
+</ul>
+<h4>Личное снаряжение<span class="orig">PERSONAL EQUIPMENT</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Conduit of Ozostium</span><span class="equip-price">35 cr</span></summary><div class="equip-profile"><p class="profile-price">35 кредитов — Exclusive<span class="orig">35 credits – Exclusive</span></p>
+<p>Носитель получает подтип Wyrd и силу Wyrd Force Blast (см. Necromunda Skirmish Core Rulebook). Однако доступа к другим силам Wyrd он не получает.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">The bearer gains the Wyrd Subtype and the Force Blast Wyrd Power (see the Necromunda Skirmish Core Rulebook). However, they do not gain access to any other Wyrd Powers.</p></details></p></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Gloves of Ozostium</span><span class="equip-price">35 cr</span></summary><div class="equip-profile"><p class="profile-price">35 кредитов — Exclusive<span class="orig">35 credits – Exclusive</span></p>
+<p>Носитель получает подтип Wyrd и силу Wyrd Flaming Weapon (см. Necromunda Skirmish Core Rulebook). Однако доступа к другим силам Wyrd он не получает.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">The bearer gains the Wyrd Subtype and the Flaming Weapon Wyrd Power (see the Necromunda Skirmish Core Rulebook). However, they do not gain access to any other Wyrd Powers.</p></details></p></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Seven-pointed talisman</span><span class="equip-price">20 cr</span></summary><div class="equip-profile"><p class="profile-price">20 кредитов — Exclusive<span class="orig">20 credits – Exclusive</span></p>
+<p>Fighter в пределах 6” от носителя этого талисмана увеличивают характеристику Cool на 1.<span class="orig">Fighters within 6” of the bearer of this talisman increase their Cool characteristic by 1.</span></p></div></details></li>
+</ul>
+</div></details>
+<details class="fold fold-extra">
+<summary><span class="fold-title">Мутации<span class="orig">MUTATIONS</span></span><span class="fold-count">8 разделов</span></summary><div class="fold-body">
+<p>При добавлении в Gang Roster банды Mutant Outcast Fighter могут покупать Mutations из следующего списка:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When added to a Mutant Outcast gang’s Gang Roster, Fighters may purchase Mutations from the following list:</p></details></p>
+<h4>Пустотная душа<span class="orig">VOID SOUL</span></h4>
+<p>15 кредитов. Mutant не может быть целью сил Wyrd — хотя косвенный урон от сил Wyrd, например от телекинетически брошенных предметов или оружия, полученного с помощью сил Wyrd, всё ещё может ему навредить.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">15 credits The mutant cannot be targeted by Wyrd Powers –  though indirect damage from Wyrd Powers, such as telekinetically-thrown objects or weapons acquired by the use of Wyrd Powers, can still hurt them.</p></details></p>
+<h4>Лишняя конечность<span class="orig">EXTRA APPENDAGE</span></h4>
+<p>20 кредитов. Mutant увеличивает характеристику Attacks на 1. Кроме того, его можно экипировать четырьмя единицами оружия вместо трёх.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">20 credits The Mutant increases their Attacks characteristic by 1. In addition, they may be equipped with four weapons rather than three.</p></details></p>
+<h4>Ужасающая внешность<span class="orig">HORRIFIC APPEARANCE</span></h4>
+<p>15 кредитов. Mutant получает состояние Fearsome.<span class="orig">15 credits The Mutant is subject to the Fearsome Condition.</span></p>
+<h4>Массивные когти<span class="orig">MASSIVE CLAWS</span></h4>
+<p>35 кредитов. Mutant экипирован следующим оружием, которое не считается одним из разрешённых ему оружий:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">35 credits The Mutant is equipped with the following weapon, which does not count as one of their allowed weapons:</p></details></p>
+<div class="table-wrap"><table class="compact weapons">
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th></tr></thead><tbody>
+<tr><td class="wname">Massive claws</td><td>E</td><td>-</td><td>S+1</td><td>-1</td><td>1</td><td class="traits"><span class="trait">Breaching (6+)<span class="trait-tip">Если атака ранит и бросок на ранение не меньше X, спасброски брони делать нельзя.</span></span>, <span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span></td></tr>
+</tbody></table></div>
+<h4>Игольчатые шипы<span class="orig">NEEDLE SPINES</span></h4>
+<p>15 кредитов. Mutant с этой Mutation не может носить никакую броню или field armour, если только её нельзя сочетать с другой бронёй. Mutant увеличивает характеристику Save на 1 при разрешении попаданий, полученных в ближнем бою. Кроме того, раз за бой Mutant может выполнить действие «Огненные шипы»:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">15 credits A Mutant with this Mutation may not wear any armour or field armour unless it may be combined with other armours. The Mutant increases their Save characteristic by 1 when resolving Hits suffered in close combat. In addition, once per battle, the Mutant may perform the Fire Spines action:</p></details></p>
+<p><span class="term">Огненные шипы (одиночное):<span class="orig">Fire Spines (Single)</span></span> все остальные модели (друзья и враги) в пределах 3” от Mutant получают попадание Str -, AP -, L1 со свойством Toxin (3+). После выполнения этого действия Mutant больше не получает бонус к характеристике Save от этой Mutation до конца боя.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">All other models (friend and foe), within 3” of the Mutant suffer a Str -, AP -, L1 Hit with the Toxin (3+) trait. After this action has been performed, the Mutant gains no further bonus to their Save characteristic from this Mutation for the remainder of the battle.</p></details></p>
+<h4>Щупальца<span class="orig">TENTACLES</span></h4>
+<p>10 кредитов. Mutant может перебрасывать проваленные проверки Agility.<span class="orig">10 credits The Mutant may re-roll failed Agility tests.</span></p>
+<h4>Ядовитая кровь<span class="orig">TOXIC BLOOD</span></h4>
+<p>15 кредитов. Когда этот mutant получает неспасённую рану (Wound), немедленно сделайте проверку Agility для всех остальных Fighter (друзей и врагов) в пределах 1" от Mutant. Провалившие проверку получают попадание Str -, AP -, L1 со свойством Toxin (3+).<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">15 credits When this mutant suffers an unsaved Wound, immediately make an Agility test for all other Fighters (friend or foe) within 1" of the Mutant. Those that fail the test suffer a Str -, AP -, L1 Hit with the Toxin (3+) trait.</p></details></p>
+<h4>Перепонки крыльев<span class="orig">WING MEMBRANES</span></h4>
+<p>20 кредитов. Mutant автоматически проходит проверку Agility, чтобы перепрыгнуть расстояние до своей характеристики Movement, и при проверке прыжка вниз.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">20 credits The Mutant automatically passes the Agility test to leap distances up to their Movement characteristic and when testing to jump down.</p></details></p>
+</div></details>
+<a class="top-link" href="#top">Наверх</a>
+</section>
+</main>
+</div>
+
+<footer class="page-footer">
+    <p>Справочник собран из Gangs of the Underhive &amp; Outlands (Правила/GANGS0_3.pdf).
+    Русский текст — для игры за столом; английский оригинал спрятан под спойлером «Оригинал» или дан короткой подписью рядом.</p>
+    <p><a class="backlink" href="../../">&larr; На главную</a></p>
+    <a class="top-link" href="#top">Наверх</a>
+</footer>
+
+<script src="../handbook-search.js"></script>
+
+</body>
+</html>

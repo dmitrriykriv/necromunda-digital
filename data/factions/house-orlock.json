@@ -305,9 +305,23 @@
       },
       "rules": [
         "Длина поводка: у Cyber-Mastiff длина поводка (Leash range) 3”.",
-        "Верный защитник: вражеские Fighter не могут выполнить действие Coup de Grâce против владельца этого Pet, пока этот Fighter в пределах его Leash range.ОригиналEnemy Fighters cannot perform a Coup de Grâce action against this Pet’s owner while this Fighter is within its Leash range.",
-        "Спуск (одиночное): Fighter сдвигается до 3” по горизонтали и до 12” по вертикали. Любое вертикальное движение должно быть вниз, то есть к земле.ОригиналThe Fighter makes a move of up to 3” horizontally and up to 12” vertically. Any vertical movement must be downwards, i.e., towards the ground.",
-        "Опасное снаряжение: пользоваться jump booster небезрискованно — особенно когда владелец пытается стрелять огнемётами или кидать гранаты. Чтобы отразить эту опасность, в любой активации, в которой Fighter с jump booster включает его, любые гранаты и оружие со свойством Template также получают свойство Unstable. Как только активация Fighter заканчивается, это правило перестаёт действовать.ОригиналUsing a jump booster is not without its risks, and this is never more true than when the user is attempting to use flame weapons or lob grenades. To represent this added danger, during any activation in which a Fighter equipped with a jump booster activates it, any grenades or weapons with the Template trait will also gain the Unstable trait. Once the Fighter’s activation ends, this rule ceases to apply."
+        "Верный защитник: вражеские Fighter не могут выполнить действие Coup de Grâce против владельца этого Pet, пока этот Fighter в пределах его Leash range."
+      ],
+      "weapons": [
+        {
+          "name": "Savage bite",
+          "sr": "E",
+          "lr": "-",
+          "str": "S",
+          "ap": "-2",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            }
+          ]
+        }
       ]
     }
   ],

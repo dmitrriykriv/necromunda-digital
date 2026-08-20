@@ -236,6 +236,8 @@ body {
 .sidebar {
     position: sticky;
     top: 0;
+    align-self: start;
+    height: 100vh;
     max-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -246,10 +248,9 @@ body {
 }
 
 .sidebar nav {
-    overflow-y: auto;
-    flex: 1 1 auto;
-    min-height: 0;
-    padding-bottom: 40px;
+    overflow: visible;
+    flex: none;
+    padding-bottom: 16px;
     scrollbar-width: thin;
     scrollbar-color: var(--line) transparent;
 }
@@ -329,10 +330,38 @@ body {
     border-radius: 0 4px 4px 0;
 }
 
-.sidebar li a:hover {
+.sidebar li a:hover,
+.sidebar li a.is-current {
     color: var(--accent-soft);
     background: var(--accent-dim);
     border-left-color: var(--accent);
+}
+
+.sidebar li a.is-current {
+    color: var(--accent);
+}
+
+.sidebar-index {
+    margin: 0 0 12px;
+    padding: 0 0 12px;
+    border-bottom: 1px solid var(--line);
+}
+
+.sidebar-index a {
+    display: block;
+    padding: 6px 8px;
+    font-size: 0.82rem;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.sidebar-index a:hover,
+.sidebar-index.is-current a {
+    color: var(--accent);
+    background: var(--accent-dim);
 }
 
 .sidebar li a .en {
@@ -344,11 +373,22 @@ body {
 
 .sidebar > .toc-drawer {
     border-bottom: none;
-    flex: 1 1 auto;
+    flex: 1 1 0%;
     min-height: 0;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    scrollbar-color: var(--line) transparent;
+}
+
+.sidebar > .toc-drawer::-webkit-scrollbar {
+    width: 8px;
+}
+
+.sidebar > .toc-drawer::-webkit-scrollbar-thumb {
+    background: var(--line);
+    border-radius: 4px;
 }
 
 .sidebar > .toc-drawer > .toc-toggle {
@@ -559,6 +599,73 @@ body {
 
 .content a {
     color: var(--accent-soft);
+}
+
+.gang-index {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.gang-index-lede {
+    color: var(--text-dim);
+    margin: 0 0 28px;
+}
+
+.gang-index .home-section-title {
+    font-size: 0.78rem;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 16px;
+    padding: 0;
+    border: none;
+}
+
+.gang-index .home-section-title .en {
+    display: inline;
+    margin-left: 8px;
+    font-size: 0.72rem;
+    letter-spacing: 1.4px;
+    color: var(--text-faint);
+}
+
+.gang-index .home-cards {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px;
+}
+
+.gang-index .home-card {
+    color: var(--text);
+    padding: 20px 20px 16px;
+}
+
+.gang-index .home-card:hover {
+    color: var(--text);
+}
+
+.gang-index .home-card h3 {
+    font-size: 1.15rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin: 8px 0 12px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--accent);
+}
+
+.gang-index .home-card h3 .en {
+    display: block;
+    font-size: 0.7rem;
+    letter-spacing: 1.6px;
+    color: var(--text-faint);
+    margin-top: 4px;
+    font-weight: 400;
+}
+
+.gang-index .home-card > p {
+    color: var(--text-dim);
+    font-size: 0.88rem;
+    margin-bottom: 12px;
 }
 
 /* ---------- Таблицы ---------- */
@@ -1189,7 +1296,11 @@ details.fold[open] > summary .fold-title::before {
 }
 
 .fold-fighters > summary .fold-title,
-.fold-gear > summary .fold-title {
+.fold-gear > summary .fold-title,
+.fold-innate > summary .fold-title,
+.fold-wyrd > summary .fold-title,
+.fold-variant > summary .fold-title,
+.fold-extra > summary .fold-title {
     color: var(--accent);
 }
 
@@ -1791,6 +1902,7 @@ ul.rule-list li.sub {
         position: sticky;
         top: 0;
         z-index: 30;
+        height: auto;
         max-height: none;
         overflow: visible;
         border-right: none;

@@ -4,6 +4,7 @@ import {
   findType,
   isWeaponItem,
   skillLabel,
+  splitNamedRule,
   uniqueTraits,
   visibleProfiles,
   type EquipmentDef,
@@ -27,7 +28,8 @@ export function PrintFighterCard({
 }) {
   const type = findType(catalog, fighter.type);
   const gear = fighter.equipment.filter((item) => item.name);
-  const allProfiles: WeaponProfile[] = [];
+  const innate = type?.weapons ?? [];
+  const allProfiles: WeaponProfile[] = [...innate];
   const gearBlocks = gear.map((item) => {
     const def = findGear(catalog, item.name);
     const extras = item.extras ?? [];
@@ -65,6 +67,13 @@ export function PrintFighterCard({
         <p className="print-empty">Профиль характеристик для этого типа не найден в каталоге.</p>
       ) : null}
 
+      {innate.length > 0 ? (
+        <section className="print-section">
+          <h3>Встроенное оружие</h3>
+          <WeaponProfileTable profiles={innate} variant="print" />
+        </section>
+      ) : null}
+
       {fighter.skills.length > 0 && (
         <section className="print-section">
           <h3>Навыки</h3>
@@ -85,11 +94,17 @@ export function PrintFighterCard({
       {type?.rules?.length ? (
         <section className="print-section">
           <h3>Особые правила</h3>
-          <ul className="print-rules">
-            {type.rules.map((rule) => (
-              <li key={rule}>{rule}</li>
-            ))}
-          </ul>
+          <dl className="print-traits">
+            {type.rules.map((rule) => {
+              const { title, text } = splitNamedRule(rule);
+              return (
+                <div key={rule}>
+                  <dt>{title}</dt>
+                  {text ? <dd>{text}</dd> : null}
+                </div>
+              );
+            })}
+          </dl>
         </section>
       ) : null}
 

@@ -45,7 +45,7 @@
         ]
       },
       "rules": [
-        "Адепт культа: Genestealer Cult Adept имеет подтип Wyrd и считает Genestealer Cult Wyrd Powers своим Primary Skill Set.ОригиналA Genestealer Cult Adept has the Wyrd Subtype and treats the Genestealer Cult Wyrd Powers as a Primary Skill Set."
+        "Адепт культа: Genestealer Cult Adept имеет подтип Wyrd и считает Genestealer Cult Wyrd Powers своим Primary Skill Set."
       ]
     },
     {
@@ -90,7 +90,32 @@
         ]
       },
       "rules": [
-        "Гибрид раннего поколения: Genestealer Cult Alpha получает правило Extra Arm."
+        "Гибрид раннего поколения: Genestealer Cult Alpha получает правило Extra Arm.",
+        "Дополнительная рука: этот вариант доступен некоторым Fighter в банде культа генокрадов и указан в записи Fighter. Fighter с этой способностью считает действие Braced Shot одиночным действием вместо двойного. Кроме того, этот Fighter может нести четыре единицы оружия вместо обычных трёх и всегда считается вооружённым оружием clawed arm (оно не занимает одно из разрешённых оружий)"
+      ],
+      "weapons": [
+        {
+          "name": "Clawed arm",
+          "sr": "E",
+          "lr": "-",
+          "str": "S",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Additional Attacks (1)",
+              "text": "Оружие даёт X атак в ближнем бою сверх обычных. Только во время активации модели и только если оружие не назначено Primary или Secondary."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Rending (6+)",
+              "text": "Если натуральный бросок на ранение не меньше X, AP этой атаки увеличивается на 1."
+            }
+          ]
+        }
       ]
     },
     {
@@ -135,7 +160,7 @@
         ]
       },
       "rules": [
-        "Смешанные поколения: по умолчанию Genestealer Cult Hybrid Acolyte принадлежит к позднему поколению. При добавлении в Gang Roster его можно назначить ранним поколением за +20 кредитов. Если он раннего поколения, он получает правило Extra Arm.ОригиналBy default, a Genestealer Cult Hybrid Acolyte belongs to a later generation. When added to a Gang Roster, they can be designated as belonging to an early generation for the cost of +20 credits. If they belong to an early generation, they gain the Extra Arm rule."
+        "Смешанные поколения: по умолчанию Genestealer Cult Hybrid Acolyte принадлежит к позднему поколению. При добавлении в Gang Roster его можно назначить ранним поколением за +20 кредитов. Если он раннего поколения, он получает правило Extra Arm."
       ]
     },
     {
@@ -181,7 +206,7 @@
         ]
       },
       "rules": [
-        "Смешанные поколения: по умолчанию Genestealer Cult Neophyte Hybrid принадлежит к позднему поколению. При добавлении в Gang Roster его можно назначить ранним поколением за +20 кредитов. Если он раннего поколения, он получает правило Extra Arm.ОригиналBy default, a Genestealer Cult Neophyte Hybrid belongs to a later generation. When added to a Gang Roster, they can be designated as belonging to an early generation for the cost of +20 credits. If they belong to an early generation, they gain the Extra Arm rule."
+        "Смешанные поколения: по умолчанию Genestealer Cult Neophyte Hybrid принадлежит к позднему поколению. При добавлении в Gang Roster его можно назначить ранним поколением за +20 кредитов. Если он раннего поколения, он получает правило Extra Arm."
       ]
     },
     {
@@ -271,7 +296,7 @@
         ]
       },
       "rules": [
-        "Смешанные поколения: по умолчанию Genestealer Cult Hybrid Initiate принадлежит к позднему поколению. При добавлении в Gang Roster его можно назначить ранним поколением за +20 кредитов. Если он раннего поколения, он получает правило Extra Arm.ОригиналBy default, a Genestealer Cult Hybrid Initiate belongs to a later generation. When added to a Gang Roster, they can be designated as belonging to an early generation for the cost of +20 credits. If they belong to an early generation, they gain the Extra Arm rule."
+        "Смешанные поколения: по умолчанию Genestealer Cult Hybrid Initiate принадлежит к позднему поколению. При добавлении в Gang Roster его можно назначить ранним поколением за +20 кредитов. Если он раннего поколения, он получает правило Extra Arm."
       ]
     },
     {
@@ -317,6 +342,38 @@
       },
       "rules": [
         "Навыки: у Genestealer Cult Abominant есть навык Unstoppable."
+      ],
+      "weapons": [
+        {
+          "name": "Power sledgehammer",
+          "sr": "E",
+          "lr": "-",
+          "str": "S+1",
+          "ap": "-1",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Breaching (5+)",
+              "text": "Если атака ранит и бросок на ранение не меньше X, спасброски брони делать нельзя."
+            },
+            {
+              "name": "Damage (2)",
+              "text": "Раненая модель теряет X Wounds вместо одного. Число кубиков ранений всё равно равно Lethality оружия."
+            },
+            {
+              "name": "Heavy",
+              "text": "Дальнобойное: только Braced Shot. Ближний бой: нельзя как Secondary и нельзя использовать Secondary вместе с ним."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Unwieldy",
+              "text": "В ближнем бою Initiative модели ставится в 1 до любых модификаторов."
+            }
+          ]
+        }
       ]
     },
     {
@@ -363,12 +420,9 @@
       },
       "rules": [
         "Длина поводка: у Psychic Familiar длина поводка (Leash range) 3”.",
-        "Знамение удачи: Psychic Familiar чует беду и предупреждает спутника вспышкой предвидения. Пока он в пределах Leash range от владельца, у владельца есть непробиваемый спасбросок 4+.ОригиналA Psychic Familiar is able to sense bad fortune and forewarn their companion, giving them a flash of precognition. While they are within Leash range of their owner, their owner has a 4+ Invulnerable save.",
-        "Предвидение: дар предвидения Psychic Familiar позволяет уклоняться почти от любых атак, кроме самых неожиданных. Это мощное предвидение даёт непробиваемый спасбросок 4+.ОригиналThe gift of foresight possessed by a Psychic Familiar enables it to dodge and evade all but the most unexpected of attacks. This tremendous precognition grants them a 4+ Invulnerable save.",
-        "Навыки: у Psychic Familiar есть навыки Catfall и Clamber.",
-        "Повышение Leader до Wyrd: Leader порченной культом генокрадов банды можно повысить до Wyrd за +35 кредитов. Эта стоимость либо оплачивается во время Post-cycle Sequence и требует, чтобы Leader отказался от любых пост-цикловых действий и не был In Recovery, либо может быть выбрана при добавлении в Gang Roster. После повышения Leader получает подтип Wyrd и может использовать одну силу Wyrd из списка сил Wyrd культа генокрадов. Далее новые силы Wyrd порченной культом генокрадов банды считаются одним из его Primary Skill Sets.ОригиналThe Leader of a Genestealer Cult Corrupted Gang can be upgraded to become a Wyrd for +35 credits. This cost is either paid during the Post-cycle Sequence and requires the Leader to forgo any Post-cycle Actions and to not be In Recovery, or it may be selected when they are added to the Gang Roster. Once the Leader has been upgraded, they gain the Wyrd Subtype and can use a single Wyrd power from the Genestealer Cult Wyrd Powers list. Thereafter, they count new Genestealer Cult Corrupted Gang Wyrd Powers as one of their Primary Skill Sets.",
-        "Psychic Familiars: Leaders и Champions в Genestealer Cult Corrupted Gangs могут быть экипированы не более чем одним Psychic Familiar каждый.ОригиналLeaders and Champions in Genestealer Cult Corrupted Gangs can be equipped with up to one Psychic Familiar each.",
-        "Prospects ранних поколений: Genestealer Cult Corrupted Gang может дать любым Prospects правило Extra Arm за +20 кредитов при добавлении в Gang Roster.ОригиналGenestealer Cult Corrupted Gang may give any Prospects the Extra Arm rule for a cost of +20 credits when they are added to the Gang Roster."
+        "Знамение удачи: Psychic Familiar чует беду и предупреждает спутника вспышкой предвидения. Пока он в пределах Leash range от владельца, у владельца есть непробиваемый спасбросок 4+.",
+        "Предвидение: дар предвидения Psychic Familiar позволяет уклоняться почти от любых атак, кроме самых неожиданных. Это мощное предвидение даёт непробиваемый спасбросок 4+.",
+        "Навыки: у Psychic Familiar есть навыки Catfall и Clamber."
       ]
     }
   ],

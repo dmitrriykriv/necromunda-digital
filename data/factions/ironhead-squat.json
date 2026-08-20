@@ -300,8 +300,88 @@
         ]
       },
       "rules": [
-        "Комплект сенсоров: Ironhead Squat Vartijan Exo-Driller считает правило Visibility (X”) на 3” больше, чем оно есть.ОригиналAn Ironhead Squat Vartijan Exo-Driller treats the Visibility (X”) rule as being 3” higher than it is.",
+        "Комплект сенсоров: Ironhead Squat Vartijan Exo-Driller считает правило Visibility (X”) на 3” больше, чем оно есть.",
         "Навыки: у Ironhead Squat Vartijan Exo-Driller есть навык Bulging Biceps."
+      ],
+      "weapons": [
+        {
+          "name": "Power fist",
+          "sr": "E",
+          "lr": "-",
+          "str": "S+3",
+          "ap": "-3",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Breaching (6+)",
+              "text": "Если атака ранит и бросок на ранение не меньше X, спасброски брони делать нельзя."
+            },
+            {
+              "name": "Concussive (5+)",
+              "text": "Если атака ранит и бросок на ранение не меньше X, цель снижает Initiative на 1 до конца следующей активации."
+            },
+            {
+              "name": "Damage (2)",
+              "text": "Раненая модель теряет X Wounds вместо одного. Число кубиков ранений всё равно равно Lethality оружия."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Unwieldy",
+              "text": "В ближнем бою Initiative модели ставится в 1 до любых модификаторов."
+            }
+          ]
+        },
+        {
+          "name": "Ironhead heavy flamer*",
+          "sr": "T",
+          "lr": "-",
+          "str": "5",
+          "ap": "-2",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (6+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blaze (5+)",
+              "text": "Если бросок на ранение не меньше X, цель получает ещё одно попадание тем же профилем. Оно бросается на ранение отдельно и не вызывает новых дополнительных попаданий."
+            },
+            {
+              "name": "Rapid Fire (1)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            },
+            {
+              "name": "Template",
+              "text": "Каплевидный шаблон от стреляющего через цель: все под ним получают автоматическое попадание. С Light в ближнем бою — одно автоматическое попадание без шаблона. С Rapid Fire (X) ближайшая модель получает попадания по кубику огневой мощи, остальные — по одному."
+            }
+          ]
+        },
+        {
+          "name": "Seismic crusher",
+          "sr": "T",
+          "lr": "-",
+          "str": "2",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (6+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Breaching (5+)",
+              "text": "Если атака ранит и бросок на ранение не меньше X, спасброски брони делать нельзя."
+            },
+            {
+              "name": "Template",
+              "text": "Каплевидный шаблон от стреляющего через цель: все под ним получают автоматическое попадание. С Light в ближнем бою — одно автоматическое попадание без шаблона. С Rapid Fire (X) ближайшая модель получает попадания по кубику огневой мощи, остальные — по одному."
+            }
+          ]
+        }
       ]
     },
     {
@@ -396,7 +476,27 @@
       },
       "rules": [
         "Длина поводка: у Techmite Oculi длина поводка (Leash range) 12”.",
-        "Целеуказание: пока хотя бы один Techmite Oculi в пределах 6” от вражеского Fighter, его владелец считается стреляющим на короткой дистанции при расчёте бонусов за укрытие.ОригиналWhile at least one Techmite Oculi is within 6” of an enemy Fighter, its owner counts as firing at short range for the purposes of calculating cover bonuses."
+        "Целеуказание: пока хотя бы один Techmite Oculi в пределах 6” от вражеского Fighter, его владелец считается стреляющим на короткой дистанции при расчёте бонусов за укрытие."
+      ],
+      "weapons": [
+        {
+          "name": "Pincers",
+          "sr": "E",
+          "lr": "-",
+          "str": "S",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Paired (2)",
+              "text": "Нельзя как Secondary и нельзя Secondary вместе с ним. Как Primary: носитель увеличивает Attacks на X."
+            }
+          ]
+        }
       ]
     },
     {
@@ -440,10 +540,95 @@
           "7"
         ]
       },
-      "rules": [
-        "Лёгкая: лёгкая панцирная броня улучшает характеристику Save Fighter на 1. Кроме того, он снижает характеристику Initiative на 1.ОригиналLight carapace armour improves a Fighter’s Save characteristic by 1. In addition, they reduce their Initiative characteristic by 1.",
-        "Тяжёлая: тяжёлая панцирная броня улучшает характеристику Save Fighter на 2. Кроме того, он снижает характеристику Initiative на 2 и применяет модификатор −1 ко всем тестам Agility.ОригиналHeavy carapace armour improve’s a Fighter’s Save characteristic by 2. In addition, they reduce their Initiative characteristic by 2 and apply a -1 modifier to all Agility tests they make.",
-        "Спуск (одиночное): Fighter сдвигается до 3” по горизонтали и до 12” по вертикали. Любое вертикальное движение должно быть вниз, то есть к земле.ОригиналThe Fighter makes a move of up to 3” horizontally and up to 12” vertically. Any vertical movement must be downwards, i.e., towards the ground."
+      "weapons": [
+        {
+          "name": "Skalvian flamer",
+          "sr": "T",
+          "lr": "-",
+          "str": "4",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (6+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Arc (Front)",
+              "text": "Ограниченные сектора обстрела, обозначенные X. Целиться можно только в модели в этом секторе."
+            },
+            {
+              "name": "Blaze (5+)",
+              "text": "Если бросок на ранение не меньше X, цель получает ещё одно попадание тем же профилем. Оно бросается на ранение отдельно и не вызывает новых дополнительных попаданий."
+            },
+            {
+              "name": "Template",
+              "text": "Каплевидный шаблон от стреляющего через цель: все под ним получают автоматическое попадание. С Light в ближнем бою — одно автоматическое попадание без шаблона. С Rapid Fire (X) ближайшая модель получает попадания по кубику огневой мощи, остальные — по одному."
+            }
+          ]
+        },
+        {
+          "name": "Skalvian heavy stubber",
+          "sr": "20”",
+          "lr": "40”",
+          "str": "4",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Rapid Fire (2)",
+              "text": "Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают."
+            },
+            {
+              "name": "Reliable",
+              "text": "Игнорирует первый символ Out of Ammo за раунд на кубике огневой мощи."
+            }
+          ]
+        },
+        {
+          "name": "Ironhead claw",
+          "sr": "E",
+          "lr": "-",
+          "str": "S",
+          "ap": "-1",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Additional Attacks (2)",
+              "text": "Оружие даёт X атак в ближнем бою сверх обычных. Только во время активации модели и только если оружие не назначено Primary или Secondary."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Unwieldy",
+              "text": "В ближнем бою Initiative модели ставится в 1 до любых модификаторов."
+            }
+          ]
+        },
+        {
+          "name": "Skalvian hull",
+          "sr": "E",
+          "lr": "-",
+          "str": "S",
+          "ap": "-2",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Damage (2)",
+              "text": "Раненая модель теряет X Wounds вместо одного. Число кубиков ранений всё равно равно Lethality оружия."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Ram",
+              "text": "Можно использовать только в активации, когда носитель выполнил Charge."
+            }
+          ]
+        }
       ]
     }
   ],
@@ -1761,7 +1946,7 @@
       "slots": 0,
       "category": "MOUNTS",
       "list": "IRONHEAD SQUAT",
-      "description": "Fighter с Svenotar Scout Trike получает подтип Mounted и ставит характеристику Movement на 8”. Когда он выполняет действие Dash, он добавляет 5” к характеристике Movement вместо Initiative. Svenotar Scout Trike экипирован Svenotar autogun и может взять любой из следующих вариантов при добавлении в банду или в любой пост-цикловой последовательности. • Заменить Svenotar autogun на Svenotar boltgun.......+35 кредитов • Заменить Svenotar autogun на Svenotar meltagun.....+70 кредитов"
+      "description": "Fighter с Svenotar Scout Trike получает подтип Mounted и ставит характеристику Movement на 8”. Когда он выполняет действие Dash, он добавляет 5” к характеристике Movement вместо Initiative. Svenotar Scout Trike экипирован Svenotar autogun и может взять любой из следующих вариантов при добавлении в банду или в любой пост-цикловой последовательности. • Replace the Svenotar autogun with a Svenotar boltgun.......+35 credits • Replace the Svenotar autogun with a Svenotar meltagun.....+70 credits"
     },
     {
       "name": "Techmite Exovator",

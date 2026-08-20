@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Собирает gangs.html из текста, извлечённого из Правила/GANGS0_3.pdf.
+"""Собирает страницы банд из текста, извлечённого из Правила/GANGS0_3.pdf.
 
+Каталог — pages/gangs.html (карточки). Каждая банда — pages/gangs/<slug>.html.
 Разбор опирается на регулярную структуру исходника: каждая банда начинается
 с заголовка "<NAME> GANG LIST", далее идут особые правила, таблица доступа к
 навыкам, карточки бойцов, список снаряжения и профили оружия.
@@ -21,6 +22,7 @@ PAGES = ROOT / 'pages'
 RAW = TOOLS / 'gangs_raw.txt'
 CORE_RAW = TOOLS / 'rules_raw.txt'
 OUT = PAGES / 'gangs.html'
+GANGS_DIR = PAGES / 'gangs'
 
 # ---------------------------------------------------------------- банды
 
@@ -55,7 +57,8 @@ GROUPS = [
 
 # ---------------------------------------------------------------- шаблоны
 
-FIGHTER_HEAD = re.compile(r'^([A-Z0-9][A-Z0-9\u2019\'&\-\.\*/ ]+?)\s+(\d+)\s+CREDITS$')
+FIGHTER_HEAD = re.compile(
+    r'^([A-Z0-9][A-Z0-9\u2018\u2019\'&\-\.\*/ ]+?)\s+(\d+)\s+CREDITS$')
 STAT_A1 = re.compile(r'^M\s+WS\s+BS\s+S\s+T\s+W\s+I\s+A\s+Sv$')
 STAT_A2 = re.compile(r'^Ld\s+Cl\s+Wil\s+Int\s+Type\s+Starting XP$')
 STAT_B = re.compile(r'^M\s+WS\s+BS\s+S\s+T\s+W\s+I\s+A\s+Sv\s+Ld\s+Cl\s+Wil\s+Int\s+Starting XP$')
@@ -577,14 +580,27 @@ def parse_section(lines):
 
 
 def join_wrapped(lines):
-    """Склеивает перенесённые строки в абзацы."""
+    """Склеивает перенесённые строки в абзацы.
+
+    Пункты с ценой («• rad gun........+35 credits») не сливаются: в PDF они
+    часто без точки в конце, и старое правило склеивало весь список в один абзац.
+    """
     out = []
     for line in lines:
-        if out and not out[-1].endswith(('.', ':', '!', '?')) or \
-                (out and line[:1].islower()):
-            out[-1] += ' ' + line
+        s = line.strip()
+        if not s:
+            continue
+        starts_item = bool(BULLET.match(s))
+        if starts_item and out:
+            out.append(s)
+            continue
+        if out and EQUIP_ROW.match(out[-1]) and not s[:1].islower():
+            out.append(s)
+            continue
+        if out and (not out[-1].endswith(('.', ':', '!', '?')) or s[:1].islower()):
+            out[-1] += ' ' + s
         else:
-            out.append(line)
+            out.append(s)
     return out
 
 
@@ -919,7 +935,7 @@ def trait_glossary():
 
 
 def render_traits(raw):
-    """Каждое известное свойство — подсказка по наведению, без JavaScript."""
+    """Каждое известное свойство — скрытый текст для всплывающей подсказки."""
     if not raw or raw.strip() in ('-', '–', '—', '*'):
         return esc(raw)
     glossary = trait_glossary()
@@ -1039,7 +1055,20 @@ def render_equipment(items, stores):
     return '\n'.join(out)
 
 
-def render_fighter(f, prefix=''):
+def render_priced_options(lines, stores):
+    """Пункты «название........+N credits» на карточке бойца — как в списке покупок."""
+    items = []
+    for line in lines:
+        em = EQUIP_ROW.match(line)
+        if not em:
+            return None
+        items.append({'name': em.group(1).strip(),
+                      'price': em.group(2) + em.group(3),
+                      'sub': False})
+    return render_equipment(items, stores)
+
+
+def render_fighter(f, prefix='', stores=()):
     out = ['<details class="fighter" id="%s">' % fighter_id(prefix, f['name'])]
     out.append('<summary class="fighter-head">')
     out.append('<h4 class="fighter-name">%s</h4>' % esc(f['name']))
@@ -1070,8 +1099,18 @@ def render_fighter(f, prefix=''):
         out.append('<tr>%s</tr>' % ''.join('<td>%s</td>' % esc(c) for c in cells))
     out.append('</tbody></table></div>')
 
-    for rule in f['rules']:
-        out.append(render_paragraph(rule))
+    i = 0
+    rules = f['rules']
+    while i < len(rules):
+        if EQUIP_ROW.match(rules[i]):
+            group = []
+            while i < len(rules) and EQUIP_ROW.match(rules[i]):
+                group.append(rules[i])
+                i += 1
+            out.append(render_priced_options(group, stores))
+            continue
+        out.append(render_paragraph(rules[i]))
+        i += 1
     out.append('</div></details>')
     return '\n'.join(out)
 
@@ -1105,30 +1144,140 @@ def equipment_region(blocks, start):
 
 
 GEAR_PRICE = re.compile(r'^(\+?\d+\s*credits?|Exclusive)\b', re.I)
+EXTRA_WYRD = re.compile(r'(WYRD POWERS|PSYCHOTERIC WHISPERS)$', re.I)
+EXTRA_VARIANT = re.compile(r'CORRUPTED GANGS$', re.I)
+EXTRA_MUTATIONS = re.compile(r'^MUTATIONS$', re.I)
 
 
-def count_gear_entries(blocks, start, end):
-    """Профили в блоке экипировки: таблицы оружия и описания с ценой."""
-    total = 0
-    for i in range(start, end):
-        kind, payload = blocks[i]
-        if kind == 'weapons':
-            total += 1
-        elif kind == 'heading' and i + 1 < end:
-            nxt_kind, nxt = blocks[i + 1]
-            if nxt_kind == 'prose' and GEAR_PRICE.match(nxt.strip()):
-                total += 1
-    return total
+def extra_fold_class(text):
+    """Отдельный fold для правил, которые не являются магазином снаряжения."""
+    if EXTRA_WYRD.search(text):
+        return 'fold-wyrd'
+    if EXTRA_VARIANT.search(text):
+        return 'fold-variant'
+    if EXTRA_MUTATIONS.search(text):
+        return 'fold-extra'
+    return None
+
+
+def leftover_remainder_title(blocks, start, end):
+    """Заголовок для хвоста, который не является встроенным оружием."""
+    parts = []
+    for idx in range(start, end):
+        kind, payload = blocks[idx]
+        if kind == 'heading':
+            parts.append(payload['text'])
+        elif kind == 'prose':
+            parts.append(payload)
+    blob = ' '.join(parts)
+    if re.search(r'Tier \d+\s+Augmentation|HUNTING RIG', blob, re.I):
+        return 'Аугментации'
+    if re.search(r'FIGHTER ONLY', blob, re.I):
+        return 'Особые правила'
+    return 'Уникальное снаряжение'
+
+
+def shop_keys_from_blocks(blocks):
+    keys = set()
+    for kind, payload in blocks:
+        if kind != 'equipment':
+            continue
+        for item in payload:
+            keys.update(item_variants(item['name']))
+    return keys
+
+
+def name_in_shop(name, shop_keys):
+    return any(variant in shop_keys for variant in item_variants(name))
+
+
+def leftover_weapon_payload(payload, shop_keys):
+    """Строки профилей, которых нет в списке покупок.
+
+    В хвосте PDF часто одна таблица смешивает Exclusive-оружие из магазина
+    (las carbine у Ван Саар) и настоящее оружие модели (twin-linked heavy
+    las carbine у Arachni-Rig). Магазинные строки убираем, чтобы блок
+    «Встроенное оружие» не дублировал список покупок.
+    """
+    kept = []
+    dropping = False
+    for row in payload.get('rows', []):
+        name = row.get('name', '').strip()
+        is_sub = bool(name.startswith('-') or COMPONENT.match(name))
+        if not is_sub:
+            dropping = bool(name) and name_in_shop(name, shop_keys)
+        if not dropping:
+            kept.append(row)
+    if not kept:
+        return None
+    filtered = dict(payload)
+    filtered['rows'] = kept
+    return filtered
+
+
+def leftover_skip(blocks, start, shop_keys):
+    """Дубли магазинных профилей и описаний — не показывать второй раз."""
+    skip = set()
+    n = len(blocks)
+    extra_at = next((i for i in range(start, n)
+                     if blocks[i][0] == 'heading'
+                     and extra_fold_class(blocks[i][1]['text'])), n)
+    idx = start
+    while idx < extra_at:
+        kind, payload = blocks[idx]
+        if kind == 'heading' and extra_fold_class(payload['text']):
+            idx += 1
+            continue
+        if kind == 'weapons' and leftover_weapon_payload(payload, shop_keys) is None:
+            skip.add(idx)
+            idx += 1
+            continue
+        if kind == 'heading' and name_in_shop(payload['text'], shop_keys):
+            skip.add(idx)
+            nxt = idx + 1
+            while nxt < extra_at:
+                other_kind, other = blocks[nxt]
+                if other_kind == 'heading':
+                    break
+                skip.add(nxt)
+                nxt += 1
+            idx = nxt
+            continue
+        idx += 1
+
+    changed = True
+    while changed:
+        changed = False
+        for idx in range(start, extra_at):
+            kind, payload = blocks[idx]
+            if kind != 'heading' or idx in skip or extra_fold_class(payload['text']):
+                continue
+            level = payload.get('level', 4)
+            children = []
+            nxt = idx + 1
+            while nxt < extra_at:
+                other_kind, other = blocks[nxt]
+                if other_kind == 'heading' and other.get('level', 4) <= level:
+                    break
+                if other_kind == 'heading' and extra_fold_class(other['text']):
+                    break
+                children.append(nxt)
+                nxt += 1
+            if not children or all(child in skip for child in children):
+                skip.add(idx)
+                changed = True
+    return skip
 
 
 def plan_regions(blocks):
     """Границы сворачиваемых блоков раздела, по индексу первого блока.
 
-    Порядок в исходнике всегда один: карточки бойцов, списки снаряжения,
-    профили клановой экипировки. Поэтому границы задаются первым бойцом и
-    списками снаряжения, а всё после последнего списка — экипировка.
+    После списков снаряжения дубли профилей скрываются, а виарды и порченные
+    банды выносятся в отдельные fold.
+    Возвращает (regions, skip, leftover, shop_keys).
     """
     regions = {}
+    skip = set()
 
     equips = []
     for idx, (kind, payload) in enumerate(blocks):
@@ -1164,18 +1313,68 @@ def plan_regions(blocks):
             'count': '%d %s' % (cnt, plural(cnt, 'позиция', 'позиции',
                                             'позиций'))}
 
-    gear = equips[-1][1] if equips else bound
-    if gear < len(blocks):
-        cnt = count_gear_entries(blocks, gear, len(blocks))
-        regions[gear] = {
-            'end': len(blocks), 'cls': 'fold-gear', 'title': 'Экипировка банды',
-            'count': '%d %s' % (cnt, plural(cnt, 'профиль', 'профиля',
-                                            'профилей'))}
-    return regions
+    leftover = equips[-1][1] if equips else bound
+    shop_keys = shop_keys_from_blocks(blocks)
+    if leftover >= len(blocks):
+        return regions, skip, leftover, shop_keys
+
+    skip = leftover_skip(blocks, leftover, shop_keys)
+    extras = [idx for idx in range(leftover, len(blocks))
+              if blocks[idx][0] == 'heading'
+              and extra_fold_class(blocks[idx][1]['text'])]
+    extra_start = extras[0] if extras else len(blocks)
+
+    last_weapon = None
+    for idx in range(leftover, extra_start):
+        if idx not in skip and blocks[idx][0] == 'weapons':
+            last_weapon = idx
+    innate_end = extra_start if last_weapon is None else last_weapon + 1
+    innate_idx = next((idx for idx in range(leftover, innate_end)
+                       if idx not in skip), None)
+    if last_weapon is not None and innate_idx is not None:
+        tables = sum(1 for idx in range(innate_idx, innate_end)
+                     if idx not in skip and blocks[idx][0] == 'weapons')
+        regions[innate_idx] = {
+            'end': innate_end, 'cls': 'fold-innate',
+            'title': 'Встроенное оружие',
+            'count': '%d %s' % (tables, plural(tables, 'профиль', 'профиля',
+                                               'профилей')),
+        }
+        rest_from = innate_end
+    else:
+        rest_from = leftover
+    rest_idx = next((idx for idx in range(rest_from, extra_start)
+                     if idx not in skip), None)
+    if rest_idx is not None:
+        heads = sum(1 for idx in range(rest_idx, extra_start)
+                    if idx not in skip and blocks[idx][0] == 'heading')
+        regions[rest_idx] = {
+            'end': extra_start, 'cls': 'fold-extra',
+            'title': leftover_remainder_title(blocks, rest_idx, extra_start),
+            'count': '%d %s' % (max(1, heads),
+                                plural(max(1, heads), 'раздел', 'раздела',
+                                       'разделов')),
+        }
+
+    for pos, start in enumerate(extras):
+        end = extras[pos + 1] if pos + 1 < len(extras) else len(blocks)
+        raw_title = blocks[start][1]['text']
+        heads = sum(1 for idx in range(start + 1, end)
+                    if blocks[idx][0] == 'heading')
+        regions[start] = {
+            'end': end, 'cls': extra_fold_class(raw_title),
+            'drop_heading': True,
+            'title_html': i18n.orig_block(esc(i18n.translate_heading(raw_title)),
+                                          raw_title),
+            'count': '%d %s' % (max(1, heads),
+                                plural(max(1, heads), 'раздел', 'раздела',
+                                       'разделов')),
+        }
+    return regions, skip, leftover, shop_keys
 
 
 def render_blocks(blocks, prefix='', stores=()):
-    regions = plan_regions(blocks)
+    regions, skip, leftover, shop_keys = plan_regions(blocks)
     out = []
     close_at = None
     for idx, (kind, payload) in enumerate(blocks):
@@ -1195,6 +1394,9 @@ def render_blocks(blocks, prefix='', stores=()):
             if region.get('drop_heading'):
                 continue    # заголовок списка перенесён в шапку блока
 
+        if idx in skip:
+            continue
+
         if kind == 'heading':
             tag = 'h%d' % payload['level']
             ru = i18n.translate_heading(payload['text'])
@@ -1209,7 +1411,7 @@ def render_blocks(blocks, prefix='', stores=()):
                 out.append('<li%s>%s</li>' % (cls, i18n.bilingual(it['text'])))
             out.append('</ul>')
         elif kind == 'fighter':
-            out.append(render_fighter(payload, prefix))
+            out.append(render_fighter(payload, prefix, stores))
         elif kind == 'skills':
             out.append('<div class="table-wrap"><table class="compact skills">')
             out.append('<thead><tr><th>Боец<span class="orig">Fighter</span></th>'
@@ -1239,7 +1441,12 @@ def render_blocks(blocks, prefix='', stores=()):
                 out.append('<tr>%s</tr>' % ''.join('<td>%s</td>' % esc(c) for c in row))
             out.append('</tbody></table></div>')
         elif kind == 'weapons':
-            out.append(render_weapon_rows(payload['caption'], payload['rows']))
+            table = payload
+            if idx >= leftover:
+                table = leftover_weapon_payload(payload, shop_keys)
+                if table is None:
+                    continue
+            out.append(render_weapon_rows(table['caption'], table['rows']))
         elif kind == 'equipment':
             out.append(render_equipment(payload, stores))
         elif kind == 'dice':
@@ -1289,31 +1496,51 @@ def gang_summary(blocks, prefix=''):
 
 # ---------------------------------------------------------------- сборка
 
-HEAD = '''<!DOCTYPE html>
+def gang_en(title):
+    return (title.replace(' GANG LIST', '')
+                 .replace(' CULT LIST', ' Cult')
+                 .replace(' PATROL LIST', '')
+                 .replace(' PARTY LIST', '')
+                 .title())
+
+
+def page_head(title, subtitle, back_href, back_label, asset, extra_head='',
+              layout=True, body_class=''):
+    return '''<!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Necromunda — правила банд</title>
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>%(title)s</title>
+<link rel="icon" href="%(asset)sfavicon.svg" type="image/svg+xml">
 <meta name="theme-color" content="#14161c">
-<link rel="stylesheet" href="styles.css">
-</head>
-<body>
+<link rel="stylesheet" href="%(asset)sstyles.css">
+%(extra)s</head>
+<body%(body_class)s>
 
 <header class="topbar" id="top">
-    <a class="backlink" href="../index.html">&larr; На главную</a>
+    <a class="backlink" href="%(back)s">&larr; %(back_label)s</a>
     <h1>Necromunda</h1>
-    <p>Правила банд &mdash; русский перевод, оригинал под спойлером</p>
+    <p>%(subtitle)s</p>
     <p class="source">Источник: Gangs of the Underhive &amp; Outlands &bull; Правила/GANGS0_3.pdf</p>
 </header>
+%(layout)s''' % {
+        'title': title,
+        'subtitle': subtitle,
+        'back': back_href,
+        'back_label': back_label,
+        'asset': asset,
+        'extra': extra_head,
+        'body_class': ' class="%s"' % body_class if body_class else '',
+        'layout': '\n<div class="layout">\n' if layout else '\n',
+    }
 
-<div class="layout">
 
-<aside class="sidebar">
+def page_search():
+    return '''<aside class="sidebar">
     <div class="hb-search" id="hb-search">
         <label class="hb-search-label" for="hb-q">Поиск</label>
-        <input class="hb-q" id="hb-q" type="search" placeholder="Банда, боец, оружие…" autocomplete="off" spellcheck="false" title="Клавиша / — фокус, Enter — к совпадению">
+        <input class="hb-q" id="hb-q" type="search" placeholder="Боец, оружие, правило…" autocomplete="off" spellcheck="false" title="Клавиша / — фокус, Enter — к совпадению">
         <div class="hb-modes" role="radiogroup" aria-label="Режим поиска">
             <label class="is-on">
                 <input type="radio" name="hb-mode" value="headings" checked>
@@ -1327,28 +1554,120 @@ HEAD = '''<!DOCTYPE html>
         <p class="hb-status" id="hb-status" hidden></p>
         <ol class="hb-hits" id="hb-hits" hidden></ol>
     </div>
-    <details class="toc-drawer">
-    <summary class="toc-toggle">Банды</summary>
-    <nav>
-        <h2>Банды</h2>
 '''
 
-FOOT = '''
-</main>
-</div>
 
+def page_sidebar_start(search=True):
+    if search:
+        return page_search()
+    return '''<aside class="sidebar">
+'''
+
+
+def render_nav(parsed, current, href_for, index_href):
+    out = [
+        page_sidebar_start(search=current is not None),
+        '    <details class="toc-drawer">',
+        '    <summary class="toc-toggle">Банды</summary>',
+        '    <nav>',
+        '        <p class="sidebar-index%s">'
+        '<a href="%s"%s>Все банды</a></p>' % (
+            ' is-current' if current is None else '',
+            index_href,
+            ' aria-current="page"' if current is None else '',
+        ),
+        '        <h2>Банды</h2>',
+    ]
+    for key, ru_group, _en_group in GROUPS:
+        items = [(t, ru) for t, ru, g, _b, _d in parsed if g == key]
+        if not items:
+            continue
+        out.append('        <details open>')
+        out.append('            <summary>%s</summary>' % ru_group)
+        out.append('            <ul>')
+        for title, ru in items:
+            gid = slug(title)
+            current_cls = ' class="is-current"' if gid == current else ''
+            current_aria = ' aria-current="page"' if gid == current else ''
+            out.append(
+                '                <li><a href="%s"%s%s>%s<span class="en">%s</span></a></li>'
+                % (href_for(gid), current_cls, current_aria, ru, esc(gang_en(title)))
+            )
+        out.append('            </ul>')
+        out.append('        </details>')
+    out.append('    </nav>\n    </details>\n</aside>')
+    return '\n'.join(out)
+
+
+def page_foot(home_href, asset, search=True, layout=True):
+    script = (
+        '\n<script src="%shandbook-search.js"></script>\n' % asset
+        if search else '\n'
+    )
+    close = '</main>\n</div>\n' if layout else '</main>\n'
+    return '''
+%s
 <footer class="page-footer">
     <p>Справочник собран из Gangs of the Underhive &amp; Outlands (Правила/GANGS0_3.pdf).
     Русский текст — для игры за столом; английский оригинал спрятан под спойлером «Оригинал» или дан короткой подписью рядом.</p>
-    <p><a class="backlink" href="../index.html">&larr; На главную</a></p>
+    <p><a class="backlink" href="%s">&larr; На главную</a></p>
     <a class="top-link" href="#top">Наверх</a>
 </footer>
-
-<script src="handbook-search.js"></script>
-
+%s
 </body>
 </html>
+''' % (close, home_href, script)
+
+
+HASH_REDIRECT = '''<script>
+(function () {
+    var hash = (location.hash || '').replace(/^#/, '');
+    if (!hash || hash === 'top') return;
+    var id = hash.split('--')[0];
+    if (!id) return;
+    location.replace('gangs/' + encodeURIComponent(id) + '.html' + (hash === id ? '' : '#' + hash));
+})();
+</script>
 '''
+
+
+def render_index_cards(parsed):
+    groups = {key: [] for key, _ru, _en in GROUPS}
+    for title, ru, group, blocks, _db in parsed:
+        groups[group].append((title, ru, blocks))
+    out = ['<main class="content gang-index">',
+           '<p class="gang-index-lede">Выберите банду, чтобы открыть особые правила, '
+           'профили бойцов и список снаряжения.</p>']
+    for key, ru_group, en_group in GROUPS:
+        items = groups.get(key) or []
+        if not items:
+            continue
+        out.append('<section class="home-section" aria-labelledby="g-%s">' % key)
+        out.append('<h2 class="home-section-title" id="g-%s">%s'
+                   '<span class="en">%s</span></h2>' % (key, ru_group, en_group))
+        out.append('<div class="home-cards">')
+        for title, ru, blocks in items:
+            gid = slug(title)
+            n = sum(1 for kind, _ in blocks if kind == 'fighter')
+            out.append(
+                '<a class="home-card" href="gangs/%s.html">'
+                '<span class="home-card-kicker">%s</span>'
+                '<h3>%s<span class="en">%s</span></h3>'
+                '<p>%s</p>'
+                '<span class="home-card-src">%s</span>'
+                '</a>' % (
+                    gid,
+                    ru_group,
+                    esc(ru),
+                    esc(gang_en(title)),
+                    'Особые правила, состав, снаряжение и оружие.',
+                    '%d %s в списке' % (
+                        n, 'боец' if n == 1 else ('бойца' if n < 5 else 'бойцов')
+                    ),
+                )
+            )
+        out.append('</div></section>')
+    return '\n'.join(out)
 
 
 def main():
@@ -1365,37 +1684,57 @@ def main():
         gang_db = build_gang_db(body, blocks, slug(title))
         parsed.append((title, ru, group, blocks, gang_db))
 
-    # ---- боковое меню
-    nav = []
-    for key, ru_group, en_group in GROUPS:
-        items = [(t, ru) for t, ru, g, _b, _d in parsed if g == key]
-        if not items:
-            continue
-        nav.append('        <details open>')
-        nav.append('            <summary>%s</summary>' % ru_group)
-        nav.append('            <ul>')
-        for title, ru in items:
-            en = title.replace(' GANG LIST', '').replace(' CULT LIST', ' Cult') \
-                      .replace(' PATROL LIST', '').replace(' PARTY LIST', '').title()
-            nav.append('                <li><a href="#%s">%s<span class="en">%s</span></a></li>'
-                       % (slug(title), ru, esc(en)))
-        nav.append('            </ul>')
-        nav.append('        </details>')
-    nav.append('    </nav>\n    </details>\n</aside>\n\n<main class="content">')
+    GANGS_DIR.mkdir(parents=True, exist_ok=True)
+    for stale in GANGS_DIR.glob('*.html'):
+        stale.unlink()
 
-    body_html = []
+    index_doc = (
+        page_head(
+            'Necromunda — правила банд',
+            'Правила банд &mdash; выберите список',
+            '../', 'На главную', '',
+            extra_head=HASH_REDIRECT,
+            layout=False,
+        )
+        + render_index_cards(parsed)
+        + page_foot('../', '', search=False, layout=False)
+    )
+    OUT.write_text(index_doc, encoding='utf-8')
+
     for title, ru, group, blocks, gang_db in parsed:
-        en = title.title()
         gid = slug(title)
-        body_html.append('<section id="%s">' % gid)
-        body_html.append('<h2>%s<span class="en">%s</span></h2>' % (esc(ru), esc(en)))
-        body_html.append(gang_summary(blocks, gid))
-        body_html.append(render_blocks(blocks, gid, (gang_db, core_db)))
-        body_html.append('<a class="top-link" href="#top">Наверх</a>')
-        body_html.append('</section>')
-
-    doc = HEAD + '\n'.join(nav) + '\n' + '\n'.join(body_html) + FOOT
-    open(OUT, 'w', encoding='utf-8').write(doc)
+        en = title.title()
+        nav = render_nav(
+            parsed, gid,
+            href_for=lambda other: '%s.html' % other,
+            index_href='../gangs.html',
+        )
+        body = [
+            '<main class="content">',
+            '<section id="%s">' % gid,
+            '<h2>%s<span class="en">%s</span></h2>' % (esc(ru), esc(en)),
+            gang_summary(blocks, gid),
+            '<p class="note"><span class="label">Снаряжение банды'
+            '<span class="orig">Gang Equipment</span></span> '
+            'Турели и прочее снаряжение банды покупаются в Trading Post и '
+            'кладутся в Stash, не на бойца. '
+            '<a href="../core-rules.html#snaryazhenie-bandy">'
+            'Правила и турель Trazior →</a></p>',
+            render_blocks(blocks, gid, (gang_db, core_db)),
+            '<a class="top-link" href="#top">Наверх</a>',
+            '</section>',
+        ]
+        doc = (
+            page_head(
+                'Necromunda — %s' % ru,
+                '%s &mdash; русский перевод, оригинал под спойлером' % ru,
+                '../gangs.html', 'Все банды', '../',
+            )
+            + nav + '\n'
+            + '\n'.join(body)
+            + page_foot('../../', '../', search=True)
+        )
+        (GANGS_DIR / ('%s.html' % gid)).write_text(doc, encoding='utf-8')
 
     fighters = sum(1 for _, _, _, b, _ in parsed for k, _ in b if k == 'fighter')
     weapons = sum(1 for _, _, _, b, _ in parsed for k, _ in b if k == 'weapons')
@@ -1425,7 +1764,10 @@ def main():
         print('без профиля (%d уникальных):' % len(uniq))
         for name in uniq[:60]:
             print('   ', name)
-    print('размер: %.1f КБ' % (len(doc) / 1024))
+    print('страниц банд: %d' % len(parsed))
+    print('каталог: %.1f КБ, банды: %.1f КБ'
+          % (OUT.stat().st_size / 1024,
+             sum(p.stat().st_size for p in GANGS_DIR.glob('*.html')) / 1024))
 
 
 if __name__ == '__main__':

@@ -44,7 +44,7 @@
         ]
       },
       "rules": [
-        "Мастер шёпотов: при добавлении в Gang Roster Delaque Master of Shadow может получить подтип Wyrd и выбрать силу Wyrd Psychoteric Whispers за +35 кредитов.ОригиналWhen added to a Gang Roster, a Delaque Master of Shadow may gain the Wyrd Subtype and select a Psychoteric Whispers Wyrd Power for +35 credits."
+        "Мастер шёпотов: при добавлении в Gang Roster Delaque Master of Shadow может получить подтип Wyrd и выбрать силу Wyrd Psychoteric Whispers за +35 кредитов."
       ]
     },
     {
@@ -89,7 +89,7 @@
         ]
       },
       "rules": [
-        "Мастер шёпотов: при добавлении в Gang Roster Delaque Phantom может получить подтип Wyrd и выбрать силу Wyrd Psychoteric Whispers за +35 кредитов.ОригиналWhen added to a Gang Roster, a Delaque Phantom may gain the Wyrd Subtype and select a Psychoteric Whispers Wyrd Power for +35 credits."
+        "Мастер шёпотов: при добавлении в Gang Roster Delaque Phantom может получить подтип Wyrd и выбрать силу Wyrd Psychoteric Whispers за +35 кредитов."
       ]
     },
     {
@@ -135,7 +135,7 @@
         ]
       },
       "rules": [
-        "Из теней: вместо обычной расстановки этого Fighter можно отложить в сторону. В начале любого раунда после первого, до броска за Priority, контролирующий игрок может выставить его в любой точке поля, которая не в линии видимости ни одной вражеской модели и не ближе 9” к любому вражескому Fighter. Если у обоих игроков есть Fighter с этим особым правилом, которых они хотят выставить в начале одного и того же раунда, победитель броска на очерёдность решает, кто выставляет своих Fighter первым.ОригиналInstead of deploying this Fighter normally, they may instead be placed to one side. At the start of any round after the first, before rolling for Priority, their controlling player may set them up anywhere on the battlefield that is not in Line of Sight of any enemy models, and not within 9” of any enemy Fighters. If both players have Fighter(s) with this special rule that they wish to deploy at the start of the same round, the winner of a roll-off may decide which player places their Fighter(s) first."
+        "Из теней: вместо обычной расстановки этого Fighter можно отложить в сторону. В начале любого раунда после первого, до броска за Priority, контролирующий игрок может выставить его в любой точке поля, которая не в линии видимости ни одной вражеской модели и не ближе 9” к любому вражескому Fighter. Если у обоих игроков есть Fighter с этим особым правилом, которых они хотят выставить в начале одного и того же раунда, победитель броска на очерёдность решает, кто выставляет своих Fighter первым."
       ]
     },
     {
@@ -315,6 +315,26 @@
       },
       "rules": [
         "Шёпоты во тьме: при добавлении в Gang Roster этот Fighter выбирает силу Wyrd Psychoteric Whispers."
+      ],
+      "weapons": [
+        {
+          "name": "Psychomantic claws*",
+          "sr": "E",
+          "lr": "-",
+          "str": "S+1",
+          "ap": "-3",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Paired (2)",
+              "text": "Нельзя как Secondary и нельзя Secondary вместе с ним. Как Primary: носитель увеличивает Attacks на X."
+            }
+          ]
+        }
       ]
     },
     {
@@ -362,7 +382,27 @@
       },
       "rules": [
         "Длина поводка: у Cephalopod Spektor длина поводка (Leash range) 3”.",
-        "Сенсорная решётка: если Cephalopod Spektor в пределах Leash range от владельца, когда владельцу нужно сделать проверку Intelligence по любой причине, бросьте лишний D6 и один из кубиков отбросьте.ОригиналIf a Cephalopod Spektor is within Leash range of its owner when the owner is required to make an Intelligence check for any reason, roll an extra D6, picking one of the dice to discard."
+        "Сенсорная решётка: если Cephalopod Spektor в пределах Leash range от владельца, когда владельцу нужно сделать проверку Intelligence по любой причине, бросьте лишний D6 и один из кубиков отбросьте."
+      ],
+      "weapons": [
+        {
+          "name": "Shock tendrils",
+          "sr": "E",
+          "lr": "-",
+          "str": "S+1",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Shock (6+)",
+              "text": "Если атака попадает и бросок попадания не меньше X, она автоматически ранит и считается натуральной 6 на ранении для других свойств."
+            }
+          ]
+        }
       ]
     },
     {
@@ -409,9 +449,28 @@
       },
       "rules": [
         "Длина поводка: у Psychoteric Wyrm длина поводка (Leash range) 12”.",
-        "Психотерический узел: когда Delaque Wyrd использует Psychoteric Power, он может назначить своего Active Psychoteric Wyrm в пределах Leash range, через которого проводить эту силу. Эффект Psychoteric Power считается от модели Psychoteric Wyrm, а не от модели Fighter. Иначе говоря, линия видимости, дистанция, дальность и прочее измеряются от Psychoteric Wyrm, а не от Fighter.ОригиналWhen a Delaque Wyrd uses a Psychoteric Power, they may nominate an Active Psychoteric Wyrm they own that is within Leash range through which to channel that Power. The effect of the Psychoteric Power is worked out from the model representing the Psychoteric Wyrm, rather than from the model representing the Fighter. In other words, Line of Sight, distance, range and so forth are all measured from the Psychoteric Wyrm, not from the Fighter.",
-        "Рытьё: Psychoteric Wyrm умеет рыть под металлическими и роккритовыми полами нижнего улья, быстро проходя скрытыми лазами и засыпанными вентиляциями и выходя в другом месте. Psychoteric Wyrm может свободно двигаться под непроходимой местностью, если ему хватает движения, но не может закончить движение на непроходимой местности или внутри неё.ОригиналA Psychoteric Wyrm is able to burrow beneath and through the metal and rockcrete floors of the underhive, passing quickly through hidden crawl spaces and buried vents, before emerging elsewhere. A Psychoteric Wyrm may move freely under impassable terrain if it has sufficient movement to do so, but may not end its movement on or within impassable terrain.",
-        "Гарпун (двойное): Fighter может сдвинуться до 12” по прямой в любом направлении, если заканчивает это движение на более высоком уровне, чем начал.ОригиналThe Fighter can move up to 12” in a straight line in any direction as long as they end this move on a higher level than they started."
+        "Психотерический узел: когда Delaque Wyrd использует Psychoteric Power, он может назначить своего Active Psychoteric Wyrm в пределах Leash range, через которого проводить эту силу. Эффект Psychoteric Power считается от модели Psychoteric Wyrm, а не от модели Fighter. Иначе говоря, линия видимости, дистанция, дальность и прочее измеряются от Psychoteric Wyrm, а не от Fighter.",
+        "Рытьё: Psychoteric Wyrm умеет рыть под металлическими и роккритовыми полами нижнего улья, быстро проходя скрытыми лазами и засыпанными вентиляциями и выходя в другом месте. Psychoteric Wyrm может свободно двигаться под непроходимой местностью, если ему хватает движения, но не может закончить движение на непроходимой местности или внутри неё."
+      ],
+      "weapons": [
+        {
+          "name": "Ferocious jaws",
+          "sr": "E",
+          "lr": "-",
+          "str": "S+1",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Rending (6+)",
+              "text": "Если натуральный бросок на ранение не меньше X, AP этой атаки увеличивается на 1."
+            }
+          ]
+        }
       ]
     }
   ],

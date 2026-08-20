@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Necromunda — Кочевники Пепельных пустошей</title>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#14161c">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<header class="topbar" id="top">
+    <a class="backlink" href="../gangs.html">&larr; Все банды</a>
+    <h1>Necromunda</h1>
+    <p>Кочевники Пепельных пустошей &mdash; русский перевод, оригинал под спойлером</p>
+    <p class="source">Источник: Gangs of the Underhive &amp; Outlands &bull; Правила/GANGS0_3.pdf</p>
+</header>
+
+<div class="layout">
+<aside class="sidebar">
+    <div class="hb-search" id="hb-search">
+        <label class="hb-search-label" for="hb-q">Поиск</label>
+        <input class="hb-q" id="hb-q" type="search" placeholder="Боец, оружие, правило…" autocomplete="off" spellcheck="false" title="Клавиша / — фокус, Enter — к совпадению">
+        <div class="hb-modes" role="radiogroup" aria-label="Режим поиска">
+            <label class="is-on">
+                <input type="radio" name="hb-mode" value="headings" checked>
+                Заголовки
+            </label>
+            <label>
+                <input type="radio" name="hb-mode" value="full">
+                Весь текст
+            </label>
+        </div>
+        <p class="hb-status" id="hb-status" hidden></p>
+        <ol class="hb-hits" id="hb-hits" hidden></ol>
+    </div>
+
+    <details class="toc-drawer">
+    <summary class="toc-toggle">Банды</summary>
+    <nav>
+        <p class="sidebar-index"><a href="../gangs.html">Все банды</a></p>
+        <h2>Банды</h2>
+        <details open>
+            <summary>Кланы-дома</summary>
+            <ul>
+                <li><a href="house-cawdor-gang-list.html">Дом Каудор<span class="en">House Cawdor</span></a></li>
+                <li><a href="house-delaque-gang-list.html">Дом Делак<span class="en">House Delaque</span></a></li>
+                <li><a href="house-escher-gang-list.html">Дом Эшер<span class="en">House Escher</span></a></li>
+                <li><a href="house-goliath-gang-list.html">Дом Голиаф<span class="en">House Goliath</span></a></li>
+                <li><a href="house-orlock-gang-list.html">Дом Орлок<span class="en">House Orlock</span></a></li>
+                <li><a href="house-van-saar-gang-list.html">Дом Ван Саар<span class="en">House Van Saar</span></a></li>
+            </ul>
+        </details>
+        <details open>
+            <summary>Ответвления домов</summary>
+            <ul>
+                <li><a href="blades-of-the-matriarch-gang-list.html">Клинки Матриарха<span class="en">Blades Of The Matriarch</span></a></li>
+                <li><a href="forge-smelters-gang-list.html">Плавильщики кузниц<span class="en">Forge Smelters</span></a></li>
+            </ul>
+        </details>
+        <details open>
+            <summary>Культы и мутанты</summary>
+            <ul>
+                <li><a href="chaos-helot-cult-list.html">Культ хаоситских илотов<span class="en">Chaos Helot Cult</span></a></li>
+                <li><a href="corpse-grinder-cult-gang-list.html">Культ Трупорезов<span class="en">Corpse Grinder Cult</span></a></li>
+                <li><a href="genestealer-cult-gang-list.html">Культ генокрадов<span class="en">Genestealer Cult</span></a></li>
+                <li><a href="malstrain-gang-list.html">Мальстрейн<span class="en">Malstrain</span></a></li>
+            </ul>
+        </details>
+        <details open>
+            <summary>Прочие банды</summary>
+            <ul>
+                <li><a href="ash-waste-nomad-gang-list.html" class="is-current" aria-current="page">Кочевники Пепельных пустошей<span class="en">Ash Waste Nomad</span></a></li>
+                <li><a href="free-ogryn-gang-list.html">Свободные огрины<span class="en">Free Ogryn</span></a></li>
+                <li><a href="ironhead-squat-gang-list.html">Сквоты Айронхед<span class="en">Ironhead Squat</span></a></li>
+                <li><a href="outcast-gang-list.html">Изгои<span class="en">Outcast</span></a></li>
+                <li><a href="palanite-enforcer-patrol-list.html">Паланитские энфорсеры<span class="en">Palanite Enforcer</span></a></li>
+                <li><a href="spyre-hunting-party-list.html">Охотники Шпиля<span class="en">Spyre Hunting</span></a></li>
+                <li><a href="venator-gang-list.html">Венаторы<span class="en">Venator</span></a></li>
+            </ul>
+        </details>
+    </nav>
+    </details>
+</aside>
+<main class="content">
+<section id="ash-waste-nomad-gang-list">
+<h2>Кочевники Пепельных пустошей<span class="en">Ash Waste Nomad Gang List</span></h2>
+<div class="table-wrap"><table class="compact roster">
+<caption>Состав банды<span class="orig">Gang Composition</span></caption>
+<thead><tr><th>Боец<span class="orig">Fighter</span></th><th>Тип<span class="orig">Type</span></th><th class="num">Кредиты<span class="orig">Credits</span></th></tr></thead><tbody>
+<tr><td><a href="#ash-waste-nomad-gang-list--ash-waste-nomad-chieftain">ASH WASTE NOMAD CHIEFTAIN</a></td><td>Боец (Лидер)<span class="orig">Fighter (Leader)</span></td><td class="num">120</td></tr>
+<tr><td><a href="#ash-waste-nomad-gang-list--ash-waste-nomad-watcher">ASH WASTE NOMAD WATCHER</a></td><td>Боец (Чемпион)<span class="orig">Fighter (Champion)</span></td><td class="num">100</td></tr>
+<tr><td><a href="#ash-waste-nomad-gang-list--ash-waste-nomad-stormcaller">ASH WASTE NOMAD STORMCALLER</a></td><td>Боец (Чемпион)<span class="orig">Fighter (Champion)</span></td><td class="num">140</td></tr>
+<tr><td><a href="#ash-waste-nomad-gang-list--ash-waste-nomad-warrior">ASH WASTE NOMAD WARRIOR</a></td><td>Боец (Гэнгер, Специалист)<span class="orig">Fighter (Ganger, Specialist)</span></td><td class="num">45</td></tr>
+<tr><td><a href="#ash-waste-nomad-gang-list--ash-waste-nomad-hunter">ASH WASTE NOMAD HUNTER</a></td><td>Боец (Проспект)<span class="orig">Fighter (Prospect)</span></td><td class="num">45</td></tr>
+<tr><td><a href="#ash-waste-nomad-gang-list--ash-waste-nomad-dust-runner">ASH WASTE NOMAD DUST RUNNER</a></td><td>Боец (Проспект)<span class="orig">Fighter (Prospect)</span></td><td class="num">25</td></tr>
+<tr><td><a href="#ash-waste-nomad-gang-list--arthromite-duneskuttler">ARTHROMITE DUNESKUTTLER</a></td><td>Боец (Зверь, Громила)<span class="orig">Fighter (Beast, Brute)</span></td><td class="num">225</td></tr>
+<tr><td><a href="#ash-waste-nomad-gang-list--arthromite-spinewyrm">ARTHROMITE SPINEWYRM</a></td><td>Боец (Зверь, Питомец)<span class="orig">Fighter (Beast, Pet)</span></td><td class="num">60</td></tr>
+<tr><td><a href="#ash-waste-nomad-gang-list--unbound-helamite">UNBOUND HELAMITE</a></td><td>Боец (Зверь, Питомец)<span class="orig">Fighter (Beast, Pet)</span></td><td class="num">70</td></tr>
+<tr><td><a href="#ash-waste-nomad-gang-list--ashwing-helamite">ASHWING HELAMITE</a></td><td>Боец (Зверь, Летающий, Питомец)<span class="orig">Fighter (Beast, Flying, Pet)</span></td><td class="num">70</td></tr>
+</tbody></table></div>
+<p class="note"><span class="label">Снаряжение банды<span class="orig">Gang Equipment</span></span> Турели и прочее снаряжение банды покупаются в Trading Post и кладутся в Stash, не на бойца. <a href="../core-rules.html#snaryazhenie-bandy">Правила и турель Trazior →</a></p>
+<h3>Особые правила банды<span class="orig">GANG SPECIAL RULES</span></h3>
+<p><span class="term">Призраки пустошей:<span class="orig">Ghosts of the Wastes</span></span> в начале боя, до первого броска за Priority, два Ash Waste Nomad Fighters могут поменяться местами на поле боя. Кроме того, Ash Waste Nomad Fighters игнорируют и трудную, и опасную местность.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">At the start of the battle, before the first roll for Priority, two Ash Waste Nomad Fighters may swap positions on the battlefield. Additionally, Ash Waste Nomad Fighters ignore both difficult and dangerous terrain.</p></details></p>
+<p><span class="term">Уроженцы пустошей:<span class="orig">Natives of the Wastes</span></span> банда Ash Waste Nomad не может включать никаких Vehicle или Mounts, которых нет в их Equipment List.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">An Ash Waste Nomad gang may not include any Vehicles or Mounts that are not included in their Equipment List.</p></details></p>
+<p><span class="term">Стартовые навыки:<span class="orig">Starting Skills</span></span> при добавлении в ростер банды все Ash Waste Nomad Leaders and Champions могут выбрать один навык из одного из своих основных наборов (Primary Skill Sets).<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When added to a Gang Roster, all Ash Waste Nomad Leaders and Champions may select one skill from one of their Primary Skill Sets.</p></details></p>
+<p><span class="term">Доступ к навыкам:<span class="orig">Skill Access</span></span> бойцы этой банды имеют доступ к следующим наборам навыков:<span class="orig">This gang’s Fighters have access to the following Skill Sets:</span></p>
+<div class="table-wrap"><table class="compact skills">
+<thead><tr><th>Боец<span class="orig">Fighter</span></th><th>Ловкость<span class="orig">Agility</span></th><th>Сила<span class="orig">Brawn</span></th><th>Бой<span class="orig">Combat</span></th><th>Хитрость<span class="orig">Cunning</span></th><th>Эрудит<span class="orig">Savant</span></th><th>Стрельба<span class="orig">Shooting</span></th></tr></thead><tbody>
+<tr><td>Chieftain</td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill n">-</td><td class="skill n">-</td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill s">Вторичный<span class="orig">Secondary</span></td></tr>
+<tr><td>Watcher</td><td class="skill n">-</td><td class="skill n">-</td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill n">-</td></tr>
+<tr><td>Stormcaller</td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill n">-</td><td class="skill n">-</td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill n">-</td></tr>
+<tr><td>Warrior</td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill n">-</td><td class="skill n">-</td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill n">-</td><td class="skill s">Вторичный<span class="orig">Secondary</span></td></tr>
+<tr><td>Hunter</td><td class="skill n">-</td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill n">-</td><td class="skill n">-</td><td class="skill n">-</td></tr>
+<tr><td>Dust Runner</td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill n">-</td><td class="skill n">-</td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill n">-</td><td class="skill n">-</td></tr>
+<tr><td>Arthromite Duneskuttler</td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill n">-</td><td class="skill n">-</td><td class="skill n">-</td><td class="skill n">-</td></tr>
+<tr><td>Arthromite Spinewyrm</td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill n">-</td><td class="skill n">-</td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill n">-</td><td class="skill n">-</td></tr>
+<tr><td>Unbound Helamite</td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill n">-</td><td class="skill n">-</td><td class="skill n">-</td><td class="skill n">-</td></tr>
+<tr><td>Ashwing Helamite</td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill n">-</td><td class="skill n">-</td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill n">-</td><td class="skill n">-</td></tr>
+</tbody></table></div>
+<details class="fold fold-fighters">
+<summary><span class="fold-title">Бойцы банды</span><span class="fold-count">10 карточек</span></summary><div class="fold-body">
+<details class="fighter" id="ash-waste-nomad-gang-list--ash-waste-nomad-chieftain">
+<summary class="fighter-head">
+<h4 class="fighter-name">ASH WASTE NOMAD CHIEFTAIN</h4>
+<span class="fighter-cost">120 кредитов<span class="orig">120 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Лидер)<span class="orig">Fighter (Leader)</span></span> <span class="fighter-xp">Стартовый XP: 61<span class="orig">Starting XP: 61</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+<tbody>
+<tr><td>6”</td><td>3+</td><td>3+</td><td>3</td><td>3</td><td>3</td><td>4</td><td>2</td><td>5+</td><td>8</td><td>8</td><td>7</td><td>7</td></tr>
+</tbody></table></div>
+<p><span class="term">Снаряжение:<span class="orig">Equipment</span></span> при добавлении в ростер банды Ash Waste Nomad Chieftain может купить оружие и снаряжение из списка Ash Waste Nomad:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When added to a Gang Roster, an Ash Waste Nomad Chieftain may purchase weapons and wargear from the Ash Waste Nomad Equipment List:</p></details></p>
+<p>В ходе кампании им можно давать дополнительное оружие и снаряжение, купленное из списка Ash Waste Nomad и с Trading Post.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">• During the course of a campaign, they may be given additional weapons and wargear purchased from the Ash Waste Nomad List and from the Trading Post.</p></details></p>
+</div></details>
+<details class="fighter" id="ash-waste-nomad-gang-list--ash-waste-nomad-watcher">
+<summary class="fighter-head">
+<h4 class="fighter-name">ASH WASTE NOMAD WATCHER</h4>
+<span class="fighter-cost">100 кредитов<span class="orig">100 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Чемпион)<span class="orig">Fighter (Champion)</span></span> <span class="fighter-xp">Стартовый XP: 37<span class="orig">Starting XP: 37</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+<tbody>
+<tr><td>5”</td><td>3+</td><td>3+</td><td>3</td><td>3</td><td>2</td><td>4</td><td>2</td><td>5+</td><td>7</td><td>7</td><td>7</td><td>7</td></tr>
+</tbody></table></div>
+<p><span class="term">Снаряжение:<span class="orig">Equipment</span></span> при добавлении в ростер банды Ash Waste Nomad Watcher может купить оружие и снаряжение из списка Ash Waste Nomad:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When added to a Gang Roster, an Ash Waste Nomad Watcher may purchase weapons and wargear from the Ash Waste Nomad Equipment List:</p></details></p>
+<p>В ходе кампании им можно давать дополнительное оружие и снаряжение, купленное из списка Ash Waste Nomad и с Trading Post.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">• During the course of a campaign, they may be given additional weapons and wargear purchased from the Ash Waste Nomad List and from the Trading Post.</p></details></p>
+</div></details>
+<details class="fighter" id="ash-waste-nomad-gang-list--ash-waste-nomad-stormcaller">
+<summary class="fighter-head">
+<h4 class="fighter-name">ASH WASTE NOMAD STORMCALLER</h4>
+<span class="fighter-cost">140 кредитов<span class="orig">140 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Чемпион)<span class="orig">Fighter (Champion)</span></span> <span class="fighter-xp">Стартовый XP: 49<span class="orig">Starting XP: 49</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+<tbody>
+<tr><td>5”</td><td>3+</td><td>4+</td><td>3</td><td>3</td><td>2</td><td>4</td><td>2</td><td>5+</td><td>6</td><td>8</td><td>8</td><td>7</td></tr>
+</tbody></table></div>
+<p><span class="term">Воззвать к буре:<span class="orig">Call the Storm</span></span> пока экипирован Stormcaller staff, Active Ash Waste Nomad Stormcaller может выполнить действие Пылевая буря:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">While equipped with a Stormcaller staff, an Active Ash Waste Nomad Stormcaller can perform the Dust Storm action:</p></details></p>
+<p><span class="term">Пылевая буря (одиночное):<span class="orig">Dust Storm (Single)</span></span> если в этом бою правило Visibility (X”) не действует, примените правило Visibility (24”). Иначе увеличьте или уменьшите значение X” на 6” (минимум 6”). Эти эффекты длятся до конца боя и могут дальше меняться повторными применениями этой способности.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">If the Visibility (X”) rule is not active for this battle, apply the Visibility (24”) rule. Otherwise, either increase or decrease the value of X” by 6” to a minimum of 6”. These effects last for the remainder of the battle and can be modified further by future uses of this ability.</p></details></p>
+<p><span class="term">Снаряжение:<span class="orig">Equipment</span></span> Ash Waste Nomad Stormcaller экипирован Dustback Helamite (входит в стоимость) и при добавлении в Gang Roster может купить оружие и снаряжение из списка снаряжения Ash Waste Nomad:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">An Ash Waste Nomad Stormcaller is equipped with a Dustback Helamite (included in their cost) and, when added to a Gang Roster, may purchase weapons and wargear from the Ash Waste Nomad Equipment List:</p></details></p>
+<p>В ходе кампании им можно давать дополнительное оружие и снаряжение, купленное из списка Ash Waste Nomad и с Trading Post.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">• During the course of a campaign, they may be given additional weapons and wargear purchased from the Ash Waste Nomad List and from the Trading Post.</p></details></p>
+</div></details>
+<details class="fighter" id="ash-waste-nomad-gang-list--ash-waste-nomad-warrior">
+<summary class="fighter-head">
+<h4 class="fighter-name">ASH WASTE NOMAD WARRIOR</h4>
+<span class="fighter-cost">45 кредитов<span class="orig">45 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Гэнгер, Специалист)<span class="orig">Fighter (Ganger, Specialist)</span></span> <span class="fighter-xp">Стартовый XP: 13<span class="orig">Starting XP: 13</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+<tbody>
+<tr><td>6”</td><td>4+</td><td>4+</td><td>3</td><td>3</td><td>1</td><td>4</td><td>1</td><td>6+</td><td>6</td><td>6</td><td>6</td><td>6</td></tr>
+</tbody></table></div>
+<p><span class="term">Снаряжение:<span class="orig">Equipment</span></span> при добавлении в ростер банды Ash Waste Nomad Warrior может купить оружие и снаряжение из списка Ash Waste Nomad:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When added to a Gang Roster, an Ash Waste Nomad Warrior may purchase weapons and wargear from the Ash Waste Nomad Equipment List:</p></details></p>
+<p>В ходе кампании им можно давать дополнительное оружие и снаряжение, купленное из списка Ash Waste Nomad и с Trading Post.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">• During the course of a campaign, they may be given additional weapons and wargear purchased from the Ash Waste Nomad List and from the Trading Post.</p></details></p>
+</div></details>
+<details class="fighter" id="ash-waste-nomad-gang-list--ash-waste-nomad-hunter">
+<summary class="fighter-head">
+<h4 class="fighter-name">ASH WASTE NOMAD HUNTER</h4>
+<span class="fighter-cost">45 кредитов<span class="orig">45 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Проспект)<span class="orig">Fighter (Prospect)</span></span> <span class="fighter-xp">Стартовый XP: 4<span class="orig">Starting XP: 4</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+<tbody>
+<tr><td>6”</td><td>5+</td><td>5+</td><td>3</td><td>3</td><td>1</td><td>4</td><td>2</td><td>6+</td><td>5</td><td>6</td><td>6</td><td>5</td></tr>
+</tbody></table></div>
+<p><span class="term">Стартовый навык:<span class="orig">Starting Skill</span></span> у Ash Waste Nomad Hunter есть навык Infiltrate.<span class="orig">An Ash Waste Nomad Hunter has the Infiltrate skill.</span></p>
+<p><span class="term">Снаряжение:<span class="orig">Equipment</span></span> при добавлении в ростер банды Ash Waste Nomad Hunter может купить оружие и снаряжение из списка Ash Waste Nomad:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When added to a Gang Roster, an Ash Waste Nomad Hunter may purchase weapons and wargear from the Ash Waste Nomad Equipment List:</p></details></p>
+<p>В ходе кампании им можно давать дополнительное оружие и снаряжение, купленное из списка Ash Waste Nomad и с Trading Post.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">• During the course of a campaign, they may be given additional weapons and wargear purchased from the Ash Waste Nomad List and from the Trading Post.</p></details></p>
+</div></details>
+<details class="fighter" id="ash-waste-nomad-gang-list--ash-waste-nomad-dust-runner">
+<summary class="fighter-head">
+<h4 class="fighter-name">ASH WASTE NOMAD DUST RUNNER</h4>
+<span class="fighter-cost">25 кредитов<span class="orig">25 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Проспект)<span class="orig">Fighter (Prospect)</span></span> <span class="fighter-xp">Стартовый XP: 1<span class="orig">Starting XP: 1</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+<tbody>
+<tr><td>6”</td><td>5+</td><td>5+</td><td>3</td><td>3</td><td>1</td><td>4</td><td>1</td><td>6+</td><td>5</td><td>6</td><td>6</td><td>5</td></tr>
+</tbody></table></div>
+<p><span class="term">Снаряжение:<span class="orig">Equipment</span></span> при добавлении в ростер банды Ash Waste Nomad Dust Runner может купить оружие и снаряжение из списка Ash Waste Nomad:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When added to a Gang Roster, an Ash Waste Nomad Dust Runner may purchase weapons and wargear from the Ash Waste Nomad Equipment List:</p></details></p>
+<p>В ходе кампании им можно давать дополнительное оружие и снаряжение, купленное из списка Ash Waste Nomad и с Trading Post.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">• During the course of a campaign, they may be given additional weapons and wargear purchased from the Ash Waste Nomad List and from the Trading Post.</p></details></p>
+</div></details>
+<details class="fighter" id="ash-waste-nomad-gang-list--arthromite-duneskuttler">
+<summary class="fighter-head">
+<h4 class="fighter-name">ARTHROMITE DUNESKUTTLER</h4>
+<span class="fighter-cost">225 кредитов<span class="orig">225 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Зверь, Громила)<span class="orig">Fighter (Beast, Brute)</span></span> <span class="fighter-xp">Стартовый XP: 25<span class="orig">Starting XP: 25</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+<tbody>
+<tr><td>6”</td><td>3+</td><td>5+</td><td>5</td><td>5</td><td>3</td><td>4</td><td>4</td><td>4+</td><td>7</td><td>8</td><td>6</td><td>4</td></tr>
+</tbody></table></div>
+<p><span class="term">Трудно убить:<span class="orig">Hard to Kill</span></span> Arthromite Duneskuttler знаменит живучестью; при броске по таблице Lasting Injury для Arthromite Duneskuttler бросьте дважды и примените тот результат, который выберет владеющий игрок.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">An Arthromite Duneskuttler is notoriously hard to kill; when rolling on the Lasting Injury table for an Arthromite Duneskuttler, roll twice and apply whichever result the owning player wishes.</p></details></p>
+<p><span class="term">Навыки:<span class="orig">Skills</span></span> у Arthromite Duneskuttler есть навык Clamber.<span class="orig">An Arthromite Duneskuttler has the Clamber skill.</span></p>
+<p><span class="term">Снаряжение:<span class="orig">Equipment</span></span> Arthromite Duneskuttler вооружён(а) mandibles. Дополнительное оружие и снаряжение покупать и надевать нельзя.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">An Arthromite Duneskuttler is armed with mandibles. They may not purchase or be equipped with additional weapons or wargear.</p></details></p>
+</div></details>
+<details class="fighter" id="ash-waste-nomad-gang-list--arthromite-spinewyrm">
+<summary class="fighter-head">
+<h4 class="fighter-name">ARTHROMITE SPINEWYRM</h4>
+<span class="fighter-cost">60 кредитов<span class="orig">60 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Зверь, Питомец)<span class="orig">Fighter (Beast, Pet)</span></span> <span class="fighter-xp">Стартовый XP: 13<span class="orig">Starting XP: 13</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+<tbody>
+<tr><td>6”</td><td>4+</td><td>6+</td><td>2</td><td>3</td><td>1</td><td>4</td><td>1</td><td>6+</td><td>6</td><td>7</td><td>6</td><td>4</td></tr>
+</tbody></table></div>
+<p><span class="term">Длина поводка:<span class="orig">Leash Range</span></span> у Arthromite Spinewyrm длина поводка (Leash range) 6”.<span class="orig">An Arthromite Spinewyrm has a 6” Leash range.</span></p>
+<p><span class="term">Маленькая цель:<span class="orig">Small Target</span></span> Arthromite Spinewyrm держатся низко над землёй и на удивление быстры, поэтому по ним трудно целиться на просторах пепельных пустошей. Дальнобойные атаки по Arthromite Spinewyrm получают −1 к попаданию.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Arthromite Spinewyrms are low to the ground and surprisingly fast, making them difficult to target in the vast expanse of the ash wastes. Ranged attacks against Arthromite Spinewyrms are made at -1 to Hit.</p></details></p>
+<p><span class="term">Рытьё:<span class="orig">Burrowing</span></span> Arthromite Spinewyrm умеет рыть под металлическими и роккритовыми полами нижнего улья, быстро проходя скрытыми лазами и засыпанными вентиляциями и выходя в другом месте. Arthromite Spinewyrm может свободно двигаться под непроходимой местностью, если ему хватает движения, но не может закончить движение на непроходимой местности или в ней.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">An Arthromite Spinewyrm is able to burrow beneath and through the metal and rockcrete floors of the underhive, passing quickly through hidden crawl spaces and buried vents, before emerging elsewhere. An Arthromite Spinewyrm may move freely under impassable terrain if it has sufficient movement to do so, but may not end its movement on or with impassable terrain.</p></details></p>
+<p><span class="term">Снаряжение:<span class="orig">Equipment</span></span> Arthromite Spinewyrm вооружён(а) barbed fangs. Дополнительное оружие и снаряжение покупать и надевать нельзя.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">An Arthromite Spinewyrm is armed with barbed fangs. They may not purchase or be equipped with additional weapons or wargear.</p></details></p>
+</div></details>
+<details class="fighter" id="ash-waste-nomad-gang-list--unbound-helamite">
+<summary class="fighter-head">
+<h4 class="fighter-name">UNBOUND HELAMITE</h4>
+<span class="fighter-cost">70 кредитов<span class="orig">70 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Зверь, Питомец)<span class="orig">Fighter (Beast, Pet)</span></span> <span class="fighter-xp">Стартовый XP: 13<span class="orig">Starting XP: 13</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+<tbody>
+<tr><td>8”</td><td>5+</td><td>6+</td><td>3</td><td>3</td><td>1</td><td>4</td><td>1</td><td>6+</td><td>6</td><td>7</td><td>7</td><td>4</td></tr>
+</tbody></table></div>
+<p><span class="term">Длина поводка:<span class="orig">Leash Range</span></span> у Unbound Helamite длина поводка (Leash range) 3”.<span class="orig">An Unbound Helamite has a 3” Leash range.</span></p>
+<p><span class="term">Запасной скакун:<span class="orig">Spare Mount</span></span> если владелец Unbound Helamite экипирован Dustback Helamite и становится Suppressed, находясь в пределах 1” от Active Unbound Helamite, он может сделать тест Agility. Если тест пройден, Unbound Helamite меняет свой Status на Suppressed вместо владельца.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">If an Unbound Helamite’s owner is equipped with a Dustback Helamite and is Suppressed whilst within 1” of an Active Unbound Helamite, they may make an Agility test. If the test is passed, the Unbound Helamite changes its Status to Suppressed instead of its owner.</p></details></p>
+<p><span class="term">Снаряжение:<span class="orig">Equipment</span></span> Unbound Helamite вооружён(а) Helamite claws. Дополнительное оружие и снаряжение покупать и надевать нельзя.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">An Unbound Helamite is armed with Helamite claws. They may not purchase or be equipped with additional weapons or wargear.</p></details></p>
+</div></details>
+<details class="fighter" id="ash-waste-nomad-gang-list--ashwing-helamite">
+<summary class="fighter-head">
+<h4 class="fighter-name">ASHWING HELAMITE</h4>
+<span class="fighter-cost">70 кредитов<span class="orig">70 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Зверь, Летающий, Питомец)<span class="orig">Fighter (Beast, Flying, Pet)</span></span> <span class="fighter-xp">Стартовый XP: 13<span class="orig">Starting XP: 13</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+<tbody>
+<tr><td>8”</td><td>4+</td><td>6+</td><td>2</td><td>3</td><td>1</td><td>5</td><td>1</td><td>6+</td><td>6</td><td>5</td><td>6</td><td>4</td></tr>
+</tbody></table></div>
+<p><span class="term">Длина поводка:<span class="orig">Leash Range</span></span> у Ashwing Helamite длина поводка (Leash range) 9”.<span class="orig">An Ashwing Helamite has a 9” Leash range.</span></p>
+<p><span class="term">Приманка Ashwing:<span class="orig">Ashwing Lure</span></span> пока Active, владелец Ashwing Helamite может выполнить действие Размещение приманки:<span class="orig">While Active, an Ashwing Helamite’s owner may perform the Deploy Lure action:</span></p>
+<p>• Размещение приманки (одиночное): поставьте Ashwing Lure в контакт основания с этим Fighter. До конца боя приманка считается местностью, и любые Ashwing Helamite под контролем этого Fighter считают Ashwing Lure своим владельцем. Любой Fighter может выполнить действие Interact в пределах 1” от Ashwing Lure: сдвинуться на дистанцию, равную своей характеристике Movement, и в конце этого движения поставить Ashwing Lure в контакт основания с собой.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">• Deploy Lure (Single): Place an Ashwing Lure in base contact with this Fighter. For the remainder of the battle, the lure is treated as terrain and any Ashwing Helamites this Fighter controls treat the Ashwing Lure as if it were their owner. Any Fighter can perform the Interact action while within 1” of the Ashwing Lure in order to move a distance equal to their Movement characteristic and place the Ashwing Lure in base contact with the Fighter at the end of this move.</p></details></p>
+<p><span class="term">Снаряжение:<span class="orig">Equipment</span></span> Ashwing Helamite вооружён(а) toxic mandibles. Дополнительное оружие и снаряжение покупать и надевать нельзя.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">An Ashwing Helamite is armed with toxic mandibles. They may not purchase or be equipped with additional weapons or wargear.</p></details></p>
+</div></details>
+</div></details>
+<details class="fold fold-equip">
+<summary><span class="fold-title">Список снаряжения кочевников Пепельных пустошей<span class="orig">ASH WASTE NOMAD EQUIPMENT LIST</span></span><span class="fold-count">39 позиций</span></summary><div class="fold-body">
+<h4>Дальнобойное оружие<span class="orig">RANGED WEAPONS</span></h4>
+<h4>Авто / стаб-оружие<span class="orig">AUTO/STUB WEAPONS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Autogun</span><span class="equip-price">20 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Авто / стаб-оружие<span class="orig">AUTO/STUB WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Autogun</td><td>8”</td><td>24”</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Rapid Fire (1)<span class="trait-tip">Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают.</span></span></td><td>20</td><td>0</td></tr>
+<tr><td class="wname sub">warp round</td><td>8”</td><td>24”</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Cursed<span class="trait-tip">Попавшая модель проходит Willpower или получает Insanity. Натуральная 1 на попадании: то же для носителя.</span></span>, <span class="trait">Single Shot<span class="trait-tip">Один выстрел за бой, затем сразу Out of Ammo; перезарядить нельзя.</span></span></td><td>+10</td><td>4</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Long rifle</span><span class="equip-price">55 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Авто / стаб-оружие<span class="orig">AUTO/STUB WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Long rifle</td><td>24”</td><td>48”</td><td>4</td><td>-1</td><td>1</td><td class="traits"><span class="trait">Knockback (6+)<span class="trait-tip">Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1" от центра.</span></span></td><td>55</td><td>1</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Stub gun</span><span class="equip-price">5 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Авто / стаб-оружие<span class="orig">AUTO/STUB WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Stub gun</td><td>6”</td><td>12”</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Light<span class="trait-tip">Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят.</span></span></td><td>5</td><td>0</td></tr>
+<tr><td class="wname sub">warp round</td><td>6”</td><td>12”</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Cursed<span class="trait-tip">Попавшая модель проходит Willpower или получает Insanity. Натуральная 1 на попадании: то же для носителя.</span></span>, <span class="trait">Light<span class="trait-tip">Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят.</span></span>, <span class="trait">Single Shot<span class="trait-tip">Один выстрел за бой, затем сразу Out of Ammo; перезарядить нельзя.</span></span></td><td>+10</td><td>4</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Blast-оружие<span class="orig">BLAST WEAPONS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Blast carbine</span><span class="equip-price">25 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Blast-оружие<span class="orig">BLAST WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Blast carbine</td><td>10”</td><td>24”</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Rapid Fire (1)<span class="trait-tip">Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают.</span></span>, <span class="trait">Shock (6+)<span class="trait-tip">Если атака попадает и бросок попадания не меньше X, она автоматически ранит и считается натуральной 6 на ранении для других свойств.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Blast pistol</span><span class="equip-price">10 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Blast-оружие<span class="orig">BLAST WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Blast pistol</td><td>8”</td><td>12”</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Light<span class="trait-tip">Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят.</span></span>, <span class="trait">Shock (6+)<span class="trait-tip">Если атака попадает и бросок попадания не меньше X, она автоматически ранит и считается натуральной 6 на ранении для других свойств.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Blast rifle</span><span class="equip-price">20 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Blast-оружие<span class="orig">BLAST WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Blast rifle</td><td>10”</td><td>24”</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Shock (6+)<span class="trait-tip">Если атака попадает и бросок попадания не меньше X, она автоматически ранит и считается натуральной 6 на ранении для других свойств.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Heavy blaster*</span><span class="equip-price">75 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Blast-оружие<span class="orig">BLAST WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Heavy blaster*</td><td>12”</td><td>36”</td><td>4</td><td>-1</td><td>1</td><td class="traits"><span class="trait">Heavy<span class="trait-tip">Дальнобойное: только Braced Shot. Ближний бой: нельзя как Secondary и нельзя использовать Secondary вместе с ним.</span></span>, <span class="trait">Rapid Fire (2)<span class="trait-tip">Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают.</span></span>, <span class="trait">Shock (6+)<span class="trait-tip">Если атака попадает и бросок попадания не меньше X, она автоматически ранит и считается натуральной 6 на ранении для других свойств.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Эзотерическое оружие<span class="orig">ESOTERIC WEAPONS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Charge caster with shock blast rockets &amp; krak rockets</span><span class="equip-price">110 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Эзотерическое оружие<span class="orig">ESOTERIC WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr class="wgroup"><td class="wname group" colspan="7">Charge caster*</td><td>-</td><td>E</td></tr>
+<tr><td class="wname sub">shock blast rockets</td><td>20”</td><td>40”</td><td>4</td><td>-</td><td>1</td><td class="traits"><span class="trait">Ammo (4+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Blast (3”)<span class="trait-tip">Поставьте маркер Blast 3" или 5" на цель. Попадание — маркер остаётся. Промах — рассейте на D6" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него.</span></span>, <span class="trait">Heavy<span class="trait-tip">Дальнобойное: только Braced Shot. Ближний бой: нельзя как Secondary и нельзя использовать Secondary вместе с ним.</span></span>, <span class="trait">Shock (6+)<span class="trait-tip">Если атака попадает и бросок попадания не меньше X, она автоматически ранит и считается натуральной 6 на ранении для других свойств.</span></span></td><td></td><td></td></tr>
+<tr><td class="wname sub">krak rockets</td><td>20”</td><td>40”</td><td>6</td><td>-2</td><td>2</td><td class="traits"><span class="trait">Ammo (4+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Heavy<span class="trait-tip">Дальнобойное: только Braced Shot. Ближний бой: нельзя как Secondary и нельзя использовать Secondary вместе с ним.</span></span></td><td></td><td></td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Токсиновое оружие<span class="orig">TOXIN WEAPONS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Venom caster</span><span class="equip-price">75 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Токсиновое оружие<span class="orig">TOXIN WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Venom caster</td><td>T</td><td>-</td><td>-</td><td>-1</td><td>1</td><td class="traits"><span class="trait">Ammo (6+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Template<span class="trait-tip">Каплевидный шаблон от стреляющего через цель: все под ним получают автоматическое попадание. С Light в ближнем бою — одно автоматическое попадание без шаблона. С Rapid Fire (X) ближайшая модель получает попадания по кубику огневой мощи, остальные — по одному.</span></span>, <span class="trait">Toxin (3+)<span class="trait-tip">Против бойца ранит на X+ вместо сравнения Strength и Toughness. Против машины — только на натуральную 6.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Паутинное оружие<span class="orig">WEB WEAPONS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Web gun</span><span class="equip-price">65 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Паутинное оружие<span class="orig">WEB WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Web gun</td><td>T</td><td>-</td><td>5</td><td>-</td><td>-</td><td class="traits"><span class="trait">Ammo (6+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Template<span class="trait-tip">Каплевидный шаблон от стреляющего через цель: все под ним получают автоматическое попадание. С Light в ближнем бою — одно автоматическое попадание без шаблона. С Rapid Fire (X) ближайшая модель получает попадания по кубику огневой мощи, остальные — по одному.</span></span>, <span class="trait">Web<span class="trait-tip">Спасброски брони нельзя (непробиваемые можно). Раненый боец не теряет Wound, а получает Webbed.</span></span></td><td>65</td><td>4</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Web pistol</span><span class="equip-price">50 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Паутинное оружие<span class="orig">WEB WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Web pistol</td><td>T</td><td>-</td><td>4</td><td>-</td><td>-</td><td class="traits"><span class="trait">Ammo (6+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Light<span class="trait-tip">Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят.</span></span>, <span class="trait">Template<span class="trait-tip">Каплевидный шаблон от стреляющего через цель: все под ним получают автоматическое попадание. С Light в ближнем бою — одно автоматическое попадание без шаблона. С Rapid Fire (X) ближайшая модель получает попадания по кубику огневой мощи, остальные — по одному.</span></span>, <span class="trait">Web<span class="trait-tip">Спасброски брони нельзя (непробиваемые можно). Раненый боец не теряет Wound, а получает Webbed.</span></span></td><td>50</td><td>3</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Оружие ближнего боя<span class="orig">CLOSE COMBAT WEAPONS</span></h4>
+<h4>Цепное оружие<span class="orig">CHAIN WEAPONS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Chain lance</span><span class="equip-price">30 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Цепное оружие<span class="orig">CHAIN WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Chain lance*</td><td>E</td><td>-</td><td>S+1</td><td>-2</td><td>1</td><td class="traits"><span class="trait">Heavy<span class="trait-tip">Дальнобойное: только Braced Shot. Ближний бой: нельзя как Secondary и нельзя использовать Secondary вместе с ним.</span></span>, <span class="trait">Lance<span class="trait-tip">У бойца с подтипом Mounted: +1 Strength на атаках как часть Charge.</span></span>, <span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span>, <span class="trait">Shred (6+)<span class="trait-tip">Если оружие ранит и бросок на ранение не меньше X, Lethality этой атаки +1.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Эзотерическое оружие<span class="orig">ESOTERIC WEAPONS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Stormcaller staff* (Stormcaller only)</span><span class="equip-price">40 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Эзотерическое оружие<span class="orig">ESOTERIC WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Stormcaller staff*</td><td>E</td><td>-</td><td>S+1</td><td>-2</td><td>1</td><td class="traits"><span class="trait">Heavy<span class="trait-tip">Дальнобойное: только Braced Shot. Ближний бой: нельзя как Secondary и нельзя использовать Secondary вместе с ним.</span></span>, <span class="trait">Lance<span class="trait-tip">У бойца с подтипом Mounted: +1 Strength на атаках как часть Charge.</span></span>, <span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span>, <span class="trait">Unwieldy<span class="trait-tip">В ближнем бою Initiative модели ставится в 1 до любых модификаторов.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Оружие кочевников<span class="orig">NOMAD WEAPONS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Bone talons</span><span class="equip-price">20 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Оружие кочевников<span class="orig">NOMAD WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Bone talons</td><td>E</td><td>-</td><td>S</td><td>-1</td><td>1</td><td class="traits"><span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span>, <span class="trait">Rending (6+)<span class="trait-tip">Если натуральный бросок на ранение не меньше X, AP этой атаки увеличивается на 1.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Chitin dagger</span><span class="equip-price">10 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Оружие кочевников<span class="orig">NOMAD WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Chitin dagger</td><td>E</td><td>-</td><td>S</td><td>-</td><td>1</td><td class="traits"><span class="trait">Backstab<span class="trait-tip">+1 Strength, если цель Engaged более чем с одной моделью.</span></span>, <span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span>, <span class="trait">Rending (6+)<span class="trait-tip">Если натуральный бросок на ранение не меньше X, AP этой атаки увеличивается на 1.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Chitin gauntlet</span><span class="equip-price">40 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Оружие кочевников<span class="orig">NOMAD WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Chitin gauntlet</td><td>E</td><td>-</td><td>S+1</td><td>-1</td><td>2</td><td class="traits"><span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Insective knife</span><span class="equip-price">20 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Оружие кочевников<span class="orig">NOMAD WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Insective knife</td><td>E</td><td>-</td><td>S</td><td>-1</td><td>1</td><td class="traits"><span class="trait">Backstab<span class="trait-tip">+1 Strength, если цель Engaged более чем с одной моделью.</span></span>, <span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span>, <span class="trait">Shock (6+)<span class="trait-tip">Если атака попадает и бросок попадания не меньше X, она автоматически ранит и считается натуральной 6 на ранении для других свойств.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Trident</span><span class="equip-price">65 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Оружие кочевников<span class="orig">NOMAD WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Trident</td><td>E</td><td>-</td><td>S+2</td><td>-1</td><td>2</td><td class="traits"><span class="trait">Heavy<span class="trait-tip">Дальнобойное: только Braced Shot. Ближний бой: нельзя как Secondary и нельзя использовать Secondary вместе с ним.</span></span>, <span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span>, <span class="trait">Parry<span class="trait-tip">Как Primary или Secondary в схватке: +1 Save. Несколько таких оружий не складываются.</span></span>, <span class="trait">Shock (6+)<span class="trait-tip">Если атака попадает и бросок попадания не меньше X, она автоматически ранит и считается натуральной 6 на ранении для других свойств.</span></span>, <span class="trait">Unwieldy<span class="trait-tip">В ближнем бою Initiative модели ставится в 1 до любых модификаторов.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Venom stave</span><span class="equip-price">45 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Оружие кочевников<span class="orig">NOMAD WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Venom stave</td><td>E</td><td>-</td><td>-</td><td>-2</td><td>1</td><td class="traits"><span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span>, <span class="trait">Toxin (3+)<span class="trait-tip">Против бойца ранит на X+ вместо сравнения Strength и Toughness. Против машины — только на натуральную 6.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Venom whip</span><span class="equip-price">25 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Оружие кочевников<span class="orig">NOMAD WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Venom whip</td><td>E</td><td>-</td><td>-</td><td>-</td><td>1</td><td class="traits"><span class="trait">Knockback (3+)<span class="trait-tip">Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1" от центра.</span></span>, <span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span>, <span class="trait">Toxin (3+)<span class="trait-tip">Против бойца ранит на X+ вместо сравнения Strength и Toughness. Против машины — только на натуральную 6.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Примитивное оружие<span class="orig">PRIMITIVE WEAPONS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Long blade</span><span class="equip-price">25 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Примитивное оружие<span class="orig">PRIMITIVE WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Long blade</td><td>E</td><td>-</td><td>S</td><td>-1</td><td>1</td><td class="traits"><span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span>, <span class="trait">Parry<span class="trait-tip">Как Primary или Secondary в схватке: +1 Save. Несколько таких оружий не складываются.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Mono-hook</span><span class="equip-price">25 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Примитивное оружие<span class="orig">PRIMITIVE WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Mono-hook</td><td>E</td><td>-</td><td>S</td><td>-1</td><td>2</td><td class="traits"><span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Stalking knife</span><span class="equip-price">15 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Примитивное оружие<span class="orig">PRIMITIVE WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Stalking knife</td><td>E</td><td>-</td><td>S</td><td>-1</td><td>1</td><td class="traits"><span class="trait">Backstab<span class="trait-tip">+1 Strength, если цель Engaged более чем с одной моделью.</span></span>, <span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Снаряжение<span class="orig">WARGEAR</span></h4>
+<h4>Броня и силовые поля<span class="orig">ARMOUR &amp; FIELD ARMOUR</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Mesh armour</span><span class="equip-price">40 cr</span></summary><div class="equip-profile"><p class="profile-price">40 кредитов — TP 0<span class="orig">40 CREDITS – TP 0</span></p>
+<p>Fighter в сетчатой броне увеличивает характеристику Save на 1 при разрешении попаданий, полученных в ближнем бою.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A Fighter equipped with mesh armour increases their Save characteristic by 1 when resolving Hits suffered in close combat.</p></details></p></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Refractor field</span><span class="equip-price">50 cr</span></summary><div class="equip-profile"><p class="profile-price">50 кредитов — TP 2<span class="orig">50 CREDITS – TP 2</span></p>
+<p>Рефракторное поле даёт носителю непробиваемый спасбросок 5+; однако если при этом спасброске выпадает натуральная 1, поле перегорает и его нельзя использовать до конца боя.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A refractor field grants its wearer a 5+ Invulnerable save; however, should a natural 1 be rolled when making the Invulnerable save then the refractor field is burned out and cannot be used again for the rest of the battle.</p></details></p>
+<p>Рефракторное поле можно сочетать с другой бронёй и полевой бронёй.<span class="orig">A refractor field may be combined with other armour and field armour.</span></p></div></details></li>
+</ul>
+<h4>Личное снаряжение<span class="orig">PERSONAL EQUIPMENT</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Bio-booster</span><span class="equip-price">25 cr</span></summary><div class="equip-profile"><p class="profile-price">25 кредитов — TP 0<span class="orig">25 CREDITS – TP 0</span></p>
+<p>В первый раз за каждый бой, когда носитель получает состояние Injured, снизьте характеристику Lethality ранящего оружия на 1. Если Lethality стала нулём, бросьте 2 кубика ранений вместо 1, и носитель выбирает, какой применить; второй кубик отбрасывается.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">The first time in each battle that the bearer gains the Injured condition, reduce the Lethality characteristic of the weapon damaging them by 1. If the Lethality characteristic is now zero, roll 2 Injury dice instead of 1 and the bearer chooses which to apply; the other dice is discarded.</p></details></p></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Drop rig</span><span class="equip-price">10 cr</span></summary><div class="equip-profile"><p class="profile-price">10 кредитов — TP 0<span class="orig">10 CREDITS – TP 0</span></p>
+<p>Active или Suppressed Fighter со спусковой оснасткой может выполнить действие «Спуск», находясь в пределах 1” от края площадки:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">An Active or Suppressed Fighter with a drop rig can perform the Descend action while they are within 1” of the edge of a platform:</p></details></p>
+<p><span class="term">Спуск (одиночное):<span class="orig">Descend (Single)</span></span> Fighter сдвигается до 3” по горизонтали и до 12” по вертикали. Любое вертикальное движение должно быть вниз, то есть к земле.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">The Fighter makes a move of up to 3” horizontally and up to 12” vertically. Any vertical movement must be downwards, i.e., towards the ground.</p></details></p></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Grav chute</span><span class="equip-price">30 cr</span></summary><div class="equip-profile"><p class="profile-price">30 кредитов — TP 0<span class="orig">30 CREDITS – TP 0</span></p>
+<p>Если Fighter с грав-парашютом падает или прыгает вниз, он никогда не получает урон и никогда не становится Suppressed.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">If a Fighter with a grav chute falls or jumps down, they never suffer any damage and are never Suppressed.</p></details></p></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Medicae kit</span><span class="equip-price">20 cr</span></summary><div class="equip-profile"><p class="profile-price">20 кредитов — TP 0<span class="orig">20 CREDITS – TP 0</span></p>
+<p>Если Fighter с медкай-набором помогает другому Fighter на проверке Recovery, он бросает дополнительный кубик ранений и выбирает, какой оставить.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">If a Fighter with a Medicare kit aids another Fighter’s Recovery test, they roll an additional Injury dice and choose which one to keep.</p></details></p></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Photo-goggles</span><span class="equip-price">35 cr</span></summary><div class="equip-profile"><p class="profile-price">35 кредитов — TP 0<span class="orig">35 CREDITS – TP 0</span></p>
+<p>Fighter с фотоочками увеличивает значение X в правиле Visibility (X”) на 9” и может видеть сквозь дымовые облака, поставленные свойством Smoke. Кроме того, если во Fighter с фотоочками попадает оружие со свойством Flash, он получает модификатор −2 к проверке Initiative, чтобы не ослепнуть.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A Fighter equipped with photo-goggle increases the value of X in the Visibility (X”) rule by 9” and may see through smoke clouds placed as part of the Smoke trait. Additionally, if a Fighter equipped with photo-goggles is hit by a weapon with the Flash trait, they suffer a -2 modifier to their Initiative check to avoid being blinded.</p></details></p></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Photo-lumens</span><span class="equip-price">15 cr</span></summary><div class="equip-profile"><p class="profile-price">15 кредитов — TP 0<span class="orig">15 CREDITS – TP 0</span></p>
+<p>Увеличьте значение X в правиле Visibility (X”) на 9” для этого Fighter. В этого Fighter всегда можно целиться независимо от правила Visibility (X”).<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Increase the value of X in the Visibility (X”) rule by 9” for this Fighter. This Fighter can always be targeted, regardless of the Visibility (X”) rule.</p></details></p></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Respirator</span><span class="equip-price">15 cr</span></summary><div class="equip-profile"><p class="profile-price">15 кредитов — TP 0<span class="orig">15 CREDITS – TP 0</span></p>
+<p>Когда во Fighter с респиратором попадает оружие со свойством Gas, он получает непробиваемый спасбросок 5+ против этого оружия.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When a Fighter equipped with a respirator is hit by a weapon with the Gas trait, they gain a 5+ Invulnerable save against that weapon.</p></details></p></div></details></li>
+</ul>
+<h4>Аксессуары оружия<span class="orig">WEAPON ACCESSORIES</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Infra-sight</span><span class="equip-price">10 cr</span></summary><div class="equip-profile"><p class="profile-price">10 кредитов — TP 0<span class="orig">10 CREDITS – TP 0</span></p>
+<p>Оружие с инфраприцелом можно стрелять по целям за маркерами, созданными свойством Smoke. Кроме того, значение X в правиле Visibility (X”) увеличивается на 9” при использовании оружия с инфраприцелом.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A weapon fitted with an infra-sight can be fired at targets hidden behind markers created by the Smoke trait. Additionally, the value of X in the Visibility (X”) rule is increased by 9” when using a weapon equipped with an infra-sight.</p></details></p></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Mono-sight</span><span class="equip-price">20 cr</span></summary><div class="equip-profile"><p class="profile-price">20 кредитов — TP 0<span class="orig">20 CREDITS – TP 0</span></p>
+<p>Когда модель выполняет действие Aimed Shot оружием с моноприцелом, она применяет модификатор +2 к броску попадания вместо +1.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When a model performs an Aimed Shot action with a weapon equipped with a mono-sight, they apply a +2 modifier to the Hit roll instead of +1.</p></details></p></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Telescopic sight</span><span class="equip-price">20 cr</span></summary><div class="equip-profile"><p class="profile-price">20 кредитов — TP 1<span class="orig">20 CREDITS – TP 1</span></p>
+<p>Оружие с телескопическим прицелом снижает бонус модели к спасброску брони за укрытие на 1, пока цель в Long Range оружия.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A weapon fitted with a telescopic sight reduces the benefit a model gains to their Armour save for being in cover by 1 while within the weapon’s Long Range.</p></details></p></div></details></li>
+</ul>
+<h4>Скакуны<span class="orig">MOUNTS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Dustback Helamite</span><span class="equip-price">55 cr</span></summary><div class="equip-profile"><p class="profile-price">55 кредитов — Exclusive<span class="orig">55 credits – Exclusive</span></p>
+<p>Fighter с Dustback Helamite получает подтипы Mounted и Agile, навык Mighty Leap и ставит характеристику Movement на 8”. Когда он выполняет действие Dash, он добавляет 4” к характеристике Movement вместо Initiative.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A Fighter equipped with a Dustback Helamite gains the Mounted and Agile Subtypes, the Mighty Leap skill and sets their Movement characteristic to 8”. When they perform a Dash action, they add 4” to their Movement characteristic instead of their Initiative.</p></details></p>
+<p>Dustback Helamite экипирован Helamite claws, которые получают свойство Additional Attacks (1).<span class="orig">A Dustback Helamite is equipped with Helamite claws, which gain the Additional Attacks (1) trait.</span></p></div></details></li>
+</ul>
+<h4>Питомцы<span class="orig">PETS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Arthromite Spinewyrm</span><span class="equip-price">60 cr</span></summary><div class="equip-profile"><p class="fighter-meta"><span class="fighter-type">Боец (Зверь, Питомец)<span class="orig">Fighter (Beast, Pet)</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+<tbody>
+<tr><td>6”</td><td>4+</td><td>6+</td><td>2</td><td>3</td><td>1</td><td>4</td><td>1</td><td>6+</td><td>6</td><td>7</td><td>6</td><td>4</td></tr>
+</tbody></table></div>
+<p><a href="#ash-waste-nomad-gang-list--arthromite-spinewyrm">Полная карточка бойца &rarr;</a></p></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Ashwing Helamite</span><span class="equip-price">70 cr</span></summary><div class="equip-profile"><p class="fighter-meta"><span class="fighter-type">Боец (Зверь, Летающий, Питомец)<span class="orig">Fighter (Beast, Flying, Pet)</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+<tbody>
+<tr><td>8”</td><td>4+</td><td>6+</td><td>2</td><td>3</td><td>1</td><td>5</td><td>1</td><td>6+</td><td>6</td><td>5</td><td>6</td><td>4</td></tr>
+</tbody></table></div>
+<p><a href="#ash-waste-nomad-gang-list--ashwing-helamite">Полная карточка бойца &rarr;</a></p></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Unbound Helamite</span><span class="equip-price">70 cr</span></summary><div class="equip-profile"><p class="fighter-meta"><span class="fighter-type">Боец (Зверь, Питомец)<span class="orig">Fighter (Beast, Pet)</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+<tbody>
+<tr><td>8”</td><td>5+</td><td>6+</td><td>3</td><td>3</td><td>1</td><td>4</td><td>1</td><td>6+</td><td>6</td><td>7</td><td>7</td><td>4</td></tr>
+</tbody></table></div>
+<p><a href="#ash-waste-nomad-gang-list--unbound-helamite">Полная карточка бойца &rarr;</a></p></div></details></li>
+</ul>
+</div></details>
+<details class="fold fold-innate">
+<summary><span class="fold-title">Встроенное оружие</span><span class="fold-count">1 профиль</span></summary><div class="fold-body">
+<h4>Оружие ближнего боя<span class="orig">CLOSE COMBAT WEAPONS</span></h4>
+<div class="table-wrap"><table class="compact weapons">
+<caption>Природное оружие<span class="orig">NATURAL WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Barbed fangs</td><td>E</td><td>-</td><td>S+1</td><td>-</td><td>1</td><td class="traits"><span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span>, <span class="trait">Rending (6+)<span class="trait-tip">Если натуральный бросок на ранение не меньше X, AP этой атаки увеличивается на 1.</span></span></td><td>-</td><td>E</td></tr>
+<tr><td class="wname">Helamite claws</td><td>E</td><td>-</td><td>3</td><td>-1</td><td>1</td><td class="traits"><span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span></td><td>-</td><td>E</td></tr>
+<tr><td class="wname">Mandibles</td><td>E</td><td>-</td><td>S</td><td>-1</td><td>2</td><td class="traits"><span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span>, <span class="trait">Rending (6+)<span class="trait-tip">Если натуральный бросок на ранение не меньше X, AP этой атаки увеличивается на 1.</span></span></td><td>-</td><td>E</td></tr>
+<tr><td class="wname">Toxic mandibles</td><td>E</td><td>-</td><td>-</td><td>-1</td><td>1</td><td class="traits"><span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span>, <span class="trait">Toxic (3+)<span class="trait-tip">Против бойца ранит на X+ вместо сравнения Strength и Toughness. Против машины — только на натуральную 6.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div>
+</div></details>
+<a class="top-link" href="#top">Наверх</a>
+</section>
+</main>
+</div>
+
+<footer class="page-footer">
+    <p>Справочник собран из Gangs of the Underhive &amp; Outlands (Правила/GANGS0_3.pdf).
+    Русский текст — для игры за столом; английский оригинал спрятан под спойлером «Оригинал» или дан короткой подписью рядом.</p>
+    <p><a class="backlink" href="../../">&larr; На главную</a></p>
+    <a class="top-link" href="#top">Наверх</a>
+</footer>
+
+<script src="../handbook-search.js"></script>
+
+</body>
+</html>

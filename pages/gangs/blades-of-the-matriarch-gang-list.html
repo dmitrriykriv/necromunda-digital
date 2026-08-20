@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Necromunda — Клинки Матриарха</title>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#14161c">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<header class="topbar" id="top">
+    <a class="backlink" href="../gangs.html">&larr; Все банды</a>
+    <h1>Necromunda</h1>
+    <p>Клинки Матриарха &mdash; русский перевод, оригинал под спойлером</p>
+    <p class="source">Источник: Gangs of the Underhive &amp; Outlands &bull; Правила/GANGS0_3.pdf</p>
+</header>
+
+<div class="layout">
+<aside class="sidebar">
+    <div class="hb-search" id="hb-search">
+        <label class="hb-search-label" for="hb-q">Поиск</label>
+        <input class="hb-q" id="hb-q" type="search" placeholder="Боец, оружие, правило…" autocomplete="off" spellcheck="false" title="Клавиша / — фокус, Enter — к совпадению">
+        <div class="hb-modes" role="radiogroup" aria-label="Режим поиска">
+            <label class="is-on">
+                <input type="radio" name="hb-mode" value="headings" checked>
+                Заголовки
+            </label>
+            <label>
+                <input type="radio" name="hb-mode" value="full">
+                Весь текст
+            </label>
+        </div>
+        <p class="hb-status" id="hb-status" hidden></p>
+        <ol class="hb-hits" id="hb-hits" hidden></ol>
+    </div>
+
+    <details class="toc-drawer">
+    <summary class="toc-toggle">Банды</summary>
+    <nav>
+        <p class="sidebar-index"><a href="../gangs.html">Все банды</a></p>
+        <h2>Банды</h2>
+        <details open>
+            <summary>Кланы-дома</summary>
+            <ul>
+                <li><a href="house-cawdor-gang-list.html">Дом Каудор<span class="en">House Cawdor</span></a></li>
+                <li><a href="house-delaque-gang-list.html">Дом Делак<span class="en">House Delaque</span></a></li>
+                <li><a href="house-escher-gang-list.html">Дом Эшер<span class="en">House Escher</span></a></li>
+                <li><a href="house-goliath-gang-list.html">Дом Голиаф<span class="en">House Goliath</span></a></li>
+                <li><a href="house-orlock-gang-list.html">Дом Орлок<span class="en">House Orlock</span></a></li>
+                <li><a href="house-van-saar-gang-list.html">Дом Ван Саар<span class="en">House Van Saar</span></a></li>
+            </ul>
+        </details>
+        <details open>
+            <summary>Ответвления домов</summary>
+            <ul>
+                <li><a href="blades-of-the-matriarch-gang-list.html" class="is-current" aria-current="page">Клинки Матриарха<span class="en">Blades Of The Matriarch</span></a></li>
+                <li><a href="forge-smelters-gang-list.html">Плавильщики кузниц<span class="en">Forge Smelters</span></a></li>
+            </ul>
+        </details>
+        <details open>
+            <summary>Культы и мутанты</summary>
+            <ul>
+                <li><a href="chaos-helot-cult-list.html">Культ хаоситских илотов<span class="en">Chaos Helot Cult</span></a></li>
+                <li><a href="corpse-grinder-cult-gang-list.html">Культ Трупорезов<span class="en">Corpse Grinder Cult</span></a></li>
+                <li><a href="genestealer-cult-gang-list.html">Культ генокрадов<span class="en">Genestealer Cult</span></a></li>
+                <li><a href="malstrain-gang-list.html">Мальстрейн<span class="en">Malstrain</span></a></li>
+            </ul>
+        </details>
+        <details open>
+            <summary>Прочие банды</summary>
+            <ul>
+                <li><a href="ash-waste-nomad-gang-list.html">Кочевники Пепельных пустошей<span class="en">Ash Waste Nomad</span></a></li>
+                <li><a href="free-ogryn-gang-list.html">Свободные огрины<span class="en">Free Ogryn</span></a></li>
+                <li><a href="ironhead-squat-gang-list.html">Сквоты Айронхед<span class="en">Ironhead Squat</span></a></li>
+                <li><a href="outcast-gang-list.html">Изгои<span class="en">Outcast</span></a></li>
+                <li><a href="palanite-enforcer-patrol-list.html">Паланитские энфорсеры<span class="en">Palanite Enforcer</span></a></li>
+                <li><a href="spyre-hunting-party-list.html">Охотники Шпиля<span class="en">Spyre Hunting</span></a></li>
+                <li><a href="venator-gang-list.html">Венаторы<span class="en">Venator</span></a></li>
+            </ul>
+        </details>
+    </nav>
+    </details>
+</aside>
+<main class="content">
+<section id="blades-of-the-matriarch-gang-list">
+<h2>Клинки Матриарха<span class="en">Blades Of The Matriarch Gang List</span></h2>
+<div class="table-wrap"><table class="compact roster">
+<caption>Состав банды<span class="orig">Gang Composition</span></caption>
+<thead><tr><th>Боец<span class="orig">Fighter</span></th><th>Тип<span class="orig">Type</span></th><th class="num">Кредиты<span class="orig">Credits</span></th></tr></thead><tbody>
+<tr><td><a href="#blades-of-the-matriarch-gang-list--escher-blade-maiden">ESCHER BLADE MAIDEN</a></td><td>Боец (Гэнгер)<span class="orig">Fighter (Ganger)</span></td><td class="num">40</td></tr>
+<tr><td><a href="#blades-of-the-matriarch-gang-list--escher-chem-wytch">ESCHER CHEM WYTCH</a></td><td>Боец (Гэнгер)<span class="orig">Fighter (Ganger)</span></td><td class="num">55</td></tr>
+<tr><td><a href="#blades-of-the-matriarch-gang-list--escher-gun-maiden">ESCHER GUN MAIDEN</a></td><td>Боец (Гэнгер)<span class="orig">Fighter (Ganger)</span></td><td class="num">55</td></tr>
+<tr><td><a href="#blades-of-the-matriarch-gang-list--escher-huntress">ESCHER HUNTRESS</a></td><td>Боец (Гэнгер)<span class="orig">Fighter (Ganger)</span></td><td class="num">55</td></tr>
+</tbody></table></div>
+<p class="note"><span class="label">Снаряжение банды<span class="orig">Gang Equipment</span></span> Турели и прочее снаряжение банды покупаются в Trading Post и кладутся в Stash, не на бойца. <a href="../core-rules.html#snaryazhenie-bandy">Правила и турель Trazior →</a></p>
+<h3>Особые правила банды<span class="orig">GANG SPECIAL RULES</span></h3>
+<p><span class="term">Проворные:<span class="orig">Nimble</span></span> все Escher Fighters получают +1 к любым проверкам Agility.<span class="orig">All Escher Fighters add +1 to any Agility tests they make.</span></p>
+<p><span class="term">Состав банды:<span class="orig">Gang Composition</span></span> банды Blades of the Matriarch не следуют обычным правилам состава банды из Necromunda Skirmish: Core Rulebook. Вместо этого они могут брать любое число Fighter из списка банды Blades of the Matriarch в любой комбинации, но никогда не могут брать модели, которых нет в этом списке.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Blades of the Matriarch gangs do not follow the usual gang composition rules presented in the Necromunda Skirmish: Core Rulebook. Instead, they may take any number of Fighters in the Blades of the Matriarch gang list in any combination, but may never take any models that are not included in this list.</p></details></p>
+<p><span class="term">Доступ к навыкам:<span class="orig">Skill Access</span></span> бойцы этой банды имеют доступ к следующим наборам навыков:<span class="orig">This gang’s Fighters have access to the following Skill Sets:</span></p>
+<div class="table-wrap"><table class="compact skills">
+<thead><tr><th>Боец<span class="orig">Fighter</span></th><th>Ловкость<span class="orig">Agility</span></th><th>Сила<span class="orig">Brawn</span></th><th>Бой<span class="orig">Combat</span></th><th>Хитрость<span class="orig">Cunning</span></th><th>Эрудит<span class="orig">Savant</span></th><th>Стрельба<span class="orig">Shooting</span></th></tr></thead><tbody>
+<tr><td>Blade Maiden</td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill n">-</td><td class="skill n">-</td><td class="skill n">-</td></tr>
+<tr><td>Chem Wytch</td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill n">-</td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill n">-</td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill n">-</td></tr>
+<tr><td>Gun Maiden</td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill n">-</td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill n">-</td><td class="skill n">-</td><td class="skill p">Основной<span class="orig">Primary</span></td></tr>
+<tr><td>Huntress</td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill n">-</td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill n">-</td><td class="skill n">-</td><td class="skill s">Вторичный<span class="orig">Secondary</span></td></tr>
+</tbody></table></div>
+<details class="fold fold-fighters">
+<summary><span class="fold-title">Бойцы банды</span><span class="fold-count">4 карточки</span></summary><div class="fold-body">
+<details class="fighter" id="blades-of-the-matriarch-gang-list--escher-blade-maiden">
+<summary class="fighter-head">
+<h4 class="fighter-name">ESCHER BLADE MAIDEN</h4>
+<span class="fighter-cost">40 кредитов<span class="orig">40 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Гэнгер)<span class="orig">Fighter (Ganger)</span></span> <span class="fighter-xp">Стартовый XP: 19<span class="orig">Starting XP: 19</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+<tbody>
+<tr><td>5”</td><td>4+</td><td>4+</td><td>3</td><td>3</td><td>1</td><td>4</td><td>2</td><td>6+</td><td>6</td><td>6</td><td>6</td><td>6</td></tr>
+</tbody></table></div>
+<p><span class="term">Навыки:<span class="orig">Skills</span></span> у Escher Blade Maiden есть навыки Deadly Blows и Hit &amp; Run.<span class="orig">An Escher Blade Maiden has the Deadly Blows and Hit &amp; Run skills.</span></p>
+<p><span class="term">Снаряжение:<span class="orig">Equipment</span></span> при добавлении в ростер банды Escher Blade Maiden может купить оружие и снаряжение из списка Blades of the Matriarch:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When added to a Gang Roster, an Escher Blade Maiden may purchase weapons and wargear from the Blades of the Matriarch Equipment List:</p></details></p>
+<p>В ходе кампании им можно давать дополнительное оружие и снаряжение, купленное из списка Blades of the Matriarch и с Trading Post.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">• During the course of a campaign, they may be given additional weapons and wargear purchased from the Blades of the Matriarch Equipment List and from the Trading Post.</p></details></p>
+</div></details>
+<details class="fighter" id="blades-of-the-matriarch-gang-list--escher-chem-wytch">
+<summary class="fighter-head">
+<h4 class="fighter-name">ESCHER CHEM WYTCH</h4>
+<span class="fighter-cost">55 кредитов<span class="orig">55 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Гэнгер)<span class="orig">Fighter (Ganger)</span></span> <span class="fighter-xp">Стартовый XP: 19<span class="orig">Starting XP: 19</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+<tbody>
+<tr><td>5”</td><td>4+</td><td>4+</td><td>3</td><td>3</td><td>1</td><td>4</td><td>1</td><td>6+</td><td>6</td><td>6</td><td>6</td><td>7</td></tr>
+</tbody></table></div>
+<p><span class="term">Ухаживать за раненым:<span class="orig">Tend Patient</span></span> Escher Chem Wytch может выполнить пост-цикловое действие «Медицинский эскорт». Это действие стоит на 20 кредитов меньше обычного.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">An Escher Chem Wytch may perform the Medical Escort Post-cycle Action. This action costs 20 credits less than normal.</p></details></p>
+<p><span class="term">Навыки:<span class="orig">Skills</span></span> у Escher Chem Wytch есть навык Medicate. Снаряжение: при добавлении в Gang Roster Escher Chem Wytch может купить оружие и снаряжение из списка снаряжения Blades of the Matriarch:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">An Escher Chem Wytch has the Medicate skill Equipment: When added to a Gang Roster, an Escher Chem Wytch may purchase weapons and wargear from the Blades of the Matriarch Equipment List:</p></details></p>
+<p>В ходе кампании им можно давать дополнительное оружие и снаряжение, купленное из списка Blades of the Matriarch и с Trading Post.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">• During the course of a campaign, they may be given additional weapons and wargear purchased from the Blades of the Matriarch Equipment List and from the Trading Post.</p></details></p>
+</div></details>
+<details class="fighter" id="blades-of-the-matriarch-gang-list--escher-gun-maiden">
+<summary class="fighter-head">
+<h4 class="fighter-name">ESCHER GUN MAIDEN</h4>
+<span class="fighter-cost">55 кредитов<span class="orig">55 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Гэнгер)<span class="orig">Fighter (Ganger)</span></span> <span class="fighter-xp">Стартовый XP: 19<span class="orig">Starting XP: 19</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+<tbody>
+<tr><td>5”</td><td>4+</td><td>4+</td><td>3</td><td>3</td><td>1</td><td>4</td><td>1</td><td>6+</td><td>6</td><td>7</td><td>6</td><td>6</td></tr>
+</tbody></table></div>
+<p><span class="term">Навыки:<span class="orig">Skills</span></span> у Escher Gun Maiden есть навыки Hip-shooting и Lightning Reflexes.<span class="orig">An Escher Gun Maiden has the Hip-shooting and Lightning Reflexes skills.</span></p>
+<p><span class="term">Снаряжение:<span class="orig">Equipment</span></span> при добавлении в ростер банды Escher Gun Maiden может купить оружие и снаряжение из списка Blades of the Matriarch:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When added to a Gang Roster, an Escher Gun Maiden may purchase weapons and wargear from the Blades of the Matriarch Equipment List:</p></details></p>
+<p>В ходе кампании им можно давать дополнительное оружие и снаряжение, купленное из списка Blades of the Matriarch и с Trading Post.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">• During the course of a campaign, they may be given additional weapons and wargear purchased from the Blades of the Matriarch Equipment List and from the Trading Post.</p></details></p>
+</div></details>
+<details class="fighter" id="blades-of-the-matriarch-gang-list--escher-huntress">
+<summary class="fighter-head">
+<h4 class="fighter-name">ESCHER HUNTRESS</h4>
+<span class="fighter-cost">55 кредитов<span class="orig">55 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Гэнгер)<span class="orig">Fighter (Ganger)</span></span> <span class="fighter-xp">Стартовый XP: 19<span class="orig">Starting XP: 19</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+<tbody>
+<tr><td>5”</td><td>4+</td><td>4+</td><td>3</td><td>3</td><td>1</td><td>4</td><td>1</td><td>6+</td><td>6</td><td>6</td><td>7</td><td>6</td></tr>
+</tbody></table></div>
+<p><span class="term">Навыки:<span class="orig">Skills</span></span> у Escher Huntress есть навыки Gunfighter и Hip-shooting.<span class="orig">An Escher Huntress has the Gunfighter and Hip-shooting skills.</span></p>
+<p><span class="term">Снаряжение:<span class="orig">Equipment</span></span> при добавлении в ростер банды Escher Huntress может купить оружие и снаряжение из списка Blades of the Matriarch:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When added to a Gang Roster, an Escher Huntress may purchase weapons and wargear from the Blades of the Matriarch Equipment List:</p></details></p>
+<p>В ходе кампании им можно давать дополнительное оружие и снаряжение, купленное из списка Blades of the Matriarch и с Trading Post.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">• During the course of a campaign, they may be given additional weapons and wargear purchased from the Blades of the Matriarch Equipment List and from the Trading Post.</p></details></p>
+</div></details>
+</div></details>
+<details class="fold fold-equip">
+<summary><span class="fold-title">Список снаряжения Клинков Матриарха<span class="orig">BLADES OF THE MATRIARCH EQUIPMENT LIST</span></span><span class="fold-count">20 позиций</span></summary><div class="fold-body">
+<h4>Дальнобойное оружие<span class="orig">RANGED WEAPONS</span></h4>
+<h4>Авто / стаб-оружие<span class="orig">AUTO/STUB WEAPONS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Autopistol</span><span class="equip-price">10 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Авто / стаб-оружие<span class="orig">AUTO/STUB WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Autopistol</td><td>4”</td><td>12”</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Light<span class="trait-tip">Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят.</span></span>, <span class="trait">Rapid Fire (1)<span class="trait-tip">Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают.</span></span></td><td>10</td><td>0</td></tr>
+<tr><td class="wname sub">warp round</td><td>4”</td><td>12”</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Cursed<span class="trait-tip">Попавшая модель проходит Willpower или получает Insanity. Натуральная 1 на попадании: то же для носителя.</span></span>, <span class="trait">Light<span class="trait-tip">Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят.</span></span>, <span class="trait">Single Shot<span class="trait-tip">Один выстрел за бой, затем сразу Out of Ammo; перезарядить нельзя.</span></span></td><td>+10</td><td>4</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Stub gun</span><span class="equip-price">5 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Авто / стаб-оружие<span class="orig">AUTO/STUB WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Stub gun</td><td>6”</td><td>12”</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Light<span class="trait-tip">Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят.</span></span></td><td>5</td><td>0</td></tr>
+<tr><td class="wname sub">warp round</td><td>6”</td><td>12”</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Cursed<span class="trait-tip">Попавшая модель проходит Willpower или получает Insanity. Натуральная 1 на попадании: то же для носителя.</span></span>, <span class="trait">Light<span class="trait-tip">Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят.</span></span>, <span class="trait">Single Shot<span class="trait-tip">Один выстрел за бой, затем сразу Out of Ammo; перезарядить нельзя.</span></span></td><td>+10</td><td>4</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Лаз-оружие<span class="orig">LAS WEAPONS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Laspistol</span><span class="equip-price">5 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Лаз-оружие<span class="orig">LAS WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Laspistol</td><td>8”</td><td>12”</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Light<span class="trait-tip">Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят.</span></span></td><td>5</td><td>0</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Мельта-оружие<span class="orig">MELTA WEAPONS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Meltagun</span><span class="equip-price">140 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Мельта-оружие<span class="orig">MELTA WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Meltagun</td><td>6”</td><td>12”</td><td>8</td><td>-4</td><td>3</td><td class="traits"><span class="trait">Ammo (6+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Damage (3)<span class="trait-tip">Раненая модель теряет X Wounds вместо одного. Число кубиков ранений всё равно равно Lethality оружия.</span></span></td><td>140</td><td>4</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Примитивное оружие<span class="orig">PRIMITIVE WEAPONS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Throwing knives</span><span class="equip-price">10 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Примитивное оружие<span class="orig">PRIMITIVE WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Throwing knives</td><td>6”</td><td>12”</td><td>-</td><td>-</td><td>1</td><td class="traits"><span class="trait">Ammo (3+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Toxin (4+)<span class="trait-tip">Против бойца ранит на X+ вместо сравнения Strength и Toughness. Против машины — только на натуральную 6.</span></span></td><td>10</td><td>0</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Дробовики<span class="orig">SHOTGUNS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Shotgun with solid &amp; scatter ammo</span><span class="equip-price">35 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Дробовики<span class="orig">SHOTGUNS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr class="wgroup"><td class="wname group" colspan="7">Shotgun</td><td>35</td><td>0</td></tr>
+<tr><td class="wname sub">scatter ammo</td><td>4”</td><td>8”</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Rapid Fire (2)<span class="trait-tip">Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают.</span></span></td><td>+0</td><td></td></tr>
+<tr><td class="wname sub">solid ammo</td><td>8”</td><td>16”</td><td>4</td><td>-</td><td>1</td><td class="traits"><span class="trait">Knockback (5+)<span class="trait-tip">Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1" от центра.</span></span></td><td>+0</td><td></td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Токсиновое оружие<span class="orig">TOXIN WEAPONS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Needle pistol</span><span class="equip-price">25 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Токсиновое оружие<span class="orig">TOXIN WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Needle pistol</td><td>4”</td><td>9”</td><td>-</td><td>-</td><td>1</td><td class="traits"><span class="trait">Light<span class="trait-tip">Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят.</span></span>, <span class="trait">Toxin (3+)<span class="trait-tip">Против бойца ранит на X+ вместо сравнения Strength и Toughness. Против машины — только на натуральную 6.</span></span></td><td>25</td><td>1</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">‘Nightshade’ chem-thrower</span><span class="equip-price">95 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Токсиновое оружие<span class="orig">TOXIN WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">‘Nightshade’ chem-thrower</td><td>T</td><td>-</td><td>-</td><td>-</td><td>1</td><td class="traits"><span class="trait">Ammo (6+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Gas<span class="trait-tip">Спасброски брони нельзя. Респиратор даёт непробиваемый спасбросок 5+ против Wounds от этого оружия.</span></span>, <span class="trait">Template<span class="trait-tip">Каплевидный шаблон от стреляющего через цель: все под ним получают автоматическое попадание. С Light в ближнем бою — одно автоматическое попадание без шаблона. С Rapid Fire (X) ближайшая модель получает попадания по кубику огневой мощи, остальные — по одному.</span></span>, <span class="trait">Toxin (3+)<span class="trait-tip">Против бойца ранит на X+ вместо сравнения Strength и Toughness. Против машины — только на натуральную 6.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Repeater needle rifle (Gun Maiden only)</span><span class="equip-price">55 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Токсиновое оружие<span class="orig">TOXIN WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Repeater needle rifle</td><td>9”</td><td>18”</td><td>-</td><td>-1</td><td>1</td><td class="traits"><span class="trait">Rapid Fire (1)<span class="trait-tip">Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают.</span></span>, <span class="trait">Toxin (3+)<span class="trait-tip">Против бойца ранит на X+ вместо сравнения Strength и Toughness. Против машины — только на натуральную 6.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Оружие ближнего боя<span class="orig">CLOSE COMBAT WEAPONS</span></h4>
+<h4>Примитивное оружие<span class="orig">PRIMITIVE WEAPONS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Fighting knife</span><span class="equip-price">5 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Примитивное оружие<span class="orig">PRIMITIVE WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Fighting knife</td><td>E</td><td>-</td><td>S</td><td>-</td><td>1</td><td class="traits"><span class="trait">Backstab<span class="trait-tip">+1 Strength, если цель Engaged более чем с одной моделью.</span></span>, <span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span></td><td>5</td><td>0</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Шоковое оружие<span class="orig">SHOCK WEAPONS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Shock whip</span><span class="equip-price">10 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Шоковое оружие<span class="orig">SHOCK WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Shock whip</td><td>E</td><td>-</td><td>S</td><td>-</td><td>1</td><td class="traits"><span class="trait">Knockback (6+)<span class="trait-tip">Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1" от центра.</span></span>, <span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span>, <span class="trait">Shock (6+)<span class="trait-tip">Если атака попадает и бросок попадания не меньше X, она автоматически ранит и считается натуральной 6 на ранении для других свойств.</span></span></td><td>10</td><td>1</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Токсичное оружие<span class="orig">TOXIC WEAPONS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Stiletto knife</span><span class="equip-price">25 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Токсиновое оружие<span class="orig">TOXIN WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Stiletto knife</td><td>E</td><td>-</td><td>-</td><td>-</td><td>1</td><td class="traits"><span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span>, <span class="trait">Toxin (3+)<span class="trait-tip">Против бойца ранит на X+ вместо сравнения Strength и Toughness. Против машины — только на натуральную 6.</span></span></td><td>25</td><td>2</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Khimerix sting (Blade Maiden only)</span><span class="equip-price">45 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Токсиновое оружие<span class="orig">TOXIN WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Khimerix sting*</td><td>E</td><td>-</td><td>-</td><td>-1</td><td>1</td><td class="traits"><span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span>, <span class="trait">Paired (2)<span class="trait-tip">Нельзя как Secondary и нельзя Secondary вместе с ним. Как Primary: носитель увеличивает Attacks на X.</span></span>, <span class="trait">Toxin (3+)<span class="trait-tip">Против бойца ранит на X+ вместо сравнения Strength и Toughness. Против машины — только на натуральную 6.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Снаряжение<span class="orig">WARGEAR</span></h4>
+<h4>Гранаты<span class="orig">GRENADES</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Frag grenades</span><span class="equip-price">30 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Гранаты<span class="orig">GRENADES</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Frag grenades</td><td>-</td><td>9”</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Ammo (4+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Blast (3”)<span class="trait-tip">Поставьте маркер Blast 3" или 5" на цель. Попадание — маркер остаётся. Промах — рассейте на D6" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него.</span></span>, <span class="trait">Knockback (6+)<span class="trait-tip">Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1" от центра.</span></span>, <span class="trait">Limited<span class="trait-tip">Если оружие село, его нельзя перезарядить до конца боя.</span></span></td><td>30</td><td>0</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Krak grenades</span><span class="equip-price">45 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Гранаты<span class="orig">GRENADES</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Krak grenades</td><td>-</td><td>9”</td><td>6</td><td>-2</td><td>1</td><td class="traits"><span class="trait">Ammo (4+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Limited<span class="trait-tip">Если оружие село, его нельзя перезарядить до конца боя.</span></span></td><td>45</td><td>1</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Броня и силовые поля<span class="orig">ARMOUR &amp; FIELD ARMOUR</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Mesh armour</span><span class="equip-price">40 cr</span></summary><div class="equip-profile"><p class="profile-price">40 кредитов — TP 0<span class="orig">40 CREDITS – TP 0</span></p>
+<p>Fighter в сетчатой броне увеличивает характеристику Save на 1 при разрешении попаданий, полученных в ближнем бою.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A Fighter equipped with mesh armour increases their Save characteristic by 1 when resolving Hits suffered in close combat.</p></details></p></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Refractor field</span><span class="equip-price">50 cr</span></summary><div class="equip-profile"><p class="profile-price">50 кредитов — TP 2<span class="orig">50 CREDITS – TP 2</span></p>
+<p>Рефракторное поле даёт носителю непробиваемый спасбросок 5+; однако если при этом спасброске выпадает натуральная 1, поле перегорает и его нельзя использовать до конца боя.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A refractor field grants its wearer a 5+ Invulnerable save; however, should a natural 1 be rolled when making the Invulnerable save then the refractor field is burned out and cannot be used again for the rest of the battle.</p></details></p>
+<p>Рефракторное поле можно сочетать с другой бронёй и полевой бронёй.<span class="orig">A refractor field may be combined with other armour and field armour.</span></p></div></details></li>
+</ul>
+<h4>Личное снаряжение<span class="orig">PERSONAL EQUIPMENT</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Auto-chem (Chem Wytch only)</span><span class="equip-price">45 cr</span></summary><div class="equip-profile"><p class="profile-price">45 кредитов — Exclusive<span class="orig">45 credits – Exclusive</span></p>
+<p>Active Fighter с auto-chem может один раз за бой выполнить действие «Ввести Blood Rush»:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">An Active Fighter equipped with an auto-chem may perform the Administer Blood Rush action once per battle:</p></details></p>
+<p><span class="term">Ввести Blood Rush (свободное):<span class="orig">Administer Blood Rush (Free)</span></span> этот Fighter или дружественный Fighter в пределах 1” сразу восстанавливает 1 Wound, потерянный ранее в бою.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Either this Fighter or a friendly Fighter within 1” immediately recovers 1 Wound lost earlier in the battle.</p></details></p></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Multi-harness (Huntress only)</span><span class="equip-price">20 cr</span></summary><div class="equip-profile"><p class="profile-price">20 кредитов — Exclusive<span class="orig">20 credits – Exclusive</span></p>
+<p>Когда надета multi-harness, любое оружие Fighter со свойством Light также получает свойство Reliable.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When a multi-harness is equipped, any weapons equipped by the Fighter that have the Light trait also gain the Reliable trait.</p></details></p></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Servo-medicae (Chem Wytch only)</span><span class="equip-price">30 cr</span></summary><div class="equip-profile"><p class="profile-price">30 кредитов — Exclusive<span class="orig">30 credits – Exclusive</span></p>
+<p>Active Fighter с servo-medicae может выполнить действие «Автолечение»:<span class="orig">An Active Fighter equipped with a servo-medicae may perform the Auto- medicate action:</span></p>
+<p><span class="term">Автолечение (свободное):<span class="orig">Auto-medicate (Free)</span></span> когда Fighter выполняет это действие, выберите его самого или дружественного Active или Suppressed Fighter в пределах 3” и сделайте проверку Intelligence для этого Fighter. Если проверка пройдена, цель восстанавливает 1 Wound, потерянный ранее в бою.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When a Fighter performs this action, target either them or a friendly Active or Suppressed Fighter within 3” and make an Intelligence check for this Fighter. If the check is passed then the targeted Fighter regains 1 Wound lost earlier in the battle.</p></details></p></div></details></li>
+</ul>
+</div></details>
+<details class="fold fold-extra">
+<summary><span class="fold-title">Особые правила</span><span class="fold-count">2 раздела</span></summary><div class="fold-body">
+<h4>Смертельные удары (только боец)<span class="orig">DEADLY BLOWS (FIGHTER ONLY)</span></h4>
+<p>При разрешении атак ближнего боя, если модифицированная характеристика Initiative этого Fighter выше, чем у всех остальных моделей в схватке, один кубик Injury можно перебросить при разрешении урона, нанесённого этим Fighter.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When resolving close combat attacks, Fighter’s modified Initiative characteristic than that of all other models involved in the one Injury dice may be re-rolled when resolving damage inflicted by this Fighter.</p></details></p>
+<h4>Молниеносные рефлексы<span class="orig">LIGHTNING REFLEXES</span></h4>
+<p>Этот Fighter получает неуязвимый сейв 5+ против попаданий в ближнем бою и считает действие Retreat свободным действием.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">This Fighter gains a 5+ Invulnerable save against Hits suffered during close combat and treats the Retreat action as a Free action.</p></details></p>
+</div></details>
+<a class="top-link" href="#top">Наверх</a>
+</section>
+</main>
+</div>
+
+<footer class="page-footer">
+    <p>Справочник собран из Gangs of the Underhive &amp; Outlands (Правила/GANGS0_3.pdf).
+    Русский текст — для игры за столом; английский оригинал спрятан под спойлером «Оригинал» или дан короткой подписью рядом.</p>
+    <p><a class="backlink" href="../../">&larr; На главную</a></p>
+    <a class="top-link" href="#top">Наверх</a>
+</footer>
+
+<script src="../handbook-search.js"></script>
+
+</body>
+</html>

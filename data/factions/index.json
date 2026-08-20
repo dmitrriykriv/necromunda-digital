@@ -8,6 +8,13 @@
       "equipment": 39
     },
     {
+      "id": "blades-of-the-matriarch",
+      "name": "Клинки Матриарха",
+      "file": "blades-of-the-matriarch.json",
+      "types": 4,
+      "equipment": 20
+    },
+    {
       "id": "chaos-helot-cult",
       "name": "Культ хаоситских илотов",
       "file": "chaos-helot-cult.json",
@@ -20,6 +27,13 @@
       "file": "corpse-grinder-cult.json",
       "types": 5,
       "equipment": 30
+    },
+    {
+      "id": "forge-smelters",
+      "name": "Плавильщики кузниц",
+      "file": "forge-smelters.json",
+      "types": 4,
+      "equipment": 18
     },
     {
       "id": "free-ogryn",
@@ -57,25 +71,11 @@
       "equipment": 41
     },
     {
-      "id": "blades-of-the-matriarch",
-      "name": "Клинки Матриарха",
-      "file": "blades-of-the-matriarch.json",
-      "types": 4,
-      "equipment": 20
-    },
-    {
       "id": "house-goliath",
       "name": "Дом Голиаф",
       "file": "house-goliath.json",
-      "types": 7,
+      "types": 8,
       "equipment": 41
-    },
-    {
-      "id": "forge-smelters",
-      "name": "Плавильщики кузниц",
-      "file": "forge-smelters.json",
-      "types": 4,
-      "equipment": 18
     },
     {
       "id": "house-orlock",
@@ -88,7 +88,7 @@
       "id": "house-van-saar",
       "name": "Дом Ван Саар",
       "file": "house-van-saar.json",
-      "types": 7,
+      "types": 8,
       "equipment": 51
     },
     {
@@ -116,7 +116,7 @@
       "id": "palanite-enforcer",
       "name": "Паланитские энфорсеры",
       "file": "palanite-enforcer.json",
-      "types": 9,
+      "types": 10,
       "equipment": 41
     },
     {

@@ -89,8 +89,8 @@
         ]
       },
       "rules": [
-        "Ухаживать за раненым: Escher Chem Wytch может выполнить пост-цикловое действие «Медицинский эскорт». Это действие стоит на 20 кредитов меньше обычного.ОригиналAn Escher Chem Wytch may perform the Medical Escort Post-cycle Action. This action costs 20 credits less than normal.",
-        "Навыки: у Escher Chem Wytch есть навык Medicate. Снаряжение: при добавлении в Gang Roster Escher Chem Wytch может купить оружие и снаряжение из списка снаряжения Blades of the Matriarch:ОригиналAn Escher Chem Wytch has the Medicate skill Equipment: When added to a Gang Roster, an Escher Chem Wytch may purchase weapons and wargear from the Blades of the Matriarch Equipment List:"
+        "Ухаживать за раненым: Escher Chem Wytch может выполнить пост-цикловое действие «Медицинский эскорт». Это действие стоит на 20 кредитов меньше обычного.",
+        "Навыки: у Escher Chem Wytch есть навык Medicate. Снаряжение: при добавлении в Gang Roster Escher Chem Wytch может купить оружие и снаряжение из списка снаряжения Blades of the Matriarch:"
       ]
     },
     {
@@ -180,11 +180,7 @@
         ]
       },
       "rules": [
-        "Навыки: у Escher Huntress есть навыки Gunfighter и Hip-shooting.",
-        "Ввести Blood Rush (свободное): этот Fighter или дружественный Fighter в пределах 1” сразу восстанавливает 1 Wound, потерянный ранее в бою.ОригиналEither this Fighter or a friendly Fighter within 1” immediately recovers 1 Wound lost earlier in the battle.",
-        "Автолечение (свободное): когда Fighter выполняет это действие, выберите его самого или дружественного Active или Suppressed Fighter в пределах 3” и сделайте проверку Intelligence для этого Fighter. Если проверка пройдена, цель восстанавливает 1 Wound, потерянный ранее в бою.ОригиналWhen a Fighter performs this action, target either them or a friendly Active or Suppressed Fighter within 3” and make an Intelligence check for this Fighter. If the check is passed then the targeted Fighter regains 1 Wound lost earlier in the battle.",
-        "Ввести Blood Rush (свободное): этот Fighter или дружественный Fighter в пределах 1” сразу восстанавливает 1 Wound, потерянный ранее в бою.ОригиналEither this Fighter or a friendly Fighter within 1” immediately recovers 1 Wound lost earlier in the battle.",
-        "Автолечение (свободное): когда Fighter выполняет это действие, выберите его самого или дружественного Active или Suppressed Fighter в пределах 3” и сделайте проверку Intelligence для этого Fighter. Если проверка пройдена, цель восстанавливает 1 Wound, потерянный ранее в бою.ОригиналWhen a Fighter performs this action, target either them or a friendly Active or Suppressed Fighter within 3” and make an Intelligence check for this Fighter. If the check is passed then the targeted Fighter regains 1 Wound lost earlier in the battle."
+        "Навыки: у Escher Huntress есть навыки Gunfighter и Hip-shooting."
       ]
     }
   ],

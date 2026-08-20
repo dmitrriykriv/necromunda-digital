@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Necromunda — Культ хаоситских илотов</title>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#14161c">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<header class="topbar" id="top">
+    <a class="backlink" href="../gangs.html">&larr; Все банды</a>
+    <h1>Necromunda</h1>
+    <p>Культ хаоситских илотов &mdash; русский перевод, оригинал под спойлером</p>
+    <p class="source">Источник: Gangs of the Underhive &amp; Outlands &bull; Правила/GANGS0_3.pdf</p>
+</header>
+
+<div class="layout">
+<aside class="sidebar">
+    <div class="hb-search" id="hb-search">
+        <label class="hb-search-label" for="hb-q">Поиск</label>
+        <input class="hb-q" id="hb-q" type="search" placeholder="Боец, оружие, правило…" autocomplete="off" spellcheck="false" title="Клавиша / — фокус, Enter — к совпадению">
+        <div class="hb-modes" role="radiogroup" aria-label="Режим поиска">
+            <label class="is-on">
+                <input type="radio" name="hb-mode" value="headings" checked>
+                Заголовки
+            </label>
+            <label>
+                <input type="radio" name="hb-mode" value="full">
+                Весь текст
+            </label>
+        </div>
+        <p class="hb-status" id="hb-status" hidden></p>
+        <ol class="hb-hits" id="hb-hits" hidden></ol>
+    </div>
+
+    <details class="toc-drawer">
+    <summary class="toc-toggle">Банды</summary>
+    <nav>
+        <p class="sidebar-index"><a href="../gangs.html">Все банды</a></p>
+        <h2>Банды</h2>
+        <details open>
+            <summary>Кланы-дома</summary>
+            <ul>
+                <li><a href="house-cawdor-gang-list.html">Дом Каудор<span class="en">House Cawdor</span></a></li>
+                <li><a href="house-delaque-gang-list.html">Дом Делак<span class="en">House Delaque</span></a></li>
+                <li><a href="house-escher-gang-list.html">Дом Эшер<span class="en">House Escher</span></a></li>
+                <li><a href="house-goliath-gang-list.html">Дом Голиаф<span class="en">House Goliath</span></a></li>
+                <li><a href="house-orlock-gang-list.html">Дом Орлок<span class="en">House Orlock</span></a></li>
+                <li><a href="house-van-saar-gang-list.html">Дом Ван Саар<span class="en">House Van Saar</span></a></li>
+            </ul>
+        </details>
+        <details open>
+            <summary>Ответвления домов</summary>
+            <ul>
+                <li><a href="blades-of-the-matriarch-gang-list.html">Клинки Матриарха<span class="en">Blades Of The Matriarch</span></a></li>
+                <li><a href="forge-smelters-gang-list.html">Плавильщики кузниц<span class="en">Forge Smelters</span></a></li>
+            </ul>
+        </details>
+        <details open>
+            <summary>Культы и мутанты</summary>
+            <ul>
+                <li><a href="chaos-helot-cult-list.html" class="is-current" aria-current="page">Культ хаоситских илотов<span class="en">Chaos Helot Cult</span></a></li>
+                <li><a href="corpse-grinder-cult-gang-list.html">Культ Трупорезов<span class="en">Corpse Grinder Cult</span></a></li>
+                <li><a href="genestealer-cult-gang-list.html">Культ генокрадов<span class="en">Genestealer Cult</span></a></li>
+                <li><a href="malstrain-gang-list.html">Мальстрейн<span class="en">Malstrain</span></a></li>
+            </ul>
+        </details>
+        <details open>
+            <summary>Прочие банды</summary>
+            <ul>
+                <li><a href="ash-waste-nomad-gang-list.html">Кочевники Пепельных пустошей<span class="en">Ash Waste Nomad</span></a></li>
+                <li><a href="free-ogryn-gang-list.html">Свободные огрины<span class="en">Free Ogryn</span></a></li>
+                <li><a href="ironhead-squat-gang-list.html">Сквоты Айронхед<span class="en">Ironhead Squat</span></a></li>
+                <li><a href="outcast-gang-list.html">Изгои<span class="en">Outcast</span></a></li>
+                <li><a href="palanite-enforcer-patrol-list.html">Паланитские энфорсеры<span class="en">Palanite Enforcer</span></a></li>
+                <li><a href="spyre-hunting-party-list.html">Охотники Шпиля<span class="en">Spyre Hunting</span></a></li>
+                <li><a href="venator-gang-list.html">Венаторы<span class="en">Venator</span></a></li>
+            </ul>
+        </details>
+    </nav>
+    </details>
+</aside>
+<main class="content">
+<section id="chaos-helot-cult-list">
+<h2>Культ хаоситских илотов<span class="en">Chaos Helot Cult List</span></h2>
+<div class="table-wrap"><table class="compact roster">
+<caption>Состав банды<span class="orig">Gang Composition</span></caption>
+<thead><tr><th>Боец<span class="orig">Fighter</span></th><th>Тип<span class="orig">Type</span></th><th class="num">Кредиты<span class="orig">Credits</span></th></tr></thead><tbody>
+<tr><td><a href="#chaos-helot-cult-list--chaos-helot-cult-demagogue">CHAOS HELOT CULT DEMAGOGUE</a></td><td>Боец (Лидер)<span class="orig">Fighter (Leader)</span></td><td class="num">130</td></tr>
+<tr><td><a href="#chaos-helot-cult-list--chaos-helot-cult-disciple">CHAOS HELOT CULT DISCIPLE</a></td><td>Боец (Чемпион)<span class="orig">Fighter (Champion)</span></td><td class="num">95</td></tr>
+<tr><td><a href="#chaos-helot-cult-list--chaos-helot-cult-witch">CHAOS HELOT CULT WITCH</a></td><td>Боец (Чемпион, Виард)<span class="orig">Fighter (Champion, Wyrd)</span></td><td class="num">80</td></tr>
+<tr><td><a href="#chaos-helot-cult-list--chaos-helot-cultist">CHAOS HELOT CULTIST</a></td><td>Боец (Гэнгер, Специалист)<span class="orig">Fighter (Ganger, Specialist)</span></td><td class="num">45</td></tr>
+<tr><td><a href="#chaos-helot-cult-list--chaos-helot-initiate">CHAOS HELOT INITIATE</a></td><td>Боец (Проспект)<span class="orig">Fighter (Prospect)</span></td><td class="num">20</td></tr>
+<tr><td><a href="#chaos-helot-cult-list--chaos-familiar">CHAOS FAMILIAR</a></td><td>Боец (Зверь, Питомец)<span class="orig">Fighter (Beast, Pet)</span></td><td class="num">135</td></tr>
+<tr><td><a href="#chaos-helot-cult-list--chaos-spawn">CHAOS SPAWN</a></td><td>Боец (Зверь, Громила)<span class="orig">Fighter (Beast, Brute)</span></td><td class="num">130</td></tr>
+</tbody></table></div>
+<p class="note"><span class="label">Снаряжение банды<span class="orig">Gang Equipment</span></span> Турели и прочее снаряжение банды покупаются в Trading Post и кладутся в Stash, не на бойца. <a href="../core-rules.html#snaryazhenie-bandy">Правила и турель Trazior →</a></p>
+<h3>Особые правила банды<span class="orig">GANG SPECIAL RULES</span></h3>
+<p><span class="term">Благословлённые богами Хаоса:<span class="orig">Blessed by the Chaos Gods</span></span> культы Chaos Helot могут проводить Chaos Rituals (см. ниже).<span class="orig">Chaos Helot cults can perform Chaos Rituals (see below).</span></p>
+<p><span class="term">Стартовые навыки:<span class="orig">Starting Skills</span></span> при добавлении в ростер банды все Chaos Helot Leaders and Champions могут выбрать один навык из одного из своих основных наборов (Primary Skill Sets).<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When added to a Gang Roster, all Chaos Helot Leaders and Champions may select one skill from one of their Primary Skill Sets.</p></details></p>
+<p><span class="term">Доступ к навыкам:<span class="orig">Skill Access</span></span> бойцы этой банды имеют доступ к следующим наборам навыков:<span class="orig">This gang’s Fighters have access to the following Skill Sets:</span></p>
+<div class="table-wrap"><table class="compact skills">
+<thead><tr><th>Боец<span class="orig">Fighter</span></th><th>Ловкость<span class="orig">Agility</span></th><th>Сила<span class="orig">Brawn</span></th><th>Бой<span class="orig">Combat</span></th><th>Хитрость<span class="orig">Cunning</span></th><th>Эрудит<span class="orig">Savant</span></th><th>Стрельба<span class="orig">Shooting</span></th></tr></thead><tbody>
+<tr><td>Cult Demagogue</td><td class="skill n">-</td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill n">-</td></tr>
+<tr><td>Cult Disciple</td><td class="skill n">-</td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill n">-</td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill p">Основной<span class="orig">Primary</span></td></tr>
+<tr><td>Cult Witch</td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill n">-</td><td class="skill n">-</td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill n">-</td></tr>
+<tr><td>Cultist</td><td class="skill n">-</td><td class="skill n">-</td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill n">-</td><td class="skill s">Вторичный<span class="orig">Secondary</span></td></tr>
+<tr><td>Initiate</td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill n">-</td><td class="skill n">-</td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill n">-</td><td class="skill n">-</td></tr>
+<tr><td>Chaos Familiar</td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill n">-</td><td class="skill n">-</td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill n">-</td><td class="skill n">-</td></tr>
+<tr><td>Chaos Spawn</td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill n">-</td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill n">-</td><td class="skill n">-</td></tr>
+</tbody></table></div>
+<h3>Ритуалы Хаоса<span class="orig">CHAOS RITUALS</span></h3>
+<p>Следующие пост-цикловые действия доступны культам Chaos Helot и порченным Хаосом бандам:<span class="orig">The following Post-cycle Action are available to Chaos Helot cults and Chaos Corrupted gangs:</span></p>
+<h3>Вести ритуал (только лидер)<span class="orig">LEAD RITUAL (LEADER ONLY</span></h3>
+<p>Выберите, какого бога Хаоса ритуал пытается призвать: Blood God, Plague Lord, Dark Prince или Architect of Fate (примечание: порченная Хаосом банда может пытаться призвать только того бога Хаоса, которому посвятила себя).<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Select which of the Chaos gods the ritual is attempting to invoke: the Blood God, the Plague Lord, the Dark Prince or the Architect of Fate (note: a Chaos Corrupted gang can only attempt to invoke the Chaos god they have dedicated themselves to).</p></details></p>
+<p>Бросьте 2D6 и примените следующие модификаторы:<span class="orig">Roll 2D6 and apply the following modifiers:</span></p>
+<ul class="rule-list">
+<li>+1, если банда выиграла бой в этом цикле кампании.<span class="orig">+1 if the gang won a battle this Campaign Cycle.</span></li>
+<li>+1, если банда получила Reputation в этом цикле кампании.<span class="orig">+1 if the gang gained Reputation this Campaign Cycle.</span></li>
+<li>+2, если у культа уже отмечена на Gang Roster милость бога, к которому взывают ритуалом.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">+2 if the cult already has the favour of the god the ritual is invoking marked on their Gang Roster.</p></details></li>
+<li>−2, если у культа на Gang Roster отмечена милость другого бога, не того, к которому взывают ритуалом.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">- 2 if the cult has the favour of a different god to the one the ritual is invoking marked on their Gang Roster.</p></details></li>
+<li>−1, если банда проиграла бой в этом цикле кампании.<span class="orig">- 1 if the gang lost a battle this Campaign Cycle.</span></li>
+<li>−1, если банда потеряла Reputation в этом цикле кампании.<span class="orig">- 1 if the gang lost Reputation this Campaign Cycle.</span></li>
+</ul>
+<p>Если итоговый результат 9 или больше, покровитель культа внял ритуалу. Отметьте в Gang Roster, что у них есть благоволение выбранного бога — эффекты этого благоволения перечислены далее. Если уже было благоволение другого бога, оно заменяется. Кроме того, если другой Fighter выполняет пост-цикловое действие Ritual Focus, он немедленно получает D3+3 XP.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">If the final result is 9 or more, the ritual is heeded by the cult’s patron. Mark on their Gang Roster that they have the favour of their chosen god – the effects of this favour are listed as follows. If they already have the favour of a different god, it is replaced. In addition, if another Fighter perform the Ritual Focus Post-cycle Action, they immediately gain D3+3 XP.</p></details></p>
+<p>Если же итоговый результат — натуральные две 1, либо 2 или меньше после модификаторов, культ признан недостойным. Они теряют любое благоволение богов. Кроме того, если другой Fighter выполнял пост-цикловое действие Ritual Focus, он превращается в Chaos Spawn — удалите Fighter из Gang Roster и добавьте Chaos Spawn в Gang Roster.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">If, however, the final result is a natural double 1, or is 2 or less after modifiers, the cult is deemed unworthy. They lose any favour they had with the gods. Furthermore, if another Fighter performed the Ritual Focus Post-cycle Action, they are turned into a Chaos Spawn – remove the Fighter from the Gang Roster and add a Chaos Spawn to the Gang Roster.</p></details></p>
+<h3>Фокус ритуала (не больше одного бойца)<span class="orig">RITUAL FOCUS (MAX ONE FIGHTER)</span></h3>
+<p>Fighter предлагает себя в качестве фокуса Chaos Ritual. Это может дать дополнительные эффекты на Fighter, как описано в пост-цикловом действии Lead Ritual.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">The Fighter offers themselves to be the focus of the Chaos Ritual. This may have additional effects on the Fighter as described in the Lead Ritual Post-cycle Action.</p></details></p>
+<h3>Благоволение бога<span class="orig">THE GOD’S FAVOUR</span></h3>
+<p>Если банда успешно провела Chaos Ritual и отметила в Gang Roster благоволение выбранного бога, соответствующий бонус действует в следующем бою банды:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">If the gang has successfully performed a Chaos Ritual and has marked on their Gang Roster the favour of their chosen god, the appropriate bonus is gained during the gang’s next battle:</p></details></p>
+<p><span class="term">Blood God:<span class="orig">The Blood God</span></span> раз за раунд можно перебросить один проваленный бросок на ранение.<span class="orig">Once per round, a single failed Wound roll can be re-rolled.</span></p>
+<p><span class="term">Plague Lord:<span class="orig">The Plague Lord</span></span> раз за раунд можно перебросить один бросок Recovery.<span class="orig">Once per round, a single Recovery roll can be re-rolled.</span></p>
+<p><span class="term">Dark Prince:<span class="orig">The Dark Prince</span></span> раз за раунд во время фазы Activation можно выбрать две модели, которые Ready, и активировать их одну за другой, а не как обычно по одной.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Once per round, during the Activation phase, two models that are Ready can be picked and activated one after the other, rather than the usual one.</p></details></p>
+<p>Ни одна из этих моделей не может выполнять действие Group Activation.<span class="orig">Neither of these models may perform the Group Activation action.</span></p>
+<p><span class="term">Architect of Fate:<span class="orig">The Architect of Fate</span></span> раз за раунд можно перебросить один бросок попадания.<span class="orig">Once per round, a single Hit roll can be re-rolled.</span></p>
+<details class="fold fold-fighters">
+<summary><span class="fold-title">Бойцы банды</span><span class="fold-count">7 карточек</span></summary><div class="fold-body">
+<details class="fighter" id="chaos-helot-cult-list--chaos-helot-cult-demagogue">
+<summary class="fighter-head">
+<h4 class="fighter-name">CHAOS HELOT CULT DEMAGOGUE</h4>
+<span class="fighter-cost">130 кредитов<span class="orig">130 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Лидер)<span class="orig">Fighter (Leader)</span></span> <span class="fighter-xp">Стартовый XP: 61<span class="orig">Starting XP: 61</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+<tbody>
+<tr><td>5”</td><td>3+</td><td>3+</td><td>3</td><td>3</td><td>3</td><td>4</td><td>2</td><td>5+</td><td>8</td><td>9</td><td>8</td><td>7</td></tr>
+</tbody></table></div>
+<p><span class="term">Снаряжение:<span class="orig">Equipment</span></span> при добавлении в ростер банды Chaos Helot Cult Demagogue может купить оружие и снаряжение из списка Chaos Helot:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When added to a Gang Roster, a Chaos Helot Cult Demagogue may purchase weapons and wargear from the Chaos Helot Equipment List:</p></details></p>
+<p>В ходе кампании им можно давать дополнительное оружие и снаряжение, купленное из списка Chaos Helot и с Trading Post.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">• During the course of a campaign, they may be given additional weapons and wargear purchased from the Chaos Helot Equipment List and from the Trading Post.</p></details></p>
+</div></details>
+<details class="fighter" id="chaos-helot-cult-list--chaos-helot-cult-disciple">
+<summary class="fighter-head">
+<h4 class="fighter-name">CHAOS HELOT CULT DISCIPLE</h4>
+<span class="fighter-cost">95 кредитов<span class="orig">95 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Чемпион)<span class="orig">Fighter (Champion)</span></span> <span class="fighter-xp">Стартовый XP: 37<span class="orig">Starting XP: 37</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+<tbody>
+<tr><td>5”</td><td>3+</td><td>3+</td><td>3</td><td>3</td><td>2</td><td>3</td><td>2</td><td>5+</td><td>7</td><td>8</td><td>6</td><td>6</td></tr>
+</tbody></table></div>
+<p><span class="term">Снаряжение:<span class="orig">Equipment</span></span> при добавлении в ростер банды Chaos Helot Cult Disciple может купить оружие и снаряжение из списка Chaos Helot:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When added to a Gang Roster, a Chaos Helot Cult Disciple may purchase weapons and wargear from the Chaos Helot Equipment List:</p></details></p>
+<p>В ходе кампании им можно давать дополнительное оружие и снаряжение, купленное из списка Chaos Helot и с Trading Post.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">• During the course of a campaign, they may be given additional weapons and wargear purchased from the Chaos Helot Equipment List and from the Trading Post.</p></details></p>
+</div></details>
+<details class="fighter" id="chaos-helot-cult-list--chaos-helot-cult-witch">
+<summary class="fighter-head">
+<h4 class="fighter-name">CHAOS HELOT CULT WITCH</h4>
+<span class="fighter-cost">80 кредитов<span class="orig">80 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Чемпион, Виард)<span class="orig">Fighter (Champion, Wyrd)</span></span> <span class="fighter-xp">Стартовый XP: 49<span class="orig">Starting XP: 49</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+<tbody>
+<tr><td>5”</td><td>4+</td><td>4+</td><td>3</td><td>3</td><td>2</td><td>3</td><td>1</td><td>5+</td><td>6</td><td>7</td><td>8</td><td>7</td></tr>
+</tbody></table></div>
+<p><span class="term">Ведьма:<span class="orig">Witch</span></span> Chaos Helot Cult Witch считает Chaos Helot Wyrd Powers своим Primary Skill Set при выборе навыков.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A Chaos Helot Cult Witch treats Chaos Helot Wyrd Powers as a Primary Skill Set for the purposes of skill selection.</p></details></p>
+<p><span class="term">Снаряжение:<span class="orig">Equipment</span></span> при добавлении в ростер банды Chaos Helot Cult Witch может купить оружие и снаряжение из списка Chaos Helot:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When added to a Gang Roster, a Chaos Helot Cult Witch may purchase weapons and wargear from the Chaos Helot Equipment List:</p></details></p>
+<p>В ходе кампании им можно давать дополнительное оружие и снаряжение, купленное из списка Chaos Helot и с Trading Post.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">• During the course of a campaign, they may be given additional weapons and wargear purchased from the Chaos Helot Equipment List and from the Trading Post.</p></details></p>
+</div></details>
+<details class="fighter" id="chaos-helot-cult-list--chaos-helot-cultist">
+<summary class="fighter-head">
+<h4 class="fighter-name">CHAOS HELOT CULTIST</h4>
+<span class="fighter-cost">45 кредитов<span class="orig">45 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Гэнгер, Специалист)<span class="orig">Fighter (Ganger, Specialist)</span></span> <span class="fighter-xp">Стартовый XP: 13<span class="orig">Starting XP: 13</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+<tbody>
+<tr><td>5”</td><td>4+</td><td>4+</td><td>3</td><td>3</td><td>1</td><td>4</td><td>1</td><td>6+</td><td>6</td><td>7</td><td>5</td><td>6</td></tr>
+</tbody></table></div>
+<p><span class="term">Снаряжение:<span class="orig">Equipment</span></span> при добавлении в ростер банды Chaos Helot Cultist может купить оружие и снаряжение из списка Chaos Helot:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When added to a Gang Roster, a Chaos Helot Cultist may purchase weapons and wargear from the Chaos Helot Equipment List:</p></details></p>
+<p>В ходе кампании им можно давать дополнительное оружие и снаряжение, купленное из списка Chaos Helot и с Trading Post.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">• During the course of a campaign, they may be given additional weapons and wargear purchased from the Chaos Helot Equipment List and from the Trading Post.</p></details></p>
+</div></details>
+<details class="fighter" id="chaos-helot-cult-list--chaos-helot-initiate">
+<summary class="fighter-head">
+<h4 class="fighter-name">CHAOS HELOT INITIATE</h4>
+<span class="fighter-cost">20 кредитов<span class="orig">20 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Проспект)<span class="orig">Fighter (Prospect)</span></span> <span class="fighter-xp">Стартовый XP: 1<span class="orig">Starting XP: 1</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+<tbody>
+<tr><td>5”</td><td>5+</td><td>5+</td><td>3</td><td>3</td><td>1</td><td>4</td><td>1</td><td>6+</td><td>5</td><td>5</td><td>5</td><td>5</td></tr>
+</tbody></table></div>
+<p><span class="term">Снаряжение:<span class="orig">Equipment</span></span> при добавлении в ростер банды Chaos Helot Initiate может купить оружие и снаряжение из списка Chaos Helot:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When added to a Gang Roster, a Chaos Helot Initiate may purchase weapons and wargear from the Chaos Helot Equipment List:</p></details></p>
+<p>В ходе кампании им можно давать дополнительное оружие и снаряжение, купленное из списка Chaos Helot и с Trading Post.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">• During the course of a campaign, they may be given additional weapons and wargear purchased from the Chaos Helot Equipment List and from the Trading Post.</p></details></p>
+</div></details>
+<details class="fighter" id="chaos-helot-cult-list--chaos-familiar">
+<summary class="fighter-head">
+<h4 class="fighter-name">CHAOS FAMILIAR</h4>
+<span class="fighter-cost">135 кредитов<span class="orig">135 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Зверь, Питомец)<span class="orig">Fighter (Beast, Pet)</span></span> <span class="fighter-xp">Стартовый XP: 13<span class="orig">Starting XP: 13</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+<tbody>
+<tr><td>5”</td><td>4+</td><td>6+</td><td>2</td><td>2</td><td>1</td><td>5</td><td>1</td><td>6+</td><td>5</td><td>7</td><td>7</td><td>7</td></tr>
+</tbody></table></div>
+<p><span class="term">Длина поводка:<span class="orig">Leash Range</span></span> у Chaos Familiar длина поводка (Leash range) 3”.<span class="orig">A Chaos Familiar has a 3” Leash range.</span></p>
+<p><span class="term">Знамение удачи:<span class="orig">Omen of Fortune</span></span> Chaos Familiar чует беду и предупреждает спутника вспышкой предвидения. Пока он в пределах Leash range от владельца, у владельца есть непробиваемый спасбросок 4+.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A Chaos Familiar is able to sense bad fortune and forewarn its companion, giving them a flash of precognition. While they are within Leash range of their owner, their owner has a 4+ Invulnerable save.</p></details></p>
+<p><span class="term">Предвидение:<span class="orig">Precognition</span></span> дар предвидения Chaos Familiar позволяет уклоняться почти от любых атак, кроме самых неожиданных. Это мощное предвидение даёт непробиваемый спасбросок 4+.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">The gift of foresight possessed by the Chaos Familiar enables it to dodge and evade all but the most unexpected of attacks. This tremendous precognition grants them a 4+ Invulnerable save.</p></details></p>
+<p><span class="term">Психическое проявление:<span class="orig">Psychic Manifestation</span></span> Chaos Familiar — продолжение воли владельца и явное свидетельство благоволения богов Хаоса. Если владеющий Fighter имеет подтип Wyrd, раз в раунд он может перебросить проваленную проверку Willpower на проявление силы Wyrd.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A Chaos Familiar is an extension of the owner’s will and a clear indication of the favour the gods of Chaos have bestowed upon them. If the owning Fighter has the Wyrd Subtype, once per round they may re-roll a failed Willpower check to manifest a Wyrd Power.</p></details></p>
+<p><span class="term">Навыки:<span class="orig">Skills</span></span> у Chaos Familiar есть навык Clamber.<span class="orig">A Chaos Familiar has the Clamber skill.</span></p>
+<p><span class="term">Снаряжение:<span class="orig">Equipment</span></span> Chaos Familiar вооружён(а) a bite. Дополнительное оружие и снаряжение покупать и надевать нельзя.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A Chaos Familiar is armed with a bite. They may not purchase or be equipped with additional weapons or wargear.</p></details></p>
+</div></details>
+<details class="fighter" id="chaos-helot-cult-list--chaos-spawn">
+<summary class="fighter-head">
+<h4 class="fighter-name">CHAOS SPAWN</h4>
+<span class="fighter-cost">130 кредитов<span class="orig">130 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Зверь, Громила)<span class="orig">Fighter (Beast, Brute)</span></span> <span class="fighter-xp">Стартовый XP: 25<span class="orig">Starting XP: 25</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+<tbody>
+<tr><td>3+D3</td><td>*</td><td>6+</td><td>*</td><td>*</td><td>*</td><td>*</td><td>*</td><td>*</td><td>4</td><td>8</td><td>7</td><td>5</td></tr>
+</tbody></table></div>
+<p><span class="term">Искажённое чудовище:<span class="orig">Warped Monstrosity</span></span> когда Chaos Spawn добавляют в Gang Roster, бросьте D6 по каждой характеристике профиля и сверьтесь с таблицей ниже, чтобы определить её значение:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When a Chaos Spawn is added to the Gang Roster, roll a D6 for each characteristic in their profile and consult the table below to determine their value:</p></details></p>
+</div></details>
+<div class="table-wrap"><table class="compact dice-table">
+<thead><tr><th>D6</th><th>WS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th></tr></thead><tbody>
+<tr><td class="roll">1</td><td>5+</td><td>3</td><td>4</td><td>1</td><td>2</td><td>1</td><td>6+</td></tr>
+<tr><td class="roll">2-5</td><td>4+</td><td>4</td><td>5</td><td>2</td><td>3</td><td>2</td><td>5+</td></tr>
+<tr><td class="roll">6</td><td>3+</td><td>5</td><td>6</td><td>3</td><td>4</td><td>3</td><td>4+</td></tr>
+</tbody></table></div>
+<p><span class="term">Случайное движение:<span class="orig">Random Movement</span></span> характеристика Movement у Chaos Spawn случайная; бросайте каждый раз, когда Chaos Spawn активируется.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">The Movement characteristic for a Chaos Spawn is random; roll each time the Chaos Spawn is activated.</p></details></p>
+<p><span class="term">Благословлённые богами Хаоса:<span class="orig">Blessed by the Chaos Gods</span></span> когда Chaos Spawn выводится Out of Action, не бросайте по таблице Lasting Injury. Его всегда считают Out Cold.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When a Chaos Spawn is taken Out of Action, do not roll on the Lasting Injury table. They are always considered to be Out Cold.</p></details></p>
+<p><span class="term">Вне контроля:<span class="orig">Out of Control</span></span> на шаге Wrap-up последовательности Post-battle Sequence, если Chaos Spawn участвовал в бою, есть шанс, что он сбежит. Его хозяин назначает до трёх Fighter из банды, которые не были выведены Out of Action в этом бою; бросьте D6 за каждого Fighter. Если хотя бы один Fighter выбросил 4+, Chaos Spawn удерживают, и он остаётся с бандой. Иначе он сбегает в глубины андерхайва; Chaos Spawn уходит в Recovery, пока банда его возвращает. Кроме того, если любой Fighter выбросил 1, Chaos Spawn бьёт его. Немедленно бросьте по таблице Lasting Injury за него и примените результат.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">During the Wrap-up step of the Post-battle Sequence, if a Chaos Spawn took part in the battle there is a chance they will escape. Their controller nominates up to three Fighters from the gang who did not go Out of Action during the battle; roll a D6 for each Fighter. If at least one Fighter rolls a 4+, the Chaos Spawn is restrained and remains with the gang. otherwise they escape into the depths of the underhive; the Chaos Spawn goes into Recovery while the gang retrieves it. Additionally, if any Fighter rolls a 1, the Chaos Spawn lashes out at them. Roll on the Lasting Injury table for them and apply the result immediately.</p></details></p>
+<p><span class="term">Снаряжение:<span class="orig">Equipment</span></span> Chaos Spawn вооружён(а) tentacles. Дополнительное оружие и снаряжение покупать и надевать нельзя.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A Chaos Spawn is armed with tentacles. They may not purchase or be equipped with additional weapons or wargear.</p></details></p>
+</div></details>
+<details class="fold fold-equip">
+<summary><span class="fold-title">Список снаряжения хаоситских илотов<span class="orig">CHAOS HELOT EQUIPMENT LIST</span></span><span class="fold-count">40 позиций</span></summary><div class="fold-body">
+<h4>Дальнобойное оружие<span class="orig">RANGED WEAPONS</span></h4>
+<h4>Авто / стаб-оружие<span class="orig">AUTO/STUB WEAPONS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Autogun</span><span class="equip-price">20 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Авто / стаб-оружие<span class="orig">AUTO/STUB WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Autogun</td><td>8”</td><td>24”</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Rapid Fire (1)<span class="trait-tip">Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают.</span></span></td><td>20</td><td>0</td></tr>
+<tr><td class="wname sub">warp round</td><td>8”</td><td>24”</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Cursed<span class="trait-tip">Попавшая модель проходит Willpower или получает Insanity. Натуральная 1 на попадании: то же для носителя.</span></span>, <span class="trait">Single Shot<span class="trait-tip">Один выстрел за бой, затем сразу Out of Ammo; перезарядить нельзя.</span></span></td><td>+10</td><td>4</td></tr>
+</tbody></table></div></div></details></li>
+<li class="sub"><details class="equip-item"><summary><span class="equip-name">warp rounds</span><span class="equip-price">+10 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Autogun</caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname sub">warp round</td><td>8”</td><td>24”</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Cursed<span class="trait-tip">Попавшая модель проходит Willpower или получает Insanity. Натуральная 1 на попадании: то же для носителя.</span></span>, <span class="trait">Single Shot<span class="trait-tip">Один выстрел за бой, затем сразу Out of Ammo; перезарядить нельзя.</span></span></td><td>+10</td><td>4</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Autopistol</span><span class="equip-price">10 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Авто / стаб-оружие<span class="orig">AUTO/STUB WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Autopistol</td><td>4”</td><td>12”</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Light<span class="trait-tip">Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят.</span></span>, <span class="trait">Rapid Fire (1)<span class="trait-tip">Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают.</span></span></td><td>10</td><td>0</td></tr>
+<tr><td class="wname sub">warp round</td><td>4”</td><td>12”</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Cursed<span class="trait-tip">Попавшая модель проходит Willpower или получает Insanity. Натуральная 1 на попадании: то же для носителя.</span></span>, <span class="trait">Light<span class="trait-tip">Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят.</span></span>, <span class="trait">Single Shot<span class="trait-tip">Один выстрел за бой, затем сразу Out of Ammo; перезарядить нельзя.</span></span></td><td>+10</td><td>4</td></tr>
+</tbody></table></div></div></details></li>
+<li class="sub"><details class="equip-item"><summary><span class="equip-name">warp rounds</span><span class="equip-price">+10 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Autogun</caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname sub">warp round</td><td>8”</td><td>24”</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Cursed<span class="trait-tip">Попавшая модель проходит Willpower или получает Insanity. Натуральная 1 на попадании: то же для носителя.</span></span>, <span class="trait">Single Shot<span class="trait-tip">Один выстрел за бой, затем сразу Out of Ammo; перезарядить нельзя.</span></span></td><td>+10</td><td>4</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Heavy stubber*</span><span class="equip-price">70 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Авто / стаб-оружие<span class="orig">AUTO/STUB WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Heavy stubber*</td><td>20”</td><td>40”</td><td>4</td><td>-1</td><td>1</td><td class="traits"><span class="trait">Heavy<span class="trait-tip">Дальнобойное: только Braced Shot. Ближний бой: нельзя как Secondary и нельзя использовать Secondary вместе с ним.</span></span>, <span class="trait">Rapid Fire (2)<span class="trait-tip">Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают.</span></span></td><td>70</td><td>2</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Long rifle</span><span class="equip-price">55 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Авто / стаб-оружие<span class="orig">AUTO/STUB WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Long rifle</td><td>24”</td><td>48”</td><td>4</td><td>-1</td><td>1</td><td class="traits"><span class="trait">Knockback (6+)<span class="trait-tip">Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1" от центра.</span></span></td><td>55</td><td>1</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Stub gun</span><span class="equip-price">5 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Авто / стаб-оружие<span class="orig">AUTO/STUB WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Stub gun</td><td>6”</td><td>12”</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Light<span class="trait-tip">Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят.</span></span></td><td>5</td><td>0</td></tr>
+<tr><td class="wname sub">warp round</td><td>6”</td><td>12”</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Cursed<span class="trait-tip">Попавшая модель проходит Willpower или получает Insanity. Натуральная 1 на попадании: то же для носителя.</span></span>, <span class="trait">Light<span class="trait-tip">Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят.</span></span>, <span class="trait">Single Shot<span class="trait-tip">Один выстрел за бой, затем сразу Out of Ammo; перезарядить нельзя.</span></span></td><td>+10</td><td>4</td></tr>
+</tbody></table></div></div></details></li>
+<li class="sub"><details class="equip-item"><summary><span class="equip-name">warp rounds</span><span class="equip-price">+10 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Autogun</caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname sub">warp round</td><td>8”</td><td>24”</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Cursed<span class="trait-tip">Попавшая модель проходит Willpower или получает Insanity. Натуральная 1 на попадании: то же для носителя.</span></span>, <span class="trait">Single Shot<span class="trait-tip">Один выстрел за бой, затем сразу Out of Ammo; перезарядить нельзя.</span></span></td><td>+10</td><td>4</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Болт-оружие<span class="orig">BOLT WEAPONS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Warpstorm bolter</span><span class="equip-price">65 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Болт-оружие<span class="orig">BOLT WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Warpstorm bolter</td><td>12”</td><td>24”</td><td>4</td><td>-1</td><td>2</td><td class="traits"><span class="trait">Ammo (3+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Cursed<span class="trait-tip">Попавшая модель проходит Willpower или получает Insanity. Натуральная 1 на попадании: то же для носителя.</span></span>, <span class="trait">Rapid Fire (1)<span class="trait-tip">Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают.</span></span>, <span class="trait">Scarce (4+)<span class="trait-tip">При Reload бросьте D6: не меньше X — перезаряжено, иначе всё ещё Out of Ammo (можно пробовать снова).</span></span></td><td>65</td><td>4</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Огнемёты<span class="orig">FLAMERS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Flamer</span><span class="equip-price">70 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Огнемёты<span class="orig">FLAMERS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Flamer</td><td>T</td><td>-</td><td>4</td><td>-1</td><td>1</td><td class="traits"><span class="trait">Ammo (6+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Blaze (5+)<span class="trait-tip">Если бросок на ранение не меньше X, цель получает ещё одно попадание тем же профилем. Оно бросается на ранение отдельно и не вызывает новых дополнительных попаданий.</span></span>, <span class="trait">Template<span class="trait-tip">Каплевидный шаблон от стреляющего через цель: все под ним получают автоматическое попадание. С Light в ближнем бою — одно автоматическое попадание без шаблона. С Rapid Fire (X) ближайшая модель получает попадания по кубику огневой мощи, остальные — по одному.</span></span></td><td>70</td><td>1</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Hand flamer</span><span class="equip-price">45 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Огнемёты<span class="orig">FLAMERS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Hand Flamer</td><td>T</td><td>-</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Ammo (6+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Blaze (5+)<span class="trait-tip">Если бросок на ранение не меньше X, цель получает ещё одно попадание тем же профилем. Оно бросается на ранение отдельно и не вызывает новых дополнительных попаданий.</span></span>, <span class="trait">Light<span class="trait-tip">Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят.</span></span>, <span class="trait">Template<span class="trait-tip">Каплевидный шаблон от стреляющего через цель: все под ним получают автоматическое попадание. С Light в ближнем бою — одно автоматическое попадание без шаблона. С Rapid Fire (X) ближайшая модель получает попадания по кубику огневой мощи, остальные — по одному.</span></span></td><td>45</td><td>1</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Heavy flamer*</span><span class="equip-price">95 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Огнемёты<span class="orig">FLAMERS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Heavy flamer*</td><td>T</td><td>-</td><td>5</td><td>-2</td><td>1</td><td class="traits"><span class="trait">Ammo (6+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Blaze (5+)<span class="trait-tip">Если бросок на ранение не меньше X, цель получает ещё одно попадание тем же профилем. Оно бросается на ранение отдельно и не вызывает новых дополнительных попаданий.</span></span>, <span class="trait">Template<span class="trait-tip">Каплевидный шаблон от стреляющего через цель: все под ним получают автоматическое попадание. С Light в ближнем бою — одно автоматическое попадание без шаблона. С Rapid Fire (X) ближайшая модель получает попадания по кубику огневой мощи, остальные — по одному.</span></span></td><td>95</td><td>2</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Гранатомёты<span class="orig">GRENADE LAUNCHERS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Grenade launcher with frag &amp; krak grenades</span><span class="equip-price">80 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Гранатомёты<span class="orig">GRENADE LAUNCHERS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr class="wgroup"><td class="wname group" colspan="7">Grenade launcher</td><td>80</td><td>1</td></tr>
+<tr><td class="wname sub">frag grenades</td><td>6”</td><td>24”</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Ammo (4+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Blast (3”)<span class="trait-tip">Поставьте маркер Blast 3" или 5" на цель. Попадание — маркер остаётся. Промах — рассейте на D6" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него.</span></span>, <span class="trait">Knockback (5+)<span class="trait-tip">Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1" от центра.</span></span></td><td>+0</td><td></td></tr>
+<tr><td class="wname sub">krak grenades</td><td>6”</td><td>24”</td><td>6</td><td>-2</td><td>1</td><td class="traits"><span class="trait">Ammo (4+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span></td><td>+0</td><td></td></tr>
+<tr><td class="wname sub">photon flash grenades</td><td>6”</td><td>24”</td><td>-</td><td>-</td><td>-</td><td class="traits"><span class="trait">Ammo (5+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Blast (3”)<span class="trait-tip">Поставьте маркер Blast 3" или 5" на цель. Попадание — маркер остаётся. Промах — рассейте на D6" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него.</span></span>, <span class="trait">Flash<span class="trait-tip">Броска на ранение нет: цель делает проверку Initiative, при провале Blind. Слепая модель теряет Ready; её атаки ближнего боя попадают только на натуральную 6 до следующей активации.</span></span></td><td>+15</td><td>1</td></tr>
+<tr><td class="wname sub">smoke grenades</td><td>6”</td><td>24”</td><td>-</td><td>-</td><td>-</td><td class="traits"><span class="trait">Ammo (4+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Blast (3”)<span class="trait-tip">Поставьте маркер Blast 3" или 5" на цель. Попадание — маркер остаётся. Промах — рассейте на D6" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него.</span></span>, <span class="trait">Smoke<span class="trait-tip">Можно целиться в точку на поле. Маркер Blast остаётся: столб дыма блокирует линию видимости. В End phase на 5+ остаётся, иначе снимается. Попавшая модель не ранится и не становится Suppressed.</span></span></td><td>+15</td><td>1</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Лаз-оружие<span class="orig">LAS WEAPONS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Lasgun</span><span class="equip-price">15 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Лаз-оружие<span class="orig">LAS WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Lasgun</td><td>16”</td><td>24”</td><td>3</td><td>-</td><td>1</td><td class="traits">-</td><td>15</td><td>0</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Laspistol</span><span class="equip-price">5 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Лаз-оружие<span class="orig">LAS WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Laspistol</td><td>8”</td><td>12”</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Light<span class="trait-tip">Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят.</span></span></td><td>5</td><td>0</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Оружие ближнего боя<span class="orig">CLOSE COMBAT WEAPONS</span></h4>
+<h4>Цепное оружие<span class="orig">CHAIN WEAPONS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Chain glaive*</span><span class="equip-price">50 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Цепное оружие<span class="orig">CHAIN WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Chain glaive*</td><td>E</td><td>-</td><td>S+1</td><td>-1</td><td>2</td><td class="traits"><span class="trait">Heavy<span class="trait-tip">Дальнобойное: только Braced Shot. Ближний бой: нельзя как Secondary и нельзя использовать Secondary вместе с ним.</span></span>, <span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span>, <span class="trait">Parry<span class="trait-tip">Как Primary или Secondary в схватке: +1 Save. Несколько таких оружий не складываются.</span></span>, <span class="trait">Shred (6+)<span class="trait-tip">Если оружие ранит и бросок на ранение не меньше X, Lethality этой атаки +1.</span></span>, <span class="trait">Unwieldy<span class="trait-tip">В ближнем бою Initiative модели ставится в 1 до любых модификаторов.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Chainsword</span><span class="equip-price">20 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Цепное оружие<span class="orig">CHAIN WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Chainsword</td><td>E</td><td>-</td><td>S</td><td>-</td><td>1</td><td class="traits"><span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span>, <span class="trait">Parry<span class="trait-tip">Как Primary или Secondary в схватке: +1 Save. Несколько таких оружий не складываются.</span></span>, <span class="trait">Shred (5+)<span class="trait-tip">Если оружие ранит и бросок на ранение не меньше X, Lethality этой атаки +1.</span></span></td><td>20</td><td>1</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Примитивное оружие<span class="orig">PRIMITIVE WEAPONS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Axe</span><span class="equip-price">15 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Примитивное оружие<span class="orig">PRIMITIVE WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Axe</td><td>E</td><td>-</td><td>S</td><td>-1</td><td>1</td><td class="traits"><span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span></td><td>15</td><td>0</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Fighting knife</span><span class="equip-price">5 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Примитивное оружие<span class="orig">PRIMITIVE WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Fighting knife</td><td>E</td><td>-</td><td>S</td><td>-</td><td>1</td><td class="traits"><span class="trait">Backstab<span class="trait-tip">+1 Strength, если цель Engaged более чем с одной моделью.</span></span>, <span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span></td><td>5</td><td>0</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Flail</span><span class="equip-price">10 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Примитивное оружие<span class="orig">PRIMITIVE WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Flail</td><td>E</td><td>-</td><td>S</td><td>-</td><td>1</td><td class="traits"><span class="trait">Knockback (6+)<span class="trait-tip">Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1" от центра.</span></span>, <span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span></td><td>10</td><td>0</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Maul</span><span class="equip-price">20 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Примитивное оружие<span class="orig">PRIMITIVE WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Maul</td><td>E</td><td>-</td><td>S+1</td><td>-</td><td>1</td><td class="traits"><span class="trait">Concussive (6+)<span class="trait-tip">Если атака ранит и бросок на ранение не меньше X, цель снижает Initiative на 1 до конца следующей активации.</span></span>, <span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span></td><td>20</td><td>0</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Two-handed axe*</span><span class="equip-price">40 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Примитивное оружие<span class="orig">PRIMITIVE WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Two-handed axe*</td><td>E</td><td>-</td><td>S+1</td><td>-1</td><td>2</td><td class="traits"><span class="trait">Heavy<span class="trait-tip">Дальнобойное: только Braced Shot. Ближний бой: нельзя как Secondary и нельзя использовать Secondary вместе с ним.</span></span>, <span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span>, <span class="trait">Unwieldy<span class="trait-tip">В ближнем бою Initiative модели ставится в 1 до любых модификаторов.</span></span></td><td>40</td><td>1</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Two-handed hammer*</span><span class="equip-price">40 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Примитивное оружие<span class="orig">PRIMITIVE WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Two-handed hammer*</td><td>E</td><td>-</td><td>S+1</td><td>-</td><td>3</td><td class="traits"><span class="trait">Concussive (6+)<span class="trait-tip">Если атака ранит и бросок на ранение не меньше X, цель снижает Initiative на 1 до конца следующей активации.</span></span>, <span class="trait">Heavy<span class="trait-tip">Дальнобойное: только Braced Shot. Ближний бой: нельзя как Secondary и нельзя использовать Secondary вместе с ним.</span></span>, <span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span>, <span class="trait">Unwieldy<span class="trait-tip">В ближнем бою Initiative модели ставится в 1 до любых модификаторов.</span></span></td><td>40</td><td>1</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Снаряжение<span class="orig">WARGEAR</span></h4>
+<h4>Гранаты<span class="orig">GRENADES</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Blasting charges</span><span class="equip-price">60 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Гранаты<span class="orig">GRENADES</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Blasting charges</td><td>-</td><td>6”</td><td>5</td><td>-1</td><td>2</td><td class="traits"><span class="trait">Ammo (5+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Blast (5”)<span class="trait-tip">Поставьте маркер Blast 3" или 5" на цель. Попадание — маркер остаётся. Промах — рассейте на D6" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него.</span></span>, <span class="trait">Knockback (5+)<span class="trait-tip">Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1" от центра.</span></span>, <span class="trait">Limited<span class="trait-tip">Если оружие село, его нельзя перезарядить до конца боя.</span></span></td><td>60</td><td>2</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Demo charges</span><span class="equip-price">85 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Гранаты<span class="orig">GRENADES</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Demo charges</td><td>-</td><td>6”</td><td>6</td><td>-3</td><td>3</td><td class="traits"><span class="trait">Ammo (6+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Blast (5”)<span class="trait-tip">Поставьте маркер Blast 3" или 5" на цель. Попадание — маркер остаётся. Промах — рассейте на D6" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него.</span></span>, <span class="trait">Damage (2)<span class="trait-tip">Раненая модель теряет X Wounds вместо одного. Число кубиков ранений всё равно равно Lethality оружия.</span></span>, <span class="trait">Limited<span class="trait-tip">Если оружие село, его нельзя перезарядить до конца боя.</span></span></td><td>85</td><td>3</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Frag grenades</span><span class="equip-price">30 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Гранаты<span class="orig">GRENADES</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Frag grenades</td><td>-</td><td>9”</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Ammo (4+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Blast (3”)<span class="trait-tip">Поставьте маркер Blast 3" или 5" на цель. Попадание — маркер остаётся. Промах — рассейте на D6" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него.</span></span>, <span class="trait">Knockback (6+)<span class="trait-tip">Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1" от центра.</span></span>, <span class="trait">Limited<span class="trait-tip">Если оружие село, его нельзя перезарядить до конца боя.</span></span></td><td>30</td><td>0</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Incendiary charges</span><span class="equip-price">40 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Гранаты<span class="orig">GRENADES</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Incendiary charges</td><td>-</td><td>9”</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Ammo (5+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Blast (5”)<span class="trait-tip">Поставьте маркер Blast 3" или 5" на цель. Попадание — маркер остаётся. Промах — рассейте на D6" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него.</span></span>, <span class="trait">Blaze (5+)<span class="trait-tip">Если бросок на ранение не меньше X, цель получает ещё одно попадание тем же профилем. Оно бросается на ранение отдельно и не вызывает новых дополнительных попаданий.</span></span>, <span class="trait">Limited<span class="trait-tip">Если оружие село, его нельзя перезарядить до конца боя.</span></span></td><td>40</td><td>2</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Krak grenades</span><span class="equip-price">45 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Гранаты<span class="orig">GRENADES</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Krak grenades</td><td>-</td><td>9”</td><td>6</td><td>-2</td><td>1</td><td class="traits"><span class="trait">Ammo (4+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Limited<span class="trait-tip">Если оружие село, его нельзя перезарядить до конца боя.</span></span></td><td>45</td><td>1</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Броня и силовые поля<span class="orig">ARMOUR &amp; FIELD ARMOUR</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Hazard suit</span><span class="equip-price">10 cr</span></summary><div class="equip-profile"><p class="profile-price">10 кредитов — TP 0<span class="orig">10 CREDITS – TP 0</span></p>
+<p>Fighter в защитном костюме иммунен к свойствам Blaze (X+) и Rad-phage.<span class="orig">A fighter wearing a hazard suit is immune to the Blaze (X+) and Rad-phage traits.</span></p></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Mesh armour</span><span class="equip-price">40 cr</span></summary><div class="equip-profile"><p class="profile-price">40 кредитов — TP 0<span class="orig">40 CREDITS – TP 0</span></p>
+<p>Fighter в сетчатой броне увеличивает характеристику Save на 1 при разрешении попаданий, полученных в ближнем бою.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A Fighter equipped with mesh armour increases their Save characteristic by 1 when resolving Hits suffered in close combat.</p></details></p></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Refractor field</span><span class="equip-price">50 cr</span></summary><div class="equip-profile"><p class="profile-price">50 кредитов — TP 2<span class="orig">50 CREDITS – TP 2</span></p>
+<p>Рефракторное поле даёт носителю непробиваемый спасбросок 5+; однако если при этом спасброске выпадает натуральная 1, поле перегорает и его нельзя использовать до конца боя.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A refractor field grants its wearer a 5+ Invulnerable save; however, should a natural 1 be rolled when making the Invulnerable save then the refractor field is burned out and cannot be used again for the rest of the battle.</p></details></p>
+<p>Рефракторное поле можно сочетать с другой бронёй и полевой бронёй.<span class="orig">A refractor field may be combined with other armour and field armour.</span></p></div></details></li>
+</ul>
+<h4>Личное снаряжение<span class="orig">PERSONAL EQUIPMENT</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Cult icon (maximum one per gang)</span><span class="equip-price">20 cr</span></summary><div class="equip-profile"><p class="profile-price">20 кредитов — Exclusive<span class="orig">20 credits – Exclusive</span></p>
+<p>В отличие от другого снаряжения, банда может купить только один культовый символ. Его должен нести Leader или Champion. Когда Fighter с культовым символом выполняет действие Group Activation, он может перебросить проверку Leadership.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Unlike other items of wargear, a gang may only purchase a single cult icon. This item must be carried by either a Leader or a Champion. When a Fighter that is carrying a cult icon performs the Group Activation action, they may re-roll the Leadership check.</p></details></p></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Drop rig</span><span class="equip-price">10 cr</span></summary><div class="equip-profile"><p class="profile-price">10 кредитов — TP 0<span class="orig">10 CREDITS – TP 0</span></p>
+<p>Active или Suppressed Fighter со спусковой оснасткой может выполнить действие «Спуск», находясь в пределах 1” от края площадки:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">An Active or Suppressed Fighter with a drop rig can perform the Descend action while they are within 1” of the edge of a platform:</p></details></p>
+<p><span class="term">Спуск (одиночное):<span class="orig">Descend (Single)</span></span> Fighter сдвигается до 3” по горизонтали и до 12” по вертикали. Любое вертикальное движение должно быть вниз, то есть к земле.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">The Fighter makes a move of up to 3” horizontally and up to 12” vertically. Any vertical movement must be downwards, i.e., towards the ground.</p></details></p></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Medicae kit</span><span class="equip-price">20 cr</span></summary><div class="equip-profile"><p class="profile-price">20 кредитов — TP 0<span class="orig">20 CREDITS – TP 0</span></p>
+<p>Если Fighter с медкай-набором помогает другому Fighter на проверке Recovery, он бросает дополнительный кубик ранений и выбирает, какой оставить.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">If a Fighter with a Medicare kit aids another Fighter’s Recovery test, they roll an additional Injury dice and choose which one to keep.</p></details></p></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Photo-goggles</span><span class="equip-price">35 cr</span></summary><div class="equip-profile"><p class="profile-price">35 кредитов — TP 0<span class="orig">35 CREDITS – TP 0</span></p>
+<p>Fighter с фотоочками увеличивает значение X в правиле Visibility (X”) на 9” и может видеть сквозь дымовые облака, поставленные свойством Smoke. Кроме того, если во Fighter с фотоочками попадает оружие со свойством Flash, он получает модификатор −2 к проверке Initiative, чтобы не ослепнуть.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A Fighter equipped with photo-goggle increases the value of X in the Visibility (X”) rule by 9” and may see through smoke clouds placed as part of the Smoke trait. Additionally, if a Fighter equipped with photo-goggles is hit by a weapon with the Flash trait, they suffer a -2 modifier to their Initiative check to avoid being blinded.</p></details></p></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Respirator</span><span class="equip-price">15 cr</span></summary><div class="equip-profile"><p class="profile-price">15 кредитов — TP 0<span class="orig">15 CREDITS – TP 0</span></p>
+<p>Когда во Fighter с респиратором попадает оружие со свойством Gas, он получает непробиваемый спасбросок 5+ против этого оружия.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When a Fighter equipped with a respirator is hit by a weapon with the Gas trait, they gain a 5+ Invulnerable save against that weapon.</p></details></p></div></details></li>
+</ul>
+<h4>Аксессуары оружия<span class="orig">WEAPON ACCESSORIES</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Infra-sight</span><span class="equip-price">10 cr</span></summary><div class="equip-profile"><p class="profile-price">10 кредитов — TP 0<span class="orig">10 CREDITS – TP 0</span></p>
+<p>Оружие с инфраприцелом можно стрелять по целям за маркерами, созданными свойством Smoke. Кроме того, значение X в правиле Visibility (X”) увеличивается на 9” при использовании оружия с инфраприцелом.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A weapon fitted with an infra-sight can be fired at targets hidden behind markers created by the Smoke trait. Additionally, the value of X in the Visibility (X”) rule is increased by 9” when using a weapon equipped with an infra-sight.</p></details></p></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Mono-sight</span><span class="equip-price">20 cr</span></summary><div class="equip-profile"><p class="profile-price">20 кредитов — TP 0<span class="orig">20 CREDITS – TP 0</span></p>
+<p>Когда модель выполняет действие Aimed Shot оружием с моноприцелом, она применяет модификатор +2 к броску попадания вместо +1.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When a model performs an Aimed Shot action with a weapon equipped with a mono-sight, they apply a +2 modifier to the Hit roll instead of +1.</p></details></p></div></details></li>
+</ul>
+<h4>Скакуны<span class="orig">MOUNTS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Dirt bike</span><span class="equip-price">35 cr</span></summary><div class="equip-profile"><p class="profile-price">35 кредитов — TP 0<span class="orig">35 CREDITS – TP 0</span></p>
+<p>Fighter с dirt bike получает подтип Mounted и ставит характеристику Movement на 8”. Когда он выполняет действие Dash, он добавляет 5” к характеристике Movement вместо Initiative.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A Fighter equipped with a dirt bike gains the Mounted Subtype and sets their Movement characteristic to 8”. When they perform a Dash action, they add 5” to their Movement characteristic instead of their Initiative.</p></details></p></div></details></li>
+</ul>
+<h4>Питомцы<span class="orig">PETS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Chaos Familiar</span><span class="equip-price">135 cr</span></summary><div class="equip-profile"><p class="fighter-meta"><span class="fighter-type">Боец (Зверь, Питомец)<span class="orig">Fighter (Beast, Pet)</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+<tbody>
+<tr><td>5”</td><td>4+</td><td>6+</td><td>2</td><td>2</td><td>1</td><td>5</td><td>1</td><td>6+</td><td>5</td><td>7</td><td>7</td><td>7</td></tr>
+</tbody></table></div>
+<p><a href="#chaos-helot-cult-list--chaos-familiar">Полная карточка бойца &rarr;</a></p></div></details></li>
+</ul>
+</div></details>
+<details class="fold fold-innate">
+<summary><span class="fold-title">Встроенное оружие</span><span class="fold-count">1 профиль</span></summary><div class="fold-body">
+<h4>Оружие ближнего боя<span class="orig">CLOSE COMBAT WEAPONS</span></h4>
+<div class="table-wrap"><table class="compact weapons">
+<caption>Природное оружие<span class="orig">NATURAL WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Bite</td><td>E</td><td>-</td><td>S</td><td>-</td><td>1</td><td class="traits"><span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span></td><td>-</td><td>E</td></tr>
+<tr><td class="wname">Tentacles</td><td>E</td><td>-</td><td>S</td><td>-1</td><td>2</td><td class="traits"><span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span>, <span class="trait">Parry<span class="trait-tip">Как Primary или Secondary в схватке: +1 Save. Несколько таких оружий не складываются.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div>
+</div></details>
+<details class="fold fold-wyrd">
+<summary><span class="fold-title">Силы виардов хаоситских илотов<span class="orig">CHAOS HELOT WYRD POWERS</span></span><span class="fold-count">1 раздел</span></summary><div class="fold-body">
+<p>Chaos Helot Cult Witches имеют доступ к силам Wyrd Chaos Helot Cult, перечисленным ниже, и считают эти силы одним из своих Primary Skill Sets.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Chaos Helot Cult Witches have access to the Chaos Helot Cult Wyrd Powers listed below, and treat these powers as one of their Primary Skill Sets.</p></details></p>
+<p>1. Бичевание (свободное), постоянный эффект. Пока эта сила Wyrd поддерживается, Cult Witch считается вооружённой следующим оружием:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">1. Scouring (Free), Continuous Effect For as long as this Wyrd Power is maintained, the Cult Witch counts as being armed with the following weapon:</p></details></p>
+<div class="table-wrap"><table class="compact weapons">
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th></tr></thead><tbody>
+<tr><td class="wname">Scouring</td><td>T</td><td>-</td><td>2</td><td>-</td><td>1</td><td class="traits"><span class="trait">Blaze (5+)<span class="trait-tip">Если бросок на ранение не меньше X, цель получает ещё одно попадание тем же профилем. Оно бросается на ранение отдельно и не вызывает новых дополнительных попаданий.</span></span>, <span class="trait">Template<span class="trait-tip">Каплевидный шаблон от стреляющего через цель: все под ним получают автоматическое попадание. С Light в ближнем бою — одно автоматическое попадание без шаблона. С Rapid Fire (X) ближайшая модель получает попадания по кубику огневой мощи, остальные — по одному.</span></span> 2. Levitation (Free), Continuous Effect For as long as this Wyrd Power is maintained, the Cult Witch’s Movement characteristic is increased by 3” and they gain the Flying Subtype. 3. Warp Strength (Free), Continuous Effect For as long as this Wyrd Power is maintained, the Cult Witch’s Strength characteristic is increased by 2, and the Lethality of any close combat attacks they make is increased by 1. 4. Warp <span class="trait">Shield (Single)<span class="trait-tip">Хотя бы одно такое оружие: +1 Save против стрельбы. Несколько штук не складываются.</span></span> Until the End phase of this round, add 1 to the Save characteristic of the Cult Witch and any other friendly Fighters within 3” of them. 5. Maddening Visions (Single) Until the End phase of this round, make a Willpower check for any enemy Fighter who ends their activation within 3” of the Cult Witch. If the check is failed, the Fighter gains the Insanity condition. 6. Assail (Single) Immediately make a ranged attack against an enemy Fighter within 12” and Line of Sight. If Hit, move the target D3” in any direction and Suppress them. If they come into base contact with another Fighter or any terrain, they stop moving and suffer a Str 3, AP -, L1 Hit. If they come into base contact with another Fighter, that Fighter also suffers a Str 3, AP -, L1 Hit and becomes Suppressed. If the two Fighters belong to different gangs, instead of both becoming Suppressed, they are now Engaged with each other.</td></tr>
+</tbody></table></div>
+</div></details>
+<details class="fold fold-variant">
+<summary><span class="fold-title">Банды, порченные Хаосом<span class="orig">CHAOS CORRUPTED GANGS</span></span><span class="fold-count">3 раздела</span></summary><div class="fold-body">
+<h4>Особые правила банд, порченных Хаосом<span class="orig">CHAOS CORRUPTED GANGS SPECIAL RULES</span></h4>
+<h4>Принятие богов Хаоса<span class="orig">EMBRACING THE CHAOS GODS</span></h4>
+<p>При создании банды игрок может решить, что её порчат боги Хаоса. Если да, они получают следующие преимущества и недостатки. Порченными Хаосом могут стать следующие банды: шесть домов-кланов (Cawdor, Delaque, Escher, Orlock и Van Saar) и Palanite Enforcers.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">During gang creation a player can decide that their gang has been corrupted by the Chaos gods. If they do, they gain the benefits and drawbacks that follow. The following gangs can be Chaos Corrupted: the six clan houses (Cawdor, Delaque, Escher, Orlock and Van Saar) and Palanite Enforcers.</p></details></p>
+<h4>Эффекты порчи Хаоса<span class="orig">EFFECTS OF CHAOS CORRUPTION</span></h4>
+<p>Chaos Corrupted Gang получает следующие преимущества и недостатки:<span class="orig">A Chaos Corrupted Gang gains the following benefits and drawbacks:</span></p>
+<ul class="rule-list">
+<li>Члены банды не получают выгод от особых правил банды, кроме Starting Skills и Skill Access.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Members of the gang do not benefit from any of the gang’s special rules except for Starting Skills and Skill Access.</p></details></li>
+<li>Банда должна выбрать одного из богов Хаоса, которому посвятит себя.<span class="orig">The gang must select one of the Chaos gods to dedicate themselves to.</span></li>
+<li>Банда может выполнять оба пост-цикловых действия: Lead Ritual и Ritual Focus<span class="orig">The gang may perform both the Lead Ritual and Ritual Focus Post-cycle Actions</span></li>
+<li>Chaos Helot Cult Witches можно добавить в Gang Roster<span class="orig">Chaos Helot Cult Witches may be added to the Gang Roster</span></li>
+<li>0–1 Chaos Spawn можно добавить в Gang Roster.<span class="orig">0-1 Chaos Spawn may be added to the Gang Roster.</span></li>
+<li>Leaders и Champions могут покупать Chaos Familiars.<span class="orig">Leaders and Champions may purchase Chaos Familiars.</span></li>
+<li>Fighter с подтипом Brute, Hanger-on или Pet нельзя покупать из списка банды.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">No Fighters with the Brute, Hanger-on or Pet Subtype may be purchased from the gang’s list.</p></details></li>
+</ul>
+<p><span class="term">Посвящение богу Хаоса:<span class="orig">Dedicated to a Chaos God</span></span> при основании банды нужно выбрать одного из богов Хаоса, которому посвятить себя: Blood God, Plague Lord, Dark Prince или Architect of Fate.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When the gang is founded, it must select one of the Chaos gods to dedicate themselves to: the Blood God, the Plague Lord, the Dark Prince or the Architect of Fate.</p></details></p>
+<p>Могут выполнять пост-цикловые действия Lead Ritual и Ritual Focus: Fighter банды могут выполнять оба пост-цикловых действия — Lead Ritual и Ritual Focus. Когда Leader банды выполняет пост-цикловое действие Lead Ritual, он может пытаться призвать благословение только того бога Хаоса, которому посвящена банда.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">May Perform Lead Ritual &amp; Ritual Focus Post-cycle Actions: The gang’s Fighters may perform both the Lead Ritual and Ritual Focus Post-cycle Actions. When the gang’s Leader performs the Lead Ritual Post-cycle Action, they can only attempt to invoke the blessing of the Chaos god the gang is dedicated to.</p></details></p>
+<p>Наём Chaos Helot Cult Witches и Chaos Spawn: Chaos Corrupted Gangs могут включать любое число Chaos Helot Cult Witches и не более одного Chaos Spawn. Если на шаге Update Roster последовательности Post-cycle Sequence в порченной Хаосом банде больше двух Chaos Spawn, лишних Chaos Spawn нужно удалить из Gang Roster.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Hiring Chaos Helot Cult Witches &amp; Chaos Spawn: Chaos Corrupted Gangs can include any number of Chaos Helot Cult Witches and up to one Chaos Spawn in their gang. If during the Update Roster step of the Post-cycle Sequence a Chaos Corrupted gang has more than two Chaos Spawn, any excess Chaos Spawn must be removed from the Gang Roster.</p></details></p>
+<p><span class="term">Chaos Familiars:<span class="orig">Chaos Familiars</span></span> Leaders и Champions в Chaos Corrupted Gangs могут быть экипированы не более чем одним Chaos Familiar каждый.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Leaders and Champions in Chaos Corrupted Gangs can be equipped with up to one Chaos Familiar each.</p></details></p>
+<p>Никаких Brutes, Hangers-on или Pets из основного списка снаряжения: порвав с исходной бандой, Chaos Corrupted Gangs не могут добавлять в Gang Roster Fighter с подтипом Brute или Hanger-on из своего списка банды и не могут покупать Pets из списка снаряжения.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">No Brutes, Hangers-on or Pets From Core Equipment List: Cutting ties with their original gang, Chaos Corrupted Gangs may not add any Fighters with the Brute or Hanger-on Subtype from their gang list to their Gang Roster, nor may they purchase any Pets from the equipment list.</p></details></p>
+</div></details>
+<a class="top-link" href="#top">Наверх</a>
+</section>
+</main>
+</div>
+
+<footer class="page-footer">
+    <p>Справочник собран из Gangs of the Underhive &amp; Outlands (Правила/GANGS0_3.pdf).
+    Русский текст — для игры за столом; английский оригинал спрятан под спойлером «Оригинал» или дан короткой подписью рядом.</p>
+    <p><a class="backlink" href="../../">&larr; На главную</a></p>
+    <a class="top-link" href="#top">Наверх</a>
+</footer>
+
+<script src="../handbook-search.js"></script>
+
+</body>
+</html>

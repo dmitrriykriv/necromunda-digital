@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Necromunda — Дом Делак</title>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#14161c">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<header class="topbar" id="top">
+    <a class="backlink" href="../gangs.html">&larr; Все банды</a>
+    <h1>Necromunda</h1>
+    <p>Дом Делак &mdash; русский перевод, оригинал под спойлером</p>
+    <p class="source">Источник: Gangs of the Underhive &amp; Outlands &bull; Правила/GANGS0_3.pdf</p>
+</header>
+
+<div class="layout">
+<aside class="sidebar">
+    <div class="hb-search" id="hb-search">
+        <label class="hb-search-label" for="hb-q">Поиск</label>
+        <input class="hb-q" id="hb-q" type="search" placeholder="Боец, оружие, правило…" autocomplete="off" spellcheck="false" title="Клавиша / — фокус, Enter — к совпадению">
+        <div class="hb-modes" role="radiogroup" aria-label="Режим поиска">
+            <label class="is-on">
+                <input type="radio" name="hb-mode" value="headings" checked>
+                Заголовки
+            </label>
+            <label>
+                <input type="radio" name="hb-mode" value="full">
+                Весь текст
+            </label>
+        </div>
+        <p class="hb-status" id="hb-status" hidden></p>
+        <ol class="hb-hits" id="hb-hits" hidden></ol>
+    </div>
+
+    <details class="toc-drawer">
+    <summary class="toc-toggle">Банды</summary>
+    <nav>
+        <p class="sidebar-index"><a href="../gangs.html">Все банды</a></p>
+        <h2>Банды</h2>
+        <details open>
+            <summary>Кланы-дома</summary>
+            <ul>
+                <li><a href="house-cawdor-gang-list.html">Дом Каудор<span class="en">House Cawdor</span></a></li>
+                <li><a href="house-delaque-gang-list.html" class="is-current" aria-current="page">Дом Делак<span class="en">House Delaque</span></a></li>
+                <li><a href="house-escher-gang-list.html">Дом Эшер<span class="en">House Escher</span></a></li>
+                <li><a href="house-goliath-gang-list.html">Дом Голиаф<span class="en">House Goliath</span></a></li>
+                <li><a href="house-orlock-gang-list.html">Дом Орлок<span class="en">House Orlock</span></a></li>
+                <li><a href="house-van-saar-gang-list.html">Дом Ван Саар<span class="en">House Van Saar</span></a></li>
+            </ul>
+        </details>
+        <details open>
+            <summary>Ответвления домов</summary>
+            <ul>
+                <li><a href="blades-of-the-matriarch-gang-list.html">Клинки Матриарха<span class="en">Blades Of The Matriarch</span></a></li>
+                <li><a href="forge-smelters-gang-list.html">Плавильщики кузниц<span class="en">Forge Smelters</span></a></li>
+            </ul>
+        </details>
+        <details open>
+            <summary>Культы и мутанты</summary>
+            <ul>
+                <li><a href="chaos-helot-cult-list.html">Культ хаоситских илотов<span class="en">Chaos Helot Cult</span></a></li>
+                <li><a href="corpse-grinder-cult-gang-list.html">Культ Трупорезов<span class="en">Corpse Grinder Cult</span></a></li>
+                <li><a href="genestealer-cult-gang-list.html">Культ генокрадов<span class="en">Genestealer Cult</span></a></li>
+                <li><a href="malstrain-gang-list.html">Мальстрейн<span class="en">Malstrain</span></a></li>
+            </ul>
+        </details>
+        <details open>
+            <summary>Прочие банды</summary>
+            <ul>
+                <li><a href="ash-waste-nomad-gang-list.html">Кочевники Пепельных пустошей<span class="en">Ash Waste Nomad</span></a></li>
+                <li><a href="free-ogryn-gang-list.html">Свободные огрины<span class="en">Free Ogryn</span></a></li>
+                <li><a href="ironhead-squat-gang-list.html">Сквоты Айронхед<span class="en">Ironhead Squat</span></a></li>
+                <li><a href="outcast-gang-list.html">Изгои<span class="en">Outcast</span></a></li>
+                <li><a href="palanite-enforcer-patrol-list.html">Паланитские энфорсеры<span class="en">Palanite Enforcer</span></a></li>
+                <li><a href="spyre-hunting-party-list.html">Охотники Шпиля<span class="en">Spyre Hunting</span></a></li>
+                <li><a href="venator-gang-list.html">Венаторы<span class="en">Venator</span></a></li>
+            </ul>
+        </details>
+    </nav>
+    </details>
+</aside>
+<main class="content">
+<section id="house-delaque-gang-list">
+<h2>Дом Делак<span class="en">House Delaque Gang List</span></h2>
+<div class="table-wrap"><table class="compact roster">
+<caption>Состав банды<span class="orig">Gang Composition</span></caption>
+<thead><tr><th>Боец<span class="orig">Fighter</span></th><th>Тип<span class="orig">Type</span></th><th class="num">Кредиты<span class="orig">Credits</span></th></tr></thead><tbody>
+<tr><td><a href="#house-delaque-gang-list--delaque-master-of-shadow">DELAQUE MASTER OF SHADOW</a></td><td>Боец (Лидер)<span class="orig">Fighter (Leader)</span></td><td class="num">140</td></tr>
+<tr><td><a href="#house-delaque-gang-list--delaque-phantom">DELAQUE PHANTOM</a></td><td>Боец (Чемпион)<span class="orig">Fighter (Champion)</span></td><td class="num">100</td></tr>
+<tr><td><a href="#house-delaque-gang-list--delaque-nacht-ghul">DELAQUE NACHT-GHUL</a></td><td>Боец (Чемпион, Одиночка)<span class="orig">Fighter (Champion, Loner)</span></td><td class="num">120</td></tr>
+<tr><td><a href="#house-delaque-gang-list--delaque-ghost">DELAQUE GHOST</a></td><td>Боец (Гэнгер, Специалист)<span class="orig">Fighter (Ganger, Specialist)</span></td><td class="num">45</td></tr>
+<tr><td><a href="#house-delaque-gang-list--delaque-psy-gheist">DELAQUE PSY-GHEIST</a></td><td>Боец (Проспект, Виард)<span class="orig">Fighter (Prospect, Wyrd)</span></td><td class="num">30</td></tr>
+<tr><td><a href="#house-delaque-gang-list--delaque-shadow">DELAQUE SHADOW</a></td><td>Боец (Проспект)<span class="orig">Fighter (Prospect)</span></td><td class="num">25</td></tr>
+<tr><td><a href="#house-delaque-gang-list--piscean-spektor">PISCEAN SPEKTOR</a></td><td>Боец (Зверь, Громила, Летающий, Виард)<span class="orig">Fighter (Beast, Brute, Flying, Wyrd)</span></td><td class="num">250</td></tr>
+<tr><td><a href="#house-delaque-gang-list--cephalopod-spektor">CEPHALOPOD SPEKTOR</a></td><td>Боец (Зверь, Летающий, Питомец)<span class="orig">Fighter (Beast, Flying, Pet)</span></td><td class="num">75</td></tr>
+<tr><td><a href="#house-delaque-gang-list--psychoteric-wyrm">PSYCHOTERIC WYRM</a></td><td>Боец (Зверь, Питомец)<span class="orig">Fighter (Beast, Pet)</span></td><td class="num">50</td></tr>
+</tbody></table></div>
+<p class="note"><span class="label">Снаряжение банды<span class="orig">Gang Equipment</span></span> Турели и прочее снаряжение банды покупаются в Trading Post и кладутся в Stash, не на бойца. <a href="../core-rules.html#snaryazhenie-bandy">Правила и турель Trazior →</a></p>
+<h3>Особые правила банды<span class="orig">GANG SPECIAL RULES</span></h3>
+<p><span class="term">Психотерический хор:<span class="orig">Psychoteric Choir</span></span> пока Delaque Fighter находится в пределах 3” от двух или более других дружественных Delaque Fighters, его характеристики Leadership и Willpower улучшаются на 1.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">While a Delaque Fighter is within 3” of two or more other friendly Delaque Fighters, their Leadership and Willpower characteristics are improved by 1.</p></details></p>
+<p><span class="term">Стартовые навыки:<span class="orig">Starting Skills</span></span> при добавлении в ростер банды все Delaque Leaders and Champions могут выбрать один навык из одного из своих основных наборов (Primary Skill Sets).<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When added to a Gang Roster, all Delaque Leaders and Champions may select one skill from one of their Primary Skill Sets.</p></details></p>
+<p><span class="term">Доступ к навыкам:<span class="orig">Skill Access</span></span> бойцы этой банды имеют доступ к следующим наборам навыков:<span class="orig">This gang’s Fighters have access to the following Skill Sets:</span></p>
+<div class="table-wrap"><table class="compact skills">
+<thead><tr><th>Боец<span class="orig">Fighter</span></th><th>Ловкость<span class="orig">Agility</span></th><th>Сила<span class="orig">Brawn</span></th><th>Бой<span class="orig">Combat</span></th><th>Хитрость<span class="orig">Cunning</span></th><th>Эрудит<span class="orig">Savant</span></th><th>Стрельба<span class="orig">Shooting</span></th></tr></thead><tbody>
+<tr><td>Master of Shadow</td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill n">-</td><td class="skill n">-</td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill s">Вторичный<span class="orig">Secondary</span></td></tr>
+<tr><td>Phantom</td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill n">-</td><td class="skill n">-</td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill n">-</td></tr>
+<tr><td>Nacht-Ghul</td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill n">-</td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill n">-</td><td class="skill n">-</td></tr>
+<tr><td>Ghost</td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill n">-</td><td class="skill n">-</td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill n">-</td></tr>
+<tr><td>Psy-Gheist</td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill n">-</td><td class="skill n">-</td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill n">-</td><td class="skill n">-</td></tr>
+<tr><td>Shadow</td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill n">-</td><td class="skill n">-</td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill n">-</td><td class="skill n">-</td></tr>
+<tr><td>Piscean Spektor</td><td class="skill n">-</td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill n">-</td><td class="skill n">-</td><td class="skill n">-</td></tr>
+<tr><td>Cephalopod Spektor</td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill n">-</td><td class="skill n">-</td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill n">-</td><td class="skill n">-</td></tr>
+<tr><td>Psychoteric Wyrm</td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill n">-</td><td class="skill n">-</td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill n">-</td><td class="skill n">-</td></tr>
+</tbody></table></div>
+<details class="fold fold-fighters">
+<summary><span class="fold-title">Бойцы банды</span><span class="fold-count">9 карточек</span></summary><div class="fold-body">
+<details class="fighter" id="house-delaque-gang-list--delaque-master-of-shadow">
+<summary class="fighter-head">
+<h4 class="fighter-name">DELAQUE MASTER OF SHADOW</h4>
+<span class="fighter-cost">140 кредитов<span class="orig">140 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Лидер)<span class="orig">Fighter (Leader)</span></span> <span class="fighter-xp">Стартовый XP: 61<span class="orig">Starting XP: 61</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+<tbody>
+<tr><td>5”</td><td>3+</td><td>3+</td><td>3</td><td>3</td><td>3</td><td>4</td><td>3</td><td>5+</td><td>8</td><td>8</td><td>9</td><td>8</td></tr>
+</tbody></table></div>
+<p><span class="term">Мастер шёпотов:<span class="orig">Master of Whispers</span></span> при добавлении в Gang Roster Delaque Master of Shadow может получить подтип Wyrd и выбрать силу Wyrd Psychoteric Whispers за +35 кредитов.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When added to a Gang Roster, a Delaque Master of Shadow may gain the Wyrd Subtype and select a Psychoteric Whispers Wyrd Power for +35 credits.</p></details></p>
+<p><span class="term">Снаряжение:<span class="orig">Equipment</span></span> при добавлении в ростер банды Delaque Master of Shadow может купить оружие и снаряжение из списка House Delaque:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When added to a Gang Roster, a Delaque Master of Shadow may purchase weapons and wargear from the House Delaque Equipment List:</p></details></p>
+<p>В ходе кампании им можно давать дополнительное оружие и снаряжение, купленное из списка House Delaque и с Trading Post.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">• During the course of a campaign, they may be given additional weapons and wargear purchased from the House Delaque Equipment List and from the Trading Post.</p></details></p>
+</div></details>
+<details class="fighter" id="house-delaque-gang-list--delaque-phantom">
+<summary class="fighter-head">
+<h4 class="fighter-name">DELAQUE PHANTOM</h4>
+<span class="fighter-cost">100 кредитов<span class="orig">100 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Чемпион)<span class="orig">Fighter (Champion)</span></span> <span class="fighter-xp">Стартовый XP: 37<span class="orig">Starting XP: 37</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+<tbody>
+<tr><td>5”</td><td>3+</td><td>3+</td><td>3</td><td>3</td><td>2</td><td>4</td><td>2</td><td>5+</td><td>7</td><td>7</td><td>8</td><td>7</td></tr>
+</tbody></table></div>
+<p><span class="term">Мастер шёпотов:<span class="orig">Master of Whispers</span></span> при добавлении в Gang Roster Delaque Phantom может получить подтип Wyrd и выбрать силу Wyrd Psychoteric Whispers за +35 кредитов.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When added to a Gang Roster, a Delaque Phantom may gain the Wyrd Subtype and select a Psychoteric Whispers Wyrd Power for +35 credits.</p></details></p>
+<p><span class="term">Снаряжение:<span class="orig">Equipment</span></span> при добавлении в ростер банды Delaque Phantom может купить оружие и снаряжение из списка House Delaque:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When added to a Gang Roster, a Delaque Phantom may purchase weapons and wargear from the House Delaque Equipment List:</p></details></p>
+<p>В ходе кампании им можно давать дополнительное оружие и снаряжение, купленное из списка House Delaque и с Trading Post.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">• During the course of a campaign, they may be given additional weapons and wargear purchased from the House Delaque Equipment List and from the Trading Post.</p></details></p>
+</div></details>
+<details class="fighter" id="house-delaque-gang-list--delaque-nacht-ghul">
+<summary class="fighter-head">
+<h4 class="fighter-name">DELAQUE NACHT-GHUL</h4>
+<span class="fighter-cost">120 кредитов<span class="orig">120 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Чемпион, Одиночка)<span class="orig">Fighter (Champion, Loner)</span></span> <span class="fighter-xp">Стартовый XP: 49<span class="orig">Starting XP: 49</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+<tbody>
+<tr><td>6”</td><td>3+</td><td>4+</td><td>4</td><td>3</td><td>2</td><td>5</td><td>3</td><td>5+</td><td>6</td><td>8</td><td>8</td><td>7</td></tr>
+</tbody></table></div>
+<p><span class="term">Из теней:<span class="orig">From the Shadows</span></span> вместо обычной расстановки этого Fighter можно отложить в сторону. В начале любого раунда после первого, до броска за Priority, контролирующий игрок может выставить его в любой точке поля, которая не в линии видимости ни одной вражеской модели и не ближе 9” к любому вражескому Fighter. Если у обоих игроков есть Fighter с этим особым правилом, которых они хотят выставить в начале одного и того же раунда, победитель броска на очерёдность решает, кто выставляет своих Fighter первым.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Instead of deploying this Fighter normally, they may instead be placed to one side. At the start of any round after the first, before rolling for Priority, their controlling player may set them up anywhere on the battlefield that is not in Line of Sight of any enemy models, and not within 9” of any enemy Fighters. If both players have Fighter(s) with this special rule that they wish to deploy at the start of the same round, the winner of a roll-off may decide which player places their Fighter(s) first.</p></details></p>
+<p><span class="term">Снаряжение:<span class="orig">Equipment</span></span> при добавлении в ростер банды Delaque Nacht-Ghul может купить оружие и снаряжение из списка House Delaque:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When added to a Gang Roster, a Delaque Nacht-Ghul may purchase weapons and wargear from the House Delaque Equipment List:</p></details></p>
+<p>В ходе кампании им можно давать дополнительное оружие и снаряжение, купленное из списка House Delaque и с Trading Post.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">• During the course of a campaign, they may be given additional weapons and wargear purchased from the House Delaque Equipment List and from the Trading Post.</p></details></p>
+</div></details>
+<details class="fighter" id="house-delaque-gang-list--delaque-ghost">
+<summary class="fighter-head">
+<h4 class="fighter-name">DELAQUE GHOST</h4>
+<span class="fighter-cost">45 кредитов<span class="orig">45 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Гэнгер, Специалист)<span class="orig">Fighter (Ganger, Specialist)</span></span> <span class="fighter-xp">Стартовый XP: 13<span class="orig">Starting XP: 13</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+<tbody>
+<tr><td>5”</td><td>4+</td><td>4+</td><td>3</td><td>3</td><td>1</td><td>4</td><td>1</td><td>6+</td><td>6</td><td>6</td><td>7</td><td>6</td></tr>
+</tbody></table></div>
+<p><span class="term">Снаряжение:<span class="orig">Equipment</span></span> при добавлении в ростер банды Delaque Ghost может купить оружие и снаряжение из списка House Delaque:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When added to a Gang Roster, a Delaque Ghost may purchase weapons and wargear from the House Delaque Equipment List:</p></details></p>
+<p>В ходе кампании им можно давать дополнительное оружие и снаряжение, купленное из списка House Delaque и с Trading Post.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">• During the course of a campaign, they may be given additional weapons and wargear purchased from the House Delaque Equipment List and from the Trading Post.</p></details></p>
+</div></details>
+<details class="fighter" id="house-delaque-gang-list--delaque-psy-gheist">
+<summary class="fighter-head">
+<h4 class="fighter-name">DELAQUE PSY-GHEIST</h4>
+<span class="fighter-cost">30 кредитов<span class="orig">30 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Проспект, Виард)<span class="orig">Fighter (Prospect, Wyrd)</span></span> <span class="fighter-xp">Стартовый XP: 4<span class="orig">Starting XP: 4</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+<tbody>
+<tr><td>6”</td><td>5+</td><td>5+</td><td>3</td><td>3</td><td>1</td><td>4</td><td>1</td><td>6+</td><td>5</td><td>6</td><td>7</td><td>5</td></tr>
+</tbody></table></div>
+<p><span class="term">Шёпоты во тьме:<span class="orig">Whispers in the Dark</span></span> при добавлении в Gang Roster этот Fighter выбирает силу Wyrd Psychoteric Whispers.<span class="orig">When added to a Gang Roster, this Fighter selects a Psychoteric Whispers Wyrd Power.</span></p>
+<p><span class="term">Снаряжение:<span class="orig">Equipment</span></span> при добавлении в ростер банды Delaque Psy-Gheist может купить оружие и снаряжение из списка House Delaque:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When added to a Gang Roster, a Delaque Psy-Gheist may purchase weapons and wargear from the House Delaque Equipment List:</p></details></p>
+<p>В ходе кампании им можно давать дополнительное оружие и снаряжение, купленное из списка House Delaque и с Trading Post.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">• During the course of a campaign, they may be given additional weapons and wargear purchased from the House Delaque Equipment List and from the Trading Post.</p></details></p>
+</div></details>
+<details class="fighter" id="house-delaque-gang-list--delaque-shadow">
+<summary class="fighter-head">
+<h4 class="fighter-name">DELAQUE SHADOW</h4>
+<span class="fighter-cost">25 кредитов<span class="orig">25 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Проспект)<span class="orig">Fighter (Prospect)</span></span> <span class="fighter-xp">Стартовый XP: 1<span class="orig">Starting XP: 1</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+<tbody>
+<tr><td>6”</td><td>5+</td><td>5+</td><td>3</td><td>3</td><td>1</td><td>4</td><td>1</td><td>6+</td><td>5</td><td>5</td><td>6</td><td>5</td></tr>
+</tbody></table></div>
+<p><span class="term">Снаряжение:<span class="orig">Equipment</span></span> при добавлении в ростер банды Delaque Shadow может купить оружие и снаряжение из списка House Delaque:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When added to a Gang Roster, a Delaque Shadow may purchase weapons and wargear from the House Delaque Equipment List:</p></details></p>
+<p>В ходе кампании им можно давать дополнительное оружие и снаряжение, купленное из списка House Delaque и с Trading Post.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">• During the course of a campaign, they may be given additional weapons and wargear purchased from the House Delaque Equipment List and from the Trading Post.</p></details></p>
+</div></details>
+<details class="fighter" id="house-delaque-gang-list--piscean-spektor">
+<summary class="fighter-head">
+<h4 class="fighter-name">PISCEAN SPEKTOR</h4>
+<span class="fighter-cost">250 кредитов<span class="orig">250 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Зверь, Громила, Летающий, Виард)<span class="orig">Fighter (Beast, Brute, Flying, Wyrd)</span></span> <span class="fighter-xp">Стартовый XP: 25<span class="orig">Starting XP: 25</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+<tbody>
+<tr><td>5”</td><td>3+</td><td>5+</td><td>4</td><td>4</td><td>4</td><td>4</td><td>2</td><td>5+</td><td>6</td><td>7</td><td>7</td><td>5</td></tr>
+</tbody></table></div>
+<p><span class="term">Шёпоты во тьме:<span class="orig">Whispers in the Dark</span></span> при добавлении в Gang Roster этот Fighter выбирает силу Wyrd Psychoteric Whispers.<span class="orig">When added to a Gang Roster, this Fighter selects a Psychoteric Whispers Wyrd Power.</span></p>
+<p><span class="term">Снаряжение:<span class="orig">Equipment</span></span> Piscean Spektor вооружён psychomantic claws. Дополнительное оружие и снаряжение покупать и надевать нельзя.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A Piscean Spektor is army with psychomantic claws. They may not purchase or be equipped with additional weapons or wargear.</p></details></p>
+</div></details>
+<details class="fighter" id="house-delaque-gang-list--cephalopod-spektor">
+<summary class="fighter-head">
+<h4 class="fighter-name">CEPHALOPOD SPEKTOR</h4>
+<span class="fighter-cost">75 кредитов<span class="orig">75 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Зверь, Летающий, Питомец)<span class="orig">Fighter (Beast, Flying, Pet)</span></span> <span class="fighter-xp">Стартовый XP: 13<span class="orig">Starting XP: 13</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+<tbody>
+<tr><td>5”</td><td>4+</td><td>5+</td><td>2</td><td>3</td><td>1</td><td>4</td><td>1</td><td>6+</td><td>6</td><td>7</td><td>7</td><td>7</td></tr>
+</tbody></table></div>
+<p><span class="term">Длина поводка:<span class="orig">Leash Range</span></span> у Cephalopod Spektor длина поводка (Leash range) 3”.<span class="orig">A Cephalopod Spektor has a 3” Leash range.</span></p>
+<p><span class="term">Сенсорная решётка:<span class="orig">Sensor Array</span></span> если Cephalopod Spektor в пределах Leash range от владельца, когда владельцу нужно сделать проверку Intelligence по любой причине, бросьте лишний D6 и один из кубиков отбросьте.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">If a Cephalopod Spektor is within Leash range of its owner when the owner is required to make an Intelligence check for any reason, roll an extra D6, picking one of the dice to discard.</p></details></p>
+<p><span class="term">Снаряжение:<span class="orig">Equipment</span></span> Cephalopod Spektor вооружён(а) shock tendrils. Дополнительное оружие и снаряжение покупать и надевать нельзя.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A Cephalopod Spektor is armed with shock tendrils. They may not purchase or be equipped with additional weapons or wargear.</p></details></p>
+</div></details>
+<details class="fighter" id="house-delaque-gang-list--psychoteric-wyrm">
+<summary class="fighter-head">
+<h4 class="fighter-name">PSYCHOTERIC WYRM</h4>
+<span class="fighter-cost">50 кредитов<span class="orig">50 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Зверь, Питомец)<span class="orig">Fighter (Beast, Pet)</span></span> <span class="fighter-xp">Стартовый XP: 13<span class="orig">Starting XP: 13</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+<tbody>
+<tr><td>6”</td><td>4+</td><td>6+</td><td>2</td><td>3</td><td>1</td><td>3</td><td>1</td><td>6+</td><td>5</td><td>6</td><td>7</td><td>5</td></tr>
+</tbody></table></div>
+<p><span class="term">Длина поводка:<span class="orig">Leash Range</span></span> у Psychoteric Wyrm длина поводка (Leash range) 12”.<span class="orig">A Psychoteric Wyrm has a 12” Leash range.</span></p>
+<p><span class="term">Психотерический узел:<span class="orig">Psychoteric Node</span></span> когда Delaque Wyrd использует Psychoteric Power, он может назначить своего Active Psychoteric Wyrm в пределах Leash range, через которого проводить эту силу. Эффект Psychoteric Power считается от модели Psychoteric Wyrm, а не от модели Fighter. Иначе говоря, линия видимости, дистанция, дальность и прочее измеряются от Psychoteric Wyrm, а не от Fighter.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When a Delaque Wyrd uses a Psychoteric Power, they may nominate an Active Psychoteric Wyrm they own that is within Leash range through which to channel that Power. The effect of the Psychoteric Power is worked out from the model representing the Psychoteric Wyrm, rather than from the model representing the Fighter. In other words, Line of Sight, distance, range and so forth are all measured from the Psychoteric Wyrm, not from the Fighter.</p></details></p>
+<p><span class="term">Рытьё:<span class="orig">Burrowing</span></span> Psychoteric Wyrm умеет рыть под металлическими и роккритовыми полами нижнего улья, быстро проходя скрытыми лазами и засыпанными вентиляциями и выходя в другом месте. Psychoteric Wyrm может свободно двигаться под непроходимой местностью, если ему хватает движения, но не может закончить движение на непроходимой местности или внутри неё.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A Psychoteric Wyrm is able to burrow beneath and through the metal and rockcrete floors of the underhive, passing quickly through hidden crawl spaces and buried vents, before emerging elsewhere. A Psychoteric Wyrm may move freely under impassable terrain if it has sufficient movement to do so, but may not end its movement on or within impassable terrain.</p></details></p>
+<p><span class="term">Снаряжение:<span class="orig">Equipment</span></span> Psychoteric Wyrm вооружён(а) ferocious jaws. Дополнительное оружие и снаряжение покупать и надевать нельзя.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A Psychoteric Wyrm is armed with ferocious jaws. They may not purchase or be equipped with additional weapons or wargear.</p></details></p>
+</div></details>
+</div></details>
+<details class="fold fold-equip">
+<summary><span class="fold-title">Список снаряжения дома Делак<span class="orig">HOUSE DELAQUE EQUIPMENT LIST</span></span><span class="fold-count">37 позиций</span></summary><div class="fold-body">
+<h4>Дальнобойное оружие<span class="orig">RANGED WEAPONS</span></h4>
+<h4>Авто / стаб-оружие<span class="orig">AUTO/STUB WEAPONS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Autogun</span><span class="equip-price">20 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Авто / стаб-оружие<span class="orig">AUTO/STUB WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Autogun</td><td>8”</td><td>24”</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Rapid Fire (1)<span class="trait-tip">Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают.</span></span></td><td>20</td><td>0</td></tr>
+<tr><td class="wname sub">warp round</td><td>8”</td><td>24”</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Cursed<span class="trait-tip">Попавшая модель проходит Willpower или получает Insanity. Натуральная 1 на попадании: то же для носителя.</span></span>, <span class="trait">Single Shot<span class="trait-tip">Один выстрел за бой, затем сразу Out of Ammo; перезарядить нельзя.</span></span></td><td>+10</td><td>4</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Autopistol</span><span class="equip-price">10 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Авто / стаб-оружие<span class="orig">AUTO/STUB WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Autopistol</td><td>4”</td><td>12”</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Light<span class="trait-tip">Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят.</span></span>, <span class="trait">Rapid Fire (1)<span class="trait-tip">Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают.</span></span></td><td>10</td><td>0</td></tr>
+<tr><td class="wname sub">warp round</td><td>4”</td><td>12”</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Cursed<span class="trait-tip">Попавшая модель проходит Willpower или получает Insanity. Натуральная 1 на попадании: то же для носителя.</span></span>, <span class="trait">Light<span class="trait-tip">Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят.</span></span>, <span class="trait">Single Shot<span class="trait-tip">Один выстрел за бой, затем сразу Out of Ammo; перезарядить нельзя.</span></span></td><td>+10</td><td>4</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Long rifle</span><span class="equip-price">55 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Авто / стаб-оружие<span class="orig">AUTO/STUB WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Long rifle</td><td>24”</td><td>48”</td><td>4</td><td>-1</td><td>1</td><td class="traits"><span class="trait">Knockback (6+)<span class="trait-tip">Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1" от центра.</span></span></td><td>55</td><td>1</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Stub gun</span><span class="equip-price">5 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Авто / стаб-оружие<span class="orig">AUTO/STUB WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Stub gun</td><td>6”</td><td>12”</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Light<span class="trait-tip">Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят.</span></span></td><td>5</td><td>0</td></tr>
+<tr><td class="wname sub">warp round</td><td>6”</td><td>12”</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Cursed<span class="trait-tip">Попавшая модель проходит Willpower или получает Insanity. Натуральная 1 на попадании: то же для носителя.</span></span>, <span class="trait">Light<span class="trait-tip">Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят.</span></span>, <span class="trait">Single Shot<span class="trait-tip">Один выстрел за бой, затем сразу Out of Ammo; перезарядить нельзя.</span></span></td><td>+10</td><td>4</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Эзотерическое оружие<span class="orig">ESOTERIC WEAPONS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Flechette pistol</span><span class="equip-price">35 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Эзотерическое оружие<span class="orig">ESOTERIC WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Flechette pistol</td><td>4”</td><td>12”</td><td>-</td><td>-</td><td>1</td><td class="traits"><span class="trait">Light<span class="trait-tip">Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят.</span></span>, <span class="trait">Rapid Fire (1)<span class="trait-tip">Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают.</span></span>, <span class="trait">Toxin (3+)<span class="trait-tip">Против бойца ранит на X+ вместо сравнения Strength и Toughness. Против машины — только на натуральную 6.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Огнемёты<span class="orig">FLAMERS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Flamer</span><span class="equip-price">70 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Огнемёты<span class="orig">FLAMERS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Flamer</td><td>T</td><td>-</td><td>4</td><td>-1</td><td>1</td><td class="traits"><span class="trait">Ammo (6+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Blaze (5+)<span class="trait-tip">Если бросок на ранение не меньше X, цель получает ещё одно попадание тем же профилем. Оно бросается на ранение отдельно и не вызывает новых дополнительных попаданий.</span></span>, <span class="trait">Template<span class="trait-tip">Каплевидный шаблон от стреляющего через цель: все под ним получают автоматическое попадание. С Light в ближнем бою — одно автоматическое попадание без шаблона. С Rapid Fire (X) ближайшая модель получает попадания по кубику огневой мощи, остальные — по одному.</span></span></td><td>70</td><td>1</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Hand flamer</span><span class="equip-price">45 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Огнемёты<span class="orig">FLAMERS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Hand Flamer</td><td>T</td><td>-</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Ammo (6+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Blaze (5+)<span class="trait-tip">Если бросок на ранение не меньше X, цель получает ещё одно попадание тем же профилем. Оно бросается на ранение отдельно и не вызывает новых дополнительных попаданий.</span></span>, <span class="trait">Light<span class="trait-tip">Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят.</span></span>, <span class="trait">Template<span class="trait-tip">Каплевидный шаблон от стреляющего через цель: все под ним получают автоматическое попадание. С Light в ближнем бою — одно автоматическое попадание без шаблона. С Rapid Fire (X) ближайшая модель получает попадания по кубику огневой мощи, остальные — по одному.</span></span></td><td>45</td><td>1</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Heavy flamer*</span><span class="equip-price">95 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Огнемёты<span class="orig">FLAMERS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Heavy flamer*</td><td>T</td><td>-</td><td>5</td><td>-2</td><td>1</td><td class="traits"><span class="trait">Ammo (6+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Blaze (5+)<span class="trait-tip">Если бросок на ранение не меньше X, цель получает ещё одно попадание тем же профилем. Оно бросается на ранение отдельно и не вызывает новых дополнительных попаданий.</span></span>, <span class="trait">Template<span class="trait-tip">Каплевидный шаблон от стреляющего через цель: все под ним получают автоматическое попадание. С Light в ближнем бою — одно автоматическое попадание без шаблона. С Rapid Fire (X) ближайшая модель получает попадания по кубику огневой мощи, остальные — по одному.</span></span></td><td>95</td><td>2</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Грав-оружие<span class="orig">GRAV WEAPONS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Grav gun</span><span class="equip-price">50 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Грав-оружие<span class="orig">GRAV WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Grav gun</td><td>9”</td><td>18”</td><td>-</td><td>-</td><td>2</td><td class="traits"><span class="trait">Ammo (5+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Blast (3”)<span class="trait-tip">Поставьте маркер Blast 3" или 5" на цель. Попадание — маркер остаётся. Промах — рассейте на D6" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него.</span></span>, <span class="trait">Graviton Pulse<span class="trait-tip">Вместо ранения модели в Blast делают проверку Strength; провал ранит без брони. Маркер остаётся как трудная местность до конца раунда; в End phase на 5+ остаётся ещё на раунд.</span></span></td><td>50</td><td>4</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Grav pistol</span><span class="equip-price">40 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Грав-оружие<span class="orig">GRAV WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Grav pistol</td><td>4”</td><td>9”</td><td>-</td><td>-</td><td>2</td><td class="traits"><span class="trait">Ammo (5+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Blast (3”)<span class="trait-tip">Поставьте маркер Blast 3" или 5" на цель. Попадание — маркер остаётся. Промах — рассейте на D6" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него.</span></span>, <span class="trait">Graviton Pulse<span class="trait-tip">Вместо ранения модели в Blast делают проверку Strength; провал ранит без брони. Маркер остаётся как трудная местность до конца раунда; в End phase на 5+ остаётся ещё на раунд.</span></span></td><td>40</td><td>3</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Лаз-оружие<span class="orig">LAS WEAPONS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Lasgun</span><span class="equip-price">15 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Лаз-оружие<span class="orig">LAS WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Lasgun</td><td>16”</td><td>24”</td><td>3</td><td>-</td><td>1</td><td class="traits">-</td><td>15</td><td>0</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Laspistol</span><span class="equip-price">5 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Лаз-оружие<span class="orig">LAS WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Laspistol</td><td>8”</td><td>12”</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Light<span class="trait-tip">Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят.</span></span></td><td>5</td><td>0</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Мельта-оружие<span class="orig">MELTA WEAPONS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Meltagun</span><span class="equip-price">140 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Мельта-оружие<span class="orig">MELTA WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Meltagun</td><td>6”</td><td>12”</td><td>8</td><td>-4</td><td>3</td><td class="traits"><span class="trait">Ammo (6+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Damage (3)<span class="trait-tip">Раненая модель теряет X Wounds вместо одного. Число кубиков ранений всё равно равно Lethality оружия.</span></span></td><td>140</td><td>4</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Плазма-оружие<span class="orig">PLASMA WEAPONS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Plasma gun</span><span class="equip-price">85 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Плазма-оружие<span class="orig">PLASMA WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Plasma gun</td><td>12”</td><td>24”</td><td>5</td><td>-2</td><td>2</td><td class="traits"><span class="trait">Ammo (6+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Damage (2)<span class="trait-tip">Раненая модель теряет X Wounds вместо одного. Число кубиков ранений всё равно равно Lethality оружия.</span></span>, <span class="trait">Rapid Fire (1)<span class="trait-tip">Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают.</span></span>, <span class="trait">Unstable<span class="trait-tip">Натуральная 1 на попадании: носитель получает автоматическое попадание этим профилем, другие модели не поражаются. Если броска попадания нет (Template) — сначала D6, как выше.</span></span></td><td>85</td><td>3</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Plasma pistol</span><span class="equip-price">70 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Плазма-оружие<span class="orig">PLASMA WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Plasma pistol</td><td>6”</td><td>12”</td><td>5</td><td>-2</td><td>2</td><td class="traits"><span class="trait">Ammo (6+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Damage (2)<span class="trait-tip">Раненая модель теряет X Wounds вместо одного. Число кубиков ранений всё равно равно Lethality оружия.</span></span>, <span class="trait">Light<span class="trait-tip">Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят.</span></span>, <span class="trait">Unstable<span class="trait-tip">Натуральная 1 на попадании: носитель получает автоматическое попадание этим профилем, другие модели не поражаются. Если броска попадания нет (Template) — сначала D6, как выше.</span></span></td><td>70</td><td>3</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Примитивное оружие<span class="orig">PRIMITIVE WEAPONS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Throwing knives</span><span class="equip-price">10 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Примитивное оружие<span class="orig">PRIMITIVE WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Throwing knives</td><td>6”</td><td>12”</td><td>-</td><td>-</td><td>1</td><td class="traits"><span class="trait">Ammo (3+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Toxin (4+)<span class="trait-tip">Против бойца ранит на X+ вместо сравнения Strength и Toughness. Против машины — только на натуральную 6.</span></span></td><td>10</td><td>0</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Дробовики<span class="orig">SHOTGUNS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Shotgun with solid &amp; scatter ammo</span><span class="equip-price">35 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Дробовики<span class="orig">SHOTGUNS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr class="wgroup"><td class="wname group" colspan="7">Shotgun</td><td>35</td><td>0</td></tr>
+<tr><td class="wname sub">scatter ammo</td><td>4”</td><td>8”</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Rapid Fire (2)<span class="trait-tip">Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают.</span></span></td><td>+0</td><td></td></tr>
+<tr><td class="wname sub">solid ammo</td><td>8”</td><td>16”</td><td>4</td><td>-</td><td>1</td><td class="traits"><span class="trait">Knockback (5+)<span class="trait-tip">Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1" от центра.</span></span></td><td>+0</td><td></td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Паутинное оружие<span class="orig">WEB WEAPONS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Web gun</span><span class="equip-price">65 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Паутинное оружие<span class="orig">WEB WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Web gun</td><td>T</td><td>-</td><td>5</td><td>-</td><td>-</td><td class="traits"><span class="trait">Ammo (6+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Template<span class="trait-tip">Каплевидный шаблон от стреляющего через цель: все под ним получают автоматическое попадание. С Light в ближнем бою — одно автоматическое попадание без шаблона. С Rapid Fire (X) ближайшая модель получает попадания по кубику огневой мощи, остальные — по одному.</span></span>, <span class="trait">Web<span class="trait-tip">Спасброски брони нельзя (непробиваемые можно). Раненый боец не теряет Wound, а получает Webbed.</span></span></td><td>65</td><td>4</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Web pistol</span><span class="equip-price">50 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Паутинное оружие<span class="orig">WEB WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Web pistol</td><td>T</td><td>-</td><td>4</td><td>-</td><td>-</td><td class="traits"><span class="trait">Ammo (6+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Light<span class="trait-tip">Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят.</span></span>, <span class="trait">Template<span class="trait-tip">Каплевидный шаблон от стреляющего через цель: все под ним получают автоматическое попадание. С Light в ближнем бою — одно автоматическое попадание без шаблона. С Rapid Fire (X) ближайшая модель получает попадания по кубику огневой мощи, остальные — по одному.</span></span>, <span class="trait">Web<span class="trait-tip">Спасброски брони нельзя (непробиваемые можно). Раненый боец не теряет Wound, а получает Webbed.</span></span></td><td>50</td><td>3</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Оружие ближнего боя<span class="orig">CLOSE COMBAT WEAPONS</span></h4>
+<h4>Эзотерическое оружие<span class="orig">ESOTERIC WEAPONS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Psychomantic claws* (Psy-Gheist only)</span><span class="equip-price">65 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Эзотерическое оружие<span class="orig">ESOTERIC WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Psychomantic claws*</td><td>E</td><td>-</td><td>S+1</td><td>-3</td><td>1</td><td class="traits"><span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span>, <span class="trait">Paired (2)<span class="trait-tip">Нельзя как Secondary и нельзя Secondary вместе с ним. Как Primary: носитель увеличивает Attacks на X.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Serpent’s fangs* (Nacht-Ghul only)</span><span class="equip-price">70 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Эзотерическое оружие<span class="orig">ESOTERIC WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Serpent’s fangs*</td><td>E</td><td>-</td><td>-</td><td>-3</td><td>1</td><td class="traits"><span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span>, <span class="trait">Paired (2)<span class="trait-tip">Нельзя как Secondary и нельзя Secondary вместе с ним. Как Primary: носитель увеличивает Attacks на X.</span></span>, <span class="trait">Toxin (3+)<span class="trait-tip">Против бойца ранит на X+ вместо сравнения Strength и Toughness. Против машины — только на натуральную 6.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Shivver sword (Nacht-Ghul only)</span><span class="equip-price">50 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Эзотерическое оружие<span class="orig">ESOTERIC WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Shivver sword</td><td>E</td><td>-</td><td>S+1</td><td>-1</td><td>2</td><td class="traits"><span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span>, <span class="trait">Parry<span class="trait-tip">Как Primary или Secondary в схватке: +1 Save. Несколько таких оружий не складываются.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Шоковое оружие<span class="orig">SHOCK WEAPONS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Shock stave</span><span class="equip-price">25 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Шоковое оружие<span class="orig">SHOCK WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Shock stave</td><td>E</td><td>-</td><td>S+1</td><td>-</td><td>1</td><td class="traits"><span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span>, <span class="trait">Shock (5+)<span class="trait-tip">Если атака попадает и бросок попадания не меньше X, она автоматически ранит и считается натуральной 6 на ранении для других свойств.</span></span></td><td>25</td><td>1</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Токсичное оружие<span class="orig">TOXIC WEAPONS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Stiletto knife</span><span class="equip-price">25 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Токсиновое оружие<span class="orig">TOXIN WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Stiletto knife</td><td>E</td><td>-</td><td>-</td><td>-</td><td>1</td><td class="traits"><span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span>, <span class="trait">Toxin (3+)<span class="trait-tip">Против бойца ранит на X+ вместо сравнения Strength и Toughness. Против машины — только на натуральную 6.</span></span></td><td>25</td><td>2</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Паутинное оружие<span class="orig">WEB WEAPONS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Web gauntlet</span><span class="equip-price">10 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Паутинное оружие<span class="orig">WEB WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Web gauntlet</td><td>E</td><td>-</td><td>3</td><td>-</td><td>-</td><td class="traits"><span class="trait">Backstab<span class="trait-tip">+1 Strength, если цель Engaged более чем с одной моделью.</span></span>, <span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span>, <span class="trait">Web<span class="trait-tip">Спасброски брони нельзя (непробиваемые можно). Раненый боец не теряет Wound, а получает Webbed.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Снаряжение<span class="orig">WARGEAR</span></h4>
+<h4>Гранаты<span class="orig">GRENADES</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Smoke grenades</span><span class="equip-price">15 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Гранаты<span class="orig">GRENADES</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Smoke grenades</td><td>-</td><td>9”</td><td>-</td><td>-</td><td>-</td><td class="traits"><span class="trait">Ammo (4+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Blast (3”)<span class="trait-tip">Поставьте маркер Blast 3" или 5" на цель. Попадание — маркер остаётся. Промах — рассейте на D6" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него.</span></span>, <span class="trait">Limited<span class="trait-tip">Если оружие село, его нельзя перезарядить до конца боя.</span></span>, <span class="trait">Smoke<span class="trait-tip">Можно целиться в точку на поле. Маркер Blast остаётся: столб дыма блокирует линию видимости. В End phase на 5+ остаётся, иначе снимается. Попавшая модель не ранится и не становится Suppressed.</span></span></td><td>15</td><td>0</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Броня и силовые поля<span class="orig">ARMOUR &amp; FIELD ARMOUR</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Mesh armour</span><span class="equip-price">40 cr</span></summary><div class="equip-profile"><p class="profile-price">40 кредитов — TP 0<span class="orig">40 CREDITS – TP 0</span></p>
+<p>Fighter в сетчатой броне увеличивает характеристику Save на 1 при разрешении попаданий, полученных в ближнем бою.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A Fighter equipped with mesh armour increases their Save characteristic by 1 when resolving Hits suffered in close combat.</p></details></p></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Refractor field</span><span class="equip-price">50 cr</span></summary><div class="equip-profile"><p class="profile-price">50 кредитов — TP 2<span class="orig">50 CREDITS – TP 2</span></p>
+<p>Рефракторное поле даёт носителю непробиваемый спасбросок 5+; однако если при этом спасброске выпадает натуральная 1, поле перегорает и его нельзя использовать до конца боя.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A refractor field grants its wearer a 5+ Invulnerable save; however, should a natural 1 be rolled when making the Invulnerable save then the refractor field is burned out and cannot be used again for the rest of the battle.</p></details></p>
+<p>Рефракторное поле можно сочетать с другой бронёй и полевой бронёй.<span class="orig">A refractor field may be combined with other armour and field armour.</span></p></div></details></li>
+</ul>
+<h4>Личное снаряжение<span class="orig">PERSONAL EQUIPMENT</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Grapnel launcher</span><span class="equip-price">25 cr</span></summary><div class="equip-profile"><p class="profile-price">25 кредитов — TP0<span class="orig">25 CREDITS – TP0</span></p>
+<p>Active Fighter с гарпунной лебёдкой может выполнить действие «Гарпун»:<span class="orig">An Active Fighter with a grapnel launcher can perform the Grapnel action:</span></p>
+<p><span class="term">Гарпун (двойное):<span class="orig">Grapnel (Double)</span></span> Fighter может сдвинуться до 12” по прямой в любом направлении, если заканчивает это движение на более высоком уровне, чем начал.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">The Fighter can move up to 12” in a straight line in any direction as long as they end this move on a higher level than they started.</p></details></p></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Medicae kit</span><span class="equip-price">20 cr</span></summary><div class="equip-profile"><p class="profile-price">20 кредитов — TP 0<span class="orig">20 CREDITS – TP 0</span></p>
+<p>Если Fighter с медкай-набором помогает другому Fighter на проверке Recovery, он бросает дополнительный кубик ранений и выбирает, какой оставить.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">If a Fighter with a Medicare kit aids another Fighter’s Recovery test, they roll an additional Injury dice and choose which one to keep.</p></details></p></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Photo-goggles</span><span class="equip-price">35 cr</span></summary><div class="equip-profile"><p class="profile-price">35 кредитов — TP 0<span class="orig">35 CREDITS – TP 0</span></p>
+<p>Fighter с фотоочками увеличивает значение X в правиле Visibility (X”) на 9” и может видеть сквозь дымовые облака, поставленные свойством Smoke. Кроме того, если во Fighter с фотоочками попадает оружие со свойством Flash, он получает модификатор −2 к проверке Initiative, чтобы не ослепнуть.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A Fighter equipped with photo-goggle increases the value of X in the Visibility (X”) rule by 9” and may see through smoke clouds placed as part of the Smoke trait. Additionally, if a Fighter equipped with photo-goggles is hit by a weapon with the Flash trait, they suffer a -2 modifier to their Initiative check to avoid being blinded.</p></details></p></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Psychomancer’s harness (Psy-Gheist only)</span><span class="equip-price">35 cr</span></summary><div class="equip-profile"><p class="profile-price">35 кредитов — Exclusive<span class="orig">35 credits – Exclusive</span></p>
+<p>Fighter в psychomancer’s harness увеличивает характеристику Movement на 2”; это может поднять характеристику Movement Fighter выше максимума.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A Fighter wearing a psychomancer’s harness increases their Movement characteristic by 2”; this may take the Fighter’s Movement characteristic above the maximum.</p></details></p>
+<p>Кроме того, когда этот Fighter карабкается, вертикальная дистанция не делится пополам. Иначе говоря, он всегда считается поднимающимся или спускающимся по лестнице. Fighter нельзя экипировать одновременно psychomancer’s harness и сервоупряжью.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Additionally, when this Fighter climbs, the vertical distance they move is not halved. In other words, they always count as climbing up or down a ladder. A Fighter may not be equipped with both a psychomancer’s harness and a servo-harness.</p></details></p></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Respirator</span><span class="equip-price">15 cr</span></summary><div class="equip-profile"><p class="profile-price">15 кредитов — TP 0<span class="orig">15 CREDITS – TP 0</span></p>
+<p>Когда во Fighter с респиратором попадает оружие со свойством Gas, он получает непробиваемый спасбросок 5+ против этого оружия.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When a Fighter equipped with a respirator is hit by a weapon with the Gas trait, they gain a 5+ Invulnerable save against that weapon.</p></details></p></div></details></li>
+</ul>
+<h4>Аксессуары оружия<span class="orig">WEAPON ACCESSORIES</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Telescopic sight</span><span class="equip-price">20 cr</span></summary><div class="equip-profile"><p class="profile-price">20 кредитов — TP 1<span class="orig">20 CREDITS – TP 1</span></p>
+<p>Оружие с телескопическим прицелом снижает бонус модели к спасброску брони за укрытие на 1, пока цель в Long Range оружия.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A weapon fitted with a telescopic sight reduces the benefit a model gains to their Armour save for being in cover by 1 while within the weapon’s Long Range.</p></details></p></div></details></li>
+</ul>
+<h4>Скакуны<span class="orig">MOUNTS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Dirt bike</span><span class="equip-price">35 cr</span></summary><div class="equip-profile"><p class="profile-price">35 кредитов — TP 0<span class="orig">35 CREDITS – TP 0</span></p>
+<p>Fighter с dirt bike получает подтип Mounted и ставит характеристику Movement на 8”. Когда он выполняет действие Dash, он добавляет 5” к характеристике Movement вместо Initiative.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A Fighter equipped with a dirt bike gains the Mounted Subtype and sets their Movement characteristic to 8”. When they perform a Dash action, they add 5” to their Movement characteristic instead of their Initiative.</p></details></p></div></details></li>
+</ul>
+<h4>Питомцы<span class="orig">PETS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Cephalopod Spektor</span><span class="equip-price">75 cr</span></summary><div class="equip-profile"><p class="fighter-meta"><span class="fighter-type">Боец (Зверь, Летающий, Питомец)<span class="orig">Fighter (Beast, Flying, Pet)</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+<tbody>
+<tr><td>5”</td><td>4+</td><td>5+</td><td>2</td><td>3</td><td>1</td><td>4</td><td>1</td><td>6+</td><td>6</td><td>7</td><td>7</td><td>7</td></tr>
+</tbody></table></div>
+<p><a href="#house-delaque-gang-list--cephalopod-spektor">Полная карточка бойца &rarr;</a></p></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Psychoteric Wyrm</span><span class="equip-price">50 cr</span></summary><div class="equip-profile"><p class="fighter-meta"><span class="fighter-type">Боец (Зверь, Питомец)<span class="orig">Fighter (Beast, Pet)</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+<tbody>
+<tr><td>6”</td><td>4+</td><td>6+</td><td>2</td><td>3</td><td>1</td><td>3</td><td>1</td><td>6+</td><td>5</td><td>6</td><td>7</td><td>5</td></tr>
+</tbody></table></div>
+<p><a href="#house-delaque-gang-list--psychoteric-wyrm">Полная карточка бойца &rarr;</a></p></div></details></li>
+</ul>
+</div></details>
+<details class="fold fold-innate">
+<summary><span class="fold-title">Встроенное оружие</span><span class="fold-count">1 профиль</span></summary><div class="fold-body">
+<h4>Оружие ближнего боя<span class="orig">CLOSE COMBAT WEAPONS</span></h4>
+<div class="table-wrap"><table class="compact weapons">
+<caption>Природное оружие<span class="orig">NATURAL WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Ferocious jaws</td><td>E</td><td>-</td><td>S+1</td><td>-1</td><td>1</td><td class="traits"><span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span>, <span class="trait">Rending (6+)<span class="trait-tip">Если натуральный бросок на ранение не меньше X, AP этой атаки увеличивается на 1.</span></span></td><td>-</td><td>E</td></tr>
+<tr><td class="wname">Shock tendrils</td><td>E</td><td>-</td><td>S+1</td><td>-</td><td>1</td><td class="traits"><span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span>, <span class="trait">Shock (6+)<span class="trait-tip">Если атака попадает и бросок попадания не меньше X, она автоматически ранит и считается натуральной 6 на ранении для других свойств.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div>
+</div></details>
+<details class="fold fold-wyrd">
+<summary><span class="fold-title">Психотерические шёпоты<span class="orig">PSYCHOTERIC WHISPERS</span></span><span class="fold-count">1 раздел</span></summary><div class="fold-body">
+<p>Следующие силы Wyrd доступны Delaque Fighters. Любой Delaque Fighter с подтипом Wyrd может выбрать Psychoteric Whispers как Advancement, как если бы это был Primary Skill Set.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">The following are Wyrd Powers are available to Delaque Fighters. Any Delaque Fighter with the Wyrd Subtype may select Psychoteric Whispers as an Advancement as if they were a Primary Skill Set.</p></details></p>
+<p>1. Ужасные истины (одиночное): Выберите одного вражеского Fighter в пределах 6” и в линии видимости Wyrd. Этот Fighter должен пройти проверку Willpower. Если проверка провалена, он получает состояние Insanity.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">1. Terrible Truths (Single): Choose a single enemy Fighter that is within 6” and Line of Sight of the Wyrd. That Fighter must make a Willpower check. If this check is failed, they gain the Insanity Condition.</p></details></p>
+<p>2. Психотерическая приманка (одиночное): Выберите одного вражеского Fighter, у которого сейчас есть маркер Ready и который находится в пределах 6” и в линии видимости Wyrd. Противник должен активировать этого Fighter следующим. Выбранный Fighter не может выполнить действие Group Activation при следующей активации.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">2. Psychoteric Lure (Single): Choose a single enemy Fighter that currently has a Ready marker and is within 6” and Line of Sight of the Wyrd. The opposing player must activate that Fighter next. The chosen Fighter cannot perform the Group Activation action when next activated.</p></details></p>
+<p>3. Обманчивые мысли (двойное): Выберите одного вражеского Fighter в пределах 6” и в линии видимости Wyrd. Этот Fighter немедленно проходит проверку Willpower. Если проверка провалена, игрок, контролирующий Wyrd, может немедленно переместить этого Fighter на расстояние до его характеристики Movement в любом направлении (примечание: этим перемещением нельзя сдвинуть вражеских Fighter с уступов, в опасную местность или в любую другую вредную часть поля боя).<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">3. Deceiful Thoughts (Double): Choose a single enemy Fighter that is within 6” and Line of Sight of the Wyrd. That Fighter immediately makes a Willpower check. If this check is failed, the Wyrd’s controlling player may immediately move that Fighter up to their Movement characteristic in any direction (note: this move may not be used to move enemy Fighters off ledges, into dangerous terrain or any other part of the battlefield harmful to them).</p></details></p>
+<p>4. Какофония тишины (одиночное), постоянный эффект: Пока эта сила поддерживается, все вражеские Fighter в пределах 6” и в линии видимости Wyrd должны перебрасывать успешные броски попадания при дальнобойной атаке.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">4. Cacophony of Silence (Single), Continuous Effect: While this power is maintained, all enemy Fighters within 6” and Line of Sight of the Wyrd must re- roll successful Hit rolls when making a ranged attack.</p></details></p>
+<p>5. Идеальная пустота (свободное), постоянный эффект: Пока эта сила поддерживается, Wyrd считается всегда находящимся в укрытии и в Long Range оружия для всех вражеских Fighter в пределах 10”.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">5. A Perfect Void (Free), Continuous Effect: While this power is maintained, the Wyrd counts as always being in cover and within a weapon’s Long Range to all enemy Fighters within 10”.</p></details></p>
+<p>6. Вечный сон (одиночное): Выберите Seriously Injured вражеского Fighter в пределах 3” и в линии видимости Wyrd; он немедленно выводится Out of Action.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">6. Eternal Slumber (Single): Choose a Seriously Injured enemy Fighter within 3” and Line of Sight of the Wyrd, they immediately go Out of Action.</p></details></p>
+</div></details>
+<a class="top-link" href="#top">Наверх</a>
+</section>
+</main>
+</div>
+
+<footer class="page-footer">
+    <p>Справочник собран из Gangs of the Underhive &amp; Outlands (Правила/GANGS0_3.pdf).
+    Русский текст — для игры за столом; английский оригинал спрятан под спойлером «Оригинал» или дан короткой подписью рядом.</p>
+    <p><a class="backlink" href="../../">&larr; На главную</a></p>
+    <a class="top-link" href="#top">Наверх</a>
+</footer>
+
+<script src="../handbook-search.js"></script>
+
+</body>
+</html>

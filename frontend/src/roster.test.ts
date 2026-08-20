@@ -242,6 +242,52 @@ describe('print catalog helpers', () => {
   });
 });
 
+describe('innate weapons in faction catalogs', () => {
+  it('keeps the clawed arm on a Genestealer Cult Alpha', async () => {
+    const { readFileSync } = await import('node:fs');
+    const { dirname, resolve } = await import('node:path');
+    const { fileURLToPath } = await import('node:url');
+    const root = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
+    const data = JSON.parse(
+      readFileSync(resolve(root, 'data/factions/genestealer-cult.json'), 'utf8'),
+    ) as { types: { name: string; weapons?: { name: string }[] }[] };
+    const alpha = data.types.find((item) => item.name === 'Genestealer Cult Alpha');
+    expect(alpha?.weapons?.map((item) => item.name)).toEqual(['Clawed arm']);
+  });
+});
+
+describe('fighter special rules in faction catalogs', () => {
+  async function loadCult() {
+    const { readFileSync } = await import('node:fs');
+    const { dirname, resolve } = await import('node:path');
+    const { fileURLToPath } = await import('node:url');
+    const root = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
+    return JSON.parse(
+      readFileSync(resolve(root, 'data/factions/genestealer-cult.json'), 'utf8'),
+    ) as { types: { name: string; rules?: string[] }[] };
+  }
+
+  it('attaches Extra Arm to a Genestealer Cult Alpha', async () => {
+    const data = await loadCult();
+    const alpha = data.types.find((item) => item.name === 'Genestealer Cult Alpha');
+    const extraArm = alpha?.rules?.find((rule) => rule.startsWith('Дополнительная рука'));
+    expect(extraArm).toMatch(/Braced Shot/);
+    expect(extraArm).toMatch(/четыре единицы оружия/);
+  });
+
+  it('does not auto-attach Extra Arm to a later-generation Acolyte', async () => {
+    const data = await loadCult();
+    const acolyte = data.types.find((item) => item.name === 'Genestealer Cult Hybrid Acolyte');
+    expect(acolyte?.rules?.some((rule) => rule.startsWith('Дополнительная рука'))).toBe(false);
+  });
+
+  it('does not leak English originals into fighter rules', async () => {
+    const data = await loadCult();
+    const adept = data.types.find((item) => item.name === 'Genestealer Cult Adept');
+    expect(adept?.rules?.join(' ')).not.toMatch(/Оригинал/);
+  });
+});
+
 describe('stat tooltips', () => {
   it('explains fighter and weapon profile abbreviations', () => {
     expect(fighterStatTip('WS')).toMatch(/Weapon Skill/);
@@ -249,5 +295,24 @@ describe('stat tooltips', () => {
     expect(weaponStatTip('SR')).toMatch(/Short Range/);
     expect(weaponStatTip('S')).toMatch(/Strength/);
     expect(weaponStatTip('Оружие')).toBeUndefined();
+  });
+});
+
+describe('faction equipment catalogs', () => {
+  it('keeps shop items and does not ingest wyrd powers or sentry guns', async () => {
+    const { readFileSync } = await import('node:fs');
+    const { dirname, resolve } = await import('node:path');
+    const { fileURLToPath } = await import('node:url');
+    const root = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
+    const data = JSON.parse(
+      readFileSync(resolve(root, 'data/factions/genestealer-cult.json'), 'utf8'),
+    ) as { equipment: { name: string }[]; types: { name: string; weapons?: { name: string }[] }[] };
+    const names = data.equipment.map((item) => item.name);
+    expect(names.some((name) => name.startsWith('Cult icon'))).toBe(true);
+    expect(names.some((name) => /Hypnosis|Unbreakable Will|Trazior/i.test(name))).toBe(false);
+    const alpha = data.types.find((item) => item.name === 'Genestealer Cult Alpha');
+    expect(alpha?.weapons?.map((item) => item.name)).toEqual(['Clawed arm']);
+    const abominant = data.types.find((item) => item.name === 'Genestealer Cult Abominant');
+    expect(abominant?.weapons?.map((item) => item.name)).toEqual(['Power sledgehammer']);
   });
 });

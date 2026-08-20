@@ -128,8 +128,8 @@
         ]
       },
       "rules": [
-        "Воззвать к буре: пока экипирован Stormcaller staff, Active Ash Waste Nomad Stormcaller может выполнить действие Пылевая буря:ОригиналWhile equipped with a Stormcaller staff, an Active Ash Waste Nomad Stormcaller can perform the Dust Storm action:",
-        "Пылевая буря (одиночное): если в этом бою правило Visibility (X”) не действует, примените правило Visibility (24”). Иначе увеличьте или уменьшите значение X” на 6” (минимум 6”). Эти эффекты длятся до конца боя и могут дальше меняться повторными применениями этой способности.ОригиналIf the Visibility (X”) rule is not active for this battle, apply the Visibility (24”) rule. Otherwise, either increase or decrease the value of X” by 6” to a minimum of 6”. These effects last for the remainder of the battle and can be modified further by future uses of this ability."
+        "Воззвать к буре: пока экипирован Stormcaller staff, Active Ash Waste Nomad Stormcaller может выполнить действие Пылевая буря:",
+        "Пылевая буря (одиночное): если в этом бою правило Visibility (X”) не действует, примените правило Visibility (24”). Иначе увеличьте или уменьшите значение X” на 6” (минимум 6”). Эти эффекты длятся до конца боя и могут дальше меняться повторными применениями этой способности."
       ]
     },
     {
@@ -305,8 +305,28 @@
         ]
       },
       "rules": [
-        "Трудно убить: Arthromite Duneskuttler знаменит живучестью; при броске по таблице Lasting Injury для Arthromite Duneskuttler бросьте дважды и примените тот результат, который выберет владеющий игрок.ОригиналAn Arthromite Duneskuttler is notoriously hard to kill; when rolling on the Lasting Injury table for an Arthromite Duneskuttler, roll twice and apply whichever result the owning player wishes.",
+        "Трудно убить: Arthromite Duneskuttler знаменит живучестью; при броске по таблице Lasting Injury для Arthromite Duneskuttler бросьте дважды и примените тот результат, который выберет владеющий игрок.",
         "Навыки: у Arthromite Duneskuttler есть навык Clamber."
+      ],
+      "weapons": [
+        {
+          "name": "Mandibles",
+          "sr": "E",
+          "lr": "-",
+          "str": "S",
+          "ap": "-1",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Rending (6+)",
+              "text": "Если натуральный бросок на ранение не меньше X, AP этой атаки увеличивается на 1."
+            }
+          ]
+        }
       ]
     },
     {
@@ -353,8 +373,28 @@
       },
       "rules": [
         "Длина поводка: у Arthromite Spinewyrm длина поводка (Leash range) 6”.",
-        "Маленькая цель: Arthromite Spinewyrm держатся низко над землёй и на удивление быстры, поэтому по ним трудно целиться на просторах пепельных пустошей. Дальнобойные атаки по Arthromite Spinewyrm получают −1 к попаданию.ОригиналArthromite Spinewyrms are low to the ground and surprisingly fast, making them difficult to target in the vast expanse of the ash wastes. Ranged attacks against Arthromite Spinewyrms are made at -1 to Hit.",
-        "Рытьё: Arthromite Spinewyrm умеет рыть под металлическими и роккритовыми полами нижнего улья, быстро проходя скрытыми лазами и засыпанными вентиляциями и выходя в другом месте. Arthromite Spinewyrm может свободно двигаться под непроходимой местностью, если ему хватает движения, но не может закончить движение на непроходимой местности или в ней.ОригиналAn Arthromite Spinewyrm is able to burrow beneath and through the metal and rockcrete floors of the underhive, passing quickly through hidden crawl spaces and buried vents, before emerging elsewhere. An Arthromite Spinewyrm may move freely under impassable terrain if it has sufficient movement to do so, but may not end its movement on or with impassable terrain."
+        "Маленькая цель: Arthromite Spinewyrm держатся низко над землёй и на удивление быстры, поэтому по ним трудно целиться на просторах пепельных пустошей. Дальнобойные атаки по Arthromite Spinewyrm получают −1 к попаданию.",
+        "Рытьё: Arthromite Spinewyrm умеет рыть под металлическими и роккритовыми полами нижнего улья, быстро проходя скрытыми лазами и засыпанными вентиляциями и выходя в другом месте. Arthromite Spinewyrm может свободно двигаться под непроходимой местностью, если ему хватает движения, но не может закончить движение на непроходимой местности или в ней."
+      ],
+      "weapons": [
+        {
+          "name": "Barbed fangs",
+          "sr": "E",
+          "lr": "-",
+          "str": "S+1",
+          "ap": "-",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Rending (6+)",
+              "text": "Если натуральный бросок на ранение не меньше X, AP этой атаки увеличивается на 1."
+            }
+          ]
+        }
       ]
     },
     {
@@ -401,7 +441,23 @@
       },
       "rules": [
         "Длина поводка: у Unbound Helamite длина поводка (Leash range) 3”.",
-        "Запасной скакун: если владелец Unbound Helamite экипирован Dustback Helamite и становится Suppressed, находясь в пределах 1” от Active Unbound Helamite, он может сделать тест Agility. Если тест пройден, Unbound Helamite меняет свой Status на Suppressed вместо владельца.ОригиналIf an Unbound Helamite’s owner is equipped with a Dustback Helamite and is Suppressed whilst within 1” of an Active Unbound Helamite, they may make an Agility test. If the test is passed, the Unbound Helamite changes its Status to Suppressed instead of its owner."
+        "Запасной скакун: если владелец Unbound Helamite экипирован Dustback Helamite и становится Suppressed, находясь в пределах 1” от Active Unbound Helamite, он может сделать тест Agility. Если тест пройден, Unbound Helamite меняет свой Status на Suppressed вместо владельца."
+      ],
+      "weapons": [
+        {
+          "name": "Helamite claws",
+          "sr": "E",
+          "lr": "-",
+          "str": "3",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            }
+          ]
+        }
       ]
     },
     {
@@ -449,8 +505,27 @@
       },
       "rules": [
         "Длина поводка: у Ashwing Helamite длина поводка (Leash range) 9”.",
-        "Приманка Ashwing: пока Active, владелец Ashwing Helamite может выполнить действие Размещение приманки:",
-        "Спуск (одиночное): Fighter сдвигается до 3” по горизонтали и до 12” по вертикали. Любое вертикальное движение должно быть вниз, то есть к земле.ОригиналThe Fighter makes a move of up to 3” horizontally and up to 12” vertically. Any vertical movement must be downwards, i.e., towards the ground."
+        "Приманка Ashwing: пока Active, владелец Ashwing Helamite может выполнить действие Размещение приманки:"
+      ],
+      "weapons": [
+        {
+          "name": "Toxic mandibles",
+          "sr": "E",
+          "lr": "-",
+          "str": "-",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Toxic (3+)",
+              "text": "Против бойца ранит на X+ вместо сравнения Strength и Toughness. Против машины — только на натуральную 6."
+            }
+          ]
+        }
       ]
     }
   ],

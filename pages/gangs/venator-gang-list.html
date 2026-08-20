@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Necromunda — Венаторы</title>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#14161c">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<header class="topbar" id="top">
+    <a class="backlink" href="../gangs.html">&larr; Все банды</a>
+    <h1>Necromunda</h1>
+    <p>Венаторы &mdash; русский перевод, оригинал под спойлером</p>
+    <p class="source">Источник: Gangs of the Underhive &amp; Outlands &bull; Правила/GANGS0_3.pdf</p>
+</header>
+
+<div class="layout">
+<aside class="sidebar">
+    <div class="hb-search" id="hb-search">
+        <label class="hb-search-label" for="hb-q">Поиск</label>
+        <input class="hb-q" id="hb-q" type="search" placeholder="Боец, оружие, правило…" autocomplete="off" spellcheck="false" title="Клавиша / — фокус, Enter — к совпадению">
+        <div class="hb-modes" role="radiogroup" aria-label="Режим поиска">
+            <label class="is-on">
+                <input type="radio" name="hb-mode" value="headings" checked>
+                Заголовки
+            </label>
+            <label>
+                <input type="radio" name="hb-mode" value="full">
+                Весь текст
+            </label>
+        </div>
+        <p class="hb-status" id="hb-status" hidden></p>
+        <ol class="hb-hits" id="hb-hits" hidden></ol>
+    </div>
+
+    <details class="toc-drawer">
+    <summary class="toc-toggle">Банды</summary>
+    <nav>
+        <p class="sidebar-index"><a href="../gangs.html">Все банды</a></p>
+        <h2>Банды</h2>
+        <details open>
+            <summary>Кланы-дома</summary>
+            <ul>
+                <li><a href="house-cawdor-gang-list.html">Дом Каудор<span class="en">House Cawdor</span></a></li>
+                <li><a href="house-delaque-gang-list.html">Дом Делак<span class="en">House Delaque</span></a></li>
+                <li><a href="house-escher-gang-list.html">Дом Эшер<span class="en">House Escher</span></a></li>
+                <li><a href="house-goliath-gang-list.html">Дом Голиаф<span class="en">House Goliath</span></a></li>
+                <li><a href="house-orlock-gang-list.html">Дом Орлок<span class="en">House Orlock</span></a></li>
+                <li><a href="house-van-saar-gang-list.html">Дом Ван Саар<span class="en">House Van Saar</span></a></li>
+            </ul>
+        </details>
+        <details open>
+            <summary>Ответвления домов</summary>
+            <ul>
+                <li><a href="blades-of-the-matriarch-gang-list.html">Клинки Матриарха<span class="en">Blades Of The Matriarch</span></a></li>
+                <li><a href="forge-smelters-gang-list.html">Плавильщики кузниц<span class="en">Forge Smelters</span></a></li>
+            </ul>
+        </details>
+        <details open>
+            <summary>Культы и мутанты</summary>
+            <ul>
+                <li><a href="chaos-helot-cult-list.html">Культ хаоситских илотов<span class="en">Chaos Helot Cult</span></a></li>
+                <li><a href="corpse-grinder-cult-gang-list.html">Культ Трупорезов<span class="en">Corpse Grinder Cult</span></a></li>
+                <li><a href="genestealer-cult-gang-list.html">Культ генокрадов<span class="en">Genestealer Cult</span></a></li>
+                <li><a href="malstrain-gang-list.html">Мальстрейн<span class="en">Malstrain</span></a></li>
+            </ul>
+        </details>
+        <details open>
+            <summary>Прочие банды</summary>
+            <ul>
+                <li><a href="ash-waste-nomad-gang-list.html">Кочевники Пепельных пустошей<span class="en">Ash Waste Nomad</span></a></li>
+                <li><a href="free-ogryn-gang-list.html">Свободные огрины<span class="en">Free Ogryn</span></a></li>
+                <li><a href="ironhead-squat-gang-list.html">Сквоты Айронхед<span class="en">Ironhead Squat</span></a></li>
+                <li><a href="outcast-gang-list.html">Изгои<span class="en">Outcast</span></a></li>
+                <li><a href="palanite-enforcer-patrol-list.html">Паланитские энфорсеры<span class="en">Palanite Enforcer</span></a></li>
+                <li><a href="spyre-hunting-party-list.html">Охотники Шпиля<span class="en">Spyre Hunting</span></a></li>
+                <li><a href="venator-gang-list.html" class="is-current" aria-current="page">Венаторы<span class="en">Venator</span></a></li>
+            </ul>
+        </details>
+    </nav>
+    </details>
+</aside>
+<main class="content">
+<section id="venator-gang-list">
+<h2>Венаторы<span class="en">Venator Gang List</span></h2>
+<div class="table-wrap"><table class="compact roster">
+<caption>Состав банды<span class="orig">Gang Composition</span></caption>
+<thead><tr><th>Боец<span class="orig">Fighter</span></th><th>Тип<span class="orig">Type</span></th><th class="num">Кредиты<span class="orig">Credits</span></th></tr></thead><tbody>
+<tr><td><a href="#venator-gang-list--house-hunt-leader">HOUSE HUNT LEADER</a></td><td>Боец (Лидер)<span class="orig">Fighter (Leader)</span></td><td class="num">130</td></tr>
+<tr><td><a href="#venator-gang-list--ogryn-hunt-leader">OGRYN HUNT LEADER</a></td><td>Боец (Лидер, Огрин)<span class="orig">Fighter (Leader, Ogryn)</span></td><td class="num">180</td></tr>
+<tr><td><a href="#venator-gang-list--squat-hunt-leader">SQUAT HUNT LEADER</a></td><td>Боец (Лидер)<span class="orig">Fighter (Leader)</span></td><td class="num">125</td></tr>
+<tr><td><a href="#venator-gang-list--ratling-hunt-leader">RATLING HUNT LEADER</a></td><td>Боец (Лидер, Ратлинг)<span class="orig">Fighter (Leader, Ratling)</span></td><td class="num">105</td></tr>
+<tr><td><a href="#venator-gang-list--beastman-hunt-leader">BEASTMAN HUNT LEADER</a></td><td>Боец (Лидер, Зверолюд)<span class="orig">Fighter (Leader, Beastman)</span></td><td class="num">145</td></tr>
+<tr><td><a href="#venator-gang-list--house-hunt-champion">HOUSE HUNT CHAMPION</a></td><td>Боец (Чемпион)<span class="orig">Fighter (Champion)</span></td><td class="num">100</td></tr>
+<tr><td><a href="#venator-gang-list--ogryn-hunt-champion">OGRYN HUNT CHAMPION</a></td><td>Боец (Чемпион, Огрин)<span class="orig">Fighter (Champion, Ogryn)</span></td><td class="num">150</td></tr>
+<tr><td><a href="#venator-gang-list--squat-hunt-champion">SQUAT HUNT CHAMPION</a></td><td>Боец (Чемпион)<span class="orig">Fighter (Champion)</span></td><td class="num">110</td></tr>
+<tr><td><a href="#venator-gang-list--ratling-hunt-champion">RATLING HUNT CHAMPION</a></td><td>Боец (Чемпион, Ратлинг)<span class="orig">Fighter (Champion, Ratling)</span></td><td class="num">75</td></tr>
+<tr><td><a href="#venator-gang-list--beastman-hunt-champion">BEASTMAN HUNT CHAMPION</a></td><td>Боец (Чемпион, Зверолюд)<span class="orig">Fighter (Champion, Beastman)</span></td><td class="num">110</td></tr>
+<tr><td><a href="#venator-gang-list--house-hunter">HOUSE HUNTER</a></td><td>Боец (Гэнгер, Специалист)<span class="orig">Fighter (Ganger, Specialist)</span></td><td class="num">45</td></tr>
+<tr><td><a href="#venator-gang-list--ogryn-hunter">OGRYN HUNTER</a></td><td>Боец (Гэнгер, Огрин, Специалист)<span class="orig">Fighter (Ganger, Ogryn, Specialist)</span></td><td class="num">120</td></tr>
+<tr><td><a href="#venator-gang-list--squat-hunter">SQUAT HUNTER</a></td><td>Боец (Гэнгер, Специалист)<span class="orig">Fighter (Ganger, Specialist)</span></td><td class="num">50</td></tr>
+<tr><td><a href="#venator-gang-list--ratling-hunter">RATLING HUNTER</a></td><td>Боец (Гэнгер, Ратлинг, Специалист)<span class="orig">Fighter (Ganger, Ratling, Specialist)</span></td><td class="num">25</td></tr>
+<tr><td><a href="#venator-gang-list--beastman-hunter">BEASTMAN HUNTER</a></td><td>Боец (Зверолюд, Гэнгер, Специалист)<span class="orig">Fighter (Beastman, Ganger, Specialist)</span></td><td class="num">65</td></tr>
+</tbody></table></div>
+<p class="note"><span class="label">Снаряжение банды<span class="orig">Gang Equipment</span></span> Турели и прочее снаряжение банды покупаются в Trading Post и кладутся в Stash, не на бойца. <a href="../core-rules.html#snaryazhenie-bandy">Правила и турель Trazior →</a></p>
+<h3>Особые правила банды<span class="orig">GANG SPECIAL RULES</span></h3>
+<p><span class="term">Сбор наград:<span class="orig">Claiming Bounties</span></span> если на шаге Receive Rewards последовательности Post-battle Sequence банда Venator вывела Out of Action как минимум трёх вражеских Fighter за бой, добавьте 20 кредитов в их Stash.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">If during the Receive Rewards step of the Post-battle Sequence a Venator gang has taken at least three enemy Fighters Out of Action during the battle, they add 20 credits to their Stash.</p></details></p>
+<p><span class="term">Стартовые навыки:<span class="orig">Starting Skills</span></span> при добавлении в ростер банды все Venator Leaders and Champions могут выбрать один навык из одного из своих основных наборов (Primary Skill Sets).<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When added to a Gang Roster, all Venator Leaders and Champions may select one skill from one of their Primary Skill Sets.</p></details></p>
+<p><span class="term">Доступ к навыкам:<span class="orig">Skill Access</span></span> при создании банды Venator выберите любые четыре Skill Sets из Necromunda Skirmish Core Rulebook. Проранжируйте их от 1 до 4, где 1 — Skill Set, который лучше всего отражает, как вы видите работу этой группы как команды. Доступ каждой модели к Skill Sets затем определяется по таблице ниже — это стоит записать отдельно:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When creating a Venator gang, pick any four Skill Sets from the Necromunda Skirmish Core Rulebook. Rank them from 1 to 4, with 1 being the Skill Set that most embodies the way you envisage the band operating as a team. Each model’s access to Skill Sets is then determined by referring to the table below – this should be noted down separately:</p></details></p>
+<div class="table-wrap"><table class="compact">
+<thead><tr><th>Боец<span class="orig">Fighter</span></th><th>Основной<span class="orig">Primary</span></th><th>Вторичный<span class="orig">Secondary</span></th></tr></thead><tbody>
+<tr><td>Venator Hunt Leader</td><td>1 and 2</td><td>3 and 4</td></tr>
+<tr><td>Venator Hunt Champion</td><td>1 and 2</td><td>3</td></tr>
+<tr><td>Venator Specialist</td><td>1</td><td>2 and 3</td></tr>
+</tbody></table></div>
+<h3>Новый подтип: огрин<span class="orig">NEW SUBTYPE: OGRYN</span></h3>
+<p>Все Ogryns подчиняются следующему правилу:<span class="orig">All Ogryns are subject to the following rule:</span></p>
+<p><span class="term">Стартовые навыки:<span class="orig">Starting Skills</span></span> помимо любых других навыков, все Ogryns имеют навык Juggernaut.<span class="orig">In addition to any other skills, all Ogryns have the Juggernaut skill.</span></p>
+<h3>Новый подтип: ратлинг<span class="orig">NEW SUBTYPE: RATLING</span></h3>
+<p>Все Ratlings подчиняются следующим правилам:<span class="orig">All Ratlings are subject to the following rules:</span></p>
+<p><span class="term">Снайперская стрельба:<span class="orig">Sniping</span></span> этот Fighter может перебрасывать броски попадания с натуральной 1 при действии Aimed Shot.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">This Fighter may re-roll Hit rolls of a natural 1 when performing an Aimed Shot action.</p></details></p>
+<p><span class="term">Скрытность:<span class="orig">Sneaking</span></span> этот Fighter всегда считается находящимся в Long Range оружия при расчёте бонуса за укрытие.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">This Fighter always counts as being in a weapon’s Long Range when calculating the bonus for cover.</p></details></p>
+<h3>Новый подтип: зверолюд<span class="orig">NEW SUBTYPE: BEASTMAN</span></h3>
+<p>Все Beastmen подчиняются следующему правилу:<span class="orig">All Beastmen are subject to the following rule:</span></p>
+<p><span class="term">Дикие воины:<span class="orig">Feral Warriors</span></span> Beastmen Fighters увеличивают характеристику Attacks на 1, пока Injured.<span class="orig">Beastmen Fighters increase their Attacks characteristic by 1 while they are Injured.</span></p>
+<h3>Наследие банды<span class="orig">GANG LEGACY</span></h3>
+<p>Большинство Fighter в банде Venator имеют доступ к Gang Legacy, как указано в их карточке Fighter. Fighter с Gang Legacy может купить оружие и снаряжение из Equipment List своей банды при добавлении в банду (дополнительное оружие из этого списка во время Post-cycle Sequence покупать нельзя):<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Most Fighters in a Venator gang have access to a Gang Legacy as detailed in their Fighter datasheet. A Fighter with a Gang Legacy may purchase weapons and wargear from their gang’s Equipment List when added to a gang (they may not purchase additional weapons from this list during the Post-cycle Sequence):</p></details></p>
+<p>Список снаряжения Cawdor House Cawdor Equipment List Delaque House Delaque Equipment List Escher House Escher Equipment List Goliath House Goliath Equipment List Orlock House Orlock Equipment List Van Saar House Van Saar Equipment List Ironhead Squat Ironhead Squat Equipment List Ogryn Free Ogryn Equipment List. Venator Hunt Leader или Venator Hunt Champion может купить Pets, связанные с их Gang Legacy, при добавлении в Gang Roster. Например, Venator Hunt Leader с Goliath Gang Legacy может купить Sumpkroc.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Equipment List Cawdor House Cawdor Equipment List Delaque House Delaque Equipment List Escher House Escher Equipment List Goliath House Goliath Equipment List Orlock House Orlock Equipment List Van Saar House Van Saar Equipment List Ironhead Squat Ironhead Squat Equipment List Ogryn Free Ogryn Equipment List A Venator Hunt Leader or Venator Hunt Champion may purchase Pets associated with their Gang Legacy when added to a Gang Roster. For example, a Venator Hunt Leader with a Goliath Gang Legacy may purchase a Sumpkroc.</p></details></p>
+<p>В одной банде нет ограничений на разные Gang Legacies — в банде Venator может быть сколько угодно или сколь угодно мало. Однако каждый Fighter может происходить только из одной банды.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">There is no restriction on different Gang Legacies within a gang – a Venator gang may contain as many or as few as you wish. However, each Fighter may only originate from one gang.</p></details></p>
+<details class="fold fold-fighters">
+<summary><span class="fold-title">Бойцы банды</span><span class="fold-count">15 карточек</span></summary><div class="fold-body">
+<details class="fighter" id="venator-gang-list--house-hunt-leader">
+<summary class="fighter-head">
+<h4 class="fighter-name">HOUSE HUNT LEADER</h4>
+<span class="fighter-cost">130 кредитов<span class="orig">130 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Лидер)<span class="orig">Fighter (Leader)</span></span> <span class="fighter-xp">Стартовый XP: 61<span class="orig">Starting XP: 61</span></span></p>
+<p>Когда House Hunt Leader добавляется в банду Venator, выберите один из следующих профилей, чтобы представить его:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When a House Hunt Leader is added to a Venator gang, select one of the following profiles to represent them:</p></details></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th><th>XP</th></tr></thead>
+<tbody>
+<tr><td>5”</td><td>3+</td><td>3+</td><td>3</td><td>3</td><td>3</td><td>4</td><td>2</td><td>5+</td><td>9</td><td>9</td><td>8</td><td>8</td><td>61</td></tr>
+<tr><td>4”</td><td>3+</td><td>3+</td><td>3</td><td>4</td><td>3</td><td>4</td><td>2</td><td>5+</td><td>8</td><td>8</td><td>8</td><td>8</td><td>61</td></tr>
+<tr><td>4”</td><td>3+</td><td>3+</td><td>4</td><td>3</td><td>3</td><td>5</td><td>2</td><td>5+</td><td>8</td><td>7</td><td>8</td><td>8</td><td>61</td></tr>
+<tr><td>5”</td><td>3+</td><td>3+</td><td>3</td><td>3</td><td>3</td><td>4</td><td>3</td><td>5+</td><td>7</td><td>8</td><td>8</td><td>7</td><td>61</td></tr>
+</tbody></table></div>
+<p><span class="term">Наследие банды Venator:<span class="orig">Venator Gang Legacy</span></span> House Hunt Leader выбирает Gang Legacy Cawdor, Delaque, Escher, Goliath, Orlock или Van Saar.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A House Hunt Leader selects either the Cawdor, Delaque, Escher, Goliath, Orlock or Van Saar Gang Legacy.</p></details></p>
+</div></details>
+<details class="fighter" id="venator-gang-list--ogryn-hunt-leader">
+<summary class="fighter-head">
+<h4 class="fighter-name">OGRYN HUNT LEADER</h4>
+<span class="fighter-cost">180 кредитов<span class="orig">180 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Лидер, Огрин)<span class="orig">Fighter (Leader, Ogryn)</span></span> <span class="fighter-xp">Стартовый XP: 61<span class="orig">Starting XP: 61</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th><th>XP</th></tr></thead>
+<tbody>
+<tr><td>5”</td><td>3+</td><td>5+</td><td>5</td><td>5</td><td>3</td><td>4</td><td>3</td><td>5+</td><td>6</td><td>9</td><td>5</td><td>6</td><td>61</td></tr>
+</tbody></table></div>
+<p><span class="term">Наследие банды Venator:<span class="orig">Venator Gang Legacy</span></span> Ogryn Hunt Leader выбирает Ogryn Gang Legacy.<span class="orig">An Ogryn Hunt Leader selects the Ogryn Gang Legacy.</span></p>
+</div></details>
+<details class="fighter" id="venator-gang-list--squat-hunt-leader">
+<summary class="fighter-head">
+<h4 class="fighter-name">SQUAT HUNT LEADER</h4>
+<span class="fighter-cost">125 кредитов<span class="orig">125 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Лидер)<span class="orig">Fighter (Leader)</span></span> <span class="fighter-xp">Стартовый XP: 61<span class="orig">Starting XP: 61</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th><th>XP</th></tr></thead>
+<tbody>
+<tr><td>4”</td><td>3+</td><td>3+</td><td>3</td><td>4</td><td>3</td><td>2</td><td>2</td><td>5+</td><td>9</td><td>9</td><td>9</td><td>8</td><td>61</td></tr>
+</tbody></table></div>
+<p><span class="term">Наследие банды Venator:<span class="orig">Venator Gang Legacy</span></span> Squat Hunt Leader выбирает Ironhead Squat Gang Legacy.<span class="orig">A Squat Hunt Leader selects the Ironhead Squat Gang Legacy.</span></p>
+</div></details>
+<details class="fighter" id="venator-gang-list--ratling-hunt-leader">
+<summary class="fighter-head">
+<h4 class="fighter-name">RATLING HUNT LEADER</h4>
+<span class="fighter-cost">105 кредитов<span class="orig">105 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Лидер, Ратлинг)<span class="orig">Fighter (Leader, Ratling)</span></span> <span class="fighter-xp">Стартовый XP: 61<span class="orig">Starting XP: 61</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th><th>XP</th></tr></thead>
+<tbody>
+<tr><td>6”</td><td>4+</td><td>3+</td><td>2</td><td>2</td><td>3</td><td>5</td><td>2</td><td>5+</td><td>8</td><td>8</td><td>8</td><td>9</td><td>61</td></tr>
+</tbody></table></div>
+</div></details>
+<details class="fighter" id="venator-gang-list--beastman-hunt-leader">
+<summary class="fighter-head">
+<h4 class="fighter-name">BEASTMAN HUNT LEADER</h4>
+<span class="fighter-cost">145 кредитов<span class="orig">145 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Лидер, Зверолюд)<span class="orig">Fighter (Leader, Beastman)</span></span> <span class="fighter-xp">Стартовый XP: 61<span class="orig">Starting XP: 61</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th><th>XP</th></tr></thead>
+<tbody>
+<tr><td>4”</td><td>3+</td><td>4+</td><td>4</td><td>4</td><td>3</td><td>4</td><td>3</td><td>5+</td><td>7</td><td>9</td><td>7</td><td>7</td><td>61</td></tr>
+</tbody></table></div>
+<p><span class="term">Снаряжение:<span class="orig">Equipment</span></span> при добавлении в Gang Roster Venator Hunt Leader может купить оружие и снаряжение из списка снаряжения, полученного от своего Gang Legacy, и с Trading Post с суммарным TP не больше 5:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When added to a Gang Roster, a Venator Hunt Leader may purchase weapons and wargear from an Equipment List granted to them by their Gang Legacy and from the Trading Post with a combined TP of 5 or less:</p></details></p>
+<p>• В ходе кампании им можно давать дополнительное оружие и снаряжение, купленное с Trading Post.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">• During the course of a campaign, they may be given additional weapons and wargear purchased from the Trading Post.</p></details></p>
+<p>- Учтите: в ходе кампании они не могут покупать дополнительное оружие или снаряжение из любого списка снаряжения, полученного от своего Gang Legacy.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">- Note that during the course of a campaign, they may not purchase additional weapons or wargear from any Equipment List granted them by their Gang Legacy.</p></details></p>
+</div></details>
+<details class="fighter" id="venator-gang-list--house-hunt-champion">
+<summary class="fighter-head">
+<h4 class="fighter-name">HOUSE HUNT CHAMPION</h4>
+<span class="fighter-cost">100 кредитов<span class="orig">100 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Чемпион)<span class="orig">Fighter (Champion)</span></span> <span class="fighter-xp">Стартовый XP: 37<span class="orig">Starting XP: 37</span></span></p>
+<p>Когда House Hunt Champion добавляется в банду Venator, выберите один из следующих профилей, чтобы представить его:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When a House Hunt Champion is added to a Venator gang, select one of the following profiles to represent them:</p></details></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th><th>XP</th></tr></thead>
+<tbody>
+<tr><td>5”</td><td>3+</td><td>3+</td><td>3</td><td>3</td><td>2</td><td>3</td><td>2</td><td>5+</td><td>7</td><td>7</td><td>7</td><td>7</td><td>37</td></tr>
+<tr><td>5”</td><td>4+</td><td>3+</td><td>3</td><td>4</td><td>2</td><td>2</td><td>2</td><td>5+</td><td>7</td><td>7</td><td>7</td><td>7</td><td>37</td></tr>
+<tr><td>4”</td><td>4+</td><td>3+</td><td>3</td><td>3</td><td>2</td><td>3</td><td>2</td><td>5+</td><td>8</td><td>7</td><td>7</td><td>8</td><td>37</td></tr>
+<tr><td>5”</td><td>3+</td><td>4+</td><td>3</td><td>3</td><td>2</td><td>3</td><td>3</td><td>5+</td><td>6</td><td>7</td><td>6</td><td>7</td><td>37</td></tr>
+</tbody></table></div>
+<p><span class="term">Наследие банды Venator:<span class="orig">Venator Gang Legacy</span></span> House Hunt Champion выбирает Gang Legacy Cawdor, Delaque, Escher, Goliath, Orlock или Van Saar.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A House Hunt Champion selects either the Cawdor, Delaque, Escher, Goliath, Orlock or Van Saar Gang Legacy.</p></details></p>
+</div></details>
+<details class="fighter" id="venator-gang-list--ogryn-hunt-champion">
+<summary class="fighter-head">
+<h4 class="fighter-name">OGRYN HUNT CHAMPION</h4>
+<span class="fighter-cost">150 кредитов<span class="orig">150 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Чемпион, Огрин)<span class="orig">Fighter (Champion, Ogryn)</span></span> <span class="fighter-xp">Стартовый XP: 37<span class="orig">Starting XP: 37</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th><th>XP</th></tr></thead>
+<tbody>
+<tr><td>5”</td><td>3+</td><td>5+</td><td>5</td><td>5</td><td>3</td><td>3</td><td>2</td><td>5+</td><td>6</td><td>7</td><td>5</td><td>5</td><td>37</td></tr>
+</tbody></table></div>
+<p><span class="term">Наследие банды Venator:<span class="orig">Venator Gang Legacy</span></span> Ogryn Hunt Champion выбирает Ogryn Gang Legacy.<span class="orig">An Ogryn Hunt Champion selects the Ogryn Gang Legacy.</span></p>
+</div></details>
+<details class="fighter" id="venator-gang-list--squat-hunt-champion">
+<summary class="fighter-head">
+<h4 class="fighter-name">SQUAT HUNT CHAMPION</h4>
+<span class="fighter-cost">110 кредитов<span class="orig">110 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Чемпион)<span class="orig">Fighter (Champion)</span></span> <span class="fighter-xp">Стартовый XP: 37<span class="orig">Starting XP: 37</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th><th>XP</th></tr></thead>
+<tbody>
+<tr><td>4”</td><td>3+</td><td>3+</td><td>3</td><td>4</td><td>2</td><td>2</td><td>2</td><td>5+</td><td>8</td><td>8</td><td>8</td><td>7</td><td>37</td></tr>
+</tbody></table></div>
+<p><span class="term">Наследие банды Venator:<span class="orig">Venator Gang Legacy</span></span> Squat Hunt Champion выбирает Ironhead Squat Gang Legacy.<span class="orig">A Squat Hunt Champion selects the Ironhead Squat Gang Legacy.</span></p>
+</div></details>
+<details class="fighter" id="venator-gang-list--ratling-hunt-champion">
+<summary class="fighter-head">
+<h4 class="fighter-name">RATLING HUNT CHAMPION</h4>
+<span class="fighter-cost">75 кредитов<span class="orig">75 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Чемпион, Ратлинг)<span class="orig">Fighter (Champion, Ratling)</span></span> <span class="fighter-xp">Стартовый XP: 37<span class="orig">Starting XP: 37</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th><th>XP</th></tr></thead>
+<tbody>
+<tr><td>6”</td><td>5+</td><td>3+</td><td>2</td><td>2</td><td>2</td><td>4</td><td>1</td><td>5+</td><td>7</td><td>8</td><td>7</td><td>9</td><td>37</td></tr>
+</tbody></table></div>
+</div></details>
+<details class="fighter" id="venator-gang-list--beastman-hunt-champion">
+<summary class="fighter-head">
+<h4 class="fighter-name">BEASTMAN HUNT CHAMPION</h4>
+<span class="fighter-cost">110 кредитов<span class="orig">110 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Чемпион, Зверолюд)<span class="orig">Fighter (Champion, Beastman)</span></span> <span class="fighter-xp">Стартовый XP: 37<span class="orig">Starting XP: 37</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th><th>XP</th></tr></thead>
+<tbody>
+<tr><td>4”</td><td>3+</td><td>4+</td><td>4</td><td>4</td><td>2</td><td>3</td><td>2</td><td>5+</td><td>6</td><td>8</td><td>7</td><td>6</td><td>37</td></tr>
+</tbody></table></div>
+<p><span class="term">Снаряжение:<span class="orig">Equipment</span></span> при добавлении в Gang Roster Venator Hunt Champion может купить оружие и снаряжение из списка снаряжения, полученного от своего Gang Legacy, и с Trading Post с суммарным TP не больше 4:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When added to a Gang Roster, a Venator Hunt Champion may purchase weapons and wargear from an Equipment List granted to them by their Gang Legacy and from the Trading Post with a combined TP of 4 or less:</p></details></p>
+<p>• В ходе кампании им можно давать дополнительное оружие и снаряжение, купленное с Trading Post.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">• During the course of a campaign, they may be given additional weapons and wargear purchased from the Trading Post.</p></details></p>
+<p>- Учтите: в ходе кампании они не могут покупать дополнительное оружие или снаряжение из любого списка снаряжения, полученного от своего Gang Legacy.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">- Note that during the course of a campaign, they may not purchase additional weapons or wargear from any Equipment List granted them by their Gang Legacy.</p></details></p>
+</div></details>
+<details class="fighter" id="venator-gang-list--house-hunter">
+<summary class="fighter-head">
+<h4 class="fighter-name">HOUSE HUNTER</h4>
+<span class="fighter-cost">45 кредитов<span class="orig">45 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Гэнгер, Специалист)<span class="orig">Fighter (Ganger, Specialist)</span></span> <span class="fighter-xp">Стартовый XP: 13<span class="orig">Starting XP: 13</span></span></p>
+<p>Когда House Hunter добавляется в банду Venator, выберите один из следующих профилей, чтобы представить его:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When a House Hunter is added to a Venator gang, select one of the following profiles to represent them:</p></details></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th><th>XP</th></tr></thead>
+<tbody>
+<tr><td>5”</td><td>4+</td><td>4+</td><td>3</td><td>3</td><td>1</td><td>3</td><td>1</td><td>6+</td><td>6</td><td>7</td><td>7</td><td>6</td><td>13</td></tr>
+<tr><td>4”</td><td>4+</td><td>4+</td><td>3</td><td>4</td><td>1</td><td>2</td><td>1</td><td>6+</td><td>6</td><td>6</td><td>6</td><td>7</td><td>13</td></tr>
+<tr><td>6”</td><td>4+</td><td>4+</td><td>3</td><td>3</td><td>1</td><td>4</td><td>1</td><td>6+</td><td>6</td><td>6</td><td>6</td><td>6</td><td>13</td></tr>
+<tr><td>4”</td><td>4+</td><td>5+</td><td>3</td><td>3</td><td>1</td><td>3</td><td>2</td><td>6+</td><td>6</td><td>6</td><td>6</td><td>6</td><td>13</td></tr>
+</tbody></table></div>
+<p><span class="term">Наследие банды Venator:<span class="orig">Venator Gang Legacy</span></span> House Hunter выбирает Gang Legacy Cawdor, Delaque, Escher, Goliath, Orlock или Van Saar.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A House Hunter selects either the Cawdor, Delaque, Escher, Goliath, Orlock or Van Saar Gang Legacy.</p></details></p>
+</div></details>
+<details class="fighter" id="venator-gang-list--ogryn-hunter">
+<summary class="fighter-head">
+<h4 class="fighter-name">OGRYN HUNTER</h4>
+<span class="fighter-cost">120 кредитов<span class="orig">120 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Гэнгер, Огрин, Специалист)<span class="orig">Fighter (Ganger, Ogryn, Specialist)</span></span> <span class="fighter-xp">Стартовый XP: 13<span class="orig">Starting XP: 13</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th><th>XP</th></tr></thead>
+<tbody>
+<tr><td>5”</td><td>4+</td><td>5+</td><td>5</td><td>5</td><td>2</td><td>3</td><td>2</td><td>6+</td><td>5</td><td>7</td><td>5</td><td>5</td><td>13</td></tr>
+</tbody></table></div>
+<p><span class="term">Наследие банды Venator:<span class="orig">Venator Gang Legacy</span></span> Ogryn Hunter выбирает Ogryn Gang Legacy.<span class="orig">An Ogryn Hunter selects the Ogryn Gang Legacy.</span></p>
+</div></details>
+<details class="fighter" id="venator-gang-list--squat-hunter">
+<summary class="fighter-head">
+<h4 class="fighter-name">SQUAT HUNTER</h4>
+<span class="fighter-cost">50 кредитов<span class="orig">50 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Гэнгер, Специалист)<span class="orig">Fighter (Ganger, Specialist)</span></span> <span class="fighter-xp">Стартовый XP: 13<span class="orig">Starting XP: 13</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th><th>XP</th></tr></thead>
+<tbody>
+<tr><td>4”</td><td>4+</td><td>4+</td><td>3</td><td>4</td><td>1</td><td>2</td><td>1</td><td>6+</td><td>6</td><td>6</td><td>6</td><td>7</td><td>13</td></tr>
+</tbody></table></div>
+<p><span class="term">Наследие банды Venator:<span class="orig">Venator Gang Legacy</span></span> Squat Hunter выбирает Ironhead Squat Gang Legacy.<span class="orig">A Squat Hunter selects the Ironhead Squat Gang Legacy.</span></p>
+</div></details>
+<details class="fighter" id="venator-gang-list--ratling-hunter">
+<summary class="fighter-head">
+<h4 class="fighter-name">RATLING HUNTER</h4>
+<span class="fighter-cost">25 кредитов<span class="orig">25 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Гэнгер, Ратлинг, Специалист)<span class="orig">Fighter (Ganger, Ratling, Specialist)</span></span> <span class="fighter-xp">Стартовый XP: 13<span class="orig">Starting XP: 13</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th><th>XP</th></tr></thead>
+<tbody>
+<tr><td>5”</td><td>5+</td><td>4+</td><td>2</td><td>2</td><td>1</td><td>4</td><td>1</td><td>6+</td><td>6</td><td>6</td><td>6</td><td>7</td><td>13</td></tr>
+</tbody></table></div>
+</div></details>
+<details class="fighter" id="venator-gang-list--beastman-hunter">
+<summary class="fighter-head">
+<h4 class="fighter-name">BEASTMAN HUNTER</h4>
+<span class="fighter-cost">65 кредитов<span class="orig">65 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Зверолюд, Гэнгер, Специалист)<span class="orig">Fighter (Beastman, Ganger, Specialist)</span></span> <span class="fighter-xp">Стартовый XP: 13<span class="orig">Starting XP: 13</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th><th>XP</th></tr></thead>
+<tbody>
+<tr><td>4”</td><td>4+</td><td>4+</td><td>4</td><td>4</td><td>1</td><td>3</td><td>1</td><td>6+</td><td>5</td><td>8</td><td>6</td><td>6</td><td>13</td></tr>
+</tbody></table></div>
+<p><span class="term">Снаряжение:<span class="orig">Equipment</span></span> при добавлении в Gang Roster Venator Hunter может купить оружие и снаряжение из списка снаряжения, полученного от своего Gang Legacy, и с Trading Post с суммарным TP не больше 3:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When added to a Gang Roster, a Venator Hunter may purchase weapons and wargear from an Equipment List granted to them by their Gang Legacy and from the Trading Post with a combined TP of 3 or less:</p></details></p>
+<p>• В ходе кампании им можно давать дополнительное оружие и снаряжение, купленное с Trading Post.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">• During the course of a campaign, they may be given additional weapons and wargear purchased from the Trading Post.</p></details></p>
+<p>- Учтите: в ходе кампании они не могут покупать дополнительное оружие или снаряжение из любого списка снаряжения, полученного от своего Gang Legacy.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">- Note that during the course of a campaign, they may not purchase additional weapons or wargear from any Equipment List granted them by their Gang Legacy.</p></details></p>
+</div></details>
+</div></details>
+<a class="top-link" href="#top">Наверх</a>
+</section>
+</main>
+</div>
+
+<footer class="page-footer">
+    <p>Справочник собран из Gangs of the Underhive &amp; Outlands (Правила/GANGS0_3.pdf).
+    Русский текст — для игры за столом; английский оригинал спрятан под спойлером «Оригинал» или дан короткой подписью рядом.</p>
+    <p><a class="backlink" href="../../">&larr; На главную</a></p>
+    <a class="top-link" href="#top">Наверх</a>
+</footer>
+
+<script src="../handbook-search.js"></script>
+
+</body>
+</html>

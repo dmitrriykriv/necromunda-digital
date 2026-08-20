@@ -266,6 +266,60 @@
       },
       "rules": [
         "Навыки: у Cawdor Stig-Shambler есть навык Bulging Biceps."
+      ],
+      "weapons": [
+        {
+          "name": "Heavy club",
+          "sr": "E",
+          "lr": "-",
+          "str": "S+2",
+          "ap": "-",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Concussive (5+)",
+              "text": "Если атака ранит и бросок на ранение не меньше X, цель снижает Initiative на 1 до конца следующей активации."
+            },
+            {
+              "name": "Heavy",
+              "text": "Дальнобойное: только Braced Shot. Ближний бой: нельзя как Secondary и нельзя использовать Secondary вместе с ним."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Unwieldy",
+              "text": "В ближнем бою Initiative модели ставится в 1 до любых модификаторов."
+            }
+          ]
+        },
+        {
+          "name": "flamer",
+          "sr": "T",
+          "lr": "-",
+          "str": "4",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Ammo (6+)",
+              "text": "После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя."
+            },
+            {
+              "name": "Blaze (5+)",
+              "text": "Если бросок на ранение не меньше X, цель получает ещё одно попадание тем же профилем. Оно бросается на ранение отдельно и не вызывает новых дополнительных попаданий."
+            },
+            {
+              "name": "Combi",
+              "text": "При Shoot или Aimed Shot выберите профиль до броска. Можно стрелять обоими по одной цели с −1 к попаданию каждого; атаки одновременны."
+            },
+            {
+              "name": "Template",
+              "text": "Каплевидный шаблон от стреляющего через цель: все под ним получают автоматическое попадание. С Light в ближнем бою — одно автоматическое попадание без шаблона. С Rapid Fire (X) ближайшая модель получает попадания по кубику огневой мощи, остальные — по одному."
+            }
+          ]
+        }
       ]
     },
     {
@@ -486,13 +540,27 @@
       },
       "rules": [
         "Длина поводка: у Sheen Bird длина поводка (Leash range) 6”.",
-        "В исступлении: Sheen Bird находится в состоянии Frenzy.",
-        "Подготовить крысу-бомбу (одиночное): выберите гранату со свойством Blast (3”/5”), которой экипирован Fighter и которая не Out of Ammo, и сделайте для неё тест Ammo (X+), как если бы гранату выстрелили. Затем поставьте bomb delivery rat в контакт подставками с этим Fighter; крыса сразу активируется. В начале каждого раунда, после броска за Priority, но до активации первой модели, активируются все bomb delivery rats. Когда bomb delivery rat активируется, следуйте этим указаниям:ОригиналSelect a grenade with the Blast (3”/5”) trait the Fighter is equipped with that is not Out of Ammo and make an Ammo (X+) test for them as if the grenade had been fired. Then, place a bomb delivery rat in base contact with this Fighter which then immediately activates. At the start of each round, after rolling for Priority but before the first model activates, all bomb delivery rats activate. When a bomb delivery rat activates, follow these instructions:",
-        "Спуск (одиночное): Fighter сдвигается до 3” по горизонтали и до 12” по вертикали. Любое вертикальное движение должно быть вниз, то есть к земле.ОригиналThe Fighter makes a move of up to 3” horizontally and up to 12” vertically. Any vertical movement must be downwards, i.e., towards the ground.",
-        "Слова гнева (одиночное): этот Fighter читает вслух из Book of the Redemption. До фазы окончания этого раунда любой дружественный Fanatic Fighter в пределах 6” от этого Fighter в начале своей активации может либо перебросить D6 при действии Charge, либо перебросить один бросок натуральной 1 при броске попадания.ОригиналThis Fighter read aloud from the Book of the Redemption. Until the End phase of this round, any friendly Fanatic Fighters that are within 6” of this Fighter when their activation starts may either re-roll the D6 when performing a Charge action, or may re-roll a single roll of a natural 1 when making a Hit roll.",
-        "Спуск (одиночное): Fighter сдвигается до 3” по горизонтали и до 12” по вертикали. Любое вертикальное движение должно быть вниз, то есть к земле.ОригиналThe Fighter makes a move of up to 3” horizontally and up to 12” vertically. Any vertical movement must be downwards, i.e., towards the ground.",
-        "Подготовить крысу-бомбу (одиночное): выберите гранату со свойством Blast (3”/5”), которой экипирован Fighter и которая не Out of Ammo, и сделайте для неё тест Ammo (X+), как если бы гранату выстрелили. Затем поставьте bomb delivery rat в контакт подставками с этим Fighter; крыса сразу активируется. В начале каждого раунда, после броска за Priority, но до активации первой модели, активируются все bomb delivery rats. Когда bomb delivery rat активируется, следуйте этим указаниям:ОригиналSelect a grenade with the Blast (3”/5”) trait the Fighter is equipped with that is not Out of Ammo and make an Ammo (X+) test for them as if the grenade had been fired. Then, place a bomb delivery rat in base contact with this Fighter which then immediately activates. At the start of each round, after rolling for Priority but before the first model activates, all bomb delivery rats activate. When a bomb delivery rat activates, follow these instructions:",
-        "Слова гнева (одиночное): этот Fighter читает вслух из Book of the Redemption. До фазы окончания этого раунда любой дружественный Fanatic Fighter в пределах 6” от этого Fighter в начале своей активации может либо перебросить D6 при действии Charge, либо перебросить один бросок натуральной 1 при броске попадания.ОригиналThis Fighter read aloud from the Book of the Redemption. Until the End phase of this round, any friendly Fanatic Fighters that are within 6” of this Fighter when their activation starts may either re-roll the D6 when performing a Charge action, or may re-roll a single roll of a natural 1 when making a Hit roll."
+        "В исступлении: Sheen Bird находится в состоянии Frenzy."
+      ],
+      "weapons": [
+        {
+          "name": "Beak & talons",
+          "sr": "E",
+          "lr": "-",
+          "str": "S+1",
+          "ap": "-1",
+          "l": "2",
+          "traits": [
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Rending (6+)",
+              "text": "Если натуральный бросок на ранение не меньше X, AP этой атаки увеличивается на 1."
+            }
+          ]
+        }
       ]
     }
   ],

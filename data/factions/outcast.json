@@ -132,11 +132,7 @@
           "6",
           "6"
         ]
-      },
-      "rules": [
-        "Спуск (одиночное): Fighter сдвигается до 3” по горизонтали и до 12” по вертикали. Любое вертикальное движение должно быть вниз, то есть к земле.ОригиналThe Fighter makes a move of up to 3” horizontally and up to 12” vertically. Any vertical movement must be downwards, i.e., towards the ground.",
-        "Огненные шипы (одиночное): все остальные модели (друзья и враги) в пределах 3” от Mutant получают попадание Str -, AP -, L1 со свойством Toxin (3+). После выполнения этого действия Mutant больше не получает бонус к характеристике Save от этой Mutation до конца боя.ОригиналAll other models (friend and foe), within 3” of the Mutant suffer a Str -, AP -, L1 Hit with the Toxin (3+) trait. After this action has been performed, the Mutant gains no further bonus to their Save characteristic from this Mutation for the remainder of the battle."
-      ]
+      }
     }
   ],
   "subtypes": [

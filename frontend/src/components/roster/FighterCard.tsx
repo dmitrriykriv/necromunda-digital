@@ -9,6 +9,7 @@ import {
   gearCost,
   isWeaponItem,
   SKILL_SETS,
+  splitNamedRule,
   visibleProfiles,
   type FactionCatalog,
 } from '@shared/catalog';
@@ -105,6 +106,8 @@ export function FighterCard({
   const catalogSkillNames = allSkillNames();
   const typeDef = findType(catalog, fighter.type);
   const stats = typeDef?.stats;
+  const innateWeapons = typeDef?.weapons ?? [];
+  const innateRules = typeDef?.rules ?? [];
 
   return (
     <Card
@@ -233,6 +236,36 @@ export function FighterCard({
           <p className="text-sm italic text-muted-foreground">
             Профиль характеристик для этого типа не найден в каталоге.
           </p>
+        ) : null}
+
+        {innateWeapons.length > 0 ? (
+          <div>
+            <h5 className="mb-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+              Встроенное оружие
+            </h5>
+            <WeaponProfileTable profiles={innateWeapons} />
+          </div>
+        ) : null}
+
+        {innateRules.length > 0 ? (
+          <div>
+            <h5 className="mb-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+              Особые правила
+            </h5>
+            <dl className="space-y-2">
+              {innateRules.map((rule) => {
+                const { title, text } = splitNamedRule(rule);
+                return (
+                  <div key={rule}>
+                    <dt className="text-sm font-medium">{title}</dt>
+                    {text ? (
+                      <dd className="text-xs leading-relaxed text-muted-foreground">{text}</dd>
+                    ) : null}
+                  </div>
+                );
+              })}
+            </dl>
+          </div>
         ) : null}
 
         <div>

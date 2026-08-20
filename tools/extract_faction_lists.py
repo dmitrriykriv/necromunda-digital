@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Собирает data/factions/<id>.json из карточек бойцов и списков снаряжения в pages/gangs.html."""
+"""Собирает data/factions/<id>.json из карточек бойцов и списков снаряжения в pages/gangs/."""
 from __future__ import annotations
 
 import html
@@ -8,7 +8,7 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-HTML = ROOT / 'pages' / 'gangs.html'
+GANGS_DIR = ROOT / 'pages' / 'gangs'
 OUT = ROOT / 'data' / 'factions'
 
 SECTION_RE = re.compile(
@@ -59,6 +59,16 @@ TERM_RE = re.compile(
     r'<p><span class="term">([^<]*)<span class="orig">([^<]+)</span></span>\s*(.*?)</p>',
     re.S,
 )
+SPOILER_RE = re.compile(r'<details class="orig-spoiler">.*?</details>', re.S)
+GANG_RULES_RE = re.compile(
+    r'<h3>[^<]*<span class="orig">GANG SPECIAL RULES</span></h3>(.*)',
+    re.S,
+)
+TERM_PARA_RE = re.compile(
+    r'<span class="term">([^<]*)<span class="orig">([^<]+)</span></span>\s*(.*)',
+    re.S,
+)
+BENEFITS_RE = re.compile(r'benefits from the ([A-Za-z][A-Za-z \'-]*?) rule', re.I)
 WARP_TRAITS = [
     {
         'name': 'Cursed',
@@ -100,10 +110,13 @@ def faction_id(section_id: str) -> str:
 
 
 def title_name(raw: str) -> str:
-    return ' '.join(
-        '-'.join(part.capitalize() for part in word.split('-'))
-        for word in raw.replace('\u2019', "'").split()
-    )
+    words = []
+    for word in raw.replace('\u2018', "'").replace('\u2019', "'").split():
+        quoted = word.startswith("'") and word.endswith("'") and len(word) > 1
+        core = word[1:-1] if quoted else word
+        titled = '-'.join(part.capitalize() for part in core.split('-'))
+        words.append("'%s'" % titled if quoted else titled)
+    return ' '.join(words)
 
 
 def parse_kind(orig: str) -> tuple[str, list[str]]:
@@ -162,16 +175,71 @@ def parse_stats(chunk: str) -> dict | None:
     return {'keys': keys, 'values': values}
 
 
+def without_spoilers(raw: str) -> str:
+    return SPOILER_RE.sub('', raw)
+
+
+def rule_text(title: str, body: str) -> str:
+    body = re.split(r'Оригинал', body, maxsplit=1)[0].strip()
+    return f'{title}: {body}' if body else title
+
+
 def parse_fighter_rules(chunk: str) -> list[str]:
     rules: list[str] = []
-    for match in TERM_RE.finditer(chunk):
+    for match in TERM_RE.finditer(without_spoilers(chunk)):
         orig = match.group(2).strip()
         if orig.lower().startswith('equipment'):
             continue
         title = html.unescape(match.group(1)).strip().rstrip(':') or orig
-        body = strip_tags(match.group(3))
-        rules.append(f'{title}: {body}' if body else title)
+        rules.append(rule_text(title, strip_tags(match.group(3))))
     return rules
+
+
+def parse_gang_named_rules(body: str) -> dict[str, str]:
+    match = GANG_RULES_RE.search(body)
+    if not match:
+        return {}
+    region = without_spoilers(match.group(1).split('<details class="fold fold-fighters">', 1)[0])
+    abilities: dict[str, str] = {}
+    current_key = ''
+    current_title = ''
+    parts: list[str] = []
+
+    def flush() -> None:
+        nonlocal current_key, current_title, parts
+        if current_key and parts:
+            abilities[current_key] = rule_text(current_title, ' '.join(parts).rstrip(':'))
+        current_key = ''
+        current_title = ''
+        parts = []
+
+    for para in re.findall(r'<p>(.*?)</p>', region, flags=re.S):
+        term = TERM_PARA_RE.match(para)
+        if term:
+            flush()
+            orig = term.group(2).strip()
+            current_title = html.unescape(term.group(1)).strip().rstrip(':') or orig
+            current_key = orig.lower()
+            text = strip_tags(term.group(3))
+            if text:
+                parts.append(text)
+        elif current_key:
+            extra = strip_tags(para)
+            if extra:
+                parts.append(extra)
+    flush()
+    return abilities
+
+
+def expand_referenced_rules(rules: list[str], chunk: str, abilities: dict[str, str]) -> list[str]:
+    expanded = list(rules)
+    known = {item.casefold() for item in expanded}
+    for match in BENEFITS_RE.finditer(chunk):
+        text = abilities.get(match.group(1).strip().lower())
+        if text and text.casefold() not in known:
+            expanded.append(text)
+            known.add(text.casefold())
+    return expanded
 
 
 def parse_weapon_profiles(chunk: str) -> list[dict]:
@@ -194,6 +262,87 @@ def parse_weapon_profiles(chunk: str) -> list[dict]:
             'traits': traits,
         })
     return profiles
+
+
+def norm_weapon_name(value: str) -> str:
+    return re.sub(r'[^a-z0-9]+', '', html.unescape(value).lower())
+
+
+ARMED_WITH_RE = re.compile(
+    r'(?:is armed with|is army with)\s+(.+?)(?:\.|$)',
+    re.I,
+)
+
+
+def split_armed_names(blob: str) -> list[str]:
+    text = html.unescape(blob)
+    text = re.sub(r'\([^)]*\)', ' ', text)
+    text = re.sub(r'\b(?:a|an|the)\b', ' ', text, flags=re.I)
+    text = re.sub(r'\s+', ' ', text).strip()
+    parts = re.split(r'\s*(?:,|;| and | & |\+)\s*', text, flags=re.I)
+    names = []
+    for part in parts:
+        name = part.strip(' .')
+        if len(name) < 3:
+            continue
+        if re.match(r'^(they|it|when|this|which)\b', name, re.I):
+            continue
+        names.append(name)
+    return names
+
+
+def index_weapon_profiles(body: str, equipment: list[dict]) -> dict[str, dict]:
+    by_name: dict[str, dict] = {}
+    for profile in parse_weapon_profiles(body):
+        key = norm_weapon_name(profile['name'])
+        if key:
+            by_name[key] = profile
+    for item in equipment:
+        item_key = norm_weapon_name(item['name'])
+        for profile in item.get('profiles') or []:
+            key = norm_weapon_name(profile['name'])
+            if key:
+                by_name.setdefault(key, profile)
+            if item_key:
+                by_name.setdefault(item_key, profile)
+    return by_name
+
+
+def lookup_innate_profile(name: str, catalog: dict[str, dict]) -> dict | None:
+    key = norm_weapon_name(name)
+    if not key:
+        return None
+    if key in catalog:
+        return catalog[key]
+    for stored, profile in catalog.items():
+        if len(key) >= 6 and (key in stored or stored in key):
+            return profile
+    return None
+
+
+def innate_weapons(chunk: str, catalog: dict[str, dict]) -> list[dict]:
+    names: list[str] = []
+    for match in ARMED_WITH_RE.finditer(chunk):
+        names.extend(split_armed_names(match.group(1)))
+    if re.search(r'benefits from the Extra Arm rule', chunk, re.I):
+        names.append('clawed arm')
+    found: list[dict] = []
+    seen: set[tuple] = set()
+    for profile in parse_weapon_profiles(chunk):
+        mark = (profile['name'], profile['sr'], profile['str'], profile['l'])
+        if mark not in seen:
+            seen.add(mark)
+            found.append(profile)
+    for name in names:
+        profile = lookup_innate_profile(name, catalog)
+        if not profile:
+            continue
+        mark = (profile['name'], profile['sr'], profile['str'], profile['l'])
+        if mark in seen:
+            continue
+        seen.add(mark)
+        found.append(profile)
+    return found
 
 
 def parse_gear_description(chunk: str) -> str:
@@ -264,7 +413,7 @@ def parse_equipment(body: str) -> list[dict]:
     by_key: dict[tuple[str, int], dict] = {}
     for raw in EQUIP_SPLIT_RE.split(body)[1:]:
         last_item: dict | None = None
-        cut = re.search(r'<details class="fold fold-gear">', raw)
+        cut = re.search(r'<details class="fold ', raw)
         fold = raw[: cut.start()] if cut else raw
         list_match = LIST_NAME_RE.search(fold)
         list_name = html.unescape(list_match.group(1)).replace(' EQUIPMENT LIST', '') if list_match else ''
@@ -322,13 +471,23 @@ def parse_equipment(body: str) -> list[dict]:
     return items
 
 
+def load_gang_pages() -> str:
+    files = sorted(GANGS_DIR.glob('*.html'))
+    if not files:
+        raise SystemExit('нет pages/gangs/*.html — сначала python tools/build_gangs.py')
+    return '\n'.join(path.read_text(encoding='utf-8') for path in files)
+
+
 def main() -> None:
-    html_text = HTML.read_text(encoding='utf-8')
+    html_text = load_gang_pages()
     OUT.mkdir(parents=True, exist_ok=True)
     index = []
     for section_id, heading, body in SECTION_RE.findall(html_text):
         fid = faction_id(section_id)
         name = re.sub(r'\s+', ' ', heading).strip()
+        equipment = parse_equipment(body)
+        weapon_catalog = index_weapon_profiles(body, equipment)
+        gang_rules = parse_gang_named_rules(body)
         types = []
         subtype_set: list[str] = []
         seen = set()
@@ -342,7 +501,9 @@ def main() -> None:
                 if fighter_index + 1 < len(fighter_matches)
                 else len(body)
             )
-            chunk = body[match.end():chunk_end]
+            region = body[match.end():chunk_end]
+            fold_at = re.search(r'<details class="fold', region)
+            chunk = region[: fold_at.start()] if fold_at else region
             item = {
                 'id': local_id,
                 'name': title_name(raw_name),
@@ -354,15 +515,18 @@ def main() -> None:
             stats = parse_stats(chunk)
             if stats:
                 item['stats'] = stats
-            rules = parse_fighter_rules(chunk)
+            rules = expand_referenced_rules(parse_fighter_rules(chunk), chunk, gang_rules)
             if rules:
                 item['rules'] = rules
+            weapons = innate_weapons(chunk, weapon_catalog)
+            if weapons:
+                item['weapons'] = weapons
             types.append(item)
             for subtype in subtypes:
                 if subtype not in seen:
                     seen.add(subtype)
                     subtype_set.append(subtype)
-        equipment = parse_equipment(body)
+        armed = sum(1 for item in types if item.get('weapons'))
         payload = {
             'id': fid,
             'name': name,
@@ -379,7 +543,7 @@ def main() -> None:
             'types': len(types),
             'equipment': len(equipment),
         })
-        print(f'{fid:28} {len(types):2} types  {len(equipment):3} gear  {name}')
+        print(f'{fid:28} {len(types):2} types  {armed:2} armed  {len(equipment):3} gear  {name}')
     (OUT / 'index.json').write_text(
         json.dumps({'factions': index}, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
 

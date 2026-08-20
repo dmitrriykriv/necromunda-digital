@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Necromunda — Паланитские энфорсеры</title>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#14161c">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<header class="topbar" id="top">
+    <a class="backlink" href="../gangs.html">&larr; Все банды</a>
+    <h1>Necromunda</h1>
+    <p>Паланитские энфорсеры &mdash; русский перевод, оригинал под спойлером</p>
+    <p class="source">Источник: Gangs of the Underhive &amp; Outlands &bull; Правила/GANGS0_3.pdf</p>
+</header>
+
+<div class="layout">
+<aside class="sidebar">
+    <div class="hb-search" id="hb-search">
+        <label class="hb-search-label" for="hb-q">Поиск</label>
+        <input class="hb-q" id="hb-q" type="search" placeholder="Боец, оружие, правило…" autocomplete="off" spellcheck="false" title="Клавиша / — фокус, Enter — к совпадению">
+        <div class="hb-modes" role="radiogroup" aria-label="Режим поиска">
+            <label class="is-on">
+                <input type="radio" name="hb-mode" value="headings" checked>
+                Заголовки
+            </label>
+            <label>
+                <input type="radio" name="hb-mode" value="full">
+                Весь текст
+            </label>
+        </div>
+        <p class="hb-status" id="hb-status" hidden></p>
+        <ol class="hb-hits" id="hb-hits" hidden></ol>
+    </div>
+
+    <details class="toc-drawer">
+    <summary class="toc-toggle">Банды</summary>
+    <nav>
+        <p class="sidebar-index"><a href="../gangs.html">Все банды</a></p>
+        <h2>Банды</h2>
+        <details open>
+            <summary>Кланы-дома</summary>
+            <ul>
+                <li><a href="house-cawdor-gang-list.html">Дом Каудор<span class="en">House Cawdor</span></a></li>
+                <li><a href="house-delaque-gang-list.html">Дом Делак<span class="en">House Delaque</span></a></li>
+                <li><a href="house-escher-gang-list.html">Дом Эшер<span class="en">House Escher</span></a></li>
+                <li><a href="house-goliath-gang-list.html">Дом Голиаф<span class="en">House Goliath</span></a></li>
+                <li><a href="house-orlock-gang-list.html">Дом Орлок<span class="en">House Orlock</span></a></li>
+                <li><a href="house-van-saar-gang-list.html">Дом Ван Саар<span class="en">House Van Saar</span></a></li>
+            </ul>
+        </details>
+        <details open>
+            <summary>Ответвления домов</summary>
+            <ul>
+                <li><a href="blades-of-the-matriarch-gang-list.html">Клинки Матриарха<span class="en">Blades Of The Matriarch</span></a></li>
+                <li><a href="forge-smelters-gang-list.html">Плавильщики кузниц<span class="en">Forge Smelters</span></a></li>
+            </ul>
+        </details>
+        <details open>
+            <summary>Культы и мутанты</summary>
+            <ul>
+                <li><a href="chaos-helot-cult-list.html">Культ хаоситских илотов<span class="en">Chaos Helot Cult</span></a></li>
+                <li><a href="corpse-grinder-cult-gang-list.html">Культ Трупорезов<span class="en">Corpse Grinder Cult</span></a></li>
+                <li><a href="genestealer-cult-gang-list.html">Культ генокрадов<span class="en">Genestealer Cult</span></a></li>
+                <li><a href="malstrain-gang-list.html">Мальстрейн<span class="en">Malstrain</span></a></li>
+            </ul>
+        </details>
+        <details open>
+            <summary>Прочие банды</summary>
+            <ul>
+                <li><a href="ash-waste-nomad-gang-list.html">Кочевники Пепельных пустошей<span class="en">Ash Waste Nomad</span></a></li>
+                <li><a href="free-ogryn-gang-list.html">Свободные огрины<span class="en">Free Ogryn</span></a></li>
+                <li><a href="ironhead-squat-gang-list.html">Сквоты Айронхед<span class="en">Ironhead Squat</span></a></li>
+                <li><a href="outcast-gang-list.html">Изгои<span class="en">Outcast</span></a></li>
+                <li><a href="palanite-enforcer-patrol-list.html" class="is-current" aria-current="page">Паланитские энфорсеры<span class="en">Palanite Enforcer</span></a></li>
+                <li><a href="spyre-hunting-party-list.html">Охотники Шпиля<span class="en">Spyre Hunting</span></a></li>
+                <li><a href="venator-gang-list.html">Венаторы<span class="en">Venator</span></a></li>
+            </ul>
+        </details>
+    </nav>
+    </details>
+</aside>
+<main class="content">
+<section id="palanite-enforcer-patrol-list">
+<h2>Паланитские энфорсеры<span class="en">Palanite Enforcer Patrol List</span></h2>
+<div class="table-wrap"><table class="compact roster">
+<caption>Состав банды<span class="orig">Gang Composition</span></caption>
+<thead><tr><th>Боец<span class="orig">Fighter</span></th><th>Тип<span class="orig">Type</span></th><th class="num">Кредиты<span class="orig">Credits</span></th></tr></thead><tbody>
+<tr><td><a href="#palanite-enforcer-patrol-list--enforcer-captain">ENFORCER CAPTAIN</a></td><td>Боец (Лидер)<span class="orig">Fighter (Leader)</span></td><td class="num">130</td></tr>
+<tr><td><a href="#palanite-enforcer-patrol-list--enforcer-sergeant">ENFORCER SERGEANT</a></td><td>Боец (Чемпион)<span class="orig">Fighter (Champion)</span></td><td class="num">90</td></tr>
+<tr><td><a href="#palanite-enforcer-patrol-list--enforcer-subjugator-sergeant">ENFORCER SUBJUGATOR SERGEANT</a></td><td>Боец (Чемпион)<span class="orig">Fighter (Champion)</span></td><td class="num">95</td></tr>
+<tr><td><a href="#palanite-enforcer-patrol-list--enforcer-patrol-officer">ENFORCER PATROL OFFICER</a></td><td>Боец (Гэнгер, Специалист)<span class="orig">Fighter (Ganger, Specialist)</span></td><td class="num">40</td></tr>
+<tr><td><a href="#palanite-enforcer-patrol-list--enforcer-subjugator-patrol-officer">ENFORCER SUBJUGATOR PATROL OFFICER</a></td><td>Боец (Гэнгер, Специалист)<span class="orig">Fighter (Ganger, Specialist)</span></td><td class="num">60</td></tr>
+<tr><td><a href="#palanite-enforcer-patrol-list--enforcer-rookie">ENFORCER ROOKIE</a></td><td>Боец (Проспект)<span class="orig">Fighter (Prospect)</span></td><td class="num">20</td></tr>
+<tr><td><a href="#palanite-enforcer-patrol-list--enforcer-haunt">ENFORCER HAUNT</a></td><td>Боец (Проспект)<span class="orig">Fighter (Prospect)</span></td><td class="num">50</td></tr>
+<tr><td><a href="#palanite-enforcer-patrol-list--hardcase-cyber-mastiff">HARDCASE CYBER-MASTIFF</a></td><td>Боец (Зверь, Питомец)<span class="orig">Fighter (Beast, Pet)</span></td><td class="num">75</td></tr>
+<tr><td><a href="#palanite-enforcer-patrol-list--enforcer-sanctioner-pattern-automata">ENFORCER ‘SANCTIONER’ PATTERN AUTOMATA</a></td><td>Боец (Громила)<span class="orig">Fighter (Brute)</span></td><td class="num">235</td></tr>
+<tr><td><a href="#palanite-enforcer-patrol-list--enforcer-tauros-venator">ENFORCER TAUROS VENATOR</a></td><td>Машина (Колёсная)<span class="orig">Vehicle (Wheeled)</span></td><td class="num">250</td></tr>
+</tbody></table></div>
+<p class="note"><span class="label">Снаряжение банды<span class="orig">Gang Equipment</span></span> Турели и прочее снаряжение банды покупаются в Trading Post и кладутся в Stash, не на бойца. <a href="../core-rules.html#snaryazhenie-bandy">Правила и турель Trazior →</a></p>
+<h3>Особые правила банды<span class="orig">GANG SPECIAL RULES</span></h3>
+<p><span class="term">Слаженность:<span class="orig">Well Drilled</span></span> Palanite Enforcers обучены действовать вместе и согласовывать огонь. Все Active Palanite Enforcers могут выполнять Group Activation как свободное действие.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Palanite Enforcers are trained to operate together and co-ordinate their fire. All Active Palanite Enforcers may perform the Group Activation as a Free action.</p></details></p>
+<p><span class="term">Стартовые навыки:<span class="orig">Starting Skills</span></span> при добавлении в ростер банды все Palanite Enforcer Leaders and Champions могут выбрать один навык из одного из своих основных наборов (Primary Skill Sets).<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When added to a Gang Roster, all Palanite Enforcer Leaders and Champions may select one skill from one of their Primary Skill Sets.</p></details></p>
+<p><span class="term">Доступ к навыкам:<span class="orig">Skill Access</span></span> бойцы этой банды имеют доступ к следующим наборам навыков:<span class="orig">This gang’s Fighters have access to the following Skill Sets:</span></p>
+<div class="table-wrap"><table class="compact skills">
+<thead><tr><th>Боец<span class="orig">Fighter</span></th><th>Ловкость<span class="orig">Agility</span></th><th>Сила<span class="orig">Brawn</span></th><th>Бой<span class="orig">Combat</span></th><th>Хитрость<span class="orig">Cunning</span></th><th>Эрудит<span class="orig">Savant</span></th><th>Стрельба<span class="orig">Shooting</span></th></tr></thead><tbody>
+<tr><td>Captain</td><td class="skill n">-</td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill n">-</td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill p">Основной<span class="orig">Primary</span></td></tr>
+<tr><td>Sergeant</td><td class="skill n">-</td><td class="skill n">-</td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill n">-</td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill p">Основной<span class="orig">Primary</span></td></tr>
+<tr><td>Subjugator Sergeant</td><td class="skill n">-</td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill n">-</td><td class="skill n">-</td><td class="skill s">Вторичный<span class="orig">Secondary</span></td></tr>
+<tr><td>Patrol Officer</td><td class="skill n">-</td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill n">-</td><td class="skill n">-</td><td class="skill p">Основной<span class="orig">Primary</span></td></tr>
+<tr><td>Subjugator Patrol Officer</td><td class="skill n">-</td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill n">-</td><td class="skill n">-</td><td class="skill s">Вторичный<span class="orig">Secondary</span></td></tr>
+<tr><td>Rookie</td><td class="skill n">-</td><td class="skill n">-</td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill n">-</td><td class="skill n">-</td><td class="skill p">Основной<span class="orig">Primary</span></td></tr>
+<tr><td>Haunt</td><td class="skill n">-</td><td class="skill n">-</td><td class="skill n">-</td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill n">-</td></tr>
+<tr><td>Hardcase Cyber-Mastiff</td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill n">-</td><td class="skill n">-</td><td class="skill n">-</td><td class="skill n">-</td></tr>
+</tbody></table></div>
+<p>«Sanctioner» Pattern Automata — основной, вторичный, —, —, —; Tauros Venator — вторичный, —, —, —, основной<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">‘Sanctioner’ Pattern Automata - Primary Secondary - - - Tauros Venator - Secondary - - - Primary</p></details></p>
+<details class="fold fold-fighters">
+<summary><span class="fold-title">Бойцы банды</span><span class="fold-count">10 карточек</span></summary><div class="fold-body">
+<details class="fighter" id="palanite-enforcer-patrol-list--enforcer-captain">
+<summary class="fighter-head">
+<h4 class="fighter-name">ENFORCER CAPTAIN</h4>
+<span class="fighter-cost">130 кредитов<span class="orig">130 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Лидер)<span class="orig">Fighter (Leader)</span></span> <span class="fighter-xp">Стартовый XP: 61<span class="orig">Starting XP: 61</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+<tbody>
+<tr><td>5”</td><td>3+</td><td>3+</td><td>3</td><td>3</td><td>3</td><td>4</td><td>3</td><td>5+</td><td>9</td><td>7</td><td>8</td><td>7</td></tr>
+</tbody></table></div>
+<p><span class="term">Снаряжение:<span class="orig">Equipment</span></span> при добавлении в ростер банды Enforcer Captain может купить оружие и снаряжение из списка Palanite Enforcer:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When added to a Gang Roster, an Enforcer Captain may purchase weapons and wargear from the Palanite Enforcer Equipment List:</p></details></p>
+<p>В ходе кампании им можно давать дополнительное оружие и снаряжение, купленное из списка Palanite Enforcer и с Trading Post.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">• During the course of a campaign, they may be given additional weapons and wargear purchased from the Palanite Enforcer Equipment List and from the Trading Post.</p></details></p>
+</div></details>
+<details class="fighter" id="palanite-enforcer-patrol-list--enforcer-sergeant">
+<summary class="fighter-head">
+<h4 class="fighter-name">ENFORCER SERGEANT</h4>
+<span class="fighter-cost">90 кредитов<span class="orig">90 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Чемпион)<span class="orig">Fighter (Champion)</span></span> <span class="fighter-xp">Стартовый XP: 37<span class="orig">Starting XP: 37</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+<tbody>
+<tr><td>5”</td><td>4+</td><td>3+</td><td>3</td><td>3</td><td>2</td><td>4</td><td>2</td><td>5+</td><td>8</td><td>7</td><td>7</td><td>6</td></tr>
+</tbody></table></div>
+<p><span class="term">Снаряжение:<span class="orig">Equipment</span></span> при добавлении в ростер банды Enforcer Sergeant может купить оружие и снаряжение из списка Palanite Enforcer:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When added to a Gang Roster, an Enforcer Sergeant may purchase weapons and wargear from the Palanite Enforcer Equipment List:</p></details></p>
+<p>В ходе кампании им можно давать дополнительное оружие и снаряжение, купленное из списка Palanite Enforcer и с Trading Post.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">• During the course of a campaign, they may be given additional weapons and wargear purchased from the Palanite Enforcer Equipment List and from the Trading Post.</p></details></p>
+<p>- Они не могут покупать предметы из разделов Subjugator этого списка.<span class="orig">- They may not purchase items from the Subjugator sections of this list.</span></p>
+</div></details>
+<details class="fighter" id="palanite-enforcer-patrol-list--enforcer-subjugator-sergeant">
+<summary class="fighter-head">
+<h4 class="fighter-name">ENFORCER SUBJUGATOR SERGEANT</h4>
+<span class="fighter-cost">95 кредитов<span class="orig">95 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Чемпион)<span class="orig">Fighter (Champion)</span></span> <span class="fighter-xp">Стартовый XP: 37<span class="orig">Starting XP: 37</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+<tbody>
+<tr><td>5”</td><td>3+</td><td>4+</td><td>3</td><td>3</td><td>2</td><td>3</td><td>2</td><td>4+</td><td>7</td><td>8</td><td>7</td><td>6</td></tr>
+</tbody></table></div>
+<p><span class="term">Снаряжение:<span class="orig">Equipment</span></span> при добавлении в ростер банды Enforcer Subjugator Sergeant может купить оружие и снаряжение из списка Palanite Enforcer:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When added to a Gang Roster, an Enforcer Subjugator Sergeant may purchase weapons and wargear from the Palanite Enforcer Equipment List:</p></details></p>
+<p>В ходе кампании им можно давать дополнительное оружие и снаряжение, купленное из списка Palanite Enforcer и с Trading Post.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">• During the course of a campaign, they may be given additional weapons and wargear purchased from the Palanite Enforcer Equipment List and from the Trading Post.</p></details></p>
+</div></details>
+<details class="fighter" id="palanite-enforcer-patrol-list--enforcer-patrol-officer">
+<summary class="fighter-head">
+<h4 class="fighter-name">ENFORCER PATROL OFFICER</h4>
+<span class="fighter-cost">40 кредитов<span class="orig">40 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Гэнгер, Специалист)<span class="orig">Fighter (Ganger, Specialist)</span></span> <span class="fighter-xp">Стартовый XP: 13<span class="orig">Starting XP: 13</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+<tbody>
+<tr><td>5”</td><td>4+</td><td>4+</td><td>3</td><td>3</td><td>1</td><td>4</td><td>1</td><td>6+</td><td>6</td><td>6</td><td>6</td><td>6</td></tr>
+</tbody></table></div>
+<p><span class="term">Снаряжение:<span class="orig">Equipment</span></span> при добавлении в ростер банды Enforcer Patrol officer может купить оружие и снаряжение из списка Palanite Enforcer:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When added to a Gang Roster, an Enforcer Patrol officer may purchase weapons and wargear from the Palanite Enforcer Equipment List:</p></details></p>
+<p>В ходе кампании им можно давать дополнительное оружие и снаряжение, купленное из списка Palanite Enforcer и с Trading Post.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">• During the course of a campaign, they may be given additional weapons and wargear purchased from the Palanite Enforcer Equipment List and from the Trading Post.</p></details></p>
+<p>- Они не могут покупать предметы из разделов Subjugator этого списка.<span class="orig">- They may not purchase items from the Subjugator sections of this list.</span></p>
+</div></details>
+<details class="fighter" id="palanite-enforcer-patrol-list--enforcer-subjugator-patrol-officer">
+<summary class="fighter-head">
+<h4 class="fighter-name">ENFORCER SUBJUGATOR PATROL OFFICER</h4>
+<span class="fighter-cost">60 кредитов<span class="orig">60 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Гэнгер, Специалист)<span class="orig">Fighter (Ganger, Specialist)</span></span> <span class="fighter-xp">Стартовый XP: 13<span class="orig">Starting XP: 13</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+<tbody>
+<tr><td>5”</td><td>4+</td><td>4+</td><td>3</td><td>3</td><td>1</td><td>4</td><td>2</td><td>5+</td><td>6</td><td>6</td><td>6</td><td>6</td></tr>
+</tbody></table></div>
+<p><span class="term">Специалист штурма:<span class="orig">Assault Specialist</span></span> Enforcer Subjugator Patrol Officer может выбрать только одну из следующих специализаций:<span class="orig">An Enforcer Subjugator Patrol Officer may only select one of the following specializations:</span></p>
+<p>• Gunner</p>
+<p>• Brawler</p>
+<p>• Medic Equipment: When added to a Gang Roster, an Enforcer Subjugator Patrol Officer may purchase weapons and wargear from the Palanite Enforcer Equipment List:</p>
+<p>В ходе кампании им можно давать дополнительное оружие и снаряжение, купленное из списка Palanite Enforcer и с Trading Post.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">• During the course of a campaign, they may be given additional weapons and wargear purchased from the Palanite Enforcer Equipment List and from the Trading Post.</p></details></p>
+</div></details>
+<details class="fighter" id="palanite-enforcer-patrol-list--enforcer-rookie">
+<summary class="fighter-head">
+<h4 class="fighter-name">ENFORCER ROOKIE</h4>
+<span class="fighter-cost">20 кредитов<span class="orig">20 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Проспект)<span class="orig">Fighter (Prospect)</span></span> <span class="fighter-xp">Стартовый XP: 1<span class="orig">Starting XP: 1</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+<tbody>
+<tr><td>6”</td><td>5+</td><td>5+</td><td>3</td><td>3</td><td>1</td><td>4</td><td>1</td><td>6+</td><td>5</td><td>5</td><td>5</td><td>5</td></tr>
+</tbody></table></div>
+<p><span class="term">Снаряжение:<span class="orig">Equipment</span></span> при добавлении в ростер банды Enforcer Rookie может купить оружие и снаряжение из списка Palanite Enforcer:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When added to a Gang Roster, an Enforcer Rookie may purchase weapons and wargear from the Palanite Enforcer Equipment List:</p></details></p>
+<p>В ходе кампании им можно давать дополнительное оружие и снаряжение, купленное из списка Palanite Enforcer и с Trading Post.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">• During the course of a campaign, they may be given additional weapons and wargear purchased from the Palanite Enforcer Equipment List and from the Trading Post.</p></details></p>
+<p>- Они не могут покупать предметы из разделов Subjugator этого списка.<span class="orig">- They may not purchase items from the Subjugator sections of this list.</span></p>
+</div></details>
+<details class="fighter" id="palanite-enforcer-patrol-list--enforcer-haunt">
+<summary class="fighter-head">
+<h4 class="fighter-name">ENFORCER HAUNT</h4>
+<span class="fighter-cost">50 кредитов<span class="orig">50 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Проспект)<span class="orig">Fighter (Prospect)</span></span> <span class="fighter-xp">Стартовый XP: 4<span class="orig">Starting XP: 4</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+<tbody>
+<tr><td>6”</td><td>5+</td><td>5+</td><td>3</td><td>3</td><td>1</td><td>3</td><td>1</td><td>6+</td><td>5</td><td>5</td><td>7</td><td>5</td></tr>
+</tbody></table></div>
+<p><span class="term">Санкционированный Wyrd:<span class="orig">Sanctioned Wyrd</span></span> Enforcer Wyrd специализируется на одном виде проявления Wyrd; при добавлении в Gang Roster каждый Enforcer Haunt выбирает один из следующих типов:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">An Enforcer Wyrd is specialized in an area of wyrd manifestation; when added to a Gang Roster each Enforcer Haunt selects one of the following types:</p></details></p>
+<p>• Psyrender: Psyrender знает одну силу Wyrd Psyrender на выбор игрока и получает дополнительные силы Wyrd Psyrender, как если бы они были основными навыками.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">• Psyrender: A Psyrender knows one Psyrender Wyrd Power of the player’s choice and they gain additional Psyrender Wyrd Powers as if they were primary skills.</p></details></p>
+<p>• Bonecrusher: Bonecrusher знает одну силу Wyrd Bonecrusher на выбор игрока и может получать дополнительные силы Wyrd Bonecrusher, как если бы они были основными навыками.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">• Bonecrusher: A Bonecrusher knows one Bonecrusher Wyrd Power of the player’s choice and may gain additional Bonecrusher Wyrd Powers as if they were primary skills.</p></details></p>
+<p><span class="term">Снаряжение:<span class="orig">Equipment</span></span> при добавлении в ростер банды Enforcer Haunt может купить оружие и снаряжение из списка Palanite Enforcer:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When added to a Gang Roster, an Enforcer Haunt may purchase weapons and wargear from the Palanite Enforcer Equipment List:</p></details></p>
+<p>В ходе кампании им можно давать дополнительное оружие и снаряжение, купленное из списка Palanite Enforcer и с Trading Post.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">• During the course of a campaign, they may be given additional weapons and wargear purchased from the Palanite Enforcer Equipment List and from the Trading Post.</p></details></p>
+<p>- Они не могут покупать предметы из разделов Subjugator этого списка.<span class="orig">- They may not purchase items from the Subjugator sections of this list.</span></p>
+</div></details>
+<details class="fighter" id="palanite-enforcer-patrol-list--hardcase-cyber-mastiff">
+<summary class="fighter-head">
+<h4 class="fighter-name">HARDCASE CYBER-MASTIFF</h4>
+<span class="fighter-cost">75 кредитов<span class="orig">75 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Зверь, Питомец)<span class="orig">Fighter (Beast, Pet)</span></span> <span class="fighter-xp">Стартовый XP: 13<span class="orig">Starting XP: 13</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+<tbody>
+<tr><td>5”</td><td>3+</td><td>6+</td><td>3</td><td>4</td><td>1</td><td>3</td><td>2</td><td>5+</td><td>6</td><td>6</td><td>6</td><td>4</td></tr>
+</tbody></table></div>
+<p><span class="term">Длина поводка:<span class="orig">Leash Range</span></span> у Hardcase Cyber-Mastiff длина поводка (Leash range) 3”.<span class="orig">A Hardcase Cyber-Mastiff has a 3” Leash range.</span></p>
+<p><span class="term">Цепкий:<span class="orig">Tenacious</span></span> Hardcase Cyber-Mastiff славится упрямством. Если Hardcase Cyber-Mastiff выведен Out of Action, не убирайте его с поля, если он ещё не активировался в этом раунде. В эту активацию он действует, как если бы был Active, и после завершения активации Hardcase Cyber-Mastiff убирают с поля.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Hardcase Cyber-Mastiffs are renowned for their tenacity. If a Hardcase Cyber-Mastiff is taken Out of Action, do not remove it from the battlefield if it has not yet activated this round. During this activation it may act as if it was Active and once the Hardcase Cyber-Mastiff has completed its activation, remove it from the battlefield.</p></details></p>
+<p><span class="term">Верный защитник:<span class="orig">Loyal Protector</span></span> вражеские Fighter не могут выполнить действие Coup de Grâce против владельца этого Pet, пока этот Fighter в пределах его leash range.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Enemy Fighters cannot perform a Coup de Grâce action against this Pet's owner while this Fighter is within its leash range.</p></details></p>
+<p><span class="term">Снаряжение:<span class="orig">Equipment</span></span> Hardcase Cyber-Mastiff вооружён(а) a shock bite. Дополнительное оружие и снаряжение покупать и надевать нельзя.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A Hardcase Cyber-Mastiff is armed with a shock bite. They may not purchase or be equipped with additional weapons or wargear.</p></details></p>
+</div></details>
+<details class="fighter" id="palanite-enforcer-patrol-list--enforcer-sanctioner-pattern-automata">
+<summary class="fighter-head">
+<h4 class="fighter-name">ENFORCER ‘SANCTIONER’ PATTERN AUTOMATA</h4>
+<span class="fighter-cost">235 кредитов<span class="orig">235 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Громила)<span class="orig">Fighter (Brute)</span></span> <span class="fighter-xp">Стартовый XP: 25<span class="orig">Starting XP: 25</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+<tbody>
+<tr><td>5”</td><td>4+</td><td>4+</td><td>4</td><td>5</td><td>3</td><td>3</td><td>2</td><td>4+</td><td>7</td><td>7</td><td>7</td><td>7</td></tr>
+</tbody></table></div>
+<p><span class="term">Автоматические системы ремонта:<span class="orig">Automated Repair Systems</span></span> когда этот Fighter пытается прийти в себя, будучи Seriously Injured, не бросайте кубик Injury — он автоматически приходит в себя, как если бы на кубике Injury выпал результат Injured.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When this Fighter tries to recover while Seriously Injured, do not rule the Injury dice – they automatically recover as if an Injured result had been rolled on the Injury dice.</p></details></p>
+<p><span class="term">Подвижный бастион:<span class="orig">Mobile Bulwark</span></span> если дружественный fighter находится в укрытии, потому что его заслоняет Enforcer ‘Sanctioner’ Pattern Automata, он дополнительно улучшает характеристику Save на 1.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">If a Friendly fighter is in cover due to being obscured by an Enforcer ‘Sanctioner’ Pattern Automata, they improve their Save characteristic by an additional 1.</p></details></p>
+<p><span class="term">Снаряжение:<span class="orig">Equipment</span></span> Enforcer ‘Sanctioner’ Pattern Automata вооружён pacifier assault claw, heavy shock baton и grenade launcher array с smoke grenades.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">An Enforcer ‘Sanctioner’ Pattern Automata is armed with a pacifier assault claw, heavy shock baton and grenade launcher array with smoke grenades.</p></details></p>
+<p>Они могут выбрать из вариантов ниже при добавлении в ростер банды; дополнительное оружие и снаряжение покупать и надевать нельзя:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">They may select from the below options when added to a gang roster; they may not purchase or be equipped with additional weapons or wargear:</p></details></p>
+<p>Enforcer ‘Sanctioner’ Pattern Automata может заменить pacifier assault claw и/или heavy shock baton одним из следующего:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">An Enforcer ‘Sanctioner’ Pattern Automata can replace their pacifier assault claw and/or heavy shock baton with one of the following:</p></details></p>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Concussion cannon</span><span class="equip-price">+25 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Эзотерическое оружие<span class="orig">ESOTERIC WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Concussion cannon</td><td>9”</td><td>18”</td><td>4</td><td>-1</td><td>1</td><td class="traits"><span class="trait">Blast (3”)<span class="trait-tip">Поставьте маркер Blast 3" или 5" на цель. Попадание — маркер остаётся. Промах — рассейте на D6" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него.</span></span>, <span class="trait">Concussive (5+)<span class="trait-tip">Если атака ранит и бросок на ранение не меньше X, цель снижает Initiative на 1 до конца следующей активации.</span></span>, <span class="trait">Knockback (5+)<span class="trait-tip">Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1" от центра.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Sanction pattern man-catcher</span><span class="equip-price">+10 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Эзотерическое оружие<span class="orig">ESOTERIC WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Sanction pattern man-catcher</td><td>E</td><td>-</td><td>S</td><td>-1</td><td>1</td><td class="traits"><span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span>, <span class="trait">Shock (5+)<span class="trait-tip">Если атака попадает и бросок попадания не меньше X, она автоматически ранит и считается натуральной 6 на ранении для других свойств.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">SLHG pattern assault ram ‘sledge hammer with auxiliary grenade launcher (with choke gas and frag grenades)</span><span class="equip-price">+80 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Оружие субъюгаторов<span class="orig">SUBJUGATOR WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">SLHG pattern assault ram ‘Sledge Hammer’</td><td>E</td><td>-</td><td>S+2</td><td>-1</td><td>2</td><td class="traits"><span class="trait">Concussive (6+)<span class="trait-tip">Если атака ранит и бросок на ранение не меньше X, цель снижает Initiative на 1 до конца следующей активации.</span></span>, <span class="trait">Knockback (5+)<span class="trait-tip">Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1" от центра.</span></span>, <span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span> - <span class="trait">auxiliary<span class="trait-tip">Только как насадка на другое оружие, отдельно не берётся. Не занимает слот оружия.</span></span> grenade launcher</td><td>-</td><td>E</td></tr>
+<tr><td class="wname sub">choke gas grenades</td><td>6”</td><td>24”</td><td>-</td><td>-</td><td>1</td><td class="traits"><span class="trait">Ammo (5+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Blast (3”)<span class="trait-tip">Поставьте маркер Blast 3" или 5" на цель. Попадание — маркер остаётся. Промах — рассейте на D6" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него.</span></span>, <span class="trait">Gas<span class="trait-tip">Спасброски брони нельзя. Респиратор даёт непробиваемый спасбросок 5+ против Wounds от этого оружия.</span></span>, <span class="trait">Toxin (3+)<span class="trait-tip">Против бойца ранит на X+ вместо сравнения Strength и Toughness. Против машины — только на натуральную 6.</span></span></td><td></td><td></td></tr>
+<tr><td class="wname sub">frag grenades</td><td>6”</td><td>24”</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Ammo (4+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Blast (3”)<span class="trait-tip">Поставьте маркер Blast 3" или 5" на цель. Попадание — маркер остаётся. Промах — рассейте на D6" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него.</span></span>, <span class="trait">Knockback (5+)<span class="trait-tip">Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1" от центра.</span></span></td><td></td><td></td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<p>Enforcer ‘Sanctioner’ Pattern Automata может взять следующие дополнительные типы гранат для grenade launcher array:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">An Enforcer ‘Sanctioner’ Pattern Automata can take the following additional grenade types for their grenade launcher array:</p></details></p>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Choke gas grenades</span><span class="equip-price">+50 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Grenade launcher array</caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th></tr></thead><tbody>
+<tr><td class="wname sub">choke gas grenades</td><td>6”</td><td>18”</td><td>-</td><td>-</td><td>1</td><td class="traits"><span class="trait">Ammo (5+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Blast (3”)<span class="trait-tip">Поставьте маркер Blast 3" или 5" на цель. Попадание — маркер остаётся. Промах — рассейте на D6" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него.</span></span>, <span class="trait">Gas<span class="trait-tip">Спасброски брони нельзя. Респиратор даёт непробиваемый спасбросок 5+ против Wounds от этого оружия.</span></span>, <span class="trait">Toxin (3+)<span class="trait-tip">Против бойца ранит на X+ вместо сравнения Strength и Toughness. Против машины — только на натуральную 6.</span></span></td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Stun grenades</span><span class="equip-price">+15 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Grenade launcher array</caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th></tr></thead><tbody>
+<tr><td class="wname sub">stun grenades</td><td>6”</td><td>18”</td><td>2</td><td>-1</td><td>1</td><td class="traits"><span class="trait">Ammo (3+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Concussive (5+)<span class="trait-tip">Если атака ранит и бросок на ранение не меньше X, цель снижает Initiative на 1 до конца следующей активации.</span></span>, <span class="trait">Knockback (5+)<span class="trait-tip">Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1" от центра.</span></span></td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+</div></details>
+<details class="fighter" id="palanite-enforcer-patrol-list--enforcer-tauros-venator">
+<summary class="fighter-head">
+<h4 class="fighter-name">ENFORCER TAUROS VENATOR</h4>
+<span class="fighter-cost">250 кредитов<span class="orig">250 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Машина (Колёсная)<span class="orig">Vehicle (Wheeled)</span></span> <span class="fighter-xp">Стартовый XP: 13<span class="orig">Starting XP: 13</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+<tbody>
+<tr><td>7”</td><td>5+</td><td>4+</td><td>4</td><td>5</td><td>3</td><td>4</td><td>2</td><td>4+</td><td>6</td><td>7</td><td>7</td><td>6</td></tr>
+</tbody></table></div>
+<p><span class="term">Снаряжение:<span class="orig">Equipment</span></span> Enforcer Tauros Venator вооружён Tauros concussion cannon и Tauros hull. При добавлении в Gang Roster можно выбрать вариант ниже; дополнительное оружие и снаряжение покупать и надевать нельзя:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">An Enforcer Tauros Venator is armed with a Tauros concussion cannon and a Tauros hull. It may select the below option when added to a Gang Roster; it may not purchase or be equipped with additional weapons or wargear:</p></details></p>
+<ul class="equip">
+<li><span class="equip-plain"><span class="equip-name">An Enforcer Tauros Venator can replace its Tauros concussion cannon with a Tauros heavy stubber</span><span class="equip-price">+20 cr</span></span></li>
+</ul>
+</div></details>
+</div></details>
+<details class="fold fold-equip">
+<summary><span class="fold-title">Список снаряжения паланитского патруля<span class="orig">PALANITE ENFORCE PATROL EQUIPMENT LIST</span></span><span class="fold-count">44 позиции</span></summary><div class="fold-body">
+<h4>Дальнобойное оружие<span class="orig">RANGED WEAPONS</span></h4>
+<h4>Авто / стаб-оружие<span class="orig">AUTO/STUB WEAPONS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Autogun</span><span class="equip-price">20 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Авто / стаб-оружие<span class="orig">AUTO/STUB WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Autogun</td><td>8”</td><td>24”</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Rapid Fire (1)<span class="trait-tip">Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают.</span></span></td><td>20</td><td>0</td></tr>
+<tr><td class="wname sub">warp round</td><td>8”</td><td>24”</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Cursed<span class="trait-tip">Попавшая модель проходит Willpower или получает Insanity. Натуральная 1 на попадании: то же для носителя.</span></span>, <span class="trait">Single Shot<span class="trait-tip">Один выстрел за бой, затем сразу Out of Ammo; перезарядить нельзя.</span></span></td><td>+10</td><td>4</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Autopistol</span><span class="equip-price">10 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Авто / стаб-оружие<span class="orig">AUTO/STUB WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Autopistol</td><td>4”</td><td>12”</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Light<span class="trait-tip">Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят.</span></span>, <span class="trait">Rapid Fire (1)<span class="trait-tip">Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают.</span></span></td><td>10</td><td>0</td></tr>
+<tr><td class="wname sub">warp round</td><td>4”</td><td>12”</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Cursed<span class="trait-tip">Попавшая модель проходит Willpower или получает Insanity. Натуральная 1 на попадании: то же для носителя.</span></span>, <span class="trait">Light<span class="trait-tip">Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят.</span></span>, <span class="trait">Single Shot<span class="trait-tip">Один выстрел за бой, затем сразу Out of Ammo; перезарядить нельзя.</span></span></td><td>+10</td><td>4</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Heavy stubber*</span><span class="equip-price">70 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Авто / стаб-оружие<span class="orig">AUTO/STUB WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Heavy stubber*</td><td>20”</td><td>40”</td><td>4</td><td>-1</td><td>1</td><td class="traits"><span class="trait">Heavy<span class="trait-tip">Дальнобойное: только Braced Shot. Ближний бой: нельзя как Secondary и нельзя использовать Secondary вместе с ним.</span></span>, <span class="trait">Rapid Fire (2)<span class="trait-tip">Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают.</span></span></td><td>70</td><td>2</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Long rifle</span><span class="equip-price">55 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Авто / стаб-оружие<span class="orig">AUTO/STUB WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Long rifle</td><td>24”</td><td>48”</td><td>4</td><td>-1</td><td>1</td><td class="traits"><span class="trait">Knockback (6+)<span class="trait-tip">Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1" от центра.</span></span></td><td>55</td><td>1</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Stub gun</span><span class="equip-price">5 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Авто / стаб-оружие<span class="orig">AUTO/STUB WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Stub gun</td><td>6”</td><td>12”</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Light<span class="trait-tip">Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят.</span></span></td><td>5</td><td>0</td></tr>
+<tr><td class="wname sub">warp round</td><td>6”</td><td>12”</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Cursed<span class="trait-tip">Попавшая модель проходит Willpower или получает Insanity. Натуральная 1 на попадании: то же для носителя.</span></span>, <span class="trait">Light<span class="trait-tip">Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят.</span></span>, <span class="trait">Single Shot<span class="trait-tip">Один выстрел за бой, затем сразу Out of Ammo; перезарядить нельзя.</span></span></td><td>+10</td><td>4</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Болт-оружие<span class="orig">BOLT WEAPONS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Boltgun</span><span class="equip-price">55 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Болт-оружие<span class="orig">BOLT WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Boltgun</td><td>12”</td><td>24”</td><td>4</td><td>-1</td><td>2</td><td class="traits"><span class="trait">Ammo (3+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Rapid Fire (1)<span class="trait-tip">Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают.</span></span></td><td>55</td><td>2</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Bolt pistol</span><span class="equip-price">45 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Болт-оружие<span class="orig">BOLT WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Bolt pistol</td><td>6”</td><td>12”</td><td>4</td><td>-1</td><td>2</td><td class="traits"><span class="trait">Ammo (3+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Light<span class="trait-tip">Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят.</span></span>, <span class="trait">Rapid Fire (1)<span class="trait-tip">Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают.</span></span></td><td>45</td><td>1</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Комби-оружие<span class="orig">COMBI-WEAPONS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Bolter/grenade launcher with frag grenades</span><span class="equip-price">60 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Комби-оружие<span class="orig">COMBI-WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr class="wgroup"><td class="wname group" colspan="7">Combi-bolter</td><td>-</td><td>E</td></tr>
+<tr class="wgroup"><td class="wname group" colspan="7">Primary component</td><td></td><td></td></tr>
+<tr><td class="wname sub">bolter</td><td>12”</td><td>24”</td><td>4</td><td>-1</td><td>2</td><td class="traits"><span class="trait">Ammo (3+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Combi<span class="trait-tip">При Shoot или Aimed Shot выберите профиль до броска. Можно стрелять обоими по одной цели с −1 к попаданию каждого; атаки одновременны.</span></span>, <span class="trait">Rapid Fire (1)<span class="trait-tip">Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают.</span></span></td><td></td><td></td></tr>
+<tr class="wgroup"><td class="wname group" colspan="7">Secondary component</td><td></td><td></td></tr>
+<tr><td class="wname sub">grenade launcher with frag grenades</td><td>6”</td><td>24”</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Ammo (4+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Blast (3+)<span class="trait-tip">Поставьте маркер Blast 3" или 5" на цель. Попадание — маркер остаётся. Промах — рассейте на D6" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него.</span></span>, <span class="trait">Combi<span class="trait-tip">При Shoot или Aimed Shot выберите профиль до броска. Можно стрелять обоими по одной цели с −1 к попаданию каждого; атаки одновременны.</span></span>, <span class="trait">Knockback (5+)<span class="trait-tip">Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1" от центра.</span></span></td><td></td><td></td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Эзотерическое оружие<span class="orig">ESOTERIC WEAPONS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Concussive carbine</span><span class="equip-price">25 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Эзотерическое оружие<span class="orig">ESOTERIC WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Concussive carbine</td><td>9”</td><td>18”</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Concussive (5+)<span class="trait-tip">Если атака ранит и бросок на ранение не меньше X, цель снижает Initiative на 1 до конца следующей активации.</span></span>, <span class="trait">Knockback (6+)<span class="trait-tip">Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1" от центра.</span></span>, <span class="trait">Rapid Fire (1)<span class="trait-tip">Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Огнемёты<span class="orig">FLAMERS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Flamer</span><span class="equip-price">70 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Огнемёты<span class="orig">FLAMERS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Flamer</td><td>T</td><td>-</td><td>4</td><td>-1</td><td>1</td><td class="traits"><span class="trait">Ammo (6+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Blaze (5+)<span class="trait-tip">Если бросок на ранение не меньше X, цель получает ещё одно попадание тем же профилем. Оно бросается на ранение отдельно и не вызывает новых дополнительных попаданий.</span></span>, <span class="trait">Template<span class="trait-tip">Каплевидный шаблон от стреляющего через цель: все под ним получают автоматическое попадание. С Light в ближнем бою — одно автоматическое попадание без шаблона. С Rapid Fire (X) ближайшая модель получает попадания по кубику огневой мощи, остальные — по одному.</span></span></td><td>70</td><td>1</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Плазма-оружие<span class="orig">PLASMA WEAPONS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Plasma pistol</span><span class="equip-price">70 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Плазма-оружие<span class="orig">PLASMA WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Plasma pistol</td><td>6”</td><td>12”</td><td>5</td><td>-2</td><td>2</td><td class="traits"><span class="trait">Ammo (6+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Damage (2)<span class="trait-tip">Раненая модель теряет X Wounds вместо одного. Число кубиков ранений всё равно равно Lethality оружия.</span></span>, <span class="trait">Light<span class="trait-tip">Можно как Primary или Secondary в ближнем бою, но только одна атака. С Template в ближнем бою одна вражеская модель получает автоматическое попадание, шаблон не ставят.</span></span>, <span class="trait">Unstable<span class="trait-tip">Натуральная 1 на попадании: носитель получает автоматическое попадание этим профилем, другие модели не поражаются. Если броска попадания нет (Template) — сначала D6, как выше.</span></span></td><td>70</td><td>3</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Дробовики<span class="orig">SHOTGUNS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Shotgun (with solid &amp; scatter ammo)</span><span class="equip-price">35 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Дробовики<span class="orig">SHOTGUNS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr class="wgroup"><td class="wname group" colspan="7">Shotgun</td><td>35</td><td>0</td></tr>
+<tr><td class="wname sub">scatter ammo</td><td>4”</td><td>8”</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Rapid Fire (2)<span class="trait-tip">Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают.</span></span></td><td>+0</td><td></td></tr>
+<tr><td class="wname sub">solid ammo</td><td>8”</td><td>16”</td><td>4</td><td>-</td><td>1</td><td class="traits"><span class="trait">Knockback (5+)<span class="trait-tip">Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1" от центра.</span></span></td><td>+0</td><td></td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Оружие субъюгаторов<span class="orig">SUBJUGATOR WEAPONS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Heavy concussion ram</span><span class="equip-price">45 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Оружие субъюгаторов<span class="orig">SUBJUGATOR WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Heavy concussion ram</td><td>15”</td><td>30”</td><td>4</td><td>-1</td><td>1</td><td class="traits"><span class="trait">Concussive (5+)<span class="trait-tip">Если атака ранит и бросок на ранение не меньше X, цель снижает Initiative на 1 до конца следующей активации.</span></span>, <span class="trait">Knockback (5+)<span class="trait-tip">Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1" от центра.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<ul class="rule-list">
+<li>Subjugator grenade launcher</li>
+</ul>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Subjugator grenade launcher (with frag &amp; stun grenades)</span><span class="equip-price">45 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Оружие субъюгаторов<span class="orig">SUBJUGATOR WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr class="wgroup"><td class="wname group" colspan="7">Subjugator grenade launcher</td><td>-</td><td>E</td></tr>
+<tr><td class="wname sub">frag grenades</td><td>6”</td><td>24”</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Ammo (4+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Blast (3”)<span class="trait-tip">Поставьте маркер Blast 3" или 5" на цель. Попадание — маркер остаётся. Промах — рассейте на D6" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него.</span></span>, <span class="trait">Knockback (5+)<span class="trait-tip">Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1" от центра.</span></span></td><td></td><td></td></tr>
+<tr><td class="wname sub">stun grenades</td><td>6”</td><td>24”</td><td>2</td><td>-1</td><td>1</td><td class="traits"><span class="trait">Ammo (3+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Concussive (5+)<span class="trait-tip">Если атака ранит и бросок на ранение не меньше X, цель снижает Initiative на 1 до конца следующей активации.</span></span>, <span class="trait">Knockback (5+)<span class="trait-tip">Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1" от центра.</span></span></td><td></td><td></td></tr>
+<tr><td class="wname sub">choke gas grenades</td><td>6”</td><td>24”</td><td>-</td><td>-</td><td>1</td><td class="traits"><span class="trait">Ammo (5+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Blast (3”)<span class="trait-tip">Поставьте маркер Blast 3" или 5" на цель. Попадание — маркер остаётся. Промах — рассейте на D6" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него.</span></span>, <span class="trait">Gas<span class="trait-tip">Спасброски брони нельзя. Респиратор даёт непробиваемый спасбросок 5+ против Wounds от этого оружия.</span></span>, <span class="trait">Toxin (3+)<span class="trait-tip">Против бойца ранит на X+ вместо сравнения Strength и Toughness. Против машины — только на натуральную 6.</span></span></td><td></td><td></td></tr>
+<tr><td class="wname sub">krak grenades</td><td>6”</td><td>24”</td><td>6</td><td>-2</td><td>1</td><td class="traits"><span class="trait">Ammo (4+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span></td><td></td><td></td></tr>
+<tr><td class="wname sub">smoke grenades</td><td>6”</td><td>24”</td><td>-</td><td>-</td><td>-</td><td class="traits"><span class="trait">Ammo (3+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Blast (3”)<span class="trait-tip">Поставьте маркер Blast 3" или 5" на цель. Попадание — маркер остаётся. Промах — рассейте на D6" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него.</span></span>, <span class="trait">Smoke<span class="trait-tip">Можно целиться в точку на поле. Маркер Blast остаётся: столб дыма блокирует линию видимости. В End phase на 5+ остаётся, иначе снимается. Попавшая модель не ранится и не становится Suppressed.</span></span></td><td></td><td></td></tr>
+</tbody></table></div></div></details></li>
+<li class="sub"><details class="equip-item"><summary><span class="equip-name">choke gas grenades</span><span class="equip-price">+55 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Grenade launcher array</caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th></tr></thead><tbody>
+<tr><td class="wname sub">choke gas grenades</td><td>6”</td><td>18”</td><td>-</td><td>-</td><td>1</td><td class="traits"><span class="trait">Ammo (5+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Blast (3”)<span class="trait-tip">Поставьте маркер Blast 3" или 5" на цель. Попадание — маркер остаётся. Промах — рассейте на D6" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него.</span></span>, <span class="trait">Gas<span class="trait-tip">Спасброски брони нельзя. Респиратор даёт непробиваемый спасбросок 5+ против Wounds от этого оружия.</span></span>, <span class="trait">Toxin (3+)<span class="trait-tip">Против бойца ранит на X+ вместо сравнения Strength и Toughness. Против машины — только на натуральную 6.</span></span></td></tr>
+</tbody></table></div></div></details></li>
+<li class="sub"><details class="equip-item"><summary><span class="equip-name">krak grenades</span><span class="equip-price">+60 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Subjugator grenade launcher</caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th></tr></thead><tbody>
+<tr><td class="wname sub">krak grenades</td><td>6”</td><td>24”</td><td>6</td><td>-2</td><td>1</td><td class="traits"><span class="trait">Ammo (4+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span></td></tr>
+</tbody></table></div></div></details></li>
+<li class="sub"><details class="equip-item"><summary><span class="equip-name">smoke grenades</span><span class="equip-price">+20 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Grenade launcher array</caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th></tr></thead><tbody>
+<tr><td class="wname sub">smoke grenades</td><td>6”</td><td>18”</td><td>-</td><td>-</td><td>-</td><td class="traits"><span class="trait">Ammo (4+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Blast (3”)<span class="trait-tip">Поставьте маркер Blast 3" или 5" на цель. Попадание — маркер остаётся. Промах — рассейте на D6" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него.</span></span>, <span class="trait">Smoke<span class="trait-tip">Можно целиться в точку на поле. Маркер Blast остаётся: столб дыма блокирует линию видимости. В End phase на 5+ остаётся, иначе снимается. Попавшая модель не ранится и не становится Suppressed.</span></span></td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Repulsion pattern chem-thrower</span><span class="equip-price">80 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Оружие субъюгаторов<span class="orig">SUBJUGATOR WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Repulsion pattern chem-thrower</td><td>T</td><td>-</td><td>3</td><td>-</td><td>2</td><td class="traits"><span class="trait">Ammo (6+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Gas<span class="trait-tip">Спасброски брони нельзя. Респиратор даёт непробиваемый спасбросок 5+ против Wounds от этого оружия.</span></span>, <span class="trait">Template<span class="trait-tip">Каплевидный шаблон от стреляющего через цель: все под ним получают автоматическое попадание. С Light в ближнем бою — одно автоматическое попадание без шаблона. С Rapid Fire (X) ближайшая модель получает попадания по кубику огневой мощи, остальные — по одному.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Паутинное оружие<span class="orig">WEB WEAPONS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Web gun</span><span class="equip-price">65 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Паутинное оружие<span class="orig">WEB WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Web gun</td><td>T</td><td>-</td><td>5</td><td>-</td><td>-</td><td class="traits"><span class="trait">Ammo (6+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Template<span class="trait-tip">Каплевидный шаблон от стреляющего через цель: все под ним получают автоматическое попадание. С Light в ближнем бою — одно автоматическое попадание без шаблона. С Rapid Fire (X) ближайшая модель получает попадания по кубику огневой мощи, остальные — по одному.</span></span>, <span class="trait">Web<span class="trait-tip">Спасброски брони нельзя (непробиваемые можно). Раненый боец не теряет Wound, а получает Webbed.</span></span></td><td>65</td><td>4</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Оружие ближнего боя<span class="orig">CLOSE COMBAT WEAPONS</span></h4>
+<h4>Силовое оружие<span class="orig">POWER WEAPONS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Power knife</span><span class="equip-price">30 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Силовое оружие<span class="orig">POWER WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Power knife</td><td>E</td><td>-</td><td>S</td><td>-2</td><td>1</td><td class="traits"><span class="trait">Backstab<span class="trait-tip">+1 Strength, если цель Engaged более чем с одной моделью.</span></span>, <span class="trait">Breaching (6+)<span class="trait-tip">Если атака ранит и бросок на ранение не меньше X, спасброски брони делать нельзя.</span></span>, <span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span></td><td>30</td><td>1</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Power maul</span><span class="equip-price">45 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Силовое оружие<span class="orig">POWER WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Power maul</td><td>E</td><td>-</td><td>S+1</td><td>-2</td><td>1</td><td class="traits"><span class="trait">Breaching (6+)<span class="trait-tip">Если атака ранит и бросок на ранение не меньше X, спасброски брони делать нельзя.</span></span>, <span class="trait">Concussive (6+)<span class="trait-tip">Если атака ранит и бросок на ранение не меньше X, цель снижает Initiative на 1 до конца следующей активации.</span></span>, <span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span></td><td>45</td><td>1</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Power sword</span><span class="equip-price">40 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Силовое оружие<span class="orig">POWER WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Power sword</td><td>E</td><td>-</td><td>S</td><td>-2</td><td>1</td><td class="traits"><span class="trait">Breaching (6+)<span class="trait-tip">Если атака ранит и бросок на ранение не меньше X, спасброски брони делать нельзя.</span></span>, <span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span>, <span class="trait">Parry<span class="trait-tip">Как Primary или Secondary в схватке: +1 Save. Несколько таких оружий не складываются.</span></span></td><td>40</td><td>2</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Щиты<span class="orig">SHIELDS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Riot shield</span><span class="equip-price">35 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Щиты<span class="orig">SHIELDS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Riot shield</td><td>E</td><td>-</td><td>S</td><td>-</td><td>1</td><td class="traits"><span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span>, <span class="trait">Parry<span class="trait-tip">Как Primary или Secondary в схватке: +1 Save. Несколько таких оружий не складываются.</span></span>, <span class="trait">Shield<span class="trait-tip">Хотя бы одно такое оружие: +1 Save против стрельбы. Несколько штук не складываются.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Шоковое оружие<span class="orig">SHOCK WEAPONS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Shock baton</span><span class="equip-price">20 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Шоковое оружие<span class="orig">SHOCK WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Shock baton</td><td>E</td><td>-</td><td>S</td><td>-</td><td>1</td><td class="traits"><span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span>, <span class="trait">Parry<span class="trait-tip">Как Primary или Secondary в схватке: +1 Save. Несколько таких оружий не складываются.</span></span>, <span class="trait">Shock (6+)<span class="trait-tip">Если атака попадает и бросок попадания не меньше X, она автоматически ранит и считается натуральной 6 на ранении для других свойств.</span></span></td><td>20</td><td>1</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Shock stave</span><span class="equip-price">25 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Шоковое оружие<span class="orig">SHOCK WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Shock stave</td><td>E</td><td>-</td><td>S+1</td><td>-</td><td>1</td><td class="traits"><span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span>, <span class="trait">Shock (5+)<span class="trait-tip">Если атака попадает и бросок попадания не меньше X, она автоматически ранит и считается натуральной 6 на ранении для других свойств.</span></span></td><td>25</td><td>1</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Оружие субъюгаторов<span class="orig">SUBJUGATOR WEAPONS</span></h4>
+<ul class="rule-list">
+<li>SLHG pattern assault ram ‘Sledge Hammer’ with auxiliary grenade launcher</li>
+</ul>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">SLHG pattern assault ram ‘Sledge Hammer’ with auxiliary grenade launcher (with choke gas &amp; frag grenades)</span><span class="equip-price">120 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Оружие субъюгаторов<span class="orig">SUBJUGATOR WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">SLHG pattern assault ram ‘Sledge Hammer’</td><td>E</td><td>-</td><td>S+2</td><td>-1</td><td>2</td><td class="traits"><span class="trait">Concussive (6+)<span class="trait-tip">Если атака ранит и бросок на ранение не меньше X, цель снижает Initiative на 1 до конца следующей активации.</span></span>, <span class="trait">Knockback (5+)<span class="trait-tip">Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1" от центра.</span></span>, <span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span> - <span class="trait">auxiliary<span class="trait-tip">Только как насадка на другое оружие, отдельно не берётся. Не занимает слот оружия.</span></span> grenade launcher</td><td>-</td><td>E</td></tr>
+<tr><td class="wname sub">choke gas grenades</td><td>6”</td><td>24”</td><td>-</td><td>-</td><td>1</td><td class="traits"><span class="trait">Ammo (5+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Blast (3”)<span class="trait-tip">Поставьте маркер Blast 3" или 5" на цель. Попадание — маркер остаётся. Промах — рассейте на D6" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него.</span></span>, <span class="trait">Gas<span class="trait-tip">Спасброски брони нельзя. Респиратор даёт непробиваемый спасбросок 5+ против Wounds от этого оружия.</span></span>, <span class="trait">Toxin (3+)<span class="trait-tip">Против бойца ранит на X+ вместо сравнения Strength и Toughness. Против машины — только на натуральную 6.</span></span></td><td></td><td></td></tr>
+<tr><td class="wname sub">frag grenades</td><td>6”</td><td>24”</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Ammo (4+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Blast (3”)<span class="trait-tip">Поставьте маркер Blast 3" или 5" на цель. Попадание — маркер остаётся. Промах — рассейте на D6" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него.</span></span>, <span class="trait">Knockback (5+)<span class="trait-tip">Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1" от центра.</span></span></td><td></td><td></td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Vigilance pattern assault shield</span><span class="equip-price">45 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Оружие субъюгаторов<span class="orig">SUBJUGATOR WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Vigilance pattern assault shield</td><td>E</td><td>-</td><td>S+1</td><td>-</td><td>1</td><td class="traits"><span class="trait">Concussive (6+)<span class="trait-tip">Если атака ранит и бросок на ранение не меньше X, цель снижает Initiative на 1 до конца следующей активации.</span></span>, <span class="trait">Knockback (5+)<span class="trait-tip">Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1" от центра.</span></span>, <span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span>, <span class="trait">Parry<span class="trait-tip">Как Primary или Secondary в схватке: +1 Save. Несколько таких оружий не складываются.</span></span>, <span class="trait">Shield<span class="trait-tip">Хотя бы одно такое оружие: +1 Save против стрельбы. Несколько штук не складываются.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Снаряжение<span class="orig">WARGEAR</span></h4>
+<h4>Гранаты<span class="orig">GRENADES</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Choke gas grenades</span><span class="equip-price">45 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Grenade launcher array</caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th></tr></thead><tbody>
+<tr><td class="wname sub">choke gas grenades</td><td>6”</td><td>18”</td><td>-</td><td>-</td><td>1</td><td class="traits"><span class="trait">Ammo (5+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Blast (3”)<span class="trait-tip">Поставьте маркер Blast 3" или 5" на цель. Попадание — маркер остаётся. Промах — рассейте на D6" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него.</span></span>, <span class="trait">Gas<span class="trait-tip">Спасброски брони нельзя. Респиратор даёт непробиваемый спасбросок 5+ против Wounds от этого оружия.</span></span>, <span class="trait">Toxin (3+)<span class="trait-tip">Против бойца ранит на X+ вместо сравнения Strength и Toughness. Против машины — только на натуральную 6.</span></span></td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Frag grenades</span><span class="equip-price">30 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Subjugator grenade launcher</caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th></tr></thead><tbody>
+<tr><td class="wname sub">frag grenades</td><td>6”</td><td>24”</td><td>3</td><td>-</td><td>1</td><td class="traits"><span class="trait">Ammo (4+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Blast (3”)<span class="trait-tip">Поставьте маркер Blast 3" или 5" на цель. Попадание — маркер остаётся. Промах — рассейте на D6" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него.</span></span>, <span class="trait">Knockback (5+)<span class="trait-tip">Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1" от центра.</span></span></td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Smoke grenades</span><span class="equip-price">15 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Grenade launcher array</caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th></tr></thead><tbody>
+<tr><td class="wname sub">smoke grenades</td><td>6”</td><td>18”</td><td>-</td><td>-</td><td>-</td><td class="traits"><span class="trait">Ammo (4+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Blast (3”)<span class="trait-tip">Поставьте маркер Blast 3" или 5" на цель. Попадание — маркер остаётся. Промах — рассейте на D6" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него.</span></span>, <span class="trait">Smoke<span class="trait-tip">Можно целиться в точку на поле. Маркер Blast остаётся: столб дыма блокирует линию видимости. В End phase на 5+ остаётся, иначе снимается. Попавшая модель не ранится и не становится Suppressed.</span></span></td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Броня и силовые поля<span class="orig">ARMOUR &amp; FIELD ARMOUR</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Mesh armour</span><span class="equip-price">40 cr</span></summary><div class="equip-profile"><p class="profile-price">40 кредитов — TP 0<span class="orig">40 CREDITS – TP 0</span></p>
+<p>Fighter в сетчатой броне увеличивает характеристику Save на 1 при разрешении попаданий, полученных в ближнем бою.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A Fighter equipped with mesh armour increases their Save characteristic by 1 when resolving Hits suffered in close combat.</p></details></p></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Refractor field</span><span class="equip-price">50 cr</span></summary><div class="equip-profile"><p class="profile-price">50 кредитов — TP 2<span class="orig">50 CREDITS – TP 2</span></p>
+<p>Рефракторное поле даёт носителю непробиваемый спасбросок 5+; однако если при этом спасброске выпадает натуральная 1, поле перегорает и его нельзя использовать до конца боя.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A refractor field grants its wearer a 5+ Invulnerable save; however, should a natural 1 be rolled when making the Invulnerable save then the refractor field is burned out and cannot be used again for the rest of the battle.</p></details></p>
+<p>Рефракторное поле можно сочетать с другой бронёй и полевой бронёй.<span class="orig">A refractor field may be combined with other armour and field armour.</span></p></div></details></li>
+</ul>
+<h4>Личное снаряжение<span class="orig">PERSONAL EQUIPMENT</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Bio-booster</span><span class="equip-price">25 cr</span></summary><div class="equip-profile"><p class="profile-price">25 кредитов — TP 0<span class="orig">25 CREDITS – TP 0</span></p>
+<p>В первый раз за каждый бой, когда носитель получает состояние Injured, снизьте характеристику Lethality ранящего оружия на 1. Если Lethality стала нулём, бросьте 2 кубика ранений вместо 1, и носитель выбирает, какой применить; второй кубик отбрасывается.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">The first time in each battle that the bearer gains the Injured condition, reduce the Lethality characteristic of the weapon damaging them by 1. If the Lethality characteristic is now zero, roll 2 Injury dice instead of 1 and the bearer chooses which to apply; the other dice is discarded.</p></details></p></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Drop rig</span><span class="equip-price">10 cr</span></summary><div class="equip-profile"><p class="profile-price">10 кредитов — TP 0<span class="orig">10 CREDITS – TP 0</span></p>
+<p>Active или Suppressed Fighter со спусковой оснасткой может выполнить действие «Спуск», находясь в пределах 1” от края площадки:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">An Active or Suppressed Fighter with a drop rig can perform the Descend action while they are within 1” of the edge of a platform:</p></details></p>
+<p><span class="term">Спуск (одиночное):<span class="orig">Descend (Single)</span></span> Fighter сдвигается до 3” по горизонтали и до 12” по вертикали. Любое вертикальное движение должно быть вниз, то есть к земле.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">The Fighter makes a move of up to 3” horizontally and up to 12” vertically. Any vertical movement must be downwards, i.e., towards the ground.</p></details></p></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Medicae kit</span><span class="equip-price">20 cr</span></summary><div class="equip-profile"><p class="profile-price">20 кредитов — TP 0<span class="orig">20 CREDITS – TP 0</span></p>
+<p>Если Fighter с медкай-набором помогает другому Fighter на проверке Recovery, он бросает дополнительный кубик ранений и выбирает, какой оставить.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">If a Fighter with a Medicare kit aids another Fighter’s Recovery test, they roll an additional Injury dice and choose which one to keep.</p></details></p></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Photo-goggles</span><span class="equip-price">35 cr</span></summary><div class="equip-profile"><p class="profile-price">35 кредитов — TP 0<span class="orig">35 CREDITS – TP 0</span></p>
+<p>Fighter с фотоочками увеличивает значение X в правиле Visibility (X”) на 9” и может видеть сквозь дымовые облака, поставленные свойством Smoke. Кроме того, если во Fighter с фотоочками попадает оружие со свойством Flash, он получает модификатор −2 к проверке Initiative, чтобы не ослепнуть.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A Fighter equipped with photo-goggle increases the value of X in the Visibility (X”) rule by 9” and may see through smoke clouds placed as part of the Smoke trait. Additionally, if a Fighter equipped with photo-goggles is hit by a weapon with the Flash trait, they suffer a -2 modifier to their Initiative check to avoid being blinded.</p></details></p></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Photo-lumens</span><span class="equip-price">15 cr</span></summary><div class="equip-profile"><p class="profile-price">15 кредитов — TP 0<span class="orig">15 CREDITS – TP 0</span></p>
+<p>Увеличьте значение X в правиле Visibility (X”) на 9” для этого Fighter. В этого Fighter всегда можно целиться независимо от правила Visibility (X”).<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Increase the value of X in the Visibility (X”) rule by 9” for this Fighter. This Fighter can always be targeted, regardless of the Visibility (X”) rule.</p></details></p></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Respirator</span><span class="equip-price">15 cr</span></summary><div class="equip-profile"><p class="profile-price">15 кредитов — TP 0<span class="orig">15 CREDITS – TP 0</span></p>
+<p>Когда во Fighter с респиратором попадает оружие со свойством Gas, он получает непробиваемый спасбросок 5+ против этого оружия.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When a Fighter equipped with a respirator is hit by a weapon with the Gas trait, they gain a 5+ Invulnerable save against that weapon.</p></details></p></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Stimm-slug stash</span><span class="equip-price">25 cr</span></summary><div class="equip-profile"><p class="profile-price">25 кредитов — TP 0<span class="orig">25 CREDITS – TP 0</span></p>
+<p>Раз за бой Fighter с запасом стимм-доз может использовать его в начале своей активации. До следующей активации увеличьте характеристики Movement, Strength и Toughness на 2. В начале следующей активации эффекты проходят, и контролирующий игрок бросает D6; на 2+ ничего не происходит, а на 1 Fighter плохо реагирует на стиммы — он получает попадание Str , AP -, L1, которое автоматически ранит без спасбросков.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Once per battle, a Fighter equipped with a stimm-slug stash may use it at the start of their activation. Until their next activation increase their Movement, Strength and Toughness characteristics by 2. At the start of their next activation, these effects wear off and the Fighter’s controller must roll a D6; on a 2+ nothing happens, but on a result of 1 they suffer a bad reaction to the stimms – they suffer a Str , AP -, L1 Hit that automatically wounds with no saves allowed.</p></details></p></div></details></li>
+</ul>
+<h4>Аксессуары оружия<span class="orig">WEAPON ACCESSORIES</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Infra-sight</span><span class="equip-price">10 cr</span></summary><div class="equip-profile"><p class="profile-price">10 кредитов — TP 0<span class="orig">10 CREDITS – TP 0</span></p>
+<p>Оружие с инфраприцелом можно стрелять по целям за маркерами, созданными свойством Smoke. Кроме того, значение X в правиле Visibility (X”) увеличивается на 9” при использовании оружия с инфраприцелом.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A weapon fitted with an infra-sight can be fired at targets hidden behind markers created by the Smoke trait. Additionally, the value of X in the Visibility (X”) rule is increased by 9” when using a weapon equipped with an infra-sight.</p></details></p></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Las-projector</span><span class="equip-price">20 cr</span></summary><div class="equip-profile"><p class="profile-price">20 кредитов — TP 1<span class="orig">20 CREDITS – TP 1</span></p>
+<p>Оружие с лаз-проектором снижает бонус модели к спасброску брони за укрытие на 1, пока цель в Short Range оружия.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A weapon fitted with a las-projector reduces the benefit a model gains to their Armour save for being in cover by 1 while within the weapon’s Short Range.</p></details></p></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Mono-sight</span><span class="equip-price">20 cr</span></summary><div class="equip-profile"><p class="profile-price">20 кредитов — TP 0<span class="orig">20 CREDITS – TP 0</span></p>
+<p>Когда модель выполняет действие Aimed Shot оружием с моноприцелом, она применяет модификатор +2 к броску попадания вместо +1.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When a model performs an Aimed Shot action with a weapon equipped with a mono-sight, they apply a +2 modifier to the Hit roll instead of +1.</p></details></p></div></details></li>
+</ul>
+<h4>Скакуны<span class="orig">MOUNTS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Dirt bike</span><span class="equip-price">35 cr</span></summary><div class="equip-profile"><p class="profile-price">35 кредитов — TP 0<span class="orig">35 CREDITS – TP 0</span></p>
+<p>Fighter с dirt bike получает подтип Mounted и ставит характеристику Movement на 8”. Когда он выполняет действие Dash, он добавляет 5” к характеристике Movement вместо Initiative.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A Fighter equipped with a dirt bike gains the Mounted Subtype and sets their Movement characteristic to 8”. When they perform a Dash action, they add 5” to their Movement characteristic instead of their Initiative.</p></details></p></div></details></li>
+</ul>
+<h4>Питомцы<span class="orig">PETS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Hardcase Cyber-Mastiff</span><span class="equip-price">75 cr</span></summary><div class="equip-profile"><p class="fighter-meta"><span class="fighter-type">Боец (Зверь, Питомец)<span class="orig">Fighter (Beast, Pet)</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+<tbody>
+<tr><td>5”</td><td>3+</td><td>6+</td><td>3</td><td>4</td><td>1</td><td>3</td><td>2</td><td>5+</td><td>6</td><td>6</td><td>6</td><td>4</td></tr>
+</tbody></table></div>
+<p><a href="#palanite-enforcer-patrol-list--hardcase-cyber-mastiff">Полная карточка бойца &rarr;</a></p></div></details></li>
+</ul>
+</div></details>
+<details class="fold fold-innate">
+<summary><span class="fold-title">Встроенное оружие</span><span class="fold-count">7 профилей</span></summary><div class="fold-body">
+<h4>Дальнобойное оружие<span class="orig">RANGED WEAPONS</span></h4>
+<div class="table-wrap"><table class="compact weapons">
+<caption>Авто / стаб-оружие<span class="orig">AUTO/STUB WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Tauros heavy stubber</td><td>20”</td><td>40”</td><td>4</td><td>-1</td><td>1</td><td class="traits"><span class="trait">Rapid Fire (2)<span class="trait-tip">Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают.</span></span>, <span class="trait">Twin-linked<span class="trait-tip">При дальней атаке кубики огневой мощи можно перебросить (все сразу).</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div>
+<div class="table-wrap"><table class="compact weapons">
+<caption>Эзотерическое оружие<span class="orig">ESOTERIC WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Concussion cannon</td><td>9”</td><td>18”</td><td>4</td><td>-1</td><td>1</td><td class="traits"><span class="trait">Blast (3”)<span class="trait-tip">Поставьте маркер Blast 3" или 5" на цель. Попадание — маркер остаётся. Промах — рассейте на D6" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него.</span></span>, <span class="trait">Concussive (5+)<span class="trait-tip">Если атака ранит и бросок на ранение не меньше X, цель снижает Initiative на 1 до конца следующей активации.</span></span>, <span class="trait">Knockback (5+)<span class="trait-tip">Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1" от центра.</span></span></td><td>-</td><td>E</td></tr>
+<tr><td class="wname">Tauros concussion cannon</td><td>9”</td><td>18”</td><td>4</td><td>-1</td><td>1</td><td class="traits"><span class="trait">Blast (3”)<span class="trait-tip">Поставьте маркер Blast 3" или 5" на цель. Попадание — маркер остаётся. Промах — рассейте на D6" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него.</span></span>, <span class="trait">Concussive (5+)<span class="trait-tip">Если атака ранит и бросок на ранение не меньше X, цель снижает Initiative на 1 до конца следующей активации.</span></span>, <span class="trait">Knockback (5+)<span class="trait-tip">Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1" от центра.</span></span>, <span class="trait">Rapid Fire (1)<span class="trait-tip">Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div>
+<div class="table-wrap"><table class="compact weapons">
+<caption>Гранатомёты<span class="orig">GRENADE LAUNCHERS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr class="wgroup"><td class="wname group" colspan="7">Grenade launcher array</td><td>-</td><td>E</td></tr>
+<tr><td class="wname sub">smoke grenades</td><td>6”</td><td>18”</td><td>-</td><td>-</td><td>-</td><td class="traits"><span class="trait">Ammo (4+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Blast (3”)<span class="trait-tip">Поставьте маркер Blast 3" или 5" на цель. Попадание — маркер остаётся. Промах — рассейте на D6" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него.</span></span>, <span class="trait">Smoke<span class="trait-tip">Можно целиться в точку на поле. Маркер Blast остаётся: столб дыма блокирует линию видимости. В End phase на 5+ остаётся, иначе снимается. Попавшая модель не ранится и не становится Suppressed.</span></span></td><td></td><td></td></tr>
+<tr><td class="wname sub">choke gas grenades</td><td>6”</td><td>18”</td><td>-</td><td>-</td><td>1</td><td class="traits"><span class="trait">Ammo (5+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Blast (3”)<span class="trait-tip">Поставьте маркер Blast 3" или 5" на цель. Попадание — маркер остаётся. Промах — рассейте на D6" по кубику рассеивания. Hit и 1 на рассеивании: осечка, маркер на стреляющем. Модели под маркером получают автоматическое попадание. С Rapid Fire (X) первый Blast как обычно, остальные рассеиваются от него.</span></span>, <span class="trait">Gas<span class="trait-tip">Спасброски брони нельзя. Респиратор даёт непробиваемый спасбросок 5+ против Wounds от этого оружия.</span></span>, <span class="trait">Toxin (3+)<span class="trait-tip">Против бойца ранит на X+ вместо сравнения Strength и Toughness. Против машины — только на натуральную 6.</span></span></td><td></td><td></td></tr>
+<tr><td class="wname sub">stun grenades</td><td>6”</td><td>18”</td><td>2</td><td>-1</td><td>1</td><td class="traits"><span class="trait">Ammo (3+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Concussive (5+)<span class="trait-tip">Если атака ранит и бросок на ранение не меньше X, цель снижает Initiative на 1 до конца следующей активации.</span></span>, <span class="trait">Knockback (5+)<span class="trait-tip">Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1" от центра.</span></span></td><td></td><td></td></tr>
+</tbody></table></div>
+<h4>Оружие ближнего боя<span class="orig">CLOSE COMBAT WEAPONS</span></h4>
+<div class="table-wrap"><table class="compact weapons">
+<caption>Эзотерическое оружие<span class="orig">ESOTERIC WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Sanction pattern man-catcher</td><td>E</td><td>-</td><td>S</td><td>-1</td><td>1</td><td class="traits"><span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span>, <span class="trait">Shock (5+)<span class="trait-tip">Если атака попадает и бросок попадания не меньше X, она автоматически ранит и считается натуральной 6 на ранении для других свойств.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div>
+<div class="table-wrap"><table class="compact weapons">
+<caption>Природное оружие<span class="orig">NATURAL WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th></tr></thead><tbody>
+<tr><td class="wname">Shock bite</td><td>E</td><td>-</td><td>S</td><td>-1</td><td>1</td><td class="traits"><span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span>, <span class="trait">Shock (6+)<span class="trait-tip">Если атака попадает и бросок попадания не меньше X, она автоматически ранит и считается натуральной 6 на ранении для других свойств.</span></span></td></tr>
+</tbody></table></div>
+<div class="table-wrap"><table class="compact weapons">
+<caption>Силовое оружие<span class="orig">POWER WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Pacifier assault claw</td><td>E</td><td>-</td><td>S</td><td>-2</td><td>2</td><td class="traits"><span class="trait">Breaching (5+)<span class="trait-tip">Если атака ранит и бросок на ранение не меньше X, спасброски брони делать нельзя.</span></span>, <span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div>
+<div class="table-wrap"><table class="compact weapons">
+<caption>Оружие машин<span class="orig">VEHICLE WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Tauros hull</td><td>E</td><td>-</td><td>S</td><td>-</td><td>1</td><td class="traits"><span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span>, <span class="trait">Ram<span class="trait-tip">Можно использовать только в активации, когда носитель выполнил Charge.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div>
+</div></details>
+<details class="fold fold-extra">
+<summary><span class="fold-title">Уникальное снаряжение</span><span class="fold-count">1 раздел</span></summary><div class="fold-body">
+<h4>Magnacles<span class="orig">MAGNACLES</span></h4>
+<p>20 кредитов — обычное. Engaged Fighter, экипированный Magnacles, может попытаться зафиксировать их на враге, выполнив действие «Сдержать»:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">20 credits – Common An Engaged Fighter equipped with Magnacles can try to lock them onto an enemy by performing the Restrain action:</p></details></p>
+<p><span class="term">Сдержать (двойное):<span class="orig">Restrain (Double)</span></span> выберите вражеского Fighter, с которым этот Fighter Engaged; вражеский Fighter должен пройти проверку Agility. Если проверка провалена, он зафиксирован на месте и получает состояние Webbed.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Target an enemy Fighter that this Fighter is Engaged with; the enemy Fighter must make an Agility test. If the test is failed, they have been locked in place and become subject to the Webbed condition.</p></details></p>
+</div></details>
+<a class="top-link" href="#top">Наверх</a>
+</section>
+</main>
+</div>
+
+<footer class="page-footer">
+    <p>Справочник собран из Gangs of the Underhive &amp; Outlands (Правила/GANGS0_3.pdf).
+    Русский текст — для игры за столом; английский оригинал спрятан под спойлером «Оригинал» или дан короткой подписью рядом.</p>
+    <p><a class="backlink" href="../../">&larr; На главную</a></p>
+    <a class="top-link" href="#top">Наверх</a>
+</footer>
+
+<script src="../handbook-search.js"></script>
+
+</body>
+</html>

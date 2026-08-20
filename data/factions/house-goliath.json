@@ -129,7 +129,7 @@
         ]
       },
       "rules": [
-        "Запас Combat Chems: каждый раз, когда активируется Goliath Stimmer, он может использовать Combat Chems. До фазы End этого раунда он получает дополнительные +D3 Attacks. Однако если на кубике выпала натуральная 1, вместо этого он получает плохую реакцию, и его характеристика Attacks снижается до 1 до фазы End этого раунда.ОригиналWhenever a Goliath Stimmer is activated, they may choose to use Combat Chems. Until the End phase of this round they gain an additional +D3 Attacks. However, if the dice roll is a natural 1, they instead suffer a bad reaction and their Attacks characteristic is reduced to 1 until the End phase of this round."
+        "Запас Combat Chems: каждый раз, когда активируется Goliath Stimmer, он может использовать Combat Chems. До фазы End этого раунда он получает дополнительные +D3 Attacks. Однако если на кубике выпала натуральная 1, вместо этого он получает плохую реакцию, и его характеристика Attacks снижается до 1 до фазы End этого раунда."
       ]
     },
     {
@@ -263,6 +263,72 @@
       }
     },
     {
+      "id": "goliath-zerker",
+      "name": "Goliath 'zerker",
+      "category": "Fighter",
+      "subtypes": [
+        "Brute",
+        "Loner"
+      ],
+      "baseCost": 175,
+      "xp": 25,
+      "stats": {
+        "keys": [
+          "M",
+          "WS",
+          "BS",
+          "S",
+          "T",
+          "W",
+          "I",
+          "A",
+          "Sv",
+          "Ld",
+          "Cl",
+          "Wil",
+          "Int"
+        ],
+        "values": [
+          "4”",
+          "3+",
+          "6+",
+          "6",
+          "5",
+          "4",
+          "2",
+          "3",
+          "6+",
+          "6",
+          "7",
+          "6",
+          "4"
+        ]
+      },
+      "rules": [
+        "Запас Combat Chems: каждый раз, когда активируется Goliath ‘Zerker, он может использовать Combat Chems. Если да, до End phase этого раунда он получает дополнительные +D3 Attacks. Однако если на кубике выпала натуральная 1, вместо этого у него плохая реакция, и характеристика Attacks снижается до 1 до End phase этого раунда."
+      ],
+      "weapons": [
+        {
+          "name": "Open fists",
+          "sr": "E",
+          "lr": "-",
+          "str": "S",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Knockback (6+)",
+              "text": "Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1\" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1\" от центра."
+            },
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "sumpkroc",
       "name": "Sumpkroc",
       "category": "Fighter",
@@ -306,13 +372,33 @@
       },
       "rules": [
         "Длина поводка: у Sumpkroc длина поводка (Leash range) 3”.",
-        "Контратака: если владелец Sumpkroc становится Engaged вражеским Fighter в результате действия Charge или Engage этого врага, и если Sumpkroc Active, он может немедленно активироваться и выполнить действие Charge, двигаясь к Engaging вражескому Fighter. Эта активация прерывает действие вражеского Fighter и выполняется после движения, но до атак.ОригиналIf the Sumpkroc’s owner is Engaged by an enemy Fighter as the result of the enemy Fighter making a Charge or Engage action, and if the Sumpkroc is Active, it may immediately activate and make a Charge action, moving towards the Engaging enemy Fighter. This activation interrupts the enemy Fighter’s action, being performed after the movement but before attacks.",
-        "Спуск (одиночное): Fighter сдвигается до 3” по горизонтали и до 12” по вертикали. Любое вертикальное движение должно быть вниз, то есть к земле.ОригиналThe Fighter makes a move of up to 3” horizontally and up to 12” vertically. Any vertical movement must be downwards, i.e., towards the ground."
+        "Контратака: если владелец Sumpkroc становится Engaged вражеским Fighter в результате действия Charge или Engage этого врага, и если Sumpkroc Active, он может немедленно активироваться и выполнить действие Charge, двигаясь к Engaging вражескому Fighter. Эта активация прерывает действие вражеского Fighter и выполняется после движения, но до атак."
+      ],
+      "weapons": [
+        {
+          "name": "Ferocious jaws",
+          "sr": "E",
+          "lr": "-",
+          "str": "S",
+          "ap": "-1",
+          "l": "1",
+          "traits": [
+            {
+              "name": "Melee",
+              "text": "Оружие для атак, пока модель Engaged."
+            },
+            {
+              "name": "Rending (6+)",
+              "text": "Если натуральный бросок на ранение не меньше X, AP этой атаки увеличивается на 1."
+            }
+          ]
+        }
       ]
     }
   ],
   "subtypes": [
     "Beast",
+    "Brute",
     "Champion",
     "Ganger",
     "Leader",

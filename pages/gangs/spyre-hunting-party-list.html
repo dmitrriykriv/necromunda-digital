@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Necromunda — Охотники Шпиля</title>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#14161c">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<header class="topbar" id="top">
+    <a class="backlink" href="../gangs.html">&larr; Все банды</a>
+    <h1>Necromunda</h1>
+    <p>Охотники Шпиля &mdash; русский перевод, оригинал под спойлером</p>
+    <p class="source">Источник: Gangs of the Underhive &amp; Outlands &bull; Правила/GANGS0_3.pdf</p>
+</header>
+
+<div class="layout">
+<aside class="sidebar">
+    <div class="hb-search" id="hb-search">
+        <label class="hb-search-label" for="hb-q">Поиск</label>
+        <input class="hb-q" id="hb-q" type="search" placeholder="Боец, оружие, правило…" autocomplete="off" spellcheck="false" title="Клавиша / — фокус, Enter — к совпадению">
+        <div class="hb-modes" role="radiogroup" aria-label="Режим поиска">
+            <label class="is-on">
+                <input type="radio" name="hb-mode" value="headings" checked>
+                Заголовки
+            </label>
+            <label>
+                <input type="radio" name="hb-mode" value="full">
+                Весь текст
+            </label>
+        </div>
+        <p class="hb-status" id="hb-status" hidden></p>
+        <ol class="hb-hits" id="hb-hits" hidden></ol>
+    </div>
+
+    <details class="toc-drawer">
+    <summary class="toc-toggle">Банды</summary>
+    <nav>
+        <p class="sidebar-index"><a href="../gangs.html">Все банды</a></p>
+        <h2>Банды</h2>
+        <details open>
+            <summary>Кланы-дома</summary>
+            <ul>
+                <li><a href="house-cawdor-gang-list.html">Дом Каудор<span class="en">House Cawdor</span></a></li>
+                <li><a href="house-delaque-gang-list.html">Дом Делак<span class="en">House Delaque</span></a></li>
+                <li><a href="house-escher-gang-list.html">Дом Эшер<span class="en">House Escher</span></a></li>
+                <li><a href="house-goliath-gang-list.html">Дом Голиаф<span class="en">House Goliath</span></a></li>
+                <li><a href="house-orlock-gang-list.html">Дом Орлок<span class="en">House Orlock</span></a></li>
+                <li><a href="house-van-saar-gang-list.html">Дом Ван Саар<span class="en">House Van Saar</span></a></li>
+            </ul>
+        </details>
+        <details open>
+            <summary>Ответвления домов</summary>
+            <ul>
+                <li><a href="blades-of-the-matriarch-gang-list.html">Клинки Матриарха<span class="en">Blades Of The Matriarch</span></a></li>
+                <li><a href="forge-smelters-gang-list.html">Плавильщики кузниц<span class="en">Forge Smelters</span></a></li>
+            </ul>
+        </details>
+        <details open>
+            <summary>Культы и мутанты</summary>
+            <ul>
+                <li><a href="chaos-helot-cult-list.html">Культ хаоситских илотов<span class="en">Chaos Helot Cult</span></a></li>
+                <li><a href="corpse-grinder-cult-gang-list.html">Культ Трупорезов<span class="en">Corpse Grinder Cult</span></a></li>
+                <li><a href="genestealer-cult-gang-list.html">Культ генокрадов<span class="en">Genestealer Cult</span></a></li>
+                <li><a href="malstrain-gang-list.html">Мальстрейн<span class="en">Malstrain</span></a></li>
+            </ul>
+        </details>
+        <details open>
+            <summary>Прочие банды</summary>
+            <ul>
+                <li><a href="ash-waste-nomad-gang-list.html">Кочевники Пепельных пустошей<span class="en">Ash Waste Nomad</span></a></li>
+                <li><a href="free-ogryn-gang-list.html">Свободные огрины<span class="en">Free Ogryn</span></a></li>
+                <li><a href="ironhead-squat-gang-list.html">Сквоты Айронхед<span class="en">Ironhead Squat</span></a></li>
+                <li><a href="outcast-gang-list.html">Изгои<span class="en">Outcast</span></a></li>
+                <li><a href="palanite-enforcer-patrol-list.html">Паланитские энфорсеры<span class="en">Palanite Enforcer</span></a></li>
+                <li><a href="spyre-hunting-party-list.html" class="is-current" aria-current="page">Охотники Шпиля<span class="en">Spyre Hunting</span></a></li>
+                <li><a href="venator-gang-list.html">Венаторы<span class="en">Venator</span></a></li>
+            </ul>
+        </details>
+    </nav>
+    </details>
+</aside>
+<main class="content">
+<section id="spyre-hunting-party-list">
+<h2>Охотники Шпиля<span class="en">Spyre Hunting Party List</span></h2>
+<div class="table-wrap"><table class="compact roster">
+<caption>Состав банды<span class="orig">Gang Composition</span></caption>
+<thead><tr><th>Боец<span class="orig">Fighter</span></th><th>Тип<span class="orig">Type</span></th><th class="num">Кредиты<span class="orig">Credits</span></th></tr></thead><tbody>
+<tr><td><a href="#spyre-hunting-party-list--spyre-hunt-master">SPYRE HUNT MASTER</a></td><td>Боец (Лидер, Шпайрер)<span class="orig">Fighter (Leader, Spyrer)</span></td><td class="num">190</td></tr>
+<tr><td><a href="#spyre-hunting-party-list--jakara-spyre-hunter">JAKARA SPYRE HUNTER</a></td><td>Боец (Чемпион, Шпайрер)<span class="orig">Fighter (Champion, Spyrer)</span></td><td class="num">185</td></tr>
+<tr><td><a href="#spyre-hunting-party-list--malcadon-spyre-hunter">MALCADON SPYRE HUNTER</a></td><td>Боец (Чемпион, Шпайрер)<span class="orig">Fighter (Champion, Spyrer)</span></td><td class="num">185</td></tr>
+<tr><td><a href="#spyre-hunting-party-list--orrus-spyre-hunter">ORRUS SPYRE HUNTER</a></td><td>Боец (Чемпион, Шпайрер)<span class="orig">Fighter (Champion, Spyrer)</span></td><td class="num">180</td></tr>
+<tr><td><a href="#spyre-hunting-party-list--yeld-spyre-hunter">YELD SPYRE HUNTER</a></td><td>Боец (Чемпион, Летающий, Шпайрер)<span class="orig">Fighter (Champion, Flying, Spyrer)</span></td><td class="num">180</td></tr>
+<tr><td><a href="#spyre-hunting-party-list--caryatid-prime">CARYATID PRIME</a></td><td>Боец (Зверь, Летающий, Питомец)<span class="orig">Fighter (Beast, Flying, Pet)</span></td><td class="num">70</td></tr>
+</tbody></table></div>
+<p class="note"><span class="label">Снаряжение банды<span class="orig">Gang Equipment</span></span> Турели и прочее снаряжение банды покупаются в Trading Post и кладутся в Stash, не на бойца. <a href="../core-rules.html#snaryazhenie-bandy">Правила и турель Trazior →</a></p>
+<h3>Особые правила банды<span class="orig">GANG SPECIAL RULES</span></h3>
+<h3>Состав охотничьей партии Шпиля<span class="orig">SPYRE HUNTING PARTY GANG COMPOSITION</span></h3>
+<p>Spyre Hunting Parties не следуют обычным правилам состава банды из Necromunda Skirmish Core Rulebook и вместо этого имеют следующее правило:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Spyre Hunting Parties do not follow the usual gang composition rules in the Necromunda Skirmish Core Rulebook and instead have the following rule:</p></details></p>
+<ul class="rule-list">
+<li>Должен быть один Fighter с подтипом Leader.<span class="orig">There must be one Fighter with the Leader Subtype.</span></li>
+</ul>
+<p>Если Leader когда-либо удаляется из Gang Roster, следуйте правилу Death of a Leader в Necromunda Skirmish Core Rulebook.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">If the Leader is ever deleted from the Gang Roster, follow the rule for Death of a Leader in the Necromunda Skirmish Core Rulebook.</p></details></p>
+<h3>Доход, снаряжение и набор<span class="orig">INCOME, EQUIPMENT &amp; RECRUITMENT</span></h3>
+<p>Банда Spyre Hunting Party захватывает территории так же, как обычная банда; однако они не получают стандартные бонусы (Boons) с контролируемых территорий, не являющихся Spyrer Base Camp; вместо этого каждая такая территория даёт им следующий бонус:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A Spyre Hunting Party gang gains control of Territories in the same way as a regular hang; they do not, however, gain the standard Boons from non-Spyrer Base Camp Territories they control; instead each non-Spyrer Base Camp Territory grants them the following Boon:</p></details></p>
+<p><span class="term">Доход:<span class="orig">Income</span></span> банда получает 15 кредитов с территории при сборе дохода.<span class="orig">The gang earns 15 credits from the Territory when collecting Income.</span></p>
+<p>Spyre Hunter Fighters могут свободно складывать любое экипированное оружие в Stash банды и экипировать новое оружие на подшаге Redistribute Equipment последовательности Post-cycle Sequence. Когда оружие кладётся в Stash банды, любые Augmentations, которые оно успело получить, теряются.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Spyre Hunter Fighters may freely put any weapons they are equipped with into the gang’s Stash and be equipped with new weapons during the Redistribute Equipment sub-step of the Post-cycle Sequence. Whenever a weapon is placed into the gang’s Stash, any Augmentations it may have gained are lost.</p></details></p>
+<p>Кроме того, Spyre Hunting Parties не могут набирать ни одну модель, которой нет в этом списке, если прямо не сказано, что она присоединяется к Spyre Hunting Parties.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Additionally, Spyre Hunting Parties may not recruit any model that is not included in this list unless explicitly stated they will join Spyre Hunting Parties.</p></details></p>
+<h3>База операций<span class="orig">BASE OF OPERATIONS</span></h3>
+<p>Вместо Settlement Territory банда Spyre Hunting Party начинает со территорией Spyrer Base Camp, которую никогда не может потерять.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Instead of starting with a Settlement Territory, a Spyre Hunting Party starts with a Spyrer Base Camp Territory which they can never lose.</p></details></p>
+<h3>Уникальная территория<span class="orig">UNIQUE TERRITORY -</span></h3>
+<h3>Базовый лагерь шпайреров<span class="orig">SPYRER BASE CAMP</span></h3>
+<h3>Бонус территории<span class="orig">TERRITORY BOON</span></h3>
+<p>Эта территория даёт следующие бонусы:<span class="orig">This Territory grants the following Boons:</span></p>
+<p><span class="term">Доход:<span class="orig">Income</span></span> банда получает 15 кредитов с этой территории при сборе дохода.<span class="orig">The gang earns 15 credits from this Territory when collecting income.</span></p>
+<p><span class="term">Особое:<span class="orig">Special</span></span> в начале каждой последовательности Post-cycle Sequence один Spyrer может снять отметку In Recovery до объявления пост-цикловых действий.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">At the start of each Post-cycle Sequence, one Spyrer may clear their In Recovery box before declaring Post-cycle Actions.</p></details></p>
+<p><span class="term">Отпрыски Имперского дома:<span class="orig">Scions of the Imperial House</span></span> к Spyrers применяется множество правил (см. ниже).<span class="orig">Spyrers have a wide variety of rules that apply to them (see below).</span></p>
+<p><span class="term">Стартовые навыки:<span class="orig">Starting Skills</span></span> при добавлении в ростер банды все Spyre Hunting Party Leaders and Champions могут выбрать один навык из одного из своих основных наборов (Primary Skill Sets).<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When added to a Gang Roster, all Spyre Hunting Party Leaders and Champions may select one skill from one of their Primary Skill Sets.</p></details></p>
+<p><span class="term">Доступ к навыкам:<span class="orig">Skill Access</span></span> бойцы этой банды имеют доступ к следующим наборам навыков:<span class="orig">This gang’s Fighters have access to the following Skill Sets:</span></p>
+<div class="table-wrap"><table class="compact skills">
+<thead><tr><th>Боец<span class="orig">Fighter</span></th><th>Ловкость<span class="orig">Agility</span></th><th>Сила<span class="orig">Brawn</span></th><th>Бой<span class="orig">Combat</span></th><th>Хитрость<span class="orig">Cunning</span></th><th>Эрудит<span class="orig">Savant</span></th><th>Стрельба<span class="orig">Shooting</span></th></tr></thead><tbody>
+<tr><td>Spyre Hunt Master</td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill n">-</td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill n">-</td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill p">Основной<span class="orig">Primary</span></td></tr>
+<tr><td>Jakara Spyre Hunter</td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill n">-</td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill n">-</td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill n">-</td></tr>
+<tr><td>Malcadon Spyre Hunter</td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill n">-</td><td class="skill n">-</td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill n">-</td></tr>
+<tr><td>Orrus Spyre Hunter</td><td class="skill n">-</td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill n">-</td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill n">-</td></tr>
+<tr><td>Yeld Spyre Hunter</td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill n">-</td><td class="skill n">-</td><td class="skill n">-</td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill p">Основной<span class="orig">Primary</span></td></tr>
+<tr><td>Caryatid Prime</td><td class="skill p">Основной<span class="orig">Primary</span></td><td class="skill n">-</td><td class="skill n">-</td><td class="skill s">Вторичный<span class="orig">Secondary</span></td><td class="skill n">-</td><td class="skill n">-</td></tr>
+</tbody></table></div>
+<h3>Новый подтип: шпайрер<span class="orig">NEW SUBTYPE: SPYRER</span></h3>
+<p>К шпайреру применяется ряд особых правил:<span class="orig">There are a number of special rules that apply to a Spyrer:</span></p>
+<p><span class="term">Kill Count:<span class="orig">Kill Count</span></span> каждый охотничий риг шпайрера записывает всё, что происходит со Spyrer, подтверждая убийства и открывая функции рига и его оружия по мере роста Kill Count, делая его всё опаснее. Помимо получения XP, каждый раз, когда Spyrer выводит вражеского Fighter Out of Action, увеличьте Kill Count этого Spyrer на 1.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Each Spyrer hunting rig records all that happens to the Spyrer, verifying their kills and unlocking functions of the hunting rig and its weaponry as their Kill Count ticks up, making them an ever more dangerous foe. In addition to gaining XP, each time a Spyrer takes an enemy Fighter Out of Action, increase the Spyrer’s Kill Count by 1.</p></details></p>
+<p><span class="term">Оценка угрозы:<span class="orig">Threat Assessment</span></span> при выборе стартовых Crews или Reinforcement разделите разрешённое число моделей на два, округляя вверх, чтобы определить, сколько Spyrers можно выбрать. Например, если должны прибыть 3 Reinforcements, прибывают только двое Spyrers.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When selecting starting Crews or Reinforcement, divide the number of models allowed by two, rounding up, to determine the number of Spyrers that may be selected. For example, if 3 Reinforcements would arrive, only two Spyrers arrive.</p></details></p>
+<p><span class="term">Мастер охоты:<span class="orig">Master of the Hunt</span></span> все Spyrers имеют набор особых правил, которые дают им охотничьи риги:<span class="orig">All Spyrers have a suite of special rules granted to them by their hunting rigs:</span></p>
+<ul class="rule-list">
+<li>Все шпайреры имеют навык Juggernaut.<span class="orig">All Spyrers have the Juggernaut skill.</span></li>
+<li>Шпайрера никогда нельзя захватить ни по какой причине; вместо этого считается, что он получил Поверхностные повреждения.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A Spyrer may never be Captured for any reason; rather, they are considered to have suffered Superficial Damage.</p></details></li>
+<li>Шпайреры не получают побочных эффектов от хема и никогда не могут к нему привыкнуть.<span class="orig">Spyrers do not suffer side effects from chems and can never become addicted to them.</span></li>
+<li>Шпайреру никогда не нужно делать проверку Nerve.<span class="orig">A Spyrer never needs to make Nerve check.</span></li>
+</ul>
+<p><span class="term">Усилители рефлексов:<span class="orig">Reflex Enhancers</span></span> на шаге Ready Gang фазы Priority все Spyrers получают один дополнительный маркер Ready; если эффект не дал бы им получить маркер Ready, они получают на один маркер Ready меньше. Каждый раз, когда Spyrer активируется, он снимает только один маркер Ready — то есть сможет активироваться дважды за раунд. Любой эффект, который снимает маркеры Ready или мешает их добавить, затрагивает только один маркер Ready.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">During the Ready Gang step of the Priority Phase, all Spyrers gain one extra Ready marker; if an effect would prevent them from gaining a Ready marker, they gain one fewer Ready marker. Each time a Spyrer activates, they only remove one Ready marker – this means they will be able to activate twice each round. Any effect that removes Ready markers or prevents them from being added only affects one Ready marker.</p></details></p>
+<h3>Пост-цикловые действия шпайрера<span class="orig">SPYRER POST CYCLE ACTIONS</span></h3>
+<p>Spyrers не имеют доступа к стандартным пост-цикловым действиям; вместо этого они могут выполнять только следующие пост-цикловые действия:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Spyrers do not have access to the standard Post-cycle Actions; instead, they may only perform the following Post-cycle Actions:</p></details></p>
+<h3>Эволюция костюма (только шпайрер)<span class="orig">SUIT EVOLUTION (SPYRER ONLY)</span></h3>
+<p>Если Kill Count шпайрера не меньше 4, уменьшите Kill Count на 4 и либо снимите все Spyrer Hunting Rig Glitches (сбросьте Glitch Count на ноль и уберите все отрицательные эффекты от Glitches), либо получите аугментацию охотничьего рига, как указано далее. Если Kill Count шпайрера всё ещё не меньше 4, это действие можно выполнить снова бесплатно.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">If a Spyrer’s Kill Count is at least 4, reduce their Kill Count by 4, and either clear all Spyrer Hunting Rig Glitches (resetting their Glitch Count to zero and removing all negative effects caused by the Glitches), or gain a Hunting Rig Augmentation as follows. If the Spyrer’s Kill Count is still at least 4, they may perform this action again for free.</p></details></p>
+<p><span class="term">Аугментация охотничьего рига:<span class="orig">Hunting Rig Augmentation</span></span> охотничий риг улучшает питание одной из систем и включает дополнительные функции. Выберите одно оружие или предмет снаряжения, который несёт Spyrer, и повысьте его уровень Augmentation на 1. Если новая Augmentation подняла бы характеристику выше максимума, повысьте уровень Augmentation ещё на 1.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">The hunting rig improves the power supply to one of its systems and brings additional functions online. Pick one weapon or piece of wargear carried by the Spyrer and increased its Augmentation tier by 1. If the new Augmentation would increase a characteristic beyond its maximum increase the Augmentation tier by an additional 1.</p></details></p>
+<h3>Обслуживание костюма (только шпайрер)<span class="orig">SUIT MAINTENANCE (SPYRER ONLY)</span></h3>
+<p>Fighter чинит и обслуживает свой охотничий риг. Банда может снять 100 кредитов из Stash, чтобы снять все Spyrer Hunting Rig Glitches (сбросить Glitch Count на ноль и убрать все отрицательные эффекты от сбоев).<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">The Fighter repairs and maintains their hunting rig. The gang can remove 100 credits from their Stash in order to clear all Spyrer Hunting Rig Glitches (resetting their Glitch Count to zero and removing all negative effects cause by the glitches).</p></details></p>
+<h3>Терроризировать территорию (только шпайрер, макс. 5 бойцов)<span class="orig">TERRORISE TERRITORY (SPYRER ONLY – MAX FIVE FIGHTERS)</span></h3>
+<p>Spyrer выходит на территорию, подчиняя местное население и выкуривая сочувствующих арантианцам. Добавьте 10 кредитов в Stash банды за каждого Spyrer, который выполняет это действие.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">The Spyrer goes out into a Territory, subduing the local populace and flushing out any Aranthian sympathizers. Add 10 credits to the gang’s Stash for each Spyrer that performs this action.</p></details></p>
+<h3>Тренировка (только шпайрер)<span class="orig">TRAIN (SPYRER ONLY)</span></h3>
+<p>Spyrer оттачивает навыки к предстоящим боям. Каждый Spyrer, выполняющий это действие, получает 2 XP.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">The Spyrer practises their skills ready for the upcoming battles. Each Spyrer that performs this action earns 2 XP.</p></details></p>
+<h3>Сбои охотничьего рига шпайрера<span class="orig">SPYRER HUNTING RIG GLITCHES</span></h3>
+<div class="table-wrap"><table class="compact dice-table">
+<thead><tr><th>D66</th><th>Lasting Injury</th></tr></thead><tbody>
+<tr><td class="roll">11</td><td>Урок усвоен: шпайрер получает D3 XP.<span class="orig">Lesson Learnt: The Spyrer earn D3 XP.</span></td></tr>
+<tr><td class="roll">12</td><td>Вечная вражда: шпайрер получает состояние Hatred (X), где X — тип банды, которая вывела его Out of Action.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Eternal Enmity: The Spyrer gains the Hatred (X) Condition where X is the type of gang that took them Out of Action.</p></details></td></tr>
+<tr><td class="roll">13</td><td>Горькая вражда: шпайрер получает состояние Hatred (X), где X — банда, которая вывела его Out of Action.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Bitter Enmity: The Spyrer gains the Hatred (X) Condition where X is the gang that took them Out of Action.</p></details></td></tr>
+<tr><td class="roll">14</td><td>Личная вражда: шпайрер получает состояние Hatred (X), где X — модель, которая вывела его Out of Action. Если его вывела не атака вражеской модели, считайте этот результат как Bitter Enmity.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Personal Enmity: The Spyrer gains the Hatred (X) Condition where X is the model that took them Out of Action. If they were not taken Out of Action as a result of an enemy model’s action, treat this result as Bitter Enmity.</p></details></td></tr>
+<tr><td class="roll">15</td><td>Ужасные шрамы: шпайрер получает состояние Fearsome.<span class="orig">Horrid Scars: The Spyrer gains the Fearsome Condition.</span></td></tr>
+<tr><td class="roll">16</td><td>Внушительные шрамы: шпайрер увеличивает характеристику Leadership на 1.<span class="orig">Impressive Scars: The Spyrer increases their Leadership characteristic by 1.</span></td></tr>
+<tr><td class="roll">21-26</td><td>Поверхностные повреждения: несмотря на то что шпайрер выведен из строя, охотничий риг сохраняет все системы и защищает Fighter внутри. Шпайрер пропускает остаток боя, но долгосрочных эффектов нет.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Superficial Damage: Despite being incapacitated, the Spyrer’s hunting rig successfully maintains all systems and preserves the Fighter inside. The Spyrer misses the rest of the battle, but suffers no long-term effects.</p></details></td></tr>
+<tr><td class="roll">31-46</td><td>Тяжёлая рана: шпайрер уходит в Recovery.<span class="orig">Grievous Wound: The Spyrer goes into Recovery.</span></td></tr>
+<tr><td class="roll">51</td><td>Повреждение подавления тревоги: шпайрер уходит в Recovery, увеличивает Glitch Count на 1 и снижает характеристику Cool на 1.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Anxiety Suppression Damaged: The Spyrer goes into Recovery, increases their Glitch Count by 1, and reduces their Cool characteristic by 1.</p></details></td></tr>
+<tr><td class="roll">52</td><td>Нейронная обратная связь: шпайрер уходит в Recovery, увеличивает Glitch Count на 1 и снижает характеристику Intelligence на 1.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Neural Feedback: The Spyrer goes into Recovery, increases their Glitch Count by 1, and reduces their Intelligence characteristic by 1.</p></details></td></tr>
+<tr><td class="roll">53</td><td>Унижение: шпайрер уходит в Recovery, увеличивает Glitch Count на 1 и снижает характеристику Leadership на 1.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Humbled: The Spyrer goes into Recovery, increases their Glitch Count by 1, and reduces their Leadership characteristic by 1.</p></details></td></tr>
+<tr><td class="roll">54</td><td>Вокс-призраки: шпайрер уходит в Recovery, увеличивает Glitch Count на 1 и снижает характеристику Willpower на 1.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Vox Ghosts: The Spyrer goes into Recovery, increases their Glitch Count by 1, and reduces their Willpower characteristic by 1.</p></details></td></tr>
+<tr><td class="roll">55</td><td>Гироскопическая дестабилизация: шпайрер уходит в Recovery, увеличивает Glitch Count на 1 и снижает характеристику Initiative на 1.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Gyroscopic Destabilisation: The Spyrer goes into Recovery, increases their Glitch Count by 1, and reduces their Initiative characteristic by 1.</p></details></td></tr>
+<tr><td class="roll">56</td><td>Заедание локомоторов: шпайрер уходит в Recovery, увеличивает Glitch Count на 1 и снижает характеристику Movement на 1.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Seized Locomotors: The Spyrer goes into Recovery, increases their Glitch Count by 1, and reduces their Movement characteristic by 1.</p></details></td></tr>
+<tr><td class="roll">61</td><td>Сбой канала наведения: шпайрер уходит в Recovery, увеличивает Glitch Count на 1 и снижает характеристику Ballistic Skill на 1.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Targeting Uplink Disruption: The Spyrer goes into Recovery, increases their Glitch Count by 1 and reduces their Ballistic Skill characteristic by 1.</p></details></td></tr>
+<tr><td class="roll">62</td><td>Сбои сервоприводов: шпайрер уходит в Recovery, увеличивает Glitch Count на 1 и снижает характеристику Weapon Skill на 1.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Stuttering Servos: The Spyrer goes into Recovery, increases their Glitch Count by 1 and reduces their Weapon Skill characteristic by 1.</p></details></td></tr>
+<tr><td class="roll">63</td><td>Повреждение мускулатуры: шпайрер уходит в Recovery, увеличивает Glitch Count на 1 и снижает характеристику Strength на 1.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Damaged Musculature: The Spyrer goes into Recovery, increases their Glitch Count by 1 and reduces their Strength characteristic by 1.</p></details></td></tr>
+<tr><td class="roll">64</td><td>Сниженная плотность пластин: шпайрер уходит в Recovery, увеличивает Glitch Count на 1 и снижает характеристику Toughness на 1.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Reduced Plate Density: The Spyrer goes into Recovery, increases their Glitch Count by 1 and reduces their Toughness characteristic by 1.</p></details></td></tr>
+<tr><td class="roll">65</td><td>Множественные сбои: бросьте D3 раза по этой таблице, перебрасывая результаты «Множественные сбои» и «Критическая перегрузка».<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Multiple Glitches: Roll D3 times on this table, re-rolling any results of Multiple Glitches or Critical Overload.</p></details></td></tr>
+<tr><td class="roll">66</td><td>Критическая перегрузка: шпайрер гибнет мгновенно — даже охотничий риг не спасает. Если ранение нанесла вражеская модель, она получает 1 дополнительный XP.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Critical Overload: The Spyrer is killed instantly – not even their hunting rig can save them. If the injury was caused by an enemy model, that model earns 1 extra XP.</p></details></td></tr>
+</tbody></table></div>
+<details class="fold fold-fighters">
+<summary><span class="fold-title">Бойцы банды</span><span class="fold-count">6 карточек</span></summary><div class="fold-body">
+<details class="fighter" id="spyre-hunting-party-list--spyre-hunt-master">
+<summary class="fighter-head">
+<h4 class="fighter-name">SPYRE HUNT MASTER</h4>
+<span class="fighter-cost">190 кредитов<span class="orig">190 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Лидер, Шпайрер)<span class="orig">Fighter (Leader, Spyrer)</span></span> <span class="fighter-xp">Стартовый XP: 61<span class="orig">Starting XP: 61</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+<tbody>
+<tr><td>6”</td><td>3+</td><td>3+</td><td>3</td><td>3</td><td>3</td><td>4</td><td>3</td><td>5+</td><td>8</td><td>9</td><td>8</td><td>8</td></tr>
+</tbody></table></div>
+<p><span class="term">Опытный охотник:<span class="orig">Experienced Hunter</span></span> при добавлении в Gang Roster выберите одно оружие или предмет снаряжения у Spyre Hunt Master и повысьте его уровень Augmentation на 1.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When added to a Gang Roster, pick one weapon or piece of wargear carried by a Spyre Hunt Master and increase its Augmentation level by 1.</p></details></p>
+<p><span class="term">Привязан к ригу:<span class="orig">Bonded to the Rig</span></span> со Spyre Hunt Master никогда нельзя снять Sovereign rig; если его удаляют из Gang Roster, этот предмет тоже удаляется, а не кладётся в Stash банды.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A Spyre Hunt Master may never have their Sovereign rig unequipped from them, and if they are removed from the Gang Roster this item is also removed instead of being placed into the gang’s Stash.</p></details></p>
+<p><span class="term">Фиксированная экипировка:<span class="orig">Fixed Loadouts</span></span> Spyre Hunt Master может быть экипирован не более чем двумя вариантами из раздела Hunt Master Weapons списка снаряжения Spyre Hunter.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A Spyre Hunt Master may be equipped with up to two options from the Hunt Master Weapons section of the Spyre Hunter Equipment List.</p></details></p>
+<p><span class="term">Снаряжение:<span class="orig">Equipment</span></span> Spyrer Hunt Master экипирован Sovereign hunting rig (входит в стартовую стоимость) и при добавлении в Gang Roster может купить оружие и снаряжение из списка снаряжения Spyre Hunter:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A Spyrer Hunt Master is equipped with a Sovereign hunting rig (included in their starting cost) and, when added to a Gang Roster, may purchase weapons and wargear from the Spyre Hunter Equipment List:</p></details></p>
+<p>• В ходе кампании им можно давать дополнительное оружие и снаряжение, купленное из списка снаряжения Spyrer Hunter.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">• During the course of a campaign, they may be given additional weapons and wargear purchased from the Spyrer Hunter Equipment List.</p></details></p>
+<p>- Они могут выбирать оружие только из раздела Hunt Master Weapons списка снаряжения Spyre Hunter.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">- They may only choose weapons from the Hunt Master Weapons section of the Spyre Hunter Equipment List.</p></details></p>
+</div></details>
+<details class="fighter" id="spyre-hunting-party-list--jakara-spyre-hunter">
+<summary class="fighter-head">
+<h4 class="fighter-name">JAKARA SPYRE HUNTER</h4>
+<span class="fighter-cost">185 кредитов<span class="orig">185 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Чемпион, Шпайрер)<span class="orig">Fighter (Champion, Spyrer)</span></span> <span class="fighter-xp">Стартовый XP: 37<span class="orig">Starting XP: 37</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+<tbody>
+<tr><td>6”</td><td>3+</td><td>4+</td><td>3</td><td>3</td><td>2</td><td>4</td><td>3</td><td>5+</td><td>7</td><td>8</td><td>7</td><td>7</td></tr>
+</tbody></table></div>
+<p><span class="term">Привязан к ригу:<span class="orig">Bonded to the Rig</span></span> с Jakara Spyre Hunter никогда нельзя снять Jakara hunting rig или mirror shield; если его удаляют из Gang Roster, эти предметы тоже удаляются, а не кладутся в Stash банды.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A Jakara Spyre Hunter may never have their Jakara hunting rig or mirror shield unequipped from them, and if they are removed from the Gang Roster these items are also removed instead of being placed into the gang’s Stash.</p></details></p>
+<p><span class="term">Фиксированная экипировка:<span class="orig">Fixed Loadouts</span></span> Jakara Spyre Hunter всегда должен быть экипирован ровно одним вариантом из раздела Jakara Weapons списка снаряжения Spyre Hunter.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A Jakara Spyre Hunter must always be equipped with exactly one option from the Jakara Weapons section of the Spyre Hunter Equipment List.</p></details></p>
+<p><span class="term">Снаряжение:<span class="orig">Equipment</span></span> Jakara Spyre Hunter экипирован Jakara hunting rig и mirror shield (входит в стартовую стоимость) и при добавлении в Gang Roster может купить оружие и снаряжение из списка снаряжения Spyre Hunter:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A Jakara Spyre Hunter is equipped with a Jakara hunting rig and a mirror shield (included in their starting cost) and, when added to a Gang Roster, may purchase weapons and wargear from the Spyre Hunter Equipment List:</p></details></p>
+<p>• В ходе кампании им можно давать дополнительное оружие и снаряжение, купленное из списка снаряжения Spyrer Hunter.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">• During the course of a campaign, they may be given additional weapons and wargear purchased from the Spyrer Hunter Equipment List.</p></details></p>
+<p>- Они могут выбирать оружие только из раздела Jakara Weapons списка снаряжения Spyre Hunter.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">- They may only choose weapons from the Jakara Weapons section of the Spyre Hunter Equipment List.</p></details></p>
+</div></details>
+<details class="fighter" id="spyre-hunting-party-list--malcadon-spyre-hunter">
+<summary class="fighter-head">
+<h4 class="fighter-name">MALCADON SPYRE HUNTER</h4>
+<span class="fighter-cost">185 кредитов<span class="orig">185 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Чемпион, Шпайрер)<span class="orig">Fighter (Champion, Spyrer)</span></span> <span class="fighter-xp">Стартовый XP: 37<span class="orig">Starting XP: 37</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+<tbody>
+<tr><td>7”</td><td>3+</td><td>3+</td><td>3</td><td>3</td><td>2</td><td>4</td><td>2</td><td>5+</td><td>7</td><td>8</td><td>7</td><td>7</td></tr>
+</tbody></table></div>
+<p><span class="term">Привязан к ригу:<span class="orig">Bonded to the Rig</span></span> с Malcadon Spyre Hunter никогда нельзя снять Malcadon hunting rig, drop rig, grapnel launcher или paired web incisors; если его удаляют из Gang Roster, эти предметы тоже удаляются, а не кладутся в Stash банды.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A Malcadon Spyre Hunter may never have their Malcadon hunting rig, drop rig, grapnel launcher or paired web incisors unequipped from them, and if they are removed from the Gang Roster these items are also removed instead of being placed into the gang’s Stash.</p></details></p>
+<p><span class="term">Фиксированная экипировка:<span class="orig">Fixed Loadouts</span></span> Malcadon Spyre Hunter всегда должен быть экипирован ровно одним вариантом из раздела Malcadon Weapons списка снаряжения Spyre Hunter.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A Malcadon Spyre Hunter must always be equipped with exactly one option from the Malcadon Weapons section of the Spyre Hunter Equipment List.</p></details></p>
+<p><span class="term">Снаряжение:<span class="orig">Equipment</span></span> Malcadon Spyre Hunter экипирован Malcadon hunting rig, drop rig, grapnel launcher и paired web incisors (входит в стартовую стоимость) и при добавлении в Gang Roster может купить оружие и снаряжение из списка снаряжения Spyre Hunter:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A Malcadon Spyre Hunter is equipped with a Malcadon hunting rig, drop rig, grapnel launcher and paired web incisors (included in their starting cost) and, when added to a Gang Roster, may purchase weapons and wargear from the Spyre Hunter Equipment List:</p></details></p>
+<p>• В ходе кампании им можно давать дополнительное оружие и снаряжение, купленное из списка снаряжения Spyrer Hunter.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">• During the course of a campaign, they may be given additional weapons and wargear purchased from the Spyrer Hunter Equipment List.</p></details></p>
+<p>- Они могут выбирать оружие только из раздела Malcadon Weapons списка снаряжения Spyre Hunter.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">- They may only choose weapons from the Malcadon Weapons section of the Spyre Hunter Equipment List.</p></details></p>
+</div></details>
+<details class="fighter" id="spyre-hunting-party-list--orrus-spyre-hunter">
+<summary class="fighter-head">
+<h4 class="fighter-name">ORRUS SPYRE HUNTER</h4>
+<span class="fighter-cost">180 кредитов<span class="orig">180 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Чемпион, Шпайрер)<span class="orig">Fighter (Champion, Spyrer)</span></span> <span class="fighter-xp">Стартовый XP: 37<span class="orig">Starting XP: 37</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+<tbody>
+<tr><td>5”</td><td>3+</td><td>3+</td><td>3</td><td>4</td><td>2</td><td>4</td><td>2</td><td>4+</td><td>7</td><td>8</td><td>7</td><td>7</td></tr>
+</tbody></table></div>
+<p><span class="term">Привязан к ригу:<span class="orig">Bonded to the Rig</span></span> с Orrus Spyre Hunter никогда нельзя снять Orrus hunting rig; если его удаляют из Gang Roster, этот предмет тоже удаляется, а не кладётся в Stash банды.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A Orrus Spyre Hunter may never have their Orrus hunting rig unequipped from them, and if they are removed from the Gang Roster this item is also removed instead of being placed into the gang’s Stash.</p></details></p>
+<p><span class="term">Фиксированная экипировка:<span class="orig">Fixed Loadouts</span></span> Orrus Spyre Hunter всегда должен быть экипирован ровно одним вариантом из раздела Orrus Ranged Weapons и ровно одним вариантом из раздела Orrus Close Combat списка снаряжения Spyre Hunter.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A Orrus Spyre Hunter must always be equipped with exactly one option from the Orrus Ranged Weapons section and exactly one option from the Orrus Close Combat section of the Spyre Hunter Equipment List.</p></details></p>
+<p><span class="term">Снаряжение:<span class="orig">Equipment</span></span> Orrus Spyre Hunter экипирован Orrus hunting rig (входит в стартовую стоимость) и при добавлении в Gang Roster может купить оружие и снаряжение из списка снаряжения Spyre Hunter:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A Orrus Spyre Hunter is equipped with a Orrus hunting rig (included in their starting cost) and, when added to a Gang Roster, may purchase weapons and wargear from the Spyre Hunter Equipment List:</p></details></p>
+<p>• В ходе кампании им можно давать дополнительное оружие и снаряжение, купленное из списка снаряжения Spyrer Hunter.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">• During the course of a campaign, they may be given additional weapons and wargear purchased from the Spyrer Hunter Equipment List.</p></details></p>
+<p>- Они могут выбирать оружие только из раздела Orrus Ranged Weapons и раздела Orrus Close Combat Weapons списка снаряжения Spyre Hunter.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">- They may only choose weapons from the Orrus Ranged Weapons section and the Orrus Close Combat Weapons section of the Spyre Hunter Equipment List.</p></details></p>
+</div></details>
+<details class="fighter" id="spyre-hunting-party-list--yeld-spyre-hunter">
+<summary class="fighter-head">
+<h4 class="fighter-name">YELD SPYRE HUNTER</h4>
+<span class="fighter-cost">180 кредитов<span class="orig">180 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Чемпион, Летающий, Шпайрер)<span class="orig">Fighter (Champion, Flying, Spyrer)</span></span> <span class="fighter-xp">Стартовый XP: 37<span class="orig">Starting XP: 37</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+<tbody>
+<tr><td>7”</td><td>4+</td><td>3+</td><td>3</td><td>3</td><td>2</td><td>5</td><td>2</td><td>5+</td><td>7</td><td>8</td><td>7</td><td>7</td></tr>
+</tbody></table></div>
+<p><span class="term">Привязан к ригу:<span class="orig">Bonded to the Rig</span></span> с Yeld Spyre Hunter никогда нельзя снять Yeld hunting rig или Yeld wings; если его удаляют из Gang Roster, эти предметы тоже удаляются, а не кладутся в Stash банды.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A Yeld Spyre Hunter may never have their Yeld hunting rig or Yeld wings unequipped from them, and if they are removed from the Gang Roster these items are also removed instead of being placed into the gang’s Stash.</p></details></p>
+<p><span class="term">Фиксированная экипировка:<span class="orig">Fixed Loadouts</span></span> Yeld Spyre Hunter всегда должен быть экипирован ровно одним вариантом из раздела Yeld Weapons списка снаряжения Spyre Hunter.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A Yeld Spyre Hunter must always be equipped with exactly one option from the Yeld Weapons section of the Spyre Hunter Equipment List.</p></details></p>
+<p><span class="term">Снаряжение:<span class="orig">Equipment</span></span> Yeld Spyre Hunter экипирован Yeld hunting rig и Yeld wings (входит в стартовую стоимость) и при добавлении в Gang Roster может купить оружие и снаряжение из списка снаряжения Spyre Hunter:<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A Yeld Spyre Hunter is equipped with a Yeld hunting rig and Yeld wings (included in their starting cost) and, when added to a Gang Roster, may purchase weapons and wargear from the Spyre Hunter Equipment List:</p></details></p>
+<p>• В ходе кампании им можно давать дополнительное оружие и снаряжение, купленное из списка снаряжения Spyrer Hunter.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">• During the course of a campaign, they may be given additional weapons and wargear purchased from the Spyrer Hunter Equipment List.</p></details></p>
+<p>- Они могут выбирать оружие только из раздела Yeld Weapons списка снаряжения Spyre Hunter.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">- They may only choose weapons from the Yeld Weapons section of the Spyre Hunter Equipment List.</p></details></p>
+</div></details>
+<details class="fighter" id="spyre-hunting-party-list--caryatid-prime">
+<summary class="fighter-head">
+<h4 class="fighter-name">CARYATID PRIME</h4>
+<span class="fighter-cost">70 кредитов<span class="orig">70 credits</span></span>
+</summary>
+<div class="fighter-body">
+<p class="fighter-meta"><span class="fighter-type">Боец (Зверь, Летающий, Питомец)<span class="orig">Fighter (Beast, Flying, Pet)</span></span> <span class="fighter-xp">Стартовый XP: 13<span class="orig">Starting XP: 13</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+<tbody>
+<tr><td>6”</td><td>5+</td><td>6+</td><td>2</td><td>2</td><td>1</td><td>5</td><td>1</td><td>6+</td><td>5</td><td>7</td><td>7</td><td>7</td></tr>
+</tbody></table></div>
+<p><span class="term">Длина поводка:<span class="orig">Leash Range</span></span> у Caryatid Prime длина поводка (Leash range) 3”.<span class="orig">A Caryatid Prime has a 3” Leash range.</span></p>
+<p><span class="term">Спутник Spyrer:<span class="orig">Spyrer Companion</span></span> Caryatid Prime подчиняется особому правилу Reflex Enhances.<span class="orig">A Caryatid Prime is subject to the Reflex Enhances special rule.</span></p>
+<p><span class="term">Заговорённый спутник:<span class="orig">Charmed Companion</span></span> Caryatid Prime помогает избранному спутнику избегать урона. Пока он в пределах Leash range от владельца, этот Fighter может перебросить один проваленный спасбросок каждый раунд.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A Caryatid Prime is able to help their chosen companion avoid damage. While they are within Leash range of their owner, that Fighter may re- roll one failed save each round.</p></details></p>
+<p><span class="term">Предвидение:<span class="orig">Precognition</span></span> дар предвидения Caryatid Prime позволяет уклоняться почти от любых атак, кроме самых неожиданных. Это мощное предвидение даёт непробиваемый спасбросок 3+.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">The gift of foresight possessed by a Caryatid Prime enables it to dodge and evade all but the most unexpected of attacks. This tremendous precognition grants them a 3+ Invulnerable save.</p></details></p>
+<p><span class="term">Снаряжение:<span class="orig">Equipment</span></span> Caryatid Prime вооружён(а) a bite. Дополнительное оружие и снаряжение покупать и надевать нельзя.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A Caryatid Prime is armed with a bite. They may not purchase or be equipped with additional weapons or wargear.</p></details></p>
+</div></details>
+</div></details>
+<details class="fold fold-equip">
+<summary><span class="fold-title">Список снаряжения охотников Шпиля<span class="orig">SPYRE HUNTER EQUIPMENT LIST</span></span><span class="fold-count">23 позиции</span></summary><div class="fold-body">
+<h4>Оружие шпайреров<span class="orig">SPYRER WEAPONS</span></h4>
+<h4>Оружие Hunt Master<span class="orig">HUNT MASTER WEAPONS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Malcadon slashing claw with web incisor, grapnel launcher and drop rig</span><span class="equip-price">45 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Оружие Hunt Master<span class="orig">HUNT MASTER WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Malcadon slashing claw</td><td>E</td><td>-</td><td>S</td><td>-2</td><td>1</td><td class="traits"><span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Malcadon toxin whip with web incisor, grapnel launcher and drop rig</span><span class="equip-price">60 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Оружие Hunt Master<span class="orig">HUNT MASTER WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Malcadon toxin whip</td><td>E</td><td>-</td><td>-</td><td>-2</td><td>1</td><td class="traits"><span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span>, <span class="trait">Toxin (3+)<span class="trait-tip">Против бойца ранит на X+ вместо сравнения Strength и Toughness. Против машины — только на натуральную 6.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Mirror shield</span><span class="equip-price">35 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Оружие Hunt Master<span class="orig">HUNT MASTER WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Mirror shield</td><td>4”</td><td>8”</td><td>-</td><td>-</td><td>-</td><td class="traits"><span class="trait">Flash<span class="trait-tip">Броска на ранение нет: цель делает проверку Initiative, при провале Blind. Слепая модель теряет Ready; её атаки ближнего боя попадают только на натуральную 6 до следующей активации.</span></span>, <span class="trait">Shield<span class="trait-tip">Хотя бы одно такое оружие: +1 Save против стрельбы. Несколько штук не складываются.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Monomolecular sword</span><span class="equip-price">50 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Оружие Hunt Master<span class="orig">HUNT MASTER WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Monomolecular sword</td><td>E</td><td>-</td><td>S+1</td><td>-2</td><td>1</td><td class="traits"><span class="trait">Breaching (5+)<span class="trait-tip">Если атака ранит и бросок на ранение не меньше X, спасброски брони делать нельзя.</span></span>, <span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span>, <span class="trait">Parry<span class="trait-tip">Как Primary или Secondary в схватке: +1 Save. Несколько таких оружий не складываются.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Naga blade</span><span class="equip-price">65 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Оружие Hunt Master<span class="orig">HUNT MASTER WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Naga blade</td><td>E</td><td>-</td><td>S+2</td><td>-1</td><td>2</td><td class="traits"><span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span>, <span class="trait">Parry<span class="trait-tip">Как Primary или Secondary в схватке: +1 Save. Несколько таких оружий не складываются.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Yeld laser gauntlet</span><span class="equip-price">25 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Оружие Hunt Master<span class="orig">HUNT MASTER WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Yeld laser gauntlet</td><td>10”</td><td>20”</td><td>3</td><td>-1</td><td>1</td><td class="traits">-</td><td>-</td><td>E</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Yeld missile gauntlet</span><span class="equip-price">60 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Оружие Hunt Master<span class="orig">HUNT MASTER WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Yeld missile gauntlet</td><td>15”</td><td>30”</td><td>5</td><td>-</td><td>1</td><td class="traits"><span class="trait">Knockback (5+)<span class="trait-tip">Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1" от центра.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Оружие Jakara<span class="orig">JAKARA WEAPONS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Monomolecular sword</span><span class="equip-price">50 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Оружие Hunt Master<span class="orig">HUNT MASTER WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Monomolecular sword</td><td>E</td><td>-</td><td>S+1</td><td>-2</td><td>1</td><td class="traits"><span class="trait">Breaching (5+)<span class="trait-tip">Если атака ранит и бросок на ранение не меньше X, спасброски брони делать нельзя.</span></span>, <span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span>, <span class="trait">Parry<span class="trait-tip">Как Primary или Secondary в схватке: +1 Save. Несколько таких оружий не складываются.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Naga blade</span><span class="equip-price">65 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Оружие Hunt Master<span class="orig">HUNT MASTER WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Naga blade</td><td>E</td><td>-</td><td>S+2</td><td>-1</td><td>2</td><td class="traits"><span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span>, <span class="trait">Parry<span class="trait-tip">Как Primary или Secondary в схватке: +1 Save. Несколько таких оружий не складываются.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Оружие Malcadon<span class="orig">MALCADON WEAPONS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Paired Malcadon slashing claws</span><span class="equip-price">35 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Оружие Malcadon<span class="orig">MALCADON WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Paired Malcadon slashing claws</td><td>E</td><td>-</td><td>S</td><td>-2</td><td>1</td><td class="traits"><span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span>, <span class="trait">Paired (2)<span class="trait-tip">Нельзя как Secondary и нельзя Secondary вместе с ним. Как Primary: носитель увеличивает Attacks на X.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Paired Malcadon toxin whips</span><span class="equip-price">50 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Оружие Malcadon<span class="orig">MALCADON WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Paired Malcadon toxin whips</td><td>E</td><td>-</td><td>-</td><td>-2</td><td>1</td><td class="traits"><span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span>, <span class="trait">Toxin (3+)<span class="trait-tip">Против бойца ранит на X+ вместо сравнения Strength и Toughness. Против машины — только на натуральную 6.</span></span>, <span class="trait">Paired (2)<span class="trait-tip">Нельзя как Secondary и нельзя Secondary вместе с ним. Как Primary: носитель увеличивает Attacks на X.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Дальнобойное оружие Orrus<span class="orig">ORRUS RANGED WEAPONS</span></h4>
+<ul class="rule-list">
+<li>Парные bolt launchers..............................................................40<span class="orig">Paired bolt launchers..............................................................40</span></li>
+</ul>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Paired disintegration matrix</span><span class="equip-price">75 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Дальнобойное оружие Orrus<span class="orig">ORRUS RANGED WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Paired disintegration matrix</td><td>3”</td><td>12”</td><td>5</td><td>-2</td><td>2</td><td class="traits"><span class="trait">Damage (2)<span class="trait-tip">Раненая модель теряет X Wounds вместо одного. Число кубиков ранений всё равно равно Lethality оружия.</span></span>, <span class="trait">Rapid Fire (1)<span class="trait-tip">Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают.</span></span>, <span class="trait">Ammo (5+)<span class="trait-tip">После выстрела бросьте D6. Если результат не меньше X, патроны ещё есть. Иначе оружие сразу Out of Ammo, даже без кубика огневой мощи. Если Out of Ammo также выпал на кубике огневой мощи, оружие заклинивает до конца боя.</span></span>, <span class="trait">Unstable<span class="trait-tip">Натуральная 1 на попадании: носитель получает автоматическое попадание этим профилем, другие модели не поражаются. Если броска попадания нет (Template) — сначала D6, как выше.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Paired volkite dischargers</span><span class="equip-price">45 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Дальнобойное оружие Orrus<span class="orig">ORRUS RANGED WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Paired volkite dischargers</td><td>5”</td><td>10”</td><td>5</td><td>-</td><td>1</td><td class="traits"><span class="trait">Blaze (4+)<span class="trait-tip">Если бросок на ранение не меньше X, цель получает ещё одно попадание тем же профилем. Оно бросается на ранение отдельно и не вызывает новых дополнительных попаданий.</span></span>, <span class="trait">Rapid Fire (1)<span class="trait-tip">Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Оружие ближнего боя Orrus<span class="orig">ORRUS CLOSE COMBAT WEAPONS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Orrus power fists</span><span class="equip-price">65 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Orrus power fists</td><td>E</td><td>-</td><td>S+2</td><td>-1</td><td>2</td><td class="traits"><span class="trait">Breaching (5+)<span class="trait-tip">Если атака ранит и бросок на ранение не меньше X, спасброски брони делать нельзя.</span></span>, <span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span>, <span class="trait">Paired (2)<span class="trait-tip">Нельзя как Secondary и нельзя Secondary вместе с ним. Как Primary: носитель увеличивает Attacks на X.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Orrus power talons</span><span class="equip-price">45 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Orrus power talons</td><td>E</td><td>-</td><td>S+1</td><td>-2</td><td>1</td><td class="traits"><span class="trait">Breaching (6+)<span class="trait-tip">Если атака ранит и бросок на ранение не меньше X, спасброски брони делать нельзя.</span></span>, <span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span>, <span class="trait">Paired (2)<span class="trait-tip">Нельзя как Secondary и нельзя Secondary вместе с ним. Как Primary: носитель увеличивает Attacks на X.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Оружие Yeld<span class="orig">YELD WEAPONS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Paired Yeld laser gauntlets</span><span class="equip-price">35 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Оружие Yeld<span class="orig">YELD WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Paired Yeld laser gauntlets</td><td>10”</td><td>20”</td><td>3</td><td>-1</td><td>1</td><td class="traits"><span class="trait">Rapid Fire (1)<span class="trait-tip">Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Paired Yeld missile gauntlets</span><span class="equip-price">65 cr</span></summary><div class="equip-profile"><div class="table-wrap"><table class="compact weapons">
+<caption>Оружие Yeld<span class="orig">YELD WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Paired Yeld missile gauntlets</td><td>15”</td><td>30”</td><td>5</td><td>-</td><td>1</td><td class="traits"><span class="trait">Knockback (5+)<span class="trait-tip">Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1" от центра.</span></span>, <span class="trait">Rapid Fire (1)<span class="trait-tip">Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div></div></details></li>
+</ul>
+<h4>Снаряжение<span class="orig">WARGEAR</span></h4>
+<h4>Личное снаряжение<span class="orig">PERSONAL EQUIPMENT</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Bio-booster</span><span class="equip-price">25 cr</span></summary><div class="equip-profile"><p class="profile-price">25 кредитов — TP 0<span class="orig">25 CREDITS – TP 0</span></p>
+<p>В первый раз за каждый бой, когда носитель получает состояние Injured, снизьте характеристику Lethality ранящего оружия на 1. Если Lethality стала нулём, бросьте 2 кубика ранений вместо 1, и носитель выбирает, какой применить; второй кубик отбрасывается.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">The first time in each battle that the bearer gains the Injured condition, reduce the Lethality characteristic of the weapon damaging them by 1. If the Lethality characteristic is now zero, roll 2 Injury dice instead of 1 and the bearer chooses which to apply; the other dice is discarded.</p></details></p></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Grav chute</span><span class="equip-price">30 cr</span></summary><div class="equip-profile"><p class="profile-price">30 кредитов — TP 0<span class="orig">30 CREDITS – TP 0</span></p>
+<p>Если Fighter с грав-парашютом падает или прыгает вниз, он никогда не получает урон и никогда не становится Suppressed.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">If a Fighter with a grav chute falls or jumps down, they never suffer any damage and are never Suppressed.</p></details></p></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Photo-goggles</span><span class="equip-price">35 cr</span></summary><div class="equip-profile"><p class="profile-price">35 кредитов — TP 0<span class="orig">35 CREDITS – TP 0</span></p>
+<p>Fighter с фотоочками увеличивает значение X в правиле Visibility (X”) на 9” и может видеть сквозь дымовые облака, поставленные свойством Smoke. Кроме того, если во Fighter с фотоочками попадает оружие со свойством Flash, он получает модификатор −2 к проверке Initiative, чтобы не ослепнуть.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">A Fighter equipped with photo-goggle increases the value of X in the Visibility (X”) rule by 9” and may see through smoke clouds placed as part of the Smoke trait. Additionally, if a Fighter equipped with photo-goggles is hit by a weapon with the Flash trait, they suffer a -2 modifier to their Initiative check to avoid being blinded.</p></details></p></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Photo-lumens</span><span class="equip-price">15 cr</span></summary><div class="equip-profile"><p class="profile-price">15 кредитов — TP 0<span class="orig">15 CREDITS – TP 0</span></p>
+<p>Увеличьте значение X в правиле Visibility (X”) на 9” для этого Fighter. В этого Fighter всегда можно целиться независимо от правила Visibility (X”).<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">Increase the value of X in the Visibility (X”) rule by 9” for this Fighter. This Fighter can always be targeted, regardless of the Visibility (X”) rule.</p></details></p></div></details></li>
+<li><details class="equip-item"><summary><span class="equip-name">Respirator</span><span class="equip-price">15 cr</span></summary><div class="equip-profile"><p class="profile-price">15 кредитов — TP 0<span class="orig">15 CREDITS – TP 0</span></p>
+<p>Когда во Fighter с респиратором попадает оружие со свойством Gas, он получает непробиваемый спасбросок 5+ против этого оружия.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">When a Fighter equipped with a respirator is hit by a weapon with the Gas trait, they gain a 5+ Invulnerable save against that weapon.</p></details></p></div></details></li>
+</ul>
+<h4>Питомцы<span class="orig">PETS</span></h4>
+<ul class="equip">
+<li><details class="equip-item"><summary><span class="equip-name">Caryatid Prime</span><span class="equip-price">70 cr</span></summary><div class="equip-profile"><p class="fighter-meta"><span class="fighter-type">Боец (Зверь, Летающий, Питомец)<span class="orig">Fighter (Beast, Flying, Pet)</span></span></p>
+<div class="table-wrap"><table class="stats">
+<thead><tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Sv</th><th>Ld</th><th>Cl</th><th>Wil</th><th>Int</th></tr></thead>
+<tbody>
+<tr><td>6”</td><td>5+</td><td>6+</td><td>2</td><td>2</td><td>1</td><td>5</td><td>1</td><td>6+</td><td>5</td><td>7</td><td>7</td><td>7</td></tr>
+</tbody></table></div>
+<p><a href="#spyre-hunting-party-list--caryatid-prime">Полная карточка бойца &rarr;</a></p></div></details></li>
+</ul>
+</div></details>
+<details class="fold fold-innate">
+<summary><span class="fold-title">Встроенное оружие</span><span class="fold-count">5 профилей</span></summary><div class="fold-body">
+<h4>Дальнобойное оружие<span class="orig">RANGED WEAPONS</span></h4>
+<div class="table-wrap"><table class="compact weapons">
+<caption>Оружие Hunt Master<span class="orig">HUNT MASTER WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Web incisor</td><td>4”</td><td>8”</td><td>3</td><td>-</td><td>-</td><td class="traits"><span class="trait">Web<span class="trait-tip">Спасброски брони нельзя (непробиваемые можно). Раненый боец не теряет Wound, а получает Webbed.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div>
+<div class="table-wrap"><table class="compact weapons">
+<caption>Оружие Malcadon<span class="orig">MALCADON WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Paired web incisors</td><td>4”</td><td>8”</td><td>3</td><td>-</td><td>-</td><td class="traits"><span class="trait">Rapid Fire (1)<span class="trait-tip">Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают.</span></span>, <span class="trait">Web<span class="trait-tip">Спасброски брони нельзя (непробиваемые можно). Раненый боец не теряет Wound, а получает Webbed.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div>
+<div class="table-wrap"><table class="compact weapons">
+<caption>Дальнобойное оружие Orrus<span class="orig">ORRUS RANGED WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Paired bolt launchers</td><td>8”</td><td>20”</td><td>4</td><td>-1</td><td>1</td><td class="traits"><span class="trait">Rapid Fire (2)<span class="trait-tip">Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div>
+<h4>Оружие<span class="orig">WEAPONS</span></h4>
+<div class="table-wrap"><table class="compact weapons">
+<caption>Оружие Yeld<span class="orig">YELD WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Yeld wings</td><td>E</td><td>-</td><td>S+1</td><td>-1</td><td>1</td><td class="traits"><span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div>
+<h4>Оружие ближнего боя<span class="orig">CLOSE COMBAT WEAPONS</span></h4>
+<div class="table-wrap"><table class="compact weapons">
+<caption>Природное оружие<span class="orig">NATURAL WEAPONS</span></caption>
+<thead><tr><th>Оружие<span class="orig">Weapon</span></th><th>SR</th><th>LR</th><th>Str</th><th>AP</th><th>L</th><th>Свойства<span class="orig">Traits</span></th><th>Кред.<span class="orig">Creds</span></th><th>TP</th></tr></thead><tbody>
+<tr><td class="wname">Bite</td><td>E</td><td>-</td><td>S</td><td>-</td><td>1</td><td class="traits"><span class="trait">Melee<span class="trait-tip">Оружие для атак, пока модель Engaged.</span></span></td><td>-</td><td>E</td></tr>
+</tbody></table></div>
+</div></details>
+<details class="fold fold-extra">
+<summary><span class="fold-title">Аугментации</span><span class="fold-count">12 разделов</span></summary><div class="fold-body">
+<h4>Парные bolt launcher<span class="orig">PAIRED BOLT LAUNCHERS</span></h4>
+<p><span class="term">Аугментация 1-го уровня:<span class="orig">Tier 1 Augmentation</span></span> улучшите характеристику Lethality до 2.<span class="orig">Improve the Lethality characteristic to 2.</span></p>
+<p><span class="term">Аугментация 2-го уровня:<span class="orig">Tier 2 Augmentation</span></span> улучшите характеристику AP до −2.<span class="orig">Improve the AP characteristic to -2.</span></p>
+<p><span class="term">Аугментация 3-го уровня:<span class="orig">Tier 3 Augmentation</span></span> замените свойство Rapid Fire (2) свойством Rapid Fire (3).<span class="orig">Replace the Rapid Fire (2) trait with the Rapid Fire (3) trait.</span></p>
+<h4>Охотничий риг Jakara<span class="orig">JAKARA HUNTING RIG</span></h4>
+<p><span class="term">Аугментация 1-го уровня:<span class="orig">Tier 1 Augmentation</span></span> улучшите характеристику Strength носителя на 1.<span class="orig">Improve the wearer’s Strength characteristic by 1.</span></p>
+<p><span class="term">Аугментация 2-го уровня:<span class="orig">Tier 2 Augmentation</span></span> улучшите характеристику Attacks носителя на 1.<span class="orig">Improve the wearer’s Attacks characteristic by 1.</span></p>
+<h4>Охотничий риг Malcadon<span class="orig">MALCADON HUNTING RIG</span></h4>
+<p><span class="term">Аугментация 1-го уровня:<span class="orig">Tier 1 Augmentation</span></span> улучшите характеристику Ballistic Skill или Weapon Skill носителя на 1.<span class="orig">Improve either the wearer’s Ballistic Skill or Weapon Skill characteristic by 1.</span></p>
+<p><span class="term">Аугментация 2-го уровня:<span class="orig">Tier 2 Augmentation</span></span> улучшите характеристику Save носителя на 1.<span class="orig">Improve the wearer’s Save characteristic by 1.</span></p>
+<h4>Когти<span class="orig">CLAWS</span></h4>
+<p><span class="term">Аугментация 1-го уровня:<span class="orig">Tier 1 Augmentation</span></span> улучшите характеристику AP до −3.<span class="orig">Improve the AP characteristic to -3.</span></p>
+<p><span class="term">Аугментация 2-го уровня:<span class="orig">Tier 2 Augmentation</span></span> улучшите характеристику Lethality до 2.<span class="orig">Improve the Lethality characteristic to 2.</span></p>
+<p><span class="term">Аугментация 3-го уровня:<span class="orig">Tier 3 Augmentation</span></span> улучшите характеристику Strength до S+1.<span class="orig">Improve the Strength characteristic to S+1.</span></p>
+<h4>Malcadon toxin whip и парные<span class="orig">MALCADON TOXIN WHIP &amp; PAIRED MALCADON TOXIN WHIPS</span></h4>
+<p><span class="term">Аугментация 1-го уровня:<span class="orig">Tier 1 Augmentation</span></span> улучшите характеристику Lethality до 2.<span class="orig">Improve the Lethality characteristic to 2.</span></p>
+<p><span class="term">Аугментация 2-го уровня:<span class="orig">Tier 2 Augmentation</span></span> замените свойство Paired (2) свойством Paired (3).<span class="orig">Replace the Paired (2) trait with the Paired (3) trait.</span></p>
+<p><span class="term">Аугментация 3-го уровня:<span class="orig">Tier 3 Augmentation</span></span> замените свойство Toxin (3+) свойством Toxin (2+).<span class="orig">Replace the Toxin (3+) trait with the Toxin (2+) trait.</span></p>
+<h4>Охотничий риг Orrus<span class="orig">ORRUS HUNTING RIG</span></h4>
+<p>Orrus hunting rig даёт носителю неуязвимый сейв 6+.<span class="orig">An Orrus hunting rig grants its wearer a 6+ Invulnerable save.</span></p>
+<p><span class="term">Аугментация 1-го уровня:<span class="orig">Tier 1 Augmentation</span></span> улучшите неуязвимый сейв до 5+.<span class="orig">Improve the Invulnerable save to 5+.</span></p>
+<p><span class="term">Аугментация 2-го уровня:<span class="orig">Tier 2 Augmentation</span></span> улучшите неуязвимый сейв до 4+.<span class="orig">Improve the Invulnerable save to 4+.</span></p>
+<h4>Охотничий риг Sovereign<span class="orig">SOVEREIGN HUNTING RIG</span></h4>
+<p>Sovereign hunting rig даёт носителю неуязвимый сейв 6+.<span class="orig">A Sovereign hunting rig grants its wearer a 6+ Invulnerable save.</span></p>
+<p><span class="term">Аугментация 1-го уровня:<span class="orig">Tier 1 Augmentation</span></span> улучшите неуязвимый сейв до 5+.<span class="orig">Improve the Invulnerable save to 5+.</span></p>
+<p><span class="term">Аугментация 2-го уровня:<span class="orig">Tier 2 Augmentation</span></span> улучшите характеристику Strength носителя на 1.<span class="orig">Improve the wearer’s Strength characteristic by 1.</span></p>
+<h4>Web incisor и парные<span class="orig">WEB INCISOR &amp; PAIRED WEB INCISOR</span></h4>
+<p><span class="term">Аугментация 1-го уровня:<span class="orig">Tier 1 Augmentation</span></span> улучшите характеристику Long Range до 10”.<span class="orig">Improve the Long Range characteristic to 10”.</span></p>
+<p><span class="term">Аугментация 2-го уровня:<span class="orig">Tier 2 Augmentation</span></span> улучшите характеристику Strength до 4.<span class="orig">Improve the Strength characteristic to 4.</span></p>
+<p><span class="term">Аугментация 3-го уровня:<span class="orig">Tier 3 Augmentation</span></span> улучшите характеристику Long Range до 12”.<span class="orig">Improve the Long Range characteristic to 12”.</span></p>
+<h4>Охотничий риг Yeld<span class="orig">YELD HUNTING RIG</span></h4>
+<p><span class="term">Аугментация 1-го уровня:<span class="orig">Tier 1 Augmentation</span></span> улучшите характеристику Movement носителя на 1”.<span class="orig">Improve the wearer’s Movement characteristic by 1”.</span></p>
+<p><span class="term">Аугментация 2-го уровня:<span class="orig">Tier 2 Augmentation</span></span> носитель получает дополнительный +1 к броскам Save против стрелковых атак, пока находится в укрытии.<details class="orig-spoiler"><summary>Оригинал</summary><p class="orig-full">The wearer adds an additional +1 to their Save rolls against shooting attacks while in cover.</p></details></p>
+<h4>Yeld laser gauntlet и парные<span class="orig">YELD LASER GAUNTLET &amp; PAIRED YELD LASER GAUNTLETS</span></h4>
+<p><span class="term">Аугментация 1-го уровня:<span class="orig">Tier 1 Augmentation</span></span> улучшите характеристику AP до −2.<span class="orig">Improve the AP characteristic to -2.</span></p>
+<p><span class="term">Аугментация 2-го уровня:<span class="orig">Tier 2 Augmentation</span></span> улучшите характеристику Long Range до 24”.<span class="orig">Improve the Long Range characteristic to 24”.</span></p>
+<p><span class="term">Аугментация 3-го уровня:<span class="orig">Tier 3 Augmentation</span></span> улучшите характеристику Strength до 4.<span class="orig">Improve the Strength characteristic to 4.</span></p>
+<h4>Yeld missile gauntlet и парные<span class="orig">YELD MISSILE GAUNTLET &amp; PAIRED YELD MISSILE GAUNTLETS</span></h4>
+<p><span class="term">Аугментация 1-го уровня:<span class="orig">Tier 1 Augmentation</span></span> улучшите характеристику AP до −1.<span class="orig">Improve the AP characteristic to -1.</span></p>
+<p><span class="term">Аугментация 2-го уровня:<span class="orig">Tier 2 Augmentation</span></span> улучшите характеристику Strength до 6.<span class="orig">Improve the Strength characteristic to 6.</span></p>
+<p><span class="term">Аугментация 3-го уровня:<span class="orig">Tier 3 Augmentation</span></span> добавьте свойство Blast (3”).<span class="orig">Add the Blast (3”) trait.</span></p>
+<h4>Крылья Yeld<span class="orig">YELD WINGS</span></h4>
+<p><span class="term">Аугментация 1-го уровня:<span class="orig">Tier 1 Augmentation</span></span> добавьте свойство Parry.<span class="orig">Add the Parry trait.</span></p>
+<p><span class="term">Аугментация 2-го уровня:<span class="orig">Tier 2 Augmentation</span></span> улучшите характеристику Lethality до 2.<span class="orig">Improve the Lethality characteristic to 2.</span></p>
+<p><span class="term">Аугментация 3-го уровня:<span class="orig">Tier 3 Augmentation</span></span> добавьте свойство Knockback (6+).<span class="orig">Add the Knockback (6+) trait.</span></p>
+</div></details>
+<a class="top-link" href="#top">Наверх</a>
+</section>
+</main>
+</div>
+
+<footer class="page-footer">
+    <p>Справочник собран из Gangs of the Underhive &amp; Outlands (Правила/GANGS0_3.pdf).
+    Русский текст — для игры за столом; английский оригинал спрятан под спойлером «Оригинал» или дан короткой подписью рядом.</p>
+    <p><a class="backlink" href="../../">&larr; На главную</a></p>
+    <a class="top-link" href="#top">Наверх</a>
+</footer>
+
+<script src="../handbook-search.js"></script>
+
+</body>
+</html>

@@ -25,54 +25,28 @@
           "extras": []
         },
         {
-          "name": "Mining laser*",
-          "cost": 125,
-          "slots": 2,
+          "name": "Cult icon (maximum one per gang)",
+          "cost": 20,
+          "slots": 0,
           "extras": []
-        }
-      ]
-    },
-    {
-      "id": "f-l1z1q0",
-      "name": "Сверхразум",
-      "type": "Genestealer Cult Abominant",
-      "subtypes": [
-        "Brute"
-      ],
-      "xp": 25,
-      "baseCost": 240,
-      "skills": [],
-      "equipment": [
+        },
         {
-          "name": "Two-handed hammer*",
+          "name": "Mesh armour",
           "cost": 40,
-          "slots": 2,
+          "slots": 0,
           "extras": []
-        }
-      ]
-    },
-    {
-      "id": "f-7vld4l",
-      "name": "Поехавший",
-      "type": "Genestealer Cult Aberrant",
-      "subtypes": [
-        "Ganger"
-      ],
-      "xp": 13,
-      "baseCost": 85,
-      "skills": [],
-      "equipment": [
+        },
         {
-          "name": "Two-handed hammer*",
+          "name": "Power sword",
           "cost": 40,
-          "slots": 2,
+          "slots": 1,
           "extras": []
         }
       ]
     },
     {
       "id": "f-pu0z75",
-      "name": "1сник",
+      "name": "Галя неофит",
       "type": "Genestealer Cult Neophyte Hybrid",
       "subtypes": [
         "Ganger",
@@ -87,9 +61,258 @@
           "cost": 15,
           "slots": 1,
           "extras": []
+        },
+        {
+          "name": "Hazard suit",
+          "cost": 10,
+          "slots": 0,
+          "extras": []
+        },
+        {
+          "name": "Fighting knife",
+          "cost": 5,
+          "slots": 1,
+          "extras": []
+        }
+      ]
+    },
+    {
+      "id": "f-bwnxdd",
+      "name": "Маша неофит",
+      "type": "Genestealer Cult Neophyte Hybrid",
+      "subtypes": [
+        "Ganger",
+        "Specialist"
+      ],
+      "xp": 13,
+      "baseCost": 40,
+      "skills": [],
+      "equipment": [
+        {
+          "name": "Lasgun",
+          "cost": 15,
+          "slots": 1,
+          "extras": []
+        },
+        {
+          "name": "Hazard suit",
+          "cost": 10,
+          "slots": 0,
+          "extras": []
+        },
+        {
+          "name": "Fighting knife",
+          "cost": 5,
+          "slots": 1,
+          "extras": []
+        }
+      ]
+    },
+    {
+      "id": "f-9ti9ec",
+      "name": "Маша неофит",
+      "type": "Genestealer Cult Neophyte Hybrid",
+      "subtypes": [
+        "Ganger",
+        "Specialist"
+      ],
+      "xp": 13,
+      "baseCost": 40,
+      "skills": [],
+      "equipment": [
+        {
+          "name": "Lasgun",
+          "cost": 15,
+          "slots": 1,
+          "extras": []
+        },
+        {
+          "name": "Hazard suit",
+          "cost": 10,
+          "slots": 0,
+          "extras": []
+        },
+        {
+          "name": "Fighting knife",
+          "cost": 5,
+          "slots": 1,
+          "extras": []
+        }
+      ]
+    },
+    {
+      "id": "f-gbj85g",
+      "name": "Маша неофит",
+      "type": "Genestealer Cult Neophyte Hybrid",
+      "subtypes": [
+        "Ganger",
+        "Specialist"
+      ],
+      "xp": 13,
+      "baseCost": 40,
+      "skills": [],
+      "equipment": [
+        {
+          "name": "Lasgun",
+          "cost": 15,
+          "slots": 1,
+          "extras": []
+        },
+        {
+          "name": "Hazard suit",
+          "cost": 10,
+          "slots": 0,
+          "extras": []
+        },
+        {
+          "name": "Fighting knife",
+          "cost": 5,
+          "slots": 1,
+          "extras": []
+        }
+      ]
+    },
+    {
+      "id": "f-i4tcxo",
+      "name": "Маша неофит",
+      "type": "Genestealer Cult Neophyte Hybrid",
+      "subtypes": [
+        "Ganger",
+        "Specialist"
+      ],
+      "xp": 13,
+      "baseCost": 40,
+      "skills": [],
+      "equipment": [
+        {
+          "name": "Lasgun",
+          "cost": 15,
+          "slots": 1,
+          "extras": []
+        },
+        {
+          "name": "Hazard suit",
+          "cost": 10,
+          "slots": 0,
+          "extras": []
+        },
+        {
+          "name": "Fighting knife",
+          "cost": 5,
+          "slots": 1,
+          "extras": []
+        }
+      ]
+    },
+    {
+      "id": "f-db8piy",
+      "name": "Маша неофит",
+      "type": "Genestealer Cult Neophyte Hybrid",
+      "subtypes": [
+        "Ganger",
+        "Specialist"
+      ],
+      "xp": 13,
+      "baseCost": 40,
+      "skills": [],
+      "equipment": [
+        {
+          "name": "Lasgun",
+          "cost": 15,
+          "slots": 1,
+          "extras": []
+        },
+        {
+          "name": "Hazard suit",
+          "cost": 10,
+          "slots": 0,
+          "extras": []
+        },
+        {
+          "name": "Fighting knife",
+          "cost": 5,
+          "slots": 1,
+          "extras": []
+        }
+      ]
+    },
+    {
+      "id": "f-dpvbw1",
+      "name": "Маша неофит",
+      "type": "Genestealer Cult Neophyte Hybrid",
+      "subtypes": [
+        "Ganger",
+        "Specialist"
+      ],
+      "xp": 13,
+      "baseCost": 40,
+      "skills": [],
+      "equipment": [
+        {
+          "name": "Lasgun",
+          "cost": 15,
+          "slots": 1,
+          "extras": []
+        },
+        {
+          "name": "Hazard suit",
+          "cost": 10,
+          "slots": 0,
+          "extras": []
+        },
+        {
+          "name": "Fighting knife",
+          "cost": 5,
+          "slots": 1,
+          "extras": []
+        }
+      ]
+    },
+    {
+      "id": "f-h9wf2x",
+      "name": "Юльяна бомжиха",
+      "type": "Genestealer Cult Neophyte Hybrid",
+      "subtypes": [
+        "Ganger",
+        "Specialist"
+      ],
+      "xp": 13,
+      "baseCost": 40,
+      "skills": [],
+      "equipment": [
+        {
+          "name": "Fighting knife",
+          "cost": 5,
+          "slots": 1,
+          "extras": []
+        }
+      ]
+    },
+    {
+      "id": "f-8quh3d",
+      "name": "Вася кислый",
+      "type": "Genestealer Cult Aberrant",
+      "subtypes": [
+        "Ganger"
+      ],
+      "xp": 13,
+      "baseCost": 85,
+      "skills": [],
+      "equipment": [
+        {
+          "name": "Power hammer",
+          "cost": 40,
+          "slots": 1,
+          "extras": []
+        },
+        {
+          "name": "Mesh armour",
+          "cost": 40,
+          "slots": 0,
+          "extras": []
         }
       ]
     }
   ],
-  "updatedAt": "2026-08-18"
+  "updatedAt": "2026-08-19"
 }

@@ -14,7 +14,15 @@
       "name": "Любители тиранид",
       "faction": "genestealer-cult",
       "factionName": "Культ генокрадов",
-      "rating": 785
+      "rating": 1000
+    },
+    {
+      "file": "test.json",
+      "id": "test",
+      "name": "Тест",
+      "faction": "house-van-saar",
+      "factionName": "Дом Ван Саар",
+      "rating": 155
     },
     {
       "file": "trete-koleno.json",

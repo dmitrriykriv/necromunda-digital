@@ -1,3 +1,18 @@
+export type WeaponTrait = {
+  name: string;
+  text?: string;
+};
+
+export type WeaponProfile = {
+  name: string;
+  sr: string;
+  lr: string;
+  str: string;
+  ap: string;
+  l: string;
+  traits: WeaponTrait[];
+};
+
 export type FighterStats = {
   keys: string[];
   values: string[];
@@ -12,21 +27,7 @@ export type FighterTypeDef = {
   xp: number;
   stats?: FighterStats;
   rules?: string[];
-};
-
-export type WeaponTrait = {
-  name: string;
-  text?: string;
-};
-
-export type WeaponProfile = {
-  name: string;
-  sr: string;
-  lr: string;
-  str: string;
-  ap: string;
-  l: string;
-  traits: WeaponTrait[];
+  weapons?: WeaponProfile[];
 };
 
 export type EquipmentUpgrade = {
@@ -320,6 +321,12 @@ export function findSkill(name: string) {
 
 export function skillLabel(name: string) {
   return findSkill(name)?.label ?? name;
+}
+
+export function splitNamedRule(rule: string) {
+  const index = rule.indexOf(': ');
+  if (index === -1) return { title: rule, text: '' };
+  return { title: rule.slice(0, index), text: rule.slice(index + 2) };
 }
 
 export function findType(catalog: FactionCatalog | undefined, name: string) {

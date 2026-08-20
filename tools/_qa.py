@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Проверяет, что весь текст исходников попал в gangs.html."""
+"""Проверяет, что весь текст исходников попал в pages/gangs/."""
 import html
 import re
 import sys
@@ -12,7 +12,10 @@ TOOLS = Path(__file__).resolve().parent
 PAGES = TOOLS.parent / 'pages'
 
 raw = open(TOOLS / 'gangs_raw.txt', encoding='utf-8').read()
-doc = open(PAGES / 'gangs.html', encoding='utf-8').read()
+gang_pages = sorted((PAGES / 'gangs').glob('*.html'))
+if not gang_pages:
+    raise SystemExit('нет pages/gangs/*.html — сначала python tools/build_gangs.py')
+doc = '\n'.join(path.read_text(encoding='utf-8') for path in gang_pages)
 
 raw = raw.split('=== PAGE 2 ===', 1)[1]
 raw = re.sub(r'=== PAGE \d+ ===', ' ', raw)
@@ -35,11 +38,16 @@ for w, c in sorted(lost.items(), key=lambda kv: -kv[1])[:25]:
     print('   %-24s -%d  (в PDF %d, в HTML %d)' % (w, c, a[w], b.get(w, 0)))
 
 print()
-ids = re.findall(r'id="([^"]+)"', doc)
-dup = [i for i, n in Counter(ids).items() if n > 1]
-print('дубли id: %d %s' % (len(dup), sorted(dup)[:12]))
-anchors = set(re.findall(r'href="#([^"]+)"', doc))
-print('битые якоря:', sorted(anchors - set(ids))[:12])
+dup = []
+broken = []
+for path in gang_pages:
+    page = path.read_text(encoding='utf-8')
+    ids = re.findall(r'id="([^"]+)"', page)
+    dup.extend('%s:%s' % (path.name, i) for i, n in Counter(ids).items() if n > 1)
+    anchors = set(re.findall(r'href="#([^"]+)"', page))
+    broken.extend('%s:#%s' % (path.name, a) for a in sorted(anchors - set(ids)))
+print('дубли id: %d %s' % (len(dup), dup[:12]))
+print('битые якоря:', broken[:12])
 
 bad = 0
 for tnum, tbl in enumerate(re.findall(r'<table.*?</table>', doc, re.S), 1):
@@ -66,7 +74,10 @@ closed = len(re.findall(r'</details>', doc))
 print('details: открыто %d, закрыто %d' % (opened, closed))
 for cls, label in (('fold-fighters', 'блоков с бойцами'),
                    ('fold-equip', 'списков снаряжения'),
-                   ('fold-gear', 'блоков экипировки')):
+                   ('fold-innate', 'блоков встроенного оружия'),
+                   ('fold-wyrd', 'блоков сил виардов'),
+                   ('fold-variant', 'блоков порченных банд'),
+                   ('fold-extra', 'прочих блоков после списка')):
     print('%s: %d' % (label, len(re.findall(r'<details class="fold %s">' % cls, doc))))
 print('карточек бойцов: %d' % len(re.findall(r'<details class="fighter"', doc)))
 print('раскрываемых позиций: %d'
