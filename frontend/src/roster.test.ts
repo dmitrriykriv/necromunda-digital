@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { namesMatch, allSkillNames, findSkill, isWeaponDef, visibleProfiles, type EquipmentDef } from '@shared/catalog';
+import { fighterStatTip, weaponStatTip } from '@shared/statTips';
 import {
   canAddFighters,
   canChangeFaction,
@@ -238,5 +239,15 @@ describe('print catalog helpers', () => {
     expect(isWeaponDef(grenade)).toBe(true);
     expect(isWeaponDef(mesh)).toBe(false);
     expect(isWeaponDef(sight)).toBe(false);
+  });
+});
+
+describe('stat tooltips', () => {
+  it('explains fighter and weapon profile abbreviations', () => {
+    expect(fighterStatTip('WS')).toMatch(/Weapon Skill/);
+    expect(fighterStatTip('Starting XP')).toMatch(/опыт/i);
+    expect(weaponStatTip('SR')).toMatch(/Short Range/);
+    expect(weaponStatTip('S')).toMatch(/Strength/);
+    expect(weaponStatTip('Оружие')).toBeUndefined();
   });
 });

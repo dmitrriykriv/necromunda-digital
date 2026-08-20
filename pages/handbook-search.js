@@ -1,6 +1,154 @@
 (function () {
   'use strict';
 
+  (function rulePopovers() {
+    var TIP_SEL = '.trait, .stat-abbr';
+    var FIGHTER_TIPS = {
+      M: 'Movement — сколько дюймов модель проходит обычным действием Move.',
+      WS: 'Weapon Skill — целевое число ближнего боя на D6. Чем меньше, тем лучше.',
+      BS: 'Ballistic Skill — целевое число стрельбы на D6. Чем меньше, тем лучше.',
+      S: 'Strength — сила модели. Чем выше, тем легче ранить в ближнем бою.',
+      T: 'Toughness — стойкость. Чем выше, тем сложнее ранить эту модель.',
+      W: 'Wounds — сколько урона модель выдержит, прежде чем бросают кубики ранений.',
+      I: 'Initiative — скорость реакции в бою.',
+      A: 'Attacks — сколько кубиков бросается в схватке, пока модель Engaged.',
+      Sv: 'Save — целевое число спасброска брони. Чем меньше, тем лучше.',
+      Ld: 'Leadership — приказы в бою. Проверка: 2D6, нужно выбросить не больше Ld.',
+      Cl: 'Cool — спокойствие под огнём. Проверка: 2D6, нужно выбросить не больше Cl.',
+      Wil: 'Willpower — устойчивость к ужасам. Проверка: 2D6, нужно выбросить не больше Wil.',
+      Int: 'Intelligence — ум и знания. Проверка: 2D6, нужно выбросить не больше Int.',
+      XP: 'Starting XP — опыт, с которым боец начинает в банде.'
+    };
+    var WEAPON_TIPS = {
+      SR: 'Short Range — короткая дистанция. E — только в Engaged, T — шаблон огня, «–» — нельзя.',
+      LR: 'Long Range — дальняя дистанция; за ней попасть нельзя. E / T / «–» — как у SR.',
+      Str: 'Strength — сила оружия для бросков на ранение. S — сила владельца, S+N — с модификатором, «–» — смотрите свойства.',
+      S: 'Strength — сила оружия для бросков на ранение. S — сила владельца, S+N — с модификатором, «–» — смотрите свойства.',
+      AP: 'Armour Piercing — модификатор к спасброску брони, чаще всего отрицательный.',
+      L: 'Lethality — сколько кубиков ранений бросают, если Wounds цели упали до 0.'
+    };
+
+    var pop = document.createElement('div');
+    pop.className = 'trait-pop';
+    pop.id = 'trait-pop';
+    pop.hidden = true;
+    pop.setAttribute('role', 'tooltip');
+    document.body.appendChild(pop);
+
+    var current = null;
+
+    function hide() {
+      current = null;
+      pop.hidden = true;
+      pop.textContent = '';
+    }
+
+    function place(anchor) {
+      var r = anchor.getBoundingClientRect();
+      var pad = 8;
+      var gap = 6;
+      pop.style.left = pad + 'px';
+      pop.style.top = pad + 'px';
+      pop.hidden = false;
+      var w = pop.offsetWidth;
+      var h = pop.offsetHeight;
+      var left = r.left;
+      if (left + w > window.innerWidth - pad) left = window.innerWidth - w - pad;
+      if (left < pad) left = pad;
+      var top = r.bottom + gap;
+      if (top + h > window.innerHeight - pad) top = r.top - h - gap;
+      if (top < pad) top = pad;
+      pop.style.left = Math.round(left) + 'px';
+      pop.style.top = Math.round(top) + 'px';
+    }
+
+    function tipText(el) {
+      var attr = el.getAttribute('data-tip');
+      if (attr) return attr.trim();
+      var tip = el.querySelector('.trait-tip');
+      return tip ? (tip.textContent || '').trim() : '';
+    }
+
+    function show(el) {
+      var text = tipText(el);
+      if (!text) return;
+      if (el.getAttribute('tabindex') !== '0') el.setAttribute('tabindex', '0');
+      current = el;
+      pop.textContent = text;
+      place(el);
+    }
+
+    function closestTip(node) {
+      return node && node.closest ? node.closest(TIP_SEL) : null;
+    }
+
+    function headerLabel(th) {
+      var copy = th.cloneNode(true);
+      var extras = copy.querySelectorAll('.orig, .orig-spoiler, .trait-tip');
+      for (var i = 0; i < extras.length; i++) {
+        extras[i].parentNode.removeChild(extras[i]);
+      }
+      return (copy.textContent || '').replace(/\s+/g, ' ').trim();
+    }
+
+    function markStatHeaders() {
+      var tables = document.querySelectorAll('table');
+      for (var t = 0; t < tables.length; t++) {
+        var heads = tables[t].querySelectorAll('thead th');
+        if (!heads.length) continue;
+        var labels = [];
+        for (var i = 0; i < heads.length; i++) labels.push(headerLabel(heads[i]));
+        var weapon = labels.indexOf('SR') !== -1 || labels.indexOf('LR') !== -1;
+        var fighter = labels.indexOf('WS') !== -1 && labels.indexOf('BS') !== -1;
+        if (!weapon && !fighter) continue;
+        var dict = weapon ? WEAPON_TIPS : FIGHTER_TIPS;
+        if (!weapon && dict.XP) dict['Starting XP'] = dict.XP;
+        for (var j = 0; j < heads.length; j++) {
+          var tip = dict[labels[j]];
+          if (!tip || heads[j].querySelector('.stat-abbr')) continue;
+          var span = document.createElement('span');
+          span.className = 'stat-abbr';
+          span.setAttribute('data-tip', tip);
+          while (heads[j].firstChild) span.appendChild(heads[j].firstChild);
+          heads[j].appendChild(span);
+        }
+      }
+    }
+
+    markStatHeaders();
+
+    document.addEventListener('pointerover', function (e) {
+      var el = closestTip(e.target);
+      if (el) show(el);
+    });
+    document.addEventListener('pointerout', function (e) {
+      var el = closestTip(e.target);
+      if (!el) return;
+      var next = closestTip(e.relatedTarget);
+      if (next) {
+        show(next);
+        return;
+      }
+      hide();
+    });
+    document.addEventListener('focusin', function (e) {
+      var el = closestTip(e.target);
+      if (el) show(el);
+    });
+    document.addEventListener('focusout', function (e) {
+      var el = closestTip(e.target);
+      if (!el || el.contains(e.relatedTarget)) return;
+      hide();
+    });
+    window.addEventListener('scroll', function () {
+      if (current) place(current);
+    }, true);
+    window.addEventListener('resize', hide);
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') hide();
+    });
+  })();
+
   var MOBILE = window.matchMedia('(max-width: 1000px)');
   var tocDrawer = document.querySelector('.toc-drawer');
 
