@@ -1,4 +1,4 @@
-import { findType, type FactionCatalog } from './catalog';
+import { findGear, findType, isWeaponItem, type FactionCatalog } from './catalog';
 
 export type Equipment = {
   name: string;
@@ -173,17 +173,20 @@ export function moveFighterInList<T extends { id: string }>(
   return next;
 }
 
-export function cloneFighter(fighter: Fighter): Fighter {
+export function snapshotFighter(fighter: Fighter): Fighter {
   return {
     ...fighter,
-    id: uid('f'),
-    subtypes: [...fighter.subtypes],
-    skills: [...fighter.skills],
-    equipment: fighter.equipment.map((item) => ({
+    subtypes: [...(fighter.subtypes ?? [])],
+    skills: [...(fighter.skills ?? [])],
+    equipment: (fighter.equipment ?? []).map((item) => ({
       ...item,
       extras: item.extras ? [...item.extras] : [],
     })),
   };
+}
+
+export function cloneFighter(fighter: Fighter): Fighter {
+  return { ...snapshotFighter(fighter), id: uid('f') };
 }
 
 export function copyRosterName(name: string): string {
@@ -192,6 +195,13 @@ export function copyRosterName(name: string): string {
   if (!match) return `${base} (копия)`;
   const n = match[2] ? Number(match[2]) + 1 : 2;
   return `${match[1]} (копия ${n})`;
+}
+
+export function snapshotRoster(roster: Roster): Roster {
+  return {
+    ...roster,
+    fighters: (roster.fighters ?? []).map(snapshotFighter),
+  };
 }
 
 export function cloneRoster(roster: Roster): Roster {
@@ -330,8 +340,14 @@ function weaponSlotCost(item: Equipment): number {
   return slots;
 }
 
-export function weaponSlotsUsed(fighter: Pick<Fighter, 'equipment'>): number {
-  return (fighter.equipment ?? []).reduce((sum, item) => sum + weaponSlotCost(item), 0);
+export function weaponSlotsUsed(
+  fighter: Pick<Fighter, 'equipment'>,
+  catalog?: FactionCatalog,
+): number {
+  return (fighter.equipment ?? []).reduce((sum, item) => {
+    if (catalog && !isWeaponItem(findGear(catalog, item.name), item)) return sum;
+    return sum + weaponSlotCost(item);
+  }, 0);
 }
 
 export function hasExtraWeaponCapacity(
@@ -357,7 +373,7 @@ export function weaponSlotWarning(
 ): string | undefined {
   const max = weaponSlotMax(fighter, catalog);
   if (max <= 0) return undefined;
-  const used = weaponSlotsUsed(fighter);
+  const used = weaponSlotsUsed(fighter, catalog);
   if (used <= max) return undefined;
   const label = fighter.name || fighter.type || 'Боец';
   return `${label}: ${weaponSlotOverMessage(used, max)}`;

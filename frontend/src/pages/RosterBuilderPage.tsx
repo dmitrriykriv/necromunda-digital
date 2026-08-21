@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import { Download, Printer, Save, Upload } from 'lucide-react';
+import { Download, Printer, RotateCcw, Save, Upload } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { rosterWarnings, slugify, type Roster } from '@shared/roster';
+import { rosterFingerprint, rosterWarnings, slugify, type Roster } from '@shared/roster';
 import { useApiHealth, useFactionCatalog, useSaveRoster } from '@/api/hooks';
 import { FighterCard } from '@/components/roster/FighterCard';
 import { GangMetaForm } from '@/components/roster/GangMetaForm';
@@ -16,7 +16,10 @@ import { useRosterStore } from '@/store/rosterStore';
 export function RosterBuilderPage() {
   const roster = useRosterStore((state) => state.roster);
   const currentFile = useRosterStore((state) => state.currentFile);
+  const cleanFingerprint = useRosterStore((state) => state.cleanFingerprint);
   const setRoster = useRosterStore((state) => state.setRoster);
+  const revertDraft = useRosterStore((state) => state.revertDraft);
+  const dirty = rosterFingerprint(roster) !== cleanFingerprint;
   const save = useSaveRoster();
   const health = useApiHealth();
   const catalogQuery = useFactionCatalog(roster.faction);
@@ -105,6 +108,19 @@ export function RosterBuilderPage() {
     }
   }
 
+  function onRevert() {
+    if (!dirty) return;
+    if (
+      !window.confirm(
+        'Сбросить несохранённые правки и вернуть ростер к последнему сохранению?',
+      )
+    ) {
+      return;
+    }
+    revertDraft();
+    setStatus({ text: 'Черновик возвращён к сохранённому состоянию.', ok: true });
+  }
+
   function onExport() {
     const data = payload();
     if (!data.name) {
@@ -184,6 +200,16 @@ export function RosterBuilderPage() {
             <Button type="button" onClick={() => void onSave()} disabled={save.isPending || offline}>
               <Save />
               Сохранить
+            </Button>
+            <Button
+              type="button"
+              variant="outline"
+              disabled={!dirty}
+              title="Вернуть ростер к последнему сохранению"
+              onClick={onRevert}
+            >
+              <RotateCcw />
+              Сбросить правки
             </Button>
             <Button type="button" variant="outline" onClick={onExport}>
               <Download />

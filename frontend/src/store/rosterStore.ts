@@ -11,6 +11,7 @@ import {
   moveFighterInList,
   normalizeRoster,
   rosterFingerprint,
+  snapshotRoster,
   type Equipment,
   type Fighter,
   type Roster,
@@ -18,12 +19,14 @@ import {
 
 type RosterState = {
   roster: Roster;
+  savedRoster: Roster;
   currentFile: string;
   cleanFingerprint: string;
   isDirty: () => boolean;
   setRoster: (roster: Partial<Roster>, file?: string) => void;
   setMeta: (patch: Partial<Roster>) => void;
   reset: () => void;
+  revertDraft: () => void;
   addFighter: () => string;
   copyFighter: (id: string) => string;
   moveFighter: (id: string, insertAt: number) => void;
@@ -48,6 +51,7 @@ export const useRosterStore = create<RosterState>()(
   persist(
     (set, get) => ({
       roster: empty,
+      savedRoster: snapshotRoster(empty),
       currentFile: '',
       cleanFingerprint: rosterFingerprint(empty),
       isDirty: () => rosterFingerprint(get().roster) !== get().cleanFingerprint,
@@ -55,6 +59,7 @@ export const useRosterStore = create<RosterState>()(
         const next = normalizeRoster(roster);
         set({
           roster: next,
+          savedRoster: snapshotRoster(next),
           currentFile: file ?? (roster.id ? `${roster.id}.json` : ''),
           cleanFingerprint: rosterFingerprint(next),
         });
@@ -76,9 +81,14 @@ export const useRosterStore = create<RosterState>()(
         const roster = emptyRoster();
         set({
           roster,
+          savedRoster: snapshotRoster(roster),
           currentFile: '',
           cleanFingerprint: rosterFingerprint(roster),
         });
+      },
+      revertDraft: () => {
+        const saved = get().savedRoster;
+        set({ roster: snapshotRoster(saved) });
       },
       addFighter: () => {
         if (!canAddFighters(get().roster)) return '';
@@ -174,11 +184,16 @@ export const useRosterStore = create<RosterState>()(
       name: 'necromunda-roster-draft-v2',
       partialize: (state) => ({
         roster: state.roster,
+        savedRoster: state.savedRoster,
         currentFile: state.currentFile,
         cleanFingerprint: state.cleanFingerprint,
       }),
       onRehydrateStorage: () => (state) => {
-        if (!state?.cleanFingerprint && state?.roster) {
+        if (!state?.roster) return;
+        if (!state.savedRoster) {
+          state.savedRoster = snapshotRoster(state.roster);
+        }
+        if (!state.cleanFingerprint) {
           state.cleanFingerprint = rosterFingerprint(state.roster);
         }
       },

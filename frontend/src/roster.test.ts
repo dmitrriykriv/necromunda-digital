@@ -3,12 +3,15 @@ import {
   namesMatch,
   allSkillNames,
   findSkill,
+  fighterPatchForType,
+  innateSkillsFromRules,
   isWeaponDef,
   orderedSkillSets,
   skillAccessFor,
   skillOptionLabel,
   visibleProfiles,
   type EquipmentDef,
+  type FactionCatalog,
   type FighterTypeDef,
 } from '@shared/catalog';
 import { fighterStatTip, weaponStatTip } from '@shared/statTips';
@@ -27,6 +30,8 @@ import {
   rosterWarnings,
   rosterFingerprint,
   slugify,
+  snapshotRoster,
+  weaponSlotsUsed,
 } from '@shared/roster';
 
 const sample = normalizeRoster({
@@ -64,6 +69,16 @@ describe('roster math', () => {
     expect(copy.equipment).toEqual(sample.fighters[0].equipment);
     expect(copy.equipment).not.toBe(sample.fighters[0].equipment);
     copy.equipment[0].name = 'changed';
+    expect(sample.fighters[0].equipment[0].name).toBe('flamer');
+  });
+
+  it('snapshots a roster without sharing equipment arrays', () => {
+    const snap = snapshotRoster(sample);
+    expect(snap).toEqual(sample);
+    expect(snap.fighters[0].equipment).not.toBe(sample.fighters[0].equipment);
+    snap.fighters[0].name = 'Другой';
+    snap.fighters[0].equipment[0].name = 'changed';
+    expect(sample.fighters[0].name).toBe('Мальхус');
     expect(sample.fighters[0].equipment[0].name).toBe('flamer');
   });
 
@@ -323,6 +338,170 @@ describe('print catalog helpers', () => {
     ]);
   });
 
+  it('reads built-in skills from the Skills special rule', () => {
+    expect(
+      innateSkillsFromRules([
+        'Навыки: у Malstrain Alpha есть навыки Clamber, Dodge, Infiltrate, Juggernaut, Nerves of Steel и Rain of Blows.',
+        'Ambush Predator: While Active, the Malstrain Alpha may perform the Fade action',
+      ]),
+    ).toEqual([
+      'Clamber',
+      'Dodge',
+      'Infiltrate',
+      'Juggernaut',
+      'Nerves of Steel',
+      'Rain of Blows',
+    ]);
+    expect(
+      innateSkillsFromRules(['Навыки: у Malstrain Tyramite есть навык Dodge.']),
+    ).toEqual(['Dodge']);
+    expect(
+      innateSkillsFromRules([
+        'Навыки: у Escher Blade Maiden есть навыки Deadly Blows и Hit & Run.',
+      ]),
+    ).toEqual(['Deadly Blows', 'Hit & Run']);
+    expect(
+      innateSkillsFromRules([
+        'Навыки: пока Orlock Arms Master на поле боя, его банда может перебрасывать проверки Bottle.',
+      ]),
+    ).toEqual([]);
+    expect(
+      innateSkillsFromRules([
+        'Skills: An Escher Chem Wytch has the Medicate skill Equipment: When added to a Gang Roster, an Escher Chem Wytch may purchase weapons and wargear from the Blades of the Matriarch Equipment List',
+      ]),
+    ).toEqual(['Medicate']);
+  });
+
+  it('applies type subtypes and built-in skills when the type is chosen', () => {
+    const catalog: FactionCatalog = {
+      id: 'malstrain',
+      name: 'Мальстрейн',
+      subtypes: ['Leader', 'Ganger', 'Specialist'],
+      equipment: [],
+      types: [
+        {
+          id: 'malstrain-alpha',
+          name: 'Malstrain Alpha',
+          category: 'Fighter',
+          subtypes: ['Leader'],
+          baseCost: 285,
+          xp: 61,
+          rules: [
+            'Навыки: у Malstrain Alpha есть навыки Clamber, Dodge, Infiltrate, Juggernaut, Nerves of Steel и Rain of Blows.',
+          ],
+        },
+        {
+          id: 'brood-scum',
+          name: 'Malstrain Brood Scum',
+          category: 'Fighter',
+          subtypes: ['Ganger', 'Specialist'],
+          baseCost: 45,
+          xp: 13,
+        },
+        {
+          id: 'outcast-leader',
+          name: 'Outcast Leader',
+          category: 'Fighter',
+          subtypes: ['Leader'],
+          baseCost: 135,
+          xp: 61,
+          skillAccessByArchetype: {
+            Brawler: { primary: ['combat'], secondary: ['brawn'] },
+          },
+        },
+      ],
+    };
+
+    expect(
+      fighterPatchForType(catalog, 'Malstrain Alpha', {
+        type: '',
+        subtypes: ['Ganger'],
+        skills: [],
+        baseCost: 0,
+        xp: 0,
+      }),
+    ).toMatchObject({
+      type: 'Malstrain Alpha',
+      subtypes: ['Leader'],
+      skills: [
+        'Clamber',
+        'Dodge',
+        'Infiltrate',
+        'Juggernaut',
+        'Nerves of Steel',
+        'Rain of Blows',
+      ],
+      baseCost: 285,
+      xp: 61,
+    });
+
+    expect(
+      fighterPatchForType(catalog, 'Outcast Leader', {
+        type: '',
+        subtypes: ['Ganger', 'Brawler'],
+        skills: ['Inspiring'],
+        baseCost: 0,
+        xp: 0,
+      }).subtypes,
+    ).toEqual(['Leader', 'Brawler']);
+
+    expect(
+      fighterPatchForType(catalog, 'Malstrain Brood Scum', {
+        type: 'Malstrain Alpha',
+        subtypes: ['Leader'],
+        skills: [
+          'Clamber',
+          'Dodge',
+          'Infiltrate',
+          'Juggernaut',
+          'Nerves of Steel',
+          'Rain of Blows',
+          'Inspiring',
+        ],
+        baseCost: 285,
+        xp: 61,
+      }),
+    ).toMatchObject({
+      subtypes: ['Ganger', 'Specialist'],
+      skills: ['Inspiring'],
+      baseCost: 45,
+      xp: 13,
+    });
+  });
+
+  it('reads built-in skills from a live Malstrain catalog card', async () => {
+    const { readFileSync } = await import('node:fs');
+    const { dirname, resolve } = await import('node:path');
+    const { fileURLToPath } = await import('node:url');
+    const root = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
+    const data = JSON.parse(
+      readFileSync(resolve(root, 'data/factions/malstrain.json'), 'utf8'),
+    ) as FactionCatalog;
+    const alpha = data.types.find((item) => item.name === 'Malstrain Alpha');
+    expect(fighterPatchForType(data, 'Malstrain Alpha', {
+      type: '',
+      subtypes: ['Ganger'],
+      skills: [],
+      baseCost: 0,
+      xp: 0,
+    })).toMatchObject({
+      subtypes: ['Leader'],
+      skills: [
+        'Clamber',
+        'Dodge',
+        'Infiltrate',
+        'Juggernaut',
+        'Nerves of Steel',
+        'Rain of Blows',
+      ],
+      baseCost: 285,
+      xp: 61,
+    });
+    expect(alpha?.subtypes).toEqual(['Leader']);
+    expect(alpha?.rules?.some((rule) => rule.startsWith('Хищник из засады'))).toBe(true);
+    expect(alpha?.rules?.some((rule) => rule.startsWith('Ambush Predator'))).toBe(false);
+  });
+
   it('treats profiles as weapons and armour as wargear', () => {
     const autogun: EquipmentDef = {
       name: 'Autogun',
@@ -360,10 +539,62 @@ describe('print catalog helpers', () => {
         { name: 'Frag grenades', sr: '-', lr: 'SX2', str: '3', ap: '-', l: '1', traits: [] },
       ],
     };
+    const launcher: EquipmentDef = {
+      name: 'Grenade launcher with frag & krak grenades',
+      cost: 65,
+      slots: 1,
+      category: 'GRENADE LAUNCHERS',
+      list: 'HOUSE CAWDOR',
+      profiles: [
+        { name: 'frag grenades', sr: '6”', lr: '24”', str: '3', ap: '-', l: '1', traits: [] },
+      ],
+    };
     expect(isWeaponDef(autogun)).toBe(true);
-    expect(isWeaponDef(grenade)).toBe(true);
+    expect(isWeaponDef(launcher)).toBe(true);
+    expect(isWeaponDef(grenade)).toBe(false);
     expect(isWeaponDef(mesh)).toBe(false);
     expect(isWeaponDef(sight)).toBe(false);
+  });
+
+  it('does not count grenades toward the weapon slot cap', () => {
+    const catalog: FactionCatalog = {
+      id: 'house-cawdor',
+      name: 'Каудор',
+      types: [],
+      subtypes: [],
+      equipment: [
+        {
+          name: 'Autogun',
+          cost: 20,
+          slots: 1,
+          category: 'AUTO/STUB WEAPONS',
+          list: 'HOUSE CAWDOR',
+        },
+        {
+          name: 'Frag grenades',
+          cost: 30,
+          slots: 0,
+          category: 'GRENADES',
+          list: 'HOUSE CAWDOR',
+          profiles: [
+            { name: 'Frag grenades', sr: '-', lr: 'SX2', str: '3', ap: '-', l: '1', traits: [] },
+          ],
+        },
+      ],
+    };
+    expect(
+      weaponSlotsUsed(
+        {
+          equipment: [
+            { name: 'Autogun', cost: 20, slots: 1 },
+            { name: 'Autogun', cost: 20, slots: 1 },
+            { name: 'Autogun', cost: 20, slots: 1 },
+            { name: 'Frag grenades', cost: 30, slots: 1 },
+          ],
+        },
+        catalog,
+      ),
+    ).toBe(3);
   });
 });
 
