@@ -21,13 +21,24 @@ def norm_key(text):
     return s
 
 
+def mark_inline_terms(ru_html):
+    """Подсветка названий уникальных действий внутри уже экранированного русского текста."""
+    if not ru_html or 'Исчезновение' not in ru_html:
+        return ru_html
+    return re.sub(
+        r'(?<!class="term">)Исчезновение',
+        '<span class="term">Исчезновение</span>',
+        ru_html,
+    )
+
+
 def orig_block(ru_html, en_text):
     """Русский HTML + оригинал: до 15 слов сразу, иначе спойлер.
 
     ru_html уже размечен/экранирован. en_text — сырой английский.
     """
     en_text = (en_text or '').strip()
-    ru_html = ru_html or ''
+    ru_html = mark_inline_terms(ru_html or '')
     if not en_text:
         return ru_html
     plain = re.sub(r'<[^>]+>', '', ru_html)
@@ -56,6 +67,7 @@ def bilingual(en_text):
 
 HEADINGS = {
     'AFFILIATION': 'Принадлежность',
+    'Ambush Predator': 'Хищник из засады',
     'ARANTHIAN EQUIPMENT LIST': 'Список снаряжения арантианцев',
     'ARANTHIAN OUTCAST GANGS': 'Арантианские банды изгоев',
     'ARANTHIAN WEAPONS': 'Арантианское оружие',

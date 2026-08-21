@@ -46,6 +46,10 @@
       "rules": [
         "Навыки: у Goliath Forge Breaker есть навыки Heavy Blows и Unstoppable Force."
       ],
+      "skills": [
+        "Heavy Blows",
+        "Unstoppable Force"
+      ],
       "skillAccess": {
         "primary": [
           "combat"
@@ -99,6 +103,10 @@
       },
       "rules": [
         "Навыки: у Goliath Forge Gunner есть навыки Hip-shooting и Mighty Leap."
+      ],
+      "skills": [
+        "Hip-shooting",
+        "Mighty Leap"
       ],
       "skillAccess": {
         "primary": [
@@ -154,6 +162,10 @@
       "rules": [
         "Навыки: у Goliath Forge Hauler есть навыки Bulging Biceps и Immovable Object."
       ],
+      "skills": [
+        "Bulging Biceps",
+        "Immovable Object"
+      ],
       "skillAccess": {
         "primary": [
           "brawn"
@@ -207,6 +219,9 @@
       },
       "rules": [
         "Навыки: у Goliath Forge Patcher есть навык Medicate."
+      ],
+      "skills": [
+        "Medicate"
       ],
       "skillAccess": {
         "primary": [

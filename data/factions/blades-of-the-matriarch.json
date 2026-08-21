@@ -46,6 +46,10 @@
       "rules": [
         "Навыки: у Escher Blade Maiden есть навыки Deadly Blows и Hit & Run."
       ],
+      "skills": [
+        "Deadly Blows",
+        "Hit & Run"
+      ],
       "skillAccess": {
         "primary": [
           "combat"
@@ -101,6 +105,9 @@
         "Ухаживать за раненым: Escher Chem Wytch может выполнить пост-цикловое действие «Медицинский эскорт». Это действие стоит на 20 кредитов меньше обычного.",
         "Skills: An Escher Chem Wytch has the Medicate skill Equipment: When added to a Gang Roster, an Escher Chem Wytch may purchase weapons and wargear from the Blades of the Matriarch Equipment List"
       ],
+      "skills": [
+        "Medicate"
+      ],
       "skillAccess": {
         "primary": [
           "savant"
@@ -155,6 +162,10 @@
       "rules": [
         "Навыки: у Escher Gun Maiden есть навыки Hip-shooting и Lightning Reflexes."
       ],
+      "skills": [
+        "Hip-shooting",
+        "Lightning Reflexes"
+      ],
       "skillAccess": {
         "primary": [
           "shooting"
@@ -208,6 +219,10 @@
       },
       "rules": [
         "Навыки: у Escher Huntress есть навыки Gunfighter и Hip-shooting."
+      ],
+      "skills": [
+        "Gunfighter",
+        "Hip-shooting"
       ],
       "skillAccess": {
         "primary": [

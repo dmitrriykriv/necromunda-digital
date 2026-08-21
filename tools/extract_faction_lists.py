@@ -215,6 +215,29 @@ def parse_fighter_rules(chunk: str) -> list[str]:
     return rules
 
 
+INNATE_SKILLS_RU = re.compile(
+    r'^Навыки:\s+у\s+.+\s+есть\s+навыки?\s+(.+?)(?:\.|$)',
+)
+INNATE_SKILLS_EN = re.compile(
+    r'^Skills:\s+(?:The |An? )?.+?\s+has the\s+(.+?)\s+skills?(?:\s|[.]|$)',
+    re.I,
+)
+
+
+def parse_innate_skills(rules: list[str]) -> list[str]:
+    found: list[str] = []
+    for rule in rules:
+        text = rule.strip()
+        match = INNATE_SKILLS_RU.match(text) or INNATE_SKILLS_EN.match(text)
+        if not match:
+            continue
+        for part in re.split(r',\s*|\s+и\s+|\s+and\s+', match.group(1)):
+            name = part.strip().rstrip('.')
+            if name and name not in found:
+                found.append(name)
+    return found
+
+
 def strip_innate_weapon_clause(text: str) -> str:
     """Профиль встроенного оружия не дублируем текстом особого правила."""
     text = re.sub(
@@ -674,6 +697,9 @@ def main() -> None:
             rules = expand_referenced_rules(parse_fighter_rules(chunk), chunk, gang_rules)
             if rules:
                 item['rules'] = rules
+            skills = parse_innate_skills(rules)
+            if skills:
+                item['skills'] = skills
             weapons = innate_weapons(chunk, weapon_catalog)
             if weapons:
                 item['weapons'] = weapons

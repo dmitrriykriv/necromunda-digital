@@ -205,6 +205,9 @@
       "rules": [
         "Навыки: у Cawdor Way-Brethren есть навык Dodge."
       ],
+      "skills": [
+        "Dodge"
+      ],
       "skillAccess": {
         "primary": [
           "agility"
@@ -310,6 +313,9 @@
       },
       "rules": [
         "Навыки: у Cawdor Stig-Shambler есть навык Bulging Biceps."
+      ],
+      "skills": [
+        "Bulging Biceps"
       ],
       "weapons": [
         {

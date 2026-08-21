@@ -253,6 +253,9 @@
       "rules": [
         "Навыки: у Van Saar Neotek есть навык Gunfighter."
       ],
+      "skills": [
+        "Gunfighter"
+      ],
       "skillAccess": {
         "primary": [
           "shooting"
@@ -358,6 +361,9 @@
         "Длина поводка: у Cyberachnid длина поводка (Leash range) 3”.",
         "Навыки: у Cyberachnid есть навык Clamber.",
         "Вселяющий страх: Cyberachnid находится в состоянии Fearsome."
+      ],
+      "skills": [
+        "Clamber"
       ],
       "weapons": [
         {

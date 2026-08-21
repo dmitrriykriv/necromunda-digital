@@ -255,6 +255,9 @@
       "rules": [
         "Навыки: у Orlock Wrecker есть навык Nerves of Steel."
       ],
+      "skills": [
+        "Nerves of Steel"
+      ],
       "skillAccess": {
         "primary": [
           "agility"

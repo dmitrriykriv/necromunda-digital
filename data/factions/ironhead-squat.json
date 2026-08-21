@@ -252,6 +252,9 @@
       "rules": [
         "Навыки: у Ironhead Squat Exo-Kyn есть навык Nerves of Steel."
       ],
+      "skills": [
+        "Nerves of Steel"
+      ],
       "skillAccess": {
         "primary": [
           "brawn"
@@ -355,6 +358,9 @@
       "rules": [
         "Комплект сенсоров: Ironhead Squat Vartijan Exo-Driller считает правило Visibility (X”) на 3” больше, чем оно есть.",
         "Навыки: у Ironhead Squat Vartijan Exo-Driller есть навык Bulging Biceps."
+      ],
+      "skills": [
+        "Bulging Biceps"
       ],
       "weapons": [
         {

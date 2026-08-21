@@ -361,6 +361,9 @@
         "Трудно убить: Arthromite Duneskuttler знаменит живучестью; при броске по таблице Lasting Injury для Arthromite Duneskuttler бросьте дважды и примените тот результат, который выберет владеющий игрок.",
         "Навыки: у Arthromite Duneskuttler есть навык Clamber."
       ],
+      "skills": [
+        "Clamber"
+      ],
       "weapons": [
         {
           "name": "Mandibles",

@@ -35,6 +35,7 @@ export type FighterTypeDef = {
   stats?: FighterStats;
   rules?: string[];
   weapons?: WeaponProfile[];
+  skills?: string[];
   skillAccess?: SkillAccess;
   skillAccessByArchetype?: Record<string, SkillAccess>;
 };
@@ -346,6 +347,78 @@ export function findType(catalog: FactionCatalog | undefined, name: string) {
   return catalog?.types.find((item) => item.name === name);
 }
 
+const INNATE_SKILLS_RU = /^Навыки:\s+у\s+.+\s+есть\s+навыки?\s+(.+?)(?:\.|$)/u;
+const INNATE_SKILLS_EN =
+  /^Skills:\s+(?:The |An? )?.+?\s+has the\s+(.+?)\s+skills?(?:\s|[.]|$)/i;
+
+function splitSkillNames(blob: string): string[] {
+  return blob
+    .split(/\s*(?:,| и | and )\s*/)
+    .map((part) => part.replace(/\.$/, '').trim())
+    .filter(Boolean);
+}
+
+export function isInnateSkillListRule(rule: string) {
+  const text = rule.trim();
+  const match = INNATE_SKILLS_RU.exec(text) ?? INNATE_SKILLS_EN.exec(text);
+  if (!match) return false;
+  return text.slice(match[0].length).trim().length === 0;
+}
+
+export function innateSkillsFromRules(rules: string[] | undefined): string[] {
+  const found: string[] = [];
+  for (const rule of rules ?? []) {
+    const text = rule.trim();
+    const match = INNATE_SKILLS_RU.exec(text) ?? INNATE_SKILLS_EN.exec(text);
+    if (!match) continue;
+    for (const name of splitSkillNames(match[1])) {
+      if (!found.includes(name)) found.push(name);
+    }
+  }
+  return found;
+}
+
+export function innateSkillsOf(type: FighterTypeDef | undefined): string[] {
+  if (!type) return [];
+  if (type.skills?.length) return type.skills;
+  return innateSkillsFromRules(type.rules);
+}
+
+export function typeSpecialRules(type: FighterTypeDef | undefined): string[] {
+  return (type?.rules ?? []).filter((rule) => !isInnateSkillListRule(rule));
+}
+
+export function fighterPatchForType(
+  catalog: FactionCatalog | undefined,
+  typeName: string,
+  current: {
+    type: string;
+    subtypes: string[];
+    skills: string[];
+    baseCost: number;
+    xp: number;
+  },
+) {
+  const def = findType(catalog, typeName);
+  const previous = findType(catalog, current.type);
+  const archetypes = catalogArchetypes(catalog);
+  const kept = current.subtypes.filter((subtype) => archetypes.includes(subtype));
+  const base = def?.subtypes ?? [];
+  const previousInnate = new Set(innateSkillsOf(previous));
+  const extras = current.skills.filter((skill) => skill && !previousInnate.has(skill));
+  const skills: string[] = [];
+  for (const name of [...innateSkillsOf(def), ...extras]) {
+    if (!skills.includes(name)) skills.push(name);
+  }
+  return {
+    type: typeName,
+    subtypes: [...base, ...kept.filter((subtype) => !base.includes(subtype))],
+    skills,
+    baseCost: def?.baseCost ?? current.baseCost,
+    xp: def?.xp ?? current.xp,
+  };
+}
+
 export const SKILL_ARCHETYPE_ORDER = [
   'Brawler',
   'Gunslinger',
@@ -424,10 +497,9 @@ export function findGear(catalog: FactionCatalog | undefined, name: string) {
   return catalog?.equipment.find((item) => item.name === name);
 }
 
-const WARGEAR_CATEGORY = /ARMOUR|EQUIPMENT|ACCESSORIES|MOUNTS|^PETS$/i;
+const WARGEAR_CATEGORY = /ARMOUR|EQUIPMENT|ACCESSORIES|MOUNTS|^PETS$|^GRENADES$/i;
 
 export function isWeaponDef(def: EquipmentDef) {
-  if (def.profiles?.length) return true;
   return !WARGEAR_CATEGORY.test(def.category ?? '');
 }
 

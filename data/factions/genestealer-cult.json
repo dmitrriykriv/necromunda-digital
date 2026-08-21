@@ -290,6 +290,9 @@
       "rules": [
         "Навыки: у Genestealer Cult Aberrant есть навык Unstoppable."
       ],
+      "skills": [
+        "Unstoppable"
+      ],
       "skillAccess": {
         "primary": [
           "brawn"
@@ -397,6 +400,9 @@
       "rules": [
         "Навыки: у Genestealer Cult Abominant есть навык Unstoppable."
       ],
+      "skills": [
+        "Unstoppable"
+      ],
       "weapons": [
         {
           "name": "Power sledgehammer",
@@ -485,6 +491,10 @@
         "Знамение удачи: Psychic Familiar чует беду и предупреждает спутника вспышкой предвидения. Пока он в пределах Leash range от владельца, у владельца есть непробиваемый спасбросок 4+.",
         "Предвидение: дар предвидения Psychic Familiar позволяет уклоняться почти от любых атак, кроме самых неожиданных. Это мощное предвидение даёт непробиваемый спасбросок 4+.",
         "Навыки: у Psychic Familiar есть навыки Catfall и Clamber."
+      ],
+      "skills": [
+        "Catfall",
+        "Clamber"
       ],
       "skillAccess": {
         "primary": [

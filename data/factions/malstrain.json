@@ -44,9 +44,17 @@
         ]
       },
       "rules": [
-        "Ambush Predator: While Active, the Malstrain Alpha may perform the Fade action during their activation",
+        "Хищник из засады: пока Active, Malstrain Alpha может выполнить действие Исчезновение во время своей активации.",
         "Ксено-мерзость: Malstrain Alpha не может выполнять пост-цикловые действия.",
         "Навыки: у Malstrain Alpha есть навыки Clamber, Dodge, Infiltrate, Juggernaut, Nerves of Steel и Rain of Blows."
+      ],
+      "skills": [
+        "Clamber",
+        "Dodge",
+        "Infiltrate",
+        "Juggernaut",
+        "Nerves of Steel",
+        "Rain of Blows"
       ],
       "weapons": [
         {
@@ -149,6 +157,13 @@
       "rules": [
         "Ксено-мерзость: Malstrain Genestealer не может выполнять пост-цикловые действия.",
         "Навыки: у Malstrain Genestealer есть навыки Clamber, Dodge, Juggernaut, Nerves of Steel и Rain of Blows."
+      ],
+      "skills": [
+        "Clamber",
+        "Dodge",
+        "Juggernaut",
+        "Nerves of Steel",
+        "Rain of Blows"
       ],
       "weapons": [
         {
@@ -375,6 +390,9 @@
       "rules": [
         "Длина поводка: у Malstrain Tyramite длина поводка (Leash range) 6”.",
         "Навыки: у Malstrain Tyramite есть навык Dodge."
+      ],
+      "skills": [
+        "Dodge"
       ],
       "weapons": [
         {

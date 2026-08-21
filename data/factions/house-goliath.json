@@ -256,6 +256,9 @@
       "rules": [
         "Навыки: у Goliath Forge-Born есть навык Iron Jaw."
       ],
+      "skills": [
+        "Iron Jaw"
+      ],
       "skillAccess": {
         "primary": [
           "brawn"
