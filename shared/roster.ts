@@ -157,6 +157,22 @@ export function emptyGear(kind: 'weapon' | 'wargear' = 'weapon'): Equipment {
   return { name: '', cost: 0, slots: kind === 'weapon' ? 1 : 0, extras: [] };
 }
 
+export function moveFighterInList<T extends { id: string }>(
+  list: T[],
+  id: string,
+  insertAt: number,
+): T[] {
+  const from = list.findIndex((item) => item.id === id);
+  if (from < 0) return list;
+  let to = Math.max(0, Math.min(list.length, insertAt));
+  if (to === from || to === from + 1) return list;
+  const next = [...list];
+  const [item] = next.splice(from, 1);
+  if (from < to) to -= 1;
+  next.splice(to, 0, item);
+  return next;
+}
+
 export function cloneFighter(fighter: Fighter): Fighter {
   return {
     ...fighter,

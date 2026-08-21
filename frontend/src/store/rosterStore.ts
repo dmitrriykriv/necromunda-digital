@@ -8,6 +8,7 @@ import {
   emptyGear,
   emptyRoster,
   factionName,
+  moveFighterInList,
   normalizeRoster,
   rosterFingerprint,
   type Equipment,
@@ -25,6 +26,7 @@ type RosterState = {
   reset: () => void;
   addFighter: () => string;
   copyFighter: (id: string) => string;
+  moveFighter: (id: string, insertAt: number) => void;
   updateFighter: (id: string, patch: Partial<Fighter>) => void;
   removeFighter: (id: string) => void;
   addGear: (fighterId: string, kind?: 'weapon' | 'wargear') => void;
@@ -101,6 +103,12 @@ export const useRosterStore = create<RosterState>()(
         });
         return copy.id;
       },
+      moveFighter: (id, insertAt) =>
+        set((state) => {
+          const fighters = moveFighterInList(state.roster.fighters, id, insertAt);
+          if (fighters === state.roster.fighters) return state;
+          return { roster: { ...state.roster, fighters } };
+        }),
       updateFighter: (id, patch) =>
         set((state) => ({
           roster: {

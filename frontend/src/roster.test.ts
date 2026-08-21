@@ -22,6 +22,7 @@ import {
   creditsRemaining,
   fighterCost,
   gangRating,
+  moveFighterInList,
   normalizeRoster,
   rosterWarnings,
   rosterFingerprint,
@@ -86,6 +87,16 @@ describe('roster math', () => {
 
   it('translates cyrillic slugs', () => {
     expect(slugify('Гимн Пепельной часовни')).toBe('gimn-pepelnoj-chasovni');
+  });
+
+  it('reorders fighters relative to each other', () => {
+    const list = [{ id: 'a' }, { id: 'b' }, { id: 'c' }, { id: 'd' }];
+    expect(moveFighterInList(list, 'b', 0).map((item) => item.id)).toEqual(['b', 'a', 'c', 'd']);
+    expect(moveFighterInList(list, 'a', 2).map((item) => item.id)).toEqual(['b', 'a', 'c', 'd']);
+    expect(moveFighterInList(list, 'a', 4).map((item) => item.id)).toEqual(['b', 'c', 'd', 'a']);
+    expect(moveFighterInList(list, 'c', 1).map((item) => item.id)).toEqual(['a', 'c', 'b', 'd']);
+    expect(moveFighterInList(list, 'b', 1)).toBe(list);
+    expect(moveFighterInList(list, 'b', 2)).toBe(list);
   });
 
   it('warns without a single leader', () => {

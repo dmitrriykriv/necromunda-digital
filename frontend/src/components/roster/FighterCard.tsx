@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { ChevronDown, Copy } from 'lucide-react';
+import { ChevronDown, ChevronUp, Copy, GripVertical } from 'lucide-react';
 import {
   allSkillNames,
   catalogArchetypes,
@@ -71,10 +71,28 @@ export function FighterCard({
   fighter,
   open,
   onToggle,
+  index = 0,
+  count = 1,
+  dragging = false,
+  dropEdge = null,
+  onMoveBy,
+  onDragStart,
+  onDragEnd,
+  onDragOverCard,
+  onDropOnCard,
 }: {
   fighter: Fighter;
   open: boolean;
   onToggle: () => void;
+  index?: number;
+  count?: number;
+  dragging?: boolean;
+  dropEdge?: 'before' | 'after' | null;
+  onMoveBy?: (delta: number) => void;
+  onDragStart?: () => void;
+  onDragEnd?: () => void;
+  onDragOverCard?: (edge: 'before' | 'after') => void;
+  onDropOnCard?: (edge: 'before' | 'after') => void;
 }) {
   const faction = useRosterStore((state) => state.roster.faction);
   const catalogQuery = useFactionCatalog(faction);
@@ -145,19 +163,89 @@ export function FighterCard({
   const weaponUsed = weaponSlotsUsed(fighter);
   const weaponMax = weaponSlotMax(fighter, catalog);
   const overWeapons = weaponMax > 0 && weaponUsed > weaponMax;
+  const canReorder = count > 1 && Boolean(onMoveBy);
 
   return (
     <Card
       id={`fighter-${fighter.id}`}
-      className="mb-3 scroll-mt-36 border-l-[3px] border-l-primary"
+      className={cn(
+        'mb-3 scroll-mt-36 border-l-[3px] border-l-primary',
+        dragging && 'opacity-50',
+        dropEdge === 'before' && 'border-t-2 border-t-primary',
+        dropEdge === 'after' && 'border-b-2 border-b-primary',
+      )}
+      onDragOver={
+        canReorder
+          ? (event) => {
+              event.preventDefault();
+              event.dataTransfer.dropEffect = 'move';
+              const rect = event.currentTarget.getBoundingClientRect();
+              onDragOverCard?.(event.clientY < rect.top + rect.height / 2 ? 'before' : 'after');
+            }
+          : undefined
+      }
+      onDrop={
+        canReorder
+          ? (event) => {
+              event.preventDefault();
+              const rect = event.currentTarget.getBoundingClientRect();
+              onDropOnCard?.(event.clientY < rect.top + rect.height / 2 ? 'before' : 'after');
+            }
+          : undefined
+      }
     >
       <CardHeader className="p-0">
-        <button
-          type="button"
-          className="flex w-full items-center gap-3 p-4 text-left"
-          aria-expanded={open}
-          onClick={onToggle}
-        >
+        <div className="flex items-stretch">
+          {canReorder ? (
+            <div className="flex shrink-0 items-center border-r border-border px-1">
+              <Button
+                type="button"
+                variant="ghost"
+                size="icon"
+                className="h-6 w-6 [&_svg]:size-3.5"
+                disabled={index === 0}
+                title="Выше"
+                aria-label="Переместить выше"
+                onClick={() => onMoveBy?.(-1)}
+              >
+                <ChevronUp />
+              </Button>
+              <button
+                type="button"
+                draggable
+                title="Перетащить"
+                aria-label="Перетащить бойца"
+                className="flex h-6 w-5 cursor-grab items-center justify-center rounded-sm text-muted-foreground hover:bg-accent hover:text-accent-foreground active:cursor-grabbing"
+                onClick={(event) => event.preventDefault()}
+                onDragStart={(event) => {
+                  event.dataTransfer.effectAllowed = 'move';
+                  event.dataTransfer.setData('text/plain', fighter.id);
+                  onDragStart?.();
+                }}
+                onDragEnd={() => onDragEnd?.()}
+              >
+                <GripVertical className="size-3.5" />
+              </button>
+              <Button
+                type="button"
+                variant="ghost"
+                size="icon"
+                className="h-6 w-6 [&_svg]:size-3.5"
+                disabled={index === count - 1}
+                title="Ниже"
+                aria-label="Переместить ниже"
+                onClick={() => onMoveBy?.(1)}
+              >
+                <ChevronDown />
+              </Button>
+            </div>
+          ) : null}
+          <button
+            type="button"
+            className="flex min-w-0 flex-1 items-center gap-3 px-3 py-2.5 text-left"
+            aria-expanded={open}
+            onClick={onToggle}
+          >
           <ChevronDown
             className={cn(
               'size-4 shrink-0 text-muted-foreground transition-transform',
@@ -176,7 +264,8 @@ export function FighterCard({
             ) : null}
           </span>
           <Badge variant="gold">{fighterCost(fighter)} кредитов</Badge>
-        </button>
+          </button>
+        </div>
       </CardHeader>
       {open ? (
       <CardContent className="space-y-4">

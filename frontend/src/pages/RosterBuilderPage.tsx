@@ -22,6 +22,9 @@ export function RosterBuilderPage() {
   const catalogQuery = useFactionCatalog(roster.faction);
   const [status, setStatus] = useState<{ text: string; ok?: boolean } | null>(null);
   const [collapsed, setCollapsed] = useState<Set<string>>(() => new Set());
+  const [dragId, setDragId] = useState<string | null>(null);
+  const [over, setOver] = useState<{ id: string; edge: 'before' | 'after' } | null>(null);
+  const moveFighter = useRosterStore((state) => state.moveFighter);
   const warnings = rosterWarnings(roster, catalogQuery.data);
   const offline = health.isFetched && !health.isSuccess;
   const fighterIds = roster.fighters.map((fighter) => fighter.id);
@@ -39,6 +42,21 @@ export function RosterBuilderPage() {
 
   function collapseAllCards() {
     setCollapsed(allCollapsed ? new Set() : new Set(fighterIds));
+  }
+
+  function moveFighterBy(id: string, delta: number) {
+    const from = roster.fighters.findIndex((fighter) => fighter.id === id);
+    if (from < 0) return;
+    moveFighter(id, from + (delta > 0 ? delta + 1 : delta));
+  }
+
+  function dropFighter(targetId: string, edge: 'before' | 'after') {
+    if (!dragId || dragId === targetId) return;
+    const target = roster.fighters.findIndex((fighter) => fighter.id === targetId);
+    if (target < 0) return;
+    moveFighter(dragId, edge === 'before' ? target : target + 1);
+    setDragId(null);
+    setOver(null);
   }
 
   useEffect(() => {
@@ -213,12 +231,29 @@ export function RosterBuilderPage() {
                 : 'Сначала выберите банду — от неё зависят типы бойцов и снаряжение.'}
             </p>
           ) : (
-            roster.fighters.map((fighter) => (
+            roster.fighters.map((fighter, index) => (
               <FighterCard
                 key={fighter.id}
                 fighter={fighter}
                 open={!collapsed.has(fighter.id)}
                 onToggle={() => toggleFighterCard(fighter.id)}
+                index={index}
+                count={roster.fighters.length}
+                dragging={dragId === fighter.id}
+                dropEdge={over?.id === fighter.id ? over.edge : null}
+                onMoveBy={(delta) => moveFighterBy(fighter.id, delta)}
+                onDragStart={() => {
+                  setDragId(fighter.id);
+                  setOver(null);
+                }}
+                onDragEnd={() => {
+                  setDragId(null);
+                  setOver(null);
+                }}
+                onDragOverCard={(edge) => {
+                  if (dragId && dragId !== fighter.id) setOver({ id: fighter.id, edge });
+                }}
+                onDropOnCard={(edge) => dropFighter(fighter.id, edge)}
               />
             ))
           )}
