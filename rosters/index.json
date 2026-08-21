@@ -17,12 +17,20 @@
       "rating": 1000
     },
     {
+      "file": "malstrain-genestealers.json",
+      "id": "malstrain-genestealers",
+      "name": "Malstrain genestealers",
+      "faction": "malstrain",
+      "factionName": "Мальстрейн",
+      "rating": 1000
+    },
+    {
       "file": "test.json",
       "id": "test",
       "name": "Тест",
       "faction": "house-van-saar",
       "factionName": "Дом Ван Саар",
-      "rating": 200
+      "rating": 315
     },
     {
       "file": "trete-koleno.json",

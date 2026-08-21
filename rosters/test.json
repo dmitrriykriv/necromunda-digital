@@ -43,6 +43,30 @@
           "extras": []
         }
       ]
+    },
+    {
+      "id": "f-ehlnb2",
+      "name": "",
+      "type": "Van Saar Augmek",
+      "subtypes": [
+        "Champion"
+      ],
+      "xp": 37,
+      "baseCost": 95,
+      "skills": [],
+      "equipment": []
+    },
+    {
+      "id": "f-0isiwx",
+      "name": "",
+      "type": "Van Saar Subtek",
+      "subtypes": [
+        "Prospect"
+      ],
+      "xp": 1,
+      "baseCost": 20,
+      "skills": [],
+      "equipment": []
     }
   ],
   "updatedAt": "2026-08-20"

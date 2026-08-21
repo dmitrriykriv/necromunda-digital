@@ -25,12 +25,6 @@
           "extras": []
         },
         {
-          "name": "Cult icon (maximum one per gang)",
-          "cost": 20,
-          "slots": 0,
-          "extras": []
-        },
-        {
           "name": "Mesh armour",
           "cost": 40,
           "slots": 0,
@@ -40,6 +34,37 @@
           "name": "Power sword",
           "cost": 40,
           "slots": 1,
+          "extras": []
+        },
+        {
+          "name": "Cult icon (maximum one per gang)",
+          "cost": 20,
+          "slots": 0,
+          "extras": []
+        }
+      ]
+    },
+    {
+      "id": "f-8quh3d",
+      "name": "Вася кислый",
+      "type": "Genestealer Cult Aberrant",
+      "subtypes": [
+        "Ganger"
+      ],
+      "xp": 13,
+      "baseCost": 85,
+      "skills": [],
+      "equipment": [
+        {
+          "name": "Power hammer",
+          "cost": 40,
+          "slots": 1,
+          "extras": []
+        },
+        {
+          "name": "Mesh armour",
+          "cost": 40,
+          "slots": 0,
           "extras": []
         }
       ]
@@ -110,7 +135,7 @@
     },
     {
       "id": "f-9ti9ec",
-      "name": "Маша неофит",
+      "name": "Саша неофит",
       "type": "Genestealer Cult Neophyte Hybrid",
       "subtypes": [
         "Ganger",
@@ -142,7 +167,7 @@
     },
     {
       "id": "f-gbj85g",
-      "name": "Маша неофит",
+      "name": "Петя неофит",
       "type": "Genestealer Cult Neophyte Hybrid",
       "subtypes": [
         "Ganger",
@@ -174,7 +199,7 @@
     },
     {
       "id": "f-i4tcxo",
-      "name": "Маша неофит",
+      "name": "Игорь неофит",
       "type": "Genestealer Cult Neophyte Hybrid",
       "subtypes": [
         "Ganger",
@@ -206,7 +231,7 @@
     },
     {
       "id": "f-db8piy",
-      "name": "Маша неофит",
+      "name": "Сережа неофит",
       "type": "Genestealer Cult Neophyte Hybrid",
       "subtypes": [
         "Ganger",
@@ -238,7 +263,7 @@
     },
     {
       "id": "f-dpvbw1",
-      "name": "Маша неофит",
+      "name": "Толя неофит",
       "type": "Genestealer Cult Neophyte Hybrid",
       "subtypes": [
         "Ganger",
@@ -284,31 +309,6 @@
           "name": "Fighting knife",
           "cost": 5,
           "slots": 1,
-          "extras": []
-        }
-      ]
-    },
-    {
-      "id": "f-8quh3d",
-      "name": "Вася кислый",
-      "type": "Genestealer Cult Aberrant",
-      "subtypes": [
-        "Ganger"
-      ],
-      "xp": 13,
-      "baseCost": 85,
-      "skills": [],
-      "equipment": [
-        {
-          "name": "Power hammer",
-          "cost": 40,
-          "slots": 1,
-          "extras": []
-        },
-        {
-          "name": "Mesh armour",
-          "cost": 40,
-          "slots": 0,
           "extras": []
         }
       ]
