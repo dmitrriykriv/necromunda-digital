@@ -16,7 +16,9 @@
       ],
       "xp": 61,
       "baseCost": 150,
-      "skills": [],
+      "skills": [
+        "Iron Will"
+      ],
       "equipment": [
         {
           "name": "Refractor field",
@@ -40,6 +42,12 @@
           "name": "Cult icon (maximum one per gang)",
           "cost": 20,
           "slots": 0,
+          "extras": []
+        },
+        {
+          "name": "Laspistol",
+          "cost": 5,
+          "slots": 1,
           "extras": []
         }
       ]
@@ -66,6 +74,12 @@
           "cost": 40,
           "slots": 0,
           "extras": []
+        },
+        {
+          "name": "Laspistol",
+          "cost": 5,
+          "slots": 1,
+          "extras": []
         }
       ]
     },
@@ -82,20 +96,14 @@
       "skills": [],
       "equipment": [
         {
-          "name": "Lasgun",
-          "cost": 15,
+          "name": "Fighting knife",
+          "cost": 5,
           "slots": 1,
           "extras": []
         },
         {
-          "name": "Hazard suit",
-          "cost": 10,
-          "slots": 0,
-          "extras": []
-        },
-        {
-          "name": "Fighting knife",
-          "cost": 5,
+          "name": "Heavy stubber",
+          "cost": 70,
           "slots": 1,
           "extras": []
         }
@@ -117,12 +125,6 @@
           "name": "Lasgun",
           "cost": 15,
           "slots": 1,
-          "extras": []
-        },
-        {
-          "name": "Hazard suit",
-          "cost": 10,
-          "slots": 0,
           "extras": []
         },
         {
@@ -152,12 +154,6 @@
           "extras": []
         },
         {
-          "name": "Hazard suit",
-          "cost": 10,
-          "slots": 0,
-          "extras": []
-        },
-        {
           "name": "Fighting knife",
           "cost": 5,
           "slots": 1,
@@ -181,12 +177,6 @@
           "name": "Lasgun",
           "cost": 15,
           "slots": 1,
-          "extras": []
-        },
-        {
-          "name": "Hazard suit",
-          "cost": 10,
-          "slots": 0,
           "extras": []
         },
         {
@@ -216,12 +206,6 @@
           "extras": []
         },
         {
-          "name": "Hazard suit",
-          "cost": 10,
-          "slots": 0,
-          "extras": []
-        },
-        {
           "name": "Fighting knife",
           "cost": 5,
           "slots": 1,
@@ -245,12 +229,6 @@
           "name": "Lasgun",
           "cost": 15,
           "slots": 1,
-          "extras": []
-        },
-        {
-          "name": "Hazard suit",
-          "cost": 10,
-          "slots": 0,
           "extras": []
         },
         {
@@ -280,12 +258,6 @@
           "extras": []
         },
         {
-          "name": "Hazard suit",
-          "cost": 10,
-          "slots": 0,
-          "extras": []
-        },
-        {
           "name": "Fighting knife",
           "cost": 5,
           "slots": 1,
@@ -306,6 +278,12 @@
       "skills": [],
       "equipment": [
         {
+          "name": "Laspistol",
+          "cost": 5,
+          "slots": 1,
+          "extras": []
+        },
+        {
           "name": "Fighting knife",
           "cost": 5,
           "slots": 1,
@@ -314,5 +292,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-08-20"
+  "updatedAt": "2026-08-21"
 }

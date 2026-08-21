@@ -1,6 +1,6 @@
 {
   "id": "test",
-  "name": "Тест",
+  "name": "Лазерфаги",
   "faction": "house-van-saar",
   "factionName": "Дом Ван Саар",
   "notes": "",
@@ -16,17 +16,13 @@
       ],
       "xp": 61,
       "baseCost": 115,
-      "skills": [],
+      "skills": [
+        "Precision Shot"
+      ],
       "equipment": [
         {
           "name": "Bio-booster",
           "cost": 25,
-          "slots": 0,
-          "extras": []
-        },
-        {
-          "name": "Frag grenades",
-          "cost": 30,
           "slots": 0,
           "extras": []
         },
@@ -41,24 +37,238 @@
           "cost": 10,
           "slots": 1,
           "extras": []
+        },
+        {
+          "name": "Power knife",
+          "cost": 30,
+          "slots": 1,
+          "extras": []
+        },
+        {
+          "name": "Refractor field",
+          "cost": 50,
+          "slots": 0,
+          "extras": []
+        },
+        {
+          "name": "Grav chute",
+          "cost": 30,
+          "slots": 0,
+          "extras": []
+        },
+        {
+          "name": "Smoke grenades",
+          "cost": 15,
+          "slots": 0,
+          "extras": []
         }
       ]
     },
     {
       "id": "f-ehlnb2",
-      "name": "",
-      "type": "Van Saar Augmek",
+      "name": "Джон",
+      "type": "Van Saar Archeotek",
       "subtypes": [
-        "Champion"
+        "Champion",
+        "Loner"
       ],
-      "xp": 37,
-      "baseCost": 95,
+      "xp": 49,
+      "baseCost": 85,
+      "skills": [
+        "Fast Shot"
+      ],
+      "equipment": [
+        {
+          "name": "Mesh armour",
+          "cost": 40,
+          "slots": 0,
+          "extras": []
+        },
+        {
+          "name": "Plasma pistol",
+          "cost": 70,
+          "slots": 1,
+          "extras": []
+        },
+        {
+          "name": "Las carbine",
+          "cost": 20,
+          "slots": 1,
+          "extras": []
+        },
+        {
+          "name": "Frag grenades",
+          "cost": 30,
+          "slots": 1,
+          "extras": []
+        },
+        {
+          "name": "Servo-claw",
+          "cost": 40,
+          "slots": 1,
+          "extras": []
+        }
+      ]
+    },
+    {
+      "id": "f-90msrx",
+      "name": "Джейкоб",
+      "type": "Van Saar Tek",
+      "subtypes": [
+        "Ganger",
+        "Specialist"
+      ],
+      "xp": 13,
+      "baseCost": 30,
       "skills": [],
-      "equipment": []
+      "equipment": [
+        {
+          "name": "Las sub-carbine",
+          "cost": 10,
+          "slots": 1,
+          "extras": []
+        },
+        {
+          "name": "Power knife",
+          "cost": 30,
+          "slots": 1,
+          "extras": []
+        }
+      ]
+    },
+    {
+      "id": "f-2bp3lq",
+      "name": "Генри",
+      "type": "Van Saar Tek",
+      "subtypes": [
+        "Ganger",
+        "Specialist"
+      ],
+      "xp": 13,
+      "baseCost": 30,
+      "skills": [],
+      "equipment": [
+        {
+          "name": "Laspistol",
+          "cost": 5,
+          "slots": 1,
+          "extras": []
+        },
+        {
+          "name": "Shock baton",
+          "cost": 20,
+          "slots": 1,
+          "extras": []
+        }
+      ]
     },
     {
       "id": "f-0isiwx",
-      "name": "",
+      "name": "Смит",
+      "type": "Van Saar Tek",
+      "subtypes": [
+        "Ganger",
+        "Specialist"
+      ],
+      "xp": 13,
+      "baseCost": 30,
+      "skills": [],
+      "equipment": [
+        {
+          "name": "Las carbine",
+          "cost": 20,
+          "slots": 1,
+          "extras": []
+        },
+        {
+          "name": "Fighting knife",
+          "cost": 5,
+          "slots": 1,
+          "extras": []
+        }
+      ]
+    },
+    {
+      "id": "f-zaxnpa",
+      "name": "Джек",
+      "type": "Van Saar Tek",
+      "subtypes": [
+        "Ganger",
+        "Specialist"
+      ],
+      "xp": 13,
+      "baseCost": 30,
+      "skills": [],
+      "equipment": [
+        {
+          "name": "Las carbine",
+          "cost": 20,
+          "slots": 1,
+          "extras": []
+        },
+        {
+          "name": "Fighting knife",
+          "cost": 5,
+          "slots": 1,
+          "extras": []
+        }
+      ]
+    },
+    {
+      "id": "f-bhedmn",
+      "name": "Джошуа",
+      "type": "Van Saar Tek",
+      "subtypes": [
+        "Ganger",
+        "Specialist"
+      ],
+      "xp": 13,
+      "baseCost": 30,
+      "skills": [],
+      "equipment": [
+        {
+          "name": "Las carbine",
+          "cost": 20,
+          "slots": 1,
+          "extras": []
+        },
+        {
+          "name": "Fighting knife",
+          "cost": 5,
+          "slots": 1,
+          "extras": []
+        }
+      ]
+    },
+    {
+      "id": "f-kaahwc",
+      "name": "Томас",
+      "type": "Van Saar Tek",
+      "subtypes": [
+        "Ganger",
+        "Specialist"
+      ],
+      "xp": 13,
+      "baseCost": 30,
+      "skills": [],
+      "equipment": [
+        {
+          "name": "Lasgun",
+          "cost": 15,
+          "slots": 1,
+          "extras": []
+        },
+        {
+          "name": "Fighting knife",
+          "cost": 5,
+          "slots": 1,
+          "extras": []
+        }
+      ]
+    },
+    {
+      "id": "f-t76eyp",
+      "name": "Уильям",
       "type": "Van Saar Subtek",
       "subtypes": [
         "Prospect"
@@ -66,8 +276,46 @@
       "xp": 1,
       "baseCost": 20,
       "skills": [],
-      "equipment": []
+      "equipment": [
+        {
+          "name": "Lasgun",
+          "cost": 15,
+          "slots": 1,
+          "extras": []
+        },
+        {
+          "name": "Fighting knife",
+          "cost": 5,
+          "slots": 1,
+          "extras": []
+        }
+      ]
+    },
+    {
+      "id": "f-8mtj5y",
+      "name": "Исаак",
+      "type": "Van Saar Subtek",
+      "subtypes": [
+        "Prospect"
+      ],
+      "xp": 1,
+      "baseCost": 20,
+      "skills": [],
+      "equipment": [
+        {
+          "name": "Lasgun",
+          "cost": 15,
+          "slots": 1,
+          "extras": []
+        },
+        {
+          "name": "Fighting knife",
+          "cost": 5,
+          "slots": 1,
+          "extras": []
+        }
+      ]
     }
   ],
-  "updatedAt": "2026-08-20"
+  "updatedAt": "2026-08-21"
 }

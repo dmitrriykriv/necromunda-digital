@@ -27,10 +27,10 @@
     {
       "file": "test.json",
       "id": "test",
-      "name": "Тест",
+      "name": "Лазерфаги",
       "faction": "house-van-saar",
       "factionName": "Дом Ван Саар",
-      "rating": 315
+      "rating": 1000
     },
     {
       "file": "trete-koleno.json",
