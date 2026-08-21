@@ -5,6 +5,7 @@ import {
   isWeaponItem,
   skillLabel,
   splitNamedRule,
+  typeSpecialRules,
   uniqueTraits,
   visibleProfiles,
   type EquipmentDef,
@@ -39,6 +40,7 @@ export function PrintFighterCard({
   });
   const traits = uniqueTraits(allProfiles);
   const stats = type?.stats;
+  const specialRules = typeSpecialRules(type);
   const weaponBlocks = gearBlocks.filter(({ def, item }) => isWeaponItem(def, item));
   const wargearBlocks = gearBlocks.filter(({ def, item }) => !isWeaponItem(def, item));
 
@@ -91,11 +93,11 @@ export function PrintFighterCard({
         </section>
       )}
 
-      {type?.rules?.length ? (
+      {specialRules.length ? (
         <section className="print-section">
           <h3>Особые правила</h3>
           <dl className="print-traits">
-            {type.rules.map((rule) => {
+            {specialRules.map((rule) => {
               const { title, text } = splitNamedRule(rule);
               return (
                 <div key={rule}>

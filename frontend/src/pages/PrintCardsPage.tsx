@@ -3,6 +3,7 @@ import { Printer } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useFactionCatalog } from '@/api/hooks';
 import { PrintFighterCard } from '@/components/roster/PrintFighterCard';
+import { PrintNameCards } from '@/components/roster/PrintNameCards';
 import { Button } from '@/components/ui/button';
 import { useRosterStore } from '@/store/rosterStore';
 
@@ -80,7 +81,7 @@ export function PrintCardsPage() {
         </div>
       </header>
 
-      <main className="print-sheet mx-auto max-w-[1100px] space-y-5 p-6 pb-16">
+      <main className="print-sheet mx-auto max-w-[1100px] p-6 pb-16">
         {catalogQuery.isLoading && roster.faction ? (
           <p className="text-sm text-muted-foreground">Загрузка каталога банды…</p>
         ) : null}
@@ -89,15 +90,20 @@ export function PrintCardsPage() {
             В ростере ещё нет бойцов. Добавьте их в построителе, затем вернитесь сюда.
           </p>
         ) : (
-          fighters.map((fighter) => (
-            <PrintFighterCard
-              key={fighter.id}
-              fighter={fighter}
-              roster={roster}
-              catalog={catalog}
-              showTraitGlossary={traitGlossary}
-            />
-          ))
+          <>
+            <div className="print-full-cards space-y-5">
+              {fighters.map((fighter) => (
+                <PrintFighterCard
+                  key={fighter.id}
+                  fighter={fighter}
+                  roster={roster}
+                  catalog={catalog}
+                  showTraitGlossary={traitGlossary}
+                />
+              ))}
+            </div>
+            <PrintNameCards fighters={fighters} />
+          </>
         )}
       </main>
     </div>
