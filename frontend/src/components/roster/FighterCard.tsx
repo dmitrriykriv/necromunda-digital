@@ -9,6 +9,7 @@ import {
   findType,
   fighterPatchForType,
   gearCost,
+  gearPreviewText,
   isWeaponItem,
   orderedSkillSets,
   skillAccessFor,
@@ -21,6 +22,7 @@ import {
   type FactionCatalog,
   type SkillAccessLevel,
 } from '@shared/catalog';
+import { DescribedSelect } from '@/components/roster/DescribedSelect';
 import { FighterStatsTable } from '@/components/roster/FighterStatsTable';
 import { WeaponProfileTable } from '@/components/roster/WeaponProfileTable';
 import { fighterCost, weaponSlotMax, weaponSlotOverMessage, weaponSlotsUsed, type Equipment, type Fighter } from '@shared/roster';
@@ -388,36 +390,28 @@ export function FighterCard({
               return (
                 <div key={`${fighter.id}-skill-${index}`} className="space-y-1.5">
                   <div className="flex gap-2">
-                    <NativeSelect
+                    <DescribedSelect
                       value={skill}
                       className="skill-picker"
-                      onChange={(event) => setSkill(index, event.target.value)}
-                    >
-                      <option value="">— выберите навык —</option>
-                      {extra ? <option value={extra}>{extra}</option> : null}
-                      {skillGroups.map((group) => {
+                      placeholder="— выберите навык —"
+                      extra={extra ? { value: extra, label: extra } : null}
+                      onChange={(next) => setSkill(index, next)}
+                      groups={skillGroups.map((group) => {
                         const level = skillAccessLevel(skillAccess, group.id);
-                        return (
-                          <optgroup
-                            key={group.id}
-                            label={skillSetGroupLabel(group, level)}
-                            className={skillAccessClass(level)}
-                          >
-                            {group.skills
-                              .filter((item) => item.name === skill || !taken.has(item.name))
-                              .map((item) => (
-                                <option
-                                  key={item.name}
-                                  value={item.name}
-                                  className={skillAccessClass(level)}
-                                >
-                                  {skillOptionLabel(item, level)}
-                                </option>
-                              ))}
-                          </optgroup>
-                        );
+                        return {
+                          label: skillSetGroupLabel(group, level),
+                          className: skillAccessClass(level),
+                          options: group.skills
+                            .filter((item) => item.name === skill || !taken.has(item.name))
+                            .map((item) => ({
+                              value: item.name,
+                              label: skillOptionLabel(item, level),
+                              description: item.text,
+                              className: skillAccessClass(level),
+                            })),
+                        };
                       })}
-                    </NativeSelect>
+                    />
                     <Button
                       type="button"
                       variant="destructive"
@@ -607,31 +601,29 @@ function GearRow({
         )}
       >
         {hasList ? (
-          <NativeSelect
+          <DescribedSelect
             value={item.name}
             disabled={!hasFaction || loading}
-            onChange={(event) => applyName(event.target.value)}
-          >
-            <option value="">
-              {!hasFaction
+            placeholder={
+              !hasFaction
                 ? 'Сначала выберите банду'
                 : loading
                   ? 'Загрузка списка…'
                   : weapon
                     ? '— выберите оружие —'
-                    : '— выберите предмет —'}
-            </option>
-            {extra && <option value={extra}>{extra}</option>}
-            {groups.map((group) => (
-              <optgroup key={group.label} label={group.label}>
-                {group.items.map((entry) => (
-                  <option key={`${group.label}-${entry.name}`} value={entry.name}>
-                    {entry.name} · {entry.cost} cr
-                  </option>
-                ))}
-              </optgroup>
-            ))}
-          </NativeSelect>
+                    : '— выберите предмет —'
+            }
+            extra={extra ? { value: extra, label: extra } : null}
+            onChange={applyName}
+            groups={groups.map((group) => ({
+              label: group.label,
+              options: group.items.map((entry) => ({
+                value: entry.name,
+                label: `${entry.name} · ${entry.cost} cr`,
+                description: gearPreviewText(entry),
+              })),
+            }))}
+          />
         ) : (
           <Input
             placeholder={

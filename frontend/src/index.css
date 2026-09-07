@@ -167,6 +167,15 @@ select.skill-picker optgroup.skill-access-s {
   font-weight: 400;
 }
 
+.skill-access-p {
+  color: var(--skill-primary);
+  font-weight: 600;
+}
+
+.skill-access-s {
+  color: var(--skill-secondary);
+}
+
 .print-card {
   background: #1a1d26;
   border: 1px solid hsl(var(--border));

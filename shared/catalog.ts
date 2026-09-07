@@ -578,3 +578,16 @@ export function uniqueTraits(profiles: WeaponProfile[]) {
   }
   return list;
 }
+
+export function gearPreviewText(def: EquipmentDef | undefined) {
+  if (!def) return '';
+  const parts: string[] = [];
+  if (def.description?.trim()) parts.push(def.description.trim());
+  for (const profile of visibleProfiles(def, [])) {
+    const stats = `SR ${profile.sr} · LR ${profile.lr} · S ${profile.str} · AP ${profile.ap} · L ${profile.l}`;
+    const header = namesMatch(profile.name, def.name) ? stats : `${profile.name}: ${stats}`;
+    const traits = profile.traits.map((trait) => trait.name).join(', ');
+    parts.push(traits ? `${header}\n${traits}` : header);
+  }
+  return parts.join('\n\n');
+}

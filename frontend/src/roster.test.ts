@@ -4,6 +4,7 @@ import {
   allSkillNames,
   findSkill,
   fighterPatchForType,
+  gearPreviewText,
   innateSkillsFromRules,
   isWeaponDef,
   orderedSkillSets,
@@ -283,6 +284,40 @@ describe('print catalog helpers', () => {
       'Autogun',
       'warp rounds',
     ]);
+  });
+
+  it('builds a hover preview for weapons and wargear', () => {
+    const gun: EquipmentDef = {
+      name: 'Stub cannon',
+      cost: 35,
+      slots: 1,
+      category: 'AUTO/STUB WEAPONS',
+      list: 'HOUSE GOLIATH',
+      profiles: [
+        {
+          name: 'Stub cannon',
+          sr: '9”',
+          lr: '18”',
+          str: '5',
+          ap: '-',
+          l: '1',
+          traits: [{ name: 'Knockback (5+)' }],
+        },
+      ],
+    };
+    const mesh: EquipmentDef = {
+      name: 'Mesh armor',
+      cost: 15,
+      slots: 0,
+      category: 'ARMOUR',
+      list: 'HOUSE GOLIATH',
+      description: 'Save +1 против попаданий в ближнем бою.',
+    };
+    expect(gearPreviewText(gun)).toContain('SR 9”');
+    expect(gearPreviewText(gun)).toContain('Knockback (5+)');
+    expect(gearPreviewText(gun)).not.toContain('Stub cannon:');
+    expect(gearPreviewText(mesh)).toBe('Save +1 против попаданий в ближнем бою.');
+    expect(gearPreviewText(undefined)).toBe('');
   });
 
   it('lists universal skills by English name', () => {
