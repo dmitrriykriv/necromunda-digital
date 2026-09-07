@@ -49,7 +49,14 @@
         "Nerves of Steel",
         "Rain of Blows"
       ],
-      "equipment": []
+      "equipment": [
+        {
+          "name": "Malstrain Tyramite",
+          "cost": 70,
+          "slots": 0,
+          "extras": []
+        }
+      ]
     },
     {
       "id": "f-y0x0yc",
@@ -70,8 +77,8 @@
       "equipment": []
     },
     {
-      "id": "f-w3kh5p",
-      "name": "Boy",
+      "id": "f-re2si6",
+      "name": "BOY",
       "type": "Malstrain Brood Scum",
       "subtypes": [
         "Ganger",
@@ -82,47 +89,9 @@
       "skills": [],
       "equipment": [
         {
-          "name": "Lasgun",
-          "cost": 15,
+          "name": "Shotgun with solid & scatter ammo",
+          "cost": 35,
           "slots": 1,
-          "extras": []
-        },
-        {
-          "name": "Hazard suit",
-          "cost": 10,
-          "slots": 0,
-          "extras": []
-        },
-        {
-          "name": "Flail",
-          "cost": 10,
-          "slots": 1,
-          "extras": []
-        }
-      ]
-    },
-    {
-      "id": "f-8zr8v5",
-      "name": "Boy",
-      "type": "Malstrain Brood Scum",
-      "subtypes": [
-        "Ganger",
-        "Specialist"
-      ],
-      "xp": 13,
-      "baseCost": 45,
-      "skills": [],
-      "equipment": [
-        {
-          "name": "Lasgun",
-          "cost": 15,
-          "slots": 1,
-          "extras": []
-        },
-        {
-          "name": "Hazard suit",
-          "cost": 10,
-          "slots": 0,
           "extras": []
         },
         {
@@ -134,5 +103,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-08-20"
+  "updatedAt": "2026-08-22"
 }
