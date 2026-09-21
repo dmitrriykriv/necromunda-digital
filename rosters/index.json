@@ -4,6 +4,7 @@
       "file": "gimn-pepelnoj-chasovni.json",
       "id": "gimn-pepelnoj-chasovni",
       "name": "Гимн Пепельной часовни",
+      "author": "Учебный пример",
       "faction": "house-cawdor",
       "factionName": "Дом Каудор",
       "rating": 1000
@@ -12,6 +13,7 @@
       "file": "lyubiteli-tiranid.json",
       "id": "lyubiteli-tiranid",
       "name": "Любители тиранид",
+      "author": "Владимир",
       "faction": "genestealer-cult",
       "factionName": "Культ генокрадов",
       "rating": 1000
@@ -20,6 +22,7 @@
       "file": "malstrain-genestealers.json",
       "id": "malstrain-genestealers",
       "name": "Malstrain genestealers",
+      "author": "Владимир",
       "faction": "malstrain",
       "factionName": "Мальстрейн",
       "rating": 1000
@@ -28,6 +31,7 @@
       "file": "test.json",
       "id": "test",
       "name": "Лазерфаги",
+      "author": "Дмитрий",
       "faction": "house-van-saar",
       "factionName": "Дом Ван Саар",
       "rating": 1000
@@ -36,6 +40,7 @@
       "file": "trete-koleno.json",
       "id": "trete-koleno",
       "name": "Третье Колено",
+      "author": "Дмитрий",
       "faction": "genestealer-cult",
       "factionName": "Культ генокрадов",
       "rating": 1000
