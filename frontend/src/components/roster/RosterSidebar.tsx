@@ -1,6 +1,8 @@
+import { useMemo, useState } from 'react';
 import { Copy, Loader2, Plus, Trash2 } from 'lucide-react';
-import { cloneRoster } from '@shared/roster';
+import { cloneRoster, rosterIndexMeta } from '@shared/roster';
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 import { Separator } from '@/components/ui/separator';
 import {
   fetchRoster,
@@ -22,6 +24,18 @@ export function RosterSidebar() {
   const save = useSaveRoster();
   const remove = useDeleteRoster();
   const online = health.isSuccess;
+  const [query, setQuery] = useState('');
+  const rosters = useMemo(() => {
+    const list = index.data?.rosters ?? [];
+    const needle = query.trim().toLowerCase();
+    if (!needle) return list;
+    return list.filter((item) => {
+      const haystack = [item.name, item.author, item.factionName, item.faction]
+        .join(' ')
+        .toLowerCase();
+      return haystack.includes(needle);
+    });
+  }, [index.data?.rosters, query]);
 
   async function copySaved(file: string) {
     try {
@@ -68,6 +82,15 @@ export function RosterSidebar() {
         <Plus />
         Новый ростер
       </Button>
+      {(index.data?.rosters.length ?? 0) > 0 ? (
+        <Input
+          type="search"
+          value={query}
+          placeholder="Найти по автору или названию"
+          className="mb-3"
+          onChange={(event) => setQuery(event.target.value)}
+        />
+      ) : null}
       <ul className="space-y-2">
         {index.isLoading && (
           <li className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -78,8 +101,13 @@ export function RosterSidebar() {
         {index.data?.rosters.length === 0 && (
           <li className="text-sm text-muted-foreground">Пока нет сохранённых банд.</li>
         )}
-        {index.data?.rosters.map((item) => (
-          <li key={item.file} className="flex gap-1">
+        {index.data && index.data.rosters.length > 0 && rosters.length === 0 ? (
+          <li className="text-sm text-muted-foreground">Ничего не найдено.</li>
+        ) : null}
+        {rosters.map((item) => {
+          const meta = rosterIndexMeta(item);
+          return (
+          <li key={item.file} className="flex items-stretch gap-1">
             <button
               type="button"
               className={`flex min-w-0 flex-1 flex-col rounded-md border px-3 py-2 text-left text-sm ${
@@ -92,10 +120,12 @@ export function RosterSidebar() {
               }}
             >
               <strong className="truncate">{item.name}</strong>
-              <span className="text-xs text-muted-foreground">
-                {item.factionName || item.faction}
-                {item.rating ? ` · ${item.rating} cr` : ''}
-              </span>
+              {meta ? (
+                <span className="truncate text-xs text-muted-foreground">{meta}</span>
+              ) : null}
+              {item.author ? (
+                <span className="truncate text-xs text-muted-foreground">{item.author}</span>
+              ) : null}
             </button>
             {online && (
               <>
@@ -103,6 +133,7 @@ export function RosterSidebar() {
                   type="button"
                   variant="outline"
                   size="icon"
+                  className="h-auto min-h-9 w-9 shrink-0 self-stretch"
                   title="Скопировать ростер"
                   disabled={save.isPending}
                   onClick={() => {
@@ -115,6 +146,7 @@ export function RosterSidebar() {
                   type="button"
                   variant="destructive"
                   size="icon"
+                  className="h-auto min-h-9 w-9 shrink-0 self-stretch"
                   title="Удалить из списка"
                   onClick={() => {
                     deleteSaved(item.file);
@@ -125,7 +157,8 @@ export function RosterSidebar() {
               </>
             )}
           </li>
-        ))}
+          );
+        })}
       </ul>
       <Separator className="my-4" />
       <nav className="space-y-1 text-sm">

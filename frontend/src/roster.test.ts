@@ -32,6 +32,8 @@ import {
   rosterFingerprint,
   slugify,
   snapshotRoster,
+  toIndexItem,
+  rosterIndexMeta,
   weaponSlotsUsed,
 } from '@shared/roster';
 
@@ -99,6 +101,23 @@ describe('roster math', () => {
     const b = rosterFingerprint({ ...sample, updatedAt: '2026-08-19' });
     expect(a).toBe(b);
     expect(rosterFingerprint({ ...sample, name: 'Другое' })).not.toBe(a);
+    expect(rosterFingerprint({ ...sample, author: 'Дмитрий' })).not.toBe(a);
+  });
+
+  it('keeps author on clone and index cards', () => {
+    const withAuthor = normalizeRoster({ ...sample, author: 'Дмитрий' });
+    expect(withAuthor.author).toBe('Дмитрий');
+    expect(cloneRoster(withAuthor).author).toBe('Дмитрий');
+    expect(toIndexItem(withAuthor, 'gimn.json').author).toBe('Дмитрий');
+    expect(toIndexItem(normalizeRoster({ name: 'Без автора' }), 'x.json').author).toBe('');
+    expect(rosterIndexMeta(toIndexItem(withAuthor, 'gimn.json'))).toBe('315 cr');
+    expect(
+      rosterIndexMeta({
+        factionName: 'Дом Каудор',
+        faction: 'house-cawdor',
+        rating: 1000,
+      }),
+    ).toBe('Дом Каудор · 1000 cr');
   });
 
   it('translates cyrillic slugs', () => {

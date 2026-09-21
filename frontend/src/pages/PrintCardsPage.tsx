@@ -45,6 +45,7 @@ export function PrintCardsPage() {
             </h1>
             <p className="mt-1 text-sm text-muted-foreground">
               {roster.name || 'Без названия'}
+              {roster.author ? ` · ${roster.author}` : ''}
               {roster.factionName ? ` · ${roster.factionName}` : ''}
               {fighters.length ? ` · ${fighters.length} карт` : ''}
             </p>

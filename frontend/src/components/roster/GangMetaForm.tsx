@@ -21,6 +21,15 @@ export function GangMetaForm() {
         />
       </label>
       <label className="flex flex-col gap-1.5">
+        <Label htmlFor="gang-author">Автор</Label>
+        <Input
+          id="gang-author"
+          value={roster.author}
+          placeholder="Ваше имя"
+          onChange={(event) => setMeta({ author: event.target.value })}
+        />
+      </label>
+      <label className="flex flex-col gap-1.5">
         <Label htmlFor="gang-faction">Банда</Label>
         <select
           id="gang-faction"

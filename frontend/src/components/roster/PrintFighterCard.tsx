@@ -49,7 +49,8 @@ export function PrintFighterCard({
       <header className="print-card-head">
         <div className="min-w-0">
           <p className="print-kicker">
-            {[roster.factionName, roster.name].filter(Boolean).join(' · ') || 'Necromunda'}
+            {[roster.factionName, roster.name, roster.author].filter(Boolean).join(' · ') ||
+              'Necromunda'}
           </p>
           <h2 className="print-name">{fighter.name || 'Боец'}</h2>
           <p className="print-meta">

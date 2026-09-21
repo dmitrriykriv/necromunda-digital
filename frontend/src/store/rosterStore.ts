@@ -21,6 +21,7 @@ type RosterState = {
   roster: Roster;
   savedRoster: Roster;
   currentFile: string;
+  lastAuthor: string;
   cleanFingerprint: string;
   isDirty: () => boolean;
   setRoster: (roster: Partial<Roster>, file?: string) => void;
@@ -53,6 +54,7 @@ export const useRosterStore = create<RosterState>()(
       roster: empty,
       savedRoster: snapshotRoster(empty),
       currentFile: '',
+      lastAuthor: '',
       cleanFingerprint: rosterFingerprint(empty),
       isDirty: () => rosterFingerprint(get().roster) !== get().cleanFingerprint,
       setRoster: (roster, file) => {
@@ -66,19 +68,23 @@ export const useRosterStore = create<RosterState>()(
       },
       setMeta: (patch) =>
         set((state) => {
+          let nextPatch = patch;
           if (
             patch.faction !== undefined &&
             patch.faction !== state.roster.faction &&
             !canChangeFaction(state.roster)
           ) {
             const { faction: _ignored, ...rest } = patch;
-            if (Object.keys(rest).length === 0) return state;
-            return { roster: patchRoster(state.roster, rest) };
+            nextPatch = rest;
           }
-          return { roster: patchRoster(state.roster, patch) };
+          if (Object.keys(nextPatch).length === 0) return state;
+          const roster = patchRoster(state.roster, nextPatch);
+          if (nextPatch.author === undefined) return { roster };
+          return { roster, lastAuthor: nextPatch.author.trim() };
         }),
       reset: () => {
         const roster = emptyRoster();
+        roster.author = get().lastAuthor;
         set({
           roster,
           savedRoster: snapshotRoster(roster),
@@ -186,13 +192,18 @@ export const useRosterStore = create<RosterState>()(
         roster: state.roster,
         savedRoster: state.savedRoster,
         currentFile: state.currentFile,
+        lastAuthor: state.lastAuthor,
         cleanFingerprint: state.cleanFingerprint,
       }),
       onRehydrateStorage: () => (state) => {
         if (!state?.roster) return;
+        state.roster = normalizeRoster(state.roster);
         if (!state.savedRoster) {
           state.savedRoster = snapshotRoster(state.roster);
+        } else {
+          state.savedRoster = normalizeRoster(state.savedRoster);
         }
+        state.lastAuthor = state.lastAuthor ?? state.roster.author ?? '';
         if (!state.cleanFingerprint) {
           state.cleanFingerprint = rosterFingerprint(state.roster);
         }

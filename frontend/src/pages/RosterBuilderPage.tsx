@@ -77,6 +77,7 @@ export function RosterBuilderPage() {
     return {
       ...roster,
       name,
+      author: roster.author.trim(),
       notes: roster.notes.trim(),
       id: slugify(roster.id || name || 'roster'),
       updatedAt: new Date().toISOString().slice(0, 10),

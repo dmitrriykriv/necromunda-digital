@@ -21,6 +21,7 @@ export type Fighter = {
 export type Roster = {
   id: string;
   name: string;
+  author: string;
   faction: string;
   factionName: string;
   notes: string;
@@ -34,6 +35,7 @@ export type RosterIndexItem = {
   file: string;
   id: string;
   name: string;
+  author: string;
   faction: string;
   factionName: string;
   rating: number;
@@ -130,6 +132,7 @@ export function emptyRoster(): Roster {
   return {
     id: '',
     name: '',
+    author: '',
     faction: '',
     factionName: '',
     notes: '',
@@ -393,6 +396,7 @@ function weaponUnitsWord(count: number) {
 
 export function normalizeRoster(data: Partial<Roster>): Roster {
   const roster = { ...emptyRoster(), ...data };
+  roster.author = String(roster.author ?? '').trim();
   roster.fighters = (roster.fighters ?? []).map((fighter) => ({
     ...emptyFighter(false),
     ...fighter,
@@ -414,10 +418,23 @@ export function toIndexItem(roster: Roster, file: string): RosterIndexItem {
     file,
     id: roster.id || file.replace(/\.json$/, ''),
     name: roster.name || file,
+    author: roster.author || '',
     faction: roster.faction || '',
     factionName: roster.factionName || '',
     rating: gangRating(roster),
   };
+}
+
+export function rosterIndexMeta(
+  item: Pick<RosterIndexItem, 'factionName' | 'faction' | 'rating'>,
+) {
+  return [
+    item.factionName || item.faction,
+    item.rating ? `${item.rating} cr` : '',
+  ]
+    .map((part) => String(part || '').trim())
+    .filter(Boolean)
+    .join(' · ');
 }
 
 /** Stable snapshot for unsaved-change checks. Ignores updatedAt. */
@@ -425,6 +442,7 @@ export function rosterFingerprint(roster: Roster): string {
   return JSON.stringify({
     id: roster.id,
     name: roster.name,
+    author: roster.author,
     faction: roster.faction,
     factionName: roster.factionName,
     notes: roster.notes,
