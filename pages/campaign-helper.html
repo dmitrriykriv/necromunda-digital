@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Necromunda — ведение кампании</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#14161c">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="topbar" id="top">
+    <a class="backlink" href="../">&larr; На главную</a>
+    <h1>Necromunda</h1>
+    <p>Подсказка по ведению кампании &mdash; порядок для арбитра и игроков</p>
+    <p class="source">Источник: SKIRMUNDA &bull; Using the Campaign</p>
+</header>
+
+<div class="layout">
+
+<aside class="sidebar">
+    <details class="toc-drawer">
+    <summary class="toc-toggle">Содержание</summary>
+    <nav>
+        <h2>Кампания</h2>
+        <details open>
+            <summary>Шаги</summary>
+            <ul>
+                <li><a href="#master">Подготовка мастера</a></li>
+                <li><a href="#players">Подготовка игроков</a></li>
+                <li><a href="#cycles">Шаги кампании</a></li>
+                <li><a href="#wrapup">Завершение</a></li>
+            </ul>
+        </details>
+        <p class="sidebar-note">
+            <a href="core-rules.html#kampaniya">Структура кампании</a><br>
+            <a href="core-rules.html#sozdanie-bandy">Создание банды</a><br>
+            <a href="roster-builder.html">Построитель ростера</a><br>
+            <a href="mission-helper.html">Генерация миссий</a>
+        </p>
+    </nav>
+    </details>
+</aside>
+
+<main class="content">
+
+<section id="obzor">
+    <h2>Порядок кампании<span class="en">Campaign Guide</span></h2>
+    <p class="lede">Краткая шпаргалка, а не полный свод. Полные формулировки &mdash; в
+    <a href="core-rules.html#kampaniya">справочнике</a>. Интерактивный учёт территорий и боёв появится позже.</p>
+    <ol class="seq">
+        <li><a href="#master">Подготовка мастера</a> &mdash; стол, игроки, территории и фазы.</li>
+        <li><a href="#players">Подготовка игроков</a> &mdash; банды на 1000 кредитов и стартовые территории.</li>
+        <li><a href="#cycles">Шаги кампании</a> &mdash; вызов, бой, пост-бой и пост-цикл.</li>
+        <li><a href="#wrapup">Завершение</a> &mdash; отчёт, триумфы и роспуск банд.</li>
+    </ol>
+</section>
+
+<section id="master">
+    <h2>Подготовка мастера<span class="en">Arbitrator Setup</span></h2>
+    <p class="lede">Арбитр собирает кампанию до первого боя и потом ведёт фазы.</p>
+    <ul>
+        <li>Собрать игроков и список всех банд кампании.</li>
+        <li>Зафиксировать срок: обычно семь циклов &mdash; три оккупации, один простой, три захвата. Цикл удобно считать неделей.</li>
+        <li>Сгенерировать стартовые территории: у каждой банды <strong>Поселение</strong> (Settlement, нельзя потерять и ставить на кон) и ещё одна случайная.</li>
+        <li>Сгенерировать пул территорий для боёв броском D66: 3 игрока &mdash; 9, 4 &mdash; 12, 5 &mdash; 15, 6 &mdash; 18, 7 &mdash; 21, 8 &mdash; 24. Одна и та же территория может выпасть несколько раз.</li>
+        <li>Держать под рукой таблицы сценариев (за столом удобнее <a href="mission-helper.html">генератор миссий</a>).</li>
+        <li>Вести контроль территорий, объявлять начало и конец каждой фазы и всей кампании.</li>
+    </ul>
+    <p>Подробнее: <a href="core-rules.html#kampaniya">арбитр и территории</a>,
+    <a href="core-rules.html#territorii">таблица территорий</a>.</p>
+    <a class="top-link" href="#top">&uarr; наверх</a>
+</section>
+
+<section id="players">
+    <h2>Подготовка игроков<span class="en">Player Setup</span></h2>
+    <p class="lede">Каждый игрок основывает банду до первого цикла.</p>
+    <ul>
+        <li>Собрать банду на стандартный бюджет <strong>1000 кредитов</strong> только из списка своей банды. Непотраченное уходит в запас (Stash). Арбитр может изменить бюджет.</li>
+        <li>Ровно одна модель с подтипом Leader. Чемпионов, громил и прихвостней в сумме не больше остальных.</li>
+        <li>Репутация начинается с 1. Рейтинг банды (Gang Rating) &mdash; сумма стоимостей моделей.</li>
+        <li>Записать ростер: имена, типы, снаряжение, стартовый XP. Удобнее в <a href="roster-builder.html">построителе</a>; учебный разбор &mdash; <a href="roster-example.html">ростер Каудор</a>.</li>
+        <li>Получить у арбитра стартовые территории: Поселение и одну случайную.</li>
+        <li>Если банда помечена как Enduring после прошлой кампании, нового лидера и старых бойцов берут по правилам живучей банды, а не нанимают лидера из списка.</li>
+    </ul>
+    <p>Подробнее: <a href="core-rules.html#sozdanie-bandy">создание банды</a>,
+    <a href="gangs.html">списки банд</a>,
+    <a href="core-rules.html#zhivuchaya-banda">живучая банда</a>.</p>
+    <a class="top-link" href="#top">&uarr; наверх</a>
+</section>
+
+<section id="cycles">
+    <h2>Шаги кампании<span class="en">Campaign Cycles</span></h2>
+    <p class="lede">Три фазы: оккупация (3 цикла), простой (1 цикл), захват (3 цикла).</p>
+
+    <h3>Каждый цикл</h3>
+    <ol class="seq">
+        <li><strong>Вызовы.</strong> Каждый игрок может сделать один вызов за территорию, которую сам называет. В первом цикле порядок случайный, дальше &mdash; от меньшего Gang Rating. В оккупации ставка &mdash; неконтролируемая территория (если таких нет &mdash; территория вызванной банды). В захвате ставка &mdash; территория вызванной банды. Отказ отдаёт территорию вызывающему, если вызванная банда ещё не делала вызов в этом цикле и не получила два или больше вызовов.</li>
+        <li><strong>Бой.</strong> Сценарий по таблицам (вызывающий &mdash; атакующий), затем подготовка к бою, партия и <a href="core-rules.html#posle-boya">пост-бой</a>: итоги и ранения, переназначить территорию, награды и XP, зачистка, отчёт арбитру.</li>
+        <li><strong>После цикла.</strong> Пост-цикловые действия (торговля, доход с работы, врач), сбор дохода с территорий, обновление ростера: снять In Recovery, нанять и купить снаряжение.</li>
+    </ol>
+
+    <h3>Простой</h3>
+    <p>Все банды получают 250 кредитов на снаряжение из списка банды и/или набор новых моделей в пост-цикловой последовательности этого цикла. Эти кредиты нужно потратить сейчас и нельзя положить в Stash, но можно дополнить из Stash.</p>
+
+    <h3>Награды за бой</h3>
+    <div class="table-wrap">
+        <table class="compact">
+            <caption>Награды по фазам</caption>
+            <thead>
+                <tr>
+                    <th>Результат</th>
+                    <th>Оккупация</th>
+                    <th>Захват</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Победитель</td><td>2D3&times;10 кредитов, +1 Reputation</td><td>2D6&times;10 кредитов, +2 Reputation</td></tr>
+                <tr><td>Проигравший / ничья</td><td>D3&times;10 кредитов</td><td>D6&times;10 кредитов</td></tr>
+                <tr><td>Побочное задание</td><td>D3&times;10 кредитов</td><td>D6&times;10 кредитов</td></tr>
+                <tr><td>Потеря территории</td><td>&mdash;</td><td>&minus;1 Reputation</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <p>Подробнее: <a href="core-rules.html#kampaniya">вызовы и фазы</a>,
+    <a href="core-rules.html#pered-boem">подготовка к бою</a>,
+    <a href="core-rules.html#posle-boya">после боя</a>,
+    <a href="core-rules.html#posle-cikla">после цикла</a>.</p>
+    <a class="top-link" href="#top">&uarr; наверх</a>
+</section>
+
+<section id="wrapup">
+    <h2>Завершение<span class="en">Campaign Wrap-Up</span></h2>
+    <p class="lede">Когда арбитр объявляет конец кампании, все игроки вместе проходят Wrap-up.</p>
+    <ol class="seq">
+        <li><strong>Сообщить результаты.</strong> Каждый игрок докладывает арбитру, как банда выступила по каждому триумфу.</li>
+        <li><strong>Вручить триумфы.</strong> Доминатор (больше всех территорий), Мясник (больше всех Out of Action), Кредитор (наибольшее богатство), Поджигатель войны (больше всех боёв), Серый кардинал (наивысшая Reputation). При ничьей побеждает большее богатство; если снова ничья &mdash; триумф получают все. Бонус действует только на следующую кампанию этой банды.</li>
+        <li><strong>Роспуск банды.</strong> Можно пометить банду как Enduring и выбрать один заработанный триумф для бонуса в следующей кампании. Тогда нового лидера берут из старой банды, а не из списка.</li>
+    </ol>
+    <p>Подробнее: <a href="core-rules.html#zavershenie-kampanii">завершение кампании</a>,
+    <a href="core-rules.html#zhivuchaya-banda">основание живучей банды</a>.</p>
+    <a class="top-link" href="#top">&uarr; наверх</a>
+</section>
+
+</main>
+</div>
+
+<footer class="page-footer">
+    <p>Краткая подсказка по кампании SKIRMUNDA. Полные правила &mdash; в справочнике основных правил.</p>
+    <p><a class="backlink" href="../">&larr; На главную</a>
+       &nbsp;·&nbsp; <a href="core-rules.html#kampaniya">Структура кампании</a>
+       &nbsp;·&nbsp; <a href="mission-helper.html">Генерация миссий</a>
+       &nbsp;·&nbsp; <a href="roster-builder.html">Построитель ростера</a></p>
+</footer>
+
+<script src="handbook-search.js"></script>
+
+</body>
+</html>
