@@ -67,6 +67,8 @@ def bilingual(en_text):
 
 HEADINGS = {
     'AFFILIATION': 'Принадлежность',
+    'A House Divided': 'Разделённый дом',
+    'Medic Equipment': 'Снаряжение медика',
     'Ambush Predator': 'Хищник из засады',
     'ARANTHIAN EQUIPMENT LIST': 'Список снаряжения арантианцев',
     'ARANTHIAN OUTCAST GANGS': 'Арантианские банды изгоев',
@@ -331,16 +333,63 @@ def translate_skill_cell(text):
 # ---------------------------------------------------------------------------
 
 RE_EQUIP_BUY = re.compile(
-    r'^(?:Equipment:\s*)?When added to a Gang Roster, an? (?P<who>.+?) may purchase '
+    r'^(?:(?:Medic )?Equipment:\s*)?When added to a Gang Roster, an? (?P<who>.+?) may purchase '
     r'weapons and wargear from the (?P<lst>.+?)(?: Equipment List)?:?$',
     re.I)
 RE_EQUIP_BUY_SPACE = re.compile(
     r'^(?:Equipment:\s*)?When added to a Gang Roster, an? (?P<who>.+?) may purchase '
     r'weapons and wargear from the (?P<lst>.+?) List:?$',
     re.I)
+RE_EQUIP_INCLUDED = re.compile(
+    r'^(?:Equipment:\s*)?An? (?P<who>.+?) is equipped with (?P<gear>.+?) '
+    r'\(included in their (?:starting )?cost\) and, when added to a Gang Roster, '
+    r'may purchase weapons and wargear from the (?P<lst>.+?)(?: Equipment List)?:?$',
+    re.I)
+RE_EQUIP_AFFILIATION = re.compile(
+    r'^(?:Equipment:\s*)?When added to a Gang Roster, an? (?P<who>.+?) may purchase '
+    r'weapons and wargear from the Equipment List granted to them by their '
+    r'(?P<src>Affiliation|Leader.s Affiliation), the Outcast Equipment List and from the '
+    r'Trading Post with a combined TP of (?P<tp>\d+) or less:?$',
+    re.I)
+RE_EQUIP_LEGACY = re.compile(
+    r'^(?:Equipment:\s*)?When added to a Gang Roster, an? (?P<who>.+?) may purchase '
+    r'weapons and wargear from an? Equipment List granted to them by their Gang Legacy'
+    r'(?: and from the Trading Post with a combined TP of (?P<tp>\d+) or less)?:?$',
+    re.I)
+RE_ARMED_OPTIONS = re.compile(
+    r'^(?:Equipment:\s*)?An? (?P<who>.+?) is armed with (?P<wep>.+?)\. '
+    r'They may select (?:any of |from )?the (?:following|below) options? when added '
+    r'to a Gang Roster(?:[;.] they may not purchase or be equipped with additional '
+    r'weapons or wargear)?:?$',
+    re.I)
+RE_MAY_REPLACE = re.compile(
+    r'^(?:[-•]\s*)?An? (?P<who>.+?) (?:may|can) replace (?:its|their) (?P<old>.+?) with '
+    r'(?:an? )?(?P<new>.+?)\s*\.{0,80}\+?(?P<n>\d+)\s*(?:cr|credits)\.?$',
+    re.I)
+RE_MAY_BE_EQUIPPED = re.compile(
+    r'^(?:[-•]\s*)?An? (?P<who>.+?) may be equipped with (?:an? )?(?P<item>.+?)'
+    r'\s*\.{0,80}\+?(?P<n>\d+)\s*(?:cr|credits)\.?$',
+    re.I)
+RE_MAY_REPLACE_NOPRICE = re.compile(
+    r'^(?:[-•]\s*)?An? (?P<who>.+?) (?:may|can) replace (?:its|their) (?P<old>.+?) with '
+    r'(?:an? )?(?P<new>.+?)\.?$',
+    re.I)
+RE_MAY_BE_EQUIPPED_NOPRICE = re.compile(
+    r'^(?:[-•]\s*)?An? (?P<who>.+?) may be equipped with (?:an? )?(?P<item>.+?)\.?$',
+    re.I)
+RE_REPLACE_THE = re.compile(
+    r'^(?:[-•]\s*)?Replace the (?P<old>.+) with (?:an? )?(?P<new>.+?)'
+    r'(?:\s*\.{2,}\s*\+?(?P<n>\d+)\s*(?:cr|credits))?\.?$',
+    re.I)
+RE_MOUNTED_OPTIONS = re.compile(
+    r'^An? (?P<who>.+?) is equipped with (?P<gear>.+?)\. It may select '
+    r'(?:any of )?the following options? when added to the Gang Roster or during '
+    r'any Post-cycle Sequence:?$',
+    re.I)
 RE_CAMPAIGN = re.compile(
     r'^(?:[-•]\s*)?During the course of a campaign, they may be given additional '
-    r'weapons and wargear purchased from the (?P<lst>.+?) and from the Trading Post\.?$',
+    r'(?P<what>weapons and wargear|Pets) purchased from (?:the )?(?P<lst>.+?)'
+    r'(?: and (?:from )?the Trading Post)?\.?$',
     re.I)
 RE_START_SKILLS = re.compile(
     r'^Starting Skills?:\s*When added to a Gang Roster, all (?P<who>.+?) '
@@ -374,6 +423,10 @@ RE_CREDITS = re.compile(
 RE_EXCLUSIVE = re.compile(r'^Exclusive\s*$', re.I)
 
 
+def _bare_noun(text):
+    return re.sub(r'^(?:an?|the)\s+', '', (text or '').strip(), flags=re.I)
+
+
 def _tpl_equip_buy(who, lst):
     lst = re.sub(r'\s+Equipment List$', '', lst, flags=re.I).strip()
     return ('Снаряжение: при добавлении в ростер банды %s может купить оружие и '
@@ -382,14 +435,85 @@ def _tpl_equip_buy(who, lst):
 
 def try_templates(text):
     s = re.sub(r'\s+', ' ', text.strip())
+    m = RE_EQUIP_AFFILIATION.match(s)
+    if m:
+        src = 'их принадлежностью' if m.group('src').lower() == 'affiliation' else 'принадлежностью лидера'
+        return (
+            'Снаряжение: при добавлении в ростер банды %s может купить оружие и '
+            'снаряжение из списка, данного %s, из списка Outcast и с Trading Post '
+            'на суммарно не больше %s TP:'
+            % (m.group('who'), src, m.group('tp'))
+        )
+    m = RE_EQUIP_LEGACY.match(s)
+    if m:
+        tail = ''
+        if m.group('tp'):
+            tail = ' и с Trading Post на суммарно не больше %s TP' % m.group('tp')
+        return (
+            'Снаряжение: при добавлении в ростер банды %s может купить оружие и '
+            'снаряжение из списка, данного Gang Legacy%s:'
+            % (m.group('who'), tail)
+        )
     m = RE_EQUIP_BUY.match(s) or RE_EQUIP_BUY_SPACE.match(s)
     if m:
         return _tpl_equip_buy(m.group('who'), m.group('lst'))
+    m = RE_EQUIP_INCLUDED.match(s)
+    if m:
+        lst = re.sub(r'\s+Equipment List$', '', m.group('lst'), flags=re.I).strip()
+        return (
+            'Снаряжение: %s экипирован %s (входит в стоимость) и при добавлении '
+            'в ростер банды может купить оружие и снаряжение из списка %s:'
+            % (m.group('who'), _bare_noun(m.group('gear')), lst)
+        )
+    m = RE_ARMED_OPTIONS.match(s)
+    if m:
+        return (
+            'Снаряжение: %s вооружён %s. При добавлении в ростер банды можно '
+            'выбрать вариант ниже. Дополнительное оружие и снаряжение покупать '
+            'и надевать нельзя.'
+            % (m.group('who'), _bare_noun(m.group('wep')))
+        )
+    m = RE_MAY_REPLACE.match(s)
+    if m:
+        return '%s может заменить %s на %s: +%s кредитов' % (
+            m.group('who'), m.group('old'), _bare_noun(m.group('new').rstrip('.')), m.group('n'))
+    m = RE_MAY_BE_EQUIPPED.match(s)
+    if m:
+        return '%s может быть экипирован %s: +%s кредитов' % (
+            m.group('who'), _bare_noun(m.group('item').rstrip('.')), m.group('n'))
+    m = RE_MAY_REPLACE_NOPRICE.match(s)
+    if m:
+        return '%s может заменить %s на %s' % (
+            m.group('who'), m.group('old'), _bare_noun(m.group('new').rstrip('.')))
+    m = RE_MAY_BE_EQUIPPED_NOPRICE.match(s)
+    if m:
+        return '%s может быть экипирован %s' % (
+            m.group('who'), _bare_noun(m.group('item').rstrip('.')))
+    m = RE_REPLACE_THE.match(s)
+    if m:
+        ru = 'Заменить %s на %s' % (
+            m.group('old'), _bare_noun(m.group('new').rstrip('.')))
+        if m.group('n'):
+            ru += ': +%s кредитов' % m.group('n')
+        return ru
+    m = RE_MOUNTED_OPTIONS.match(s)
+    if m:
+        return (
+            '%s экипирован %s. Он может выбрать следующий вариант при добавлении '
+            'в ростер банды или в любой пост-цикловой последовательности:'
+            % (m.group('who'), _bare_noun(m.group('gear')))
+        )
     m = RE_CAMPAIGN.match(s)
     if m:
         lst = re.sub(r'\s+(Equipment )?List$', '', m.group('lst'), flags=re.I)
-        return ('В ходе кампании им можно давать дополнительное оружие и снаряжение, '
-                'купленное из списка %s и с Trading Post.' % lst)
+        if m.group('what').lower() == 'pets':
+            ru = 'В ходе кампании им можно давать дополнительных питомцев из списка %s' % lst
+        else:
+            ru = ('В ходе кампании им можно давать дополнительное оружие и снаряжение, '
+                  'купленное из списка %s' % lst)
+        if 'trading post' in s.lower():
+            ru += ' и с Trading Post'
+        return ru + '.'
     m = RE_START_SKILLS.match(s)
     if m:
         who = m.group('who')
@@ -405,7 +529,7 @@ def try_templates(text):
     m = RE_ARMED.match(s)
     if m:
         return ('Снаряжение: %s вооружён(а) %s. Дополнительное оружие и снаряжение '
-                'покупать и надевать нельзя.' % (m.group('who'), m.group('wep')))
+                'покупать и надевать нельзя.' % (m.group('who'), _bare_noun(m.group('wep'))))
     m = RE_NO_WEAPONS.match(s)
     if m:
         return ('Снаряжение: у %s нет оружия. Дополнительное оружие и снаряжение '
@@ -416,8 +540,9 @@ def try_templates(text):
         return '%s: у %s есть навык %s.' % (label, m.group('who'), m.group('sk'))
     m = RE_CC_ONLY.match(s)
     if m:
+        lst = re.sub(r'\s+Equipment List$', '', m.group('lst'), flags=re.I).strip()
         return ('Их можно экипировать только оружием из раздела оружия ближнего боя '
-                'списка %s и Trading Post.' % m.group('lst'))
+                'списка %s и Trading Post.' % lst)
     m = RE_CREDITS.match(s)
     if m:
         label = m.group('label') or ''
@@ -437,6 +562,42 @@ def try_templates(text):
 # ---------------------------------------------------------------------------
 
 TRANSLATIONS = {}
+DOT_PRICE = re.compile(r'(?:\s*\.{2,})?\s*\+?\d+\s*(?:cr|credits)\.?$', re.I)
+
+
+def _strip_leading_bullets(text):
+    return re.sub(r'^(?:[•\-]\s+)+', '', text or '')
+
+
+def _key_variants(text):
+    k = norm_key(text)
+    if not k:
+        return set()
+    variants = {k, k.rstrip(' .:;—-')}
+    no_bullet = _strip_leading_bullets(k)
+    variants.add(no_bullet)
+    variants.add(no_bullet.rstrip(' .:;—-'))
+    no_price = DOT_PRICE.sub('', k).strip()
+    variants.add(no_price)
+    variants.add(no_price.rstrip(' .:;—-'))
+    variants.add(_strip_leading_bullets(no_price).rstrip(' .:;—-'))
+    return {item for item in variants if item}
+
+
+def _register(key, val):
+    val = _strip_leading_bullets(val) if val else val
+    for item in _key_variants(key):
+        TRANSLATIONS[item] = val
+        TRANSLATIONS[item + ':'] = val
+        TRANSLATIONS[item + '.'] = val
+
+
+def lookup_translation(text):
+    for item in _key_variants(text):
+        hit = TRANSLATIONS.get(item) or TRANSLATIONS.get(item + ':') or TRANSLATIONS.get(item + '.')
+        if hit:
+            return hit
+    return None
 
 
 def _load_extra_dicts():
@@ -449,45 +610,73 @@ def _load_extra_dicts():
         data = getattr(mod, 'DICT', None) or getattr(mod, 'TRANSLATIONS', None)
         if isinstance(data, dict):
             for key, val in data.items():
-                TRANSLATIONS[norm_key(key)] = val
+                _register(key, val)
 
 
 _load_extra_dicts()
+
+
+def _strip_bullet(text):
+    text = (text or '').strip()
+    match = re.match(r'^([•\-]\s+)(.*)$', text, re.S)
+    if match:
+        return match.group(1), match.group(2)
+    return '', text
+
+
+def _peel_credit_price(text):
+    m = re.search(
+        r'(?:\s*\.{2,})?\s*\+?(\d+)\s*(?:cr|credits)\.?$',
+        (text or '').strip(),
+        re.I,
+    )
+    return m.group(1) if m else None
+
+
+def _with_price(ru, n):
+    if not n:
+        return ru
+    if re.search(r'\d+\s*кредит', ru or '', re.I):
+        return ru
+    return (ru or '').rstrip('. ') + ': +%s кредитов' % n
 
 
 def translate(text):
     """Английский фрагмент правил → русский. Имена бойцов и термины сохраняются."""
     if not text:
         return text
-    raw = text.strip()
+    bullet, raw = _strip_bullet(text)
     headed = translate_heading(raw)
     if headed != raw:
-        return headed
+        return bullet + headed
+    n = _peel_credit_price(raw)
+    hit = lookup_translation(raw)
+    if hit:
+        return bullet + _with_price(_strip_leading_bullets(hit), n)
     tpl = try_templates(raw)
     if tpl:
-        return tpl
-    hit = TRANSLATIONS.get(norm_key(raw))
-    if hit:
-        return hit
-    # «Term: body» — переводим части отдельно, если есть
+        return bullet + _with_price(_strip_leading_bullets(tpl), n)
     m = NAMED_RULE.match(raw)
     if m:
         term, body = m.group(1), m.group(2)
-        t_ru = TRANSLATIONS.get(norm_key(term)) or translate_heading(term)
+        t_ru = lookup_translation(term) or translate_heading(term)
         b_tpl = try_templates(body)
-        b_ru = b_tpl or TRANSLATIONS.get(norm_key(body))
+        b_ru = b_tpl or lookup_translation(body)
         if (t_ru != term) or b_ru:
-            return '%s: %s' % (t_ru if t_ru != term else term, b_ru or body)
-    return raw
+            t_out = _strip_leading_bullets(t_ru if t_ru != term else term)
+            return bullet + '%s: %s' % (t_out, _strip_leading_bullets(b_ru or body))
+    return text
 
 
 def render_named_or_plain(en_text):
     """Абзац правил: термин с коротким оригиналом, тело — по лимиту слов."""
     en_text = (en_text or '').strip()
     ru = translate(en_text)
-    en_m = NAMED_RULE.match(en_text)
+    _bullet, core = _strip_bullet(en_text)
+    en_m = NAMED_RULE.match(core)
     if en_m and ':' in ru:
         term_ru, body_ru = ru.split(':', 1)
+        term_ru = _strip_leading_bullets(term_ru.strip())
         term_html = '%s:<span class="orig">%s</span>' % (
             esc(term_ru.strip()), esc(en_m.group(1)))
         body = orig_block(esc(body_ru.strip()), en_m.group(2))

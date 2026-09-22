@@ -167,4 +167,11 @@ DICT = {
     'Gang Roster.': 'Ростер банды.',
     'Sequence.': 'Последовательность.',
     '‘Sanctioner’ Pattern Automata - Primary Secondary - - - Tauros Venator - Secondary - - - Primary': '«Sanctioner» Pattern Automata — основной, вторичный, —, —, —; Tauros Venator — вторичный, —, —, —, основной',
+    'Medic Equipment: When added to a Gang Roster, an Enforcer Subjugator Patrol Officer may purchase weapons and wargear from the Palanite Enforcer Equipment List': 'Снаряжение медика: при добавлении в ростер банды Enforcer Subjugator Patrol Officer может купить оружие и снаряжение из списка Palanite Enforcer.',
+    'Replace the Cutter grenade launcher with frag & krak grenades with Cutter heavy stubbers': 'Заменить Cutter grenade launcher с гранатами frag и krak на Cutter heavy stubbers',
+    'Replace the Cutter grenade launcher with frag & krak grenades with Cutter plasma guns': 'Заменить Cutter grenade launcher с гранатами frag и krak на Cutter plasma guns',
+    'Replace the Mauler boltguns with a Mauler grenade launcher with frag & krak grenades': 'Заменить Mauler boltguns на Mauler grenade launcher с гранатами frag и krak',
+    'Replace the Svenotar autogun with a Svenotar boltgun': 'Заменить Svenotar autogun на Svenotar boltgun',
+    'Replace the Svenotar autogun with a Svenotar meltagun': 'Заменить Svenotar autogun на Svenotar meltagun',
+    'with an Outrider heavy bolter': 'на Outrider heavy bolter',
 }

@@ -1064,9 +1064,11 @@ def render_equipment(items, stores):
     out = ['<ul class="equip">']
     for it in items:
         cls = ' class="sub"' if it['sub'] else ''
+        ru_name = i18n.translate(it['name'])
+        name_html = i18n.orig_block(esc(ru_name), it['name'])
         label = ('<span class="equip-name">%s</span>'
                  '<span class="equip-price">%s cr</span>'
-                 % (esc(it['name']), esc(it['price'])))
+                 % (name_html, esc(it['price'])))
         entry = lookup_item(it['name'], *stores)
         if entry:
             out.append('<li%s><details class="equip-item">'
@@ -1410,12 +1412,60 @@ def render_early_innate(blocks, indices):
     return out
 
 
+PATH_CHOICE_HEAD = re.compile(r'^The Path of\b', re.I)
+PATH_CHOICE_STOP = re.compile(r'^(Starting Skills?|Skill Access)\s*:', re.I)
+
+
+def is_path_choice_heading(kind, payload):
+    """Заголовок развилки Cawdor: «The Path of the Pious / Fanatic»."""
+    if kind != 'bullets' or not payload:
+        return False
+    return all(
+        not it.get('sub') and PATH_CHOICE_HEAD.match((it.get('text') or '').strip())
+        for it in payload
+    )
+
+
+def path_choice_followup(blocks, start, skip):
+    """Правила пути — следующая проза до другого Path или Starting Skills."""
+    rules, consumed = [], []
+    for j in range(start + 1, len(blocks)):
+        if j in skip:
+            continue
+        kind, payload = blocks[j]
+        if is_path_choice_heading(kind, payload):
+            break
+        if kind != 'prose' or PATH_CHOICE_STOP.match((payload or '').strip()):
+            break
+        rules.append(payload)
+        consumed.append(j)
+    return rules, consumed
+
+
+def render_rule_list(items, extra_class=''):
+    cls = 'rule-list' + ((' ' + extra_class) if extra_class else '')
+    out = ['<ul class="%s">' % cls]
+    for it in items:
+        li_cls = ' class="sub"' if it['sub'] else ''
+        out.append('<li%s>%s</li>' % (li_cls, i18n.bilingual(it['text'])))
+    out.append('</ul>')
+    return '\n'.join(out)
+
+
 def render_blocks(blocks, prefix='', stores=()):
     regions, skip, leftover, shop_keys, early = plan_regions(blocks)
     out = []
     close_at = None
     prefixed = False
     has_innate_fold = any(item.get('cls') == 'fold-innate' for item in regions.values())
+    path_consumed = set()
+    in_path_group = False
+
+    def close_path_group():
+        nonlocal in_path_group
+        if in_path_group:
+            out.append('</div>')
+            in_path_group = False
 
     def write_standalone_innate():
         nonlocal prefixed
@@ -1433,6 +1483,7 @@ def render_blocks(blocks, prefix='', stores=()):
 
     for idx, (kind, payload) in enumerate(blocks):
         if close_at is not None and idx == close_at:
+            close_path_group()
             out.append('</div></details>')
             close_at = None
 
@@ -1454,8 +1505,23 @@ def render_blocks(blocks, prefix='', stores=()):
             if region.get('drop_heading'):
                 continue    # заголовок списка перенесён в шапку блока
 
-        if idx in skip:
+        if idx in skip or idx in path_consumed:
             continue
+
+        if is_path_choice_heading(kind, payload):
+            if not in_path_group:
+                out.append('<div class="path-choices">')
+                in_path_group = True
+            rules, consumed = path_choice_followup(blocks, idx, skip | path_consumed)
+            path_consumed.update(consumed)
+            out.append('<div class="path-choice">')
+            out.append(render_rule_list(payload, 'path-choice-head'))
+            for rule in rules:
+                out.append(render_paragraph(rule))
+            out.append('</div>')
+            continue
+
+        close_path_group()
 
         if kind == 'heading':
             tag = 'h%d' % payload['level']
@@ -1465,11 +1531,7 @@ def render_blocks(blocks, prefix='', stores=()):
         elif kind == 'prose':
             out.append(render_paragraph(payload))
         elif kind == 'bullets':
-            out.append('<ul class="rule-list">')
-            for it in payload:
-                cls = ' class="sub"' if it['sub'] else ''
-                out.append('<li%s>%s</li>' % (cls, i18n.bilingual(it['text'])))
-            out.append('</ul>')
+            out.append(render_rule_list(payload))
         elif kind == 'fighter':
             out.append(render_fighter(payload, prefix, stores))
         elif kind == 'skills':
@@ -1529,6 +1591,7 @@ def render_blocks(blocks, prefix='', stores=()):
                 out.append('<tr><td class="roll">%s</td>%s</tr>'
                            % (esc(row[0]), ''.join(cells)))
             out.append('</tbody></table></div>')
+    close_path_group()
     if close_at is not None:
         out.append('</div></details>')
     write_standalone_innate()
