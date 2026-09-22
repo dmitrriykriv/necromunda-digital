@@ -7,10 +7,22 @@ export function BackToTop() {
   useEffect(() => {
     function sync() {
       setOn(window.scrollY > 240);
+      const footer = document.querySelector('footer');
+      const mobile = window.matchMedia('(max-width: 767px)').matches;
+      let overlap = 0;
+      if (footer && mobile) {
+        overlap = Math.max(0, window.innerHeight - footer.getBoundingClientRect().top);
+      }
+      document.documentElement.style.setProperty('--footer-overlap', `${overlap}px`);
     }
     sync();
     window.addEventListener('scroll', sync, { passive: true });
-    return () => window.removeEventListener('scroll', sync);
+    window.addEventListener('resize', sync);
+    return () => {
+      window.removeEventListener('scroll', sync);
+      window.removeEventListener('resize', sync);
+      document.documentElement.style.removeProperty('--footer-overlap');
+    };
   }, []);
 
   function goTop() {

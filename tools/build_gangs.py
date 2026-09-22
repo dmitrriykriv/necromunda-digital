@@ -1662,7 +1662,8 @@ def render_nav(parsed, current, href_for, index_href):
 
 def page_foot(home_href, asset, search=True, layout=True):
     script = '\n<script src="%shandbook-search.js"></script>\n' % asset
-    close = '</main>\n</div>\n' if layout else '</main>\n'
+    close_main = '</main>\n'
+    close_layout = '</div>\n' if layout else ''
     return '''
 %s
 <footer class="page-footer">
@@ -1672,9 +1673,10 @@ def page_foot(home_href, asset, search=True, layout=True):
     <a class="top-link" href="#top">Наверх</a>
 </footer>
 %s
+%s
 </body>
 </html>
-''' % (close, home_href, script)
+''' % (close_main, home_href, close_layout, script)
 
 
 HASH_REDIRECT = '''<script>

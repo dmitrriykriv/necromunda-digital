@@ -24,6 +24,13 @@
     --radius: 8px;
     --skill-primary: #f0954a;
     --skill-secondary: #5b9dd9;
+    --to-top-left: 14px;
+    --to-top-bottom: 28px;
+    --to-top-w: 58px;
+    --to-top-h: 132px;
+    --to-top-gap: 12px;
+    --to-top-gutter-x: calc(var(--to-top-left) + var(--to-top-w) + var(--to-top-gap));
+    --to-top-gutter-y: calc(var(--to-top-bottom) + var(--to-top-h) + var(--to-top-gap));
   }
 
   * {
@@ -44,16 +51,16 @@
 
 .to-top {
   position: fixed;
-  left: 14px;
-  bottom: 28px;
+  left: var(--to-top-left);
+  bottom: var(--to-top-bottom);
   z-index: 50;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  width: 58px;
-  height: 132px;
+  width: var(--to-top-w);
+  height: var(--to-top-h);
   padding: 16px 8px 14px;
   border: 1px solid rgba(240, 149, 74, 0.38);
   border-radius: 22px;
@@ -78,7 +85,8 @@
     transform 0.22s ease,
     background 0.2s ease,
     color 0.2s ease,
-    border-color 0.2s ease;
+    border-color 0.2s ease,
+    bottom 0.2s ease;
 }
 
 .to-top.is-on {
@@ -120,11 +128,14 @@
 }
 
 @media (max-width: 700px) {
+  :root {
+    --to-top-left: 8px;
+    --to-top-bottom: 16px;
+    --to-top-w: 48px;
+    --to-top-h: 104px;
+  }
+
   .to-top {
-    left: 8px;
-    bottom: 16px;
-    width: 48px;
-    height: 104px;
     border-radius: 18px;
   }
 
@@ -141,6 +152,19 @@
 @media (prefers-reduced-motion: reduce) {
   .to-top {
     transition: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .to-top {
+    bottom: calc(var(--to-top-bottom) + var(--footer-overlap, 0px));
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1700px) {
+  .roster-sidebar {
+    height: calc(100vh - var(--to-top-gutter-y));
+    max-height: calc(100vh - var(--to-top-gutter-y));
   }
 }
 

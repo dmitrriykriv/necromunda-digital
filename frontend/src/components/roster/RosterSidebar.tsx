@@ -69,7 +69,8 @@ export function RosterSidebar() {
   }
 
   return (
-    <aside className="border-b border-border bg-card p-4 md:sticky md:top-0 md:h-screen md:overflow-y-auto md:border-b-0 md:border-r">
+    <aside className="roster-sidebar border-b border-border bg-card p-4 md:sticky md:top-0 md:row-span-2 md:flex md:h-screen md:flex-col md:self-start md:border-b-0 md:border-r">
+      <div className="roster-sidebar-body min-h-0 md:flex-1 md:overflow-y-auto">
       <h2 className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
         Ростеры
       </h2>
@@ -190,6 +191,7 @@ export function RosterSidebar() {
           Правила создания банды
         </a>
       </nav>
+      </div>
     </aside>
   );
 }

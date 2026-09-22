@@ -27,7 +27,7 @@
     document.body.appendChild(btn);
 
     var shown = false;
-    function sync() {
+    function syncVisibility() {
       var on = window.scrollY > 240;
       if (on === shown) return;
       shown = on;
@@ -35,7 +35,22 @@
       btn.tabIndex = on ? 0 : -1;
       btn.setAttribute('aria-hidden', on ? 'false' : 'true');
     }
+    function syncFooterOverlap() {
+      var root = document.documentElement;
+      var footer = document.querySelector('.page-footer');
+      if (!footer || !window.matchMedia('(max-width: 1000px)').matches) {
+        root.style.setProperty('--footer-overlap', '0px');
+        return;
+      }
+      var overlap = Math.max(0, window.innerHeight - footer.getBoundingClientRect().top);
+      root.style.setProperty('--footer-overlap', overlap + 'px');
+    }
+    function sync() {
+      syncVisibility();
+      syncFooterOverlap();
+    }
     window.addEventListener('scroll', sync, { passive: true });
+    window.addEventListener('resize', sync);
     sync();
   })();
 

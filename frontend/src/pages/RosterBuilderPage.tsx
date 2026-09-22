@@ -179,7 +179,7 @@ export function RosterBuilderPage() {
         </p>
       </header>
 
-      <div className="mx-auto grid max-w-[1500px] md:grid-cols-[310px_minmax(0,1fr)]">
+      <div className="mx-auto grid max-w-[1500px] md:grid-cols-[310px_minmax(0,1fr)] md:items-start">
         <RosterSidebar />
         <main className="min-w-0 p-6 pb-20">
           <TotalsBar
@@ -285,9 +285,7 @@ export function RosterBuilderPage() {
             ))
           )}
         </main>
-      </div>
-
-      <footer className="border-t border-border px-6 py-8 text-center text-sm text-muted-foreground">
+        <footer className="border-t border-border px-6 py-8 text-center text-sm text-muted-foreground md:col-start-2">
         <p>
           Типы бойцов и снаряжение подставляются из списка выбранной банды.
           «Сохранить» пишет банду в список слева; черновик в этом браузере не пропадает
@@ -305,6 +303,7 @@ export function RosterBuilderPage() {
           </a>
         </p>
       </footer>
+      </div>
     </div>
   );
 }
