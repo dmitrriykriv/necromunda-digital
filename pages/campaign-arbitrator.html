@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Necromunda — помощник арбитра</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#14161c">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="topbar" id="top">
+    <a class="backlink" href="../">&larr; На главную</a>
+    <h1>Necromunda</h1>
+    <p>Помощник арбитра &mdash; стол ведения кампании</p>
+    <p class="source">Черновик интерфейса &bull; данные не сохраняются</p>
+</header>
+
+<main class="arb-main">
+
+    <p class="arb-note">Каркас стола арбитра: страницы уже разделены, заполнение работает только в этой вкладке.
+    После обновления всё сбрасывается. Порядок кампании &mdash; в
+    <a href="campaign-helper.html">подсказке</a>, полные правила &mdash; в
+    <a href="core-rules.html#kampaniya">справочнике</a>.</p>
+
+    <div class="arb-meta">
+        <div>
+            <label for="camp-name">Кампания</label>
+            <input class="mh-input" id="camp-name" type="text" maxlength="80" placeholder="Название">
+        </div>
+        <div>
+            <label>На столе</label>
+            <strong id="camp-summary">Цикл 1 · Оккупация</strong>
+        </div>
+    </div>
+
+    <div class="arb-length" role="group" aria-label="Длина кампании">
+        <div>
+            <label for="camp-occupation">Оккупация</label>
+            <input class="mh-input" id="camp-occupation" type="number" min="0" max="12" value="3">
+        </div>
+        <div>
+            <label for="camp-downtime">Простой</label>
+            <input class="mh-input" id="camp-downtime" type="number" min="0" max="6" value="1">
+        </div>
+        <div>
+            <label for="camp-takeover">Захват</label>
+            <input class="mh-input" id="camp-takeover" type="number" min="0" max="12" value="3">
+        </div>
+    </div>
+
+    <div id="cycle-strip" class="arb-cycles" role="navigation" aria-label="Циклы кампании"></div>
+    <p class="arb-view-note" id="cycle-note" hidden></p>
+
+    <nav class="arb-nav" id="arb-nav" aria-label="Разделы стола">
+        <a href="#players">Игроки</a>
+        <a href="#territories">Территории</a>
+        <a href="#summary">Сводка</a>
+        <a href="#events">События</a>
+        <a href="#actions">Действия</a>
+        <a href="#triumphs">Триумфы</a>
+    </nav>
+
+    <section class="arb-page" id="page-players">
+        <h2>Игроки и банды<span class="en">Players &amp; Gangs</span></h2>
+        <p class="lede">Игрок, банда и привязка к сохранённому ростеру. Рейтинг и репутация подтягиваются из ростера, если API доступен.</p>
+        <div class="arb-bar">
+            <button type="button" class="mh-btn mh-btn-primary" data-act="add-player">Добавить игрока</button>
+        </div>
+        <div class="arb-table-wrap" id="players-body"></div>
+    </section>
+
+    <section class="arb-page" id="page-territories">
+        <h2>Территории<span class="en">Territories</span></h2>
+        <p class="lede">Статус: неконтролируемая, контроль банды, поселение (нельзя ставить на кон) или ставка цикла.</p>
+        <div class="arb-bar">
+            <button type="button" class="mh-btn mh-btn-primary" data-act="add-territory">Добавить территорию</button>
+            <button type="button" class="mh-btn mh-btn-ghost" data-act="add-settlements">Поселение каждому</button>
+        </div>
+        <div class="arb-table-wrap" id="territories-body"></div>
+    </section>
+
+    <section class="arb-page" id="page-summary">
+        <h2>Сводка цикла<span class="en">Cycle Summary</span></h2>
+        <p class="lede">Обзор выбранного цикла: вызовы, бои и заявки всех игроков. Длину фаз задаёт шапка стола, на ленте можно открыть любой прошлый или будущий цикл — записи не стираются.</p>
+        <div class="arb-bar" id="summary-bar"></div>
+        <div id="summary-body"></div>
+    </section>
+
+    <section class="arb-page" id="page-events">
+        <h2>События цикла<span class="en">Cycle Events</span></h2>
+        <p class="lede">Записи выбранного цикла в разрезе каждого игрока. Чтобы посмотреть прошлый цикл, нажмите его на ленте сверху.</p>
+        <div id="events-body"></div>
+    </section>
+
+    <section class="arb-page" id="page-actions">
+        <h2>Действия игроков<span class="en">Post-cycle Actions</span></h2>
+        <p class="lede">Заявки выбранного цикла. Бойца берут из привязанного ростера; если ростера нет — имя можно вписать вручную.</p>
+        <div id="actions-body"></div>
+    </section>
+
+    <section class="arb-page" id="page-triumphs">
+        <h2>Триумфы<span class="en">Triumphs</span></h2>
+        <p class="lede">Счётчики по всей кампании: бои и Out of Action суммируются по всем циклам. При ничьей побеждает большее богатство; если снова ничья — триумф получают все.</p>
+        <div class="arb-cards" id="triumphs-cards"></div>
+        <div class="arb-table-wrap" id="triumphs-table"></div>
+    </section>
+
+</main>
+
+<footer class="page-footer">
+    <p>Черновик помощника арбитра. Сохранение кампании появится позже.</p>
+    <p><a class="backlink" href="../">&larr; На главную</a>
+       &nbsp;·&nbsp; <a href="campaign-helper.html">Подсказка по кампании</a>
+       &nbsp;·&nbsp; <a href="roster-builder.html">Построитель ростера</a>
+       &nbsp;·&nbsp; <a href="mission-helper.html">Генерация миссий</a></p>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  var PAGES = ['players', 'territories', 'summary', 'events', 'actions', 'triumphs'];
+  var PHASES = [
+    { id: 'occupation', name: 'Оккупация', max: 12 },
+    { id: 'downtime', name: 'Простой', max: 6 },
+    { id: 'takeover', name: 'Захват', max: 12 }
+  ];
+  var TERRITORIES = [
+    { id: 'settlement', name: 'Поселение', home: true },
+    { id: 'bullet-den', name: 'Пулевая нора' },
+    { id: 'rogue-doc', name: 'Лавка бродячего Doc' },
+    { id: 'mess-shack', name: 'Столовая' },
+    { id: 'drinking-hole', name: 'Питейное заведение' },
+    { id: 'fence', name: 'Притон скупщика' },
+    { id: 'bounty-den', name: 'Логово охотников за головами' },
+    { id: 'generatorium', name: 'Генераториум' },
+    { id: 'corpse-farm', name: 'Трупная ферма' },
+    { id: 'tunnels', name: 'Туннели' },
+    { id: 'tech-bazaar', name: 'Тех-базар' },
+    { id: 'promethium', name: 'Склад прометиума' },
+    { id: 'collapsed-dome', name: 'Обрушенный купол' },
+    { id: 'bone-shrine', name: 'Костяной алтарь' },
+    { id: 'mines', name: 'Шахты' },
+    { id: 'gambling-den', name: 'Игорный притон' },
+    { id: 'synth-still', name: 'Синт-перегонка' },
+    { id: 'old-ruins', name: 'Старые руины' },
+    { id: 'fighting-pit', name: 'Бойцовская яма' }
+  ];
+  var ACTIONS = [
+    { id: 'medical', name: 'Сопровождение к врачу' },
+    { id: 'bionics', name: 'Поставить бионику' },
+    { id: 'tactics', name: 'Разработать тактики' },
+    { id: 'chop-shop', name: 'Визит в Chop Shop' },
+    { id: 'work', name: 'Работать территорию' },
+    { id: 'trade', name: 'Визит на Trading Post' },
+    { id: 'train', name: 'Тренировка' }
+  ];
+  var TRIUMPHS = [
+    { id: 'dominator', name: 'Доминатор', en: 'Dominator', field: 'territories', label: 'территорий' },
+    { id: 'slaughterer', name: 'Мясник', en: 'Slaughterer', field: 'ooa', label: 'Out of Action' },
+    { id: 'creditor', name: 'Кредитор', en: 'Creditor', field: 'wealth', label: 'богатство' },
+    { id: 'warmonger', name: 'Поджигатель войны', en: 'Warmonger', field: 'battles', label: 'боёв' },
+    { id: 'powerbroker', name: 'Серый кардинал', en: 'Powerbroker', field: 'reputation', label: 'Reputation' }
+  ];
+
+  var state = {
+    name: '',
+    cycle: 1,
+    liveCycle: 1,
+    occupation: 3,
+    downtime: 1,
+    takeover: 3,
+    players: [],
+    territories: [],
+    events: {},
+    actions: {}
+  };
+  var rosters = [];
+  var rosterDetails = {};
+  var rosterPending = {};
+  var seq = 1;
+
+  function uid(prefix) {
+    return prefix + (seq++);
+  }
+
+  function esc(value) {
+    return String(value == null ? '' : value)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  function $(id) {
+    return document.getElementById(id);
+  }
+
+  function playerById(id) {
+    return state.players.find(function (p) { return p.id === id; });
+  }
+
+  function fighterLabel(f) {
+    if (!f) return '—';
+    return (f.name || 'Боец') + (f.type ? ' · ' + f.type : '');
+  }
+
+  function fightersOf(player) {
+    if (!player || !player.rosterFile) return [];
+    var details = rosterDetails[player.rosterFile];
+    return (details && details.fighters) || [];
+  }
+
+  function fighterOptions(player, selected) {
+    var list = fightersOf(player).map(function (f) {
+      return { value: f.id, label: fighterLabel(f) };
+    });
+    if (selected && !list.some(function (item) { return item.value === selected; })) {
+      list.unshift({ value: selected, label: selected });
+    }
+    var empty = player && player.rosterFile
+      ? (rosterPending[player.rosterFile] ? '— загрузка —' : '— боец —')
+      : '— нет ростера —';
+    return optionList(list, selected, empty);
+  }
+
+  function playerLabel(p) {
+    if (!p) return '—';
+    return (p.name || 'Игрок') + (p.gangName ? ' · ' + p.gangName : '');
+  }
+
+  function terrName(kind) {
+    var t = TERRITORIES.find(function (x) { return x.id === kind; });
+    return t ? t.name : kind;
+  }
+
+  function isHome(kind) {
+    var t = TERRITORIES.find(function (x) { return x.id === kind; });
+    return !!(t && t.home);
+  }
+
+  function clampInt(value, min, max, fallback) {
+    var n = parseInt(value, 10);
+    if (isNaN(n)) n = fallback;
+    return Math.max(min, Math.min(max, n));
+  }
+
+  function cycleTotal() {
+    return state.occupation + state.downtime + state.takeover;
+  }
+
+  function applyCycleShape() {
+    PHASES.forEach(function (phase) {
+      state[phase.id] = clampInt(state[phase.id], 0, phase.max, phase.id === 'downtime' ? 1 : 3);
+    });
+    if (cycleTotal() < 1) state.occupation = 1;
+    var max = cycleTotal();
+    state.cycle = clampInt(state.cycle, 1, max, 1);
+    state.liveCycle = clampInt(state.liveCycle, 1, max, 1);
+  }
+
+  function syncLengthInputs() {
+    $('camp-occupation').value = state.occupation;
+    $('camp-downtime').value = state.downtime;
+    $('camp-takeover').value = state.takeover;
+  }
+
+  function setPhaseLength(phaseId, value) {
+    var phase = PHASES.find(function (p) { return p.id === phaseId; });
+    if (!phase) return;
+    state[phaseId] = value;
+    applyCycleShape();
+    syncLengthInputs();
+    renderPage(currentPage());
+  }
+
+  function cycleGroups() {
+    var n = 1;
+    return PHASES.map(function (phase) {
+      var cycles = [];
+      var count = state[phase.id];
+      for (var i = 0; i < count; i++) cycles.push(n++);
+      return { phase: phase.id, phaseName: phase.name, cycles: cycles };
+    }).filter(function (group) { return group.cycles.length > 0; });
+  }
+
+  function cycleInfo(n) {
+    var max = cycleTotal();
+    n = Math.max(1, Math.min(max, Number(n) || 1));
+    var groups = cycleGroups();
+    for (var i = 0; i < groups.length; i++) {
+      if (groups[i].cycles.indexOf(n) >= 0) {
+        return { n: n, phase: groups[i].phase, phaseName: groups[i].phaseName };
+      }
+    }
+    return { n: n, phase: 'occupation', phaseName: 'Оккупация' };
+  }
+
+  function cycleTitle(n) {
+    var info = cycleInfo(n);
+    return 'Цикл ' + info.n + ' · ' + info.phaseName;
+  }
+
+  function cycleKey(n) {
+    return String(n == null ? state.cycle : n);
+  }
+
+  function eventPeek(cycle, playerId) {
+    var bag = state.events[cycleKey(cycle)];
+    return (bag && bag[playerId]) || null;
+  }
+
+  function eventFilled(ev) {
+    if (!ev) return false;
+    return !!(ev.targetId || ev.stakeId || ev.challenge || ev.opponentId || ev.result ||
+      ev.notes || Number(ev.ooa) || ev.sideJob);
+  }
+
+  function cycleHasData(n) {
+    var key = cycleKey(n);
+    var evs = state.events[key] || {};
+    var acts = state.actions[key] || {};
+    var hasEv = Object.keys(evs).some(function (id) { return eventFilled(evs[id]); });
+    var hasAct = Object.keys(acts).some(function (id) { return (acts[id] || []).length > 0; });
+    return hasEv || hasAct;
+  }
+
+  function cycleCounts(n) {
+    var challenges = 0;
+    var battles = 0;
+    var ooa = 0;
+    var actions = 0;
+    state.players.forEach(function (p) {
+      var ev = eventPeek(n, p.id);
+      if (ev) {
+        if (ev.challenge) challenges += 1;
+        if (ev.result) battles += 1;
+        ooa += Number(ev.ooa) || 0;
+      }
+      actions += ((state.actions[cycleKey(n)] || {})[p.id] || []).length;
+    });
+    return { challenges: challenges, battles: battles, ooa: ooa, actions: actions };
+  }
+
+  function eventFor(playerId) {
+    var key = cycleKey();
+    if (!state.events[key]) state.events[key] = {};
+    if (!state.events[key][playerId]) {
+      state.events[key][playerId] = {
+        targetId: '',
+        stakeId: '',
+        challenge: '',
+        opponentId: '',
+        result: '',
+        ooa: 0,
+        sideJob: false,
+        notes: ''
+      };
+    }
+    return state.events[key][playerId];
+  }
+
+  function actionsFor(playerId) {
+    var key = cycleKey();
+    if (!state.actions[key]) state.actions[key] = {};
+    if (!state.actions[key][playerId]) state.actions[key][playerId] = [];
+    return state.actions[key][playerId];
+  }
+
+  function ownedCount(playerId) {
+    return state.territories.filter(function (t) {
+      return t.ownerId === playerId && t.status !== 'uncontrolled';
+    }).length;
+  }
+
+  function sumCycles(playerId, pick) {
+    var sum = 0;
+    Object.keys(state.events).forEach(function (key) {
+      var ev = state.events[key] && state.events[key][playerId];
+      if (ev) sum += pick(ev);
+    });
+    return sum;
+  }
+
+  function totals(p) {
+    return {
+      territories: ownedCount(p.id),
+      ooa: (Number(p.ooa) || 0) + sumCycles(p.id, function (ev) { return Number(ev.ooa) || 0; }),
+      wealth: Number(p.wealth) || 0,
+      battles: (Number(p.battles) || 0) + sumCycles(p.id, function (ev) { return ev.result ? 1 : 0; }),
+      reputation: Number(p.reputation) || 0
+    };
+  }
+
+  function winners(field) {
+    if (!state.players.length) return [];
+    var scored = state.players.map(function (p) {
+      return { p: p, v: totals(p)[field] };
+    });
+    var max = Math.max.apply(null, scored.map(function (s) { return s.v; }));
+    var top = scored.filter(function (s) { return s.v === max; });
+    if (top.length === 1) return top;
+    var wealthMax = Math.max.apply(null, top.map(function (s) { return totals(s.p).wealth; }));
+    var byWealth = top.filter(function (s) { return totals(s.p).wealth === wealthMax; });
+    return byWealth;
+  }
+
+  function optionList(items, value, empty) {
+    var html = '';
+    if (empty !== false) {
+      html = '<option value="">' + esc(empty || '—') + '</option>';
+    }
+    items.forEach(function (item) {
+      html += '<option value="' + esc(item.value) + '"' + (item.value === value ? ' selected' : '') + '>' +
+        esc(item.label) + '</option>';
+    });
+    return html;
+  }
+
+  function playerOptions(selected, skipId) {
+    return optionList(state.players.filter(function (p) {
+      return p.id !== skipId;
+    }).map(function (p) {
+      return { value: p.id, label: playerLabel(p) };
+    }), selected, '— никто —');
+  }
+
+  function rosterOptions(selected) {
+    return optionList(rosters.map(function (r) {
+      return { value: r.file, label: r.name + (r.author ? ' · ' + r.author : '') };
+    }), selected, '— без ростера —');
+  }
+
+  function territoryKindOptions(selected) {
+    return optionList(TERRITORIES.map(function (t) {
+      return { value: t.id, label: t.name };
+    }), selected, '— тип —');
+  }
+
+  function ownerOptions(selected) {
+    return optionList(state.players.map(function (p) {
+      return { value: p.id, label: playerLabel(p) };
+    }), selected, '— нет —');
+  }
+
+  function stakeOptions(selected) {
+    return optionList(state.territories.map(function (t) {
+      return { value: t.id, label: terrName(t.kind) };
+    }), selected, '— ставка —');
+  }
+
+  function statusLabel(t) {
+    if (isHome(t.kind)) return { text: 'Поселение', cls: 'is-home' };
+    if (t.status === 'staked') return { text: 'На кону', cls: 'is-stake' };
+    if (t.status === 'owned' && t.ownerId) return { text: 'Контроль', cls: 'is-owned' };
+    return { text: 'Свободна', cls: 'is-free' };
+  }
+
+  function challengeLabel(value) {
+    if (value === 'issued') return 'Сделан';
+    if (value === 'accepted') return 'Принят';
+    if (value === 'declined') return 'Отклонён';
+    return '—';
+  }
+
+  function resultLabel(value) {
+    if (value === 'win') return 'Победа';
+    if (value === 'loss') return 'Поражение';
+    if (value === 'draw') return 'Ничья';
+    return '—';
+  }
+
+  function kpi(label, value) {
+    return '<div class="arb-kpi"><span>' + esc(label) + '</span><strong>' + esc(String(value)) + '</strong></div>';
+  }
+
+  function cycleStatus(n) {
+    if (n === state.liveCycle) return 'текущий';
+    if (n < state.liveCycle) return 'пройден';
+    return 'впереди';
+  }
+
+  function renderCycleStrip() {
+    var html = '';
+    cycleGroups().forEach(function (group) {
+      html += '<div class="arb-cycle-group"><span class="arb-cycle-phase">' + esc(group.phaseName) + '</span><div class="arb-cycle-row">';
+      group.cycles.forEach(function (n) {
+        var cls = 'arb-cycle';
+        if (n === state.cycle) cls += ' is-on';
+        if (n === state.liveCycle) cls += ' is-live';
+        if (n < state.liveCycle) cls += ' is-past';
+        if (cycleHasData(n)) cls += ' has-data';
+        html += '<button type="button" class="' + cls + '" data-act="view-cycle" data-n="' + n + '" title="' +
+          esc(cycleTitle(n) + (n === state.liveCycle ? ' · текущий' : '')) + '">' + n + '</button>';
+      });
+      html += '</div></div>';
+    });
+    $('cycle-strip').innerHTML = html;
+  }
+
+  function renderCycleNote() {
+    var note = $('cycle-note');
+    var info = cycleInfo(state.cycle);
+    if (state.cycle === state.liveCycle) {
+      note.hidden = info.phase !== 'downtime';
+      note.textContent = info.phase === 'downtime'
+        ? 'Простой: боёв нет. Банды получают 250 кредитов, которые нужно потратить в этом цикле.'
+        : '';
+      return;
+    }
+    note.hidden = false;
+    if (state.cycle < state.liveCycle) {
+      note.textContent = 'Просмотр ' + cycleTitle(state.cycle) + '. Текущий цикл кампании — ' +
+        state.liveCycle + '. Записи прошлого цикла сохранены в этой вкладке.';
+    } else {
+      note.textContent = 'Просмотр будущего цикла ' + state.cycle + '. Текущий — ' +
+        state.liveCycle + '. Можно заранее набросать вызовы.';
+    }
+  }
+
+  function renderSummary() {
+    var live = cycleInfo(state.liveCycle);
+    $('camp-summary').textContent = cycleTitle(state.cycle) +
+      (state.cycle === state.liveCycle ? ' · текущий' : ' · текущий ' + live.n) +
+      ' · ' + state.players.length + ' игроков';
+    renderCycleStrip();
+    renderCycleNote();
+  }
+
+  function renderPlayers() {
+    var box = $('players-body');
+    if (!state.players.length) {
+      box.innerHTML = '<p class="arb-empty">Пока никого нет. Добавьте игрока и привяжите банду к ростеру.</p>';
+      return;
+    }
+    var html = '<table class="compact"><thead><tr>' +
+      '<th>Игрок</th><th>Банда</th><th>Ростер</th><th>Репутация</th><th>Рейтинг</th>' +
+      '<th>Богатство</th><th>Боёв</th><th>OOA</th><th></th></tr></thead><tbody>';
+    state.players.forEach(function (p) {
+      html += '<tr>' +
+        '<td><input class="mh-input" data-player="' + p.id + '" data-field="name" value="' + esc(p.name) + '" placeholder="Игрок"></td>' +
+        '<td><input class="mh-input" data-player="' + p.id + '" data-field="gangName" value="' + esc(p.gangName) + '" placeholder="Банда"></td>' +
+        '<td><select class="mh-select" data-player="' + p.id + '" data-field="rosterFile">' + rosterOptions(p.rosterFile) + '</select></td>' +
+        '<td><input class="mh-input" data-player="' + p.id + '" data-field="reputation" type="number" min="1" value="' + esc(p.reputation) + '"></td>' +
+        '<td><input class="mh-input" data-player="' + p.id + '" data-field="rating" type="number" min="0" value="' + esc(p.rating) + '"></td>' +
+        '<td><input class="mh-input" data-player="' + p.id + '" data-field="wealth" type="number" min="0" value="' + esc(p.wealth) + '"></td>' +
+        '<td><input class="mh-input" data-player="' + p.id + '" data-field="battles" type="number" min="0" value="' + esc(p.battles) + '"></td>' +
+        '<td><input class="mh-input" data-player="' + p.id + '" data-field="ooa" type="number" min="0" value="' + esc(p.ooa) + '"></td>' +
+        '<td><button type="button" class="arb-icon" data-act="remove-player" data-id="' + p.id + '" title="Убрать">×</button></td>' +
+        '</tr>';
+    });
+    html += '</tbody></table>';
+    box.innerHTML = html;
+  }
+
+  function renderTerritories() {
+    var box = $('territories-body');
+    if (!state.territories.length) {
+      box.innerHTML = '<p class="arb-empty">Пул территорий пуст. Добавьте поселения игрокам и территории для боёв.</p>';
+      return;
+    }
+    var html = '<table class="compact"><thead><tr>' +
+      '<th>Территория</th><th>Статус</th><th>Владелец</th><th>Метка</th><th></th></tr></thead><tbody>';
+    state.territories.forEach(function (t) {
+      var st = statusLabel(t);
+      var statusSelect = isHome(t.kind)
+        ? '<span class="arb-status is-home">нельзя ставить на кон</span>'
+        : '<select class="mh-select" data-terr="' + t.id + '" data-field="status">' +
+          optionList([
+            { value: 'uncontrolled', label: 'Свободна' },
+            { value: 'owned', label: 'Контроль' },
+            { value: 'staked', label: 'На кону' }
+          ], t.status, '— статус —') + '</select>';
+      html += '<tr>' +
+        '<td><select class="mh-select" data-terr="' + t.id + '" data-field="kind">' + territoryKindOptions(t.kind) + '</select></td>' +
+        '<td>' + statusSelect + '</td>' +
+        '<td><select class="mh-select" data-terr="' + t.id + '" data-field="ownerId">' + ownerOptions(t.ownerId) + '</select></td>' +
+        '<td><span class="arb-status ' + st.cls + '">' + esc(st.text) + '</span></td>' +
+        '<td><button type="button" class="arb-icon" data-act="remove-territory" data-id="' + t.id + '" title="Убрать">×</button></td>' +
+        '</tr>';
+    });
+    html += '</tbody></table>';
+    box.innerHTML = html;
+  }
+
+  function renderOverview() {
+    var bar = $('summary-bar');
+    var box = $('summary-body');
+    if (state.cycle !== state.liveCycle) {
+      bar.innerHTML = '<button type="button" class="mh-btn mh-btn-primary" data-act="set-live">Сделать цикл ' +
+        state.cycle + ' текущим</button>';
+    } else {
+      bar.innerHTML = '<span class="arb-muted">Это текущий цикл кампании.</span>';
+    }
+
+    var info = cycleInfo(state.cycle);
+    var counts = cycleCounts(state.cycle);
+    var html = '';
+    if (info.phase === 'downtime') {
+      html += '<p class="arb-downtime">Простой: боёв нет. Банды получают 250 кредитов, которые нужно потратить в этом цикле.</p>';
+    }
+    html += '<div class="arb-kpis">' +
+      kpi('Вызовов', counts.challenges) +
+      kpi('Боёв', counts.battles) +
+      kpi('OOA', counts.ooa) +
+      kpi('Заявок', counts.actions) +
+      '</div>';
+
+    html += '<h3>Циклы кампании</h3>';
+    html += '<div class="arb-table-wrap"><table class="compact"><thead><tr>' +
+      '<th>Цикл</th><th>Фаза</th><th>Вызовов</th><th>Боёв</th><th>OOA</th><th>Заявок</th><th></th></tr></thead><tbody>';
+    var last = cycleTotal();
+    for (var n = 1; n <= last; n++) {
+      var inf = cycleInfo(n);
+      var c = cycleCounts(n);
+      html += '<tr' + (n === state.cycle ? ' class="is-on"' : '') + '>' +
+        '<td><button type="button" class="mh-btn mh-btn-ghost" data-act="view-cycle" data-n="' + n + '">' + n + '</button></td>' +
+        '<td>' + esc(inf.phaseName) + '</td>' +
+        '<td>' + c.challenges + '</td>' +
+        '<td>' + c.battles + '</td>' +
+        '<td>' + c.ooa + '</td>' +
+        '<td>' + c.actions + '</td>' +
+        '<td>' + esc(cycleStatus(n)) + (cycleHasData(n) ? ' · есть записи' : '') + '</td>' +
+        '</tr>';
+    }
+    html += '</tbody></table></div>';
+
+    html += '<h3>Игроки · ' + esc(cycleTitle(state.cycle)) + '</h3>';
+    if (!state.players.length) {
+      html += '<p class="arb-empty">Сначала добавьте игроков — тогда здесь появятся вызовы и бои выбранного цикла.</p>';
+      box.innerHTML = html;
+      return;
+    }
+
+    html += '<div class="arb-table-wrap"><table class="compact"><thead><tr>' +
+      '<th>Игрок</th><th>Вызов</th><th>Кому / против</th><th>Исход</th><th>OOA</th><th>Действия</th><th>Заметка</th></tr></thead><tbody>';
+    state.players.forEach(function (p) {
+      var ev = eventPeek(state.cycle, p.id);
+      var acts = ((state.actions[cycleKey(state.cycle)] || {})[p.id] || []).length;
+      var otherId = ev && (ev.opponentId || ev.targetId);
+      var other = otherId ? playerById(otherId) : null;
+      html += '<tr>' +
+        '<td>' + esc(playerLabel(p)) + '</td>' +
+        '<td>' + esc(challengeLabel(ev && ev.challenge)) + '</td>' +
+        '<td>' + esc(other ? playerLabel(other) : '—') + '</td>' +
+        '<td>' + esc(resultLabel(ev && ev.result)) + '</td>' +
+        '<td>' + esc(String((ev && Number(ev.ooa)) || 0)) + '</td>' +
+        '<td>' + acts + '</td>' +
+        '<td>' + esc((ev && ev.notes) || '—') + '</td>' +
+        '</tr>';
+    });
+    html += '</tbody></table></div>';
+    html += '<p class="arb-muted"><a href="#events">События этого цикла</a> · <a href="#actions">Действия этого цикла</a></p>';
+    box.innerHTML = html;
+  }
+
+  function renderCycle() {
+    var box = $('events-body');
+    if (!state.players.length) {
+      box.innerHTML = '<p class="arb-empty">Сначала добавьте игроков — события цикла показываются по каждому.</p>';
+      return;
+    }
+    var html = '<p class="arb-muted">' + esc(cycleTitle(state.cycle)) +
+      (state.cycle === state.liveCycle ? '' : ' · просмотр') + '</p>';
+    state.players.forEach(function (p) {
+      var ev = eventFor(p.id);
+      html += '<div class="mh-panel arb-player"><h3>' + esc(playerLabel(p)) + '</h3><div class="arb-grid">' +
+        '<div><label class="mh-who">Вызов кому</label><select class="mh-select" data-event="' + p.id + '" data-field="targetId">' + playerOptions(ev.targetId, p.id) + '</select></div>' +
+        '<div><label class="mh-who">Ставка</label><select class="mh-select" data-event="' + p.id + '" data-field="stakeId">' + stakeOptions(ev.stakeId) + '</select></div>' +
+        '<div><label class="mh-who">Вызов</label><select class="mh-select" data-event="' + p.id + '" data-field="challenge">' +
+          optionList([
+            { value: 'issued', label: 'Сделан' },
+            { value: 'accepted', label: 'Принят' },
+            { value: 'declined', label: 'Отклонён' }
+          ], ev.challenge, '— нет —') + '</select></div>' +
+        '<div><label class="mh-who">Бой против</label><select class="mh-select" data-event="' + p.id + '" data-field="opponentId">' + playerOptions(ev.opponentId, p.id) + '</select></div>' +
+        '<div><label class="mh-who">Исход</label><select class="mh-select" data-event="' + p.id + '" data-field="result">' +
+          optionList([
+            { value: 'win', label: 'Победа' },
+            { value: 'loss', label: 'Поражение' },
+            { value: 'draw', label: 'Ничья' }
+          ], ev.result, '— не играли —') + '</select></div>' +
+        '<div><label class="mh-who">OOA в этом бою</label><input class="mh-input" data-event="' + p.id + '" data-field="ooa" type="number" min="0" value="' + esc(ev.ooa) + '"></div>' +
+        '<div><label class="mh-who">Побочное задание</label><select class="mh-select" data-event="' + p.id + '" data-field="sideJob">' +
+          optionList([
+            { value: '0', label: 'Нет' },
+            { value: '1', label: 'Выполнено' }
+          ], ev.sideJob ? '1' : '0', false) + '</select></div>' +
+        '<div><label class="mh-who">Заметка</label><input class="mh-input" data-event="' + p.id + '" data-field="notes" value="' + esc(ev.notes) + '" placeholder="Кратко"></div>' +
+        '</div></div>';
+    });
+    box.innerHTML = html;
+  }
+
+  function renderActions() {
+    var box = $('actions-body');
+    if (!state.players.length) {
+      box.innerHTML = '<p class="arb-empty">Когда появятся игроки, здесь будут их заявки на пост-цикловые действия.</p>';
+      return;
+    }
+    var html = '<p class="arb-muted">' + esc(cycleTitle(state.cycle)) +
+      (state.cycle === state.liveCycle ? '' : ' · просмотр') + '</p>';
+    state.players.forEach(function (p) {
+      var list = actionsFor(p.id);
+      html += '<div class="mh-panel arb-player"><h3>' + esc(playerLabel(p)) + '</h3>';
+      if (!list.length) html += '<p class="arb-empty">Заявок нет.</p>';
+      list.forEach(function (item) {
+        var fighters = fightersOf(p);
+        var waiting = !!(p.rosterFile && rosterPending[p.rosterFile]);
+        var fighterField = (fighters.length || waiting)
+          ? '<select class="mh-select" data-action-player="' + p.id + '" data-action-id="' + item.id + '" data-field="fighter">' +
+            fighterOptions(p, item.fighter) + '</select>'
+          : '<input class="mh-input" data-action-player="' + p.id + '" data-action-id="' + item.id + '" data-field="fighter" value="' + esc(item.fighter) + '" placeholder="Боец">';
+        html += '<div class="arb-actions-row">' +
+          fighterField +
+          '<select class="mh-select" data-action-player="' + p.id + '" data-action-id="' + item.id + '" data-field="action">' +
+            optionList(ACTIONS.map(function (a) { return { value: a.id, label: a.name }; }), item.action, '— действие —') + '</select>' +
+          '<button type="button" class="arb-icon" data-act="remove-action" data-player="' + p.id + '" data-id="' + item.id + '" title="Убрать">×</button>' +
+          '</div>';
+      });
+      html += '<button type="button" class="mh-btn mh-btn-ghost" data-act="add-action" data-id="' + p.id + '">Добавить действие</button></div>';
+    });
+    box.innerHTML = html;
+  }
+
+  function renderTriumphs() {
+    var cards = $('triumphs-cards');
+    var table = $('triumphs-table');
+    if (!state.players.length) {
+      cards.innerHTML = '';
+      table.innerHTML = '<p class="arb-empty">Триумфы появятся, когда будут игроки, территории и результаты боёв.</p>';
+      return;
+    }
+    var cardHtml = '';
+    TRIUMPHS.forEach(function (tr) {
+      var win = winners(tr.field);
+      var names = win.map(function (s) { return playerLabel(s.p); }).join(', ');
+      var value = win.length ? win[0].v : 0;
+      cardHtml += '<article class="arb-card"><h3>' + esc(tr.name) + '<span class="en">' + esc(tr.en) + '</span></h3>' +
+        '<p class="arb-lead">' + (names ? esc(names) : '—') + '</p>' +
+        '<p class="arb-muted">' + esc(String(value)) + ' ' + esc(tr.label) + '</p></article>';
+    });
+    cards.innerHTML = cardHtml;
+
+    var html = '<table class="compact"><thead><tr><th>Игрок</th>';
+    TRIUMPHS.forEach(function (tr) { html += '<th>' + esc(tr.name) + '</th>'; });
+    html += '</tr></thead><tbody>';
+    state.players.forEach(function (p) {
+      var tot = totals(p);
+      html += '<tr><td>' + esc(playerLabel(p)) + '</td>';
+      TRIUMPHS.forEach(function (tr) {
+        var lead = winners(tr.field).some(function (s) { return s.p.id === p.id; });
+        html += '<td>' + esc(String(tot[tr.field])) +
+          (lead ? ' <span class="arb-status is-lead">лидер</span>' : '') + '</td>';
+      });
+      html += '</tr>';
+    });
+    html += '</tbody></table>';
+    table.innerHTML = html;
+  }
+
+  function renderPage(page) {
+    if (page === 'players') renderPlayers();
+    if (page === 'territories') renderTerritories();
+    if (page === 'summary') renderOverview();
+    if (page === 'events') renderCycle();
+    if (page === 'actions') renderActions();
+    if (page === 'triumphs') renderTriumphs();
+    renderSummary();
+  }
+
+  function currentPage() {
+    var hash = (location.hash || '#players').replace('#', '');
+    if (hash === 'cycle') return 'events';
+    return PAGES.indexOf(hash) >= 0 ? hash : 'players';
+  }
+
+  function showPage() {
+    var page = currentPage();
+    PAGES.forEach(function (id) {
+      $('page-' + id).classList.toggle('is-on', id === page);
+    });
+    document.querySelectorAll('#arb-nav a').forEach(function (a) {
+      a.classList.toggle('is-on', a.getAttribute('href') === '#' + page);
+    });
+    renderPage(page);
+    if (page === 'actions') {
+      state.players.forEach(function (p) {
+        if (!p.rosterFile || rosterDetails[p.rosterFile]) return;
+        loadRosterDetails(p.rosterFile).then(function () {
+          if (currentPage() === 'actions') renderActions();
+        });
+      });
+    }
+  }
+
+  function addPlayer() {
+    state.players.push({
+      id: uid('p'),
+      name: '',
+      gangName: '',
+      rosterFile: '',
+      reputation: 1,
+      rating: 0,
+      wealth: 0,
+      battles: 0,
+      ooa: 0
+    });
+    renderPage(currentPage());
+  }
+
+  function addTerritory(kind, ownerId, status) {
+    var home = isHome(kind);
+    state.territories.push({
+      id: uid('t'),
+      kind: kind || 'bullet-den',
+      status: home ? 'owned' : (status || 'uncontrolled'),
+      ownerId: ownerId || ''
+    });
+  }
+
+  function loadRosterDetails(file) {
+    if (!file || rosterDetails[file]) {
+      return Promise.resolve(rosterDetails[file] || null);
+    }
+    if (rosterPending[file]) return rosterPending[file];
+    rosterPending[file] = fetch('/api/rosters/' + encodeURIComponent(file))
+      .then(function (res) { return res.ok ? res.json() : null; })
+      .then(function (roster) {
+        delete rosterPending[file];
+        if (!roster) return null;
+        rosterDetails[file] = {
+          reputation: roster.reputation || 1,
+          stash: Number(roster.stash) || 0,
+          fighters: (roster.fighters || []).map(function (f) {
+            return { id: f.id, name: f.name, type: f.type };
+          })
+        };
+        return rosterDetails[file];
+      })
+      .catch(function () {
+        delete rosterPending[file];
+        return null;
+      });
+    return rosterPending[file];
+  }
+
+  function applyRosterToPlayer(player, file) {
+    var index = rosters.find(function (r) { return r.file === file; });
+    var details = rosterDetails[file];
+    if (index && !player.gangName) player.gangName = index.name || '';
+    if (index) player.rating = index.rating || 0;
+    if (details) {
+      player.reputation = details.reputation || 1;
+      player.wealth = (index && index.rating ? index.rating : Number(player.rating) || 0) + details.stash;
+    } else if (index && !player.wealth) {
+      player.wealth = index.rating || 0;
+    }
+  }
+
+  function bindRoster(player, file) {
+    player.rosterFile = file;
+    if (!file) {
+      if (currentPage() === 'players') renderPlayers();
+      if (currentPage() === 'actions') renderActions();
+      return;
+    }
+    applyRosterToPlayer(player, file);
+    if (currentPage() === 'players') renderPlayers();
+    loadRosterDetails(file).then(function (details) {
+      if (!details || player.rosterFile !== file) return;
+      applyRosterToPlayer(player, file);
+      if (currentPage() === 'players') renderPlayers();
+      if (currentPage() === 'actions') renderActions();
+      if (currentPage() === 'triumphs') renderTriumphs();
+    });
+  }
+
+  function num(el) {
+    var n = Number(el.value);
+    return isNaN(n) ? 0 : n;
+  }
+
+  document.querySelector('.arb-main').addEventListener('click', function (e) {
+    var btn = e.target.closest('[data-act]');
+    if (!btn) return;
+    var act = btn.getAttribute('data-act');
+    if (act === 'add-player') addPlayer();
+    if (act === 'remove-player') {
+      state.players = state.players.filter(function (p) { return p.id !== btn.getAttribute('data-id'); });
+      renderPage(currentPage());
+    }
+    if (act === 'add-territory') {
+      addTerritory('bullet-den', '', 'uncontrolled');
+      renderTerritories();
+      renderSummary();
+    }
+    if (act === 'add-settlements') {
+      state.players.forEach(function (p) {
+        var has = state.territories.some(function (t) { return t.kind === 'settlement' && t.ownerId === p.id; });
+        if (!has) addTerritory('settlement', p.id, 'owned');
+      });
+      renderTerritories();
+      renderSummary();
+    }
+    if (act === 'remove-territory') {
+      state.territories = state.territories.filter(function (t) { return t.id !== btn.getAttribute('data-id'); });
+      renderTerritories();
+      renderSummary();
+    }
+    if (act === 'add-action') {
+      actionsFor(btn.getAttribute('data-id')).push({ id: uid('a'), fighter: '', action: '' });
+      renderActions();
+      renderSummary();
+    }
+    if (act === 'remove-action') {
+      var pid = btn.getAttribute('data-player');
+      var list = actionsFor(pid);
+      state.actions[cycleKey()][pid] = list.filter(function (a) { return a.id !== btn.getAttribute('data-id'); });
+      renderActions();
+      renderSummary();
+    }
+    if (act === 'view-cycle') {
+      state.cycle = Math.max(1, Math.min(cycleTotal(), Number(btn.getAttribute('data-n')) || 1));
+      renderPage(currentPage());
+    }
+    if (act === 'set-live') {
+      state.liveCycle = state.cycle;
+      renderPage(currentPage());
+    }
+  });
+
+  document.querySelector('.arb-main').addEventListener('change', function (e) {
+    var el = e.target;
+    if (el.id === 'camp-name') state.name = el.value;
+    if (el.id === 'camp-occupation') setPhaseLength('occupation', num(el));
+    if (el.id === 'camp-downtime') setPhaseLength('downtime', num(el));
+    if (el.id === 'camp-takeover') setPhaseLength('takeover', num(el));
+    var playerId = el.getAttribute('data-player');
+    if (playerId && el.getAttribute('data-field')) {
+      var p = playerById(playerId);
+      if (!p) return;
+      var field = el.getAttribute('data-field');
+      if (field === 'rosterFile') bindRoster(p, el.value);
+      else if (field === 'reputation' || field === 'rating' || field === 'wealth' || field === 'battles' || field === 'ooa') p[field] = num(el);
+      else p[field] = el.value;
+      if (currentPage() === 'territories') renderTerritories();
+    }
+    var terrId = el.getAttribute('data-terr');
+    if (terrId) {
+      var t = state.territories.find(function (x) { return x.id === terrId; });
+      if (!t) return;
+      t[el.getAttribute('data-field')] = el.value;
+      if (isHome(t.kind)) {
+        t.status = 'owned';
+        if (!t.ownerId && state.players[0]) t.ownerId = state.players[0].id;
+      }
+      renderTerritories();
+    }
+    var evId = el.getAttribute('data-event');
+    if (evId) {
+      var ev = eventFor(evId);
+      var evField = el.getAttribute('data-field');
+      if (evField === 'ooa') ev.ooa = num(el);
+      else if (evField === 'sideJob') ev.sideJob = el.value === '1';
+      else ev[evField] = el.value;
+      renderSummary();
+    }
+    var actPlayer = el.getAttribute('data-action-player');
+    if (actPlayer) {
+      var item = actionsFor(actPlayer).find(function (a) { return a.id === el.getAttribute('data-action-id'); });
+      if (item) item[el.getAttribute('data-field')] = el.value;
+      renderSummary();
+    }
+  });
+
+  document.querySelector('.arb-main').addEventListener('input', function (e) {
+    var el = e.target;
+    if (el.id === 'camp-name') state.name = el.value;
+    var playerId = el.getAttribute('data-player');
+    if (playerId && el.getAttribute('data-field')) {
+      var p = playerById(playerId);
+      if (!p) return;
+      var field = el.getAttribute('data-field');
+      if (field === 'reputation' || field === 'rating' || field === 'wealth' || field === 'battles' || field === 'ooa') p[field] = num(el);
+      else if (field !== 'rosterFile') p[field] = el.value;
+    }
+    var evId = el.getAttribute('data-event');
+    if (evId) {
+      var ev = eventFor(evId);
+      var evField = el.getAttribute('data-field');
+      if (evField === 'ooa') ev.ooa = num(el);
+      else if (evField === 'notes') ev.notes = el.value;
+      renderSummary();
+    }
+    var actPlayer = el.getAttribute('data-action-player');
+    if (actPlayer && el.getAttribute('data-field') === 'fighter') {
+      var item = actionsFor(actPlayer).find(function (a) { return a.id === el.getAttribute('data-action-id'); });
+      if (item) item.fighter = el.value;
+    }
+  });
+
+  window.addEventListener('hashchange', showPage);
+
+  fetch('/api/rosters')
+    .then(function (res) { return res.ok ? res.json() : { rosters: [] }; })
+    .then(function (data) {
+      rosters = (data && data.rosters) || [];
+      if (currentPage() === 'players') renderPlayers();
+    })
+    .catch(function () { rosters = []; });
+
+  showPage();
+})();
+</script>
+<script src="handbook-search.js"></script>
+</body>
+</html>

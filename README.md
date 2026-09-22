@@ -12,6 +12,8 @@ Games Workshop.
 
 - Статический HTML-справочник: основные правила, 19 списков банд, подсказка
   по ведению кампании, учебный ростер Дома Каудор на 1000 кредитов.
+- Черновик помощника арбитра: территории, игроки и банды, цикл, действия
+  и триумфы. Данные не сохраняются.
 - Построитель ростера (React): выбор банды, типы и подтипы бойцов, снаряжение
   из каталога, апгрейды вроде warp rounds, рейтинг и проверка состава
   (один Leader, лимит чемпионов/громил).
@@ -86,6 +88,7 @@ Necromunda Digital/
 │   ├── core-rules.html
 │   ├── gangs.html
 │   ├── campaign-helper.html
+│   ├── campaign-arbitrator.html
 │   ├── roster-example.html
 │   ├── roster-builder.html    редирект на frontend/dist
 │   ├── styles.css
@@ -121,6 +124,7 @@ Necromunda Digital/
 | `pages/core-rules.html` | Основные правила | `Правила/SKIRMUNDA.pdf` |
 | `pages/gangs.html` | 19 списков банд | `Правила/GANGS0_3.pdf` |
 | `pages/campaign-helper.html` | Подсказка по ведению кампании | SKIRMUNDA |
+| `pages/campaign-arbitrator.html` | Черновик стола арбитра (без сохранения) | SKIRMUNDA |
 | `pages/roster-example.html` | Учебный ростер Каудор | SKIRMUNDA + список Каудор |
 
 Раздел банды свёрнут в блоки: бойцы (карточки тоже сворачиваются), список
