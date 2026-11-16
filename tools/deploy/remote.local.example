@@ -1,0 +1,15 @@
+# Скопируйте в tools/deploy/remote.local и заполните.
+# remote.local не коммитится.
+
+# Куда подключаться по SSH.
+TARGET=user@203.0.113.10
+
+# Порт SSH, если не 22.
+# SSH_PORT=2222
+
+# Аргументы install-ubuntu.sh. Строка — флаг и, если нужно, значение.
+# --domain example.com
+# --port 8000
+# --branch main
+# --no-nginx
+# --no-ufw

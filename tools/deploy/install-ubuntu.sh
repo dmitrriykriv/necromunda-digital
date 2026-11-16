@@ -11,11 +11,17 @@
 #
 # Запуск на сервере (скрипт можно скачать отдельно, репозиторий он заберёт сам):
 #   curl -fsSL -o install-ubuntu.sh \
-#     https://raw.githubusercontent.com/dmitrriykriv/necromunda-digital/main/deploy/install-ubuntu.sh
+#     https://raw.githubusercontent.com/dmitrriykriv/necromunda-digital/main/tools/deploy/install-ubuntu.sh
 #   sudo bash install-ubuntu.sh
 #
 # Если репозиторий уже склонирован:
-#   sudo bash /opt/necromunda/deploy/install-ubuntu.sh
+#   sudo bash /opt/necromunda/tools/deploy/install-ubuntu.sh
+#
+# Со своего компьютера (на сервере нужен SSH и sudo).
+# Хост и флаги — в tools/deploy/remote.local, его нет в git:
+#   cp tools/deploy/remote.local.example tools/deploy/remote.local
+#   powershell -File tools/deploy/remote.ps1
+#   bash tools/deploy/remote.sh
 #
 # Параметры:
 #   --repo URL       адрес Git (по умолчанию github.com/dmitrriykriv/necromunda-digital)
@@ -167,9 +173,9 @@ if [[ ! -f "$APP_DIR/package.json" || ! -f "$APP_DIR/package-lock.json" ]]; then
   exit 1
 fi
 
-if [[ -f "$APP_DIR/deploy/install-ubuntu.sh" ]]; then
+if [[ -f "$APP_DIR/tools/deploy/install-ubuntu.sh" ]]; then
   this_script="$(realpath "$0")"
-  cloned_script="$(realpath "$APP_DIR/deploy/install-ubuntu.sh")"
+  cloned_script="$(realpath "$APP_DIR/tools/deploy/install-ubuntu.sh")"
   if [[ "$this_script" != "$cloned_script" ]]; then
     log "Дальше выполняется скрипт из клона"
     exec bash "$cloned_script" "${ORIGINAL_ARGS[@]}"
