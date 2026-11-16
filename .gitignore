@@ -26,3 +26,9 @@ Thumbs.db
 *.log
 .idea/
 *.swp
+
+# Local notes and scratch scripts
+/Пожелания
+/Правила кампейна.docx
+tools/_scan_en.py
+tools/_test_i18n.py
