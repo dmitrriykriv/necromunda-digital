@@ -5,13 +5,13 @@
 #   cp tools/deploy/remote.local.example tools/deploy/remote.local
 #   bash tools/deploy/remote.sh
 #
-# На сервере нужны SSH и sudo. Этот скрипт копирует install-ubuntu.sh
-# на сервер и запускает его. Репозиторий установщик клонирует сам.
+# На сервере нужны SSH и sudo. Скрипт установки скачивается с GitHub
+# и сам клонирует репозиторий.
 
 set -euo pipefail
 
+URL="https://raw.githubusercontent.com/dmitrriykriv/necromunda-digital/main/tools/deploy/install-ubuntu.sh"
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-INSTALL_SCRIPT="$ROOT/install-ubuntu.sh"
 CONFIG="$ROOT/remote.local"
 SSH_PORT=""
 TARGET=""
@@ -122,23 +122,16 @@ if ! command -v ssh >/dev/null 2>&1; then
   exit 1
 fi
 
-if [[ ! -f "$INSTALL_SCRIPT" ]]; then
-  echo "Нет $INSTALL_SCRIPT" >&2
-  exit 1
-fi
-if ! command -v scp >/dev/null 2>&1; then
-  echo "Не найден scp. На Windows он входит в OpenSSH Client." >&2
-  exit 1
-fi
-
 quoted=""
 if [[ ${#EXTRA[@]} -gt 0 ]]; then
   quoted="$(printf ' %q' "${EXTRA[@]}")"
 fi
+url_q="$(printf '%q' "$URL")"
+curl_cmd="curl -fsSL ${url_q} -o /tmp/necromunda-install.sh"
 if [[ "$SSH_PASSWORD_MODE" == "file" ]]; then
-  remote="sudo -S -p '' bash /tmp/necromunda-install.sh${quoted}"
+  remote="${curl_cmd} && sudo -S -p '' bash /tmp/necromunda-install.sh${quoted}"
 else
-  remote="sudo bash /tmp/necromunda-install.sh${quoted}"
+  remote="${curl_cmd} && sudo bash /tmp/necromunda-install.sh${quoted}"
 fi
 
 ssh_opts=(
@@ -147,17 +140,14 @@ ssh_opts=(
   -o NumberOfPasswordPrompts=3
   -o StrictHostKeyChecking=accept-new
 )
-scp_cmd=(scp "${ssh_opts[@]}")
 ssh_cmd=(ssh "${ssh_opts[@]}")
 # В режиме file терминал не нужен: иначе sudo снова ждёт пароль и молчит.
 if [[ "$SSH_PASSWORD_MODE" != "file" ]]; then
   ssh_cmd+=(-tt)
 fi
 if [[ -n "$SSH_PORT" && "$SSH_PORT" != "22" ]]; then
-  scp_cmd+=(-P "$SSH_PORT")
   ssh_cmd+=(-p "$SSH_PORT")
 fi
-scp_cmd+=("$INSTALL_SCRIPT" "${TARGET}:/tmp/necromunda-install.sh")
 
 sudo_pw=""
 if [[ "$SSH_PASSWORD_MODE" == "file" ]]; then
@@ -200,22 +190,15 @@ else
   echo "Если вход пройдёт, сервер может отдельно спросить пароль sudo."
 fi
 set +e
-echo "Копирую скрипт установки на ${TARGET}."
-run_with_auth "${scp_cmd[@]}"
-status=$?
-if [[ "$status" -eq 0 ]]; then
-  echo "Запускаю установку на ${TARGET}."
-  if [[ "$SSH_PASSWORD_MODE" == "file" ]]; then
-    printf '%s\n' "$sudo_pw" | run_with_auth "${ssh_cmd[@]}" "$TARGET" "$remote"
-  else
-    run_with_auth "${ssh_cmd[@]}" "$TARGET" "$remote"
-  fi
-  status=$?
-  if [[ "$status" -ne 0 ]]; then
-    report_failure "$status" "Установка"
-  fi
+echo "Скачиваю установщик с GitHub и запускаю его на ${TARGET}."
+if [[ "$SSH_PASSWORD_MODE" == "file" ]]; then
+  printf '%s\n' "$sudo_pw" | run_with_auth "${ssh_cmd[@]}" "$TARGET" "$remote"
 else
-  report_failure "$status" "Копирование скрипта"
+  run_with_auth "${ssh_cmd[@]}" "$TARGET" "$remote"
+fi
+status=$?
+if [[ "$status" -ne 0 ]]; then
+  report_failure "$status" "Установка"
 fi
 set -e
 unset sudo_pw

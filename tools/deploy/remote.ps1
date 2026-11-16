@@ -4,8 +4,8 @@
 #   copy tools\deploy\remote.local.example tools\deploy\remote.local
 #   powershell -File tools/deploy/remote.ps1
 #
-# На сервере нужны SSH и sudo. Этот скрипт копирует install-ubuntu.sh
-# на сервер и запускает его. Репозиторий установщик клонирует сам.
+# На сервере нужны SSH и sudo. Скрипт установки скачивается с GitHub
+# и сам клонирует репозиторий.
 
 [CmdletBinding()]
 param()
@@ -13,6 +13,7 @@ param()
 $ErrorActionPreference = 'Stop'
 try { [Console]::OutputEncoding = [System.Text.Encoding]::UTF8 } catch {}
 
+$Url = 'https://raw.githubusercontent.com/dmitrriykriv/necromunda-digital/main/tools/deploy/install-ubuntu.sh'
 $scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 $configPath = Join-Path $scriptDir 'remote.local'
 
@@ -202,23 +203,15 @@ if (-not (Test-Path -LiteralPath $sshExe)) {
     $sshExe = $found.Source
 }
 
-$installScript = Join-Path $scriptDir 'install-ubuntu.sh'
-if (-not (Test-Path -LiteralPath $installScript)) {
-    throw "Нет $installScript"
-}
-$scpExe = Join-Path (Split-Path -Parent $sshExe) 'scp.exe'
-if (-not (Test-Path -LiteralPath $scpExe)) {
-    throw "Не найден scp рядом с $sshExe"
-}
-
 $remoteArgs = ($tokens | ForEach-Object { ConvertTo-BashQuoted $_ }) -join ' '
 if ($remoteArgs) { $remoteArgs = ' ' + $remoteArgs }
 
+$curl = "curl -fsSL $(ConvertTo-BashQuoted $Url) -o /tmp/necromunda-install.sh"
 if ($passwordMode -eq 'file') {
-    # Без кавычек внутри команды: иначе Windows обрезает аргумент ssh и тот сразу завершается.
-    $remote = "sudo -S -p '' bash /tmp/necromunda-install.sh$remoteArgs"
+    # Без двойных кавычек внутри команды: иначе Windows обрезает аргумент ssh.
+    $remote = "$curl && sudo -S -p '' bash /tmp/necromunda-install.sh$remoteArgs"
 } else {
-    $remote = "sudo bash /tmp/necromunda-install.sh$remoteArgs"
+    $remote = "$curl && sudo bash /tmp/necromunda-install.sh$remoteArgs"
 }
 
 $sshOpts = @(
@@ -227,16 +220,13 @@ $sshOpts = @(
     '-o', 'NumberOfPasswordPrompts=3',
     '-o', 'StrictHostKeyChecking=accept-new'
 )
-$scpArgs = @() + $sshOpts
 $sshArgs = @() + $sshOpts
 if ($passwordMode -ne 'file') {
     $sshArgs = @('-tt') + $sshArgs
 }
 if ($sshPort -ne 22) {
-    $scpArgs += @('-P', "$sshPort")
     $sshArgs += @('-p', "$sshPort")
 }
-$scpArgs += @($installScript, "${target}:/tmp/necromunda-install.sh")
 $sshArgs += @($target, $remote)
 
 if ($passwordMode -eq 'file') {
@@ -273,18 +263,11 @@ function Restore-SshEnv {
         Remove-Item Env:SSH_ASKPASS -ErrorAction SilentlyContinue
         Remove-Item Env:SSH_ASKPASS_REQUIRE -ErrorAction SilentlyContinue
     }
-    Write-Note "Копирую скрипт установки на $target."
-    $copyCode = Invoke-RemoteProcess -FileName $scpExe -ArgumentList $scpArgs
-    if ($copyCode -ne 0) {
-        Write-RemoteFailure $copyCode 'Копирование скрипта'
-        $exitCode = $copyCode
-    } else {
-        Write-Note "Запускаю установку на $target."
-        $sendPassword = $passwordMode -eq 'file'
-        $exitCode = Invoke-RemoteProcess -FileName $sshExe -ArgumentList $sshArgs -SendSudoPassword:$sendPassword
-        if ($exitCode -ne 0) {
-            Write-RemoteFailure $exitCode 'Установка'
-        }
+    Write-Note "Скачиваю установщик с GitHub и запускаю его на $target."
+    $sendPassword = $passwordMode -eq 'file'
+    $exitCode = Invoke-RemoteProcess -FileName $sshExe -ArgumentList $sshArgs -SendSudoPassword:$sendPassword
+    if ($exitCode -ne 0) {
+        Write-RemoteFailure $exitCode 'Установка'
     }
 } catch {
     Write-Note $_.Exception.Message
