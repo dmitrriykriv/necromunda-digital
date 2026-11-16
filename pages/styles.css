@@ -2156,6 +2156,76 @@ ul.rule-list li.sub {
     color: var(--accent-soft);
 }
 
+.arb-bar .mh-btn.is-on {
+    border-color: var(--accent);
+    color: var(--accent-soft);
+    background: var(--accent-dim);
+}
+
+.arb-generate {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.arb-generate[hidden] {
+    display: none !important;
+}
+
+.arb-generate label {
+    font-size: 0.78rem;
+    letter-spacing: 0.4px;
+    color: var(--text-dim);
+}
+
+.arb-generate .mh-input {
+    width: 5.5rem;
+}
+
+.arb-income {
+    white-space: nowrap;
+}
+
+.arb-income .trait {
+    margin-left: 8px;
+}
+
+.arb-setup {
+    margin: 0 0 18px;
+    padding: 14px 16px 16px;
+    background: var(--bg-panel);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+}
+
+.arb-setup h3 {
+    margin: 16px 0 8px;
+}
+
+.arb-setup h3:first-child {
+    margin-top: 0;
+}
+
+.arb-setup .arb-boon {
+    min-width: 220px;
+    max-width: 460px;
+    color: var(--text-dim);
+    font-size: 0.82rem;
+    line-height: 1.4;
+}
+
+.arb-setup tr.is-off td:not(:first-child) {
+    opacity: 0.45;
+}
+
+.arb-setup .arb-income-input {
+    width: 88px;
+}
+
+.arb-setup .arb-name-input {
+    min-width: 180px;
+}
+
 @media (max-width: 800px) {
     .arb-meta {
         grid-template-columns: 1fr 1fr;

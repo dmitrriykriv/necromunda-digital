@@ -73,10 +73,21 @@
 
     <section class="arb-page" id="page-territories">
         <h2>Территории<span class="en">Territories</span></h2>
-        <p class="lede">Статус: неконтролируемая, контроль банды, поселение (нельзя ставить на кон) или ставка цикла.</p>
+        <p class="lede">Статус: неконтролируемая, контроль банды, поселение (нельзя ставить на кон) или ставка цикла. В колонке дохода — кредиты; если кроме денег есть другие эффекты, наведите на «+ доп. свойства».</p>
         <div class="arb-bar">
             <button type="button" class="mh-btn mh-btn-primary" data-act="add-territory">Добавить территорию</button>
             <button type="button" class="mh-btn mh-btn-ghost" data-act="add-settlements">Поселение каждому</button>
+            <button type="button" class="mh-btn mh-btn-ghost" data-act="toggle-catalog" aria-expanded="false" aria-controls="territory-setup">Настроить территории</button>
+            <button type="button" class="mh-btn mh-btn-ghost" data-act="show-generate" aria-expanded="false" aria-controls="generate-box" title="Случайные территории из включённых, кроме поселения. Одна и та же может выпасть несколько раз.">Сгенерировать территории</button>
+            <span class="arb-generate" id="generate-box" hidden>
+                <label for="generate-count">Количество</label>
+                <input class="mh-input" id="generate-count" type="number" min="1" max="99" inputmode="numeric">
+                <button type="button" class="mh-btn mh-btn-primary" data-act="generate-territories">Заполнить</button>
+                <span class="arb-muted" id="generate-note"></span>
+            </span>
+        </div>
+        <div class="arb-setup" id="territory-setup" hidden>
+            <div id="territory-setup-body"></div>
         </div>
         <div class="arb-table-wrap" id="territories-body"></div>
     </section>
@@ -127,26 +138,55 @@
     { id: 'downtime', name: 'Простой', max: 6 },
     { id: 'takeover', name: 'Захват', max: 12 }
   ];
-  var TERRITORIES = [
-    { id: 'settlement', name: 'Поселение', home: true },
-    { id: 'bullet-den', name: 'Пулевая нора' },
-    { id: 'rogue-doc', name: 'Лавка бродячего Doc' },
-    { id: 'mess-shack', name: 'Столовая' },
-    { id: 'drinking-hole', name: 'Питейное заведение' },
-    { id: 'fence', name: 'Притон скупщика' },
-    { id: 'bounty-den', name: 'Логово охотников за головами' },
-    { id: 'generatorium', name: 'Генераториум' },
-    { id: 'corpse-farm', name: 'Трупная ферма' },
-    { id: 'tunnels', name: 'Туннели' },
-    { id: 'tech-bazaar', name: 'Тех-базар' },
-    { id: 'promethium', name: 'Склад прометиума' },
-    { id: 'collapsed-dome', name: 'Обрушенный купол' },
-    { id: 'bone-shrine', name: 'Костяной алтарь' },
-    { id: 'mines', name: 'Шахты' },
-    { id: 'gambling-den', name: 'Игорный притон' },
-    { id: 'synth-still', name: 'Синт-перегонка' },
-    { id: 'old-ruins', name: 'Старые руины' },
-    { id: 'fighting-pit', name: 'Бойцовская яма' }
+  var RULE_TERRITORIES = [
+    { id: 'settlement', name: 'Поселение', en: 'Settlement', roll: '—', home: true, income: 15,
+      boon: 'Вместо дохода: набрать гэнгера на 25 кредитов дешевле обычного (мин. 0).' },
+    { id: 'bullet-den', name: 'Пулевая нора', en: 'Bullet Den', roll: '11–12', income: 15,
+      boon: 'Вместо дохода: если в Gang Roster ещё нет Ammo-Jack, набрать его на 30 кредитов дешевле обычного.',
+      field: 'Обилие патронов: раз за раунд каждая банда может выполнить Reload как свободное действие.' },
+    { id: 'rogue-doc', name: 'Лавка бродячего Doc', en: 'Rogue Doc Shop', roll: '13–14', income: 15,
+      boon: 'Вместо дохода: если в Gang Roster ещё нет Rogue Doc, набрать его на 30 кредитов дешевле обычного.',
+      field: 'Припасы повсюду: когда боец оказывает помощь, добавляйте два кубика ранений вместо одного.' },
+    { id: 'mess-shack', name: 'Столовая', en: 'Mess Shack', roll: '15–16', income: 15,
+      boon: 'Вместо дохода: если в Gang Roster ещё нет Slopper, набрать его на 30 кредитов дешевле обычного.',
+      field: 'Сытые: все модели увеличивают Leadership на 1.' },
+    { id: 'drinking-hole', name: 'Питейное заведение', en: 'Drinking Hole', roll: '21–22', income: 15,
+      boon: 'Вместо дохода: если в Gang Roster ещё нет Hive Watcher, набрать его на 30 кредитов дешевле обычного.',
+      field: 'Драка в баре: в первом раунде нельзя использовать дальнобойное оружие.' },
+    { id: 'fence', name: 'Притон скупщика', en: 'Fence Hangout', roll: '23–24', income: 15,
+      boon: 'Вместо дохода: если в Gang Roster ещё нет Dome Runner, набрать его на 30 кредитов дешевле обычного.',
+      field: 'Радость барыги: банды получают дополнительные D3×10 кредитов за выполнение Side Job.' },
+    { id: 'bounty-den', name: 'Логово охотников за головами', en: 'Bounty Den', roll: '25–26', income: 25,
+      field: 'Доска наград: каждый игрок генерирует дополнительное Side Job.' },
+    { id: 'generatorium', name: 'Генераториум', en: 'Generatorium', roll: '31–32', income: 15,
+      boon: 'Reputation +1.',
+      field: 'Свечение энергии: правило Visibility (X") не действует.' },
+    { id: 'corpse-farm', name: 'Трупная ферма', en: 'Corpse Farm', roll: '33–34', income: 25,
+      field: 'Плата натурой: банды получают 10 кредитов за каждую вражескую модель, выведенную из боя.' },
+    { id: 'tunnels', name: 'Туннели', en: 'Tunnels', roll: '35–36', income: 20,
+      field: 'Извилистые туннели: действует правило Tunnel Warfare.' },
+    { id: 'tech-bazaar', name: 'Тех-базар', en: 'Tech Bazaar', roll: '41–42', income: 15,
+      boon: 'Особое: дополнительно 1 TP каждую пост-цикловую последовательность и всегда можно покупать на Trading Post.',
+      field: 'Не порть товар: оружие со свойствами Blast (3"/5") и Template нельзя использовать в первом раунде.' },
+    { id: 'promethium', name: 'Склад прометиума', en: 'Promethium Cache', roll: '43–44', income: 15,
+      boon: 'Вместо дохода: три hazard suit в Stash бесплатно.',
+      field: 'Обилие прометиума: для всего оружия со свойством Blaze (X+) увеличьте X на 1.' },
+    { id: 'collapsed-dome', name: 'Обрушенный купол', en: 'Collapsed Dome', roll: '45–46', income: 20,
+      field: 'Опасная почва: на натуральную 1 в тесте Agility модель получает дополнительное попадание Str –, AP –, L1, которое автоматически ранит без спасбросков.' },
+    { id: 'bone-shrine', name: 'Костяной алтарь', en: 'Bone Shrine', roll: '51–52', income: 25,
+      field: 'Священный алтарь: защитник ставит маркер в пределах 6" от центра; бойцы могут получать XP за контроль его как за цель.' },
+    { id: 'mines', name: 'Шахты', en: 'Mine Workings', roll: '53–54', income: 20,
+      boon: 'Вместо дохода: два респиратора в Stash бесплатно.',
+      field: 'Шахтная пыль: действует Visibility (18").' },
+    { id: 'gambling-den', name: 'Игорный притон', en: 'Gambling Den', roll: '55–56', income: 15,
+      boon: 'Reputation +1.',
+      field: 'Удача любит смелых: каждый игрок может перебросить один кубик, один раз за бой.' },
+    { id: 'synth-still', name: 'Синт-перегонка', en: 'Synth Still', roll: '61–62', income: 20,
+      field: 'Токсичные чаны: увеличьте AP всего оружия со свойством Toxin (X+) на 1.' },
+    { id: 'old-ruins', name: 'Старые руины', en: 'Old Ruins', roll: '63–64', income: 20,
+      field: 'Разбросанный мусор: модели в Long Range оружия и не в укрытии увеличивают Save на 1.' },
+    { id: 'fighting-pit', name: 'Бойцовская яма', en: 'Fighting Pit', roll: '65–66', income: 25,
+      field: 'Игра на публику: модели получают дополнительный 1 XP, когда делают врага Seriously Injured/Damaged или выводят из боя в ближнем бою.' }
   ];
   var ACTIONS = [
     { id: 'medical', name: 'Сопровождение к врачу' },
@@ -174,6 +214,9 @@
     takeover: 3,
     players: [],
     territories: [],
+    disabled: {},
+    customs: [],
+    catalogOpen: false,
     events: {},
     actions: {}
   };
@@ -231,14 +274,120 @@
     return (p.name || 'Игрок') + (p.gangName ? ' · ' + p.gangName : '');
   }
 
+  function ruleById(id) {
+    return RULE_TERRITORIES.find(function (x) { return x.id === id; }) || null;
+  }
+
+  function customById(id) {
+    return state.customs.find(function (x) { return x.id === id; }) || null;
+  }
+
+  function defById(id) {
+    return ruleById(id) || customById(id);
+  }
+
   function terrName(kind) {
-    var t = TERRITORIES.find(function (x) { return x.id === kind; });
-    return t ? t.name : kind;
+    var t = defById(kind);
+    if (!t) return 'Нет в списке';
+    return (t.name || '').trim() || 'Своя территория';
   }
 
   function isHome(kind) {
-    var t = TERRITORIES.find(function (x) { return x.id === kind; });
+    var t = ruleById(kind);
     return !!(t && t.home);
+  }
+
+  function extraParts(def) {
+    if (!def) return [];
+    if (def.custom) {
+      var text = String(def.extras || '').trim();
+      return text ? [text] : [];
+    }
+    var parts = [];
+    if (def.boon) parts.push(def.boon);
+    if (def.field) parts.push('Поле боя: ' + def.field);
+    return parts;
+  }
+
+  function extraTip(def) {
+    return extraParts(def).join(' ');
+  }
+
+  function incomeLabel(def) {
+    if (!def || def.income === '' || def.income == null) return '—';
+    var n = Number(def.income);
+    if (isNaN(n)) return '—';
+    return n + ' cr';
+  }
+
+  function incomeCell(def) {
+    var html = esc(incomeLabel(def));
+    var tip = extraTip(def);
+    if (tip) {
+      html += ' <span class="trait" data-tip="' + esc(tip) + '">+ доп. свойства</span>';
+    }
+    return html;
+  }
+
+  function enabledKinds(selected) {
+    var list = RULE_TERRITORIES.filter(function (t) { return !state.disabled[t.id]; });
+    state.customs.forEach(function (c) { list.push(c); });
+    if (selected && !list.some(function (t) { return t.id === selected; })) {
+      var current = defById(selected);
+      list.unshift(current || { id: selected, name: 'Нет в списке' });
+    }
+    return list;
+  }
+
+  function firstKind() {
+    var list = enabledKinds('');
+    var pick = null;
+    list.forEach(function (t) {
+      if (!pick && !t.home) pick = t;
+    });
+    return (pick || list[0] || {}).id || '';
+  }
+
+  function rollableKinds() {
+    return enabledKinds('').filter(function (t) { return t.id && !t.home; });
+  }
+
+  function generateTerritories(count) {
+    var pool = rollableKinds();
+    if (!pool.length || count < 1) return false;
+    var homes = state.territories.filter(function (t) { return isHome(t.kind); });
+    var next = homes.slice();
+    for (var i = 0; i < count; i++) {
+      var kind = pool[Math.floor(Math.random() * pool.length)].id;
+      next.push({
+        id: uid('t'),
+        kind: kind,
+        status: 'uncontrolled',
+        ownerId: ''
+      });
+    }
+    state.territories = next;
+    return true;
+  }
+
+  function runGenerate() {
+    var input = $('generate-count');
+    var note = $('generate-note');
+    var count = parseInt(input.value, 10);
+    if (!count || count < 1) {
+      note.textContent = 'Укажите количество.';
+      return;
+    }
+    count = Math.min(99, count);
+    input.value = String(count);
+    if (!rollableKinds().length) {
+      note.textContent = 'Нет территорий для броска. Включите их в настройке или добавьте свою.';
+      return;
+    }
+    note.textContent = '';
+    generateTerritories(count);
+    renderTerritories();
+    renderSummary();
   }
 
   function clampInt(value, min, max, fallback) {
@@ -434,9 +583,9 @@
   }
 
   function territoryKindOptions(selected) {
-    return optionList(TERRITORIES.map(function (t) {
-      return { value: t.id, label: t.name };
-    }), selected, '— тип —');
+    return optionList(enabledKinds(selected).map(function (t) {
+      return { value: t.id, label: terrName(t.id) };
+    }), selected, false);
   }
 
   function ownerOptions(selected) {
@@ -562,7 +711,7 @@
       return;
     }
     var html = '<table class="compact"><thead><tr>' +
-      '<th>Территория</th><th>Статус</th><th>Владелец</th><th>Метка</th><th></th></tr></thead><tbody>';
+      '<th>Территория</th><th>Доход</th><th>Статус</th><th>Владелец</th><th>Метка</th><th></th></tr></thead><tbody>';
     state.territories.forEach(function (t) {
       var st = statusLabel(t);
       var statusSelect = isHome(t.kind)
@@ -575,6 +724,7 @@
           ], t.status, '— статус —') + '</select>';
       html += '<tr>' +
         '<td><select class="mh-select" data-terr="' + t.id + '" data-field="kind">' + territoryKindOptions(t.kind) + '</select></td>' +
+        '<td class="arb-income">' + incomeCell(defById(t.kind)) + '</td>' +
         '<td>' + statusSelect + '</td>' +
         '<td><select class="mh-select" data-terr="' + t.id + '" data-field="ownerId">' + ownerOptions(t.ownerId) + '</select></td>' +
         '<td><span class="arb-status ' + st.cls + '">' + esc(st.text) + '</span></td>' +
@@ -812,13 +962,57 @@
   }
 
   function addTerritory(kind, ownerId, status) {
+    if (!kind) kind = firstKind();
+    if (!kind) return false;
     var home = isHome(kind);
     state.territories.push({
       id: uid('t'),
-      kind: kind || 'bullet-den',
+      kind: kind,
       status: home ? 'owned' : (status || 'uncontrolled'),
       ownerId: ownerId || ''
     });
+    return true;
+  }
+
+  function renderCatalog() {
+    var box = $('territory-setup-body');
+    var html = '<h3>Из правил</h3>' +
+      '<p class="arb-muted">Эти территории нельзя править. Снимите галочку, чтобы убрать тип из выбора при добавлении. Уже стоящие на столе строки останутся.</p>' +
+      '<div class="arb-table-wrap"><table class="compact"><thead><tr>' +
+      '<th>В пуле</th><th>D66</th><th>Территория</th><th>Доход</th><th>Прочие свойства</th></tr></thead><tbody>';
+    RULE_TERRITORIES.forEach(function (t) {
+      var on = !state.disabled[t.id];
+      var parts = extraParts(t);
+      html += '<tr' + (on ? '' : ' class="is-off"') + '>' +
+        '<td><input type="checkbox" data-disable="' + t.id + '"' + (on ? ' checked' : '') +
+          ' aria-label="Доступна: ' + esc(t.name) + '"></td>' +
+        '<td class="num">' + esc(t.roll) + '</td>' +
+        '<td>' + esc(t.name) + ' <span class="arb-muted">' + esc(t.en) + '</span></td>' +
+        '<td>' + esc(incomeLabel(t)) + '</td>' +
+        '<td class="arb-boon">' + (parts.length ? parts.map(esc).join('<br>') : '—') + '</td>' +
+        '</tr>';
+    });
+    html += '</tbody></table></div>';
+
+    html += '<h3>Свои</h3>' +
+      '<p class="arb-muted">Свои территории можно править и удалять. Они попадают в тот же список выбора.</p>';
+    if (!state.customs.length) {
+      html += '<p class="arb-empty">Пока нет своих территорий.</p>';
+    } else {
+      html += '<div class="arb-table-wrap"><table class="compact"><thead><tr>' +
+        '<th>Территория</th><th>Доход, cr</th><th>Прочие свойства</th><th></th></tr></thead><tbody>';
+      state.customs.forEach(function (c) {
+        html += '<tr>' +
+          '<td><input class="mh-input arb-name-input" data-custom="' + c.id + '" data-field="name" value="' + esc(c.name) + '" placeholder="Название"></td>' +
+          '<td><input class="mh-input arb-income-input" data-custom="' + c.id + '" data-field="income" type="number" min="0" value="' + esc(c.income) + '"></td>' +
+          '<td><input class="mh-input" data-custom="' + c.id + '" data-field="extras" value="' + esc(c.extras) + '" placeholder="Эффекты кроме дохода"></td>' +
+          '<td><button type="button" class="arb-icon" data-act="remove-custom" data-id="' + c.id + '" title="Убрать">×</button></td>' +
+          '</tr>';
+      });
+      html += '</tbody></table></div>';
+    }
+    html += '<button type="button" class="mh-btn mh-btn-ghost" data-act="add-custom">Добавить свою</button>';
+    box.innerHTML = html;
   }
 
   function loadRosterDetails(file) {
@@ -893,15 +1087,55 @@
       renderPage(currentPage());
     }
     if (act === 'add-territory') {
-      addTerritory('bullet-den', '', 'uncontrolled');
+      if (addTerritory('', '', 'uncontrolled')) {
+        renderTerritories();
+        renderSummary();
+      }
+    }
+    if (act === 'add-settlements') {
+      if (!state.disabled.settlement) {
+        state.players.forEach(function (p) {
+          var has = state.territories.some(function (t) { return t.kind === 'settlement' && t.ownerId === p.id; });
+          if (!has) addTerritory('settlement', p.id, 'owned');
+        });
+      }
       renderTerritories();
       renderSummary();
     }
-    if (act === 'add-settlements') {
-      state.players.forEach(function (p) {
-        var has = state.territories.some(function (t) { return t.kind === 'settlement' && t.ownerId === p.id; });
-        if (!has) addTerritory('settlement', p.id, 'owned');
-      });
+    if (act === 'show-generate') {
+      var box = $('generate-box');
+      var opening = box.hidden;
+      box.hidden = false;
+      btn.classList.add('is-on');
+      btn.setAttribute('aria-expanded', 'true');
+      var countInput = $('generate-count');
+      if (opening && !countInput.value && state.players.length) {
+        countInput.value = String(state.players.length * 3);
+      }
+      if (opening) {
+        countInput.focus();
+        countInput.select();
+      } else {
+        runGenerate();
+      }
+    }
+    if (act === 'generate-territories') runGenerate();
+    if (act === 'toggle-catalog') {
+      state.catalogOpen = !state.catalogOpen;
+      $('territory-setup').hidden = !state.catalogOpen;
+      btn.classList.toggle('is-on', state.catalogOpen);
+      btn.setAttribute('aria-expanded', state.catalogOpen ? 'true' : 'false');
+      if (state.catalogOpen) renderCatalog();
+    }
+    if (act === 'add-custom') {
+      state.customs.push({ id: uid('c'), name: '', income: '', extras: '', custom: true });
+      renderCatalog();
+      renderTerritories();
+    }
+    if (act === 'remove-custom') {
+      var cid = btn.getAttribute('data-id');
+      state.customs = state.customs.filter(function (c) { return c.id !== cid; });
+      renderCatalog();
       renderTerritories();
       renderSummary();
     }
@@ -932,6 +1166,12 @@
     }
   });
 
+  document.querySelector('.arb-main').addEventListener('keydown', function (e) {
+    if (e.key !== 'Enter' || e.target.id !== 'generate-count') return;
+    e.preventDefault();
+    runGenerate();
+  });
+
   document.querySelector('.arb-main').addEventListener('change', function (e) {
     var el = e.target;
     if (el.id === 'camp-name') state.name = el.value;
@@ -947,6 +1187,23 @@
       else if (field === 'reputation' || field === 'rating' || field === 'wealth' || field === 'battles' || field === 'ooa') p[field] = num(el);
       else p[field] = el.value;
       if (currentPage() === 'territories') renderTerritories();
+    }
+    var disableId = el.getAttribute('data-disable');
+    if (disableId) {
+      if (el.checked) delete state.disabled[disableId];
+      else state.disabled[disableId] = true;
+      var row = el.closest('tr');
+      if (row) row.classList.toggle('is-off', !el.checked);
+      renderTerritories();
+    }
+    var customId = el.getAttribute('data-custom');
+    if (customId) {
+      var custom = customById(customId);
+      if (custom) {
+        var cField = el.getAttribute('data-field');
+        custom[cField] = cField === 'income' ? (el.value === '' ? '' : Math.max(0, num(el))) : el.value;
+        renderTerritories();
+      }
     }
     var terrId = el.getAttribute('data-terr');
     if (terrId) {
@@ -994,6 +1251,16 @@
       if (evField === 'ooa') ev.ooa = num(el);
       else if (evField === 'notes') ev.notes = el.value;
       renderSummary();
+    }
+    var customId = el.getAttribute('data-custom');
+    if (customId) {
+      var custom = customById(customId);
+      if (custom) {
+        var cField = el.getAttribute('data-field');
+        if (cField === 'income') custom.income = el.value === '' ? '' : Math.max(0, num(el));
+        else custom[cField] = el.value;
+        if (cField === 'name' || cField === 'income' || cField === 'extras') renderTerritories();
+      }
     }
     var actPlayer = el.getAttribute('data-action-player');
     if (actPlayer && el.getAttribute('data-field') === 'fighter') {
