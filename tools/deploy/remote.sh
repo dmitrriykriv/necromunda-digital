@@ -5,13 +5,13 @@
 #   cp tools/deploy/remote.local.example tools/deploy/remote.local
 #   bash tools/deploy/remote.sh
 #
-# На сервере нужны SSH и sudo. Скрипт установки скачивается с GitHub
-# и сам клонирует репозиторий.
+# На сервере нужны SSH и sudo. Этот скрипт копирует install-ubuntu.sh
+# на сервер и запускает его. Репозиторий установщик клонирует сам.
 
 set -euo pipefail
 
-URL="https://raw.githubusercontent.com/dmitrriykriv/necromunda-digital/main/tools/deploy/install-ubuntu.sh"
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+INSTALL_SCRIPT="$ROOT/install-ubuntu.sh"
 CONFIG="$ROOT/remote.local"
 SSH_PORT=""
 TARGET=""
@@ -122,19 +122,44 @@ if ! command -v ssh >/dev/null 2>&1; then
   exit 1
 fi
 
+if [[ ! -f "$INSTALL_SCRIPT" ]]; then
+  echo "Нет $INSTALL_SCRIPT" >&2
+  exit 1
+fi
+if ! command -v scp >/dev/null 2>&1; then
+  echo "Не найден scp. На Windows он входит в OpenSSH Client." >&2
+  exit 1
+fi
+
 quoted=""
 if [[ ${#EXTRA[@]} -gt 0 ]]; then
   quoted="$(printf ' %q' "${EXTRA[@]}")"
 fi
-url_q="$(printf '%q' "$URL")"
-
-remote="curl -fsSL ${url_q} -o /tmp/necromunda-install.sh && sudo bash /tmp/necromunda-install.sh${quoted}"
-
-ssh_cmd=(ssh -t)
-if [[ -n "$SSH_PORT" && "$SSH_PORT" != "22" ]]; then
-  ssh_cmd+=(-p "$SSH_PORT")
+if [[ "$SSH_PASSWORD_MODE" == "file" ]]; then
+  remote="sudo -S -p '' bash /tmp/necromunda-install.sh${quoted}"
+else
+  remote="sudo bash /tmp/necromunda-install.sh${quoted}"
 fi
 
+ssh_opts=(
+  -o ConnectTimeout=20
+  -o ConnectionAttempts=1
+  -o NumberOfPasswordPrompts=3
+  -o StrictHostKeyChecking=accept-new
+)
+scp_cmd=(scp "${ssh_opts[@]}")
+ssh_cmd=(ssh "${ssh_opts[@]}")
+# В режиме file терминал не нужен: иначе sudo снова ждёт пароль и молчит.
+if [[ "$SSH_PASSWORD_MODE" != "file" ]]; then
+  ssh_cmd+=(-tt)
+fi
+if [[ -n "$SSH_PORT" && "$SSH_PORT" != "22" ]]; then
+  scp_cmd+=(-P "$SSH_PORT")
+  ssh_cmd+=(-p "$SSH_PORT")
+fi
+scp_cmd+=("$INSTALL_SCRIPT" "${TARGET}:/tmp/necromunda-install.sh")
+
+sudo_pw=""
 if [[ "$SSH_PASSWORD_MODE" == "file" ]]; then
   if [[ -z "$SSH_PASSWORD" ]]; then
     echo "SSH_PASSWORD_MODE=file, но SSH_PASSWORD пуст." >&2
@@ -144,16 +169,54 @@ if [[ "$SSH_PASSWORD_MODE" == "file" ]]; then
   chmod 700 "$ASKPASS_FILE"
   printf '%s\n' '#!/bin/sh' "printf '%s\\n' $(printf '%q' "$SSH_PASSWORD")" > "$ASKPASS_FILE"
   chmod +x "$ASKPASS_FILE"
+  sudo_pw="$SSH_PASSWORD"
   unset SSH_PASSWORD
 fi
 
-echo "Подключаюсь к ${TARGET} и запускаю установку на сервере."
+run_with_auth() {
+  if [[ "$SSH_PASSWORD_MODE" == "file" ]]; then
+    SSH_ASKPASS="$ASKPASS_FILE" \
+    SSH_ASKPASS_REQUIRE=force \
+    DISPLAY="${DISPLAY:-:0}" \
+      "$@"
+  else
+    env -u SSH_ASKPASS -u SSH_ASKPASS_REQUIRE "$@"
+  fi
+}
+
+report_failure() {
+  local code="$1" what="$2"
+  if [[ "$code" -eq 255 ]]; then
+    echo "${what} не удалось: нет соединения (код 255). Проверьте адрес, порт и пароль SSH." >&2
+  else
+    echo "${what} завершилось с кодом ${code}. Текст ошибки выше." >&2
+  fi
+}
+
 if [[ "$SSH_PASSWORD_MODE" == "file" ]]; then
-  SSH_ASKPASS="$ASKPASS_FILE" \
-  SSH_ASKPASS_REQUIRE=force \
-  DISPLAY="${DISPLAY:-:0}" \
-  "${ssh_cmd[@]}" "$TARGET" "$remote"
+  echo "Подключаюсь к ${TARGET}. Пароль из файла, без запроса. Жду ответ не дольше 20 с."
 else
-  env -u SSH_ASKPASS -u SSH_ASKPASS_REQUIRE \
-    "${ssh_cmd[@]}" "$TARGET" "$remote"
+  echo "Подключаюсь к ${TARGET}. Сейчас появится запрос пароля SSH, жду ответ не дольше 20 с."
+  echo "Если вход пройдёт, сервер может отдельно спросить пароль sudo."
 fi
+set +e
+echo "Копирую скрипт установки на ${TARGET}."
+run_with_auth "${scp_cmd[@]}"
+status=$?
+if [[ "$status" -eq 0 ]]; then
+  echo "Запускаю установку на ${TARGET}."
+  if [[ "$SSH_PASSWORD_MODE" == "file" ]]; then
+    printf '%s\n' "$sudo_pw" | run_with_auth "${ssh_cmd[@]}" "$TARGET" "$remote"
+  else
+    run_with_auth "${ssh_cmd[@]}" "$TARGET" "$remote"
+  fi
+  status=$?
+  if [[ "$status" -ne 0 ]]; then
+    report_failure "$status" "Установка"
+  fi
+else
+  report_failure "$status" "Копирование скрипта"
+fi
+set -e
+unset sudo_pw
+exit "$status"

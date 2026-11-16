@@ -66,6 +66,40 @@ npm run lint      # eslint frontend
 
 Пример ростера: `rosters/gimn-pepelnoj-chasovni.json` (Дом Каудор, 1000 cr).
 
+## Установка на Ubuntu 22.04
+
+На сервере нужны SSH и sudo. Со своего компьютера скопируйте
+`tools/deploy/remote.local.example` в `tools/deploy/remote.local` и укажите
+`TARGET=user@адрес-сервера`. Этот файл в git не попадает.
+
+`SSH_PASSWORD_MODE=ask` спрашивает пароль при подключении. `file` берёт его
+из `SSH_PASSWORD` и передаёт и в SSH, и в sudo, без вопросов. Если пароль
+неверный или сервер не отвечает, скрипт напишет ошибку, а не зависнет.
+Домен и прочие флаги установщика пишутся строками `--domain example.com`.
+
+```powershell
+powershell -File tools/deploy/remote.ps1
+```
+
+Окно не закроется само: в конце нужно нажать Enter. Тот же текст пишется в
+`tools/deploy/remote.log`.
+
+Скрипт копирует локальный `tools/deploy/install-ubuntu.sh` на сервер,
+ставит Node.js, клонирует проект в `/opt/necromunda`, собирает его
+и открывает сайт через nginx: `http://<IP-сервера>/`. Повторный запуск
+подтягивает новый код с GitHub и не затирает сохранённые ростеры.
+
+Тот же запуск из bash: `bash tools/deploy/remote.sh`.
+
+Прямо на сервере эта ссылка заработает, когда текущий установщик будет на GitHub.
+Пока её нет, используйте запуск со своего компьютера: он отправляет локальный файл.
+
+```bash
+curl -fsSL -o install-ubuntu.sh \
+  https://raw.githubusercontent.com/dmitrriykriv/necromunda-digital/main/tools/deploy/install-ubuntu.sh
+sudo bash install-ubuntu.sh
+```
+
 ---
 
 ## Стек
