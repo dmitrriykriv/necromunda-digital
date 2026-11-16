@@ -20,27 +20,78 @@ function ConvertTo-BashQuoted([string]$Value) {
     return "'" + ($Value -replace "'", "'\''") + "'"
 }
 
+function Unquote([string]$Value) {
+    if ($Value.Length -ge 2) {
+        $first = $Value[0]
+        $last = $Value[$Value.Length - 1]
+        if (($first -eq "'" -and $last -eq "'") -or ($first -eq '"' -and $last -eq '"')) {
+            return $Value.Substring(1, $Value.Length - 2)
+        }
+    }
+    return $Value
+}
+
+function Get-ConfigValue([string]$Line, [string]$Key) {
+    $prefix = $Key + '='
+    if (-not $Line.StartsWith($prefix)) { return $null }
+    $value = $Line.Substring($prefix.Length)
+    $hash = $value.IndexOf('#')
+    if ($hash -ge 0) { $value = $value.Substring(0, $hash) }
+    return (Unquote $value.Trim())
+}
+
+function Get-AskPassExe {
+    $exe = Join-Path $env:TEMP 'necromunda-askpass.exe'
+    if (Test-Path -LiteralPath $exe) { return $exe }
+    $code = @'
+using System;
+public class NecromundaAskPass {
+    public static void Main(string[] args) {
+        string password = Environment.GetEnvironmentVariable("NECROMUNDA_SSH_PASSWORD");
+        if (password == null) password = "";
+        Console.OutputEncoding = System.Text.Encoding.UTF8;
+        Console.Out.WriteLine(password);
+    }
+}
+'@
+    Add-Type -TypeDefinition $code -OutputAssembly $exe -OutputType ConsoleApplication
+    return $exe
+}
+
 if (-not (Test-Path -LiteralPath $configPath)) {
     Write-Error "Нет $configPath. Скопируйте tools/deploy/remote.local.example в tools/deploy/remote.local и заполните TARGET."
 }
 
 $target = ''
 $sshPort = 22
+$sshPassword = ''
+$passwordMode = 'ask'
 $tokens = New-Object System.Collections.Generic.List[string]
 foreach ($raw in [System.IO.File]::ReadAllLines($configPath)) {
-    $line = $raw
+    $line = $raw.Trim()
+    if (-not $line -or $line.StartsWith('#')) { continue }
+    if ($line.StartsWith('SSH_PASSWORD=')) {
+        $sshPassword = Unquote $line.Substring(13).Trim()
+        continue
+    }
+    $modeValue = Get-ConfigValue $line 'SSH_PASSWORD_MODE'
+    if ($null -ne $modeValue) {
+        $passwordMode = $modeValue.ToLowerInvariant()
+        continue
+    }
+    $targetValue = Get-ConfigValue $line 'TARGET'
+    if ($null -ne $targetValue) {
+        $target = $targetValue
+        continue
+    }
+    $portValue = Get-ConfigValue $line 'SSH_PORT'
+    if ($null -ne $portValue) {
+        $sshPort = [int]$portValue
+        continue
+    }
     $hash = $line.IndexOf('#')
-    if ($hash -ge 0) { $line = $line.Substring(0, $hash) }
-    $line = $line.Trim()
+    if ($hash -ge 0) { $line = $line.Substring(0, $hash).Trim() }
     if (-not $line) { continue }
-    if ($line -like 'TARGET=*') {
-        $target = $line.Substring(7).Trim()
-        continue
-    }
-    if ($line -like 'SSH_PORT=*') {
-        $sshPort = [int]$line.Substring(9).Trim()
-        continue
-    }
     if ($line.StartsWith('--')) {
         $parts = $line -split '\s+', 2
         $tokens.Add($parts[0])
@@ -50,6 +101,14 @@ foreach ($raw in [System.IO.File]::ReadAllLines($configPath)) {
         continue
     }
     Write-Error "Не понял строку в ${configPath}: $line"
+}
+
+if ($passwordMode -ne 'ask' -and $passwordMode -ne 'file' -and $passwordMode -ne 'prompt') {
+    Write-Error "SSH_PASSWORD_MODE должен быть ask или file, сейчас: $passwordMode"
+}
+if ($passwordMode -eq 'prompt') { $passwordMode = 'ask' }
+if ($passwordMode -eq 'file' -and -not $sshPassword) {
+    Write-Error 'SSH_PASSWORD_MODE=file, но SSH_PASSWORD пуст.'
 }
 
 if (-not $target) {
@@ -72,5 +131,39 @@ if ($sshPort -ne 22) {
 $sshArgs += @($target, $remote)
 
 Write-Host "Подключаюсь к $target и запускаю установку на сервере."
-& ssh @sshArgs
-exit $LASTEXITCODE
+
+$saved = @{
+    NECROMUNDA_SSH_PASSWORD = [Environment]::GetEnvironmentVariable('NECROMUNDA_SSH_PASSWORD')
+    SSH_ASKPASS = [Environment]::GetEnvironmentVariable('SSH_ASKPASS')
+    SSH_ASKPASS_REQUIRE = [Environment]::GetEnvironmentVariable('SSH_ASKPASS_REQUIRE')
+    DISPLAY = [Environment]::GetEnvironmentVariable('DISPLAY')
+}
+function Restore-SshEnv {
+    foreach ($name in @('NECROMUNDA_SSH_PASSWORD', 'SSH_ASKPASS', 'SSH_ASKPASS_REQUIRE', 'DISPLAY')) {
+        $previous = $saved[$name]
+        if ($null -eq $previous) {
+            Remove-Item "Env:$name" -ErrorAction SilentlyContinue
+        } else {
+            Set-Item "Env:$name" $previous
+        }
+    }
+}
+
+try {
+    if ($passwordMode -eq 'file') {
+        $env:NECROMUNDA_SSH_PASSWORD = $sshPassword
+        $env:SSH_ASKPASS = Get-AskPassExe
+        $env:SSH_ASKPASS_REQUIRE = 'force'
+        if (-not $env:DISPLAY) { $env:DISPLAY = 'localhost:0' }
+    } else {
+        Remove-Item Env:NECROMUNDA_SSH_PASSWORD -ErrorAction SilentlyContinue
+        Remove-Item Env:SSH_ASKPASS -ErrorAction SilentlyContinue
+        Remove-Item Env:SSH_ASKPASS_REQUIRE -ErrorAction SilentlyContinue
+    }
+    & ssh @sshArgs
+    $exitCode = $LASTEXITCODE
+} finally {
+    Restore-SshEnv
+}
+
+exit $exitCode
