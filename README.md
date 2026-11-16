@@ -91,6 +91,14 @@ powershell -File tools/deploy/remote.ps1
 
 Тот же запуск из bash: `bash tools/deploy/remote.sh`.
 
+Перезапуск уже установленной службы, с тем же `remote.local`:
+
+```powershell
+powershell -File tools/deploy/restart.ps1
+```
+
+На сервере это `systemctl restart necromunda`: тот же `npm start` в каталоге установки. Окно ждёт Enter, вывод пишется в `tools/deploy/remote.log`. Из bash: `bash tools/deploy/restart.sh`.
+
 Прямо на сервере:
 
 ```bash

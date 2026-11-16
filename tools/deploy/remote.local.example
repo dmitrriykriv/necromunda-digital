@@ -1,5 +1,6 @@
 # Скопируйте в tools/deploy/remote.local и заполните.
 # remote.local не коммитится.
+# Этот же файл читают remote.ps1 (установка) и restart.ps1 (перезапуск службы).
 
 # Куда подключаться по SSH.
 TARGET=user@203.0.113.10
