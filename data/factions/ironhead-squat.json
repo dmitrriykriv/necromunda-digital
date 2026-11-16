@@ -1966,7 +1966,7 @@
       "slots": 0,
       "category": "PERSONAL EQUIPMENT",
       "list": "IRONHEAD SQUAT",
-      "description": "An Active or Suppressed Fighter with a drop rig can perform the Descend action while they are within 1” of the edge of a platform Спуск (одиночное): Fighter сдвигается до 3” по горизонтали и до 12” по вертикали. Любое вертикальное движение должно быть вниз, то есть к земле."
+      "description": "Active или Suppressed Fighter со спусковой оснасткой может выполнить действие «Спуск», находясь в пределах 1” от края площадки: Спуск (одиночное): Fighter сдвигается до 3” по горизонтали и до 12” по вертикали. Любое вертикальное движение должно быть вниз, то есть к земле."
     },
     {
       "name": "Grav chute",
@@ -2038,7 +2038,7 @@
       "slots": 0,
       "category": "MOUNTS",
       "list": "IRONHEAD SQUAT",
-      "description": "Fighter с Svenotar Scout Trike получает подтип Mounted и ставит характеристику Movement на 8”. Когда он выполняет действие Dash, он добавляет 5” к характеристике Movement вместо Initiative. Svenotar Scout Trike экипирован Svenotar autogun и может взять любой из следующих вариантов при добавлении в банду или в любой пост-цикловой последовательности. • Replace the Svenotar autogun with a Svenotar boltgun.......+35 credits • Replace the Svenotar autogun with a Svenotar meltagun.....+70 credits"
+      "description": "Fighter с Svenotar Scout Trike получает подтип Mounted и ставит характеристику Movement на 8”. Когда он выполняет действие Dash, он добавляет 5” к характеристике Movement вместо Initiative. Svenotar Scout Trike экипирован Svenotar autogun и может взять любой из следующих вариантов при добавлении в банду или в любой пост-цикловой последовательности. • Заменить Svenotar autogun на Svenotar boltgun: +35 кредитов • Заменить Svenotar autogun на Svenotar meltagun: +70 кредитов"
     },
     {
       "name": "Techmite Exovator",

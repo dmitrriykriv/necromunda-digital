@@ -147,7 +147,7 @@
         ]
       },
       "rules": [
-        "Call the Storm: While equipped with a Stormcaller staff, an Active Ash Waste Nomad Stormcaller can perform the Dust Storm action",
+        "Воззвать к буре: пока экипирован Stormcaller staff, Active Ash Waste Nomad Stormcaller может выполнить действие Пылевая буря:",
         "Пылевая буря (одиночное): если в этом бою правило Visibility (X”) не действует, примените правило Visibility (24”). Иначе увеличьте или уменьшите значение X” на 6” (минимум 6”). Эти эффекты длятся до конца боя и могут дальше меняться повторными применениями этой способности."
       ],
       "skillAccess": {
@@ -585,7 +585,8 @@
       },
       "rules": [
         "Длина поводка: у Ashwing Helamite длина поводка (Leash range) 9”.",
-        "Ashwing Lure: While Active, an Ashwing Helamite’s owner may perform the Deploy Lure action"
+        "Приманка Ashwing: пока Active, владелец Ashwing Helamite может выполнить действие Размещение приманки:",
+        "Размещение приманки (одиночное): поставьте Ashwing Lure в контакт основания с этим Fighter. До конца боя приманка считается местностью, и любые Ashwing Helamite под контролем этого Fighter считают Ashwing Lure своим владельцем. Любой Fighter может выполнить действие Interact в пределах 1” от Ashwing Lure: сдвинуться на дистанцию, равную своей характеристике Movement, и в конце этого движения поставить Ashwing Lure в контакт основания с собой."
       ],
       "weapons": [
         {
@@ -1394,7 +1395,7 @@
       "slots": 0,
       "category": "PERSONAL EQUIPMENT",
       "list": "ASH WASTE NOMAD",
-      "description": "An Active or Suppressed Fighter with a drop rig can perform the Descend action while they are within 1” of the edge of a platform Спуск (одиночное): Fighter сдвигается до 3” по горизонтали и до 12” по вертикали. Любое вертикальное движение должно быть вниз, то есть к земле."
+      "description": "Active или Suppressed Fighter со спусковой оснасткой может выполнить действие «Спуск», находясь в пределах 1” от края площадки: Спуск (одиночное): Fighter сдвигается до 3” по горизонтали и до 12” по вертикали. Любое вертикальное движение должно быть вниз, то есть к земле."
     },
     {
       "name": "Grav chute",

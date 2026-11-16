@@ -640,7 +640,10 @@ def index_weapon_rows(rows, caption, store):
         if not name:
             continue
         if name.startswith('-'):
-            # варианты боеприпасов вроде «- warp round» ищут отдельно
+            # варианты боеприпасов вроде «- warp round» ищут отдельно.
+            # Combi-компонент не должен подменять самостоятельное оружие.
+            if re.search(r'\bCombi\b', row.get('traits') or '', re.I):
+                continue
             key = norm_item(name.lstrip('- '))
             if key and key not in store:
                 store[key] = {'kind': 'weapon', 'caption': parent,
@@ -801,14 +804,63 @@ def item_variants(name):
     return out
 
 
+def lookup_in_store(store, variants):
+    """В одной базе сначала самостоятельный профиль, потом combi/ammo-подстрока."""
+    sub_hit = None
+    for variant in variants:
+        if variant not in store:
+            continue
+        entry = store[variant]
+        if not entry.get('sub'):
+            return entry
+        if sub_hit is None:
+            sub_hit = entry
+    return sub_hit
+
+
 def lookup_item(name, *stores):
     """Ищет профиль предмета, пробуя разные написания названия."""
     variants = item_variants(name)
+    hits = []
     for store in stores:
-        for v in variants:
-            if v in store:
-                return store[v]
-    return None
+        hit = lookup_in_store(store, variants)
+        if hit:
+            hits.append(hit)
+    if not hits:
+        return None
+    return merge_weapon_lookups(hits)
+
+
+def merge_weapon_lookups(hits):
+    """Бандитская таблица часто даёт только доп. патроны; базовые профили — в своде."""
+    weapons = [entry for entry in hits if entry.get('kind') == 'weapon']
+    if not weapons:
+        return hits[0]
+    standalone = [entry for entry in weapons if not entry.get('sub')]
+    primary = standalone[0] if standalone else weapons[0]
+    if len(weapons) < 2:
+        return primary
+    children = []
+    seen = set()
+
+    def add_child(row):
+        key = norm_item(row['name'].lstrip('- '))
+        if not key or key in seen:
+            return
+        seen.add(key)
+        children.append(row)
+
+    others = [entry for entry in weapons if entry is not primary]
+    for entry in reversed(others):
+        for child in entry.get('children') or []:
+            add_child(child)
+    for child in primary.get('children') or []:
+        add_child(child)
+    if children == list(primary.get('children') or []):
+        return primary
+    merged = dict(primary)
+    merged['children'] = children
+    return merged
 
 
 # ------------------------------------------------- свойства оружия (подсказки)

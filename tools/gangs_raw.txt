@@ -1232,7 +1232,7 @@ Shotgun
 - retributor ammo 4” 8” 4 - 1 Blaze (5+), Rapid Fire (2) - E
 CLOSE COMBAT WEAPONS
 CAWDOR POLEARMS SR LR Str AP L Traits Creds TP
-Cawdor polearm* E - S+1 - 2 Heavy, Lance, Melee, Unwieldy, Rapid Fire (1) - E
+Cawdor polearm* E - S+1 - 2 Heavy, Lance, Melee, Unwieldy - E
 - autogun 8” 24” 3 - 1 Rapid Fire (1)
 - blunderbuss with grape &
 purgation rounds

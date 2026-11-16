@@ -613,7 +613,7 @@
       "slots": 0,
       "category": "PERSONAL EQUIPMENT",
       "list": "FORGE SMELTERS",
-      "description": "An Active Fighter equipped with a chem slugger may perform the Chem Slug action Chem Slug (одиночное): выберите дружественного Fighter в пределах 2”; в своей следующей активации он может выполнить дополнительное действие. В конце его активации бросьте D6. На 4+ ничего не происходит. На 1–3 система Fighter перегружается, и он получает попадание Str -, AP -, L1, которое автоматически ранит без спасбросков."
+      "description": "Active Fighter с chem slugger может выполнить действие Chem Slug: Chem Slug (одиночное): выберите дружественного Fighter в пределах 2”; в своей следующей активации он может выполнить дополнительное действие. В конце его активации бросьте D6. На 4+ ничего не происходит. На 1–3 система Fighter перегружается, и он получает попадание Str -, AP -, L1, которое автоматически ранит без спасбросков."
     },
     {
       "name": "Servo-medicae (Forge Patcher only)",
@@ -621,7 +621,7 @@
       "slots": 0,
       "category": "PERSONAL EQUIPMENT",
       "list": "FORGE SMELTERS",
-      "description": "An Active Fighter equipped with a servo-medicae may perform the Auto-medicate action Автолечение (свободное): когда Fighter выполняет это действие, выберите его самого или дружественного Active или Suppressed Fighter в пределах 3” и сделайте проверку Intelligence для этого Fighter. Если проверка пройдена, цель восстанавливает 1 Wound, потерянный ранее в бою."
+      "description": "Active Fighter с servo-medicae может выполнить действие «Автолечение»: Автолечение (свободное): когда Fighter выполняет это действие, выберите его самого или дружественного Active или Suppressed Fighter в пределах 3” и сделайте проверку Intelligence для этого Fighter. Если проверка пройдена, цель восстанавливает 1 Wound, потерянный ранее в бою."
     },
     {
       "name": "Infra-sight",

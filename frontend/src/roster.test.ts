@@ -305,6 +305,32 @@ describe('print catalog helpers', () => {
     ]);
   });
 
+  it('shows included shotgun ammo and only selected extras', () => {
+    const def: EquipmentDef = {
+      name: 'Shotgun with solid & scatter ammo',
+      cost: 35,
+      slots: 1,
+      category: 'SHOTGUNS',
+      list: 'REDEMPTIONIST',
+      upgrades: [
+        { name: 'executioner ammo', cost: 45 },
+        { name: 'retributor ammo', cost: 25 },
+      ],
+      profiles: [
+        { name: 'scatter ammo', sr: '4”', lr: '8”', str: '3', ap: '-', l: '1', traits: [] },
+        { name: 'solid ammo', sr: '8”', lr: '16”', str: '4', ap: '-', l: '1', traits: [] },
+        { name: 'executioner ammo', sr: '4”', lr: '16”', str: '4', ap: '-2', l: '2', traits: [] },
+        { name: 'retributor ammo', sr: '4”', lr: '16”', str: '4', ap: '-', l: '1', traits: [] },
+      ],
+    };
+    expect(visibleProfiles(def, []).map((item) => item.name)).toEqual(['scatter ammo', 'solid ammo']);
+    expect(visibleProfiles(def, ['executioner ammo']).map((item) => item.name)).toEqual([
+      'scatter ammo',
+      'solid ammo',
+      'executioner ammo',
+    ]);
+  });
+
   it('builds a hover preview for weapons and wargear', () => {
     const gun: EquipmentDef = {
       name: 'Stub cannon',
@@ -736,6 +762,7 @@ describe('skill access in faction catalogs', () => {
     const root = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
     return JSON.parse(readFileSync(resolve(root, `data/factions/${id}.json`), 'utf8')) as {
       types: FighterTypeDef[];
+      equipment: EquipmentDef[];
     };
   }
 
@@ -754,5 +781,65 @@ describe('skill access in faction catalogs', () => {
     const way = data.types.find((item) => item.name === 'Cawdor Way-Brethren');
     expect(brethren?.skillAccess?.primary).toEqual(['combat']);
     expect(way?.skillAccess?.primary).toEqual(['agility']);
+  });
+
+  it('keeps shotgun scatter/solid profiles and extra ammo', async () => {
+    const cawdor = await loadFaction('house-cawdor');
+    const shotgun = cawdor.equipment.find((item) => item.name === 'Shotgun with solid & scatter ammo');
+    expect(shotgun?.profiles?.map((item) => item.name)).toEqual([
+      'scatter ammo',
+      'solid ammo',
+      'executioner ammo',
+      'retributor ammo',
+    ]);
+    expect(visibleProfiles(shotgun, []).map((item) => item.name)).toEqual(['scatter ammo', 'solid ammo']);
+    expect(visibleProfiles(shotgun, ['retributor ammo']).map((item) => item.name)).toEqual([
+      'scatter ammo',
+      'solid ammo',
+      'retributor ammo',
+    ]);
+  });
+
+  it('keeps Rapid Fire on Cawdor polearm autogun, not melee', async () => {
+    const cawdor = await loadFaction('house-cawdor');
+    const polearm = cawdor.equipment.find((item) => item.name === 'Cawdor polearm/autogun*');
+    const melee = polearm?.profiles?.find((item) => item.name === 'Cawdor polearm*');
+    const gun = polearm?.profiles?.find((item) => item.name === 'autogun');
+    expect(melee?.traits.map((trait) => trait.name)).toEqual(['Heavy', 'Lance', 'Melee', 'Unwieldy']);
+    expect(gun?.traits.map((trait) => trait.name)).toEqual(['Rapid Fire (1)']);
+  });
+
+  it('does not hide Autogun/Stub gun behind a fake self-upgrade', async () => {
+    const cawdor = await loadFaction('house-cawdor');
+    const autogun = cawdor.equipment.find((item) => item.name === 'Autogun');
+    expect(autogun?.upgrades?.map((item) => item.name)).toEqual(['warp rounds']);
+    expect(visibleProfiles(autogun, []).map((item) => item.name)).toEqual(['Autogun']);
+    expect(autogun?.profiles?.[0]?.traits.map((trait) => trait.name)).toEqual(['Rapid Fire (1)']);
+
+    const goliath = await loadFaction('house-goliath');
+    const stub = goliath.equipment.find((item) => item.name === 'Stub gun');
+    expect(stub?.upgrades?.map((item) => item.name)).toEqual(['warp rounds']);
+    expect(visibleProfiles(stub, []).map((item) => item.name)).toEqual(['Stub gun']);
+    expect(stub?.profiles?.[0]?.traits.map((trait) => trait.name)).toEqual(['Light']);
+  });
+
+  it('keeps core flamer/las/melta stats instead of combi components', async () => {
+    const cawdor = await loadFaction('house-cawdor');
+    const flamer = cawdor.equipment.find((item) => item.name === 'Flamer');
+    const heavy = cawdor.equipment.find((item) => item.name === 'Heavy flamer*');
+    expect(flamer?.profiles?.[0]).toMatchObject({ name: 'Flamer', str: '4', ap: '-1' });
+    expect(flamer?.profiles?.[0]?.traits.map((trait) => trait.name)).toEqual([
+      'Ammo (6+)',
+      'Blaze (5+)',
+      'Template',
+    ]);
+    expect(heavy?.profiles?.[0]).toMatchObject({ name: 'Heavy flamer*', str: '5', ap: '-2' });
+    expect(heavy?.profiles?.[0]?.traits.map((trait) => trait.name)).not.toContain('Combi');
+
+    const vanSaar = await loadFaction('house-van-saar');
+    const laspistol = vanSaar.equipment.find((item) => item.name === 'Laspistol');
+    const meltagun = vanSaar.equipment.find((item) => item.name === 'Meltagun');
+    expect(laspistol?.profiles?.[0]?.traits.map((trait) => trait.name)).toEqual(['Light']);
+    expect(meltagun?.profiles?.[0]?.traits.map((trait) => trait.name)).toEqual(['Ammo (6+)', 'Damage (3)']);
   });
 });

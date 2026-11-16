@@ -35,9 +35,8 @@ ITEM_RE = re.compile(
 SUB_ROW_RE = re.compile(
     r'<td class="wname sub">([^<]+)</td>'
     r'(?:<td>[^<]*</td>){5}'
-    r'<td class="traits">.*?</td>'
+    r'<td class="traits">(?:(?!</tr>).)*?</td>'
     r'<td>\+(\d+)</td>',
-    re.S,
 )
 WARP_WEAPONS = {'Autogun', 'Autopistol', 'Stub gun'}
 STATS_RE = re.compile(
@@ -92,6 +91,27 @@ WARP_PROFILES = {
     'Stub gun': {
         'name': 'warp rounds', 'sr': '6”', 'lr': '12”', 'str': '3', 'ap': '-', 'l': '1',
         'traits': [WARP_TRAITS[0], LIGHT_TRAIT, WARP_TRAITS[1]],
+    },
+}
+RAPID_FIRE_2 = {
+    'name': 'Rapid Fire (2)',
+    'text': 'Можно бросить до X кубиков огневой мощи. При попадании число попаданий равно числу пуль на кубиках. Любой символ боеприпасов — оружие садится; несколько символов — заклинивает до конца боя. Ammo (X+) считается ещё одним символом. С Light в ближнем бою кубик огневой мощи не бросают.',
+}
+KNOCKBACK_5 = {
+    'name': 'Knockback (5+)',
+    'text': 'Если попадание по бойцу и бросок попадания не меньше X, его сдвигают на 1" от атакующего (может упасть или перестать быть Engaged). С Blast: D6 за каждого под маркером, на X+ — 1" от центра.',
+}
+KNOCKBACK_6 = {
+    'name': 'Knockback (6+)',
+    'text': KNOCKBACK_5['text'],
+}
+INCLUDED_AMMO = {
+    'scatter ammo': {'name': 'scatter ammo', 'sr': '4”', 'lr': '8”', 'str': '3', 'ap': '-', 'l': '1', 'traits': [RAPID_FIRE_2]},
+    'solid ammo': {'name': 'solid ammo', 'sr': '8”', 'lr': '16”', 'str': '4', 'ap': '-', 'l': '1', 'traits': [KNOCKBACK_5]},
+    'scatter shot': {'name': 'scatter shot', 'sr': '4”', 'lr': '8”', 'str': '3', 'ap': '-', 'l': '1', 'traits': [RAPID_FIRE_2]},
+    'solid shot': {
+        'name': 'solid shot', 'sr': '4”', 'lr': '8”', 'str': '4', 'ap': '-', 'l': '1',
+        'traits': [LIGHT_TRAIT, KNOCKBACK_6],
     },
 }
 
@@ -170,6 +190,8 @@ def upgrade_name(raw: str) -> str:
 
 def add_upgrade(item: dict, name: str, cost: int) -> None:
     if cost <= 0 or not name or '<' in name:
+        return
+    if upgrade_name(name).lower() == upgrade_name(item.get('name') or '').lower():
         return
     upgrades = item.setdefault('upgrades', [])
     if any(entry['name'] == name for entry in upgrades):
@@ -538,8 +560,20 @@ def parse_gear_description(chunk: str) -> str:
     return ' '.join(parts)
 
 
-def profile_belongs(item_name: str, profile_name: str) -> bool:
+def item_is_combi(name: str, category: str = '') -> bool:
+    blob = f'{name} {category}'.lower()
+    return 'combi' in blob or '/' in name.split('(')[0]
+
+
+def profile_has_combi(profile: dict) -> bool:
+    return any(trait.get('name', '').lower() == 'combi' for trait in profile.get('traits') or [])
+
+
+def profile_belongs(item_name: str, profile_name: str, upgrades: list | None = None) -> bool:
     if upgrade_name(profile_name) == 'warp rounds':
+        return True
+    needle = upgrade_name(profile_name).lower()
+    if upgrades and any(upgrade_name(entry['name']).lower() == needle for entry in upgrades):
         return True
     item = re.sub(r'[*()]', '', item_name.lower())
     prof = re.sub(r'[*()]', '', profile_name.lower())
@@ -557,7 +591,12 @@ def has_named_profile(item: dict, name: str) -> bool:
 
 
 def attach_profiles(item: dict, chunk: str) -> None:
-    profiles = [profile for profile in parse_weapon_profiles(chunk) if profile_belongs(item['name'], profile['name'])]
+    allow_combi = item_is_combi(item['name'], item.get('category') or '')
+    profiles = [
+        profile for profile in parse_weapon_profiles(chunk)
+        if profile_belongs(item['name'], profile['name'], item.get('upgrades'))
+        and (allow_combi or not profile_has_combi(profile))
+    ]
     if profiles:
         existing = {(p['name'], p['sr'], p['lr'], p['str']) for p in item.get('profiles', [])}
         merged = item.setdefault('profiles', [])
@@ -569,6 +608,58 @@ def attach_profiles(item: dict, chunk: str) -> None:
     description = parse_gear_description(chunk)
     if description and not item.get('description'):
         item['description'] = description
+
+
+def copy_profile(profile: dict) -> dict:
+    return {
+        **profile,
+        'traits': [dict(trait) for trait in profile.get('traits', [])],
+    }
+
+
+def prepend_profile(item: dict, profile: dict) -> None:
+    profiles = item.setdefault('profiles', [])
+    profiles.insert(0, copy_profile(profile))
+
+
+def included_ammo_names(item_name: str) -> list[str]:
+    name = item_name.lower()
+    if 'solid' not in name or 'scatter' not in name:
+        return []
+    if 'shot' in name and 'ammo' not in name:
+        return ['scatter shot', 'solid shot']
+    return ['scatter ammo', 'solid ammo']
+
+
+def matching_catalog_profile(name: str, catalog: dict[str, dict]) -> dict | None:
+    key = norm_weapon_name(name)
+    profile = catalog.get(key)
+    if profile and upgrade_name(profile['name']).lower() == upgrade_name(name).lower():
+        return profile
+    return None
+
+
+def ensure_included_ammo(item: dict, catalog: dict[str, dict]) -> None:
+    wanted = included_ammo_names(item['name'])
+    for label in reversed(wanted):
+        if has_named_profile(item, label):
+            continue
+        profile = matching_catalog_profile(label, catalog) or INCLUDED_AMMO.get(label)
+        if profile:
+            prepend_profile(item, profile)
+
+
+def ensure_upgrade_profiles(item: dict, catalog: dict[str, dict]) -> None:
+    allow_combi = item_is_combi(item['name'], item.get('category') or '')
+    for upgrade in item.get('upgrades') or []:
+        if has_named_profile(item, upgrade['name']):
+            continue
+        profile = lookup_innate_profile(upgrade['name'], catalog)
+        if not profile:
+            continue
+        if not allow_combi and profile_has_combi(profile):
+            continue
+        item.setdefault('profiles', []).append(copy_profile(profile))
 
 
 def ensure_warp_rounds(item: dict) -> None:
@@ -665,6 +756,9 @@ def main() -> None:
         name = re.sub(r'\s+', ' ', heading).strip()
         equipment = parse_equipment(body)
         weapon_catalog = index_weapon_profiles(body, equipment)
+        for item in equipment:
+            ensure_included_ammo(item, weapon_catalog)
+            ensure_upgrade_profiles(item, weapon_catalog)
         gang_rules = parse_gang_named_rules(body)
         skill_flat, skill_by_arch = parse_skill_access_tables(body)
         types = []
