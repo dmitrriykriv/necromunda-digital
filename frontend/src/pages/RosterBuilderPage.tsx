@@ -237,6 +237,12 @@ export function RosterBuilderPage() {
                 Карточки для печати
               </Link>
             </Button>
+            <Button type="button" variant="outline" asChild>
+              <Link to="/print/small">
+                <Printer />
+                Маленькие карточки
+              </Link>
+            </Button>
           </div>
           {hint ? (
             <p

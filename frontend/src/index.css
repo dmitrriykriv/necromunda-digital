@@ -398,6 +398,10 @@ select.skill-picker optgroup.skill-access-s {
   overflow-x: auto;
 }
 
+.print-sheet > .print-minis {
+  margin-top: 0;
+}
+
 .print-minis-intro h2 {
   color: #e8622a;
   font-size: 0.78rem;
@@ -538,9 +542,12 @@ select.skill-picker optgroup.skill-access-s {
   }
 
   .print-minis {
-    break-before: page;
     margin: 0;
     overflow: visible;
+  }
+
+  .print-full-cards + .print-minis {
+    break-before: page;
     page-break-before: always;
   }
 

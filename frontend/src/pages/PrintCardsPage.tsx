@@ -61,6 +61,9 @@ export function PrintCardsPage() {
               Расшифровки свойств оружия
             </label>
             <div className="flex flex-wrap gap-2">
+              <Button type="button" variant="outline" asChild>
+                <Link to="/print/small">Маленькие карточки</Link>
+              </Button>
               <Button
                 type="button"
                 onClick={() => printCards(true)}

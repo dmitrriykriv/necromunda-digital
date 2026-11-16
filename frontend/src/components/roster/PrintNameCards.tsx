@@ -11,18 +11,26 @@ function chunksOf<T>(items: T[], size: number): T[][] {
   return chunks;
 }
 
-export function PrintNameCards({ fighters }: { fighters: Fighter[] }) {
+export function PrintNameCards({
+  fighters,
+  showIntro = true,
+}: {
+  fighters: Fighter[];
+  showIntro?: boolean;
+}) {
   if (fighters.length === 0) return null;
 
   return (
     <section className="print-minis">
-      <div className="print-minis-intro">
-        <h2>Карточки 63×88 мм</h2>
-        <p>
-          Отдельный лист для нарезки: имя и тип каждого бойца. На страницу
-          помещается {MINI_CARDS_PER_SHEET} карточек, следующие идут на новый лист.
-        </p>
-      </div>
+      {showIntro ? (
+        <div className="print-minis-intro">
+          <h2>Карточки 63×88 мм</h2>
+          <p>
+            Отдельный лист для нарезки: имя и тип каждого бойца. На страницу
+            помещается {MINI_CARDS_PER_SHEET} карточек, следующие идут на новый лист.
+          </p>
+        </div>
+      ) : null}
       {chunksOf(fighters, MINI_CARDS_PER_SHEET).map((sheet) => (
         <table
           key={sheet.map((fighter) => fighter.id).join('-')}
