@@ -1,0 +1,210 @@
+{
+  "id": "saar-house",
+  "name": "Saar house",
+  "author": "Сергей",
+  "faction": "house-van-saar",
+  "factionName": "Дом Ван Саар",
+  "notes": "",
+  "reputation": 1,
+  "stash": 1000,
+  "fighters": [
+    {
+      "id": "f-e3olbq",
+      "name": "NeoTek",
+      "type": "Van Saar Neotek",
+      "subtypes": [
+        "Specialist",
+        "Ganger"
+      ],
+      "xp": 4,
+      "baseCost": 65,
+      "skills": [
+        "Gunfighter",
+        "Marksman"
+      ],
+      "equipment": [
+        {
+          "name": "Laspistol",
+          "cost": 5,
+          "slots": 1,
+          "extras": []
+        },
+        {
+          "name": "Plasma pistol",
+          "cost": 70,
+          "slots": 1,
+          "extras": []
+        },
+        {
+          "name": "Mesh armour",
+          "cost": 40,
+          "slots": 0,
+          "extras": []
+        },
+        {
+          "name": "Grav Cutter",
+          "cost": 0,
+          "slots": 0,
+          "extras": []
+        }
+      ]
+    },
+    {
+      "id": "f-hwayvx",
+      "name": "Prime",
+      "type": "Van Saar Prime",
+      "subtypes": [
+        "Leader"
+      ],
+      "xp": 61,
+      "baseCost": 115,
+      "skills": [
+        "Iron Will"
+      ],
+      "equipment": [
+        {
+          "name": "Plasma gun",
+          "cost": 85,
+          "slots": 1,
+          "extras": []
+        },
+        {
+          "name": "Mesh armour",
+          "cost": 40,
+          "slots": 0,
+          "extras": []
+        },
+        {
+          "name": "Shock baton",
+          "cost": 20,
+          "slots": 1,
+          "extras": []
+        }
+      ]
+    },
+    {
+      "id": "f-h1o384",
+      "name": "Augmek",
+      "type": "Van Saar Augmek",
+      "subtypes": [
+        "Champion"
+      ],
+      "xp": 37,
+      "baseCost": 95,
+      "skills": [
+        "Marksman"
+      ],
+      "equipment": [
+        {
+          "name": "Las carbine",
+          "cost": 20,
+          "slots": 1,
+          "extras": []
+        }
+      ]
+    },
+    {
+      "id": "f-nkgvyu",
+      "name": "Archeotek",
+      "type": "Van Saar Archeotek",
+      "subtypes": [
+        "Champion",
+        "Loner"
+      ],
+      "xp": 49,
+      "baseCost": 85,
+      "skills": [],
+      "equipment": [
+        {
+          "name": "Rad beamer (Archeotek only)",
+          "cost": 35,
+          "slots": 1,
+          "extras": []
+        },
+        {
+          "name": "Smoke grenades",
+          "cost": 15,
+          "slots": 0,
+          "extras": []
+        }
+      ]
+    },
+    {
+      "id": "f-kw4jpi",
+      "name": "Tek",
+      "type": "Van Saar Tek",
+      "subtypes": [
+        "Specialist",
+        "Ganger"
+      ],
+      "xp": 13,
+      "baseCost": 30,
+      "skills": [],
+      "equipment": [
+        {
+          "name": "‘Hystrar’ pattern energy shield",
+          "cost": 35,
+          "slots": 1,
+          "extras": []
+        },
+        {
+          "name": "Laspistol",
+          "cost": 5,
+          "slots": 1,
+          "extras": []
+        },
+        {
+          "name": "Shock stave",
+          "cost": 25,
+          "slots": 1,
+          "extras": []
+        },
+        {
+          "name": "Light carapace armour (Gunner specialist only)",
+          "cost": 100,
+          "slots": 0,
+          "extras": []
+        }
+      ]
+    },
+    {
+      "id": "f-d3hugc",
+      "name": "Tek2",
+      "type": "Van Saar Tek",
+      "subtypes": [
+        "Specialist",
+        "Ganger"
+      ],
+      "xp": 13,
+      "baseCost": 30,
+      "skills": [],
+      "equipment": [
+        {
+          "name": "‘Hystrar’ pattern energy shield",
+          "cost": 35,
+          "slots": 1,
+          "extras": []
+        },
+        {
+          "name": "Laspistol",
+          "cost": 5,
+          "slots": 1,
+          "extras": []
+        },
+        {
+          "name": "Shock stave",
+          "cost": 25,
+          "slots": 1,
+          "extras": []
+        },
+        {
+          "name": "Medicae kit",
+          "cost": 20,
+          "slots": 0,
+          "extras": []
+        }
+      ]
+    }
+  ],
+  "updatedAt": "2026-09-26"
+}

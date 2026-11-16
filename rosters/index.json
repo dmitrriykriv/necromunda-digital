@@ -10,6 +10,15 @@
       "rating": 1000
     },
     {
+      "file": "iduschie-po-stopam-svyatogo-gusa.json",
+      "id": "iduschie-po-stopam-svyatogo-gusa",
+      "name": "Идущие по стопам святого Гуса",
+      "author": "Odronin",
+      "faction": "house-cawdor",
+      "factionName": "Дом Каудор",
+      "rating": 1000
+    },
+    {
       "file": "lyubiteli-tiranid.json",
       "id": "lyubiteli-tiranid",
       "name": "Любители тиранид",
@@ -25,6 +34,15 @@
       "author": "Владимир",
       "faction": "malstrain",
       "factionName": "Мальстрейн",
+      "rating": 1000
+    },
+    {
+      "file": "saar-house.json",
+      "id": "saar-house",
+      "name": "Saar house",
+      "author": "Сергей",
+      "faction": "house-van-saar",
+      "factionName": "Дом Ван Саар",
       "rating": 1000
     },
     {
