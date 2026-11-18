@@ -7,6 +7,7 @@ import { Separator } from '@/components/ui/separator';
 import {
   fetchRoster,
   useApiHealth,
+  useCampaignIndex,
   useDeleteRoster,
   useRosterIndex,
   useSaveRoster,
@@ -17,10 +18,13 @@ import { useRosterStore } from '@/store/rosterStore';
 
 export function RosterSidebar() {
   const currentFile = useRosterStore((state) => state.currentFile);
+  const campaignId = useRosterStore((state) => state.campaignId);
   const reset = useRosterStore((state) => state.reset);
   const setRoster = useRosterStore((state) => state.setRoster);
   const health = useApiHealth();
-  const index = useRosterIndex();
+  const campaigns = useCampaignIndex();
+  const [listCampaign, setListCampaign] = useState(campaignId);
+  const index = useRosterIndex(listCampaign);
   const save = useSaveRoster();
   const remove = useDeleteRoster();
   const online = health.isSuccess;
@@ -39,29 +43,31 @@ export function RosterSidebar() {
 
   async function copySaved(file: string) {
     try {
-      const data = await fetchRoster(file);
-      await save.mutateAsync(cloneRoster(data));
+      const data = await fetchRoster(file, listCampaign);
+      await save.mutateAsync({ roster: cloneRoster(data), campaignId: listCampaign });
     } catch {
       /* список обновится при следующем удачном сохранении */
     }
   }
 
   async function openSaved(file: string) {
-    if (file === currentFile && !useRosterStore.getState().isDirty()) return;
+    const same = file === currentFile && listCampaign === campaignId;
+    if (same && !useRosterStore.getState().isDirty()) return;
     if (!confirmUnsaved()) return;
-    const data = await fetchRoster(file);
-    setRoster(data, file);
+    const data = await fetchRoster(file, listCampaign);
+    setRoster(data, file, listCampaign);
   }
 
   function newRoster() {
     if (!confirmUnsaved()) return;
+    useRosterStore.setState({ campaignId: listCampaign });
     reset();
   }
 
   function deleteSaved(file: string) {
-    const wipingOpen = currentFile === file;
+    const wipingOpen = currentFile === file && campaignId === listCampaign;
     if (wipingOpen && !confirmUnsaved()) return;
-    remove.mutate(file, {
+    remove.mutate({ file, campaignId: listCampaign }, {
       onSuccess: () => {
         if (wipingOpen) reset();
       },
@@ -76,9 +82,27 @@ export function RosterSidebar() {
       </h2>
       <p className="mb-3 text-xs leading-relaxed text-muted-foreground">
         {online
-          ? 'Список сохранённых банд. «Сохранить» записывает текущую сюда.'
+          ? listCampaign
+            ? 'Ростеры выбранной кампании. Общая библиотека их не меняет.'
+            : 'Общие ростеры, не привязанные к кампании.'
           : 'Список файлов недоступен. Правки остаются в этом браузере; можно скачать копию.'}
       </p>
+      <label className="mb-1 block text-xs text-muted-foreground" htmlFor="roster-scope">
+        Где лежит список
+      </label>
+      <select
+        id="roster-scope"
+        className="mb-3 h-9 w-full rounded-md border border-border bg-background px-3 text-sm"
+        value={listCampaign}
+        onChange={(event) => setListCampaign(event.target.value)}
+      >
+        <option value="">Не в кампании</option>
+        {(campaigns.data?.campaigns ?? []).map((item) => (
+          <option key={item.id} value={item.id}>
+            {item.name}{item.status === 'finished' ? ' · завершена' : ''}
+          </option>
+        ))}
+      </select>
       <Button type="button" variant="outline" className="mb-3 w-full" onClick={newRoster}>
         <Plus />
         Новый ростер
@@ -112,7 +136,7 @@ export function RosterSidebar() {
             <button
               type="button"
               className={`flex min-w-0 flex-1 flex-col rounded-md border px-3 py-2 text-left text-sm ${
-                currentFile === item.file
+                currentFile === item.file && campaignId === listCampaign
                   ? 'border-primary bg-primary/15'
                   : 'border-border bg-background hover:border-primary'
               }`}

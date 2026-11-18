@@ -21,10 +21,11 @@ type RosterState = {
   roster: Roster;
   savedRoster: Roster;
   currentFile: string;
+  campaignId: string;
   lastAuthor: string;
   cleanFingerprint: string;
   isDirty: () => boolean;
-  setRoster: (roster: Partial<Roster>, file?: string) => void;
+  setRoster: (roster: Partial<Roster>, file?: string, campaignId?: string) => void;
   setMeta: (patch: Partial<Roster>) => void;
   reset: () => void;
   revertDraft: () => void;
@@ -54,15 +55,17 @@ export const useRosterStore = create<RosterState>()(
       roster: empty,
       savedRoster: snapshotRoster(empty),
       currentFile: '',
+      campaignId: '',
       lastAuthor: '',
       cleanFingerprint: rosterFingerprint(empty),
       isDirty: () => rosterFingerprint(get().roster) !== get().cleanFingerprint,
-      setRoster: (roster, file) => {
+      setRoster: (roster, file, campaignId) => {
         const next = normalizeRoster(roster);
         set({
           roster: next,
           savedRoster: snapshotRoster(next),
           currentFile: file ?? (roster.id ? `${roster.id}.json` : ''),
+          campaignId: campaignId ?? get().campaignId,
           cleanFingerprint: rosterFingerprint(next),
         });
       },
@@ -192,6 +195,7 @@ export const useRosterStore = create<RosterState>()(
         roster: state.roster,
         savedRoster: state.savedRoster,
         currentFile: state.currentFile,
+        campaignId: state.campaignId,
         lastAuthor: state.lastAuthor,
         cleanFingerprint: state.cleanFingerprint,
       }),
@@ -204,6 +208,7 @@ export const useRosterStore = create<RosterState>()(
           state.savedRoster = normalizeRoster(state.savedRoster);
         }
         state.lastAuthor = state.lastAuthor ?? state.roster.author ?? '';
+        state.campaignId = state.campaignId ?? '';
         if (!state.cleanFingerprint) {
           state.cleanFingerprint = rosterFingerprint(state.roster);
         }

@@ -4,12 +4,14 @@ import { existsSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createProxyMiddleware } from 'http-proxy-middleware';
+import { campaignRouter } from './routes/campaigns.ts';
 import { rosterRouter } from './routes/rosters.ts';
 import { rebuildIndex } from './services/rosterFiles.ts';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
 const FRONTEND_DIST = join(ROOT, 'frontend', 'dist');
 const ROSTERS = join(ROOT, 'rosters');
+const CAMPAIGNS = join(ROOT, 'campaigns');
 const HOST = process.env.HOST ?? '0.0.0.0';
 const PORT = Number(process.env.PORT ?? 8000);
 const VITE = process.env.VITE_URL ?? 'http://127.0.0.1:5173';
@@ -24,6 +26,7 @@ app.get('/api/health', (_req, res) => {
   res.json({ ok: true });
 });
 app.use('/api/rosters', rosterRouter(ROSTERS));
+app.use('/api/campaigns', campaignRouter(CAMPAIGNS, ROSTERS));
 
 app.use('/pages', express.static(join(ROOT, 'pages'), {
   setHeaders(res, filePath) {

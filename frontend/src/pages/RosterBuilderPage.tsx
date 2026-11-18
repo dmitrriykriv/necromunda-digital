@@ -16,6 +16,7 @@ import { useRosterStore } from '@/store/rosterStore';
 export function RosterBuilderPage() {
   const roster = useRosterStore((state) => state.roster);
   const currentFile = useRosterStore((state) => state.currentFile);
+  const campaignId = useRosterStore((state) => state.campaignId);
   const cleanFingerprint = useRosterStore((state) => state.cleanFingerprint);
   const setRoster = useRosterStore((state) => state.setRoster);
   const revertDraft = useRosterStore((state) => state.revertDraft);
@@ -98,9 +99,12 @@ export function RosterBuilderPage() {
       return;
     }
     try {
-      const result = await save.mutateAsync(data);
-      setRoster(result.roster, result.file);
-      setStatus({ text: 'Сохранено в список слева.', ok: true });
+      const result = await save.mutateAsync({ roster: data, campaignId });
+      setRoster(result.roster, result.file, campaignId);
+      setStatus({
+        text: campaignId ? 'Сохранено в ростеры этой кампании.' : 'Сохранено в общие ростеры.',
+        ok: true,
+      });
     } catch {
       setStatus({
         text: 'Не удалось записать в список. Можно скачать копию и открыть её позже.',
@@ -137,7 +141,7 @@ export function RosterBuilderPage() {
     if (!confirmUnsaved()) return;
     try {
       const data = (await readJsonFile(file)) as Roster;
-      setRoster(data, '');
+      setRoster(data, '', '');
       setStatus({
         text: `Открыт ${file.name}. «Сохранить» добавит банду в список слева.`,
         ok: true,

@@ -1,49 +1,64 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import type { FactionCatalog } from '@shared/catalog';
+import type { CampaignIndex } from '@shared/campaign';
 import type { Roster, RosterIndex } from '@shared/roster';
 import { factionCatalogUrl } from '@/lib/paths';
 import { api } from './client';
 
-export async function fetchRoster(file: string) {
-  const { data } = await api.get<Roster>(`/rosters/${encodeURIComponent(file)}`);
+export function rosterBase(campaignId = '') {
+  return campaignId
+    ? `/campaigns/${encodeURIComponent(campaignId)}/rosters`
+    : '/rosters';
+}
+
+export async function fetchRoster(file: string, campaignId = '') {
+  const { data } = await api.get<Roster>(`${rosterBase(campaignId)}/${encodeURIComponent(file)}`);
   return data;
 }
 
 const KEY = ['rosters'] as const;
 
-export function useRosterIndex() {
+export function useCampaignIndex() {
   return useQuery({
-    queryKey: KEY,
+    queryKey: ['campaigns'],
     queryFn: async () => {
-      const { data } = await api.get<RosterIndex>('/rosters');
+      const { data } = await api.get<CampaignIndex>('/campaigns');
       return data;
     },
   });
 }
 
-export function useRosterFile(file: string | null) {
+export function useRosterIndex(campaignId = '') {
   return useQuery({
-    queryKey: [...KEY, file],
-    enabled: Boolean(file),
+    queryKey: [...KEY, campaignId],
     queryFn: async () => {
-      const { data } = await api.get<Roster>(`/rosters/${encodeURIComponent(file!)}`);
+      const { data } = await api.get<RosterIndex>(rosterBase(campaignId));
       return data;
     },
+  });
+}
+
+export function useRosterFile(file: string | null, campaignId = '') {
+  return useQuery({
+    queryKey: [...KEY, campaignId, file],
+    enabled: Boolean(file),
+    queryFn: async () => fetchRoster(file!, campaignId),
   });
 }
 
 export function useSaveRoster() {
   const client = useQueryClient();
   return useMutation({
-    mutationFn: async (roster: Roster) => {
+    mutationFn: async (input: { roster: Roster; campaignId?: string }) => {
+      const campaignId = input.campaignId ?? '';
       const { data } = await api.put<{ ok: boolean; file: string; roster: Roster; index: RosterIndex }>(
-        '/rosters',
-        roster,
+        rosterBase(campaignId),
+        input.roster,
       );
-      return data;
+      return { ...data, campaignId };
     },
     onSuccess: (data) => {
-      client.setQueryData(KEY, data.index);
+      client.setQueryData([...KEY, data.campaignId], data.index);
     },
   });
 }
@@ -51,14 +66,15 @@ export function useSaveRoster() {
 export function useDeleteRoster() {
   const client = useQueryClient();
   return useMutation({
-    mutationFn: async (file: string) => {
+    mutationFn: async (input: { file: string; campaignId?: string }) => {
+      const campaignId = input.campaignId ?? '';
       const { data } = await api.delete<{ ok: boolean; index: RosterIndex }>(
-        `/rosters/${encodeURIComponent(file)}`,
+        `${rosterBase(campaignId)}/${encodeURIComponent(input.file)}`,
       );
-      return data;
+      return { ...data, campaignId };
     },
     onSuccess: (data) => {
-      client.setQueryData(KEY, data.index);
+      client.setQueryData([...KEY, data.campaignId], data.index);
     },
   });
 }

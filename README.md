@@ -2,8 +2,9 @@
 
 Справочник правил Necromunda и построитель ростера для личного использования.
 
-Структура разделов справочника на русском, тексты правил — в оригинале
-(SKIRMUNDA и списки банд). Приложение не является официальным продуктом
+Справочник на русском: разделы и тексты правил переведены, оригинал лежит
+под спойлером. Имена собственные остаются на английском. Источники —
+SKIRMUNDA и списки банд. Приложение не является официальным продуктом
 Games Workshop.
 
 ---
@@ -11,14 +12,19 @@ Games Workshop.
 ## Что уже работает
 
 - Статический HTML-справочник: основные правила, 19 списков банд, подсказка
-  по ведению кампании, учебный ростер Дома Каудор на 1000 кредитов.
-- Черновик помощника арбитра: территории, игроки и банды, цикл, действия
-  и триумфы. Данные не сохраняются.
+  по ведению кампании, генератор миссий, учебный ростер Дома Каудор на
+  1000 кредитов.
+- Черновик помощника арбитра: игроки и банды, территории с доходом и
+  настройкой списка, случайная генерация пула, цикл, действия и триумфы.
+  Кампания пишется в `campaigns/<id>/`. Ростер игрока — копия общего файла;
+  после завершения кампании копию можно вернуть в `rosters/`.
 - Построитель ростера (React): выбор банды, типы и подтипы бойцов, снаряжение
-  из каталога, апгрейды вроде warp rounds, рейтинг и проверка состава
-  (один Leader, лимит чемпионов/громил).
-- Карточки для печати: характеристики, навыки, профили оружия и описания
-  снаряжения.
+  из каталога, апгрейды вроде warp rounds, рейтинг и проверка состава.
+  Нужен ровно один Leader. Моделей с Champion, Brute или Hanger-on не больше
+  остальных: Leader считается среди остальных, питомцы не считаются. У части
+  банд эти проверки отключены.
+- Печать: карточки с характеристиками, навыками, профилями оружия и описаниями
+  снаряжения, а также бирки 63×88 мм.
 
 Пока нет аккаунтов и PostgreSQL (план — [PRD.md](./PRD.md)): ростеры временно
 пишутся в `rosters/*.json`, черновик дублируется в браузере. Если API
@@ -116,7 +122,7 @@ sudo bash install-ubuntu.sh
 | Справочник | HTML + CSS (`pages/styles.css`) |
 | Построитель | React 18, Vite, TypeScript, Tailwind, shadcn/ui, Zustand, TanStack Query |
 | API | Express + TypeScript |
-| Общие типы | `shared/roster.ts`, `shared/catalog.ts` |
+| Общие типы | `shared/roster.ts`, `shared/catalog.ts`, `shared/statTips.ts` |
 
 ---
 
@@ -124,23 +130,43 @@ sudo bash install-ubuntu.sh
 
 ```
 Necromunda Digital/
-├── index.html                 главная справочника
-├── pages/                     HTML-страницы, стили и favicon
-│   ├── core-rules.html
-│   ├── gangs.html
-│   ├── campaign-helper.html
-│   ├── campaign-arbitrator.html
-│   ├── roster-example.html
-│   ├── roster-builder.html    редирект на frontend/dist
+├── index.html                      главная справочника
+├── pages/
+│   ├── core-rules.html             основные правила
+│   ├── gangs.html                  каталог банд
+│   ├── gangs/                      19 страниц списков банд
+│   ├── campaign-helper.html        подсказка по кампании
+│   ├── campaign-arbitrator.html    стол арбитра
+│   ├── mission-helper.html         генерация миссий
+│   ├── roster-example.html         учебный ростер
+│   ├── roster-builder.html         редирект на frontend/dist
+│   ├── handbook-search.js          поиск и подсказки свойств
 │   ├── styles.css
 │   └── favicon.svg
-├── frontend/                  React-построитель (base: './')
-├── backend/                   Express: /api/rosters, статика, /data
-├── shared/                    типы ростера и каталога
-├── data/factions/             JSON каталогов банд (типы, статы, снаряжение)
-├── rosters/                   временно: сохранённые ростеры (до PostgreSQL)
-├── tools/                     сборка справочника и каталога
-└── rules/                     исходные PDF
+├── frontend/                       React-построитель (base: './')
+│   └── src/pages/                  ростер, печать карточек и бейджей 63×88
+├── backend/src/                    Express: /api/rosters, статика, /data
+├── shared/                         roster.ts, catalog.ts, statTips.ts
+├── data/factions/                  JSON каталогов: index и 19 банд
+├── rosters/                        общие ростеры, не привязанные к кампании
+├── campaigns/                      столы кампаний, каталог в git не входит
+│   └── <id>/                       campaign, players, territories, types,
+│                                   names, cycles/ и rosters/ — копии банд
+├── tools/
+│   ├── build_gangs.py              HTML списков банд
+│   ├── extract_faction_lists.py    JSON каталога из HTML
+│   ├── gangs_raw.txt               текст таблиц банд
+│   ├── rules_raw.txt               текст Trading Post
+│   ├── gang_i18n.py                словарь перевода
+│   ├── i18n_*.py                   переводы правил и прозы
+│   ├── serve.py                    локальный сервер
+│   ├── _qa.py
+│   └── deploy/                     установка на Ubuntu и перезапуск
+├── rules/                          исходные PDF, в git не входят
+├── package.json                    npm start, build и test
+├── PRD.md
+├── SCENARIOS.md
+└── TECH_STACK.md
 ```
 
 При `npm run build` каталоги из `data/` копируются в `frontend/dist/data/`,
@@ -156,16 +182,22 @@ Necromunda Digital/
 | PUT | `/api/rosters` | записать JSON в `rosters/` |
 | DELETE | `/api/rosters/:file` | удалить файл |
 
+Кампании — отдельные папки `campaigns/<id>/`. Список: `GET /api/campaigns`.
+Запись стола: `PUT /api/campaigns/:id`. Ростеры этой кампании:
+`/api/campaigns/:id/rosters`. Копия из общих при выборе банды игрока и возврат
+в `rosters/` после `POST /api/campaigns/:id/finish`.
+
 ---
 
 ## Справочник правил
 
 | Файл | Раздел | Источник |
 | --- | --- | --- |
-| `pages/core-rules.html` | Основные правила | `Правила/SKIRMUNDA.pdf` |
-| `pages/gangs.html` | 19 списков банд | `Правила/GANGS0_3.pdf` |
+| `pages/core-rules.html` | Основные правила | `rules/SKIRMUNDA.pdf` |
+| `pages/gangs.html` | 19 списков банд | `rules/GANGS0_3.pdf` |
 | `pages/campaign-helper.html` | Подсказка по ведению кампании | SKIRMUNDA |
-| `pages/campaign-arbitrator.html` | Черновик стола арбитра (без сохранения) | SKIRMUNDA |
+| `pages/campaign-arbitrator.html` | Стол арбитра, сохраняется в `campaigns/` | SKIRMUNDA |
+| `pages/mission-helper.html` | Генерация миссий | SKIRMUNDA |
 | `pages/roster-example.html` | Учебный ростер Каудор | SKIRMUNDA + список Каудор |
 
 Раздел банды свёрнут в блоки: бойцы (карточки тоже сворачиваются), список
@@ -182,7 +214,7 @@ python tools/_qa.py
 ```
 
 Каталог для построителя (типы бойцов, характеристики, оружие, описания,
-апгрейды) извлекается из уже собранного `pages/gangs.html`:
+апгрейды) извлекается из уже собранных страниц `pages/gangs/*.html`:
 
 ```bash
 python tools/extract_faction_lists.py

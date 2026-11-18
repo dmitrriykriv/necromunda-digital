@@ -2126,6 +2126,70 @@ ul.rule-list li.sub {
     gap: 10px 12px;
 }
 
+.arb-mode {
+    display: inline-flex;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 0 0 8px;
+}
+
+.arb-mode .mh-btn {
+    border: none;
+    border-radius: 0;
+    border-right: 1px solid var(--line);
+}
+
+.arb-mode .mh-btn:last-child {
+    border-right: none;
+}
+
+.arb-mode .mh-btn.is-on {
+    background: var(--accent-dim);
+    color: var(--accent-soft);
+}
+
+.arb-battle-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.arb-battle-head h3 {
+    margin: 0;
+}
+
+.arb-battle-sides {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 16px;
+    margin-top: 14px;
+}
+
+.arb-battle-side h4 {
+    font-size: 0.92rem;
+    margin: 0 0 8px;
+    color: var(--text);
+}
+
+.arb-role {
+    display: block;
+    font-size: 0.72rem;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    font-weight: 400;
+    margin-bottom: 2px;
+}
+
+@media (max-width: 720px) {
+    .arb-battle-sides {
+        grid-template-columns: 1fr;
+    }
+}
+
 .arb-actions-row {
     display: grid;
     grid-template-columns: minmax(120px, 1fr) minmax(160px, 1.2fr) auto;
@@ -2156,7 +2220,17 @@ ul.rule-list li.sub {
     color: var(--accent-soft);
 }
 
-.arb-bar .mh-btn.is-on {
+.arb-save {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 16px;
+}
+
+.arb-save .mh-select {
+    width: min(280px, 100%);
+}
     border-color: var(--accent);
     color: var(--accent-soft);
     background: var(--accent-dim);
@@ -2184,6 +2258,43 @@ ul.rule-list li.sub {
 
 .arb-income {
     white-space: nowrap;
+}
+
+.arb-terr-name {
+    min-width: 8rem;
+    width: 100%;
+}
+
+.arb-name-cell {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.arb-names-btn {
+    padding: 6px 10px;
+    font-size: 0.72rem;
+    white-space: nowrap;
+}
+
+.arb-names-btn.is-on {
+    border-color: var(--accent);
+    color: var(--accent-soft);
+    background: var(--accent-dim);
+}
+
+.arb-name-editor {
+    margin-top: 16px;
+}
+
+.arb-name-editor[hidden] {
+    display: none !important;
+}
+
+.arb-name-list {
+    min-height: 18rem;
+    resize: vertical;
+    line-height: 1.45;
 }
 
 .arb-income .trait {

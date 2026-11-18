@@ -14,15 +14,24 @@
     <a class="backlink" href="../">&larr; На главную</a>
     <h1>Necromunda</h1>
     <p>Помощник арбитра &mdash; стол ведения кампании</p>
-    <p class="source">Черновик интерфейса &bull; данные не сохраняются</p>
+    <p class="source">Стол кампании &bull; данные пишутся в папку campaigns</p>
 </header>
 
 <main class="arb-main">
 
-    <p class="arb-note">Каркас стола арбитра: страницы уже разделены, заполнение работает только в этой вкладке.
-    После обновления всё сбрасывается. Порядок кампании &mdash; в
+    <p class="arb-note">Стол одной кампании. «Сохранить» создаёт папку в <code>campaigns/</code>:
+    игроки, территории, циклы и копии ростеров. Общие ростеры в построителе не меняются,
+    пока кампанию не завершат и ростер не вернут в библиотеку. Порядок кампании &mdash; в
     <a href="campaign-helper.html">подсказке</a>, полные правила &mdash; в
     <a href="core-rules.html#kampaniya">справочнике</a>.</p>
+
+    <div class="arb-save">
+        <select class="mh-select" id="camp-pick" aria-label="Открыть кампанию"></select>
+        <button type="button" class="mh-btn mh-btn-primary" data-act="save-campaign">Сохранить</button>
+        <button type="button" class="mh-btn mh-btn-ghost" data-act="new-campaign">Новая</button>
+        <button type="button" class="mh-btn mh-btn-ghost" id="camp-finish" data-act="finish-campaign">Завершить</button>
+        <span class="arb-muted" id="camp-save-note"></span>
+    </div>
 
     <div class="arb-meta">
         <div>
@@ -64,7 +73,7 @@
 
     <section class="arb-page" id="page-players">
         <h2>Игроки и банды<span class="en">Players &amp; Gangs</span></h2>
-        <p class="lede">Игрок, банда и привязка к сохранённому ростеру. Рейтинг и репутация подтягиваются из ростера, если API доступен.</p>
+        <p class="lede">Игрок и банда. Ростер выбирается из общих: в кампанию попадает отдельная копия, её правят в построителе фильтром этой кампании. После завершения кампании копию можно вернуть в общие.</p>
         <div class="arb-bar">
             <button type="button" class="mh-btn mh-btn-primary" data-act="add-player">Добавить игрока</button>
         </div>
@@ -73,7 +82,7 @@
 
     <section class="arb-page" id="page-territories">
         <h2>Территории<span class="en">Territories</span></h2>
-        <p class="lede">Статус: неконтролируемая, контроль банды, поселение (нельзя ставить на кон) или ставка цикла. В колонке дохода — кредиты; если кроме денег есть другие эффекты, наведите на «+ доп. свойства».</p>
+        <p class="lede">У каждой строки своё название, чтобы отличать территории одного типа. Кнопка у поля подбирает новое. Статус: неконтролируемая, контроль банды, поселение (нельзя ставить на кон) или ставка цикла. В колонке дохода — кредиты; если кроме денег есть другие эффекты, наведите на «+ доп. свойства».</p>
         <div class="arb-bar">
             <button type="button" class="mh-btn mh-btn-primary" data-act="add-territory">Добавить территорию</button>
             <button type="button" class="mh-btn mh-btn-ghost" data-act="add-settlements">Поселение каждому</button>
@@ -88,6 +97,12 @@
         </div>
         <div class="arb-setup" id="territory-setup" hidden>
             <div id="territory-setup-body"></div>
+            <div class="arb-name-editor" id="name-editor" hidden>
+                <h3 id="name-editor-title">Названия</h3>
+                <p class="arb-muted">По одному названию на строку. Пустые строки в генератор не попадают. Список сохраняется вместе с кампанией.</p>
+                <p class="arb-muted" id="name-editor-count"></p>
+                <textarea class="mh-input arb-name-list" id="name-editor-text" rows="16" spellcheck="false"></textarea>
+            </div>
         </div>
         <div class="arb-table-wrap" id="territories-body"></div>
     </section>
@@ -101,7 +116,12 @@
 
     <section class="arb-page" id="page-events">
         <h2>События цикла<span class="en">Cycle Events</span></h2>
-        <p class="lede">Записи выбранного цикла в разрезе каждого игрока. Чтобы посмотреть прошлый цикл, нажмите его на ленте сверху.</p>
+        <p class="lede">Режим один на всю кампанию и хранится в её карточке. После первого события его нельзя сменить, пока события не удалены во всех циклах. Исход обновляет ставку: победа забирает её, поражение отдаёт сопернику, ничья не меняет хозяина.</p>
+        <div class="arb-mode" id="cycle-mode" role="group" aria-label="Режим событий кампании">
+            <button type="button" class="mh-btn mh-btn-ghost is-on" data-act="cycle-mode" data-mode="full" aria-pressed="true">Полный цикл</button>
+            <button type="button" class="mh-btn mh-btn-ghost" data-act="cycle-mode" data-mode="short" aria-pressed="false">Укороченный цикл</button>
+        </div>
+        <p class="arb-muted" id="cycle-mode-note"></p>
         <div id="events-body"></div>
     </section>
 
@@ -121,7 +141,7 @@
 </main>
 
 <footer class="page-footer">
-    <p>Черновик помощника арбитра. Сохранение кампании появится позже.</p>
+    <p>Кампания хранится в <code>campaigns/&lt;id&gt;/</code>. Ростеры кампании — копии, общие файлы в <code>rosters/</code> сами не меняются.</p>
     <p><a class="backlink" href="../">&larr; На главную</a>
        &nbsp;·&nbsp; <a href="campaign-helper.html">Подсказка по кампании</a>
        &nbsp;·&nbsp; <a href="roster-builder.html">Построитель ростера</a>
@@ -206,6 +226,8 @@
   ];
 
   var state = {
+    id: '',
+    status: 'active',
     name: '',
     cycle: 1,
     liveCycle: 1,
@@ -217,9 +239,16 @@
     disabled: {},
     customs: [],
     catalogOpen: false,
+    nameEditId: '',
     events: {},
-    actions: {}
+    actions: {},
+    eventMode: 'full',
+    battles: {}
   };
+  var campaignIndex = [];
+  var saveTimer = 0;
+  var hydrating = false;
+  var defaultNames = null;
   var rosters = [];
   var rosterDetails = {};
   var rosterPending = {};
@@ -252,7 +281,7 @@
 
   function fightersOf(player) {
     if (!player || !player.rosterFile) return [];
-    var details = rosterDetails[player.rosterFile];
+    var details = rosterDetails[rosterKey(player.rosterFile)];
     return (details && details.fighters) || [];
   }
 
@@ -264,7 +293,7 @@
       list.unshift({ value: selected, label: selected });
     }
     var empty = player && player.rosterFile
-      ? (rosterPending[player.rosterFile] ? '— загрузка —' : '— боец —')
+      ? (rosterPending[rosterKey(player.rosterFile)] ? '— загрузка —' : '— боец —')
       : '— нет ростера —';
     return optionList(list, selected, empty);
   }
@@ -290,6 +319,13 @@
     var t = defById(kind);
     if (!t) return 'Нет в списке';
     return (t.name || '').trim() || 'Своя территория';
+  }
+
+  function instanceTitle(t) {
+    var type = terrName(t.kind);
+    var name = (t.name || '').trim();
+    if (!name) return type;
+    return name + ' · ' + type;
   }
 
   function isHome(kind) {
@@ -352,6 +388,92 @@
     return enabledKinds('').filter(function (t) { return t.id && !t.home; });
   }
 
+  var TERRITORY_NAMES = {
+    settlement: ['Клети Пепельного яруса', 'Двор Святого Гуса', 'Норы у Серного колодца', 'Посёлок Нижней решётки', 'Халупы у Лифта 9', 'Двор Трёх свечей', 'Ярус Тихих молитв', 'Квартал Ржавой лестницы', 'Клети у Водосборника', 'Двор Четвёртого пролёта', 'Посёлок Глухой смены', 'Халупы под Насосом', 'Ярус Стёртых номеров', 'Квартал Тёплой трубы', 'Клети Без вывески', 'Двор у Серной решётки', 'Норы Третьего спала', 'Посёлок Нижних коек', 'Халупы у Чёрного хода', 'Ярус Двенадцати семей', 'Квартал Мигающей лампы', 'Клети у Общей плиты', 'Двор Старой очереди', 'Норы под Лестницей Б', 'Посёлок Тихого часа', 'Халупы у Сливного жёлоба', 'Ярус Второй галереи', 'Квартал Ржавых дверей', 'Клети без окон', 'Двор Последнего звонка'],
+    'bullet-den': ['Патронный тупик', 'Нора Гильз', 'Ствол девятый', 'Каморка без осечек', 'Склад Глухих выстрелов', 'Лавка Последнего магазина', 'Переулок Осечки', 'Двор Трассирующих', 'Капсюльный угол', 'Нора Без осечки', 'Склад Девятого ящика', 'Переулок Гильзового звона', 'Лавка Тёплого ствола', 'Двор Короткой очереди', 'Каморка Последнего патрона', 'Ствол у Решётки', 'Нора Трассирующего следа', 'Лавка Двух обойм', 'Переулок Глухого выстрела', 'Склад без пломбы', 'Каморка Третьей обоймы', 'Двор Сбитого прицела', 'Нора под Оружейной', 'Лавка Чёрного пороха', 'Переулок Пустой гильзы', 'Склад Ночной выдачи', 'Каморка у Ствольной', 'Двор Длинной очереди', 'Нора Без клейма', 'Лавка Считанных патронов'],
+    'rogue-doc': ['Лазарет без вопросов', 'Койка под капельницей', 'Приёмная Грязных бинтов', 'Нора Иглы', 'Подвал Сшитых ран', 'Кабинет Третьей смены', 'Лазарет у Сливного жёлоба', 'Койка Не спрашивай', 'Койка у Сливной трубы', 'Приёмная без света', 'Лазарет Третьей иглы', 'Подвал Грязных перчаток', 'Кабинет Ночной смены', 'Нора Сшитого шва', 'Койка До утра', 'Приёмная Тёплого спирта', 'Лазарет у Решётки', 'Подвал Без имени на двери', 'Кабинет Двух бинтов', 'Нора Капельной стойки', 'Койка под Лампой', 'Приёмная Тихого часа', 'Лазарет Четвёртого яруса', 'Подвал Ржавого скальпеля', 'Кабинет без очереди', 'Нора Стерильного угла', 'Койка Последнего шва', 'Приёмная у Лифта', 'Лазарет Глухой боли', 'Подвал Трёх каталок'],
+    'mess-shack': ['Котёл Серого варева', 'Столовая у Решётки', 'Харчевня Второго черпака', 'Барак Сытого яруса', 'Кухня Прокисшего супа', 'Кормушка Ночной смены', 'Стол Двенадцати ложек', 'Харчевня Тёплого чана', 'Котёл у Решётки', 'Харчевня Третьей смены', 'Барак Без соли', 'Кухня Дымного часа', 'Кормушка у Лифта', 'Стол Общей миски', 'Харчевня Прогорклого жира', 'Котёл Нижнего яруса', 'Барак Тёплой очереди', 'Кухня без вывески', 'Кормушка Двенадцати ртов', 'Стол у Паровой трубы', 'Харчевня Серого хлеба', 'Котёл Ночной раздачи', 'Барак Второй ложки', 'Кухня Ржавого ковша', 'Кормушка под Лестницей', 'Стол Глухого часа', 'Харчевня Четвёртого черпака', 'Котёл у Водосборника', 'Барак Сытного угла', 'Кухня Последней порции'],
+    'drinking-hole': ['Кружка у Утечки', 'Кабак Последний глоток', 'Пивная Трёх бочек', 'Зал Сивушного пара', 'Бар Ржавой трубы', 'Кабак под Решёткой', 'Стопка у Лифта', 'Забегаловка Глухого часа', 'Кружка Третьей смены', 'Кабак у Утечки', 'Пивная без вывески', 'Зал Ржавой кружки', 'Бар под Решёткой', 'Стопка Ночного часа', 'Забегаловка Двух бочек', 'Кружка у Лифта', 'Кабак Глухого угла', 'Пивная Серного пара', 'Зал Последней стопки', 'Бар Четвёртого яруса', 'Стопка у Сливной', 'Забегаловка Тёплого спирта', 'Кружка Без сдачи', 'Кабак Нижней галереи', 'Пивная Треснутой бочки', 'Зал у Чёрного хода', 'Бар Двенадцати кружек', 'Стопка Глухой смены', 'Забегаловка без окон', 'Кружка Второй очереди'],
+    fence: ['Лавка Без чека', 'Притон Скупщика', 'Переулок Краденого', 'Нора Тихой сделки', 'Склад Чужих клейм', 'Барахолка Второго хода', 'Лавка Не твоё', 'Двор Перепроданного', 'Лавка Чужого клейма', 'Притон без расписки', 'Переулок Тихой цены', 'Нора Второго хозяина', 'Склад без бирки', 'Барахолка у Решётки', 'Лавка Ночной сдачи', 'Двор Краденого ящика', 'Притон Третьей руки', 'Переулок без вопросов', 'Нора под Прилавком', 'Склад Стёртых номеров', 'Барахолка Глухого часа', 'Лавка Двух замков', 'Двор у Чёрного хода', 'Притон Последней сделки', 'Переулок Ржавой пломбы', 'Нора Сорванной пломбы', 'Склад Четвёртого яруса', 'Барахолка Тёплого металла', 'Лавка Спроси завтра', 'Двор Перекупленного'],
+    'bounty-den': ['Доска Чёрных имён', 'Логово Охотников', 'Контора Награды', 'Кабинет Чужой головы', 'Зал Объявленных', 'Нора Следа', 'Стол Двух контрактов', 'Притон Мёртвых долгов', 'Доска без фото', 'Логово Двух следов', 'Контора Ночной награды', 'Кабинет Стёртого имени', 'Зал Чужих долгов', 'Нора под Объявлением', 'Стол Третьего контракта', 'Притон у Решётки', 'Доска Глухой охоты', 'Логово без вывески', 'Контора Четвёртого яруса', 'Кабинет Тёплого следа', 'Зал Последней головы', 'Нора Двух плакатов', 'Стол у Чёрного хода', 'Притон Считанной награды', 'Доска Нижнего яруса', 'Логово Тихого часа', 'Контора без окна', 'Кабинет Ржавой булавки', 'Зал Объявленной цены', 'Нора Чёрного списка'],
+    generatorium: ['Зал Живого тока', 'Узел Гудящих шин', 'Камера Искрящего яруса', 'Станция Третьей фазы', 'Колодец Света', 'Щитовая без таблички', 'Зал Тёплого гула', 'Узел Рвущихся кабелей', 'Зал Третьей шины', 'Узел без таблички', 'Камера Тёплого гула', 'Станция у Решётки', 'Колодец Мигающего света', 'Щитовая Ночной смены', 'Зал Рвущегося кабеля', 'Узел Четвёртого яруса', 'Камера без кожуха', 'Станция Глухого гула', 'Колодец у Лифта', 'Щитовая Двух рубильников', 'Зал Искры на полу', 'Узел под Лестницей', 'Камера Серного озона', 'Станция без ограждения', 'Колодец Нижней жилы', 'Щитовая Тёплой меди', 'Зал Последней лампы', 'Узел у Водосборника', 'Камера Третьего гула', 'Станция Ржавых шин'],
+    'corpse-farm': ['Поле Тихих тел', 'Ферма у Сливного жёлоба', 'Сарай Холодных носилок', 'Яма Второго урожая', 'Двор Без имён', 'Склад Остывших', 'Поле Ночной смены', 'Сарай Тканевых мешков', 'Поле у Сливной', 'Ферма без таблички', 'Сарай Третьей смены', 'Яма Холодного урожая', 'Двор Тканевых мешков', 'Склад у Решётки', 'Поле Ночных носилок', 'Ферма Четвёртого яруса', 'Сарай без имён', 'Яма Глухого часа', 'Двор Остывшей смены', 'Склад Двух тележек', 'Поле под Насосом', 'Ферма Тихих рядов', 'Сарай у Чёрного хода', 'Яма Последнего мешка', 'Двор Нижнего урожая', 'Склад без бирок', 'Поле Ржавых носилок', 'Ферма у Лифта', 'Сарай Второй смены', 'Яма Считанных тел'],
+    tunnels: ['Ход под Решёткой', 'Колено Серной трубы', 'Лаз у Обвала', 'Штрек Третьего поворота', 'Нора Без эха', 'Переход Глухих шагов', 'Ход к Чёрному люку', 'Колено Ржавой жилы', 'Ход Третьего колена', 'Колено без света', 'Лаз у Решётки', 'Штрек Глухих шагов', 'Нора Четвёртого поворота', 'Переход у Обвала', 'Ход к Серной жиле', 'Колено Нижнего яруса', 'Лаз без эха', 'Штрек Двух люков', 'Нора под Трубой', 'Переход Тёплого пара', 'Ход Ночной смены', 'Колено у Водосборника', 'Лаз Ржавой скобы', 'Штрек без крепи', 'Нора Последнего поворота', 'Переход Чёрного люка', 'Ход у Лифтовой шахты', 'Колено Глухого стука', 'Лаз Второй галереи', 'Штрек Считанных шагов'],
+    'tech-bazaar': ['Ряд Мигающих витрин', 'Базар Запчастей', 'Лавка Живого припоя', 'Ряд Без гарантии', 'Прилавок Третьей руки', 'Рынок Тёплого металла', 'Лавка Чужих схем', 'Ряд Последней детали', 'Ряд без ценника', 'Базар Третьей руки', 'Лавка Тёплого припоя', 'Прилавок у Решётки', 'Рынок Глухой схемы', 'Ряд Четвёртого яруса', 'Базар без гарантии', 'Лавка Двух разъёмов', 'Прилавок Ночной сдачи', 'Рынок Ржавой платы', 'Ряд Последней катушки', 'Базар у Чёрного хода', 'Лавка Стёртых клейм', 'Прилавок Нижнего ряда', 'Рынок Мигающей лампы', 'Ряд под Лестницей', 'Базар Чужой схемы', 'Лавка без чека', 'Прилавок Тёплого металла', 'Рынок Второй смены', 'Ряд у Лифта', 'Базар Считанных деталей'],
+    promethium: ['Цистерна Без крышки', 'Склад Горячего пара', 'Бак Утечки', 'Двор Синего пламени', 'Камера Запахшего топлива', 'Склад Третьей бочки', 'Цистерна у Вентиляции', 'Бак Не курить', 'Цистерна Нижнего яруса', 'Склад Тёплого пара', 'Бак у Чёрного хода', 'Двор без огня', 'Камера Третьей утечки', 'Склад Ржавого крана', 'Цистерна Ночной смены', 'Бак под Лестницей', 'Двор Синего чада', 'Камера у Решётки', 'Склад без пломбы', 'Цистерна Двух шлангов', 'Бак Глухого часа', 'Двор Запахшего топлива', 'Камера Четвёртого яруса', 'Склад Последней бочки', 'Цистерна у Лифта', 'Бак Тёплой жижи', 'Двор Считанных канистр', 'Камера без крышки', 'Склад Второй заправки', 'Цистерна Ржавого люка'],
+    'collapsed-dome': ['Провал Девятого купола', 'Завал у Опоры', 'Двор Треснувшей плиты', 'Яма без перил', 'Площадь Осевшего свода', 'Завал Ночного обвала', 'Двор Сыплющейся пыли', 'Провал у Лифтовой шахты', 'Провал Третьего свода', 'Завал без таблички', 'Двор у Лифтовой шахты', 'Яма Сыплющейся пыли', 'Площадь Четвёртого купола', 'Завал под Опорой', 'Двор Ночного обвала', 'Яма у Решётки', 'Площадь Треснувшей арки', 'Завал Глухого часа', 'Двор без перил', 'Яма Нижнего яруса', 'Площадь Осевшей плиты', 'Завал Двух балок', 'Двор у Чёрного хода', 'Яма Последнего провала', 'Площадь Ржавой опоры', 'Завал Второй галереи', 'Двор Считанных плит', 'Яма под Куполом', 'Площадь без света', 'Завал у Водосборника'],
+    'bone-shrine': ['Алтарь Тихих костей', 'Ниша Третьей молитвы', 'Святилище Пепла', 'Часовня Без имени', 'Алтарь у Серной свечи', 'Ниша Сложенных черепов', 'Часовня Нижнего яруса', 'Святилище Глухого колокола', 'Алтарь Третьей свечи', 'Ниша без имени', 'Святилище у Решётки', 'Часовня Ночной молитвы', 'Алтарь Четвёртого яруса', 'Ниша Глухого колокола', 'Святилище Сложенных костей', 'Часовня под Лестницей', 'Алтарь Тёплого воска', 'Ниша Двух черепов', 'Святилище без вывески', 'Часовня Нижней галереи', 'Алтарь у Серного колодца', 'Ниша Тихого часа', 'Святилище Ржавой цепи', 'Часовня Последней свечи', 'Алтарь Считанных имён', 'Ниша у Чёрного хода', 'Святилище Второй молитвы', 'Часовня Пепельного яруса', 'Алтарь без колокола', 'Ниша под Куполом'],
+    mines: ['Забой Ржавой жилы', 'Штрек Пыльного часа', 'Лава под Решёткой', 'Забой Третьей смены', 'Штольня Без крепи', 'Лава у Водяного капежа', 'Забой Глухого стука', 'Штрек Чёрной пыли', 'Забой у Решётки', 'Штрек без света', 'Лава Третьей смены', 'Забой Четвёртого штрека', 'Штольня Глухого стука', 'Лава у Чёрной пыли', 'Забой Ночной бригады', 'Штрек Двух крепей', 'Лава под Насосом', 'Забой без таблички', 'Штольня Нижнего яруса', 'Лава Тёплого капежа', 'Забой у Водосборника', 'Штрек Последней вагонетки', 'Лава Ржавой жилы', 'Забой Второй смены', 'Штольня Считанных шагов', 'Лава у Обвала', 'Забой Чёрного забоя', 'Штрек под Лестницей', 'Лава без крепи', 'Забой Глухой кирки'],
+    'gambling-den': ['Стол Последней ставки', 'Притон Костей', 'Зал Двух кубиков', 'Каморка Должников', 'Стол Ещё одну', 'Притон Ржавой фишки', 'Зал без окон', 'Каморка Ночной сдачи', 'Стол Третьей сдачи', 'Притон без вывески', 'Зал у Решётки', 'Каморка Ночной ставки', 'Стол Четвёртого яруса', 'Притон Глухих костей', 'Зал Двух фишек', 'Каморка под Лестницей', 'Стол Тёплой сдачи', 'Притон Последнего долга', 'Зал без света', 'Каморка Нижнего круга', 'Стол у Чёрного хода', 'Притон Ржавой кости', 'Зал Считанных ставок', 'Каморка Второй очереди', 'Стол без окон', 'Притон у Лифта', 'Зал Глухого часа', 'Каморка Чужая фишка', 'Стол Двенадцати костей', 'Притон Тихой сдачи'],
+    'synth-still': ['Чан Сивушного пара', 'Перегонка у Утечки', 'Бак Мутного спирта', 'Цех Третьей капли', 'Чан без пробки', 'Перегонка Глухого часа', 'Бак Сладкой вони', 'Цех у Сливной решётки', 'Чан Третьей капли', 'Перегонка без крышки', 'Бак у Решётки', 'Цех Ночной смены', 'Чан Четвёртого яруса', 'Перегонка Глухого пара', 'Бак Двух кранов', 'Цех под Лестницей', 'Чан Тёплой вони', 'Перегонка без пробки', 'Бак Нижнего яруса', 'Цех Считанных капель', 'Чан у Чёрного хода', 'Перегонка Ржавой трубы', 'Бак Последней перегонки', 'Цех Второй смены', 'Чан без таблички', 'Перегонка у Лифта', 'Бак Серного спирта', 'Цех Глухого часа', 'Чан Мутного угла', 'Перегонка Трёх чанов'],
+    'old-ruins': ['Руины Старого купола', 'Двор До обвала', 'Площадь Стёртых гербов', 'Зал без крыши', 'Руины у Серного колодца', 'Двор Третьей арки', 'Площадь Треснувших плит', 'Зал Глухих колонн', 'Руины Третьей арки', 'Двор без крыши', 'Площадь у Решётки', 'Зал Ночного обвала', 'Руины Четвёртого купола', 'Двор Глухих колонн', 'Площадь Двух гербов', 'Зал под Лестницей', 'Руины Тёплого камня', 'Двор Стёртой надписи', 'Площадь без света', 'Зал Нижнего яруса', 'Руины у Чёрного хода', 'Двор Ржавой плиты', 'Площадь Последней арки', 'Зал Второй галереи', 'Руины Считанных колонн', 'Двор у Лифта', 'Площадь Глухого часа', 'Зал Треснувшего свода', 'Руины без таблички', 'Двор Серного камня'],
+    'fighting-pit': ['Яма под крики', 'Круг Первой крови', 'Арена без песка', 'Яма Ночной смены', 'Круг у Решётки', 'Арена Трёх рядов', 'Яма До конца', 'Круг Глухого удара', 'Яма Третьего ряда', 'Круг без песка', 'Арена у Решётки', 'Яма Ночного боя', 'Круг Четвёртого яруса', 'Арена Глухого удара', 'Яма Двух рядов', 'Круг под Лестницей', 'Арена Тёплой крови', 'Яма без перил', 'Круг Нижней галереи', 'Арена Последнего раунда', 'Яма у Чёрного хода', 'Круг Ржавой решётки', 'Арена Считанных ударов', 'Яма Второй смены', 'Круг без света', 'Арена у Лифта', 'Яма Глухого часа', 'Круг Двенадцати мест', 'Арена без вывески', 'Яма До первой крови'],
+    custom: ['Участок без вывески', 'Двор у Чёрного хода', 'Нора Третьего яруса', 'Тупик у Вентиляции', 'Площадка Ночной смены', 'Переулок без номера', 'Каморка у Лифта', 'Двор Глухого часа', 'Участок Третьего яруса', 'Двор без номера', 'Нора у Решётки', 'Тупик Ночной смены', 'Площадка Четвёртого пролёта', 'Переулок Глухого часа', 'Каморка Двух дверей', 'Двор под Лестницей', 'Участок Тёплой трубы', 'Нора без вывески', 'Тупик Нижнего хода', 'Площадка у Чёрного хода', 'Переулок Ржавой лестницы', 'Каморка Последней двери', 'Двор Второй галереи', 'Участок без света', 'Нора у Лифта', 'Тупик Считанных шагов', 'Площадка Глухой смены', 'Переулок у Водосборника', 'Каморка без номера', 'Двор Серного угла']
+  };
+
+  function takenNames(exceptId) {
+    var taken = {};
+    state.territories.forEach(function (t) {
+      if (t.id === exceptId) return;
+      var name = (t.name || '').trim();
+      if (name) taken[name] = true;
+    });
+    return taken;
+  }
+
+  function namesFromText(text) {
+    var seen = {};
+    var list = [];
+    String(text || '').split(/\r?\n/).forEach(function (line) {
+      var name = line.trim();
+      if (!name || seen[name]) return;
+      seen[name] = true;
+      list.push(name);
+    });
+    return list;
+  }
+
+  function namePool(kind) {
+    if (!TERRITORY_NAMES[kind]) TERRITORY_NAMES[kind] = TERRITORY_NAMES.custom.slice();
+    return TERRITORY_NAMES[kind];
+  }
+
+  function rollTerritoryName(kind, taken) {
+    var pool = namePool(kind);
+    if (!pool.length) {
+      var fallback = 'Без названия';
+      if (!taken[fallback]) return fallback;
+      var n = 2;
+      while (taken[fallback + ' ' + n]) n += 1;
+      return fallback + ' ' + n;
+    }
+    var free = [];
+    for (var i = 0; i < pool.length; i++) {
+      if (!taken[pool[i]]) free.push(pool[i]);
+    }
+    var source = free.length ? free : pool;
+    var name = source[Math.floor(Math.random() * source.length)];
+    if (taken[name]) {
+      var n = 2;
+      while (taken[name + ' ' + n]) n += 1;
+      name = name + ' ' + n;
+    }
+    return name;
+  }
+
+  function fillMissingNames(list) {
+    var taken = {};
+    list.forEach(function (t) {
+      var name = (t.name || '').trim();
+      if (name) taken[name] = true;
+    });
+    list.forEach(function (t) {
+      if ((t.name || '').trim()) return;
+      t.name = rollTerritoryName(t.kind, taken);
+      taken[t.name] = true;
+    });
+  }
+
   function generateTerritories(count) {
     var pool = rollableKinds();
     if (!pool.length || count < 1) return false;
@@ -361,11 +483,13 @@
       var kind = pool[Math.floor(Math.random() * pool.length)].id;
       next.push({
         id: uid('t'),
+        name: '',
         kind: kind,
         status: 'uncontrolled',
         ownerId: ''
       });
     }
+    fillMissingNames(next);
     state.territories = next;
     return true;
   }
@@ -467,28 +591,69 @@
       ev.notes || Number(ev.ooa) || ev.sideJob);
   }
 
+  function isShort() {
+    return state.eventMode === 'short';
+  }
+
+  function campaignHasEvents() {
+    var keys = {};
+    Object.keys(state.events).forEach(function (key) { keys[key] = true; });
+    Object.keys(state.battles).forEach(function (key) { keys[key] = true; });
+    return Object.keys(keys).some(function (key) {
+      if (isShort()) return (state.battles[key] || []).some(battleFilled);
+      var evs = state.events[key] || {};
+      return Object.keys(evs).some(function (id) { return eventFilled(evs[id]); });
+    });
+  }
+
+  function battlesOf(n) {
+    return state.battles[cycleKey(n)] || [];
+  }
+
+  function battleFilled(battle) {
+    if (!battle) return false;
+    return !!(battle.challengerId || battle.responderId || battle.stakeId || battle.challenge || battle.result ||
+      battle.challengerNotes || battle.responderNotes || Number(battle.challengerOoa) || Number(battle.responderOoa) ||
+      battle.challengerSideJob || battle.responderSideJob);
+  }
+
   function cycleHasData(n) {
     var key = cycleKey(n);
-    var evs = state.events[key] || {};
     var acts = state.actions[key] || {};
-    var hasEv = Object.keys(evs).some(function (id) { return eventFilled(evs[id]); });
     var hasAct = Object.keys(acts).some(function (id) { return (acts[id] || []).length > 0; });
+    if (isShort()) {
+      return hasAct || (state.battles[key] || []).some(battleFilled);
+    }
+    var evs = state.events[key] || {};
+    var hasEv = Object.keys(evs).some(function (id) { return eventFilled(evs[id]); });
     return hasEv || hasAct;
   }
 
   function cycleCounts(n) {
+    var actions = 0;
+    state.players.forEach(function (p) {
+      actions += ((state.actions[cycleKey(n)] || {})[p.id] || []).length;
+    });
+    if (isShort(n)) {
+      var shortChallenges = 0;
+      var shortBattles = 0;
+      var shortOoa = 0;
+      battlesOf(n).forEach(function (battle) {
+        if (battle.challenge) shortChallenges += 1;
+        if (battle.result) shortBattles += 1;
+        shortOoa += (Number(battle.challengerOoa) || 0) + (Number(battle.responderOoa) || 0);
+      });
+      return { challenges: shortChallenges, battles: shortBattles, ooa: shortOoa, actions: actions };
+    }
     var challenges = 0;
     var battles = 0;
     var ooa = 0;
-    var actions = 0;
     state.players.forEach(function (p) {
       var ev = eventPeek(n, p.id);
-      if (ev) {
-        if (ev.challenge) challenges += 1;
-        if (ev.result) battles += 1;
-        ooa += Number(ev.ooa) || 0;
-      }
-      actions += ((state.actions[cycleKey(n)] || {})[p.id] || []).length;
+      if (!ev) return;
+      if (ev.challenge) challenges += 1;
+      if (ev.result) battles += 1;
+      ooa += Number(ev.ooa) || 0;
     });
     return { challenges: challenges, battles: battles, ooa: ooa, actions: actions };
   }
@@ -505,10 +670,171 @@
         result: '',
         ooa: 0,
         sideJob: false,
-        notes: ''
+        notes: '',
+        stakePriorId: '',
+        stakePriorStatus: '',
+        stakePriorOwnerId: ''
       };
     }
     return state.events[key][playerId];
+  }
+
+  function territoryById(id) {
+    return state.territories.find(function (t) { return t.id === id; }) || null;
+  }
+
+  function restoreStake(ev) {
+    if (!ev || !ev.stakePriorId) return;
+    var territory = territoryById(ev.stakePriorId);
+    if (territory && !isHome(territory.kind)) {
+      territory.status = ev.stakePriorStatus || 'uncontrolled';
+      territory.ownerId = ev.stakePriorOwnerId || '';
+    }
+    ev.stakePriorId = '';
+    ev.stakePriorStatus = '';
+    ev.stakePriorOwnerId = '';
+  }
+
+  function stakeIdFor(playerId, ev) {
+    if (ev.stakeId) return ev.stakeId;
+    var otherId = ev.opponentId || ev.targetId;
+    if (!otherId) return '';
+    var other = eventPeek(state.cycle, otherId);
+    if (!other || !other.stakeId) return '';
+    if (other.opponentId === playerId || other.targetId === playerId) return other.stakeId;
+    return '';
+  }
+
+  function applyBattleOutcome(playerId) {
+    var ev = eventFor(playerId);
+    var stakeId = stakeIdFor(playerId, ev);
+    if (!ev.result || !stakeId) {
+      restoreStake(ev);
+      return;
+    }
+    var territory = territoryById(stakeId);
+    if (!territory || isHome(territory.kind)) {
+      restoreStake(ev);
+      return;
+    }
+    if (ev.stakePriorId && ev.stakePriorId !== stakeId) restoreStake(ev);
+    if (ev.stakePriorId !== stakeId) {
+      ev.stakePriorId = stakeId;
+      ev.stakePriorStatus = territory.status;
+      ev.stakePriorOwnerId = territory.ownerId || '';
+    }
+    if (ev.result === 'draw') {
+      if (ev.stakePriorOwnerId && (ev.stakePriorStatus === 'owned' || ev.stakePriorStatus === 'staked')) {
+        territory.status = 'owned';
+        territory.ownerId = ev.stakePriorOwnerId;
+      } else {
+        territory.status = 'uncontrolled';
+        territory.ownerId = '';
+      }
+      return;
+    }
+    var winner = ev.result === 'win' ? playerId : (ev.opponentId || ev.targetId);
+    if (!winner) return;
+    territory.status = 'owned';
+    territory.ownerId = winner;
+  }
+
+  function blankBattle() {
+    return {
+      id: uid('b'),
+      challengerId: '',
+      responderId: '',
+      stakeId: '',
+      challenge: '',
+      result: '',
+      challengerOoa: 0,
+      responderOoa: 0,
+      challengerSideJob: false,
+      responderSideJob: false,
+      challengerNotes: '',
+      responderNotes: '',
+      stakePriorId: '',
+      stakePriorStatus: '',
+      stakePriorOwnerId: ''
+    };
+  }
+
+  function battleById(id) {
+    return battlesOf().find(function (battle) { return battle.id === id; }) || null;
+  }
+
+  function battleOfPlayer(n, playerId) {
+    return battlesOf(n).find(function (battle) {
+      return battle.challengerId === playerId || battle.responderId === playerId;
+    }) || null;
+  }
+
+  function takenInBattles(exceptId) {
+    var taken = {};
+    battlesOf().forEach(function (battle) {
+      if (battle.id === exceptId) return;
+      if (battle.challengerId) taken[battle.challengerId] = true;
+      if (battle.responderId) taken[battle.responderId] = true;
+    });
+    return taken;
+  }
+
+  function unpairedCount() {
+    var taken = takenInBattles('');
+    var count = 0;
+    state.players.forEach(function (p) {
+      if (!taken[p.id]) count += 1;
+    });
+    return count;
+  }
+
+  function resultForPlayer(battle, playerId) {
+    if (!battle || !battle.result) return '';
+    if (battle.challengerId === playerId) return battle.result;
+    if (battle.result === 'draw') return 'draw';
+    return battle.result === 'win' ? 'loss' : 'win';
+  }
+
+  function shortAsEvent(battle, playerId) {
+    var mine = battle.challengerId === playerId;
+    return {
+      ooa: mine ? battle.challengerOoa : battle.responderOoa,
+      result: battle.result || ''
+    };
+  }
+
+  function applyShortOutcome(battle) {
+    if (!battle) return;
+    var stakeId = battle.stakeId || '';
+    if (!battle.result || !stakeId) {
+      restoreStake(battle);
+      return;
+    }
+    var territory = territoryById(stakeId);
+    if (!territory || isHome(territory.kind)) {
+      restoreStake(battle);
+      return;
+    }
+    if (battle.stakePriorId && battle.stakePriorId !== stakeId) restoreStake(battle);
+    if (battle.stakePriorId !== stakeId) {
+      battle.stakePriorId = stakeId;
+      battle.stakePriorStatus = territory.status;
+      battle.stakePriorOwnerId = territory.ownerId || '';
+    }
+    if (battle.result === 'draw') {
+      if (battle.stakePriorOwnerId && (battle.stakePriorStatus === 'owned' || battle.stakePriorStatus === 'staked')) {
+        territory.status = 'owned';
+        territory.ownerId = battle.stakePriorOwnerId;
+      } else {
+        territory.status = 'uncontrolled';
+        territory.ownerId = '';
+      }
+      return;
+    }
+    var winner = battle.result === 'win' ? battle.challengerId : battle.responderId;
+    if (!winner) return;
+    territory.status = 'owned';
+    territory.ownerId = winner;
   }
 
   function actionsFor(playerId) {
@@ -526,7 +852,17 @@
 
   function sumCycles(playerId, pick) {
     var sum = 0;
-    Object.keys(state.events).forEach(function (key) {
+    var keys = {};
+    Object.keys(state.events).forEach(function (key) { keys[key] = true; });
+    Object.keys(state.battles).forEach(function (key) { keys[key] = true; });
+    Object.keys(keys).forEach(function (key) {
+      if (isShort()) {
+        var battle = (state.battles[key] || []).find(function (item) {
+          return item.challengerId === playerId || item.responderId === playerId;
+        });
+        if (battle) sum += pick(shortAsEvent(battle, playerId));
+        return;
+      }
       var ev = state.events[key] && state.events[key][playerId];
       if (ev) sum += pick(ev);
     });
@@ -576,10 +912,18 @@
     }), selected, '— никто —');
   }
 
+  function rosterKey(file) {
+    return (state.id || 'library') + '/' + file;
+  }
+
   function rosterOptions(selected) {
-    return optionList(rosters.map(function (r) {
+    var items = rosters.map(function (r) {
       return { value: r.file, label: r.name + (r.author ? ' · ' + r.author : '') };
-    }), selected, '— без ростера —');
+    });
+    if (selected && !items.some(function (item) { return item.value === selected; })) {
+      items.unshift({ value: selected, label: selected });
+    }
+    return optionList(items, selected, '— из общих —');
   }
 
   function territoryKindOptions(selected) {
@@ -596,7 +940,7 @@
 
   function stakeOptions(selected) {
     return optionList(state.territories.map(function (t) {
-      return { value: t.id, label: terrName(t.kind) };
+      return { value: t.id, label: instanceTitle(t) };
     }), selected, '— ставка —');
   }
 
@@ -612,6 +956,35 @@
     if (value === 'accepted') return 'Принят';
     if (value === 'declined') return 'Отклонён';
     return '—';
+  }
+
+  function playerCycleView(n, p) {
+    if (isShort(n)) {
+      var battle = battleOfPlayer(n, p.id);
+      if (!battle) return { challenge: '—', other: '—', result: '—', ooa: 0, notes: '—' };
+      var mine = battle.challengerId === p.id;
+      var other = playerById(mine ? battle.responderId : battle.challengerId);
+      var challenge = mine
+        ? challengeLabel(battle.challenge)
+        : (battle.challenge === 'declined' ? 'Отклонил' : 'Отвечает');
+      return {
+        challenge: challenge,
+        other: other ? playerLabel(other) : '—',
+        result: resultLabel(resultForPlayer(battle, p.id)),
+        ooa: mine ? (Number(battle.challengerOoa) || 0) : (Number(battle.responderOoa) || 0),
+        notes: (mine ? battle.challengerNotes : battle.responderNotes) || '—'
+      };
+    }
+    var ev = eventPeek(n, p.id);
+    var otherId = ev && (ev.opponentId || ev.targetId);
+    var otherPlayer = otherId ? playerById(otherId) : null;
+    return {
+      challenge: challengeLabel(ev && ev.challenge),
+      other: otherPlayer ? playerLabel(otherPlayer) : '—',
+      result: resultLabel(ev && ev.result),
+      ooa: (ev && Number(ev.ooa)) || 0,
+      notes: (ev && ev.notes) || '—'
+    };
   }
 
   function resultLabel(value) {
@@ -691,7 +1064,12 @@
       html += '<tr>' +
         '<td><input class="mh-input" data-player="' + p.id + '" data-field="name" value="' + esc(p.name) + '" placeholder="Игрок"></td>' +
         '<td><input class="mh-input" data-player="' + p.id + '" data-field="gangName" value="' + esc(p.gangName) + '" placeholder="Банда"></td>' +
-        '<td><select class="mh-select" data-player="' + p.id + '" data-field="rosterFile">' + rosterOptions(p.rosterFile) + '</select></td>' +
+        '<td><select class="mh-select" data-player="' + p.id + '" data-field="rosterFile">' + rosterOptions(p.sourceRosterFile) + '</select>' +
+        (p.rosterFile ? '<div class="arb-muted">копия в кампании</div>' : '') +
+        (state.status === 'finished' && p.rosterFile
+          ? '<button type="button" class="mh-btn mh-btn-ghost arb-names-btn" data-act="publish-roster" data-id="' + p.id + '">В общие</button>'
+          : '') +
+        '</td>' +
         '<td><input class="mh-input" data-player="' + p.id + '" data-field="reputation" type="number" min="1" value="' + esc(p.reputation) + '"></td>' +
         '<td><input class="mh-input" data-player="' + p.id + '" data-field="rating" type="number" min="0" value="' + esc(p.rating) + '"></td>' +
         '<td><input class="mh-input" data-player="' + p.id + '" data-field="wealth" type="number" min="0" value="' + esc(p.wealth) + '"></td>' +
@@ -711,7 +1089,7 @@
       return;
     }
     var html = '<table class="compact"><thead><tr>' +
-      '<th>Территория</th><th>Доход</th><th>Статус</th><th>Владелец</th><th>Метка</th><th></th></tr></thead><tbody>';
+      '<th>Название</th><th>Тип</th><th>Доход</th><th>Статус</th><th>Владелец</th><th>Метка</th><th></th></tr></thead><tbody>';
     state.territories.forEach(function (t) {
       var st = statusLabel(t);
       var statusSelect = isHome(t.kind)
@@ -723,6 +1101,8 @@
             { value: 'staked', label: 'На кону' }
           ], t.status, '— статус —') + '</select>';
       html += '<tr>' +
+        '<td><span class="arb-name-cell"><input class="mh-input arb-terr-name" data-terr="' + t.id + '" data-field="name" value="' + esc(t.name || '') + '" placeholder="Своё название">' +
+        '<button type="button" class="arb-icon" data-act="roll-name" data-id="' + t.id + '" title="Другое название">↻</button></span></td>' +
         '<td><select class="mh-select" data-terr="' + t.id + '" data-field="kind">' + territoryKindOptions(t.kind) + '</select></td>' +
         '<td class="arb-income">' + incomeCell(defById(t.kind)) + '</td>' +
         '<td>' + statusSelect + '</td>' +
@@ -777,7 +1157,8 @@
     }
     html += '</tbody></table></div>';
 
-    html += '<h3>Игроки · ' + esc(cycleTitle(state.cycle)) + '</h3>';
+    html += '<h3>Игроки · ' + esc(cycleTitle(state.cycle)) +
+      (isShort(state.cycle) ? ' · укороченный' : '') + '</h3>';
     if (!state.players.length) {
       html += '<p class="arb-empty">Сначала добавьте игроков — тогда здесь появятся вызовы и бои выбранного цикла.</p>';
       box.innerHTML = html;
@@ -787,18 +1168,16 @@
     html += '<div class="arb-table-wrap"><table class="compact"><thead><tr>' +
       '<th>Игрок</th><th>Вызов</th><th>Кому / против</th><th>Исход</th><th>OOA</th><th>Действия</th><th>Заметка</th></tr></thead><tbody>';
     state.players.forEach(function (p) {
-      var ev = eventPeek(state.cycle, p.id);
+      var view = playerCycleView(state.cycle, p);
       var acts = ((state.actions[cycleKey(state.cycle)] || {})[p.id] || []).length;
-      var otherId = ev && (ev.opponentId || ev.targetId);
-      var other = otherId ? playerById(otherId) : null;
       html += '<tr>' +
         '<td>' + esc(playerLabel(p)) + '</td>' +
-        '<td>' + esc(challengeLabel(ev && ev.challenge)) + '</td>' +
-        '<td>' + esc(other ? playerLabel(other) : '—') + '</td>' +
-        '<td>' + esc(resultLabel(ev && ev.result)) + '</td>' +
-        '<td>' + esc(String((ev && Number(ev.ooa)) || 0)) + '</td>' +
+        '<td>' + esc(view.challenge) + '</td>' +
+        '<td>' + esc(view.other) + '</td>' +
+        '<td>' + esc(view.result) + '</td>' +
+        '<td>' + esc(String(view.ooa)) + '</td>' +
         '<td>' + acts + '</td>' +
-        '<td>' + esc((ev && ev.notes) || '—') + '</td>' +
+        '<td>' + esc(view.notes) + '</td>' +
         '</tr>';
     });
     html += '</tbody></table></div>';
@@ -806,12 +1185,66 @@
     box.innerHTML = html;
   }
 
-  function renderCycle() {
-    var box = $('events-body');
-    if (!state.players.length) {
-      box.innerHTML = '<p class="arb-empty">Сначала добавьте игроков — события цикла показываются по каждому.</p>';
+  function battlePlayerOptions(selected, battle, role) {
+    var taken = takenInBattles(battle.id);
+    var blocked = role === 'challenger' ? battle.responderId : battle.challengerId;
+    var items = state.players.filter(function (p) {
+      if (blocked && p.id === blocked) return false;
+      if (taken[p.id] && p.id !== selected) return false;
+      return true;
+    }).map(function (p) {
+      return { value: p.id, label: playerLabel(p) };
+    });
+    return optionList(items, selected, role === 'challenger' ? '— вызывающий —' : '— отвечающий —');
+  }
+
+  function renderModeSwitch() {
+    var short = isShort();
+    var locked = campaignHasEvents();
+    document.querySelectorAll('#cycle-mode [data-mode]').forEach(function (btn) {
+      var on = (btn.getAttribute('data-mode') === 'short') === short;
+      btn.classList.toggle('is-on', on);
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      btn.disabled = locked;
+      btn.title = locked ? 'В кампании уже есть события. Удалите их во всех циклах, чтобы сменить режим.' : '';
+    });
+    var note = $('cycle-mode-note');
+    if (!note) return;
+    if (locked) {
+      note.textContent = 'Режим кампании зафиксирован. Чтобы сменить его, удалите все события во всех циклах.';
       return;
     }
+    note.textContent = short
+      ? 'Режим кампании: одна карточка на бой. Игрок за цикл либо вызывает, либо отвечает.'
+      : 'Режим кампании: отдельная карточка на каждого игрока.';
+  }
+
+  function sideBlock(battle, role) {
+    var mine = role === 'challenger';
+    var playerId = mine ? battle.challengerId : battle.responderId;
+    var player = playerId ? playerById(playerId) : null;
+    var roleName = mine ? 'Вызывающий' : 'Отвечающий';
+    var heading = player
+      ? '<span class="arb-role">' + roleName + '</span>' + esc(playerLabel(player))
+      : roleName;
+    var ooaField = mine ? 'challengerOoa' : 'responderOoa';
+    var jobField = mine ? 'challengerSideJob' : 'responderSideJob';
+    var notesField = mine ? 'challengerNotes' : 'responderNotes';
+    var ooa = mine ? battle.challengerOoa : battle.responderOoa;
+    var job = mine ? battle.challengerSideJob : battle.responderSideJob;
+    var notes = mine ? battle.challengerNotes : battle.responderNotes;
+    return '<div class="arb-battle-side"><h4>' + heading + '</h4><div class="arb-grid">' +
+      '<div><label class="mh-who">OOA в этом бою</label><input class="mh-input" data-battle="' + battle.id + '" data-field="' + ooaField + '" type="number" min="0" value="' + esc(ooa) + '"></div>' +
+      '<div><label class="mh-who">Побочное задание</label><select class="mh-select" data-battle="' + battle.id + '" data-field="' + jobField + '">' +
+        optionList([
+          { value: '0', label: 'Нет' },
+          { value: '1', label: 'Выполнено' }
+        ], job ? '1' : '0', false) + '</select></div>' +
+      '<div><label class="mh-who">Заметка</label><input class="mh-input" data-battle="' + battle.id + '" data-field="' + notesField + '" value="' + esc(notes) + '" placeholder="Кратко"></div>' +
+      '</div></div>';
+  }
+
+  function renderFullCycle(box) {
     var html = '<p class="arb-muted">' + esc(cycleTitle(state.cycle)) +
       (state.cycle === state.liveCycle ? '' : ' · просмотр') + '</p>';
     state.players.forEach(function (p) {
@@ -844,6 +1277,60 @@
     box.innerHTML = html;
   }
 
+  function renderShortCycle(box) {
+    var list = battlesOf();
+    var html = '<p class="arb-muted">' + esc(cycleTitle(state.cycle)) +
+      (state.cycle === state.liveCycle ? '' : ' · просмотр') + '</p>';
+    if (!list.length) {
+      html += '<p class="arb-empty">Боёв в этом цикле ещё нет. В одной карточке сразу оба игрока.</p>';
+    }
+    list.forEach(function (battle, index) {
+      html += '<div class="mh-panel arb-player arb-battle">' +
+        '<div class="arb-battle-head"><h3>Бой ' + (index + 1) + '</h3>' +
+        '<button type="button" class="arb-icon" data-act="remove-battle" data-id="' + battle.id + '" title="Убрать бой">×</button></div>' +
+        '<div class="arb-grid">' +
+        '<div><label class="mh-who">Вызывающий</label><select class="mh-select" data-battle="' + battle.id + '" data-field="challengerId">' + battlePlayerOptions(battle.challengerId, battle, 'challenger') + '</select></div>' +
+        '<div><label class="mh-who">Отвечающий</label><select class="mh-select" data-battle="' + battle.id + '" data-field="responderId">' + battlePlayerOptions(battle.responderId, battle, 'responder') + '</select></div>' +
+        '<div><label class="mh-who">Ставка</label><select class="mh-select" data-battle="' + battle.id + '" data-field="stakeId">' + stakeOptions(battle.stakeId) + '</select></div>' +
+        '<div><label class="mh-who">Вызов</label><select class="mh-select" data-battle="' + battle.id + '" data-field="challenge">' +
+          optionList([
+            { value: 'issued', label: 'Сделан' },
+            { value: 'accepted', label: 'Принят' },
+            { value: 'declined', label: 'Отклонён' }
+          ], battle.challenge, '— нет —') + '</select></div>' +
+        '<div><label class="mh-who">Исход</label><select class="mh-select" data-battle="' + battle.id + '" data-field="result">' +
+          optionList([
+            { value: 'win', label: 'Победа вызывающего' },
+            { value: 'loss', label: 'Победа отвечающего' },
+            { value: 'draw', label: 'Ничья' }
+          ], battle.result, '— не играли —') + '</select></div>' +
+        '</div>' +
+        '<div class="arb-battle-sides">' + sideBlock(battle, 'challenger') + sideBlock(battle, 'responder') + '</div>' +
+        '</div>';
+    });
+    var taken = takenInBattles('');
+    var idle = state.players.filter(function (p) { return !taken[p.id]; });
+    if (idle.length) {
+      html += '<p class="arb-muted">Без боя: ' + esc(idle.map(playerLabel).join(', ')) + '</p>';
+    } else {
+      html += '<p class="arb-muted">Все игроки уже в бою этого цикла.</p>';
+    }
+    html += '<button type="button" class="mh-btn mh-btn-primary" data-act="add-battle"' +
+      (unpairedCount() >= 2 ? '' : ' disabled') + '>Добавить бой</button>';
+    box.innerHTML = html;
+  }
+
+  function renderCycle() {
+    renderModeSwitch();
+    var box = $('events-body');
+    if (!state.players.length) {
+      box.innerHTML = '<p class="arb-empty">Сначала добавьте игроков — события цикла показываются по каждому.</p>';
+      return;
+    }
+    if (isShort()) renderShortCycle(box);
+    else renderFullCycle(box);
+  }
+
   function renderActions() {
     var box = $('actions-body');
     if (!state.players.length) {
@@ -858,7 +1345,7 @@
       if (!list.length) html += '<p class="arb-empty">Заявок нет.</p>';
       list.forEach(function (item) {
         var fighters = fightersOf(p);
-        var waiting = !!(p.rosterFile && rosterPending[p.rosterFile]);
+        var waiting = !!(p.rosterFile && rosterPending[rosterKey(p.rosterFile)]);
         var fighterField = (fighters.length || waiting)
           ? '<select class="mh-select" data-action-player="' + p.id + '" data-action-id="' + item.id + '" data-field="fighter">' +
             fighterOptions(p, item.fighter) + '</select>'
@@ -938,7 +1425,7 @@
     renderPage(page);
     if (page === 'actions') {
       state.players.forEach(function (p) {
-        if (!p.rosterFile || rosterDetails[p.rosterFile]) return;
+        if (!p.rosterFile || rosterDetails[rosterKey(p.rosterFile)]) return;
         loadRosterDetails(p.rosterFile).then(function () {
           if (currentPage() === 'actions') renderActions();
         });
@@ -952,6 +1439,7 @@
       name: '',
       gangName: '',
       rosterFile: '',
+      sourceRosterFile: '',
       reputation: 1,
       rating: 0,
       wealth: 0,
@@ -967,6 +1455,7 @@
     var home = isHome(kind);
     state.territories.push({
       id: uid('t'),
+      name: rollTerritoryName(kind, takenNames('')),
       kind: kind,
       status: home ? 'owned' : (status || 'uncontrolled'),
       ownerId: ownerId || ''
@@ -974,12 +1463,39 @@
     return true;
   }
 
+  function namesButton(id) {
+    var on = state.nameEditId === id ? ' is-on' : '';
+    return '<button type="button" class="mh-btn mh-btn-ghost arb-names-btn' + on + '" data-act="edit-names" data-id="' + id + '">Названия</button>';
+  }
+
+  function showNameEditor(id) {
+    namePool(id);
+    state.nameEditId = id;
+    var editor = $('name-editor');
+    editor.hidden = false;
+    $('name-editor-title').textContent = 'Названия · ' + terrName(id);
+    $('name-editor-text').value = TERRITORY_NAMES[id].join('\n');
+    $('name-editor-count').textContent = 'В списке: ' + TERRITORY_NAMES[id].length;
+    document.querySelectorAll('[data-act="edit-names"]').forEach(function (btn) {
+      btn.classList.toggle('is-on', btn.getAttribute('data-id') === id);
+    });
+    $('name-editor-text').focus();
+  }
+
+  function closeNameEditor() {
+    state.nameEditId = '';
+    $('name-editor').hidden = true;
+    document.querySelectorAll('[data-act="edit-names"]').forEach(function (btn) {
+      btn.classList.remove('is-on');
+    });
+  }
+
   function renderCatalog() {
     var box = $('territory-setup-body');
     var html = '<h3>Из правил</h3>' +
-      '<p class="arb-muted">Эти территории нельзя править. Снимите галочку, чтобы убрать тип из выбора при добавлении. Уже стоящие на столе строки останутся.</p>' +
+      '<p class="arb-muted">Тип, доход и свойства из правил нельзя править. Список названий — можно: кнопка «Названия». Снимите галочку, чтобы убрать тип из выбора при добавлении. Уже стоящие на столе строки останутся.</p>' +
       '<div class="arb-table-wrap"><table class="compact"><thead><tr>' +
-      '<th>В пуле</th><th>D66</th><th>Территория</th><th>Доход</th><th>Прочие свойства</th></tr></thead><tbody>';
+      '<th>В пуле</th><th>D66</th><th>Территория</th><th>Доход</th><th>Прочие свойства</th><th></th></tr></thead><tbody>';
     RULE_TERRITORIES.forEach(function (t) {
       var on = !state.disabled[t.id];
       var parts = extraParts(t);
@@ -990,6 +1506,7 @@
         '<td>' + esc(t.name) + ' <span class="arb-muted">' + esc(t.en) + '</span></td>' +
         '<td>' + esc(incomeLabel(t)) + '</td>' +
         '<td class="arb-boon">' + (parts.length ? parts.map(esc).join('<br>') : '—') + '</td>' +
+        '<td>' + namesButton(t.id) + '</td>' +
         '</tr>';
     });
     html += '</tbody></table></div>';
@@ -1000,12 +1517,13 @@
       html += '<p class="arb-empty">Пока нет своих территорий.</p>';
     } else {
       html += '<div class="arb-table-wrap"><table class="compact"><thead><tr>' +
-        '<th>Территория</th><th>Доход, cr</th><th>Прочие свойства</th><th></th></tr></thead><tbody>';
+        '<th>Территория</th><th>Доход, cr</th><th>Прочие свойства</th><th></th><th></th></tr></thead><tbody>';
       state.customs.forEach(function (c) {
         html += '<tr>' +
           '<td><input class="mh-input arb-name-input" data-custom="' + c.id + '" data-field="name" value="' + esc(c.name) + '" placeholder="Название"></td>' +
           '<td><input class="mh-input arb-income-input" data-custom="' + c.id + '" data-field="income" type="number" min="0" value="' + esc(c.income) + '"></td>' +
           '<td><input class="mh-input" data-custom="' + c.id + '" data-field="extras" value="' + esc(c.extras) + '" placeholder="Эффекты кроме дохода"></td>' +
+          '<td>' + namesButton(c.id) + '</td>' +
           '<td><button type="button" class="arb-icon" data-act="remove-custom" data-id="' + c.id + '" title="Убрать">×</button></td>' +
           '</tr>';
       });
@@ -1015,35 +1533,484 @@
     box.innerHTML = html;
   }
 
-  function loadRosterDetails(file) {
-    if (!file || rosterDetails[file]) {
-      return Promise.resolve(rosterDetails[file] || null);
+  function jsonHeaders() {
+    return { 'Content-Type': 'application/json' };
+  }
+
+  function setSaveNote(text) {
+    var note = $('camp-save-note');
+    if (note) note.textContent = text || '';
+  }
+
+  function sameList(a, b) {
+    if (!a || !b || a.length !== b.length) return false;
+    for (var i = 0; i < a.length; i++) if (a[i] !== b[i]) return false;
+    return true;
+  }
+
+  function namesPayload() {
+    var out = {};
+    if (!defaultNames) return out;
+    Object.keys(TERRITORY_NAMES).forEach(function (key) {
+      if (key === 'custom') return;
+      var current = TERRITORY_NAMES[key] || [];
+      var base = defaultNames[key];
+      if (base && sameList(current, base)) return;
+      out[key] = current.slice();
+    });
+    return out;
+  }
+
+  function resetNameLists(saved) {
+    Object.keys(TERRITORY_NAMES).forEach(function (key) {
+      if (key !== 'custom' && !(defaultNames && defaultNames[key])) delete TERRITORY_NAMES[key];
+    });
+    if (defaultNames) {
+      Object.keys(defaultNames).forEach(function (key) {
+        if (key === 'custom') return;
+        TERRITORY_NAMES[key] = defaultNames[key].slice();
+      });
     }
-    if (rosterPending[file]) return rosterPending[file];
-    rosterPending[file] = fetch('/api/rosters/' + encodeURIComponent(file))
+    Object.keys(saved || {}).forEach(function (key) {
+      if (key === 'custom' || !Array.isArray(saved[key])) return;
+      TERRITORY_NAMES[key] = saved[key].slice();
+    });
+  }
+
+  function packBattle(battle) {
+    return {
+      id: battle.id,
+      challengerId: battle.challengerId || '',
+      responderId: battle.responderId || '',
+      stakeId: battle.stakeId || '',
+      challenge: battle.challenge || '',
+      result: battle.result || '',
+      challengerOoa: Number(battle.challengerOoa) || 0,
+      responderOoa: Number(battle.responderOoa) || 0,
+      challengerSideJob: !!battle.challengerSideJob,
+      responderSideJob: !!battle.responderSideJob,
+      challengerNotes: battle.challengerNotes || '',
+      responderNotes: battle.responderNotes || '',
+      stakePriorId: battle.stakePriorId || '',
+      stakePriorStatus: battle.stakePriorStatus || '',
+      stakePriorOwnerId: battle.stakePriorOwnerId || ''
+    };
+  }
+
+  function unpackBattle(battle) {
+    var packed = packBattle(battle || {});
+    packed.id = battle.id;
+    return packed;
+  }
+
+  function packCycles() {
+    var keys = {};
+    Object.keys(state.events).forEach(function (key) { keys[key] = true; });
+    Object.keys(state.actions).forEach(function (key) { keys[key] = true; });
+    Object.keys(state.battles).forEach(function (key) { keys[key] = true; });
+    return Object.keys(keys).map(function (key) {
+      var evBag = state.events[key] || {};
+      var actBag = state.actions[key] || {};
+      var events = Object.keys(evBag).map(function (playerId) {
+        var ev = evBag[playerId] || {};
+        return {
+          playerId: playerId,
+          targetId: ev.targetId || '',
+          stakeId: ev.stakeId || '',
+          challenge: ev.challenge || '',
+          opponentId: ev.opponentId || '',
+          result: ev.result || '',
+          ooa: Number(ev.ooa) || 0,
+          sideJob: !!ev.sideJob,
+          notes: ev.notes || '',
+          stakePriorId: ev.stakePriorId || '',
+          stakePriorStatus: ev.stakePriorStatus || '',
+          stakePriorOwnerId: ev.stakePriorOwnerId || ''
+        };
+      }).filter(function (ev) {
+        return ev.targetId || ev.stakeId || ev.challenge || ev.opponentId || ev.result || ev.notes || ev.ooa || ev.sideJob;
+      });
+      var actions = [];
+      Object.keys(actBag).forEach(function (playerId) {
+        (actBag[playerId] || []).forEach(function (item) {
+          actions.push({
+            id: item.id,
+            playerId: playerId,
+            fighter: item.fighter || '',
+            action: item.action || ''
+          });
+        });
+      });
+      var battles = (state.battles[key] || []).map(packBattle);
+      return { cycle: Number(key), events: events, actions: actions, battles: battles };
+    }).filter(function (cycle) {
+      return cycle.cycle && (cycle.events.length || cycle.actions.length || cycle.battles.length);
+    });
+  }
+
+  function packDocument() {
+    return {
+      campaign: {
+        id: state.id,
+        name: state.name,
+        occupation: state.occupation,
+        downtime: state.downtime,
+        takeover: state.takeover,
+        liveCycle: state.liveCycle,
+        eventMode: state.eventMode === 'short' ? 'short' : 'full',
+        status: state.status
+      },
+      players: state.players.map(function (p) {
+        return {
+          id: p.id,
+          name: p.name,
+          gangName: p.gangName,
+          rosterFile: p.rosterFile || '',
+          sourceRosterFile: p.sourceRosterFile || '',
+          reputation: p.reputation,
+          rating: p.rating,
+          wealth: p.wealth,
+          battles: p.battles,
+          ooa: p.ooa
+        };
+      }),
+      territories: state.territories.map(function (t) {
+        return { id: t.id, name: t.name || '', kind: t.kind, status: t.status, ownerId: t.ownerId || '' };
+      }),
+      types: {
+        disabled: Object.keys(state.disabled).filter(function (id) { return state.disabled[id]; }),
+        custom: state.customs.map(function (c) {
+          return { id: c.id, name: c.name || '', income: c.income === '' ? '' : Number(c.income) || 0, extras: c.extras || '' };
+        })
+      },
+      names: namesPayload(),
+      cycles: packCycles()
+    };
+  }
+
+  function renderCampaignPick() {
+    var pick = $('camp-pick');
+    if (!pick) return;
+    var html = '<option value="">— новая —</option>';
+    campaignIndex.forEach(function (item) {
+      html += '<option value="' + esc(item.id) + '">' + esc(item.name) +
+        (item.status === 'finished' ? ' · завершена' : '') + '</option>';
+    });
+    var next = state.id && campaignIndex.some(function (item) { return item.id === state.id; }) ? state.id : '';
+    hydrating = true;
+    if (pick.innerHTML !== html) pick.innerHTML = html;
+    if (pick.value !== next) pick.value = next;
+    hydrating = false;
+    var finish = $('camp-finish');
+    if (finish) finish.disabled = !state.id || state.status === 'finished';
+  }
+
+  function blankCampaign() {
+    hydrating = true;
+    state.id = '';
+    state.status = 'active';
+    state.name = '';
+    state.cycle = 1;
+    state.liveCycle = 1;
+    state.occupation = 3;
+    state.downtime = 1;
+    state.takeover = 3;
+    state.players = [];
+    state.territories = [];
+    state.disabled = {};
+    state.customs = [];
+    state.events = {};
+    state.actions = {};
+    state.eventMode = 'full';
+    state.battles = {};
+    rosterDetails = {};
+    rosterPending = {};
+    resetNameLists({});
+    closeNameEditor();
+    $('camp-name').value = '';
+    syncLengthInputs();
+    hydrating = false;
+    renderCampaignPick();
+    setSaveNote('Новая кампания. Сохраните, чтобы создать папку.');
+    renderPage(currentPage());
+  }
+
+  function applyDocument(doc) {
+    var meta = doc.campaign || {};
+    hydrating = true;
+    state.id = meta.id || '';
+    state.status = meta.status === 'finished' ? 'finished' : 'active';
+    state.name = meta.name || '';
+    state.occupation = Number(meta.occupation);
+    state.downtime = Number(meta.downtime);
+    state.takeover = Number(meta.takeover);
+    state.liveCycle = Number(meta.liveCycle) || 1;
+    state.cycle = state.liveCycle;
+    state.eventMode = meta.eventMode === 'short' ? 'short' : 'full';
+    state.players = (doc.players || []).map(function (p) {
+      p.sourceRosterFile = p.sourceRosterFile || '';
+      p.rosterFile = p.rosterFile || '';
+      return p;
+    });
+    state.territories = (doc.territories || []).map(function (t) {
+      t.name = t.name || '';
+      return t;
+    });
+    state.disabled = {};
+    ((doc.types && doc.types.disabled) || []).forEach(function (id) { state.disabled[id] = true; });
+    state.customs = ((doc.types && doc.types.custom) || []).map(function (c) {
+      c.custom = true;
+      return c;
+    });
+    state.events = {};
+    state.actions = {};
+    state.battles = {};
+    (doc.cycles || []).forEach(function (cycle) {
+      var key = String(cycle.cycle);
+      if (meta.eventMode !== 'short' && meta.eventMode !== 'full' && cycle.mode === 'short') state.eventMode = 'short';
+      state.events[key] = {};
+      (cycle.events || []).forEach(function (ev) {
+        state.events[key][ev.playerId] = {
+          targetId: ev.targetId || '',
+          stakeId: ev.stakeId || '',
+          challenge: ev.challenge || '',
+          opponentId: ev.opponentId || '',
+          result: ev.result || '',
+          ooa: Number(ev.ooa) || 0,
+          sideJob: !!ev.sideJob,
+          notes: ev.notes || '',
+          stakePriorId: ev.stakePriorId || '',
+          stakePriorStatus: ev.stakePriorStatus || '',
+          stakePriorOwnerId: ev.stakePriorOwnerId || ''
+        };
+      });
+      state.actions[key] = {};
+      (cycle.actions || []).forEach(function (item) {
+        if (!state.actions[key][item.playerId]) state.actions[key][item.playerId] = [];
+        state.actions[key][item.playerId].push({
+          id: item.id,
+          fighter: item.fighter || '',
+          action: item.action || ''
+        });
+      });
+      state.battles[key] = (cycle.battles || []).map(unpackBattle);
+    });
+    rosterDetails = {};
+    rosterPending = {};
+    resetNameLists(doc.names || {});
+    var usedIds = state.players.map(function (p) { return p.id; })
+      .concat(state.territories.map(function (t) { return t.id; }))
+      .concat(state.customs.map(function (c) { return c.id; }));
+    (doc.cycles || []).forEach(function (cycle) {
+      (cycle.actions || []).forEach(function (item) { usedIds.push(item.id); });
+      (cycle.battles || []).forEach(function (item) { usedIds.push(item.id); });
+    });
+    usedIds.forEach(function (id) {
+      var n = parseInt(String(id).replace(/^[a-z]+/, ''), 10);
+      if (!isNaN(n) && n >= seq) seq = n + 1;
+    });
+    closeNameEditor();
+    applyCycleShape();
+    $('camp-name').value = state.name;
+    syncLengthInputs();
+    hydrating = false;
+    renderCampaignPick();
+    setSaveNote(state.status === 'finished' ? 'Кампания завершена.' : 'Открыта «' + state.name + '».');
+    renderPage(currentPage());
+  }
+
+  function saveCampaign(silent) {
+    var name = ($('camp-name').value || state.name || '').trim();
+    if (!name) {
+      if (!silent) setSaveNote('Укажите название кампании.');
+      return Promise.resolve(null);
+    }
+    state.name = name;
+    var creating = !state.id;
+    var url = creating ? '/api/campaigns' : '/api/campaigns/' + encodeURIComponent(state.id);
+    var method = creating ? 'POST' : 'PUT';
+    return fetch(url, { method: method, headers: jsonHeaders(), body: JSON.stringify(packDocument()) })
+      .then(function (res) { return res.json().then(function (body) { return { ok: res.ok, body: body }; }); })
+      .then(function (result) {
+        if (!result.ok) {
+          setSaveNote((result.body && result.body.error) || 'Не удалось сохранить.');
+          return null;
+        }
+        var doc = result.body.document;
+        if (doc && doc.campaign) state.id = doc.campaign.id;
+        if (doc && doc.campaign && doc.campaign.status) state.status = doc.campaign.status;
+        campaignIndex = (result.body.index && result.body.index.campaigns) || campaignIndex;
+        renderCampaignPick();
+        setSaveNote(state.status === 'finished' ? 'Кампания завершена.' : 'Сохранено.');
+        return doc;
+      })
+      .catch(function () {
+        setSaveNote('Сервер недоступен, кампания осталась в этой вкладке.');
+        return null;
+      });
+  }
+
+  function scheduleSave() {
+    if (hydrating || !state.id || state.status === 'finished') return;
+    clearTimeout(saveTimer);
+    saveTimer = setTimeout(function () { saveCampaign(true); }, 800);
+  }
+
+  function openCampaign(id) {
+    if (id === state.id) return;
+    var pending = state.id && state.status !== 'finished' ? saveCampaign(true) : Promise.resolve();
+    pending.then(function () {
+      if (!id) {
+        blankCampaign();
+        return;
+      }
+      return fetch('/api/campaigns/' + encodeURIComponent(id))
+        .then(function (res) { return res.ok ? res.json() : null; })
+        .then(function (doc) {
+          if (!doc) {
+            setSaveNote('Кампания не найдена.');
+            renderCampaignPick();
+            return;
+          }
+          applyDocument(doc);
+        });
+    });
+  }
+
+  function finishCampaign() {
+    if (!state.id) {
+      setSaveNote('Сначала сохраните кампанию.');
+      return;
+    }
+    saveCampaign(true).then(function () {
+      return fetch('/api/campaigns/' + encodeURIComponent(state.id) + '/finish', { method: 'POST' });
+    }).then(function (res) {
+      if (!res) return null;
+      return res.json().then(function (body) { return { ok: res.ok, body: body }; });
+    }).then(function (result) {
+      if (!result || !result.ok) {
+        setSaveNote((result && result.body && result.body.error) || 'Не удалось завершить.');
+        return;
+      }
+      applyDocument(result.body.document);
+      campaignIndex = (result.body.index && result.body.index.campaigns) || campaignIndex;
+      renderCampaignPick();
+      setSaveNote('Кампания завершена. Ростеры можно вернуть в общие.');
+    }).catch(function () {
+      setSaveNote('Сервер недоступен.');
+    });
+  }
+
+  function publishPlayerRoster(playerId) {
+    var player = playerById(playerId);
+    if (!state.id || !player || !player.rosterFile || state.status !== 'finished') return;
+    fetch('/api/campaigns/' + encodeURIComponent(state.id) + '/rosters/' + encodeURIComponent(player.rosterFile) + '/publish', {
+      method: 'POST'
+    }).then(function (res) {
+      return res.json().then(function (body) { return { ok: res.ok, body: body }; });
+    }).then(function (result) {
+      if (!result.ok) {
+        setSaveNote((result.body && result.body.error) || 'Не удалось скопировать в общие.');
+        return;
+      }
+      setSaveNote('В общих появился файл ' + result.body.file + '.');
+      return fetch('/api/rosters').then(function (res) { return res.ok ? res.json() : null; }).then(function (data) {
+        if (data) rosters = data.rosters || [];
+        if (currentPage() === 'players') renderPlayers();
+      });
+    }).catch(function () {
+      setSaveNote('Сервер недоступен.');
+    });
+  }
+
+  function copyLibraryRoster(player, sourceFile) {
+    if (!sourceFile) {
+      player.sourceRosterFile = '';
+      player.rosterFile = '';
+      renderPage(currentPage());
+      scheduleSave();
+      return;
+    }
+    var name = ($('camp-name').value || state.name || '').trim();
+    if (!name) {
+      setSaveNote('Сначала укажите название кампании и сохраните её.');
+      renderPlayers();
+      return;
+    }
+    state.name = name;
+    var ready = state.id ? Promise.resolve() : saveCampaign(false);
+    ready.then(function () {
+      if (!state.id) {
+        renderPlayers();
+        return null;
+      }
+      return fetch('/api/campaigns/' + encodeURIComponent(state.id) + '/players/' + encodeURIComponent(player.id) + '/roster', {
+        method: 'POST',
+        headers: jsonHeaders(),
+        body: JSON.stringify({ sourceFile: sourceFile })
+      }).then(function (res) {
+        return res.json().then(function (body) { return { ok: res.ok, body: body }; });
+      });
+    }).then(function (result) {
+      if (!result) return;
+      if (!result.ok) {
+        setSaveNote((result.body && result.body.error) || 'Не удалось скопировать ростер.');
+        renderPlayers();
+        return;
+      }
+      player.sourceRosterFile = sourceFile;
+      player.rosterFile = result.body.file;
+      var roster = result.body.roster || {};
+      rosterDetails[rosterKey(player.rosterFile)] = {
+        reputation: roster.reputation || 1,
+        stash: Number(roster.stash) || 0,
+        fighters: (roster.fighters || []).map(function (f) {
+          return { id: f.id, name: f.name, type: f.type };
+        })
+      };
+      if (!player.gangName) player.gangName = roster.name || '';
+      applyRosterToPlayer(player, sourceFile);
+      setSaveNote('Ростер скопирован в кампанию.');
+      renderPage(currentPage());
+      saveCampaign(true);
+    }).catch(function () {
+      setSaveNote('Сервер недоступен.');
+    });
+  }
+
+  function loadRosterDetails(file) {
+    var key = rosterKey(file);
+    if (!file || rosterDetails[key]) {
+      return Promise.resolve(rosterDetails[key] || null);
+    }
+    if (rosterPending[key]) return rosterPending[key];
+    var url = state.id
+      ? '/api/campaigns/' + encodeURIComponent(state.id) + '/rosters/' + encodeURIComponent(file)
+      : '/api/rosters/' + encodeURIComponent(file);
+    rosterPending[key] = fetch(url)
       .then(function (res) { return res.ok ? res.json() : null; })
       .then(function (roster) {
-        delete rosterPending[file];
+        delete rosterPending[key];
         if (!roster) return null;
-        rosterDetails[file] = {
+        rosterDetails[key] = {
           reputation: roster.reputation || 1,
           stash: Number(roster.stash) || 0,
           fighters: (roster.fighters || []).map(function (f) {
             return { id: f.id, name: f.name, type: f.type };
           })
         };
-        return rosterDetails[file];
+        return rosterDetails[key];
       })
       .catch(function () {
-        delete rosterPending[file];
+        delete rosterPending[key];
         return null;
       });
-    return rosterPending[file];
+    return rosterPending[key];
   }
 
   function applyRosterToPlayer(player, file) {
     var index = rosters.find(function (r) { return r.file === file; });
-    var details = rosterDetails[file];
+    var details = rosterDetails[rosterKey(player.rosterFile)];
     if (index && !player.gangName) player.gangName = index.name || '';
     if (index) player.rating = index.rating || 0;
     if (details) {
@@ -1055,21 +2022,7 @@
   }
 
   function bindRoster(player, file) {
-    player.rosterFile = file;
-    if (!file) {
-      if (currentPage() === 'players') renderPlayers();
-      if (currentPage() === 'actions') renderActions();
-      return;
-    }
-    applyRosterToPlayer(player, file);
-    if (currentPage() === 'players') renderPlayers();
-    loadRosterDetails(file).then(function (details) {
-      if (!details || player.rosterFile !== file) return;
-      applyRosterToPlayer(player, file);
-      if (currentPage() === 'players') renderPlayers();
-      if (currentPage() === 'actions') renderActions();
-      if (currentPage() === 'triumphs') renderTriumphs();
-    });
+    copyLibraryRoster(player, file);
   }
 
   function num(el) {
@@ -1081,6 +2034,23 @@
     var btn = e.target.closest('[data-act]');
     if (!btn) return;
     var act = btn.getAttribute('data-act');
+    if (act === 'save-campaign') {
+      saveCampaign(false);
+      return;
+    }
+    if (act === 'new-campaign') {
+      var leave = state.id && state.status !== 'finished' ? saveCampaign(true) : Promise.resolve();
+      leave.then(function () { blankCampaign(); });
+      return;
+    }
+    if (act === 'finish-campaign') {
+      finishCampaign();
+      return;
+    }
+    if (act === 'publish-roster') {
+      publishPlayerRoster(btn.getAttribute('data-id'));
+      return;
+    }
     if (act === 'add-player') addPlayer();
     if (act === 'remove-player') {
       state.players = state.players.filter(function (p) { return p.id !== btn.getAttribute('data-id'); });
@@ -1128,14 +2098,30 @@
       if (state.catalogOpen) renderCatalog();
     }
     if (act === 'add-custom') {
-      state.customs.push({ id: uid('c'), name: '', income: '', extras: '', custom: true });
+      var customId = uid('c');
+      TERRITORY_NAMES[customId] = TERRITORY_NAMES.custom.slice();
+      state.customs.push({ id: customId, name: '', income: '', extras: '', custom: true });
       renderCatalog();
       renderTerritories();
     }
     if (act === 'remove-custom') {
       var cid = btn.getAttribute('data-id');
       state.customs = state.customs.filter(function (c) { return c.id !== cid; });
+      if (cid !== 'custom') delete TERRITORY_NAMES[cid];
+      if (state.nameEditId === cid) closeNameEditor();
       renderCatalog();
+      renderTerritories();
+      renderSummary();
+    }
+    if (act === 'edit-names') {
+      var editId = btn.getAttribute('data-id');
+      if (state.nameEditId === editId) closeNameEditor();
+      else showNameEditor(editId);
+    }
+    if (act === 'roll-name') {
+      var named = state.territories.find(function (t) { return t.id === btn.getAttribute('data-id'); });
+      if (!named) return;
+      named.name = rollTerritoryName(named.kind, takenNames(named.id));
       renderTerritories();
       renderSummary();
     }
@@ -1160,10 +2146,30 @@
       state.cycle = Math.max(1, Math.min(cycleTotal(), Number(btn.getAttribute('data-n')) || 1));
       renderPage(currentPage());
     }
+    if (act === 'cycle-mode') {
+      if (campaignHasEvents()) return;
+      state.eventMode = btn.getAttribute('data-mode') === 'short' ? 'short' : 'full';
+      renderPage(currentPage());
+    }
+    if (act === 'add-battle') {
+      if (unpairedCount() < 2) return;
+      if (!state.battles[cycleKey()]) state.battles[cycleKey()] = [];
+      state.battles[cycleKey()].push(blankBattle());
+      renderPage(currentPage());
+    }
+    if (act === 'remove-battle') {
+      var battleKey = cycleKey();
+      var battleList = state.battles[battleKey] || [];
+      var removed = battleList.find(function (battle) { return battle.id === btn.getAttribute('data-id'); });
+      if (removed) restoreStake(removed);
+      state.battles[battleKey] = battleList.filter(function (battle) { return battle.id !== btn.getAttribute('data-id'); });
+      renderPage(currentPage());
+    }
     if (act === 'set-live') {
       state.liveCycle = state.cycle;
       renderPage(currentPage());
     }
+    scheduleSave();
   });
 
   document.querySelector('.arb-main').addEventListener('keydown', function (e) {
@@ -1174,6 +2180,11 @@
 
   document.querySelector('.arb-main').addEventListener('change', function (e) {
     var el = e.target;
+    if (el.id === 'camp-pick') {
+      if (hydrating) return;
+      openCampaign(el.value);
+      return;
+    }
     if (el.id === 'camp-name') state.name = el.value;
     if (el.id === 'camp-occupation') setPhaseLength('occupation', num(el));
     if (el.id === 'camp-downtime') setPhaseLength('downtime', num(el));
@@ -1209,7 +2220,9 @@
     if (terrId) {
       var t = state.territories.find(function (x) { return x.id === terrId; });
       if (!t) return;
-      t[el.getAttribute('data-field')] = el.value;
+      var terrField = el.getAttribute('data-field');
+      t[terrField] = el.value;
+      if (terrField === 'name') return;
       if (isHome(t.kind)) {
         t.status = 'owned';
         if (!t.ownerId && state.players[0]) t.ownerId = state.players[0].id;
@@ -1223,7 +2236,31 @@
       if (evField === 'ooa') ev.ooa = num(el);
       else if (evField === 'sideJob') ev.sideJob = el.value === '1';
       else ev[evField] = el.value;
+      if (evField === 'result' || evField === 'stakeId' || evField === 'opponentId' || evField === 'targetId') {
+        applyBattleOutcome(evId);
+      }
       renderSummary();
+      renderModeSwitch();
+    }
+    var battleId = el.getAttribute('data-battle');
+    if (battleId) {
+      var battle = battleById(battleId);
+      if (battle) {
+        var battleField = el.getAttribute('data-field');
+        if (battleField === 'challengerOoa' || battleField === 'responderOoa') battle[battleField] = num(el);
+        else if (battleField === 'challengerSideJob' || battleField === 'responderSideJob') battle[battleField] = el.value === '1';
+        else battle[battleField] = el.value;
+        if (battle.challengerId && battle.challengerId === battle.responderId) {
+          if (battleField === 'challengerId') battle.responderId = '';
+          else battle.challengerId = '';
+        }
+        if (battleField === 'result' || battleField === 'stakeId' || battleField === 'challengerId' || battleField === 'responderId') {
+          applyShortOutcome(battle);
+        }
+        if (battleField === 'challengerId' || battleField === 'responderId') renderCycle();
+        renderSummary();
+        renderModeSwitch();
+      }
     }
     var actPlayer = el.getAttribute('data-action-player');
     if (actPlayer) {
@@ -1231,11 +2268,16 @@
       if (item) item[el.getAttribute('data-field')] = el.value;
       renderSummary();
     }
+    scheduleSave();
   });
 
   document.querySelector('.arb-main').addEventListener('input', function (e) {
     var el = e.target;
     if (el.id === 'camp-name') state.name = el.value;
+    if (el.id === 'name-editor-text' && state.nameEditId) {
+      TERRITORY_NAMES[state.nameEditId] = namesFromText(el.value);
+      $('name-editor-count').textContent = 'В списке: ' + TERRITORY_NAMES[state.nameEditId].length;
+    }
     var playerId = el.getAttribute('data-player');
     if (playerId && el.getAttribute('data-field')) {
       var p = playerById(playerId);
@@ -1251,6 +2293,18 @@
       if (evField === 'ooa') ev.ooa = num(el);
       else if (evField === 'notes') ev.notes = el.value;
       renderSummary();
+      renderModeSwitch();
+    }
+    var battleInputId = el.getAttribute('data-battle');
+    if (battleInputId) {
+      var battleInput = battleById(battleInputId);
+      if (battleInput) {
+        var battleInputField = el.getAttribute('data-field');
+        if (battleInputField === 'challengerOoa' || battleInputField === 'responderOoa') battleInput[battleInputField] = num(el);
+        else if (battleInputField === 'challengerNotes' || battleInputField === 'responderNotes') battleInput[battleInputField] = el.value;
+        renderSummary();
+        renderModeSwitch();
+      }
     }
     var customId = el.getAttribute('data-custom');
     if (customId) {
@@ -1262,14 +2316,31 @@
         if (cField === 'name' || cField === 'income' || cField === 'extras') renderTerritories();
       }
     }
+    var terrId = el.getAttribute('data-terr');
+    if (terrId && el.getAttribute('data-field') === 'name') {
+      var named = state.territories.find(function (x) { return x.id === terrId; });
+      if (named) named.name = el.value;
+    }
     var actPlayer = el.getAttribute('data-action-player');
     if (actPlayer && el.getAttribute('data-field') === 'fighter') {
       var item = actionsFor(actPlayer).find(function (a) { return a.id === el.getAttribute('data-action-id'); });
       if (item) item.fighter = el.value;
     }
+    scheduleSave();
   });
 
   window.addEventListener('hashchange', showPage);
+
+  defaultNames = JSON.parse(JSON.stringify(TERRITORY_NAMES));
+  renderCampaignPick();
+
+  fetch('/api/campaigns')
+    .then(function (res) { return res.ok ? res.json() : { campaigns: [] }; })
+    .then(function (data) {
+      campaignIndex = (data && data.campaigns) || [];
+      renderCampaignPick();
+    })
+    .catch(function () { campaignIndex = []; });
 
   fetch('/api/rosters')
     .then(function (res) { return res.ok ? res.json() : { rosters: [] }; })
